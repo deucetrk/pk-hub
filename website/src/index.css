@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: "IBM Plex Sans Thai", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --pk-black: #18181b; /* zinc-900 for a softer black */
+    --pk-white: #ffffff;
+    --pk-grey: #fafafa;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--pk-white);
+    color: var(--pk-black);
+  }
+}
+
+.font-display {
+  font-family: "Anuphan", "IBM Plex Sans Thai", ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--pk-black);
+  color: var(--pk-white);
+}
+
+.brand-rail {
+  overflow: hidden;
+  border-top: 1px solid var(--pk-grey);
+  border-bottom: 1px solid var(--pk-grey);
+  background: transparent;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.brand-rail__track {
+  display: flex;
+  width: max-content;
+  animation: brand-marquee 40s linear infinite;
+  will-change: transform;
+}
+
+.brand-rail__group {
+  display: flex;
+  min-width: max-content;
+  flex-shrink: 0;
+}
+
+.brand-rail__item {
+  display: flex;
+  min-width: 11rem;
+  height: 6rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid var(--pk-grey);
+  padding: 0 1.75rem;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.brand-rail__item:hover {
+  opacity: 1;
+}
+
+@media (min-width: 640px) {
+  .brand-rail__item {
+    min-width: 13rem;
+    height: 7rem;
+    padding: 0 2rem;
+  }
+}
+
+.brand-rail:hover .brand-rail__track {
+  animation-play-state: paused;
+}
+
+@keyframes brand-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-rail {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .brand-rail__track {
+    animation: none;
+  }
+}
