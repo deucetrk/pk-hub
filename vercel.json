@@ -1,0 +1,12 @@
+{
+  "buildCommand": "cd website && npm ci && npm run build",
+  "outputDirectory": "website/dist",
+  "installCommand": "cd website && npm ci",
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/((?!.*\\.).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
