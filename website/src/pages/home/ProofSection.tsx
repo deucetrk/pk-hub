@@ -68,10 +68,9 @@ export default function ProofSection() {
           </figure>
         </div>
 
-        <div className="mt-5 flex flex-col gap-3 border-b border-zinc-200 pb-8 text-sm leading-6 text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
-          <span>{isThai ? 'ภาพจากหน้าร้านและโกดังของเราในฉะเชิงเทรา' : 'Photos from our storefront and packing space in Chachoengsao.'}</span>
+        <div className="mt-5 flex flex-col gap-3 border-b border-zinc-200 pb-8 text-sm leading-6 text-zinc-500 sm:flex-row sm:items-center sm:justify-end">
           <a
-            href="https://maps.google.com/?q=72/29-30+ถนนศุขประยูร+ต.หน้าเมือง+อ.เมือง+จ.ฉะเชิงเทรา+24000"
+            href="https://maps.app.goo.gl/uW4TCkzRHMe59yS19"
             target="_blank"
             rel="noreferrer"
             className="font-bold text-zinc-950 underline decoration-zinc-300 underline-offset-4 hover:decoration-zinc-950"

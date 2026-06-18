@@ -23,7 +23,7 @@ export default function TrustSection() {
             <div>
               <div className="text-xl font-black">{isThai ? 'ดำเนินธุรกิจมากกว่า 25 ปี' : 'More than 25 years in business'}</div>
               <div className="mt-3 text-base leading-[1.8] text-zinc-600">
-                {isThai ? 'มีหน้าร้านจริงในฉะเชิงเทรา และทำธุรกิจในพื้นที่มายาวนาน' : 'A long-standing operator with a physical storefront in Chachoengsao.'}
+                {isThai ? 'มีหน้าร้านในฉะเชิงเทรา ทำธุรกิจในพื้นที่มายาวนาน ลูกค้าในพื้นที่ไว้ใจมากมาย' : 'A long-standing local business with a physical storefront in Chachoengsao and trusted local customers.'}
               </div>
             </div>
           </div>
@@ -34,7 +34,7 @@ export default function TrustSection() {
             <div>
               <div className="text-xl font-black">{isThai ? 'ผู้จัดจำหน่ายที่ได้รับอนุญาตจาก AIS' : 'Authorized AIS Distributor'}</div>
               <div className="mt-3 text-base leading-[1.8] text-zinc-600">
-                {isThai ? 'ทำงานแบบธุรกิจจริง เอกสารชัดเจน และดูแลหลังการขายในมาตรฐานที่ตรวจสอบได้' : 'Clear documentation and verifiable after-sales support standards.'}
+                {isThai ? 'ไม่ต้องลุ้น เครื่องใหม่มือหนึ่ง สต็อกแน่น ประกันศูนย์ไทย' : 'No guessing: brand-new units, strong stock, and Thai official warranty.'}
               </div>
             </div>
           </div>
@@ -47,7 +47,7 @@ export default function TrustSection() {
                 {isThai ? 'พร้อมเอกสารบัญชีสำหรับบริษัท ร้านค้าปลีก และเชนร้านค้า' : 'Full tax invoices for companies, retailers, and retail chains'}
               </div>
               <div className="mt-3 text-base leading-[1.8] text-zinc-600">
-                {isThai ? 'จดทะเบียน VAT และออกใบกำกับภาษีเต็มรูปแบบ เลขทะเบียน VAT: 0245540000020' : 'VAT registered and able to issue full tax invoices. VAT registration: 0245540000020.'}
+                {isThai ? 'จดทะเบียน VAT และออกใบกำกับภาษีเต็มรูปแบบได้' : 'VAT registered and able to issue full tax invoices.'}
               </div>
             </div>
           </div>

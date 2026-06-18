@@ -12,7 +12,7 @@ export default function ContactSection() {
     {
       label: isThai ? 'ที่อยู่' : 'Address',
       value: isThai ? '72/29-30 ถ.ศุขประยูร ฉะเชิงเทรา' : '72/29-30 Sukprayoon Rd, Chachoengsao',
-      href: 'https://maps.google.com/?q=72/29-30+ถนนศุขประยูร+ต.หน้าเมือง+อ.เมือง+จ.ฉะเชิงเทรา+24000',
+      href: 'https://maps.app.goo.gl/uW4TCkzRHMe59yS19',
       icon: MapPinned,
     },
   ]
