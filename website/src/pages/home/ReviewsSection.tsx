@@ -77,14 +77,14 @@ export default function ReviewsSection() {
               controls
               playsInline
               preload="metadata"
-              poster="/reviews/packing-real-order-poster.jpg"
+              poster="/reviews/packing-highlight-reel-poster.jpg"
               aria-label={
                 isThai
-                  ? 'วิดีโอรอบแพ็กสินค้าจริงก่อนส่งให้ร้านค้าพาร์ทเนอร์'
-                  : 'Real packing video before dispatch to retail partners'
+                  ? 'วิดีโอไฮไลต์การแพ็กสินค้าจริงก่อนส่งให้ร้านค้าพาร์ทเนอร์'
+                  : 'Highlight video of real packing before dispatch to retail partners'
               }
             >
-              <source src="/reviews/packing-real-order.mp4" type="video/mp4" />
+              <source src="/reviews/packing-highlight-reel.mp4" type="video/mp4" />
               {isThai ? 'เบราว์เซอร์ของคุณไม่รองรับวิดีโอ' : 'Your browser does not support video playback.'}
             </video>
           </div>
@@ -95,8 +95,8 @@ export default function ReviewsSection() {
               </div>
               <div className="mt-5 text-base leading-[1.8] text-zinc-600 sm:text-lg">
                 {isThai
-                  ? 'วิดีโอจากรอบแพ็กสินค้าจริงก่อนส่งให้ร้านค้าพาร์ทเนอร์ ช่วยยืนยันว่ามีสินค้าเข้า มีการตรวจแพ็ก และส่งต่อจากฐานปฏิบัติการในฉะเชิงเทรา'
-                  : 'Real packing footage before dispatch to retail partners, showing active stock handling and dispatch from our Chachoengsao operation.'}
+                  ? 'วิดีโอไฮไลต์จากหลายจังหวะแพ็กสินค้า เห็นทั้งสินค้าหลากหลายแบรนด์ การกันกระแทก และหลักฐานส่งต่อจากฐานปฏิบัติการในฉะเชิงเทรา'
+                  : 'A highlight reel from multiple packing moments, showing multi-brand stock, protective packing, and dispatch proof from our Chachoengsao operation.'}
               </div>
             </div>
             <div className="grid gap-px bg-zinc-200 sm:grid-cols-3">
