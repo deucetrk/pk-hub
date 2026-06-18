@@ -1,4 +1,4 @@
-import { Clock, ShieldCheck, Truck } from 'lucide-react'
+import { BadgeCheck, Clock, ReceiptText, ShieldCheck, Truck } from 'lucide-react'
 
 import Container from '@/components/Container'
 import LogoMark from '@/components/LogoMark'
@@ -18,16 +18,26 @@ export default function HeroSection() {
                 {isThai ? 'พันธมิตรค้าส่งมือถือ • ฉะเชิงเทรา / ภาคตะวันออก' : 'Smartphone wholesale partner • Eastern Thailand'}
               </div>
             </div>
-            <h1 className="font-display flex flex-col text-5xl font-black leading-[1.02] tracking-[-0.055em] sm:text-6xl lg:text-7xl lg:leading-[0.98]">
+            <h1 className="font-display flex flex-col gap-3 text-5xl font-black leading-[1.24] tracking-[-0.025em] sm:text-6xl sm:leading-[1.22] lg:text-7xl lg:leading-[1.2]">
               <span className="text-zinc-900">{isThai ? 'ค้าส่งมือถือ' : 'Official smartphones'}</span>
               <span className="text-zinc-900">{isThai ? 'เครื่องศูนย์ไทย' : 'for retail partners'}</span>
               <span className="text-zinc-400">{isThai ? 'สำหรับร้านค้า' : 'across Thailand'}</span>
             </h1>
             <p className="max-w-xl text-base leading-[1.8] text-zinc-600 sm:text-lg lg:mt-2">
               {isThai
-                ? 'PK HUB ดูแลร้านมือถือออนไลน์และหน้าร้าน ด้วยราคาส่ง B2B เครื่องศูนย์ไทย 100% ส่งของทุกวัน และบริการหลังการขายจากทีมที่คุยกันได้จริง'
-                : 'PK HUB supplies official Thai-market smartphones to online and physical retailers, with daily dispatch and direct after-sales support.'}
+                ? 'PK HUB ดูแลร้านมือถือออนไลน์และหน้าร้าน ด้วยราคาส่ง B2B เครื่องศูนย์ไทย 100% ส่งของทุกวัน พร้อมเอกสารธุรกิจที่ตรวจสอบได้'
+                : 'PK HUB supplies official Thai-market smartphones to online and physical retailers, with daily dispatch and verifiable business documentation.'}
             </p>
+            <div className="grid gap-3 sm:grid-cols-2">
+              <div className="flex min-h-16 items-center gap-3 border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-bold leading-6 text-zinc-950">
+                <BadgeCheck className="h-5 w-5 shrink-0 text-emerald-600" />
+                <span>{isThai ? 'ผู้จัดจำหน่ายที่ได้รับอนุญาตจาก AIS' : 'Authorized AIS Distributor'}</span>
+              </div>
+              <div className="flex min-h-16 items-center gap-3 border border-zinc-200 bg-white px-4 py-3 text-sm font-bold leading-6 text-zinc-950">
+                <ReceiptText className="h-5 w-5 shrink-0 text-emerald-600" />
+                <span>{isThai ? 'จดทะเบียน VAT • ออกใบกำกับภาษีเต็มรูปแบบ' : 'VAT registered • Full tax invoices'}</span>
+              </div>
+            </div>
             <div className="mt-2 flex flex-col gap-4 sm:flex-row">
               <a
                 href="https://lin.ee/VEgW6qG"
@@ -58,8 +68,8 @@ export default function HeroSection() {
                 <div className="mt-1 text-base font-bold text-zinc-900">{isThai ? 'ส่งทุกวัน' : 'Daily'}</div>
               </div>
               <div className="border-l-2 border-zinc-200 pl-4">
-                <div className="text-xs font-semibold text-zinc-500">{isThai ? 'ยอดขาย 2026' : '2026 sales'}</div>
-                <div className="mt-1 text-base font-bold text-zinc-900">฿100M+</div>
+                <div className="text-xs font-semibold text-zinc-500">{isThai ? 'เอกสารธุรกิจ' : 'Business docs'}</div>
+                <div className="mt-1 text-base font-bold text-zinc-900">{isThai ? 'VAT พร้อม' : 'VAT ready'}</div>
               </div>
             </div>
           </div>
@@ -73,9 +83,9 @@ export default function HeroSection() {
               <div className="flex items-start gap-4">
                 <ShieldCheck className="mt-0.5 h-6 w-6 shrink-0 text-white" />
                 <div>
-                  <div className="font-semibold text-white">{isThai ? 'รับราคาและสต็อกล่าสุดจากทีมโดยตรง' : 'Get current prices and live stock directly'}</div>
+                  <div className="font-semibold text-white">{isThai ? 'ผู้จัดจำหน่ายที่ได้รับอนุญาตจาก AIS' : 'Authorized AIS Distributor'}</div>
                   <div className="mt-1 text-sm leading-[1.8] text-zinc-400">
-                    {isThai ? 'แจ้งแบรนด์ รุ่น และจำนวนที่สนใจ ทีมช่วยเช็กให้ทันที' : 'Tell us the brands, models, and quantities you need.'}
+                    {isThai ? 'สินค้าและเอกสารธุรกิจพร้อมตรวจสอบสำหรับร้านค้าพาร์ทเนอร์' : 'Stock and business documentation are available for partner verification.'}
                   </div>
                 </div>
               </div>
@@ -91,9 +101,9 @@ export default function HeroSection() {
               <div className="flex items-start gap-4">
                 <Clock className="mt-0.5 h-6 w-6 shrink-0 text-white" />
                 <div>
-                  <div className="font-semibold text-white">{isThai ? 'เครื่องศูนย์ไทย พร้อมดูแลหลังการขาย' : 'Official Thai stock with after-sales support'}</div>
+                  <div className="font-semibold text-white">{isThai ? 'ใบกำกับภาษีเต็มรูปแบบสำหรับองค์กร' : 'Full tax invoices for business buyers'}</div>
                   <div className="mt-1 text-sm leading-[1.8] text-zinc-400">
-                    {isThai ? 'คุยตรงกับทีมขายผ่าน LINE หรือโทรศัพท์' : 'Speak directly with our sales team by LINE or phone.'}
+                    {isThai ? 'เลขทะเบียน VAT 0245540000020 พร้อมใช้สำหรับงานบัญชี' : 'VAT registration 0245540000020 for accounting documentation.'}
                   </div>
                 </div>
               </div>

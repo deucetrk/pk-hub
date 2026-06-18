@@ -9,7 +9,7 @@ import { useLanguage } from '@/i18n/LanguageContext'
 const TH_FAQS = [
   {
     q: 'PK HUB ขายส่งมือถือแบรนด์อะไรบ้าง?',
-    a: 'เราจัดจำหน่ายมือถือเครื่องศูนย์ไทยจากแบรนด์ชั้นนำ ได้แก่ Apple, Samsung, Oppo, Vivo, Realme, Xiaomi, Honor และ Infinix ทุกเครื่องเป็นสินค้าศูนย์ไทย มีarranty และบริการหลังการขาย',
+    a: 'เราจัดจำหน่ายมือถือเครื่องศูนย์ไทยจากแบรนด์ชั้นนำ ได้แก่ Apple, Samsung, Oppo, Vivo, Realme, Xiaomi, Honor และ Infinix ทุกเครื่องเป็นสินค้าศูนย์ไทย มีประกันและบริการหลังการขาย',
   },
   {
     q: 'มีขั้นต่ำในการสั่งซื้อหรือไม่?',
@@ -17,7 +17,7 @@ const TH_FAQS = [
   },
   {
     q: 'สินค้ามีประกันหรือไม่?',
-    a: 'ทุกเครื่องมีประกันศูนย์ไทยตามมาตรฐานufacturer และเรามีบริการหลังการขาย หากมีปัญหาสามารถติดต่อทีมงานได้ผ่าน LINE หรือโทรศัพท์',
+    a: 'ทุกเครื่องมีประกันศูนย์ไทยตามมาตรฐานผู้ผลิต และเรามีบริการหลังการขาย หากมีปัญหาสามารถติดต่อทีมงานได้ผ่าน LINE หรือโทรศัพท์',
   },
   {
     q: 'ส่งสินค้าอย่างไรและใช้เวลาเท่าไหร่?',
@@ -28,12 +28,16 @@ const TH_FAQS = [
     a: 'ได้ เรารองรับร้านค้าทั่วประเทศ โดยเฉพาะภาคตะวันออก เช่น ชลบุรี ระยอง ฉะเชิงเทรา จันทบุรี ตราด สระแก้ว และปราจีนบุรี',
   },
   {
+    q: 'PK HUB อยู่ฉะเชิงเทราและขายส่งมือถือให้ร้านค้าในพื้นที่หรือไม่?',
+    a: 'ใช่ ฐานหลักของเราอยู่ที่ 72/29-30 ถนนศุขประยูร ต.หน้าเมือง อ.เมือง จ.ฉะเชิงเทรา รองรับร้านค้าในฉะเชิงเทราและภาคตะวันออกที่ต้องการมือถือเครื่องศูนย์ไทย ราคาส่ง และเอกสารธุรกิจครบ',
+  },
+  {
     q: 'ช่องทางการติดต่อที่เร็วที่สุดคืออะไร?',
     a: 'LINE คือช่องทางที่เร็วที่สุด ทักมาที่ @pkhub หรือโทร 089-248-0888 ทีมขายตอบเร็วและช่วยเช็กสต็อกให้ทันที',
   },
   {
     q: 'มีใบกำกับภาษีหรือไม่?',
-    a: 'มี เราออกใบกำกับภาษีให้ร้านค้าที่ต้องการ ดำเนินธุรกิจแบบถูกต้องตามกฎหมาย',
+    a: 'มี เราจดทะเบียน VAT เลขที่ 0245540000020 และออกใบกำกับภาษีเต็มรูปแบบให้บริษัท ร้านค้าปลีก และเชนร้านค้าที่ต้องใช้เอกสารบัญชีถูกต้อง',
   },
   {
     q: 'สินค้าเป็นเครื่องใหม่หรือมือสอง?',
@@ -63,12 +67,16 @@ const EN_FAQS = [
     a: 'Yes. We serve retailers nationwide, with strong coverage in the Eastern provinces: Chachoengsao, Chonburi, Rayong, Chanthaburi, Trat, Sa Kaeo, and Prachinburi.',
   },
   {
+    q: 'Is PK HUB based in Chachoengsao and serving local retailers?',
+    a: 'Yes. Our main operation is at 72/29-30 Sukprayoon Road, Na Mueang, Mueang Chachoengsao. We support Chachoengsao and Eastern Thailand retailers that need official Thai-market smartphones, wholesale pricing, and complete business documents.',
+  },
+  {
     q: 'What is the fastest way to contact PK HUB?',
     a: 'LINE is the fastest channel. Add @pkhub or call 089-248-0888. Our sales team responds quickly and can check stock immediately.',
   },
   {
     q: 'Do you provide VAT invoices?',
-    a: 'Yes. We issue VAT invoices for retail partners who need them. Our business is fully registered and compliant.',
+    a: 'Yes. PK HUB is VAT registered under 0245540000020 and can issue full tax invoices for companies, retailers, and retail chains that need proper accounting documents.',
   },
   {
     q: 'Are the phones new or refurbished?',

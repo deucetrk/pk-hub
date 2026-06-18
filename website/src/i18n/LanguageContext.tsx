@@ -13,14 +13,14 @@ const LanguageContext = createContext<LanguageContextValue | null>(null)
 
 const META = {
   th: {
-    title: 'PK HUB | พันธมิตรค้าส่งมือถือสำหรับร้านค้า',
+    title: 'PK HUB | ค้าส่งมือถือฉะเชิงเทรา เครื่องศูนย์ไทยสำหรับร้านค้า',
     description:
-      'PK HUB ผู้จัดจำหน่ายมือถือเครื่องศูนย์ไทยสำหรับร้านค้า ส่งของทุกวัน ดูแลมากกว่า 180 ร้านค้า จากฐานธุรกิจจริงในฉะเชิงเทรา',
+      'PK HUB ค้าส่งมือถือฉะเชิงเทรา ผู้จัดจำหน่ายที่ได้รับอนุญาตจาก AIS สำหรับร้านค้า เครื่องศูนย์ไทย จดทะเบียน VAT และออกใบกำกับภาษีเต็มรูปแบบ',
   },
   en: {
-    title: 'PK HUB | Thai Smartphone Wholesale Partner',
+    title: 'PK HUB | Chachoengsao Smartphone Wholesale Partner',
     description:
-      'PK HUB supplies official Thai-market smartphones to retailers nationwide, with daily dispatch and more than 180 retail partners.',
+      'PK HUB is a Chachoengsao smartphone wholesale partner and Authorized AIS Distributor supplying official Thai-market phones with VAT invoices.',
   },
 } satisfies Record<Language, { title: string; description: string }>
 
@@ -34,6 +34,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.documentElement.lang = language
     document.title = meta.title
     document.querySelector('meta[name="description"]')?.setAttribute('content', meta.description)
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', `https://pkhub.co/${language}`)
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', meta.title)
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', meta.description)
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', `https://pkhub.co/${language}`)
   }, [language])
 
   const setLanguage = (next: Language) => {

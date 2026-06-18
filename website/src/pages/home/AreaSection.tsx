@@ -12,11 +12,11 @@ export default function AreaSection() {
   return (
     <Section
       id="area"
-      title={isThai ? 'ฐานหลักฉะเชิงเทรา ส่งให้ร้านค้าทั่วประเทศ' : 'Based in Chachoengsao, supplying retailers nationwide'}
+      title={isThai ? 'ค้าส่งมือถือฉะเชิงเทรา สำหรับร้านค้าและพาร์ทเนอร์' : 'Smartphone wholesale in Chachoengsao for retail partners'}
       subtitle={
         isThai
-          ? 'ดูแลภาคตะวันออกอย่างใกล้ชิด พร้อมรองรับการส่งต่างจังหวัดตามรอบขนส่ง'
-          : 'Close regional support for Eastern Thailand, with nationwide delivery available.'
+          ? 'ฐานหลักของ PK HUB อยู่ในตัวเมืองฉะเชิงเทรา ดูแลร้านค้าในพื้นที่และภาคตะวันออก พร้อมรองรับการส่งต่างจังหวัดตามรอบขนส่ง'
+          : 'PK HUB is based in central Chachoengsao, supporting local and Eastern Thailand retailers with nationwide delivery available.'
       }
     >
       <div className="grid gap-6 md:grid-cols-2">
@@ -43,12 +43,12 @@ export default function AreaSection() {
         <div className="rounded-none border-2 border-black bg-white p-10">
           <div className="flex items-center gap-4 text-xl font-black">
             <Truck className="h-8 w-8 stroke-[1.5]" />
-            {isThai ? 'ฐานปฏิบัติการและการจัดส่ง' : 'Operation base and dispatch'}
+            {isThai ? 'ฐานค้าส่งมือถือและการจัดส่ง' : 'Wholesale base and dispatch'}
           </div>
           <div className="mt-4 text-base leading-[1.8] text-zinc-600">
             {isThai
-              ? 'ฐานหลักอยู่ที่ 72/29-30 ถนนศุขประยูร ต.หน้าเมือง อ.เมือง จ.ฉะเชิงเทรา 24000 รองรับการส่งภาคตะวันออกและต่างจังหวัด'
-              : 'Our main operation is at 72/29-30 Sukprayoon Road, Chachoengsao 24000, supporting regional and nationwide dispatch.'}
+              ? 'ฐานหลักอยู่ที่ 72/29-30 ถนนศุขประยูร ต.หน้าเมือง อ.เมือง จ.ฉะเชิงเทรา 24000 สำหรับเช็กสต็อก แพ็กมือถือเครื่องศูนย์ไทย และประสานงานออเดอร์ร้านค้า'
+              : 'Our main operation is at 72/29-30 Sukprayoon Road, Chachoengsao 24000 for stock checks, Thai-market phone packing, and retail partner order coordination.'}
           </div>
           <div className="mt-8 rounded-none border-2 border-black bg-zinc-50 p-6 text-base leading-[1.8] font-bold">
             {isThai

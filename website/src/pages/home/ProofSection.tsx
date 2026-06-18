@@ -1,4 +1,4 @@
-import { MapPinned, ShieldCheck } from 'lucide-react'
+import { BadgeCheck, MapPinned, ReceiptText } from 'lucide-react'
 
 import Container from '@/components/Container'
 import { useLanguage } from '@/i18n/LanguageContext'
@@ -16,11 +16,11 @@ export default function ProofSection() {
             </h2>
             <p className="mt-6 text-base leading-8 text-zinc-600 sm:text-lg">
               {isThai
-                ? 'ฐานปฏิบัติการของเราอยู่ในตัวเมืองฉะเชิงเทรา ใช้ดูแลสต็อก แพ็กสินค้า และประสานงานกับร้านค้าพาร์ทเนอร์ทุกวัน'
-                : 'Our Chachoengsao operation supports stock handling, packing, dispatch, and daily partner communication.'}
+                ? 'ฐานปฏิบัติการของเราอยู่ในตัวเมืองฉะเชิงเทรา ใช้ดูแลสต็อก แพ็กสินค้า เอกสารภาษี และประสานงานกับร้านค้าพาร์ทเนอร์ทุกวัน'
+                : 'Our Chachoengsao operation supports stock handling, packing, tax documentation, dispatch, and daily partner communication.'}
             </p>
           </div>
-          <div className="grid gap-4 border-y border-zinc-200 py-6 sm:grid-cols-2">
+          <div className="grid gap-4 border-y border-zinc-200 py-6 sm:grid-cols-2 lg:grid-cols-3">
             <div className="flex gap-4">
               <MapPinned className="mt-1 h-6 w-6 shrink-0" />
               <div>
@@ -31,11 +31,20 @@ export default function ProofSection() {
               </div>
             </div>
             <div className="flex gap-4">
-              <ShieldCheck className="mt-1 h-6 w-6 shrink-0" />
+              <BadgeCheck className="mt-1 h-6 w-6 shrink-0 text-emerald-600" />
               <div>
-                <div className="font-bold">{isThai ? 'AIS Authorized Distribution Partner' : 'AIS Authorized Distribution Partner'}</div>
+                <div className="font-bold">{isThai ? 'ผู้จัดจำหน่ายที่ได้รับอนุญาตจาก AIS' : 'Authorized AIS Distributor'}</div>
                 <div className="mt-2 text-sm leading-6 text-zinc-500">
                   {isThai ? 'เอกสารธุรกิจและหลักฐานออเดอร์พร้อมตรวจสอบ' : 'Business documentation and order evidence available.'}
+                </div>
+              </div>
+            </div>
+            <div className="flex gap-4">
+              <ReceiptText className="mt-1 h-6 w-6 shrink-0 text-emerald-600" />
+              <div>
+                <div className="font-bold">{isThai ? 'ออกใบกำกับภาษีเต็มรูปแบบ' : 'Full tax invoices'}</div>
+                <div className="mt-2 text-sm leading-6 text-zinc-500">
+                  {isThai ? 'เลขทะเบียน VAT: 0245540000020' : 'VAT registration: 0245540000020'}
                 </div>
               </div>
             </div>

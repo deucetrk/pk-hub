@@ -56,11 +56,11 @@ export default function ReviewsSection() {
   return (
     <Section
       id="reviews"
-      title={isThai ? 'ภาพจากการดำเนินงานจริง' : 'Inside our real operation'}
+      title={isThai ? 'รีวิวงานจริงจาก PK HUB' : 'Real operation videos from PK HUB'}
       subtitle={
         isThai
-          ? 'สต็อกสินค้า ทีมงาน การแพ็ก และออเดอร์ที่เตรียมส่งให้ร้านค้าพาร์ทเนอร์'
-          : 'Real stock, our team, careful packing, and orders prepared for retail partners.'
+          ? 'วิดีโอและภาพจากรอบแพ็กสินค้า สต็อกจริง และออเดอร์ที่เตรียมส่งให้ร้านค้าพาร์ทเนอร์'
+          : 'Video and photo proof from real packing rounds, real stock, and orders prepared for retail partners.'
       }
     >
       <motion.div 
@@ -70,6 +70,48 @@ export default function ReviewsSection() {
         viewport={{ once: true, margin: "-100px" }}
         className="grid gap-4 md:grid-cols-2 lg:grid-cols-3"
       >
+        <motion.div variants={itemVariants} className="grid gap-6 border-2 border-black bg-white p-4 md:col-span-2 lg:col-span-3 lg:grid-cols-[0.78fr,1.22fr] lg:items-stretch lg:p-6">
+          <div className="bg-zinc-100">
+            <video
+              className="aspect-[9/16] h-full max-h-[620px] w-full bg-black object-cover"
+              controls
+              playsInline
+              preload="metadata"
+              poster="/reviews/packing-real-order-poster.jpg"
+              aria-label={
+                isThai
+                  ? 'วิดีโอรอบแพ็กสินค้าจริงก่อนส่งให้ร้านค้าพาร์ทเนอร์'
+                  : 'Real packing video before dispatch to retail partners'
+              }
+            >
+              <source src="/reviews/packing-real-order.mp4" type="video/mp4" />
+              {isThai ? 'เบราว์เซอร์ของคุณไม่รองรับวิดีโอ' : 'Your browser does not support video playback.'}
+            </video>
+          </div>
+          <div className="flex flex-col justify-between gap-8 p-2 sm:p-4 lg:p-8">
+            <div>
+              <div className="font-display text-3xl font-black leading-[1.12] tracking-[-0.035em] text-zinc-950 sm:text-4xl">
+                {isThai ? 'รอบแพ็กสินค้าจริงจากฐานฉะเชิงเทรา' : 'Real packing round from our Chachoengsao base'}
+              </div>
+              <div className="mt-5 text-base leading-[1.8] text-zinc-600 sm:text-lg">
+                {isThai
+                  ? 'วิดีโอจากรอบแพ็กสินค้าจริงก่อนส่งให้ร้านค้าพาร์ทเนอร์ ช่วยยืนยันว่ามีสินค้าเข้า มีการตรวจแพ็ก และส่งต่อจากฐานปฏิบัติการในฉะเชิงเทรา'
+                  : 'Real packing footage before dispatch to retail partners, showing active stock handling and dispatch from our Chachoengsao operation.'}
+              </div>
+            </div>
+            <div className="grid gap-px bg-zinc-200 sm:grid-cols-3">
+              {(isThai
+                ? ['สต็อกจริง', 'แพ็กก่อนส่ง', 'ฐานฉะเชิงเทรา']
+                : ['Real stock', 'Packed before dispatch', 'Chachoengsao base']
+              ).map((item) => (
+                <div key={item} className="bg-zinc-50 px-4 py-4 text-sm font-bold text-zinc-900">
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
         <motion.div variants={itemVariants} className="group relative overflow-hidden rounded-[2rem] bg-zinc-100 shadow-sm md:col-span-2 lg:col-span-2">
           <img
             src="/reviews/iphone-lot.jpg"

@@ -22,10 +22,10 @@ export default function Home() {
       <Navbar />
 
       <HeroSection />
-      <BrandsSection />
+      <ProofSection />
       <StatsSection />
       <TrustSection />
-      <ProofSection />
+      <BrandsSection />
       <ReviewsSection />
       <ProcessSection />
       <AreaSection />
