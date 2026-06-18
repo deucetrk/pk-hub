@@ -20,8 +20,8 @@ export default function ContactSection() {
   return (
     <Section
       id="contact"
-      title={isThai ? 'ช่องทางติดต่อ' : 'Contact PK HUB'}
-      subtitle={isThai ? 'พร้อมเช็กสต็อกและส่งรายการราคาล่าสุดสำหรับร้านค้า' : 'Contact us for live stock and current wholesale prices.'}
+      title={isThai ? 'พร้อมเช็กราคา? ทักมาเลย' : 'Ready to check prices? Message us.'}
+      subtitle={isThai ? 'LINE ตอบไวสุด บอกแบรนด์หรือรุ่นที่อยากได้ แล้วทีมขายช่วยเช็กให้' : 'LINE is the fastest channel. Tell us the brands or models you need and sales will check for you.'}
     >
       <div className="grid gap-px overflow-hidden border border-zinc-200 bg-zinc-200 md:grid-cols-2">
         {contacts.map((contact) => {

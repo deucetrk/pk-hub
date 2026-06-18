@@ -52,8 +52,8 @@ export default function AreaSection() {
           </div>
           <div className="mt-8 rounded-none border-2 border-black bg-zinc-50 p-6 text-base leading-[1.8] font-bold">
             {isThai
-              ? 'ต้องการเช็กคิวหรือระยะเวลาส่ง? ทัก LINE หรือโทรให้ทีมช่วยประเมินตามรอบจริง'
-              : 'Need a delivery estimate? Message us on LINE or call for the latest dispatch schedule.'}
+              ? 'อยากรู้รอบส่งวันนี้? Inbox LINE หรือโทรให้ทีมช่วยเช็กตามรอบจริง'
+              : 'Want today’s dispatch timing? Inbox LINE or call and our team will check the real schedule.'}
           </div>
         </div>
       </div>

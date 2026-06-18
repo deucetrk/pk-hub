@@ -23,7 +23,7 @@ export default function StatsSection() {
     <section id="stats" className="bg-[#090909] py-16 text-white sm:py-20">
       <Container>
         <div className="mb-10 max-w-xl text-sm leading-7 text-zinc-500">
-          {isThai ? 'ตัวเลขจากการดำเนินงานจริงของเรา' : 'Numbers from our day-to-day operation'}
+          {isThai ? 'ตัวเลขจากงานที่เราดูแลจริง' : 'Real numbers from the work we handle'}
         </div>
         <motion.div
           initial="hidden"

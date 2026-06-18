@@ -15,7 +15,7 @@ export default function HeroSection() {
             <div className="flex items-center gap-4">
               <LogoMark className="border-zinc-900/10" />
               <div className="text-sm font-semibold text-zinc-500">
-                {isThai ? 'พันธมิตรค้าส่งมือถือ • ฉะเชิงเทรา / ภาคตะวันออก' : 'Smartphone wholesale partner • Eastern Thailand'}
+                {isThai ? 'ราคาส่งมือถือ • ฉะเชิงเทรา / ภาคตะวันออก' : 'Wholesale phones • Eastern Thailand'}
               </div>
             </div>
             <h1 className="font-display flex flex-col gap-3 text-5xl font-black leading-[1.24] tracking-[-0.025em] sm:text-6xl sm:leading-[1.22] lg:text-7xl lg:leading-[1.2]">
@@ -25,8 +25,8 @@ export default function HeroSection() {
             </h1>
             <p className="max-w-xl text-base leading-[1.8] text-zinc-600 sm:text-lg lg:mt-2">
               {isThai
-                ? 'PK HUB ดูแลร้านมือถือออนไลน์และหน้าร้าน ด้วยราคาส่ง B2B เครื่องศูนย์ไทย 100% ส่งของทุกวัน พร้อมเอกสารธุรกิจที่ตรวจสอบได้'
-                : 'PK HUB supplies official Thai-market smartphones to online and physical retailers, with daily dispatch and verifiable business documentation.'}
+                ? 'มีหน้าร้านหรือเพิ่งเริ่มขายมือถือ ทัก LINE มาเช็กราคาส่งได้เลย ทีม PK HUB ช่วยดูรุ่น เช็กสต็อก และแนะนำรอบส่งให้'
+                : 'Own a phone shop or just starting out? Message PK HUB on LINE for wholesale prices, live stock, and dispatch guidance.'}
             </p>
             <div className="grid gap-3 sm:grid-cols-2">
               <div className="flex min-h-16 items-center gap-3 border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-bold leading-6 text-zinc-950">
@@ -45,13 +45,13 @@ export default function HeroSection() {
                 rel="noreferrer"
                 className="inline-flex items-center justify-center rounded-2xl bg-zinc-900 px-8 py-4 text-[0.95rem] font-semibold tracking-tight text-white shadow-md transition-all active:scale-[0.98] hover:bg-zinc-800 hover:shadow-lg"
               >
-                {isThai ? 'ทัก LINE ขอราคาล่าสุด' : 'Request prices on LINE'}
+                {isThai ? 'Inbox LINE มาเลย' : 'Inbox us on LINE'}
               </a>
               <a
                 href="#reviews"
                 className="inline-flex items-center justify-center rounded-2xl border border-zinc-200 bg-white/50 px-8 py-4 text-[0.95rem] font-semibold tracking-tight text-zinc-900 shadow-sm backdrop-blur-sm transition-all active:scale-[0.98] hover:border-zinc-300 hover:bg-zinc-50"
               >
-                {isThai ? 'ดูผลงานจริง' : 'See our operation'}
+                {isThai ? 'ดูงานแพ็กจริง' : 'See real packing'}
               </a>
             </div>
             <div className="mt-4 grid grid-cols-2 gap-4 border-t border-zinc-200/50 pt-8 sm:grid-cols-4">
@@ -77,7 +77,7 @@ export default function HeroSection() {
           <div className="relative overflow-hidden rounded-[2rem] border border-zinc-800 bg-zinc-900 p-8 shadow-2xl lg:p-12">
             <div className="absolute inset-0 bg-gradient-to-br from-zinc-800/40 to-transparent"></div>
             <div className="relative mb-8 text-lg font-bold tracking-tight text-white">
-              {isThai ? 'เริ่มสั่งซื้อกับ PK HUB' : 'Start ordering with PK HUB'}
+              {isThai ? 'อยากได้ราคาส่ง เริ่มตรงนี้' : 'Need wholesale prices? Start here'}
             </div>
             <div className="relative grid gap-8 text-base text-zinc-300">
               <div className="flex items-start gap-4">
@@ -85,7 +85,7 @@ export default function HeroSection() {
                 <div>
                   <div className="font-semibold text-white">{isThai ? 'ผู้จัดจำหน่ายที่ได้รับอนุญาตจาก AIS' : 'Authorized AIS Distributor'}</div>
                   <div className="mt-1 text-sm leading-[1.8] text-zinc-400">
-                    {isThai ? 'สินค้าและเอกสารธุรกิจพร้อมตรวจสอบสำหรับร้านค้าพาร์ทเนอร์' : 'Stock and business documentation are available for partner verification.'}
+                    {isThai ? 'คุยกับร้านค้าได้มั่นใจ มีเอกสารและหลักฐานธุรกิจพร้อม' : 'Business documents and proof are ready for retailer checks.'}
                   </div>
                 </div>
               </div>
@@ -94,7 +94,7 @@ export default function HeroSection() {
                 <div>
                   <div className="font-semibold text-white">{isThai ? 'แพ็กและส่งทุกวันทำการ' : 'Packed and dispatched every business day'}</div>
                   <div className="mt-1 text-sm leading-[1.8] text-zinc-400">
-                    {isThai ? 'ออเดอร์ที่ยืนยันทันรอบออกภายในวันเดียวกัน' : 'Orders confirmed before cutoff can leave the same day.'}
+                    {isThai ? 'เช็กสต็อก สรุปราคา และออกของตามรอบจริง' : 'Check stock, confirm prices, and dispatch on real rounds.'}
                   </div>
                 </div>
               </div>
@@ -109,10 +109,12 @@ export default function HeroSection() {
               </div>
             </div>
             <a
-              href="#contact"
+              href="https://lin.ee/VEgW6qG"
+              target="_blank"
+              rel="noreferrer"
               className="relative mt-8 inline-flex items-center justify-center rounded-2xl border border-transparent bg-white px-8 py-4 text-[0.95rem] font-semibold tracking-tight text-zinc-900 shadow-sm transition-all active:scale-[0.98] hover:bg-zinc-100"
             >
-              {isThai ? 'ดูช่องทางติดต่อ' : 'View contact options'}
+              {isThai ? 'ทักทีมขายตอนนี้' : 'Talk to sales now'}
             </a>
           </div>
         </div>

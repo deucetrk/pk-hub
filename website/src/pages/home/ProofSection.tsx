@@ -16,8 +16,8 @@ export default function ProofSection() {
             </h2>
             <p className="mt-6 text-base leading-8 text-zinc-600 sm:text-lg">
               {isThai
-                ? 'ฐานปฏิบัติการของเราอยู่ในตัวเมืองฉะเชิงเทรา ใช้ดูแลสต็อก แพ็กสินค้า เอกสารภาษี และประสานงานกับร้านค้าพาร์ทเนอร์ทุกวัน'
-                : 'Our Chachoengsao operation supports stock handling, packing, tax documentation, dispatch, and daily partner communication.'}
+                ? 'เราอยู่ในตัวเมืองฉะเชิงเทรา มีหน้าร้านและพื้นที่แพ็กของจริง ร้านค้าสามารถเช็กที่อยู่ เอกสาร และงานส่งของเราได้'
+                : 'We are based in central Chachoengsao with a real storefront and packing area, so retailers can verify our address, documents, and dispatch work.'}
             </p>
           </div>
           <div className="grid gap-4 border-y border-zinc-200 py-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -35,7 +35,7 @@ export default function ProofSection() {
               <div>
                 <div className="font-bold">{isThai ? 'ผู้จัดจำหน่ายที่ได้รับอนุญาตจาก AIS' : 'Authorized AIS Distributor'}</div>
                 <div className="mt-2 text-sm leading-6 text-zinc-500">
-                  {isThai ? 'เอกสารธุรกิจและหลักฐานออเดอร์พร้อมตรวจสอบ' : 'Business documentation and order evidence available.'}
+                  {isThai ? 'คุยงานขายส่งได้มั่นใจ มีเอกสารให้ตรวจสอบ' : 'Wholesale buyers can verify business documentation.'}
                 </div>
               </div>
             </div>
@@ -69,7 +69,7 @@ export default function ProofSection() {
         </div>
 
         <div className="mt-5 flex flex-col gap-3 border-b border-zinc-200 pb-8 text-sm leading-6 text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
-          <span>{isThai ? 'ภาพหน้าร้านและอาคารจากสถานที่ดำเนินงานจริง' : 'Storefront and building photographed at our real operation.'}</span>
+          <span>{isThai ? 'ภาพจากหน้าร้านและโกดังของเราในฉะเชิงเทรา' : 'Photos from our storefront and packing space in Chachoengsao.'}</span>
           <a
             href="https://maps.google.com/?q=72/29-30+ถนนศุขประยูร+ต.หน้าเมือง+อ.เมือง+จ.ฉะเชิงเทรา+24000"
             target="_blank"

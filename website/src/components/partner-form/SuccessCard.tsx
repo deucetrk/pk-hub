@@ -11,8 +11,8 @@ export default function SuccessCard({ values, onReset }: { values: PartnerLead; 
       <div className="flex items-start gap-4">
         <CheckCircle2 className="mt-1 h-8 w-8 text-black" />
         <div className="grid gap-2">
-          <div className="text-2xl font-black">{isThai ? 'ส่งข้อมูลเรียบร้อย' : 'Enquiry submitted'}</div>
-          <div className="text-base leading-[1.8] text-zinc-600">{isThai ? 'ทีม PK HUB จะติดต่อกลับโดยเร็วผ่าน LINE/โทร/อีเมล' : 'The PK HUB team will contact you by LINE, phone, or email.'}</div>
+          <div className="text-2xl font-black">{isThai ? 'รับข้อมูลแล้ว เดี๋ยวทีมเช็กราคาให้' : 'Got it. Our team will check prices for you.'}</div>
+          <div className="text-base leading-[1.8] text-zinc-600">{isThai ? 'ถ้ารีบใช้ราคา ทัก LINE ซ้ำได้เลย ทีมขายจะเห็นเร็วกว่า' : 'If you need prices urgently, message us on LINE for the fastest reply.'}</div>
         </div>
       </div>
       <div className="grid gap-4 rounded-none bg-zinc-50 p-6 text-base">
@@ -41,17 +41,19 @@ export default function SuccessCard({ values, onReset }: { values: PartnerLead; 
       </div>
       <div className="flex flex-col gap-4 sm:flex-row">
         <a
-          href="#contact"
+          href="https://lin.ee/VEgW6qG"
+          target="_blank"
+          rel="noreferrer"
           className="inline-flex items-center justify-center rounded-none border-2 border-black bg-black px-6 py-4 text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-zinc-800"
         >
-          {isThai ? 'ดูช่องทางติดต่อ' : 'View contact options'}
+          {isThai ? 'Inbox LINE ต่อเลย' : 'Inbox LINE now'}
         </a>
         <button
           type="button"
           className="inline-flex items-center justify-center rounded-none border-2 border-black bg-white px-6 py-4 text-sm font-bold uppercase tracking-widest text-black transition-colors hover:bg-zinc-100"
           onClick={onReset}
         >
-          {isThai ? 'ส่งข้อมูลอีกครั้ง' : 'Submit another enquiry'}
+          {isThai ? 'ฝากข้อมูลร้านอื่น' : 'Send another store'}
         </button>
       </div>
     </div>

@@ -16,8 +16,8 @@ export default function ConsentField({
       <div className="flex items-start gap-4">
         <input type="checkbox" className="mt-1 h-5 w-5 rounded-none border-2 border-black accent-black" checked={checked} onChange={(e) => onChange(e.target.checked)} />
         <div>
-          <div className="font-bold leading-[1.8]">{isThai ? 'ยินยอมให้ PK HUB ติดต่อกลับเพื่อส่งรายการราคา' : 'I agree that PK HUB may contact me about wholesale pricing'}</div>
-          <div className="mt-1 text-sm font-medium text-zinc-600">{isThai ? 'ข้อมูลนี้ใช้เพื่อการติดต่อทางธุรกิจเท่านั้น' : 'Your details will only be used for business contact.'}</div>
+          <div className="font-bold leading-[1.8]">{isThai ? 'ยินยอมให้ทีม PK HUB ทักกลับเพื่อเช็กราคาและสต็อก' : 'I agree that PK HUB may reply with prices and stock availability'}</div>
+          <div className="mt-1 text-sm font-medium text-zinc-600">{isThai ? 'ใช้สำหรับคุยเรื่องราคาส่งและออเดอร์ร้านค้าเท่านั้น' : 'Used only for wholesale pricing and store order discussions.'}</div>
         </div>
       </div>
       {error ? <div className="mt-2 text-sm font-bold text-red-700">{error}</div> : null}

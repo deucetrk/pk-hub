@@ -71,7 +71,7 @@ export default function PartnerForm() {
       setStatus('success')
     } catch {
       setStatus('idle')
-      setSubmitError(isThai ? 'ไม่สามารถส่งข้อมูลได้ในขณะนี้ กรุณาลองใหม่อีกครั้ง' : 'Unable to submit right now. Please try again.')
+      setSubmitError(isThai ? 'ส่งฟอร์มไม่สำเร็จตอนนี้ ทัก LINE มาได้เลย ทีมขายช่วยเช็กราคาให้' : 'The form could not be submitted right now. Message us on LINE and our sales team can help.')
     }
   }
 
@@ -109,11 +109,11 @@ export default function PartnerForm() {
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         <TextField
           id="shopName"
-          label={isThai ? 'ชื่อร้านค้า' : 'Store name'}
+          label={isThai ? 'ชื่อร้าน / ชื่อเพจ' : 'Store or page name'}
           value={values.shopName}
           onChange={(v) => setField('shopName', v)}
           onBlur={() => setTouched((t) => ({ ...t, shopName: true }))}
-          placeholder={isThai ? 'เช่น PK Mobile ชลบุรี' : 'e.g. PK Mobile Chonburi'}
+          placeholder={isThai ? 'เช่น ร้านมือถือชลบุรี หรือชื่อเพจ' : 'e.g. PK Mobile Chonburi or page name'}
           error={showError('shopName') ? errors.shopName : undefined}
         />
 
@@ -131,11 +131,11 @@ export default function PartnerForm() {
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
         <TextField
           id="contactName"
-          label={isThai ? 'ชื่อผู้ติดต่อ' : 'Contact name'}
+          label={isThai ? 'ชื่อคนคุย' : 'Contact name'}
           value={values.contactName}
           onChange={(v) => setField('contactName', v)}
           onBlur={() => setTouched((t) => ({ ...t, contactName: true }))}
-          placeholder={isThai ? 'ชื่อ-นามสกุล' : 'Full name'}
+          placeholder={isThai ? 'ชื่อเล่นก็ได้' : 'Full name or nickname'}
           error={showError('contactName') ? errors.contactName : undefined}
         />
 
@@ -158,7 +158,7 @@ export default function PartnerForm() {
           value={values.lineId}
           onChange={(v) => setField('lineId', v)}
           onBlur={() => setTouched((t) => ({ ...t, lineId: true }))}
-          placeholder={isThai ? '@pkhub หรือ ไอดี' : '@pkhub or your LINE ID'}
+          placeholder={isThai ? 'ใส่ไอดี LINE ที่ให้ทีมทักกลับ' : 'LINE ID for our team to reply'}
         />
         <TextField
           id="email"
@@ -188,11 +188,11 @@ export default function PartnerForm() {
 
       <TextAreaField
         id="note"
-        label={isThai ? 'หมายเหตุเพิ่มเติม (ถ้ามี)' : 'Additional notes (optional)'}
+        label={isThai ? 'อยากเช็กรุ่นไหนเป็นพิเศษ? (ถ้ามี)' : 'Any models you want us to check? (optional)'}
         value={values.note}
         onChange={(v) => setField('note', v)}
         onBlur={() => setTouched((t) => ({ ...t, note: true }))}
-        placeholder={isThai ? 'โมเดลที่สนใจ ปริมาณโดยประมาณ ฯลฯ' : 'Models, estimated quantities, or other details'}
+        placeholder={isThai ? 'เช่น iPhone 15, A06, Reno, งบประมาณ หรือจำนวนที่อยากเริ่ม' : 'Models, estimated quantities, budget, or other details'}
       />
 
       <ConsentField
@@ -212,24 +212,26 @@ export default function PartnerForm() {
           {status === 'submitting' ? (
             <>
               <Loader2 className="h-5 w-5 animate-spin" />
-              {isThai ? 'กำลังส่งข้อมูล' : 'Submitting'}
+              {isThai ? 'กำลังส่งให้ทีมขาย' : 'Sending to sales'}
             </>
           ) : (
-            isThai ? 'ส่งข้อมูลขอรับรายการราคา' : 'Submit price enquiry'
+            isThai ? 'ฝากข้อมูลให้ทีมเช็กราคา' : 'Send details for a price check'
           )}
         </Button>
         <a
-          href="#contact"
+          href="https://lin.ee/VEgW6qG"
+          target="_blank"
+          rel="noreferrer"
           className="inline-flex w-full items-center justify-center rounded-none border-2 border-black bg-white px-6 py-3.5 text-sm font-bold uppercase tracking-widest text-black hover:bg-zinc-100 sm:w-auto transition-colors"
         >
-          {isThai ? 'ต้องการคุยด่วน? ดูช่องทางติดต่อ' : 'Need a quick reply? View contact options'}
+          {isThai ? 'ด่วนกว่า? Inbox LINE' : 'Faster? Inbox LINE'}
         </a>
       </div>
 
       <div className="text-xs text-zinc-600">
         {isThai
-          ? 'ข้อมูลของคุณจะถูกส่งให้ทีม PK HUB เพื่อใช้ติดต่อกลับและดูแลคำขอนี้'
-          : 'Your details will be sent to the PK HUB team so they can follow up on this enquiry.'}
+          ? 'ถ้าต้องการราคาทันที แนะนำทัก LINE เป็นช่องทางที่เร็วที่สุด'
+          : 'For the fastest price check, LINE is the quickest channel.'}
       </div>
     </form>
   )

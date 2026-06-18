@@ -3,17 +3,17 @@ import { motion, type Variants } from 'framer-motion'
 import { useLanguage } from '@/i18n/LanguageContext'
 
 const TH_STEPS = [
-  { n: '1', t: 'ทัก LINE หรือโทรเข้ามา', d: 'แจ้งว่าคุณเป็นร้านค้า พร้อมระบุแบรนด์หรือรุ่นที่ต้องการเช็ก' },
-  { n: '2', t: 'รับราคาและเช็กสต็อก', d: 'ทีมจะส่งรายการราคาล่าสุดและช่วยเช็กความพร้อมของรุ่นที่สนใจ' },
-  { n: '3', t: 'ยืนยันออเดอร์กับทีม', d: 'ตกลงรุ่น จำนวน และรอบจัดส่งให้ชัดเจนก่อนแพ็กสินค้า' },
-  { n: '4', t: 'แพ็กและส่งภายในวัน / วันถัดไป', d: 'หากยืนยันทันรอบจะจัดส่งวันเดียวกัน หากไม่ทันจะออกในวันถัดไป' },
+  { n: '1', t: 'Inbox LINE มาเลย', d: 'บอกว่าเป็นร้านมือถือ หรือกำลังเริ่มขาย พร้อมรุ่นที่อยากเช็ก' },
+  { n: '2', t: 'ทีมเช็กราคาให้', d: 'ส่งราคาส่งล่าสุด เช็กสต็อก และแนะนำรุ่นที่เหมาะกับร้าน' },
+  { n: '3', t: 'ถูกใจแล้วค่อยสรุปออเดอร์', d: 'ตกลงรุ่น จำนวน และรอบส่งให้ชัดก่อนแพ็กสินค้า' },
+  { n: '4', t: 'แพ็กและส่งตามรอบ', d: 'ยืนยันทันรอบก็ออกของไว ไม่ทันรอบก็สรุปวันส่งถัดไปให้ชัดเจน' },
 ]
 
 const EN_STEPS = [
-  { n: '1', t: 'Message us on LINE or call', d: 'Tell us about your shop and the brands or models you need.' },
-  { n: '2', t: 'Receive prices and stock status', d: 'Our team shares the latest wholesale prices and confirms availability.' },
-  { n: '3', t: 'Confirm the order with our team', d: 'Agree on models, quantities, payment, and dispatch timing.' },
-  { n: '4', t: 'Packed and dispatched', d: 'Orders confirmed before cutoff leave the same day or the following day.' },
+  { n: '1', t: 'Inbox us on LINE', d: 'Tell us whether you run a phone shop or are just starting, plus the models you want.' },
+  { n: '2', t: 'We check prices for you', d: 'Our team shares current wholesale prices, stock, and starter-friendly model options.' },
+  { n: '3', t: 'Confirm only when ready', d: 'Agree on models, quantities, and dispatch timing before packing.' },
+  { n: '4', t: 'Packed and dispatched', d: 'Orders go out on the available dispatch round with clear timing from our team.' },
 ]
 
 const containerVariants: Variants = {
@@ -36,8 +36,8 @@ export default function ProcessSection() {
   return (
     <Section
       id="process"
-      title={isThai ? 'กระบวนการสั่งซื้อสำหรับร้านค้า' : 'How retailers order from PK HUB'}
-      subtitle={isThai ? 'คุยกับทีมจริง เช็กสต็อกจริง และสรุปออเดอร์ได้เร็ว' : 'Speak with a real team, confirm real stock, and place orders quickly.'}
+      title={isThai ? 'สั่งยังไง? เริ่มจากทัก LINE' : 'How to order? Start with LINE.'}
+      subtitle={isThai ? 'ไม่ต้องรู้ทุกรุ่นก่อนก็ได้ บอกงบหรือรุ่นที่สนใจ แล้วทีมช่วยไล่ราคาให้' : 'You do not need every model planned. Tell us your budget or target models and our team will help.'}
     >
       <motion.div 
         variants={containerVariants} 

@@ -56,11 +56,11 @@ export default function ReviewsSection() {
   return (
     <Section
       id="reviews"
-      title={isThai ? 'รีวิวงานจริงจาก PK HUB' : 'Real operation videos from PK HUB'}
+      title={isThai ? 'ดูงานจริงก่อนทักมา' : 'See real work before you message'}
       subtitle={
         isThai
-          ? 'วิดีโอและภาพจากรอบแพ็กสินค้า สต็อกจริง และออเดอร์ที่เตรียมส่งให้ร้านค้าพาร์ทเนอร์'
-          : 'Video and photo proof from real packing rounds, real stock, and orders prepared for retail partners.'
+          ? 'วิดีโอและภาพจากรอบแพ็ก สต็อก และออเดอร์ที่เราเตรียมส่งให้ร้านค้า'
+          : 'Videos and photos from real packing rounds, stock, and orders prepared for retailers.'
       }
     >
       <motion.div 
@@ -91,12 +91,12 @@ export default function ReviewsSection() {
           <div className="grid content-start gap-6 p-2 sm:p-4 lg:p-6">
             <div>
               <div className="font-display text-3xl font-black leading-[1.12] tracking-[-0.035em] text-zinc-950 sm:text-4xl">
-                {isThai ? 'รอบแพ็กสินค้าจริงจากฐานฉะเชิงเทรา' : 'Real packing round from our Chachoengsao base'}
+                {isThai ? 'รอบแพ็กสินค้าจริงที่ฉะเชิงเทรา' : 'Real packing round in Chachoengsao'}
               </div>
               <div className="mt-5 text-base leading-[1.8] text-zinc-600 sm:text-lg">
                 {isThai
-                  ? 'วิดีโอไฮไลต์จากหลายจังหวะแพ็กสินค้า เห็นทั้งสินค้าหลากหลายแบรนด์ การกันกระแทก และหลักฐานส่งต่อจากฐานปฏิบัติการในฉะเชิงเทรา'
-                  : 'A highlight reel from multiple packing moments, showing multi-brand stock, protective packing, and dispatch proof from our Chachoengsao operation.'}
+                  ? 'รวมบางช่วงจากรอบแพ็กสินค้าจริง มีทั้งสินค้าหลายแบรนด์ การแพ็กกันกระแทก และออเดอร์ที่เตรียมส่งให้ร้านค้าพาร์ทเนอร์'
+                  : 'A short highlight from real packing rounds, showing multi-brand stock, protective packing, and orders prepared for retail partners.'}
               </div>
             </div>
             <div className="grid gap-px bg-zinc-200 sm:grid-cols-3 lg:max-w-2xl">

@@ -24,8 +24,8 @@ export default function Navbar() {
             { href: '#proof', label: 'หน้าร้านจริง' },
             { href: '#process', label: 'ขั้นตอนสั่งซื้อ' },
             { href: '#area', label: 'พื้นที่บริการ' },
-            { href: '#form', label: 'ขอราคา/สมัครคู่ค้า' },
-            { href: '#contact', label: 'ติดต่อ' },
+            { href: '#form', label: 'ฝากข้อมูลร้าน' },
+            { href: '#contact', label: 'ทักทีมขาย' },
           ]
         : [
             { href: '#trust', label: 'Why PK HUB' },
@@ -33,8 +33,8 @@ export default function Navbar() {
             { href: '#proof', label: 'Our storefront' },
             { href: '#process', label: 'How to order' },
             { href: '#area', label: 'Service area' },
-            { href: '#form', label: 'Partner enquiry' },
-            { href: '#contact', label: 'Contact' },
+            { href: '#form', label: 'Store details' },
+            { href: '#contact', label: 'Talk to sales' },
           ],
     [isThai],
   )
@@ -61,7 +61,7 @@ export default function Navbar() {
             <LogoMark className="h-10 sm:h-12 w-auto shrink-0" />
             <div className="hidden min-w-0 lg:block">
               <div className="mt-1 text-sm font-semibold text-zinc-500">
-                {isThai ? 'พันธมิตรค้าส่งมือถือสำหรับร้านค้า' : 'Thai smartphone wholesale partner'}
+                {isThai ? 'เช็กราคาส่งมือถือสำหรับร้านค้า' : 'Wholesale phone prices for retailers'}
               </div>
             </div>
           </a>
@@ -83,16 +83,18 @@ export default function Navbar() {
               <LanguageSwitch />
             </div>
             <a
-              href="#form"
+              href="https://lin.ee/VEgW6qG"
+              target="_blank"
+              rel="noreferrer"
               className="hidden min-h-12 items-center justify-center whitespace-nowrap rounded-2xl border border-transparent bg-zinc-900 px-6 text-sm font-semibold tracking-tight text-white shadow-sm transition-all active:scale-[0.98] hover:bg-zinc-800 hover:shadow-md lg:inline-flex"
             >
-              {isThai ? 'ขอราคาส่งล่าสุด' : 'Request latest prices'}
+              {isThai ? 'Inbox LINE มาเลย' : 'Inbox us on LINE'}
             </a>
             <a
               href="#contact"
               className="hidden whitespace-nowrap text-sm font-bold text-zinc-600 transition-colors hover:text-black xl:inline-flex"
             >
-              {isThai ? 'ติดต่อเรา' : 'Contact'}
+              {isThai ? 'ทักทีมขาย' : 'Talk to sales'}
             </a>
             <button
               type="button"
@@ -127,18 +129,20 @@ export default function Navbar() {
             ))}
             <div className="grid grid-cols-1 gap-2 pt-2 sm:grid-cols-2">
               <a
-                href="#form"
+                href="https://lin.ee/VEgW6qG"
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex items-center justify-center rounded-2xl bg-zinc-900 px-6 py-3.5 text-[0.95rem] font-semibold tracking-tight text-white shadow-md transition-all hover:bg-zinc-800"
                 onClick={() => setOpen(false)}
               >
-                {isThai ? 'ขอราคาส่งล่าสุด' : 'Request latest prices'}
+                {isThai ? 'Inbox LINE มาเลย' : 'Inbox us on LINE'}
               </a>
               <a
                 href="#contact"
                 className="inline-flex items-center justify-center rounded-2xl border border-zinc-200 bg-white/50 px-6 py-3.5 text-[0.95rem] font-semibold tracking-tight text-zinc-900 shadow-sm transition-all hover:bg-zinc-50"
                 onClick={() => setOpen(false)}
               >
-                {isThai ? 'ติดต่อเรา' : 'Contact'}
+                {isThai ? 'ทักทีมขาย' : 'Talk to sales'}
               </a>
             </div>
           </div>

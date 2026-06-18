@@ -13,7 +13,7 @@ const TH_FAQS = [
   },
   {
     q: 'มีขั้นต่ำในการสั่งซื้อหรือไม่?',
-    a: 'ไม่มีขั้นต่ำในการเริ่มสั่ง ร้านค้าสามารถสั่งได้ตั้งแต่เครื่องเดียว ทีมงานช่วยเช็กสต็อกและราคาให้ก่อนตัดสินใจ',
+    a: 'ไม่มีขั้นต่ำในการเริ่มคุย ร้านค้าสามารถเช็กราคาได้ตั้งแต่เครื่องเดียว ทีมงานช่วยดูสต็อกและรุ่นที่เหมาะก่อนตัดสินใจ',
   },
   {
     q: 'สินค้ามีประกันหรือไม่?',
@@ -33,7 +33,7 @@ const TH_FAQS = [
   },
   {
     q: 'ช่องทางการติดต่อที่เร็วที่สุดคืออะไร?',
-    a: 'LINE คือช่องทางที่เร็วที่สุด ทักมาที่ @pkhub หรือโทร 089-248-0888 ทีมขายตอบเร็วและช่วยเช็กสต็อกให้ทันที',
+    a: 'LINE คือช่องทางที่เร็วที่สุด Inbox มาที่ @pkhub หรือโทร 089-248-0888 บอกแบรนด์หรือรุ่นที่อยากเช็ก ทีมขายช่วยดูราคาและสต็อกให้',
   },
   {
     q: 'มีใบกำกับภาษีหรือไม่?',
@@ -52,7 +52,7 @@ const EN_FAQS = [
   },
   {
     q: 'Is there a minimum order quantity?',
-    a: 'No minimum order. Retailers can start with a single unit. Our team checks stock and pricing before you commit.',
+    a: 'No minimum to start talking. Retailers can check prices from a single unit, and our team can suggest suitable stock before you commit.',
   },
   {
     q: 'Do the phones come with warranty?',
@@ -72,7 +72,7 @@ const EN_FAQS = [
   },
   {
     q: 'What is the fastest way to contact PK HUB?',
-    a: 'LINE is the fastest channel. Add @pkhub or call 089-248-0888. Our sales team responds quickly and can check stock immediately.',
+    a: 'LINE is the fastest channel. Inbox @pkhub or call 089-248-0888 with the brands or models you need, and sales will check prices and stock.',
   },
   {
     q: 'Do you provide VAT invoices?',
@@ -122,8 +122,8 @@ export default function FaqSection() {
             </h2>
             <p className="text-base leading-[1.8] sm:text-lg text-zinc-600">
               {isThai
-                ? 'คำตอบสำหรับคำถามที่ร้านค้ามักถามก่อนเริ่มสั่งซื้อ'
-                : 'Answers to common questions from retail partners before placing an order.'}
+                ? 'คำตอบสั้นๆ ก่อนทัก LINE มาเช็กราคา'
+                : 'Quick answers before you message us on LINE.'}
             </p>
           </div>
           <motion.div
