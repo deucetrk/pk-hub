@@ -88,7 +88,7 @@ export default function ReviewsSection() {
               {isThai ? 'เบราว์เซอร์ของคุณไม่รองรับวิดีโอ' : 'Your browser does not support video playback.'}
             </video>
           </div>
-          <div className="grid content-start gap-7 p-2 sm:p-4 lg:p-6">
+          <div className="grid content-start gap-6 p-2 sm:p-4 lg:p-6">
             <div>
               <div className="font-display text-3xl font-black leading-[1.12] tracking-[-0.035em] text-zinc-950 sm:text-4xl">
                 {isThai ? 'รอบแพ็กสินค้าจริงจากฐานฉะเชิงเทรา' : 'Real packing round from our Chachoengsao base'}
@@ -108,11 +108,6 @@ export default function ReviewsSection() {
                   {item}
                 </div>
               ))}
-            </div>
-            <div className="border-l-4 border-emerald-500 bg-emerald-50 px-5 py-4 text-sm font-semibold leading-[1.7] text-zinc-800 lg:max-w-2xl">
-              {isThai
-                ? 'ใช้เป็นหลักฐานการทำงานจริง: สินค้าเข้า แพ็กกันกระแทก และเตรียมจัดส่งจากฐานฉะเชิงเทรา'
-                : 'Operational proof: stock arrival, protective packing, and dispatch preparation from the Chachoengsao base.'}
             </div>
           </div>
         </motion.div>
