@@ -1,10 +1,13 @@
+import { motion } from 'framer-motion'
 import { Facebook, MapPinned, MessageCircle, Phone } from 'lucide-react'
 
 import Section from '@/components/Section'
 import { useLanguage } from '@/i18n/LanguageContext'
+import { revealViewport, useRevealMotion } from '@/lib/motion'
 
 export default function ContactSection() {
   const { isThai } = useLanguage()
+  const { container, item } = useRevealMotion()
   const contacts = [
     { label: 'LINE', value: '@pkhub', href: 'https://lin.ee/VEgW6qG', icon: MessageCircle },
     { label: isThai ? 'โทรศัพท์' : 'Phone', value: '089-248-0888', href: 'tel:0892480888', icon: Phone },
@@ -23,26 +26,33 @@ export default function ContactSection() {
       title={isThai ? 'พร้อมเช็กราคา? ทักมาเลย' : 'Ready to check prices? Message us.'}
       subtitle={isThai ? 'LINE ตอบไวสุด บอกแบรนด์หรือรุ่นที่อยากได้ แล้วทีมขายช่วยเช็กให้' : 'LINE is the fastest channel. Tell us the brands or models you need and sales will check for you.'}
     >
-      <div className="grid gap-px overflow-hidden border border-zinc-200 bg-zinc-200 md:grid-cols-2">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={revealViewport}
+        className="grid gap-px overflow-hidden border border-zinc-200 bg-zinc-200 md:grid-cols-2"
+      >
         {contacts.map((contact) => {
           const Icon = contact.icon
           return (
-            <a
+            <motion.a
               key={contact.label}
+              variants={item}
               href={contact.href}
               target={contact.href.startsWith('http') ? '_blank' : undefined}
               rel={contact.href.startsWith('http') ? 'noreferrer' : undefined}
-              className="flex min-h-28 items-center justify-between gap-5 bg-white p-6 transition-colors hover:bg-zinc-50 sm:p-8"
+              className="group flex min-h-28 items-center justify-between gap-5 bg-white p-6 transition-colors hover:bg-zinc-50 sm:p-8"
             >
               <span className="flex items-center gap-4 text-lg font-bold">
-                <Icon className="h-6 w-6 stroke-[1.5]" />
+                <Icon className="h-6 w-6 stroke-[1.5] transition-transform motion-safe:group-hover:translate-x-0.5" />
                 {contact.label}
               </span>
               <span className="max-w-[15rem] text-right text-sm font-semibold leading-6 text-zinc-500">{contact.value}</span>
-            </a>
+            </motion.a>
           )
         })}
-      </div>
+      </motion.div>
     </Section>
   )
 }

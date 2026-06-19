@@ -1,11 +1,14 @@
-import { BadgeCheck, Clock, ReceiptText, ShieldCheck, Truck } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { BadgeCheck, Clock, MessageCircle, ReceiptText, ShieldCheck, Truck } from 'lucide-react'
 
 import Container from '@/components/Container'
 import LogoMark from '@/components/LogoMark'
 import { useLanguage } from '@/i18n/LanguageContext'
+import { revealViewport, useRevealMotion } from '@/lib/motion'
 
 export default function HeroSection() {
   const { isThai } = useLanguage()
+  const { container, item, reduceMotion } = useRevealMotion()
 
   return (
     <section className="bg-transparent text-zinc-900">
@@ -28,25 +31,34 @@ export default function HeroSection() {
                 ? 'มีหน้าร้านหรือเพิ่งเริ่มขายมือถือ ทัก LINE มาเช็กราคาส่งได้เลย ทีม PK HUB ช่วยดูรุ่น เช็กสต็อก และแนะนำรอบส่งให้'
                 : 'Own a phone shop or just starting out? Message PK HUB on LINE for wholesale prices, live stock, and dispatch guidance.'}
             </p>
-            <div className="grid gap-3 sm:grid-cols-2">
-              <div className="flex min-h-16 items-center gap-3 border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-bold leading-6 text-zinc-950">
+            <motion.div
+              variants={container}
+              initial="hidden"
+              whileInView="show"
+              viewport={revealViewport}
+              className="grid gap-3 sm:grid-cols-2"
+            >
+              <motion.div variants={item} className="flex min-h-16 items-center gap-3 border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-bold leading-6 text-zinc-950">
                 <BadgeCheck className="h-5 w-5 shrink-0 text-emerald-600" />
                 <span>{isThai ? 'ผู้จัดจำหน่ายที่ได้รับอนุญาตจาก AIS' : 'Authorized AIS Distributor'}</span>
-              </div>
-              <div className="flex min-h-16 items-center gap-3 border border-zinc-200 bg-white px-4 py-3 text-sm font-bold leading-6 text-zinc-950">
+              </motion.div>
+              <motion.div variants={item} className="flex min-h-16 items-center gap-3 border border-zinc-200 bg-white px-4 py-3 text-sm font-bold leading-6 text-zinc-950">
                 <ReceiptText className="h-5 w-5 shrink-0 text-emerald-600" />
                 <span>{isThai ? 'จดทะเบียน VAT • ออกใบกำกับภาษีเต็มรูปแบบ' : 'VAT registered • Full tax invoices'}</span>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
             <div className="mt-2 flex flex-col gap-4 sm:flex-row">
-              <a
+              <motion.a
                 href="https://lin.ee/VEgW6qG"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-2xl bg-zinc-900 px-8 py-4 text-[0.95rem] font-semibold tracking-tight text-white shadow-md transition-all active:scale-[0.98] hover:bg-zinc-800 hover:shadow-lg"
+                whileHover={reduceMotion ? undefined : { y: -2 }}
+                whileTap={reduceMotion ? undefined : { scale: 0.98 }}
+                className="group inline-flex items-center justify-center gap-2 rounded-2xl bg-zinc-900 px-8 py-4 text-[0.95rem] font-semibold tracking-tight text-white shadow-md transition-all hover:bg-zinc-800 hover:shadow-lg"
               >
+                <MessageCircle className="h-4 w-4 fill-current transition-transform motion-safe:group-hover:translate-x-0.5" />
                 {isThai ? 'Inbox LINE มาเลย' : 'Inbox us on LINE'}
-              </a>
+              </motion.a>
               <a
                 href="#reviews"
                 className="inline-flex items-center justify-center rounded-2xl border border-zinc-200 bg-white/50 px-8 py-4 text-[0.95rem] font-semibold tracking-tight text-zinc-900 shadow-sm backdrop-blur-sm transition-all active:scale-[0.98] hover:border-zinc-300 hover:bg-zinc-50"
@@ -74,7 +86,13 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-[2rem] border border-zinc-800 bg-zinc-900 p-8 shadow-2xl lg:p-12">
+          <motion.div
+            variants={item}
+            initial="hidden"
+            whileInView="show"
+            viewport={revealViewport}
+            className="relative overflow-hidden rounded-[2rem] border border-zinc-800 bg-zinc-900 p-8 shadow-2xl lg:p-12"
+          >
             <div className="absolute inset-0 bg-gradient-to-br from-zinc-800/40 to-transparent"></div>
             <div className="relative mb-8 text-lg font-bold tracking-tight text-white">
               {isThai ? 'อยากได้ราคาส่ง เริ่มตรงนี้' : 'Need wholesale prices? Start here'}
@@ -108,15 +126,18 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
-            <a
+            <motion.a
               href="https://lin.ee/VEgW6qG"
               target="_blank"
               rel="noreferrer"
-              className="relative mt-8 inline-flex items-center justify-center rounded-2xl border border-transparent bg-white px-8 py-4 text-[0.95rem] font-semibold tracking-tight text-zinc-900 shadow-sm transition-all active:scale-[0.98] hover:bg-zinc-100"
+              whileHover={reduceMotion ? undefined : { y: -2 }}
+              whileTap={reduceMotion ? undefined : { scale: 0.98 }}
+              className="relative mt-8 inline-flex items-center justify-center gap-2 rounded-2xl border border-transparent bg-white px-8 py-4 text-[0.95rem] font-semibold tracking-tight text-zinc-900 shadow-sm transition-all hover:bg-zinc-100"
             >
+              <MessageCircle className="h-4 w-4 fill-current" />
               {isThai ? 'ทักทีมขายตอนนี้' : 'Talk to sales now'}
-            </a>
-          </div>
+            </motion.a>
+          </motion.div>
         </div>
       </Container>
     </section>

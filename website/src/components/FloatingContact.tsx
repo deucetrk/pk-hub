@@ -11,7 +11,7 @@ export default function FloatingContact() {
         href="https://lin.ee/VEgW6qG"
         target="_blank"
         rel="noreferrer"
-        className="inline-flex h-12 items-center gap-2 rounded-full bg-[#06c755] px-4 text-sm font-bold text-white shadow-[0_6px_20px_rgba(0,0,0,0.18)] transition-colors hover:bg-[#05b84e] sm:h-14 sm:px-5"
+        className="line-pulse inline-flex h-12 items-center gap-2 rounded-full bg-[#06c755] px-4 text-sm font-bold text-white shadow-[0_6px_20px_rgba(0,0,0,0.18)] transition-all hover:bg-[#05b84e] motion-safe:hover:-translate-y-0.5 sm:h-14 sm:px-5"
       >
         <MessageCircle className="h-5 w-5 fill-current" />
         {isThai ? 'Inbox LINE' : 'Inbox LINE'}

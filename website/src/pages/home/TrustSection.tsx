@@ -1,10 +1,13 @@
+import { motion } from 'framer-motion'
 import { BadgeCheck, Building2, ReceiptText, Store } from 'lucide-react'
 
 import Section from '@/components/Section'
 import { useLanguage } from '@/i18n/LanguageContext'
+import { revealViewport, useRevealMotion } from '@/lib/motion'
 
 export default function TrustSection() {
   const { isThai } = useLanguage()
+  const { container, item } = useRevealMotion()
 
   return (
     <Section
@@ -16,8 +19,14 @@ export default function TrustSection() {
           : 'Clear information, verifiable stock, and business-ready documents for legitimate buyers.'
       }
     >
-      <div className="grid gap-6 md:grid-cols-2">
-        <div className="grid gap-4 rounded-none border-2 border-black bg-white p-10 transition-colors hover:bg-zinc-50">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={revealViewport}
+        className="grid gap-6 md:grid-cols-2"
+      >
+        <motion.div variants={item} className="grid gap-4 rounded-none border-2 border-black bg-white p-10 transition-all hover:bg-zinc-50 hover:shadow-md motion-safe:hover:-translate-y-0.5">
           <div className="flex items-start gap-5">
             <Building2 className="mt-1 h-10 w-10 shrink-0 stroke-[1.5]" />
             <div>
@@ -27,8 +36,8 @@ export default function TrustSection() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="grid gap-4 rounded-none border-2 border-black bg-white p-10 transition-colors hover:bg-zinc-50">
+        </motion.div>
+        <motion.div variants={item} className="grid gap-4 rounded-none border-2 border-black bg-white p-10 transition-all hover:bg-zinc-50 hover:shadow-md motion-safe:hover:-translate-y-0.5">
           <div className="flex items-start gap-5">
             <BadgeCheck className="mt-1 h-10 w-10 shrink-0 stroke-[1.5] text-emerald-600" />
             <div>
@@ -38,8 +47,8 @@ export default function TrustSection() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="grid gap-4 rounded-none border-2 border-black bg-white p-10 transition-colors hover:bg-zinc-50">
+        </motion.div>
+        <motion.div variants={item} className="grid gap-4 rounded-none border-2 border-black bg-white p-10 transition-all hover:bg-zinc-50 hover:shadow-md motion-safe:hover:-translate-y-0.5">
           <div className="flex items-start gap-5">
             <ReceiptText className="mt-1 h-10 w-10 shrink-0 stroke-[1.5] text-emerald-600" />
             <div>
@@ -51,8 +60,8 @@ export default function TrustSection() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="grid gap-4 rounded-none border-2 border-black bg-white p-10 transition-colors hover:bg-zinc-50">
+        </motion.div>
+        <motion.div variants={item} className="grid gap-4 rounded-none border-2 border-black bg-white p-10 transition-all hover:bg-zinc-50 hover:shadow-md motion-safe:hover:-translate-y-0.5">
           <div className="flex items-start gap-5">
             <Store className="mt-1 h-10 w-10 shrink-0 stroke-[1.5]" />
             <div>
@@ -62,8 +71,8 @@ export default function TrustSection() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </Section>
   )
 }

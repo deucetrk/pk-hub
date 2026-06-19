@@ -88,6 +88,21 @@
   animation-play-state: paused;
 }
 
+.line-pulse {
+  position: relative;
+  isolation: isolate;
+}
+
+.line-pulse::after {
+  position: absolute;
+  inset: -5px;
+  z-index: -1;
+  border-radius: 9999px;
+  background: rgba(6, 199, 85, 0.28);
+  content: "";
+  animation: line-soft-pulse 3.6s ease-out infinite;
+}
+
 @keyframes brand-marquee {
   from {
     transform: translateX(0);
@@ -95,6 +110,23 @@
 
   to {
     transform: translateX(-50%);
+  }
+}
+
+@keyframes line-soft-pulse {
+  0%,
+  68% {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+
+  78% {
+    opacity: 0.65;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.14);
   }
 }
 
@@ -107,5 +139,10 @@
 
   .brand-rail__track {
     animation: none;
+  }
+
+  .line-pulse::after {
+    animation: none;
+    opacity: 0;
   }
 }

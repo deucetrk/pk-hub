@@ -1,5 +1,8 @@
+import { motion } from 'framer-motion'
+
 import Section from '@/components/Section'
 import { useLanguage } from '@/i18n/LanguageContext'
+import { revealViewport, useRevealMotion } from '@/lib/motion'
 
 import { BRAND_MARQUEE_ITEMS, type BrandMarqueeItem } from './constants'
 
@@ -24,6 +27,7 @@ function BrandTile({ brand }: { brand: BrandMarqueeItem }) {
 
 export default function BrandsSection() {
   const { isThai } = useLanguage()
+  const { item } = useRevealMotion()
 
   return (
     <Section
@@ -35,7 +39,13 @@ export default function BrandsSection() {
           : 'Contact our sales team for current wholesale prices and live stock.'
       }
     >
-      <div className="brand-rail">
+      <motion.div
+        variants={item}
+        initial="hidden"
+        whileInView="show"
+        viewport={revealViewport}
+        className="brand-rail"
+      >
         <div className="brand-rail__track">
           <div className="brand-rail__group">
             {BRAND_MARQUEE_ITEMS.map((brand) => (
@@ -49,7 +59,7 @@ export default function BrandsSection() {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </Section>
   )
 }

@@ -1,9 +1,13 @@
+import { motion } from 'framer-motion'
+
 import PartnerForm from '@/components/PartnerForm'
 import Section from '@/components/Section'
 import { useLanguage } from '@/i18n/LanguageContext'
+import { revealViewport, useRevealMotion } from '@/lib/motion'
 
 export default function FormSection() {
   const { isThai } = useLanguage()
+  const { item, reduceMotion } = useRevealMotion()
 
   return (
     <Section
@@ -17,7 +21,13 @@ export default function FormSection() {
     >
       <div className="grid gap-8 lg:grid-cols-[1fr,420px] lg:items-start">
         <PartnerForm />
-        <div className="grid gap-8 rounded-[2rem] bg-zinc-100 p-10 shadow-sm border border-zinc-200/50">
+        <motion.div
+          variants={item}
+          initial="hidden"
+          whileInView="show"
+          viewport={revealViewport}
+          className="grid gap-8 rounded-[2rem] border border-zinc-200/50 bg-zinc-100 p-10 shadow-sm"
+        >
           <div className="grid gap-3">
             <div className="text-xl font-bold tracking-tight">{isThai ? 'เหมาะกับใคร?' : 'Who is this for?'}</div>
             <div className="text-sm sm:text-base leading-[1.8] text-zinc-600">
@@ -34,15 +44,17 @@ export default function FormSection() {
               <div className="rounded-2xl bg-white px-5 py-4 text-sm font-semibold shadow-sm border border-zinc-100">{isThai ? 'เริ่มคุยได้แม้สั่งไม่เยอะ' : 'You can start small'}</div>
             </div>
           </div>
-          <a
+          <motion.a
             href="https://lin.ee/VEgW6qG"
             target="_blank"
             rel="noreferrer"
-            className="mt-2 inline-flex items-center justify-center rounded-2xl bg-zinc-900 px-6 py-4 text-sm font-bold tracking-wide text-white hover:bg-zinc-800 transition-transform active:scale-[0.98]"
+            whileHover={reduceMotion ? undefined : { y: -2 }}
+            whileTap={reduceMotion ? undefined : { scale: 0.98 }}
+            className="mt-2 inline-flex items-center justify-center rounded-2xl bg-zinc-900 px-6 py-4 text-sm font-bold tracking-wide text-white transition-colors hover:bg-zinc-800"
           >
             {isThai ? 'Inbox LINE เช็กราคา' : 'Inbox LINE for prices'}
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
       </div>
     </Section>
   )
