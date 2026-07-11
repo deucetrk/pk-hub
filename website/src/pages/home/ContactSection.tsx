@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { Facebook, MapPinned, MessageCircle, Phone } from 'lucide-react'
 
 import Section from '@/components/Section'
@@ -26,7 +26,7 @@ export default function ContactSection() {
       title={isThai ? 'พร้อมเช็กราคา? ทักมาเลย' : 'Ready to check prices? Message us.'}
       subtitle={isThai ? 'LINE ตอบไวสุด บอกแบรนด์หรือรุ่นที่อยากได้ แล้วทีมขายช่วยเช็กให้' : 'LINE is the fastest channel. Tell us the brands or models you need and sales will check for you.'}
     >
-      <motion.div
+      <m.div
         variants={container}
         initial="hidden"
         whileInView="show"
@@ -36,7 +36,7 @@ export default function ContactSection() {
         {contacts.map((contact) => {
           const Icon = contact.icon
           return (
-            <motion.a
+            <m.a
               key={contact.label}
               variants={item}
               href={contact.href}
@@ -49,10 +49,10 @@ export default function ContactSection() {
                 {contact.label}
               </span>
               <span className="max-w-[15rem] text-right text-sm font-semibold leading-6 text-zinc-500">{contact.value}</span>
-            </motion.a>
+            </m.a>
           )
         })}
-      </motion.div>
+      </m.div>
     </Section>
   )
 }

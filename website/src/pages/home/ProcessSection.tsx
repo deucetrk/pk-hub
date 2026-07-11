@@ -1,5 +1,5 @@
 import Section from '@/components/Section'
-import { motion, type Variants } from 'framer-motion'
+import { m, type Variants } from 'framer-motion'
 import { useLanguage } from '@/i18n/LanguageContext'
 
 const TH_STEPS = [
@@ -39,7 +39,7 @@ export default function ProcessSection() {
       title={isThai ? 'สั่งยังไง? เริ่มจากทัก LINE' : 'How to order? Start with LINE.'}
       subtitle={isThai ? 'ไม่ต้องรู้ทุกรุ่นก่อนก็ได้ บอกงบหรือรุ่นที่สนใจ แล้วทีมช่วยไล่ราคาให้' : 'You do not need every model planned. Tell us your budget or target models and our team will help.'}
     >
-      <motion.div 
+      <m.div 
         variants={containerVariants} 
         initial="hidden" 
         whileInView="show" 
@@ -47,15 +47,15 @@ export default function ProcessSection() {
         className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"
       >
         {steps.map((s) => (
-          <motion.div variants={itemVariants} key={s.n} className="rounded-3xl border border-zinc-200/60 bg-white/60 p-10 shadow-sm backdrop-blur-md transition-all ease-out hover:-translate-y-1 hover:bg-white hover:shadow-lg">
+          <m.div variants={itemVariants} key={s.n} className="rounded-3xl border border-zinc-200/60 bg-white/60 p-10 shadow-sm backdrop-blur-md transition-all ease-out hover:-translate-y-1 hover:bg-white hover:shadow-lg">
             <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-zinc-900 text-xl font-bold text-white shadow-sm">
               {s.n}
             </div>
             <div className="mt-8 text-[1.15rem] font-bold tracking-tight text-zinc-900">{s.t}</div>
             <div className="mt-4 text-base leading-[1.8] text-zinc-600">{s.d}</div>
-          </motion.div>
+          </m.div>
         ))}
-      </motion.div>
+      </m.div>
     </Section>
   )
 }

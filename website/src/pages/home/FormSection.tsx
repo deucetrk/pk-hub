@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 import PartnerForm from '@/components/PartnerForm'
 import Section from '@/components/Section'
@@ -21,7 +21,7 @@ export default function FormSection() {
     >
       <div className="grid gap-8 lg:grid-cols-[1fr,420px] lg:items-start">
         <PartnerForm />
-        <motion.div
+        <m.div
           variants={item}
           initial="hidden"
           whileInView="show"
@@ -44,7 +44,7 @@ export default function FormSection() {
               <div className="rounded-2xl bg-white px-5 py-4 text-sm font-semibold shadow-sm border border-zinc-100">{isThai ? 'เริ่มคุยได้แม้สั่งไม่เยอะ' : 'You can start small'}</div>
             </div>
           </div>
-          <motion.a
+          <m.a
             href="https://lin.ee/VEgW6qG"
             target="_blank"
             rel="noreferrer"
@@ -53,8 +53,8 @@ export default function FormSection() {
             className="mt-2 inline-flex items-center justify-center rounded-2xl bg-zinc-900 px-6 py-4 text-sm font-bold tracking-wide text-white transition-colors hover:bg-zinc-800"
           >
             {isThai ? 'Inbox LINE เช็กราคา' : 'Inbox LINE for prices'}
-          </motion.a>
-        </motion.div>
+          </m.a>
+        </m.div>
       </div>
     </Section>
   )

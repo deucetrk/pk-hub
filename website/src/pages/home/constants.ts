@@ -47,7 +47,7 @@ export const BRAND_MARQUEE_ITEMS: BrandMarqueeItem[] = [
   },
   {
     name: 'Honor',
-    logoSrc: '/brands/honor.jpg',
+    logoSrc: '/brands/honor.webp',
     frameClassName: 'h-8 w-[5.75rem] sm:h-9 sm:w-[6.5rem]',
     logoClassName: 'scale-[1.9]',
   },

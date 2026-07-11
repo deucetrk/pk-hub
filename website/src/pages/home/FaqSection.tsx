@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { ChevronDown } from 'lucide-react'
-import { motion, type Variants } from 'framer-motion'
+import { m, type Variants } from 'framer-motion'
 
 import Container from '@/components/Container'
 import { useLanguage } from '@/i18n/LanguageContext'
@@ -93,7 +93,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
 
   return (
-    <motion.div variants={itemVariants} className="border-b border-zinc-200 last:border-b-0">
+    <m.div variants={itemVariants} className="border-b border-zinc-200 last:border-b-0">
       <button
         onClick={() => setOpen((o) => !o)}
         className="flex w-full items-center justify-between gap-4 py-5 text-left text-base font-bold tracking-tight text-zinc-900 sm:text-lg"
@@ -104,7 +104,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
       <div className={`overflow-hidden transition-all duration-200 ${open ? 'max-h-96 pb-5' : 'max-h-0'}`}>
         <p className="text-base leading-[1.8] text-zinc-600">{a}</p>
       </div>
-    </motion.div>
+    </m.div>
   )
 }
 
@@ -122,11 +122,11 @@ export default function FaqSection() {
             </h2>
             <p className="text-base leading-[1.8] sm:text-lg text-zinc-600">
               {isThai
-                ? 'คำตอบสั้นๆ ก่อนทัก LINE มาเช็กราคา'
-                : 'Quick answers before you message us on LINE.'}
+                ? 'PK HUB ขายส่งมือถือเครื่องศูนย์ไทยให้ร้านค้าในฉะเชิงเทราและทั่วประเทศ ไม่มีขั้นต่ำ มี VAT และใบกำกับภาษีเต็มรูปแบบ คำตอบสั้นๆ ก่อนทัก LINE มาเช็กราคา'
+                : 'PK HUB wholesales official Thai-market smartphones to retailers in Chachoengsao and nationwide, with no minimum order and full VAT invoices. Quick answers before you message us on LINE.'}
             </p>
           </div>
-          <motion.div
+          <m.div
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: '-100px' }}
@@ -136,7 +136,7 @@ export default function FaqSection() {
             {faqs.map((faq) => (
               <FaqItem key={faq.q} q={faq.q} a={faq.a} />
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </Container>
     </section>

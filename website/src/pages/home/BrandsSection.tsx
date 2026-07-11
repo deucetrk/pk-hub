@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 import Section from '@/components/Section'
 import { useLanguage } from '@/i18n/LanguageContext'
@@ -39,7 +39,7 @@ export default function BrandsSection() {
           : 'Contact our sales team for current wholesale prices and live stock.'
       }
     >
-      <motion.div
+      <m.div
         variants={item}
         initial="hidden"
         whileInView="show"
@@ -59,7 +59,7 @@ export default function BrandsSection() {
             ))}
           </div>
         </div>
-      </motion.div>
+      </m.div>
     </Section>
   )
 }

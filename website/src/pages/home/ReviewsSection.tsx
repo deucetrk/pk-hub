@@ -1,10 +1,12 @@
 import Section from '@/components/Section'
-import { motion, type Variants } from 'framer-motion'
+import { m, type Variants } from 'framer-motion'
 import { useLanguage } from '@/i18n/LanguageContext'
 
 const REVIEW_IMAGES = [
   {
-    src: '/reviews/store-team.jpg',
+    src: '/reviews/store-team.webp',
+    width: 800,
+    height: 1758,
     alt: 'ทีมงานและหน้าร้าน PK HUB',
     title: 'หน้าร้านและทีมงานดูแล',
     description: 'ฐานการขายและการดูแลลูกค้าอยู่หน้างานจริง ไม่ใช่หน้าเว็บอย่างเดียว',
@@ -12,7 +14,9 @@ const REVIEW_IMAGES = [
     enDescription: 'Our sales and customer support operation is based at a real storefront.',
   },
   {
-    src: '/reviews/bubble-pack.jpg',
+    src: '/reviews/bubble-pack.webp',
+    width: 900,
+    height: 1200,
     alt: 'การแพ็กสินค้าแบบกันกระแทกก่อนจัดส่ง',
     title: 'แพ็กกันกระแทกก่อนส่ง',
     description: 'ลดความเสี่ยงระหว่างขนส่งและช่วยให้ร้านค้ารับงานต่อได้มั่นใจขึ้น',
@@ -20,7 +24,9 @@ const REVIEW_IMAGES = [
     enDescription: 'Careful packing reduces transit risk and helps retailers receive stock confidently.',
   },
   {
-    src: '/reviews/outbound-boxes.jpg',
+    src: '/reviews/outbound-boxes.webp',
+    width: 900,
+    height: 1200,
     alt: 'กล่องสินค้าที่เตรียมจัดส่ง',
     title: 'ออเดอร์เตรียมออก',
     description: 'มีรอบแพ็กและจัดส่งจริง ไม่ใช่เพียงแค่เปิดรับคำถามเรื่องราคา',
@@ -28,7 +34,9 @@ const REVIEW_IMAGES = [
     enDescription: 'A real daily packing and dispatch workflow, not simply a price enquiry page.',
   },
   {
-    src: '/reviews/oppo-batch.jpg',
+    src: '/reviews/oppo-batch.webp',
+    width: 900,
+    height: 1200,
     alt: 'สินค้าล็อต OPPO ที่เตรียมส่ง',
     title: 'มีหลากหลายแบรนด์',
     description: 'รองรับทั้งรุ่นตลาดหลักและรุ่นที่ร้านค้าต้องการเช็กราคาเป็นรอบๆ',
@@ -63,15 +71,15 @@ export default function ReviewsSection() {
           : 'Videos and photos from real packing rounds, stock, and orders prepared for retailers.'
       }
     >
-      <motion.div 
+      <m.div 
         variants={containerVariants} 
         initial="hidden" 
         whileInView="show" 
         viewport={{ once: true, margin: "-100px" }}
         className="grid gap-4 md:grid-cols-2 lg:grid-cols-3"
       >
-        <motion.div variants={itemVariants} className="grid gap-6 border-2 border-black bg-white p-4 md:col-span-2 lg:col-span-3 lg:grid-cols-[minmax(280px,420px),minmax(0,1fr)] lg:items-start lg:p-6">
-          <div className="bg-zinc-100 lg:self-start">
+        <m.div variants={itemVariants} className="grid gap-6 rounded-[2rem] border border-zinc-200 bg-white p-4 shadow-sm md:col-span-2 lg:col-span-3 lg:grid-cols-[minmax(280px,420px),minmax(0,1fr)] lg:items-start lg:p-6">
+          <div className="overflow-hidden rounded-2xl bg-zinc-100 lg:self-start">
             <video
               className="aspect-[9/16] max-h-[500px] w-full bg-black object-cover"
               controls
@@ -110,12 +118,16 @@ export default function ReviewsSection() {
               ))}
             </div>
           </div>
-        </motion.div>
+        </m.div>
 
-        <motion.div variants={itemVariants} className="group relative overflow-hidden rounded-[2rem] bg-zinc-100 shadow-sm md:col-span-2 lg:col-span-2">
+        <m.div variants={itemVariants} className="group relative overflow-hidden rounded-[2rem] bg-zinc-100 shadow-sm md:col-span-2 lg:col-span-2">
           <img
-            src="/reviews/iphone-lot.jpg"
+            src="/reviews/iphone-lot.webp"
             alt="ล็อตสินค้า iPhone จากงานจริงของ PK HUB"
+            width={1100}
+            height={600}
+            loading="lazy"
+            decoding="async"
             className="h-[320px] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 sm:h-[420px]"
           />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-900/90 via-zinc-900/20 to-transparent"></div>
@@ -129,13 +141,17 @@ export default function ReviewsSection() {
                 : 'Real PK HUB stock showing active inventory flow and regular supply to our retail partners.'}
             </div>
           </div>
-        </motion.div>
+        </m.div>
 
         {REVIEW_IMAGES.map((image) => (
-          <motion.div variants={itemVariants} key={image.title} className="group relative overflow-hidden rounded-[2rem] bg-zinc-100 shadow-sm">
+          <m.div variants={itemVariants} key={image.title} className="group relative overflow-hidden rounded-[2rem] bg-zinc-100 shadow-sm">
             <img
               src={image.src}
               alt={image.alt}
+              width={image.width}
+              height={image.height}
+              loading="lazy"
+              decoding="async"
               className="h-[280px] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 sm:h-[320px] lg:h-[100%]"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-900/90 via-zinc-900/20 to-transparent"></div>
@@ -145,9 +161,9 @@ export default function ReviewsSection() {
                 {isThai ? image.description : image.enDescription}
               </div>
             </div>
-          </motion.div>
+          </m.div>
         ))}
-      </motion.div>
+      </m.div>
     </Section>
   )
 }

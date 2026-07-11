@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 
 import Container from '@/components/Container'
 import { useLanguage } from '@/i18n/LanguageContext'
@@ -25,7 +25,7 @@ export default function StatsSection() {
         <div className="mb-10 max-w-xl text-sm leading-7 text-zinc-500">
           {isThai ? 'ตัวเลขจากงานที่เราดูแลจริง' : 'Real numbers from the work we handle'}
         </div>
-        <motion.div
+        <m.div
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: '-80px' }}
@@ -33,7 +33,7 @@ export default function StatsSection() {
           className="grid gap-px bg-zinc-800 sm:grid-cols-2 lg:grid-cols-4"
         >
           {stats.map((stat) => (
-            <motion.div
+            <m.div
               key={stat.label}
               variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } }}
               transition={{ duration: 0.45, ease: 'easeOut' }}
@@ -43,9 +43,9 @@ export default function StatsSection() {
                 {stat.value}
               </div>
               <div className="mt-5 text-sm leading-6 text-zinc-500">{stat.label}</div>
-            </motion.div>
+            </m.div>
           ))}
-        </motion.div>
+        </m.div>
       </Container>
     </section>
   )

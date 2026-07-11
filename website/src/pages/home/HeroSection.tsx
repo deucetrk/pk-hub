@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { BadgeCheck, Clock, MessageCircle, ReceiptText, ShieldCheck, Truck } from 'lucide-react'
 
 import Container from '@/components/Container'
@@ -38,7 +38,7 @@ function TypewriterLine({ phrases, reduceMotion }: { phrases: string[]; reduceMo
     const phrase = phrases[phraseIndex]
     const doneTyping = !deleting && visibleLength === phrase.length
     const doneDeleting = deleting && visibleLength === 0
-    const delay = doneTyping ? 1500 : doneDeleting ? 250 : deleting ? 38 : 68
+    const delay = doneTyping ? 2600 : doneDeleting ? 250 : deleting ? 30 : 62
 
     const timer = window.setTimeout(() => {
       if (doneTyping) {
@@ -95,24 +95,24 @@ export default function HeroSection() {
                 ? 'PK Hub ดูแลเครื่องศูนย์ไทย ซิม AIS และบริการหลังการขายสำหรับร้านค้ามือถือในพื้นที่ ร้านที่ต้องการรับเครื่องไปขายต่อสามารถทักมาเช็กสต็อก ราคา และรอบส่งกับทีมในพื้นที่ได้โดยตรง'
                 : 'PK Hub supports local phone retailers with Thai official devices, AIS SIMs, and after-sales coordination. Retail partners can message us directly to check stock, prices, and dispatch rounds.'}
             </p>
-            <motion.div
+            <m.div
               variants={container}
               initial="hidden"
               whileInView="show"
               viewport={revealViewport}
               className="grid gap-3 sm:grid-cols-2"
             >
-              <motion.div variants={item} className="flex min-h-16 items-center gap-3 border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-bold leading-6 text-zinc-950">
+              <m.div variants={item} className="flex min-h-16 items-center gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-bold leading-6 text-zinc-950">
                 <BadgeCheck className="h-5 w-5 shrink-0 text-emerald-600" />
                 <span>{isThai ? 'ผู้จัดจำหน่ายที่ได้รับอนุญาตจาก AIS' : 'Authorized AIS Distributor'}</span>
-              </motion.div>
-              <motion.div variants={item} className="flex min-h-16 items-center gap-3 border border-zinc-200 bg-white px-4 py-3 text-sm font-bold leading-6 text-zinc-950">
+              </m.div>
+              <m.div variants={item} className="flex min-h-16 items-center gap-3 rounded-xl border border-zinc-200 bg-white px-4 py-3 text-sm font-bold leading-6 text-zinc-950">
                 <ReceiptText className="h-5 w-5 shrink-0 text-emerald-600" />
                 <span>{isThai ? 'จดทะเบียน VAT • ออกใบกำกับภาษีเต็มรูปแบบ' : 'VAT registered • Full tax invoices'}</span>
-              </motion.div>
-            </motion.div>
+              </m.div>
+            </m.div>
             <div className="mt-2 flex flex-col gap-4 sm:flex-row">
-              <motion.a
+              <m.a
                 href="https://lin.ee/VEgW6qG"
                 target="_blank"
                 rel="noreferrer"
@@ -122,7 +122,7 @@ export default function HeroSection() {
               >
                 <MessageCircle className="h-4 w-4 fill-current transition-transform motion-safe:group-hover:translate-x-0.5" />
                 {isThai ? 'ทัก LINE เช็กของและราคา' : 'Check stock and prices on LINE'}
-              </motion.a>
+              </m.a>
               <a
                 href="#reviews"
                 className="inline-flex items-center justify-center rounded-2xl border border-zinc-200 bg-white/50 px-8 py-4 text-[0.95rem] font-semibold tracking-tight text-zinc-900 shadow-sm backdrop-blur-sm transition-all active:scale-[0.98] hover:border-zinc-300 hover:bg-zinc-50"
@@ -150,7 +150,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          <motion.div
+          <m.div
             variants={item}
             initial="hidden"
             whileInView="show"
@@ -190,7 +190,7 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
-            <motion.a
+            <m.a
               href="https://lin.ee/VEgW6qG"
               target="_blank"
               rel="noreferrer"
@@ -200,8 +200,8 @@ export default function HeroSection() {
             >
               <MessageCircle className="h-4 w-4 fill-current" />
               {isThai ? 'ทักทีมขายเช็กสต็อก' : 'Check stock with sales'}
-            </motion.a>
-          </motion.div>
+            </m.a>
+          </m.div>
         </div>
       </Container>
     </section>
