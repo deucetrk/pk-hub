@@ -8,7 +8,7 @@ import { BRAND_MARQUEE_ITEMS, type BrandMarqueeItem } from './constants'
 
 function BrandTile({ brand }: { brand: BrandMarqueeItem }) {
   return (
-    <article className="brand-rail__item">
+    <article className="flex min-h-28 items-center justify-center bg-white px-6 py-6 grayscale transition-all duration-300 hover:grayscale-0">
       {brand.logoSrc ? (
         <div className={`flex items-center justify-center overflow-hidden ${brand.frameClassName ?? 'h-10 w-28 sm:h-12 sm:w-32'}`}>
           <img
@@ -44,21 +44,11 @@ export default function BrandsSection() {
         initial="hidden"
         whileInView="show"
         viewport={revealViewport}
-        className="brand-rail"
+        className="grid grid-cols-2 gap-px border border-zinc-200 bg-zinc-200 sm:grid-cols-4"
       >
-        <div className="brand-rail__track">
-          <div className="brand-rail__group">
-            {BRAND_MARQUEE_ITEMS.map((brand) => (
-              <BrandTile key={`${brand.name}-primary`} brand={brand} />
-            ))}
-          </div>
-
-          <div className="brand-rail__group" aria-hidden="true">
-            {BRAND_MARQUEE_ITEMS.map((brand) => (
-              <BrandTile key={`${brand.name}-duplicate`} brand={brand} />
-            ))}
-          </div>
-        </div>
+        {BRAND_MARQUEE_ITEMS.map((brand) => (
+          <BrandTile key={brand.name} brand={brand} />
+        ))}
       </m.div>
     </Section>
   )

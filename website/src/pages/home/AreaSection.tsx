@@ -12,6 +12,7 @@ export default function AreaSection() {
   return (
     <Section
       id="area"
+      variant="muted"
       title={isThai ? 'ค้าส่งมือถือฉะเชิงเทรา สำหรับร้านค้าและพาร์ทเนอร์' : 'Smartphone wholesale in Chachoengsao for retail partners'}
       subtitle={
         isThai
@@ -25,14 +26,14 @@ export default function AreaSection() {
             <MapPinned className="h-8 w-8 stroke-[1.5]" />
             {isThai ? 'จังหวัดที่ดูแลเป็นหลัก' : 'Primary service provinces'}
           </div>
-          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
+          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3">
             {provinces.map((p) => (
               <div
                 key={p}
                 className={
                   p === (isThai ? 'ฉะเชิงเทรา' : 'Chachoengsao')
-                    ? 'flex items-center justify-center rounded-none border-2 border-black bg-black px-4 py-4 text-base font-bold text-white'
-                    : 'flex items-center justify-center rounded-none border-2 border-black/30 bg-zinc-50/40 px-4 py-4 text-base font-bold text-zinc-400'
+                    ? 'flex items-center justify-center rounded-none border-2 border-black bg-black whitespace-nowrap px-2 py-4 text-sm font-bold lg:px-4 lg:text-base text-white'
+                    : 'flex items-center justify-center rounded-none border-2 border-black/30 bg-zinc-50/40 whitespace-nowrap px-2 py-4 text-sm font-bold lg:px-4 lg:text-base text-zinc-400'
                 }
               >
                 {p}

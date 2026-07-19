@@ -19,7 +19,7 @@ export default function Section({
 }) {
   const sectionClass =
     variant === 'inverse'
-      ? 'bg-black text-white'
+      ? 'bg-[#090909] text-white'
       : variant === 'muted'
         ? 'bg-zinc-50 text-black'
         : 'bg-white text-black'

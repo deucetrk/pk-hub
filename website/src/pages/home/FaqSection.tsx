@@ -5,6 +5,7 @@ import { m, type Variants } from 'framer-motion'
 
 import Container from '@/components/Container'
 import { useLanguage } from '@/i18n/LanguageContext'
+import { revealViewport, useRevealMotion } from '@/lib/motion'
 
 const TH_FAQS = [
   {
@@ -84,16 +85,11 @@ const EN_FAQS = [
   },
 ]
 
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 12 },
-  show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 300, damping: 24 } },
-}
-
-function FaqItem({ q, a }: { q: string; a: string }) {
+function FaqItem({ q, a, variants }: { q: string; a: string; variants: Variants }) {
   const [open, setOpen] = useState(false)
 
   return (
-    <m.div variants={itemVariants} className="border-b border-zinc-200 last:border-b-0">
+    <m.div variants={variants} className="border-b border-zinc-200 last:border-b-0">
       <button
         onClick={() => setOpen((o) => !o)}
         className="flex w-full items-center justify-between gap-4 py-5 text-left text-base font-bold tracking-tight text-zinc-900 sm:text-lg"
@@ -110,10 +106,11 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 
 export default function FaqSection() {
   const { isThai } = useLanguage()
+  const { container, item } = useRevealMotion()
   const faqs = isThai ? TH_FAQS : EN_FAQS
 
   return (
-    <section id="faq" className="scroll-mt-20 py-16 sm:py-24 bg-zinc-50">
+    <section id="faq" className="scroll-mt-20 bg-white py-16 sm:py-24">
       <Container>
         <div className="grid gap-8 sm:gap-12">
           <div className="grid max-w-3xl gap-4">
@@ -127,14 +124,14 @@ export default function FaqSection() {
             </p>
           </div>
           <m.div
+            variants={container}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: true, margin: '-100px' }}
-            variants={{ hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.05 } } }}
-            className="rounded-3xl border border-zinc-200/60 bg-white p-6 sm:p-10 shadow-sm"
+            viewport={revealViewport}
+            className="rounded-none border-2 border-black bg-white p-6 sm:p-10"
           >
             {faqs.map((faq) => (
-              <FaqItem key={faq.q} q={faq.q} a={faq.a} />
+              <FaqItem key={faq.q} q={faq.q} a={faq.a} variants={item} />
             ))}
           </m.div>
         </div>

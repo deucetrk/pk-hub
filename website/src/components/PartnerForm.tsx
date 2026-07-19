@@ -5,6 +5,7 @@ import { Loader2 } from 'lucide-react'
 import { hasErrors, type PartnerLead, validatePartnerLead } from '@/utils/partnerLead'
 import { useLanguage } from '@/i18n/LanguageContext'
 import { submitPartnerLead } from '@/services/partnerLeadSubmission'
+import { CONTACT } from '@/pages/home/constants'
 
 import Button from './Button'
 import BrandSelector from './partner-form/BrandSelector'
@@ -208,7 +209,7 @@ export default function PartnerForm() {
       {submitError ? <div className="text-sm font-semibold text-red-700">{submitError}</div> : null}
 
       <div className="flex flex-col gap-4 sm:flex-row">
-        <Button type="submit" className="w-full sm:w-auto" disabled={status === 'submitting'}>
+        <Button type="submit" className="w-full rounded-none border-transparent bg-[#06c755] text-white shadow-md hover:bg-[#05b34c] hover:shadow-lg sm:w-auto" disabled={status === 'submitting'}>
           {status === 'submitting' ? (
             <>
               <Loader2 className="h-5 w-5 animate-spin" />
@@ -219,7 +220,7 @@ export default function PartnerForm() {
           )}
         </Button>
         <a
-          href="https://lin.ee/VEgW6qG"
+          href={CONTACT.LINE_URL}
           target="_blank"
           rel="noreferrer"
           className="inline-flex w-full items-center justify-center rounded-none border-2 border-black bg-white px-6 py-3.5 text-sm font-bold uppercase tracking-widest text-black hover:bg-zinc-100 sm:w-auto transition-colors"

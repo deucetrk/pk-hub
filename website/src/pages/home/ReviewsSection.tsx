@@ -1,6 +1,8 @@
+import { m } from 'framer-motion'
+
 import Section from '@/components/Section'
-import { m, type Variants } from 'framer-motion'
 import { useLanguage } from '@/i18n/LanguageContext'
+import { revealViewport, useRevealMotion } from '@/lib/motion'
 
 const REVIEW_IMAGES = [
   {
@@ -45,21 +47,9 @@ const REVIEW_IMAGES = [
   },
 ]
 
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 }
-  }
-}
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 300, damping: 25 } }
-}
-
 export default function ReviewsSection() {
   const { isThai } = useLanguage()
+  const { container, item } = useRevealMotion()
 
   return (
     <Section
@@ -71,15 +61,15 @@ export default function ReviewsSection() {
           : 'Videos and photos from real packing rounds, stock, and orders prepared for retailers.'
       }
     >
-      <m.div 
-        variants={containerVariants} 
-        initial="hidden" 
-        whileInView="show" 
-        viewport={{ once: true, margin: "-100px" }}
+      <m.div
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={revealViewport}
         className="grid gap-4 md:grid-cols-2 lg:grid-cols-3"
       >
-        <m.div variants={itemVariants} className="grid gap-6 rounded-[2rem] border border-zinc-200 bg-white p-4 shadow-sm md:col-span-2 lg:col-span-3 lg:grid-cols-[minmax(280px,420px),minmax(0,1fr)] lg:items-start lg:p-6">
-          <div className="overflow-hidden rounded-2xl bg-zinc-100 lg:self-start">
+        <m.div variants={item} className="grid gap-6 rounded-none border-2 border-black bg-white p-4 md:col-span-2 lg:col-span-3 lg:grid-cols-[minmax(280px,420px),minmax(0,1fr)] lg:p-6">
+          <div className="overflow-hidden bg-zinc-100 lg:self-start">
             <video
               className="aspect-[9/16] max-h-[500px] w-full bg-black object-cover"
               controls
@@ -96,7 +86,7 @@ export default function ReviewsSection() {
               {isThai ? 'เบราว์เซอร์ของคุณไม่รองรับวิดีโอ' : 'Your browser does not support video playback.'}
             </video>
           </div>
-          <div className="grid content-start gap-6 p-2 sm:p-4 lg:p-6">
+          <div className="flex flex-col justify-between gap-6 p-2 sm:p-4 lg:p-6">
             <div>
               <div className="font-display text-3xl font-black leading-[1.12] tracking-[-0.035em] text-zinc-950 sm:text-4xl">
                 {isThai ? 'รอบแพ็กสินค้าจริงที่ฉะเชิงเทรา' : 'Real packing round in Chachoengsao'}
@@ -111,16 +101,16 @@ export default function ReviewsSection() {
               {(isThai
                 ? ['สต็อกจริง', 'แพ็กก่อนส่ง', 'ฐานฉะเชิงเทรา']
                 : ['Real stock', 'Packed before dispatch', 'Chachoengsao base']
-              ).map((item) => (
-                <div key={item} className="bg-zinc-50 px-4 py-4 text-sm font-bold text-zinc-900">
-                  {item}
+              ).map((chip) => (
+                <div key={chip} className="bg-zinc-50 px-4 py-4 text-sm font-bold text-zinc-900">
+                  {chip}
                 </div>
               ))}
             </div>
           </div>
         </m.div>
 
-        <m.div variants={itemVariants} className="group relative overflow-hidden rounded-[2rem] bg-zinc-100 shadow-sm md:col-span-2 lg:col-span-2">
+        <m.div variants={item} className="group relative overflow-hidden bg-zinc-100 md:col-span-2 lg:col-span-2">
           <img
             src="/reviews/iphone-lot.webp"
             alt="ล็อตสินค้า iPhone จากงานจริงของ PK HUB"
@@ -130,7 +120,7 @@ export default function ReviewsSection() {
             decoding="async"
             className="h-[320px] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 sm:h-[420px]"
           />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-900/90 via-zinc-900/20 to-transparent"></div>
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-900/90 via-zinc-900/45 to-zinc-900/10"></div>
           <div className="absolute bottom-0 left-0 p-6 sm:p-10">
             <div className="mb-2 text-2xl font-bold tracking-tight text-white sm:text-3xl">
               {isThai ? 'หลากหลายรุ่น พร้อมปล่อย' : 'Multiple models ready for partners'}
@@ -144,7 +134,7 @@ export default function ReviewsSection() {
         </m.div>
 
         {REVIEW_IMAGES.map((image) => (
-          <m.div variants={itemVariants} key={image.title} className="group relative overflow-hidden rounded-[2rem] bg-zinc-100 shadow-sm">
+          <m.div variants={item} key={image.title} className="group relative overflow-hidden bg-zinc-100">
             <img
               src={image.src}
               alt={image.alt}
@@ -154,7 +144,7 @@ export default function ReviewsSection() {
               decoding="async"
               className="h-[280px] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 sm:h-[320px] lg:h-[100%]"
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-900/90 via-zinc-900/20 to-transparent"></div>
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-zinc-900/90 via-zinc-900/45 to-zinc-900/10"></div>
             <div className="absolute bottom-0 left-0 p-6">
               <div className="mb-2 text-lg font-bold tracking-tight text-white">{isThai ? image.title : image.enTitle}</div>
               <div className="text-sm leading-[1.6] text-zinc-300">

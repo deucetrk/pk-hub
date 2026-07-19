@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
 import { cn } from '@/lib/utils'
+import { CONTACT } from '@/pages/home/constants'
 
 import Container from './Container'
 import LanguageSwitch from './LanguageSwitch'
@@ -54,7 +55,7 @@ export default function Navbar() {
   }, [open])
 
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-200/50 bg-white/70 backdrop-blur-md supports-[backdrop-filter]:bg-white/60">
+    <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white">
       <Container className="py-3">
         <div className="flex items-center justify-between gap-4 lg:gap-6">
           <a href="#top" className="flex min-w-0 items-center gap-4" aria-label="PK HUB">
@@ -83,10 +84,10 @@ export default function Navbar() {
               <LanguageSwitch />
             </div>
             <a
-              href="https://lin.ee/VEgW6qG"
+              href={CONTACT.LINE_URL}
               target="_blank"
               rel="noreferrer"
-              className="hidden min-h-12 items-center justify-center whitespace-nowrap rounded-2xl border border-transparent bg-zinc-900 px-6 text-sm font-semibold tracking-tight text-white shadow-sm transition-all active:scale-[0.98] hover:bg-zinc-800 hover:shadow-md lg:inline-flex"
+              className="hidden min-h-12 items-center justify-center whitespace-nowrap rounded-none bg-[#06c755] px-6 text-sm font-semibold tracking-tight text-white shadow-sm transition-all hover:bg-[#05b34c] active:scale-[0.98] lg:inline-flex"
             >
               {isThai ? 'Inbox LINE มาเลย' : 'Inbox us on LINE'}
             </a>
@@ -98,7 +99,7 @@ export default function Navbar() {
             </a>
             <button
               type="button"
-              className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-zinc-200 bg-white/50 backdrop-blur-sm text-zinc-900 shadow-sm transition-all active:scale-[0.98] hover:bg-zinc-50 lg:hidden"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-zinc-200 bg-white text-zinc-900 shadow-sm transition-all active:scale-[0.98] hover:bg-zinc-50 lg:hidden"
               aria-label={open ? (isThai ? 'ปิดเมนู' : 'Close menu') : isThai ? 'เปิดเมนู' : 'Open menu'}
               onClick={() => setOpen((v) => !v)}
             >
@@ -113,7 +114,7 @@ export default function Navbar() {
             open ? 'max-h-[80vh] overflow-y-auto opacity-100' : 'max-h-0 opacity-0',
           )}
         >
-          <div className="mt-3 grid gap-2 rounded-2xl border border-zinc-200/50 bg-white/80 p-3 shadow-xl backdrop-blur-lg">
+          <div className="mt-3 grid gap-2 rounded-2xl border border-zinc-200 bg-white p-3 shadow-xl">
             <div className="px-4 py-2 sm:hidden">
               <LanguageSwitch />
             </div>
@@ -129,17 +130,17 @@ export default function Navbar() {
             ))}
             <div className="grid grid-cols-1 gap-2 pt-2 sm:grid-cols-2">
               <a
-                href="https://lin.ee/VEgW6qG"
+                href={CONTACT.LINE_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-2xl bg-zinc-900 px-6 py-3.5 text-[0.95rem] font-semibold tracking-tight text-white shadow-md transition-all hover:bg-zinc-800"
+                className="inline-flex items-center justify-center rounded-none bg-[#06c755] px-6 py-3.5 text-[0.95rem] font-semibold tracking-tight text-white shadow-md transition-all hover:bg-[#05b34c]"
                 onClick={() => setOpen(false)}
               >
                 {isThai ? 'Inbox LINE มาเลย' : 'Inbox us on LINE'}
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center rounded-2xl border border-zinc-200 bg-white/50 px-6 py-3.5 text-[0.95rem] font-semibold tracking-tight text-zinc-900 shadow-sm transition-all hover:bg-zinc-50"
+                className="inline-flex items-center justify-center rounded-2xl border border-zinc-200 bg-white px-6 py-3.5 text-[0.95rem] font-semibold tracking-tight text-zinc-900 shadow-sm transition-all hover:bg-zinc-50"
                 onClick={() => setOpen(false)}
               >
                 {isThai ? 'ทักทีมขาย' : 'Talk to sales'}

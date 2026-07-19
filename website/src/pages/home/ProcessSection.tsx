@@ -1,6 +1,8 @@
+import { m } from 'framer-motion'
+
 import Section from '@/components/Section'
-import { m, type Variants } from 'framer-motion'
 import { useLanguage } from '@/i18n/LanguageContext'
+import { revealViewport, useRevealMotion } from '@/lib/motion'
 
 const TH_STEPS = [
   { n: '1', t: 'Inbox LINE มาเลย', d: 'บอกว่าเป็นร้านมือถือ หรือกำลังเริ่มขาย พร้อมรุ่นที่อยากเช็ก' },
@@ -16,46 +18,41 @@ const EN_STEPS = [
   { n: '4', t: 'Packed and dispatched', d: 'Orders go out on the available dispatch round with clear timing from our team.' },
 ]
 
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 }
-  }
-}
-
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0, transition: { type: 'spring', stiffness: 300, damping: 24 } }
-}
-
 export default function ProcessSection() {
   const { isThai } = useLanguage()
+  const { container, item } = useRevealMotion()
   const steps = isThai ? TH_STEPS : EN_STEPS
 
   return (
     <Section
       id="process"
+      variant="inverse"
       title={isThai ? 'สั่งยังไง? เริ่มจากทัก LINE' : 'How to order? Start with LINE.'}
       subtitle={isThai ? 'ไม่ต้องรู้ทุกรุ่นก่อนก็ได้ บอกงบหรือรุ่นที่สนใจ แล้วทีมช่วยไล่ราคาให้' : 'You do not need every model planned. Tell us your budget or target models and our team will help.'}
     >
-      <m.div 
-        variants={containerVariants} 
-        initial="hidden" 
-        whileInView="show" 
-        viewport={{ once: true, margin: "-100px" }}
-        className="grid gap-6 md:grid-cols-2 lg:grid-cols-4"
+      <m.ol
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={revealViewport}
+        className="border-b border-zinc-800"
       >
-        {steps.map((s) => (
-          <m.div variants={itemVariants} key={s.n} className="rounded-3xl border border-zinc-200/60 bg-white/60 p-10 shadow-sm backdrop-blur-md transition-all ease-out hover:-translate-y-1 hover:bg-white hover:shadow-lg">
-            <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-zinc-900 text-xl font-bold text-white shadow-sm">
-              {s.n}
+        {steps.map((s, index) => (
+          <m.li
+            variants={item}
+            key={s.n}
+            className="grid gap-3 border-t border-zinc-800 py-8 sm:grid-cols-[10rem_1fr] sm:items-baseline sm:gap-10 sm:py-10"
+          >
+            <div className="font-display text-6xl font-black leading-none tracking-[-0.05em] text-white sm:text-7xl">
+              {String(index + 1).padStart(2, '0')}
             </div>
-            <div className="mt-8 text-[1.15rem] font-bold tracking-tight text-zinc-900">{s.t}</div>
-            <div className="mt-4 text-base leading-[1.8] text-zinc-600">{s.d}</div>
-          </m.div>
+            <div>
+              <div className="text-xl font-bold tracking-tight text-white sm:text-2xl">{s.t}</div>
+              <div className="mt-2 max-w-2xl text-base leading-[1.8] text-zinc-400">{s.d}</div>
+            </div>
+          </m.li>
         ))}
-      </m.div>
+      </m.ol>
     </Section>
   )
 }

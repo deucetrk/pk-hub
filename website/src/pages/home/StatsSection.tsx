@@ -2,9 +2,11 @@ import { m } from 'framer-motion'
 
 import Container from '@/components/Container'
 import { useLanguage } from '@/i18n/LanguageContext'
+import { revealViewport, useRevealMotion } from '@/lib/motion'
 
 export default function StatsSection() {
   const { isThai } = useLanguage()
+  const { container, item } = useRevealMotion()
   const stats = isThai
     ? [
         { value: 'ทุกวัน', label: 'เช็กอินรอบแพ็กและจัดส่ง' },
@@ -22,27 +24,26 @@ export default function StatsSection() {
   return (
     <section id="stats" className="bg-[#090909] py-16 text-white sm:py-20">
       <Container>
-        <div className="mb-10 max-w-xl text-sm leading-7 text-zinc-500">
+        <div className="mb-10 max-w-xl text-sm leading-7 text-zinc-400">
           {isThai ? 'ตัวเลขจากงานที่เราดูแลจริง' : 'Real numbers from the work we handle'}
         </div>
         <m.div
+          variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: true, margin: '-80px' }}
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}
+          viewport={revealViewport}
           className="grid gap-px bg-zinc-800 sm:grid-cols-2 lg:grid-cols-4"
         >
           {stats.map((stat) => (
             <m.div
               key={stat.label}
-              variants={{ hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } }}
-              transition={{ duration: 0.45, ease: 'easeOut' }}
+              variants={item}
               className="bg-[#090909] py-7 sm:px-7 lg:min-h-44 lg:px-8"
             >
               <div className="font-display text-5xl font-black leading-none tracking-[-0.06em] sm:text-6xl xl:text-7xl">
                 {stat.value}
               </div>
-              <div className="mt-5 text-sm leading-6 text-zinc-500">{stat.label}</div>
+              <div className="mt-5 text-sm leading-6 text-zinc-400">{stat.label}</div>
             </m.div>
           ))}
         </m.div>

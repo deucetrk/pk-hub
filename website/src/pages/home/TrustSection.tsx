@@ -12,6 +12,7 @@ export default function TrustSection() {
   return (
     <Section
       id="trust"
+      variant="muted"
       title={isThai ? 'ทำไมร้านค้าถึงเลือก PK HUB' : 'Why retailers choose PK HUB'}
       subtitle={
         isThai
@@ -39,7 +40,7 @@ export default function TrustSection() {
         </m.div>
         <m.div variants={item} className="grid gap-4 rounded-none border-2 border-black bg-white p-10 transition-all hover:bg-zinc-50 hover:shadow-md motion-safe:hover:-translate-y-0.5">
           <div className="flex items-start gap-5">
-            <BadgeCheck className="mt-1 h-10 w-10 shrink-0 stroke-[1.5] text-emerald-600" />
+            <BadgeCheck className="mt-1 h-10 w-10 shrink-0 stroke-[1.5] text-zinc-900" />
             <div>
               <div className="text-xl font-black">{isThai ? 'ผู้จัดจำหน่ายที่ได้รับอนุญาตจาก AIS' : 'Authorized AIS Distributor'}</div>
               <div className="mt-3 text-base leading-[1.8] text-zinc-600">
@@ -50,7 +51,7 @@ export default function TrustSection() {
         </m.div>
         <m.div variants={item} className="grid gap-4 rounded-none border-2 border-black bg-white p-10 transition-all hover:bg-zinc-50 hover:shadow-md motion-safe:hover:-translate-y-0.5">
           <div className="flex items-start gap-5">
-            <ReceiptText className="mt-1 h-10 w-10 shrink-0 stroke-[1.5] text-emerald-600" />
+            <ReceiptText className="mt-1 h-10 w-10 shrink-0 stroke-[1.5] text-zinc-900" />
             <div>
               <div className="text-xl font-black">
                 {isThai ? 'พร้อมเอกสารบัญชีสำหรับบริษัท ร้านค้าปลีก และเชนร้านค้า' : 'Full tax invoices for companies, retailers, and retail chains'}

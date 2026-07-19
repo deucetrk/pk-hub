@@ -1,3 +1,14 @@
+// Single source of truth for contact wiring — every CTA/link reads from here.
+export const CONTACT = {
+  LINE_URL: 'https://lin.ee/VEgW6qG',
+  LINE_ID: '@pkhub',
+  PHONE_TEL: 'tel:0892480888',
+  PHONE_DISPLAY: '089-248-0888',
+  FACEBOOK_URL: 'https://www.facebook.com/pkmedia168',
+  MAPS_URL: 'https://maps.app.goo.gl/uW4TCkzRHMe59yS19',
+  VAT_NUMBER: '0245540000020',
+} as const
+
 export const BRANDS = ['Apple', 'Samsung', 'Oppo', 'Vivo', 'Realme', 'Xiaomi', 'Honor', 'Infinix']
 
 export type BrandMarqueeItem = {

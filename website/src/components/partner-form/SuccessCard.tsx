@@ -2,6 +2,7 @@ import { CheckCircle2 } from 'lucide-react'
 
 import type { PartnerLead } from '@/utils/partnerLead'
 import { useLanguage } from '@/i18n/LanguageContext'
+import { CONTACT } from '@/pages/home/constants'
 
 export default function SuccessCard({ values, onReset }: { values: PartnerLead; onReset: () => void }) {
   const { isThai } = useLanguage()
@@ -41,10 +42,10 @@ export default function SuccessCard({ values, onReset }: { values: PartnerLead; 
       </div>
       <div className="flex flex-col gap-4 sm:flex-row">
         <a
-          href="https://lin.ee/VEgW6qG"
+          href={CONTACT.LINE_URL}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center justify-center rounded-none border-2 border-black bg-black px-6 py-4 text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-zinc-800"
+          className="inline-flex items-center justify-center rounded-none border-2 border-transparent bg-[#06c755] px-6 py-4 text-sm font-bold uppercase tracking-widest text-white transition-colors hover:bg-[#05b34c]"
         >
           {isThai ? 'Inbox LINE ต่อเลย' : 'Inbox LINE now'}
         </a>

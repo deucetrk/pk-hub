@@ -5,6 +5,8 @@ import Container from '@/components/Container'
 import { useLanguage } from '@/i18n/LanguageContext'
 import { revealViewport, useRevealMotion } from '@/lib/motion'
 
+import { CONTACT } from './constants'
+
 export default function ProofSection() {
   const { isThai } = useLanguage()
   const { container, item } = useRevealMotion()
@@ -40,7 +42,7 @@ export default function ProofSection() {
               </div>
             </m.div>
             <m.div variants={item} className="flex gap-4">
-              <BadgeCheck className="mt-1 h-6 w-6 shrink-0 text-emerald-600" />
+              <BadgeCheck className="mt-1 h-6 w-6 shrink-0 text-zinc-900" />
               <div>
                 <div className="font-bold">{isThai ? 'ผู้จัดจำหน่ายที่ได้รับอนุญาตจาก AIS' : 'Authorized AIS Distributor'}</div>
                 <div className="mt-2 text-sm leading-6 text-zinc-500">
@@ -49,11 +51,11 @@ export default function ProofSection() {
               </div>
             </m.div>
             <m.div variants={item} className="flex gap-4">
-              <ReceiptText className="mt-1 h-6 w-6 shrink-0 text-emerald-600" />
+              <ReceiptText className="mt-1 h-6 w-6 shrink-0 text-zinc-900" />
               <div>
                 <div className="font-bold">{isThai ? 'ออกใบกำกับภาษีเต็มรูปแบบ' : 'Full tax invoices'}</div>
                 <div className="mt-2 text-sm leading-6 text-zinc-500">
-                  {isThai ? 'เลขทะเบียน VAT: 0245540000020' : 'VAT registration: 0245540000020'}
+                  {isThai ? `เลขทะเบียน VAT: ${CONTACT.VAT_NUMBER}` : `VAT registration: ${CONTACT.VAT_NUMBER}`}
                 </div>
               </div>
             </m.div>
@@ -67,7 +69,7 @@ export default function ProofSection() {
           viewport={revealViewport}
           className="mt-12 grid gap-4 lg:grid-cols-[1.55fr,0.75fr]"
         >
-          <m.figure variants={item} className="group overflow-hidden rounded-2xl bg-zinc-100">
+          <m.figure variants={item} className="group overflow-hidden rounded-none bg-zinc-100">
             <img
               src="/proof/storefront-building.webp"
               alt={isThai ? 'อาคารและหน้าร้าน PK HUB ในฉะเชิงเทรา' : 'PK HUB building and storefront in Chachoengsao'}
@@ -78,7 +80,7 @@ export default function ProofSection() {
               className="aspect-[4/3] h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.015] lg:aspect-[16/10]"
             />
           </m.figure>
-          <m.figure variants={item} className="group overflow-hidden rounded-2xl bg-zinc-100">
+          <m.figure variants={item} className="group overflow-hidden rounded-none bg-zinc-100">
             <img
               src="/proof/storefront-entrance.webp"
               alt={isThai ? 'ทางเข้าหน้าร้าน PK HUB' : 'PK HUB storefront entrance'}
@@ -93,7 +95,7 @@ export default function ProofSection() {
 
         <div className="mt-5 flex flex-col gap-3 border-b border-zinc-200 pb-8 text-sm leading-6 text-zinc-500 sm:flex-row sm:items-center sm:justify-end">
           <a
-            href="https://maps.app.goo.gl/uW4TCkzRHMe59yS19"
+            href={CONTACT.MAPS_URL}
             target="_blank"
             rel="noreferrer"
             className="font-bold text-zinc-950 underline decoration-zinc-300 underline-offset-4 hover:decoration-zinc-950"
