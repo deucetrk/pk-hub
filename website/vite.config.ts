@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import tsconfigPaths from "vite-tsconfig-paths";
 
 // https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   build: {
     sourcemap: false,
   },
@@ -11,10 +11,10 @@ export default defineConfig({
     react({
       babel: {
         plugins: [
-          'react-dev-locator',
+          ...(command === 'serve' ? ['react-dev-locator'] : []),
         ],
       },
     }),
     tsconfigPaths()
   ],
-})
+}))

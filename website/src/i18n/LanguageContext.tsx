@@ -13,9 +13,9 @@ const LanguageContext = createContext<LanguageContextValue | null>(null)
 
 const META = {
   th: {
-    title: 'PK HUB | ค้าส่งมือถือฉะเชิงเทรา เครื่องศูนย์ไทยสำหรับร้านค้า',
+    title: 'ค้าส่งมือถือฉะเชิงเทรา สำหรับร้านค้า | PK HUB',
     description:
-      'PK HUB ค้าส่งมือถือฉะเชิงเทรา ผู้จัดจำหน่ายที่ได้รับอนุญาตจาก AIS สำหรับร้านค้า เครื่องศูนย์ไทย จดทะเบียน VAT และออกใบกำกับภาษีเต็มรูปแบบ',
+      'PK HUB ขายส่งและค้าส่งมือถือฉะเชิงเทรา สำหรับร้านค้าและตัวแทนจำหน่าย เครื่องศูนย์ไทย มี VAT ใบกำกับภาษี และทีมพื้นที่สำหรับเช็กสต็อก ราคาส่ง และรอบจัดส่ง',
   },
   en: {
     title: 'PK HUB | Chachoengsao Smartphone Wholesale Partner',

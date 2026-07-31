@@ -32,17 +32,17 @@ export default function HeroSection() {
               </div>
             </div>
             <h1 className="font-display text-5xl font-black leading-[1.24] tracking-[-0.025em] text-white sm:text-6xl sm:leading-[1.22] lg:text-7xl lg:leading-[1.2]">
-              {isThai ? 'พาร์ทเนอร์ตัวแทนจำหน่าย AIS ในจังหวัดฉะเชิงเทรา' : 'AIS distributor partner in Chachoengsao'}
+              {isThai ? 'ค้าส่งมือถือฉะเชิงเทรา สำหรับร้านค้าและตัวแทนจำหน่าย' : 'Smartphone wholesale in Chachoengsao for retail partners'}
             </h1>
             <p className="text-xl font-bold leading-snug text-zinc-200 sm:text-2xl">
               {isThai
-                ? 'เครื่องศูนย์ไทย ซิม AIS และบริการหลังการขาย — พร้อมรอบส่งในฉะเชิงเทรา'
-                : 'Thai official devices, AIS SIMs, and after-sales support — with dispatch rounds in Chachoengsao'}
+                ? 'PK HUB ขายส่งมือถือเครื่องศูนย์ไทยให้ร้านค้าในฉะเชิงเทราและภาคตะวันออก เช็กสต็อก ราคาส่ง รอบจัดส่ง และเอกสาร VAT กับทีมพื้นที่ได้โดยตรง'
+                : 'PK HUB supplies official Thai-market smartphones to retailers in Chachoengsao and Eastern Thailand, with direct stock, wholesale price, dispatch, and VAT document checks.'}
             </p>
             <p className="max-w-xl text-base leading-[1.8] text-zinc-400 sm:text-lg">
               {isThai
-                ? 'PK Hub ดูแลเครื่องศูนย์ไทย ซิม AIS และบริการหลังการขายสำหรับร้านค้ามือถือในพื้นที่ ร้านที่ต้องการรับเครื่องไปขายต่อสามารถทักมาเช็กสต็อก ราคา และรอบส่งกับทีมในพื้นที่ได้โดยตรง'
-                : 'PK Hub supports local phone retailers with Thai official devices, AIS SIMs, and after-sales coordination. Retail partners can message us directly to check stock, prices, and dispatch rounds.'}
+                ? 'พาร์ทเนอร์ตัวแทนจำหน่าย AIS ที่ได้รับอนุญาต พร้อมบริการหลังการขายและเอกสารธุรกิจสำหรับร้านมือถือหน้าร้าน ร้านออนไลน์ และผู้เริ่มต้นขายมือถือ'
+                : 'An Authorized AIS Distributor with after-sales coordination and complete business documentation for physical shops, online retailers, and new phone sellers.'}
             </p>
             <div className="mt-1 flex flex-col gap-4 sm:flex-row">
               <m.a
