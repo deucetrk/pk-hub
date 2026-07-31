@@ -20,7 +20,7 @@ export default function FloatingContact() {
       <a
         href={CONTACT.PHONE_TEL}
         aria-label={isThai ? 'โทรหาทีมขาย' : 'Call sales team'}
-        className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-zinc-950 text-white shadow-[0_6px_20px_rgba(0,0,0,0.18)] transition-colors hover:bg-zinc-800 sm:h-14 sm:w-14"
+        className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-slate-950 text-white shadow-[0_6px_20px_rgba(0,0,0,0.18)] transition-colors hover:bg-slate-800 sm:h-14 sm:w-14"
       >
         <Phone className="h-5 w-5" />
       </a>

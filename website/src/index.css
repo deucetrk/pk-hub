@@ -13,9 +13,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    --pk-black: #18181b; /* zinc-900 for a softer black */
-    --pk-white: #ffffff;
-    --pk-grey: #fafafa;
+    --pk-black: #111827; /* slate-900: cool, softer than pure black */
+    --pk-white: #f8fafc; /* slate-50: off-white */
+    --pk-grey: #f1f5f9; /* slate-100 */
   }
 
   html {
@@ -25,6 +25,29 @@
   body {
     background-color: var(--pk-white);
     color: var(--pk-black);
+  }
+}
+
+@keyframes pk-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.pk-marquee-track {
+  animation: pk-marquee 28s linear infinite;
+}
+
+.pk-marquee:hover .pk-marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pk-marquee-track {
+    animation: none;
   }
 }
 

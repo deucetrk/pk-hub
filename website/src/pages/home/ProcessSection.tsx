@@ -35,20 +35,20 @@ export default function ProcessSection() {
         initial="hidden"
         whileInView="show"
         viewport={revealViewport}
-        className="border-b border-zinc-800"
+        className="border-b border-slate-800"
       >
         {steps.map((s, index) => (
           <m.li
             variants={item}
             key={s.n}
-            className="grid gap-3 border-t border-zinc-800 py-8 sm:grid-cols-[10rem_1fr] sm:items-baseline sm:gap-10 sm:py-10"
+            className="grid gap-3 border-t border-slate-800 py-8 sm:grid-cols-[10rem_1fr] sm:items-baseline sm:gap-10 sm:py-10"
           >
             <div className="font-display text-6xl font-black leading-none tracking-[-0.05em] text-white sm:text-7xl">
               {String(index + 1).padStart(2, '0')}
             </div>
             <div>
               <div className="text-xl font-bold tracking-tight text-white sm:text-2xl">{s.t}</div>
-              <div className="mt-2 max-w-2xl text-base leading-[1.8] text-zinc-400">{s.d}</div>
+              <div className="mt-2 max-w-2xl text-base leading-[1.8] text-slate-400">{s.d}</div>
             </div>
           </m.li>
         ))}

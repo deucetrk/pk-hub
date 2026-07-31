@@ -14,28 +14,32 @@ export default function BrandSelector({
   label?: string
 }) {
   return (
-    <div className="grid gap-3">
+    <fieldset className="grid gap-3">
       <div className="flex items-center justify-between gap-3">
-        <div className="text-sm font-bold tracking-wide">{label}</div>
-        {error ? <div className="text-xs font-bold text-red-700">{error}</div> : null}
+        <legend className="text-sm font-semibold text-slate-700">{label}</legend>
+        {error ? <div className="text-xs font-semibold text-red-600">{error}</div> : null}
       </div>
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <div className="flex flex-wrap gap-2">
         {options.map((b) => {
           const checked = selected.includes(b)
           return (
-            <label
+            <button
               key={b}
+              type="button"
+              aria-pressed={checked}
+              onClick={() => onToggle(b, !checked)}
               className={cn(
-                'flex cursor-pointer items-center gap-3 rounded-none border-2 px-4 py-3 text-base font-bold transition-colors',
-                checked ? 'border-black bg-zinc-100' : 'border-black bg-white hover:bg-zinc-50',
+                'rounded-full border px-4 py-2 text-sm font-semibold transition-all active:scale-[0.97]',
+                checked
+                  ? 'border-slate-900 bg-slate-900 text-white shadow-sm'
+                  : 'border-slate-300 bg-white text-slate-600 hover:border-slate-400 hover:text-slate-900',
               )}
             >
-              <input type="checkbox" className="h-4 w-4 rounded-none border-2 border-black accent-black" checked={checked} onChange={(e) => onToggle(b, e.target.checked)} />
               {b}
-            </label>
+            </button>
           )
         })}
       </div>
-    </div>
+    </fieldset>
   )
 }

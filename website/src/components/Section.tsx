@@ -19,10 +19,10 @@ export default function Section({
 }) {
   const sectionClass =
     variant === 'inverse'
-      ? 'bg-[#090909] text-white'
+      ? 'bg-[#111827] text-white'
       : variant === 'muted'
-        ? 'bg-zinc-50 text-black'
-        : 'bg-white text-black'
+        ? 'bg-slate-100 text-black'
+        : 'bg-[#f8fafc] text-black'
 
   return (
     <section id={id} className={cn('scroll-mt-20 py-16 sm:py-24', sectionClass)}>
@@ -33,7 +33,7 @@ export default function Section({
               {title}
             </h2>
             {subtitle ? (
-              <p className={cn('text-base leading-[1.8] sm:text-lg', variant === 'inverse' ? 'text-zinc-400' : 'text-zinc-600')}>
+              <p className={cn('text-base leading-[1.8] sm:text-lg', variant === 'inverse' ? 'text-slate-400' : 'text-slate-600')}>
                 {subtitle}
               </p>
             ) : null}

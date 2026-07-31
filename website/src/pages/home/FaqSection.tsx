@@ -89,16 +89,16 @@ function FaqItem({ q, a, variants }: { q: string; a: string; variants: Variants 
   const [open, setOpen] = useState(false)
 
   return (
-    <m.div variants={variants} className="border-b border-zinc-200 last:border-b-0">
+    <m.div variants={variants} className="border-b border-slate-200 last:border-b-0">
       <button
         onClick={() => setOpen((o) => !o)}
-        className="flex w-full items-center justify-between gap-4 py-5 text-left text-base font-bold tracking-tight text-zinc-900 sm:text-lg"
+        className="flex w-full items-center justify-between gap-4 py-5 text-left text-base font-bold tracking-tight text-slate-900 sm:text-lg"
       >
         <span>{q}</span>
-        <ChevronDown className={`h-5 w-5 shrink-0 text-zinc-400 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`h-5 w-5 shrink-0 text-slate-400 transition-transform duration-200 ${open ? 'rotate-180' : ''}`} />
       </button>
       <div className={`overflow-hidden transition-all duration-200 ${open ? 'max-h-96 pb-5' : 'max-h-0'}`}>
-        <p className="text-base leading-[1.8] text-zinc-600">{a}</p>
+        <p className="text-base leading-[1.8] text-slate-600">{a}</p>
       </div>
     </m.div>
   )
@@ -110,14 +110,14 @@ export default function FaqSection() {
   const faqs = isThai ? TH_FAQS : EN_FAQS
 
   return (
-    <section id="faq" className="scroll-mt-20 bg-white py-16 sm:py-24">
+    <section id="faq" className="scroll-mt-20 bg-[#f8fafc] py-16 sm:py-24">
       <Container>
         <div className="grid gap-8 sm:gap-12">
           <div className="grid max-w-3xl gap-4">
             <h2 className="font-display text-3xl font-black leading-[1.12] tracking-[-0.035em] sm:text-4xl">
               {isThai ? 'คำถามที่พบบ่อย' : 'Frequently asked questions'}
             </h2>
-            <p className="text-base leading-[1.8] sm:text-lg text-zinc-600">
+            <p className="text-base leading-[1.8] sm:text-lg text-slate-600">
               {isThai
                 ? 'PK HUB ขายส่งมือถือเครื่องศูนย์ไทยให้ร้านค้าในฉะเชิงเทราและทั่วประเทศ ไม่มีขั้นต่ำ มี VAT และใบกำกับภาษีเต็มรูปแบบ คำตอบสั้นๆ ก่อนทัก LINE มาเช็กราคา'
                 : 'PK HUB wholesales official Thai-market smartphones to retailers in Chachoengsao and nationwide, with no minimum order and full VAT invoices. Quick answers before you message us on LINE.'}

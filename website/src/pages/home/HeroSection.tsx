@@ -1,5 +1,5 @@
 import { m } from 'framer-motion'
-import { BadgeCheck, MessageCircle, ReceiptText } from 'lucide-react'
+import { BadgeCheck, MessageCircle, ReceiptText, Smartphone } from 'lucide-react'
 
 import Container from '@/components/Container'
 import LogoMark from '@/components/LogoMark'
@@ -7,19 +7,30 @@ import { useLanguage } from '@/i18n/LanguageContext'
 import { revealViewport, useRevealMotion } from '@/lib/motion'
 import { CONTACT } from '@/pages/home/constants'
 
-const HERO_STATS = [
-  { th: { label: 'ร้านค้าที่ดูแล', value: '180+' }, en: { label: 'Retail partners', value: '180+' } },
-  { th: { label: 'สินค้า', value: 'ศูนย์ไทย 100%' }, en: { label: 'Products', value: '100% Thai official' } },
-  { th: { label: 'จัดส่ง', value: 'ส่งทุกวัน' }, en: { label: 'Dispatch', value: 'Daily' } },
-  { th: { label: 'เอกสารธุรกิจ', value: 'VAT พร้อม' }, en: { label: 'Business docs', value: 'VAT ready' } },
-]
-
 export default function HeroSection() {
   const { isThai } = useLanguage()
   const { container, item, reduceMotion } = useRevealMotion()
 
+  const chips = [
+    {
+      icon: BadgeCheck,
+      th: 'ผู้จัดจำหน่ายที่ได้รับอนุญาตจาก AIS',
+      en: 'Authorized AIS Distributor',
+    },
+    {
+      icon: ReceiptText,
+      th: 'จดทะเบียน VAT • ออกใบกำกับภาษีเต็มรูปแบบ',
+      en: 'VAT registered • Full tax invoices',
+    },
+    {
+      icon: Smartphone,
+      th: 'มือถือเครื่องศูนย์ไทย 100%',
+      en: '100% official Thai-market devices',
+    },
+  ]
+
   return (
-    <section className="bg-[#090909] text-white">
+    <section className="bg-[#111827] text-white">
       <Container className="py-16 sm:py-24">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="grid gap-7">
@@ -27,22 +38,17 @@ export default function HeroSection() {
               <span className="inline-block bg-white px-2 py-1">
                 <LogoMark className="h-8" />
               </span>
-              <div className="text-sm font-semibold tracking-wide text-zinc-400">
+              <div className="text-sm font-semibold tracking-wide text-slate-400">
                 {isThai ? 'AIS Partner • ฉะเชิงเทรา' : 'AIS Partner • Chachoengsao'}
               </div>
             </div>
             <h1 className="font-display text-5xl font-black leading-[1.24] tracking-[-0.025em] text-white sm:text-6xl sm:leading-[1.22] lg:text-7xl lg:leading-[1.2]">
               {isThai ? 'ค้าส่งมือถือฉะเชิงเทรา สำหรับร้านค้าและตัวแทนจำหน่าย' : 'Smartphone wholesale in Chachoengsao for retail partners'}
             </h1>
-            <p className="text-xl font-bold leading-snug text-zinc-200 sm:text-2xl">
+            <p className="max-w-xl text-xl font-bold leading-snug text-slate-200 sm:text-2xl">
               {isThai
-                ? 'PK HUB ขายส่งมือถือเครื่องศูนย์ไทยให้ร้านค้าในฉะเชิงเทราและภาคตะวันออก เช็กสต็อก ราคาส่ง รอบจัดส่ง และเอกสาร VAT กับทีมพื้นที่ได้โดยตรง'
-                : 'PK HUB supplies official Thai-market smartphones to retailers in Chachoengsao and Eastern Thailand, with direct stock, wholesale price, dispatch, and VAT document checks.'}
-            </p>
-            <p className="max-w-xl text-base leading-[1.8] text-zinc-400 sm:text-lg">
-              {isThai
-                ? 'พาร์ทเนอร์ตัวแทนจำหน่าย AIS ที่ได้รับอนุญาต พร้อมบริการหลังการขายและเอกสารธุรกิจสำหรับร้านมือถือหน้าร้าน ร้านออนไลน์ และผู้เริ่มต้นขายมือถือ'
-                : 'An Authorized AIS Distributor with after-sales coordination and complete business documentation for physical shops, online retailers, and new phone sellers.'}
+                ? 'เครื่องศูนย์ไทย ราคาส่ง ส่งทุกวัน — ทัก LINE เช็กสต็อกและราคาได้เลย'
+                : 'Official Thai-market devices at wholesale prices, dispatched daily — check stock and prices on LINE.'}
             </p>
             <div className="mt-1 flex flex-col gap-4 sm:flex-row">
               <m.a
@@ -57,8 +63,8 @@ export default function HeroSection() {
                 {isThai ? 'ทัก LINE เช็กของและราคา' : 'Check stock and prices on LINE'}
               </m.a>
               <a
-                href="#reviews"
-                className="inline-flex items-center justify-center border border-zinc-600 px-8 py-4 text-[0.95rem] font-semibold tracking-tight text-white transition-all hover:border-zinc-400 hover:bg-zinc-900 active:scale-[0.98]"
+                href="#proof"
+                className="inline-flex items-center justify-center border border-slate-600 px-8 py-4 text-[0.95rem] font-semibold tracking-tight text-white transition-all hover:border-slate-400 hover:bg-slate-900 active:scale-[0.98]"
               >
                 {isThai ? 'ดูงานแพ็กจริง' : 'See real packing'}
               </a>
@@ -68,28 +74,22 @@ export default function HeroSection() {
               initial="hidden"
               whileInView="show"
               viewport={revealViewport}
-              className="grid gap-3 sm:grid-cols-2"
+              className="grid gap-3 sm:grid-cols-3"
             >
-              <m.div variants={item} className="flex min-h-16 items-center gap-3 border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm font-bold leading-6 text-white">
-                <BadgeCheck className="h-5 w-5 shrink-0 text-zinc-300" />
-                <span>{isThai ? 'ผู้จัดจำหน่ายที่ได้รับอนุญาตจาก AIS' : 'Authorized AIS Distributor'}</span>
-              </m.div>
-              <m.div variants={item} className="flex min-h-16 items-center gap-3 border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm font-bold leading-6 text-white">
-                <ReceiptText className="h-5 w-5 shrink-0 text-zinc-300" />
-                <span>{isThai ? 'จดทะเบียน VAT • ออกใบกำกับภาษีเต็มรูปแบบ' : 'VAT registered • Full tax invoices'}</span>
-              </m.div>
-            </m.div>
-            <div className="mt-2 grid grid-cols-2 gap-4 border-t border-zinc-800 pt-8 sm:grid-cols-4">
-              {HERO_STATS.map((stat) => {
-                const copy = isThai ? stat.th : stat.en
+              {chips.map((chip) => {
+                const Icon = chip.icon
                 return (
-                  <div key={copy.label} className="border-l-2 border-zinc-700 pl-4">
-                    <div className="text-xs font-semibold text-zinc-500">{copy.label}</div>
-                    <div className="mt-1 text-base font-bold text-white">{copy.value}</div>
-                  </div>
+                  <m.div
+                    key={chip.en}
+                    variants={item}
+                    className="flex min-h-16 items-center gap-3 border border-slate-700 bg-slate-900 px-4 py-3 text-sm font-bold leading-6 text-white"
+                  >
+                    <Icon className="h-5 w-5 shrink-0 text-slate-300" />
+                    <span>{isThai ? chip.th : chip.en}</span>
+                  </m.div>
                 )
               })}
-            </div>
+            </m.div>
           </div>
 
           <m.figure
@@ -97,7 +97,7 @@ export default function HeroSection() {
             initial="hidden"
             whileInView="show"
             viewport={revealViewport}
-            className="border-2 border-white/20 bg-zinc-900"
+            className="border-2 border-white/20 bg-slate-900"
           >
             <img
               src="/proof/storefront-entrance.webp"
@@ -113,7 +113,7 @@ export default function HeroSection() {
                 href={CONTACT.MAPS_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="shrink-0 text-sm font-semibold text-zinc-400 underline decoration-zinc-600 underline-offset-4 transition-colors hover:text-white"
+                className="shrink-0 text-sm font-semibold text-slate-400 underline decoration-slate-600 underline-offset-4 transition-colors hover:text-white"
               >
                 {isThai ? 'เปิดแผนที่' : 'Open map'}
               </a>

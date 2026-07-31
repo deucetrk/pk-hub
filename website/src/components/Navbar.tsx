@@ -20,21 +20,19 @@ export default function Navbar() {
     () =>
       isThai
         ? [
-            { href: '#trust', label: 'ความน่าเชื่อถือ' },
+            { href: '#why', label: 'ทำไม PK HUB' },
             { href: '#brands', label: 'แบรนด์' },
-            { href: '#proof', label: 'หน้าร้านจริง' },
+            { href: '#proof', label: 'งานจริง' },
             { href: '#process', label: 'ขั้นตอนสั่งซื้อ' },
-            { href: '#area', label: 'พื้นที่บริการ' },
-            { href: '#form', label: 'ฝากข้อมูลร้าน' },
+            { href: '#faq', label: 'คำถามที่พบบ่อย' },
             { href: '#contact', label: 'ทักทีมขาย' },
           ]
         : [
-            { href: '#trust', label: 'Why PK HUB' },
+            { href: '#why', label: 'Why PK HUB' },
             { href: '#brands', label: 'Brands' },
-            { href: '#proof', label: 'Our storefront' },
+            { href: '#proof', label: 'Real work' },
             { href: '#process', label: 'How to order' },
-            { href: '#area', label: 'Service area' },
-            { href: '#form', label: 'Store details' },
+            { href: '#faq', label: 'FAQ' },
             { href: '#contact', label: 'Talk to sales' },
           ],
     [isThai],
@@ -55,13 +53,13 @@ export default function Navbar() {
   }, [open])
 
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white">
       <Container className="py-3">
         <div className="flex items-center justify-between gap-4 lg:gap-6">
           <a href="#top" className="flex min-w-0 items-center gap-4" aria-label="PK HUB">
             <LogoMark className="h-10 sm:h-12 w-auto shrink-0" />
             <div className="hidden min-w-0 lg:block">
-              <div className="mt-1 text-sm font-semibold text-zinc-500">
+              <div className="mt-1 text-sm font-semibold text-slate-500">
                 {isThai ? 'เช็กราคาส่งมือถือสำหรับร้านค้า' : 'Wholesale phone prices for retailers'}
               </div>
             </div>
@@ -72,7 +70,7 @@ export default function Navbar() {
               <a
                 key={it.href}
                 href={it.href}
-                className="whitespace-nowrap border-b-2 border-transparent pb-1 text-[0.95rem] font-bold text-zinc-600 transition-colors duration-150 hover:border-black hover:text-black"
+                className="whitespace-nowrap border-b-2 border-transparent pb-1 text-[0.95rem] font-bold text-slate-600 transition-colors duration-150 hover:border-black hover:text-black"
               >
                 {it.label}
               </a>
@@ -93,13 +91,13 @@ export default function Navbar() {
             </a>
             <a
               href="#contact"
-              className="hidden whitespace-nowrap text-sm font-bold text-zinc-600 transition-colors hover:text-black xl:inline-flex"
+              className="hidden whitespace-nowrap text-sm font-bold text-slate-600 transition-colors hover:text-black xl:inline-flex"
             >
               {isThai ? 'ทักทีมขาย' : 'Talk to sales'}
             </a>
             <button
               type="button"
-              className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-zinc-200 bg-white text-zinc-900 shadow-sm transition-all active:scale-[0.98] hover:bg-zinc-50 lg:hidden"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-200 bg-white text-slate-900 shadow-sm transition-all active:scale-[0.98] hover:bg-slate-50 lg:hidden"
               aria-label={open ? (isThai ? 'ปิดเมนู' : 'Close menu') : isThai ? 'เปิดเมนู' : 'Open menu'}
               onClick={() => setOpen((v) => !v)}
             >
@@ -114,7 +112,7 @@ export default function Navbar() {
             open ? 'max-h-[80vh] overflow-y-auto opacity-100' : 'max-h-0 opacity-0',
           )}
         >
-          <div className="mt-3 grid gap-2 rounded-2xl border border-zinc-200 bg-white p-3 shadow-xl">
+          <div className="mt-3 grid gap-2 rounded-2xl border border-slate-200 bg-white p-3 shadow-xl">
             <div className="px-4 py-2 sm:hidden">
               <LanguageSwitch />
             </div>
@@ -122,7 +120,7 @@ export default function Navbar() {
               <a
                 key={it.href}
                 href={it.href}
-                className="rounded-xl px-4 py-3 text-[0.95rem] font-semibold text-zinc-700 hover:bg-zinc-100/80 hover:text-zinc-900"
+                className="rounded-xl px-4 py-3 text-[0.95rem] font-semibold text-slate-700 hover:bg-slate-100/80 hover:text-slate-900"
                 onClick={() => setOpen(false)}
               >
                 {it.label}
@@ -140,7 +138,7 @@ export default function Navbar() {
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center rounded-2xl border border-zinc-200 bg-white px-6 py-3.5 text-[0.95rem] font-semibold tracking-tight text-zinc-900 shadow-sm transition-all hover:bg-zinc-50"
+                className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-6 py-3.5 text-[0.95rem] font-semibold tracking-tight text-slate-900 shadow-sm transition-all hover:bg-slate-50"
                 onClick={() => setOpen(false)}
               >
                 {isThai ? 'ทักทีมขาย' : 'Talk to sales'}

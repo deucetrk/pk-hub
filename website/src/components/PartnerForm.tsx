@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 
-import { Loader2 } from 'lucide-react'
+import { Loader2, MessageCircle } from 'lucide-react'
 
 import { hasErrors, type PartnerLead, validatePartnerLead } from '@/utils/partnerLead'
 import { useLanguage } from '@/i18n/LanguageContext'
@@ -11,25 +11,26 @@ import Button from './Button'
 import BrandSelector from './partner-form/BrandSelector'
 import ConsentField from './partner-form/ConsentField'
 import SuccessCard from './partner-form/SuccessCard'
-import TextAreaField from './partner-form/TextAreaField'
 import TextField from './partner-form/TextField'
 
 const BRAND_OPTIONS = ['Apple', 'Samsung', 'Oppo', 'Vivo', 'Realme', 'Xiaomi', 'Honor', 'Infinix']
 
+const EMPTY_LEAD: PartnerLead = {
+  shopName: '',
+  province: '',
+  contactName: '',
+  phone: '',
+  lineId: '',
+  email: '',
+  interestedBrands: [],
+  note: '',
+  consent: false,
+}
+
 export default function PartnerForm() {
   const { isThai, language } = useLanguage()
   const [requestId, setRequestId] = useState(() => crypto.randomUUID())
-  const [values, setValues] = useState<PartnerLead>({
-    shopName: '',
-    province: '',
-    contactName: '',
-    phone: '',
-    lineId: '',
-    email: '',
-    interestedBrands: [],
-    note: '',
-    consent: false,
-  })
+  const [values, setValues] = useState<PartnerLead>(EMPTY_LEAD)
   const [touched, setTouched] = useState<Record<string, boolean>>({})
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle')
   const [submitError, setSubmitError] = useState<string>('')
@@ -45,17 +46,7 @@ export default function PartnerForm() {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     const website = String(new FormData(e.currentTarget as HTMLFormElement).get('website') ?? '')
-    setTouched({
-      shopName: true,
-      province: true,
-      contactName: true,
-      phone: true,
-      lineId: true,
-      email: true,
-      interestedBrands: true,
-      note: true,
-      consent: true,
-    })
+    setTouched({ shopName: true, province: true, phone: true, interestedBrands: true, consent: true })
     setSubmitError('')
 
     if (hasErrors(errors)) return
@@ -84,30 +75,20 @@ export default function PartnerForm() {
           setStatus('idle')
           setTouched({})
           setRequestId(crypto.randomUUID())
-          setValues({
-            shopName: '',
-            province: '',
-            contactName: '',
-            phone: '',
-            lineId: '',
-            email: '',
-            interestedBrands: [],
-            note: '',
-            consent: false,
-          })
+          setValues(EMPTY_LEAD)
         }}
       />
     )
   }
 
   return (
-    <form onSubmit={onSubmit} className="grid gap-6 rounded-none border-2 border-black bg-white p-8">
+    <form onSubmit={onSubmit} className="grid gap-5 rounded-2xl bg-white p-6 shadow-xl shadow-black/20 sm:p-8">
       <div className="hidden" aria-hidden="true">
         <label htmlFor="website">Website</label>
         <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <TextField
           id="shopName"
           label={isThai ? 'ชื่อร้าน / ชื่อเพจ' : 'Store or page name'}
@@ -129,53 +110,20 @@ export default function PartnerForm() {
         />
       </div>
 
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-        <TextField
-          id="contactName"
-          label={isThai ? 'ชื่อคนคุย' : 'Contact name'}
-          value={values.contactName}
-          onChange={(v) => setField('contactName', v)}
-          onBlur={() => setTouched((t) => ({ ...t, contactName: true }))}
-          placeholder={isThai ? 'ชื่อเล่นก็ได้' : 'Full name or nickname'}
-          error={showError('contactName') ? errors.contactName : undefined}
-        />
-
-        <TextField
-          id="phone"
-          label={isThai ? 'เบอร์โทร' : 'Phone number'}
-          value={values.phone}
-          onChange={(v) => setField('phone', v)}
-          onBlur={() => setTouched((t) => ({ ...t, phone: true }))}
-          placeholder="08x-xxx-xxxx"
-          inputMode="tel"
-          error={showError('phone') ? errors.phone : undefined}
-        />
-      </div>
-
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-        <TextField
-          id="lineId"
-          label="LINE ID"
-          value={values.lineId}
-          onChange={(v) => setField('lineId', v)}
-          onBlur={() => setTouched((t) => ({ ...t, lineId: true }))}
-          placeholder={isThai ? 'ใส่ไอดี LINE ที่ให้ทีมทักกลับ' : 'LINE ID for our team to reply'}
-        />
-        <TextField
-          id="email"
-          label={isThai ? 'อีเมล' : 'Email'}
-          value={values.email}
-          onChange={(v) => setField('email', v)}
-          onBlur={() => setTouched((t) => ({ ...t, email: true }))}
-          placeholder="you@company.co"
-          inputMode="email"
-          error={showError('email') ? errors.email : undefined}
-        />
-      </div>
+      <TextField
+        id="phone"
+        label={isThai ? 'เบอร์โทรที่ให้ทีมทักกลับ' : 'Phone number for our team to call back'}
+        value={values.phone}
+        onChange={(v) => setField('phone', v)}
+        onBlur={() => setTouched((t) => ({ ...t, phone: true }))}
+        placeholder="08x-xxx-xxxx"
+        inputMode="tel"
+        error={showError('phone') ? errors.phone : undefined}
+      />
 
       <BrandSelector
         options={BRAND_OPTIONS}
-        label={isThai ? 'แบรนด์ที่สนใจ' : 'Brands of interest'}
+        label={isThai ? 'แบรนด์ที่สนใจ (แตะเลือกได้หลายแบรนด์)' : 'Brands of interest (tap to select)'}
         selected={values.interestedBrands}
         error={touched.interestedBrands ? errors.interestedBrands : undefined}
         onToggle={(brand, checked) => {
@@ -185,15 +133,6 @@ export default function PartnerForm() {
             interestedBrands: checked ? [...v.interestedBrands, brand] : v.interestedBrands.filter((x) => x !== brand),
           }))
         }}
-      />
-
-      <TextAreaField
-        id="note"
-        label={isThai ? 'อยากเช็กรุ่นไหนเป็นพิเศษ? (ถ้ามี)' : 'Any models you want us to check? (optional)'}
-        value={values.note}
-        onChange={(v) => setField('note', v)}
-        onBlur={() => setTouched((t) => ({ ...t, note: true }))}
-        placeholder={isThai ? 'เช่น iPhone 15, A06, Reno, งบประมาณ หรือจำนวนที่อยากเริ่ม' : 'Models, estimated quantities, budget, or other details'}
       />
 
       <ConsentField
@@ -206,10 +145,14 @@ export default function PartnerForm() {
         }}
       />
 
-      {submitError ? <div className="text-sm font-semibold text-red-700">{submitError}</div> : null}
+      {submitError ? <div className="text-sm font-semibold text-red-600">{submitError}</div> : null}
 
-      <div className="flex flex-col gap-4 sm:flex-row">
-        <Button type="submit" className="w-full rounded-none border-transparent bg-[#06c755] text-white shadow-md hover:bg-[#05b34c] hover:shadow-lg sm:w-auto" disabled={status === 'submitting'}>
+      <div className="flex flex-col gap-3 sm:flex-row">
+        <Button
+          type="submit"
+          className="w-full rounded-xl border-transparent bg-[#06c755] text-white shadow-md hover:bg-[#05b34c] hover:shadow-lg sm:w-auto"
+          disabled={status === 'submitting'}
+        >
           {status === 'submitting' ? (
             <>
               <Loader2 className="h-5 w-5 animate-spin" />
@@ -223,16 +166,11 @@ export default function PartnerForm() {
           href={CONTACT.LINE_URL}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex w-full items-center justify-center rounded-none border-2 border-black bg-white px-6 py-3.5 text-sm font-bold uppercase tracking-widest text-black hover:bg-zinc-100 sm:w-auto transition-colors"
+          className="inline-flex w-full items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-6 py-3.5 text-sm font-semibold text-slate-700 transition-colors hover:border-slate-400 hover:text-slate-900 sm:w-auto"
         >
+          <MessageCircle className="h-4 w-4 fill-current" />
           {isThai ? 'ด่วนกว่า? Inbox LINE' : 'Faster? Inbox LINE'}
         </a>
-      </div>
-
-      <div className="text-xs text-zinc-600">
-        {isThai
-          ? 'ถ้าต้องการราคาทันที แนะนำทัก LINE เป็นช่องทางที่เร็วที่สุด'
-          : 'For the fastest price check, LINE is the quickest channel.'}
       </div>
     </form>
   )
