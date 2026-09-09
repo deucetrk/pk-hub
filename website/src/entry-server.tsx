@@ -4,6 +4,8 @@ import { StaticRouter } from 'react-router-dom'
 import { LazyMotion, domAnimation } from 'framer-motion'
 
 import AppRoutes from '@/AppRoutes'
+import { getPublishedArticle, getPublishedBlogPaths } from '@/content/blog/articles'
+import { BLOG_INDEX_META, DEALER_LOGIN_META, getBlogIndexMeta, HOME_META, JOIN_META, SITE_URL, type PageMeta } from '@/lib/seo'
 
 export function render(url: string) {
   return renderToString(
@@ -15,4 +17,34 @@ export function render(url: string) {
       </LazyMotion>
     </StrictMode>,
   )
+}
+
+export function getPrerenderRoutes() {
+  return ['/th', '/en', '/th/join', '/en/join', '/th/dealer/login', '/en/dealer/login', ...getPublishedBlogPaths()]
+}
+
+export function getPageMeta(url: string): PageMeta {
+  if (url === '/en') return HOME_META.en
+  if (url === '/th/join') return JOIN_META.th
+  if (url === '/en/join') return JOIN_META.en
+  if (url === '/th/dealer/login') return DEALER_LOGIN_META.th
+  if (url === '/en/dealer/login') return DEALER_LOGIN_META.en
+  if (url === '/th/blog') return BLOG_INDEX_META
+  if (url.startsWith('/th/blog/page/')) {
+    return getBlogIndexMeta(Number(url.split('/').pop() ?? 1))
+  }
+  if (url.startsWith('/th/blog/')) {
+    const article = getPublishedArticle(url.split('/').pop() ?? '')
+    if (article) {
+      return {
+        title: article.seoTitle,
+        description: article.metaDescription,
+        canonical: `${SITE_URL}${url}`,
+        ogType: 'article',
+        image: `${SITE_URL}${article.recommendedImage}`,
+        locale: 'th_TH',
+      }
+    }
+  }
+  return HOME_META.th
 }
