@@ -463,14 +463,14 @@ export default function BlogArticle() {
                     <MessageCircle className="h-5 w-5" aria-hidden="true" /> ต้องการคำตอบเร็ว? {article.ctaLabel}
                   </a>
                 </div>
-                <PartnerForm className="border border-[#ddd8f5] shadow-[0_12px_30px_rgba(69,55,125,0.10)]" />
+                <PartnerForm />
               </div>
             </section>
           </article>
         </Container>
       </main>
       <Footer />
-      <FloatingContact className="hidden lg:flex" />
+      <FloatingContact />
     </div>
   )
 }

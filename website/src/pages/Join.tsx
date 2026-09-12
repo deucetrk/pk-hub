@@ -79,7 +79,7 @@ export default function Join() {
             </div>
 
             <div>
-              <PartnerForm className="shadow-[0_18px_50px_rgba(43,45,38,0.08)]" />
+              <PartnerForm />
               <p className="mt-4 text-xs leading-6 text-stone-500">
                 {isThai
                   ? 'ข้อมูลจะถูกใช้เพื่อติดต่อเกี่ยวกับการสมัครร้านค้าและการค้าส่งเท่านั้น'
