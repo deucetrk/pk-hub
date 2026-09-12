@@ -1,18 +1,27 @@
 import { useLanguage } from '@/i18n/LanguageContext'
 
-export default function LanguageSwitch() {
+type LanguageSwitchProps = {
+  onChange?: () => void
+}
+
+export default function LanguageSwitch({ onChange }: LanguageSwitchProps = {}) {
   const { language, setLanguage } = useLanguage()
 
+  const changeLanguage = (nextLanguage: 'th' | 'en') => {
+    setLanguage(nextLanguage)
+    onChange?.()
+  }
+
   return (
-    <div className="inline-flex rounded-full border border-slate-200 bg-slate-100 p-0.5 text-xs font-semibold" aria-label="Language">
+    <div className="inline-flex border border-stone-300 bg-white text-xs font-semibold" aria-label="Language">
       {(['th', 'en'] as const).map((item) => (
         <button
           key={item}
           type="button"
           aria-pressed={language === item}
-          onClick={() => setLanguage(item)}
-          className={`rounded-full px-3 py-1.5 transition-colors ${
-            language === item ? 'bg-slate-950 text-white' : 'text-slate-500 hover:text-slate-950'
+          onClick={() => changeLanguage(item)}
+          className={`px-3 py-1.5 transition-colors ${
+            language === item ? 'bg-stone-900 text-white' : 'text-stone-500 hover:text-stone-950'
           }`}
         >
           {item === 'th' ? 'ไทย' : 'EN'}
