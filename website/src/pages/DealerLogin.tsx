@@ -9,14 +9,15 @@ import { useReferralAttribution } from '@/hooks/useReferralAttribution'
 import { buildDealerPortalUrl, withReferral } from '@/utils/referralAttribution'
 import { CONTACT } from '@/pages/home/constants'
 
-const DEALER_PORTAL_BASE_URL = import.meta.env.VITE_DEALER_PORTAL_BASE_URL ?? 'https://pkhub.co'
+const DEALER_PORTAL_BASE_URL =
+  import.meta.env.VITE_DEALER_PORTAL_BASE_URL ?? 'https://dealer.pkhub.co'
 
 export default function DealerLogin() {
   const { isThai, language } = useLanguage()
   const referralCode = useReferralAttribution()
   usePageMeta(DEALER_LOGIN_META[language])
 
-  const portalUrl = buildDealerPortalUrl(DEALER_PORTAL_BASE_URL, referralCode, '/dealer-portal')
+  const portalUrl = buildDealerPortalUrl(DEALER_PORTAL_BASE_URL, referralCode, '/login')
   const joinUrl = withReferral(`/${language}/join`, referralCode)
 
   return (
@@ -64,8 +65,8 @@ export default function DealerLogin() {
                 <Lock className="mt-0.5 h-5 w-5 shrink-0 text-stone-500" aria-hidden="true" />
                 <span>
                   {isThai
-                    ? 'ระบบค้าส่งอยู่บน PK Commerce โดยตรง คุณจะถูกนำไปยังหน้าเข้าสู่ระบบของพาร์ทเนอร์ที่มีการยืนยันตัวตน'
-                    : 'The wholesale portal runs directly on PK Commerce. You will be taken to the partner authentication page.'}
+                    ? 'PK HUB Dealer Portal เป็นเว็บไซต์สำหรับร้านค้าพาร์ทเนอร์โดยเฉพาะ และเชื่อมกับระบบ PK Commerce ผ่านช่องทางที่ได้รับการปกป้อง'
+                    : 'PK HUB Dealer Portal is a dedicated partner site connected to PK Commerce through protected services.'}
                 </span>
               </div>
 

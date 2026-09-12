@@ -49,7 +49,7 @@ export function withReferral(href: string, referralCode: string | null) {
 export function buildDealerPortalUrl(
   baseUrl: string,
   referralCode: string | null,
-  redirectPath = '/dealer-portal',
+  redirectPath = '/login',
 ) {
   const separator = baseUrl.includes('?') ? '&' : '?'
   const normalized = baseUrl.replace(/\/$/, '')
@@ -57,4 +57,3 @@ export function buildDealerPortalUrl(
   if (!referralCode) return url
   return `${url}${separator}ref=${encodeURIComponent(referralCode)}`
 }
-
