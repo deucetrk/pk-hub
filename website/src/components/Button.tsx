@@ -14,9 +14,9 @@ export default function Button({
     <button
       {...props}
       className={cn(
-        'inline-flex items-center justify-center gap-2 rounded-2xl border px-6 py-3.5 text-[0.95rem] font-semibold tracking-tight transition-all active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
-        variant === 'primary' && 'border-transparent bg-slate-900 text-white shadow-md hover:bg-slate-800 hover:shadow-lg',
-        variant === 'outline' && 'border-slate-200 bg-white/50 backdrop-blur-sm text-slate-900 shadow-sm hover:bg-slate-50 hover:border-slate-300',
+        'inline-flex min-h-12 items-center justify-center gap-2 border px-6 py-3.5 text-[0.95rem] font-semibold tracking-tight transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2457d6] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+        variant === 'primary' && 'border-transparent bg-[#2457d6] text-white hover:bg-[#1946b8]',
+        variant === 'outline' && 'border-zinc-300 bg-white text-zinc-900 hover:bg-zinc-50 hover:border-zinc-400',
         className,
       )}
     >
@@ -24,4 +24,3 @@ export default function Button({
     </button>
   )
 }
-

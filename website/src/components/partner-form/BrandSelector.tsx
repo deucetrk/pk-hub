@@ -16,7 +16,7 @@ export default function BrandSelector({
   return (
     <fieldset className="grid gap-3">
       <div className="flex items-center justify-between gap-3">
-        <legend className="text-sm font-semibold text-slate-700">{label}</legend>
+        <legend className="text-sm font-semibold text-zinc-700">{label}</legend>
         {error ? <div className="text-xs font-semibold text-red-600">{error}</div> : null}
       </div>
       <div className="flex flex-wrap gap-2">
@@ -31,8 +31,8 @@ export default function BrandSelector({
               className={cn(
                 'rounded-full border px-4 py-2 text-sm font-semibold transition-all active:scale-[0.97]',
                 checked
-                  ? 'border-slate-900 bg-slate-900 text-white shadow-sm'
-                  : 'border-slate-300 bg-white text-slate-600 hover:border-slate-400 hover:text-slate-900',
+                  ? 'border-zinc-900 bg-zinc-900 text-white shadow-sm'
+                  : 'border-zinc-300 bg-white text-zinc-600 hover:border-zinc-400 hover:text-zinc-900',
               )}
             >
               {b}

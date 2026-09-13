@@ -1,8 +1,47 @@
 {
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/th",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
-      "source": "/((?!.*\\.).*)",
-      "destination": "/index.html"
+      "source": "/th",
+      "destination": "/th/index.html"
+    },
+    {
+      "source": "/en",
+      "destination": "/en/index.html"
+    },
+    {
+      "source": "/th/join",
+      "destination": "/th/join/index.html"
+    },
+    {
+      "source": "/en/join",
+      "destination": "/en/join/index.html"
+    },
+    {
+      "source": "/th/dealer/login",
+      "destination": "/th/dealer/login/index.html"
+    },
+    {
+      "source": "/en/dealer/login",
+      "destination": "/en/dealer/login/index.html"
+    },
+    {
+      "source": "/th/blog",
+      "destination": "/th/blog/index.html"
+    },
+    {
+      "source": "/th/blog/page/:page",
+      "destination": "/th/blog/page/:page/index.html"
+    },
+    {
+      "source": "/th/blog/:slug",
+      "destination": "/th/blog/:slug/index.html"
     }
   ]
 }

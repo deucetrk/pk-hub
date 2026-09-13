@@ -3,10 +3,10 @@ import { cn } from '@/lib/utils'
 export default function LogoMark({ className }: { className?: string }) {
   return (
     <img
-      src="/logo.png"
+      src="/logo-transparent.png"
       alt="PK HUB"
-      width={1091}
-      height={301}
+      width={2179}
+      height={721}
       className={cn(
         'h-10 w-auto object-contain',
         className
@@ -14,4 +14,3 @@ export default function LogoMark({ className }: { className?: string }) {
     />
   )
 }
-

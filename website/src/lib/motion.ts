@@ -8,15 +8,16 @@ export function useRevealMotion() {
   const container: Variants = reduceMotion
     ? { hidden: { opacity: 1 }, show: { opacity: 1 } }
     : {
-        hidden: { opacity: 0 },
+        hidden: { opacity: 1 },
         show: { opacity: 1, transition: { staggerChildren: 0.08 } },
       }
 
   const item: Variants = reduceMotion
     ? { hidden: visible, show: visible }
     : {
-        hidden: { opacity: 0, y: 18 },
-        show: { ...visible, transition: { duration: 0.42, ease: 'easeOut' } },
+        // Content is readable before hydration and without JavaScript.
+        hidden: visible,
+        show: { opacity: [0.4, 1], y: [18, 0], transition: { duration: 0.55, ease: 'easeOut' } },
       }
 
   return { container, item, reduceMotion }

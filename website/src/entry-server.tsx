@@ -4,6 +4,7 @@ import { StaticRouter } from 'react-router-dom'
 import { LazyMotion, domAnimation } from 'framer-motion'
 
 import AppRoutes from '@/AppRoutes'
+export { getHomeFaqSchema } from '@/content/homeFaqs'
 import { getPublishedArticle, getPublishedBlogPaths } from '@/content/blog/articles'
 import { BLOG_INDEX_META, DEALER_LOGIN_META, getBlogIndexMeta, HOME_META, JOIN_META, SITE_URL, type PageMeta } from '@/lib/seo'
 
@@ -42,9 +43,17 @@ export function getPageMeta(url: string): PageMeta {
         canonical: `${SITE_URL}${url}`,
         ogType: 'article',
         image: `${SITE_URL}${article.recommendedImage}`,
+        imageAlt: article.imageAlt,
         locale: 'th_TH',
+        publishedTime: `${article.publishedAt}T00:00:00+07:00`,
+        modifiedTime: `${article.modifiedAt}T00:00:00+07:00`,
       }
     }
   }
   return HOME_META.th
+}
+
+export function getRouteLastModified(url: string) {
+  if (!url.startsWith('/th/blog/')) return undefined
+  return getPublishedArticle(url.split('/').pop() ?? '')?.modifiedAt
 }

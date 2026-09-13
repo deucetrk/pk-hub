@@ -22,8 +22,8 @@ export default function TextField({
   error?: string
 }) {
   return (
-    <div className="grid gap-2">
-      <label htmlFor={id} className="text-sm font-semibold text-slate-700">
+    <div className="grid min-w-0 gap-2">
+      <label htmlFor={id} className="text-sm font-semibold text-zinc-700">
         {label}
       </label>
       <input
@@ -35,8 +35,8 @@ export default function TextField({
         inputMode={inputMode}
         type={type}
         className={cn(
-          'h-12 rounded-xl border bg-white px-4 text-base font-medium text-slate-900 outline-none transition-all placeholder:text-slate-400 focus-visible:border-slate-900 focus-visible:ring-4 focus-visible:ring-slate-900/10',
-          error ? 'border-red-500' : 'border-slate-300 hover:border-slate-400',
+          'h-12 w-full min-w-0 rounded-xl border bg-white px-4 text-base font-medium text-zinc-900 outline-none transition-all placeholder:text-zinc-400 focus-visible:border-zinc-900 focus-visible:ring-4 focus-visible:ring-zinc-900/10',
+          error ? 'border-red-500' : 'border-zinc-300 hover:border-zinc-400',
         )}
       />
       {error ? <div className="text-sm font-semibold text-red-600">{error}</div> : null}

@@ -1,13 +1,18 @@
 import { MessageCircle, Phone } from 'lucide-react'
 
 import { useLanguage } from '@/i18n/LanguageContext'
+import { cn } from '@/lib/utils'
 import { CONTACT } from '@/pages/home/constants'
 
-export default function FloatingContact() {
+type FloatingContactProps = {
+  className?: string
+}
+
+export default function FloatingContact({ className }: FloatingContactProps) {
   const { isThai } = useLanguage()
 
   return (
-    <aside className="fixed bottom-4 right-4 z-40 flex items-center gap-2 sm:bottom-6 sm:right-6">
+    <aside className={cn('fixed bottom-4 right-4 z-40 flex items-center gap-2 sm:bottom-6 sm:right-6', className)}>
       <a
         href={CONTACT.LINE_URL}
         target="_blank"
@@ -20,7 +25,7 @@ export default function FloatingContact() {
       <a
         href={CONTACT.PHONE_TEL}
         aria-label={isThai ? 'โทรหาทีมขาย' : 'Call sales team'}
-        className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-slate-950 text-white shadow-[0_6px_20px_rgba(0,0,0,0.18)] transition-colors hover:bg-slate-800 sm:h-14 sm:w-14"
+        className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-zinc-950 text-white shadow-[0_6px_20px_rgba(0,0,0,0.18)] transition-colors hover:bg-zinc-800 sm:h-14 sm:w-14"
       >
         <Phone className="h-5 w-5" />
       </a>

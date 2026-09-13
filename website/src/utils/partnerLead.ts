@@ -5,6 +5,9 @@ export type PartnerLead = {
   phone: string
   lineId: string
   email: string
+  socialContact: string
+  address: string
+  taxId: string
   interestedBrands: string[]
   note: string
   consent: boolean
@@ -15,6 +18,8 @@ export type PartnerLeadSubmission = PartnerLead & {
   sourcePage: string
   requestId: string
   website: string
+  referralCode: string
+  acquisitionSource: 'ORGANIC' | 'BD_REFERRAL'
 }
 
 export type PartnerLeadErrors = Partial<Record<keyof PartnerLead, string>>
@@ -35,6 +40,7 @@ export function validatePartnerLead(values: PartnerLead, language: 'th' | 'en' =
 
   if (!values.shopName.trim()) errors.shopName = message('กรุณากรอกชื่อร้านค้า', 'Please enter your store name')
   if (!values.province.trim()) errors.province = message('กรุณากรอกจังหวัด', 'Please enter your province')
+  if (!values.contactName.trim()) errors.contactName = message('กรุณากรอกชื่อผู้ติดต่อ', 'Please enter a contact name')
 
   if (!values.phone.trim()) {
     errors.phone = message('กรุณากรอกเบอร์โทร', 'Please enter a phone number')

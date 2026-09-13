@@ -11,7 +11,7 @@ import { fileURLToPath } from 'node:url'
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const dist = resolve(root, 'dist')
 
-const { render, getPageMeta, getPrerenderRoutes } = await import(
+const { render, getPageMeta, getPrerenderRoutes, getRouteLastModified, getHomeFaqSchema } = await import(
   resolve(root, 'dist-ssr/entry-server.js')
 )
 
@@ -31,7 +31,7 @@ function removeScriptById(html, id) {
 }
 
 function localize(html, route, meta) {
-  const isEnglish = route === '/en'
+  const isEnglish = route === '/en' || route.startsWith('/en/')
   const isHome = route === '/th' || route === '/en'
   const lang = isEnglish ? 'en' : 'th'
   let page = html
@@ -49,12 +49,24 @@ function localize(html, route, meta) {
     .replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${meta.canonical}$2`)
     .replace(/(<meta property="og:type" content=")[^"]*(")/, `$1${meta.ogType ?? 'website'}$2`)
     .replace(/(<meta property="og:image" content=")[^"]*(")/, `$1${meta.image ?? `${SITE}/og-image.jpg`}$2`)
+    .replace(/(<meta property="og:image:alt" content=")[^"]*(")/, `$1${meta.imageAlt ?? meta.title}$2`)
     .replace(/(<meta property="og:locale" content=")[^"]*(")/, `$1${meta.locale ?? 'th_TH'}$2`)
     .replace(
       /(<meta property="og:locale:alternate" content=")[^"]*(")/,
       `$1${isEnglish ? 'th_TH' : 'en_US'}$2`,
     )
     .replace(/(<link rel="canonical" href=")[^"]*(")/, `$1${meta.canonical}$2`)
+    .replace(/(<meta name="twitter:title" content=")[^"]*(")/, `$1${meta.title}$2`)
+    .replace(/(<meta\s+name="twitter:description"\s+content=")[^"]*(")/, `$1${meta.description}$2`)
+    .replace(/(<meta name="twitter:image" content=")[^"]*(")/, `$1${meta.image ?? `${SITE}/og-image.jpg`}$2`)
+    .replace(/(<meta name="twitter:image:alt" content=")[^"]*(")/, `$1${meta.imageAlt ?? meta.title}$2`)
+
+  if (meta.publishedTime) {
+    page = page.replace('</head>', `    <meta property="article:published_time" content="${meta.publishedTime}" />\n</head>`)
+  }
+  if (meta.modifiedTime) {
+    page = page.replace('</head>', `    <meta property="article:modified_time" content="${meta.modifiedTime}" />\n</head>`)
+  }
 
   if (!isHome) {
     page = removeTagById(page, 'alternate-th')
@@ -63,6 +75,19 @@ function localize(html, route, meta) {
     page = removeTagById(page, 'og-locale-alternate')
     page = removeScriptById(page, 'faq-schema')
     page = removeScriptById(page, 'video-schema')
+  }
+
+  if (isHome) {
+    const schema = JSON.stringify(getHomeFaqSchema(lang)).replace(/</g, '\\u003c')
+    page = page.replace('</head>', `<script id="faq-schema" type="application/ld+json">${schema}</script>\n</head>`)
+    page = page.replace('</head>', '<link rel="preload" as="image" href="/proof/storefront-building.webp" fetchpriority="high" />\n</head>')
+  }
+
+  if (route.endsWith('/join')) {
+    const alternate = `<link id="alternate-th" rel="alternate" hreflang="th" href="${SITE}/th/join" />
+    <link id="alternate-en" rel="alternate" hreflang="en" href="${SITE}/en/join" />
+    <link id="alternate-default" rel="alternate" hreflang="x-default" href="${SITE}/th/join" />`
+    page = page.replace('</head>', `${alternate}\n</head>`)
   }
 
   return page
@@ -116,7 +141,7 @@ const secondaryUrls = routes
   .map((route) => `
   <url>
     <loc>${SITE}${route}</loc>
-    <lastmod>${lastmod}</lastmod>
+    <lastmod>${getRouteLastModified(route) ?? lastmod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>${route.includes('/join') ? '0.9' : route.includes('/dealer/login') ? '0.8' : route === '/th/blog' ? '0.8' : '0.7'}</priority>
   </url>`)

@@ -22,6 +22,9 @@ export async function submitPartnerLead(payload: PartnerLeadSubmission) {
         phone: payload.phone.trim(),
         lineId: payload.lineId.trim(),
         email: payload.email.trim(),
+        socialContact: payload.socialContact.trim(),
+        address: payload.address.trim(),
+        taxId: payload.taxId.trim(),
         interestedBrands: payload.interestedBrands.join(', '),
         note: payload.note.trim(),
         consent: String(payload.consent),
@@ -29,6 +32,8 @@ export async function submitPartnerLead(payload: PartnerLeadSubmission) {
         sourcePage: payload.sourcePage,
         requestId: payload.requestId,
         website: payload.website,
+        referralCode: payload.referralCode,
+        acquisitionSource: payload.acquisitionSource,
       }),
       signal: controller.signal,
     })

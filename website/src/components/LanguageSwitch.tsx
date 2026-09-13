@@ -13,7 +13,7 @@ export default function LanguageSwitch({ onChange }: LanguageSwitchProps = {}) {
   }
 
   return (
-    <div className="inline-flex border border-stone-300 bg-white text-xs font-semibold" aria-label="Language">
+    <div className="inline-flex border border-zinc-300 bg-white text-xs font-semibold" aria-label="Language">
       {(['th', 'en'] as const).map((item) => (
         <button
           key={item}
@@ -21,7 +21,7 @@ export default function LanguageSwitch({ onChange }: LanguageSwitchProps = {}) {
           aria-pressed={language === item}
           onClick={() => changeLanguage(item)}
           className={`px-3 py-1.5 transition-colors ${
-            language === item ? 'bg-stone-900 text-white' : 'text-stone-500 hover:text-stone-950'
+            language === item ? 'bg-zinc-900 text-white' : 'text-zinc-500 hover:text-zinc-950'
           }`}
         >
           {item === 'th' ? 'ไทย' : 'EN'}

@@ -34,7 +34,7 @@ export default function ContactSection() {
       title={isThai ? 'พร้อมเช็กราคา? ทัก LINE มาเลย' : 'Ready to check prices? Message us on LINE.'}
       subtitle={
         isThai
-          ? 'บอกแบรนด์หรือรุ่นที่อยากได้ ทีมขายช่วยเช็กราคา สต็อก และรอบส่งให้ทันทีในเวลาทำการ'
+          ? 'บอกแบรนด์หรือรุ่นที่อยากได้ ทีมขายช่วยเช็กราคา สต็อก และรอบส่งในเวลาทำการ'
           : 'Tell us the brands or models you need and sales will check prices, stock, and dispatch rounds during business hours.'
       }
     >
@@ -45,7 +45,7 @@ export default function ContactSection() {
         viewport={revealViewport}
         className="grid gap-10"
       >
-        <div className="grid gap-px overflow-hidden border border-slate-800 bg-slate-800 md:grid-cols-2">
+        <div className="grid gap-px overflow-hidden border border-zinc-800 bg-zinc-800 md:grid-cols-2">
           {contacts.map((contact) => {
             const Icon = contact.icon
             return (
@@ -57,15 +57,15 @@ export default function ContactSection() {
                 rel={contact.href.startsWith('http') ? 'noreferrer' : undefined}
                 className={
                   contact.highlight
-                    ? 'group flex min-h-28 items-center justify-between gap-5 bg-[#06c755] p-6 transition-colors hover:bg-[#05b34c] sm:p-8'
-                    : 'group flex min-h-28 items-center justify-between gap-5 bg-[#111827] p-6 transition-colors hover:bg-slate-900 sm:p-8'
+                    ? 'group flex min-h-28 items-center justify-between gap-5 bg-[#087c3b] p-6 transition-colors hover:bg-[#066430] sm:p-8'
+                    : 'group flex min-h-28 items-center justify-between gap-5 bg-[#18181b] p-6 transition-colors hover:bg-zinc-800 sm:p-8'
                 }
               >
                 <span className="flex items-center gap-4 whitespace-nowrap text-lg font-bold text-white">
                   <Icon className="h-6 w-6 stroke-[1.5] transition-transform motion-safe:group-hover:translate-x-0.5" />
                   {contact.label}
                 </span>
-                <span className={`max-w-[15rem] text-right text-sm font-semibold leading-6 ${contact.highlight ? 'text-white' : 'text-slate-400 group-hover:text-slate-200'}`}>
+                <span className={`max-w-[15rem] text-right text-sm font-semibold leading-6 ${contact.highlight ? 'text-white' : 'text-zinc-400 group-hover:text-zinc-200'}`}>
                   {contact.value}
                 </span>
               </m.a>
@@ -73,18 +73,18 @@ export default function ContactSection() {
           })}
         </div>
 
-        <m.div variants={item} className="text-sm font-semibold leading-7 text-slate-400">
+        <m.div variants={item} className="text-sm font-semibold leading-7 text-zinc-400">
           {isThai ? 'พื้นที่ที่ดูแลเป็นหลัก: ' : 'Primary service area: '}
-          <span className="text-slate-200">{provinces.join(' • ')}</span>
+          <span className="text-zinc-200">{provinces.join(' • ')}</span>
           {isThai ? ' และจัดส่งทั่วประเทศตามรอบขนส่ง' : ' — plus nationwide delivery by dispatch round.'}
         </m.div>
 
-        <m.div variants={item} className="grid gap-6 border-t border-slate-800 pt-10">
+        <m.div variants={item} className="grid gap-6 border-t border-zinc-800 pt-10">
           <div className="grid max-w-2xl gap-2">
             <div className="text-xl font-black text-white">
               {isThai ? 'ไม่สะดวกทักตอนนี้? ฝากข้อมูลร้านไว้' : 'No time to chat? Leave your store details'}
             </div>
-            <div className="text-base leading-[1.8] text-slate-400">
+            <div className="text-base leading-[1.8] text-zinc-400">
               {isThai ? 'ทีมขายจะเช็กราคาและติดต่อกลับให้' : 'Our sales team will check prices and get back to you.'}
             </div>
           </div>

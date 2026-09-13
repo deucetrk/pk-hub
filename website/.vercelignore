@@ -1,0 +1,17 @@
+# Local review artifacts and private editorial context.
+.review-shots/
+content-drafts/
+media-originals/
+docs/
+google-apps-script/
+scripts/validate-blog-drafts.mjs
+PKHUB_CONTENT_FACTS.md
+PKHUB_BLOG_WORKFLOW.md
+
+# Local or generated files that are not required by the Vercel build.
+/.vercel/
+/dist/
+/dist-ssr/
+*.md
+*.local
+.env*

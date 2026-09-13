@@ -8,26 +8,31 @@ export type PageMeta = {
   canonical: string
   ogType?: 'website' | 'article'
   image?: string
+  imageAlt?: string
   locale?: 'th_TH' | 'en_US'
+  publishedTime?: string
+  modifiedTime?: string
 }
 
 export const HOME_META = {
   th: {
     title: 'ค้าส่งมือถือฉะเชิงเทรา สำหรับร้านค้า | PK HUB',
     description:
-      'PK HUB ขายส่งและค้าส่งมือถือฉะเชิงเทรา สำหรับร้านค้าและตัวแทนจำหน่าย เครื่องศูนย์ไทย มี VAT ใบกำกับภาษี และทีมพื้นที่สำหรับเช็กสต็อก ราคาส่ง และรอบจัดส่ง',
+      'PK HUB พาร์ทเนอร์ค้าส่งมือถือในฉะเชิงเทราและภาคตะวันออก หลายแบรนด์ พร้อม Dealer Portal สำหรับร้านที่ได้รับอนุมัติ เช็กราคา สต็อกอ้างอิง และคุยกับทีมโดยตรง',
     canonical: `${SITE_URL}/th`,
     ogType: 'website',
     image: `${SITE_URL}/og-image.jpg`,
+    imageAlt: 'หน้าร้านและทีมค้าส่งมือถือ PK HUB ในฉะเชิงเทรา',
     locale: 'th_TH',
   },
   en: {
     title: 'PK HUB | Chachoengsao Smartphone Wholesale Partner',
     description:
-      'PK HUB is a Chachoengsao smartphone wholesale partner and Authorized AIS Distributor supplying official Thai-market phones with VAT invoices.',
+      'Multi-brand phone wholesale in Chachoengsao and eastern Thailand. Approved retailers can check pricing, reference stock, and orders in the PK HUB Dealer Portal.',
     canonical: `${SITE_URL}/en`,
     ogType: 'website',
     image: `${SITE_URL}/og-image.jpg`,
+    imageAlt: 'PK HUB smartphone wholesale storefront in Chachoengsao',
     locale: 'en_US',
   },
 } satisfies Record<'th' | 'en', PageMeta>
@@ -39,6 +44,7 @@ export const BLOG_INDEX_META: PageMeta = {
   canonical: `${SITE_URL}/th/blog`,
   ogType: 'website',
   image: `${SITE_URL}/og-image.jpg`,
+  imageAlt: 'บทความมือถือ ธุรกิจร้านมือถือ และเทคโนโลยีจาก PK HUB',
   locale: 'th_TH',
 }
 
@@ -102,7 +108,27 @@ export function applyPageMeta(meta: PageMeta) {
   document.querySelector('meta[property="og:url"]')?.setAttribute('content', meta.canonical)
   document.querySelector('meta[property="og:type"]')?.setAttribute('content', meta.ogType ?? 'website')
   document.querySelector('meta[property="og:image"]')?.setAttribute('content', meta.image ?? `${SITE_URL}/og-image.jpg`)
+  document.querySelector('meta[property="og:image:alt"]')?.setAttribute('content', meta.imageAlt ?? meta.title)
   document.querySelector('meta[property="og:locale"]')?.setAttribute('content', meta.locale ?? 'th_TH')
+  document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', meta.title)
+  document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', meta.description)
+  document.querySelector('meta[name="twitter:image"]')?.setAttribute('content', meta.image ?? `${SITE_URL}/og-image.jpg`)
+  document.querySelector('meta[name="twitter:image:alt"]')?.setAttribute('content', meta.imageAlt ?? meta.title)
+
+  document.querySelector('meta[property="article:published_time"]')?.remove()
+  document.querySelector('meta[property="article:modified_time"]')?.remove()
+  if (meta.publishedTime) {
+    const published = document.createElement('meta')
+    published.setAttribute('property', 'article:published_time')
+    published.setAttribute('content', meta.publishedTime)
+    document.head.appendChild(published)
+  }
+  if (meta.modifiedTime) {
+    const modified = document.createElement('meta')
+    modified.setAttribute('property', 'article:modified_time')
+    modified.setAttribute('content', meta.modifiedTime)
+    document.head.appendChild(modified)
+  }
 }
 
 export function usePageMeta(meta: PageMeta) {
