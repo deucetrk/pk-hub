@@ -2,7 +2,7 @@
 
 Status: canonical public-site design direction
 Owner accepted: 2026-09-20
-Last verified: 2026-09-20 local desktop and 390px public acceptance; production release not performed
+Last verified: 2026-09-20 production desktop and 390px public acceptance at `pkhub.co`
 
 This document governs the public PK HUB website only. Dealer Portal and PK Commerce remain separate
 products and deployments. Public PK HUB explains the relationship, shows real operating proof, and
@@ -87,4 +87,9 @@ capabilities before owner-approved claims and owning contracts exist.
 - `/th` renders at desktop and 390px without horizontal overflow. Mobile navigation opens with an
   accessible label, and the three Portal illustration tabs update the selected task and panel.
 - Reduced-motion fallbacks exist in `src/index.css` and `src/lib/motion.ts`.
-- No production deployment or hosted-route verification was performed for this redesign slice.
+- Release `c7d6375` is production-active through Vercel deployment
+  `dpl_2S5UP4zYh6nTfnEEmi2nN5t8dH4z` on `https://pkhub.co` and `https://www.pkhub.co`.
+- Live `/th`, `/en`, `/th/join`, `/th/dealer/login`, and `/th/blog` return `200`; an unknown route
+  returns `404`; the Thai homepage canonical is `https://pkhub.co/th`.
+- Live 390 x 844 acceptance confirms contained document width, completed hero entrance motion, and
+  an accessible mobile menu with language, content, LINE, application, and Dealer Portal routes.
