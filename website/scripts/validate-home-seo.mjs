@@ -51,8 +51,9 @@ for (const lang of ['th', 'en']) {
   assert(body.includes('href="https://lin.ee/VEgW6qG"'), `${lang}: LINE CTA`)
   assert(body.includes('preload="none"'), `${lang}: video deferred until requested`)
   assert(body.includes('id="dealer-portal"'), `${lang}: Dealer Portal is prerendered`)
-  assert(body.includes('PK INTELLIGENCE') && body.includes('FINANCING OPTIONS'), `${lang}: ecosystem content`)
-  assert(body.includes(lang === 'th' ? 'บริการด้านล่างยังไม่เปิดใช้งานผ่านเว็บไซต์' : 'the services below are not yet available through this website.'), `${lang}: future-service boundary`)
+  assert(body.includes('01 / TRUSTED SUPPLY') && body.includes('02 / DEALER PORTAL'), `${lang}: ecosystem content`)
+  assert(!body.includes('PK INTELLIGENCE') && !body.includes('FINANCING OPTIONS'), `${lang}: speculative services removed`)
+  assert(body.includes(lang === 'th' ? 'สิทธิ์ใช้งานเปิดหลังตรวจสอบและอนุมัติ' : 'Access follows review and approval.'), `${lang}: access boundary`)
   assert(body.includes(lang === 'th' ? 'ภาพอธิบายการใช้งานจากโครงสร้าง Portal' : 'Illustration based on the Portal structure'), `${lang}: illustrative UI labelled`)
   assert(body.includes('/logo-transparent.png'), `${lang}: transparent brand asset`)
 }
@@ -70,4 +71,4 @@ for (const match of sitemap.matchAll(/<loc>https:\/\/pkhub.co\/([^<]+)<\/loc>/g)
   assert.equal(destination, path + '/index.html', `Wrong hosted HTML for ${path}`)
 }
 assert(!rewrites.some(({ destination }) => destination === '/index.html'), 'No homepage catch-all for unknown routes')
-console.log('PASS: locale metadata, canonical/hreflang, visible prerendering, FAQ parity, images, CTA anchors, deferred video, and sitemap routes')
+console.log('PASS: locale metadata, canonical/hreflang, visible prerendering, truthful ecosystem content, FAQ parity, images, CTA anchors, deferred video, and sitemap routes')

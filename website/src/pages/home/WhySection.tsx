@@ -117,27 +117,9 @@ export default function WhySection() {
             <div><p>{isThai ? 'ดูราคาสำหรับร้าน เช็กสต็อกอ้างอิง และติดตามคำสั่งซื้อผ่าน Dealer Portal สำหรับร้านที่ผ่านการตรวจสอบและได้รับสิทธิ์แล้ว' : 'View your store’s pricing, reference stock, and order status through the Dealer Portal after review and access approval.'}</p><a className="pk-text-link" href={withReferral(`/${language}/dealer/login`, referralCode)}>{isThai ? 'เข้าสู่ Dealer Portal' : 'Enter the Dealer Portal'}<ArrowUpRight size={18} aria-hidden="true" /></a></div>
           </div>
           <m.div variants={item} initial="hidden" whileInView="show" viewport={revealViewport}><PortalPreview /></m.div>
+          <div className="pk-ecosystem-end"><div><p className="font-display text-xl font-semibold">{isThai ? 'เริ่มเป็นส่วนหนึ่งของเครือข่าย PK' : 'Make your next move with PK'}</p><p className="mt-2 text-sm leading-6 text-zinc-600">{isThai ? 'สมัครให้ทีมรู้จักร้านของคุณ สิทธิ์ใช้งานเปิดหลังตรวจสอบและอนุมัติ' : 'Introduce your store. Access follows review and approval.'}</p></div><a href={withReferral(`/${language}/join`, referralCode)} className="pk-action pk-action-primary">{isThai ? 'สมัครเป็นพาร์ทเนอร์' : 'Become a partner'}<ArrowUpRight size={18} aria-hidden="true" /></a></div>
         </Container>
       </div>
-      <Container>
-        <div className="pk-next-heading"><p className="pk-eyebrow">WHAT WE’RE BUILDING NEXT</p><p>{isThai ? 'ทิศทางต่อไปของเครือข่าย PK — บริการด้านล่างยังไม่เปิดใช้งานผ่านเว็บไซต์' : 'The next direction for the PK network — the services below are not yet available through this website.'}</p></div>
-        <div className="pk-next-grid">
-          <m.article className="pk-intelligence" variants={item} initial="hidden" whileInView="show" viewport={revealViewport}>
-            <p className="pk-eyebrow">03 / PK INTELLIGENCE</p><span className="pk-development">{isThai ? 'แนวทางที่กำลังพัฒนา' : 'In development'}</span>
-            <h3 className="font-display">{isThai ? <>เติมของครั้งถัดไป<br />ด้วยข้อมูลที่ดีกว่า</> : <>Better information.<br />Better buying decisions.</>}</h3>
-            <p>{isThai ? 'เรากำลังพัฒนาแนวทางใช้ข้อมูลสินค้า ราคา และการเคลื่อนไหว ช่วยให้ร้านตัดสินใจเรื่องของที่จะเติมได้ชัดขึ้น' : 'We’re developing ways to use product, price, and movement information to help stores make clearer replenishment decisions.'}</p>
-            <ul className="pk-question-list">{(isThai ? ['รุ่นไหนควรเติม?', 'อะไรเริ่มหมุนช้า?', 'งบครั้งนี้ควรลงที่ไหน?'] : ['Which models should I restock?', 'What is moving more slowly?', 'Where should my next budget go?']).map(q => <li key={q}>{q}<ArrowUpRight size={20} aria-hidden="true" /></li>)}</ul>
-            <p className="pk-feature-note">{isThai ? 'ตัวอย่างคำถามที่ตั้งใจช่วยตอบ ยังไม่มีคำแนะนำหรือผลวิเคราะห์ให้ใช้งาน' : 'Examples of questions we aim to help answer. Recommendations and analysis are not yet available.'}</p>
-          </m.article>
-          <m.article className="pk-financing" variants={item} initial="hidden" whileInView="show" viewport={revealViewport}>
-            <p className="pk-eyebrow">04 / FINANCING OPTIONS</p><span className="pk-development">{isThai ? 'อยู่ระหว่างวางแนวทางบริการ' : 'Service direction under review'}</span>
-            <h3 className="font-display">{isThai ? <>เพิ่มทางเลือก<br />ให้การขายของร้าน</> : <>More ways to support<br />your store’s sales.</>}</h3>
-            <p>{isThai ? 'แนวทางที่เรากำลังศึกษา คือเชื่อมร้านค้ากับบริการผ่อนสำหรับผู้ซื้อ และแยกออกจากเรื่องเงินทุนของร้านอย่างชัดเจน' : 'We’re exploring how retailers could connect customers with installment services, clearly separate from financing for the retailer itself.'}</p>
-            <div className="pk-finance-distinction"><div><h4>{isThai ? 'ผ่อนสำหรับลูกค้าหน้าร้าน' : 'Installments for retail customers'}</h4><p>{isThai ? 'ทางเลือกสำหรับผู้ซื้อ โดยผู้ให้บริการเป็นผู้กำหนดเงื่อนไขและพิจารณาอนุมัติ' : 'Options for the buyer, with terms and approval determined by the provider.'}</p></div><div><h4>{isThai ? 'เงินทุนสำหรับร้านค้า' : 'Financing for the retailer'}</h4><p>{isThai ? 'เป็นคนละบริการ ยังไม่มีวงเงินหรือข้อเสนอสินเชื่อร้านค้าให้สมัครผ่านหน้านี้' : 'A separate service. No retailer credit limit or loan offer is available through this page.'}</p></div></div>
-          </m.article>
-        </div>
-        <div className="pk-ecosystem-end"><div><p className="font-display text-xl font-semibold">{isThai ? 'เริ่มเป็นส่วนหนึ่งของเครือข่าย PK' : 'Make your next move with PK'}</p><p className="mt-2 text-sm leading-6 text-zinc-600">{isThai ? 'สมัครให้ทีมรู้จักร้านของคุณ สิทธิ์ใช้งานเปิดหลังตรวจสอบและอนุมัติ' : 'Introduce your store. Access follows review and approval.'}</p></div><a href={withReferral(`/${language}/join`, referralCode)} className="pk-action pk-action-primary">{isThai ? 'สมัครเป็นพาร์ทเนอร์' : 'Become a partner'}<ArrowUpRight size={18} aria-hidden="true" /></a></div>
-      </Container>
     </section>
   )
 }

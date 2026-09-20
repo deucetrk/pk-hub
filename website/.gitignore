@@ -24,3 +24,9 @@ dist-ssr
 *.sw?
 .vercel
 media-originals/
+
+# Local strategy drafts and business notes stay out of the public-site repository.
+*.md
+!AGENTS.md
+!DESIGN.md
+.env*
