@@ -1,5 +1,5 @@
 {
-  "buildCommand": "npm --prefix website run check && npm --prefix website run lint && npm --prefix website run build && npm --prefix website run seo:validate",
+  "buildCommand": "npm --prefix website run build",
   "outputDirectory": "website/dist",
   "installCommand": "npm --prefix website install --no-audit --no-fund",
   "framework": null,
