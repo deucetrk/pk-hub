@@ -1,0 +1,35 @@
+name: Verify PKHub site
+
+on:
+  pull_request:
+    paths:
+      - 'website/**'
+      - 'vercel.json'
+      - '.github/workflows/pkhub-site.yml'
+  push:
+    branches:
+      - main
+    paths:
+      - 'website/**'
+      - 'vercel.json'
+      - '.github/workflows/pkhub-site.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: website
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: website/package-lock.json
+      - run: npm ci
+      - run: npm run check
+      - run: npm run lint
+      - run: npm run build
+      - run: npm run seo:validate

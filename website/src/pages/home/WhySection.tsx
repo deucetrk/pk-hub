@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { m } from 'framer-motion'
+import { AnimatePresence, m } from 'framer-motion'
 import { ArrowRight, ArrowUpRight, LockKeyhole, Search, PackageCheck, SlidersHorizontal } from 'lucide-react'
 import Container from '@/components/Container'
 import { useLanguage } from '@/i18n/LanguageContext'
@@ -23,6 +23,7 @@ const PORTAL_STEPS = {
 function PortalPreview() {
   const { isThai, language } = useLanguage()
   const [active, setActive] = useState(0)
+  const { reduceMotion } = useRevealMotion()
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([])
   const steps = PORTAL_STEPS[language]
   const icons = [Search, SlidersHorizontal, PackageCheck]
@@ -49,23 +50,33 @@ function PortalPreview() {
               }}><span aria-hidden="true">0{index + 1}</span>{label}</button>
           ))}
         </div>
-        <div key={active} id="portal-panel" role="tabpanel" aria-labelledby={`portal-tab-${active}`} tabIndex={0} className="pk-portal-panel">
-          <div className="pk-portal-preview-heading"><Icon size={24} strokeWidth={1.5} aria-hidden="true" /><span>{isThai ? 'สำหรับร้านที่ได้รับอนุมัติ' : 'For approved partner stores'}</span></div>
-          <h4 className="font-display">{steps[active][1]}</h4>
-          <p>{steps[active][2]}</p>
-          {active === 0 ? <div className="pk-portal-example">
-            <div className="pk-catalog-search"><Search size={17} aria-hidden="true" />{isThai ? 'แบรนด์ · รุ่น · ความจุ' : 'Brand · Model · Capacity'}</div>
-            <div className="pk-catalog-brands"><span>Apple</span><span>Samsung</span><span>OPPO</span><span>vivo</span></div>
-            <div className="pk-catalog-note"><LockKeyhole size={17} aria-hidden="true" />{isThai ? 'เข้าสู่ระบบเพื่อดูรายการและราคาสำหรับร้านคุณ' : 'Sign in for your store’s catalog and prices'}</div>
-          </div> : active === 1 ? <dl className="pk-portal-example pk-data-rows">
-            <div><dt>{isThai ? 'ราคาส่ง' : 'Wholesale price'}</dt><dd>{isThai ? 'ตามสิทธิ์ของร้าน' : 'Based on store access'}</dd></div>
-            <div><dt>{isThai ? 'สต็อก' : 'Stock'}</dt><dd>{isThai ? 'ข้อมูลอ้างอิงตามรอบอัปเดต' : 'Reference data, updated in batches'}</dd></div>
-            <div><dt>{isThai ? 'ก่อนยืนยัน' : 'Before confirming'}</dt><dd>{isThai ? 'ตรวจสอบเงื่อนไขของรายการ' : 'Review the item’s terms'}</dd></div>
-          </dl> : <div className="pk-portal-example pk-order-preview">
-            <PackageCheck size={34} strokeWidth={1.3} aria-hidden="true" />
-            <span>{isThai ? 'คำสั่งซื้อของร้านคุณ' : 'Your store’s orders'}</span>
-            <p>{isThai ? 'รายละเอียดออเดอร์ สถานะ และประวัติ จะอยู่ในบัญชีที่ได้รับอนุมัติ' : 'Order details, status, and history are available in your approved account.'}</p>
-          </div>}
+        <div id="portal-panel" role="tabpanel" aria-labelledby={`portal-tab-${active}`} tabIndex={0} className="pk-portal-panel">
+          <AnimatePresence initial={false} mode="wait">
+            <m.div
+              key={active}
+              initial={reduceMotion ? false : { opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={reduceMotion ? undefined : { opacity: 0, y: -6 }}
+              transition={{ duration: reduceMotion ? 0 : 0.2, ease: 'easeOut' }}
+            >
+              <div className="pk-portal-preview-heading"><Icon size={24} strokeWidth={1.5} aria-hidden="true" /><span>{isThai ? 'สำหรับร้านที่ได้รับอนุมัติ' : 'For approved partner stores'}</span></div>
+              <h4 className="font-display">{steps[active][1]}</h4>
+              <p>{steps[active][2]}</p>
+              {active === 0 ? <div className="pk-portal-example">
+                <div className="pk-catalog-search"><Search size={17} aria-hidden="true" />{isThai ? 'แบรนด์ · รุ่น · ความจุ' : 'Brand · Model · Capacity'}</div>
+                <div className="pk-catalog-brands"><span>Apple</span><span>Samsung</span><span>OPPO</span><span>vivo</span></div>
+                <div className="pk-catalog-note"><LockKeyhole size={17} aria-hidden="true" />{isThai ? 'เข้าสู่ระบบเพื่อดูรายการและราคาสำหรับร้านคุณ' : 'Sign in for your store’s catalog and prices'}</div>
+              </div> : active === 1 ? <dl className="pk-portal-example pk-data-rows">
+                <div><dt>{isThai ? 'ราคาส่ง' : 'Wholesale price'}</dt><dd>{isThai ? 'ตามสิทธิ์ของร้าน' : 'Based on store access'}</dd></div>
+                <div><dt>{isThai ? 'สต็อก' : 'Stock'}</dt><dd>{isThai ? 'ข้อมูลอ้างอิงตามรอบอัปเดต' : 'Reference data, updated in batches'}</dd></div>
+                <div><dt>{isThai ? 'ก่อนยืนยัน' : 'Before confirming'}</dt><dd>{isThai ? 'ตรวจสอบเงื่อนไขของรายการ' : 'Review the item’s terms'}</dd></div>
+              </dl> : <div className="pk-portal-example pk-order-preview">
+                <PackageCheck size={34} strokeWidth={1.3} aria-hidden="true" />
+                <span>{isThai ? 'คำสั่งซื้อของร้านคุณ' : 'Your store’s orders'}</span>
+                <p>{isThai ? 'รายละเอียดออเดอร์ สถานะ และประวัติ จะอยู่ในบัญชีที่ได้รับอนุมัติ' : 'Order details, status, and history are available in your approved account.'}</p>
+              </div>}
+            </m.div>
+          </AnimatePresence>
         </div>
       </div>
       <p className="pk-demo-caption">{isThai ? 'ภาพอธิบายการใช้งานจากโครงสร้าง Portal · ไม่แสดงราคา สต็อก หรือข้อมูลร้านค้าจริง' : 'Illustration based on the Portal structure · No actual prices, stock, or store data shown'}</p>
