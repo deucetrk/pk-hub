@@ -35,7 +35,7 @@ export default function TextField({
         inputMode={inputMode}
         type={type}
         className={cn(
-          'h-12 w-full min-w-0 rounded-xl border bg-white px-4 text-base font-medium text-zinc-900 outline-none transition-all placeholder:text-zinc-400 focus-visible:border-zinc-900 focus-visible:ring-4 focus-visible:ring-zinc-900/10',
+          'h-12 w-full min-w-0 border bg-white px-4 text-base font-medium text-zinc-900 outline-none transition-colors placeholder:text-zinc-400 focus-visible:border-zinc-900 focus-visible:ring-2 focus-visible:ring-zinc-900/10',
           error ? 'border-red-500' : 'border-zinc-300 hover:border-zinc-400',
         )}
       />

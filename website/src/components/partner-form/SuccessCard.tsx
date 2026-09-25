@@ -41,13 +41,13 @@ export default function SuccessCard({ values, onReset }: { values: PartnerLead; 
           href={CONTACT.LINE_URL}
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center justify-center rounded-xl bg-[#06c755] px-6 py-4 text-sm font-bold text-white transition-colors hover:bg-[#05b34c]"
+          className="inline-flex items-center justify-center bg-[#06c755] px-6 py-4 text-sm font-bold text-white transition-colors hover:bg-[#05b34c]"
         >
           {isThai ? 'Inbox LINE ต่อเลย' : 'Inbox LINE now'}
         </a>
         <button
           type="button"
-          className="inline-flex items-center justify-center rounded-xl border border-zinc-300 bg-white px-6 py-4 text-sm font-semibold text-zinc-700 transition-colors hover:border-zinc-400 hover:text-zinc-900"
+          className="inline-flex items-center justify-center border border-zinc-300 bg-white px-6 py-4 text-sm font-semibold text-zinc-700 transition-colors hover:border-zinc-400 hover:text-zinc-900"
           onClick={onReset}
         >
           {isThai ? 'ฝากข้อมูลร้านอื่น' : 'Send another store'}

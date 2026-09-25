@@ -12,7 +12,7 @@ export default function ConsentField({
   isThai?: boolean
 }) {
   return (
-    <label className={cn('grid cursor-pointer gap-2 rounded-xl border bg-zinc-50 p-4 text-base transition-colors', error ? 'border-red-500' : 'border-zinc-200')}>
+    <label className={cn('grid cursor-pointer gap-2 border bg-zinc-50 p-4 text-base transition-colors', error ? 'border-red-500' : 'border-zinc-200')}>
       <div className="flex items-start gap-3">
         <input type="checkbox" className="mt-1 h-4 w-4 rounded border-zinc-300 accent-zinc-900" checked={checked} onChange={(e) => onChange(e.target.checked)} />
         <div>

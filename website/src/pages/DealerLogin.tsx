@@ -26,11 +26,27 @@ export default function DealerLogin() {
       <main>
         <section className="border-b border-zinc-300">
           <Container className="py-12 sm:py-16 lg:py-24">
-            <div className="mx-auto max-w-2xl text-center">
-              <div className="mx-auto flex h-14 w-14 items-center justify-center bg-[#2457d6] text-white">
+            <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
+              <figure className="order-2 lg:order-1">
+                <img
+                  src="/proof/storefront-entrance.webp"
+                  alt={isThai ? 'ทางเข้าหน้าร้าน PK HUB ฉะเชิงเทรา' : 'PK HUB storefront entrance in Chachoengsao'}
+                  width={1000}
+                  height={1333}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-[4/3] w-full object-cover"
+                />
+                <figcaption className="mt-3 text-xs leading-5 text-zinc-500">
+                  {isThai ? 'หน้าสำหรับร้านค้าที่ได้รับสิทธิ์แล้ว' : 'For stores with approved access.'}
+                </figcaption>
+              </figure>
+
+              <div className="order-1 lg:order-2">
+              <div className="flex h-14 w-14 items-center justify-center bg-[#2457d6] text-white">
                 <Store className="h-7 w-7" aria-hidden="true" />
               </div>
-              <p className="mt-6 text-sm font-semibold text-[#2457d6]">
+              <p className="pk-eyebrow mt-6">
                 {isThai ? 'สำหรับร้านค้าพาร์ทเนอร์ที่ได้รับอนุมัติแล้ว' : 'For approved retail partners'}
               </p>
               <h1 className="mt-4 font-display text-4xl font-black leading-[1.1] tracking-[-0.035em] sm:text-5xl">
@@ -81,6 +97,7 @@ export default function DealerLogin() {
                   {isThai ? 'สมัครเป็นร้านค้าพาร์ทเนอร์' : 'Apply to become a retail partner'}
                   <ArrowRight className="h-4 w-4" />
                 </a>
+              </div>
               </div>
             </div>
           </Container>

@@ -33,7 +33,7 @@ export default function Join() {
         <section className="border-b border-zinc-300">
           <Container className="grid gap-10 py-12 sm:py-16 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16 lg:py-20">
             <div className="self-start lg:sticky lg:top-28">
-              <p className="mb-5 text-sm font-semibold text-[#2457d6]">
+              <p className="pk-eyebrow mb-5">
                 {isThai ? 'สมัครเป็นร้านค้าพาร์ทเนอร์' : 'Become a retail partner'}
               </p>
               <h1 className="max-w-xl font-display text-4xl font-black leading-[1.16] tracking-[-0.035em] sm:text-5xl">
@@ -76,6 +76,21 @@ export default function Join() {
                 <MessageCircle className="h-4 w-4" />
                 {isThai ? 'ต้องการคุยก่อน? ทักทีม PK ทาง LINE' : 'Want to talk first? Message PK on LINE'}
               </a>
+
+              <figure className="mt-10 border-t border-zinc-300 pt-5">
+                <img
+                  src="/proof/storefront-entrance.webp"
+                  alt={isThai ? 'ทางเข้าหน้าร้าน PK HUB ฉะเชิงเทรา' : 'PK HUB storefront entrance in Chachoengsao'}
+                  width={1000}
+                  height={1333}
+                  loading="lazy"
+                  decoding="async"
+                  className="aspect-[4/3] w-full object-cover"
+                />
+                <figcaption className="mt-3 text-xs leading-5 text-zinc-500">
+                  {isThai ? 'เริ่มจากร้านจริงและการคุยกับทีมจริง' : 'Start with a real store and a real conversation.'}
+                </figcaption>
+              </figure>
             </div>
 
             <div>

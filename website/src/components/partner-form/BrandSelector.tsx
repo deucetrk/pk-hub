@@ -29,9 +29,9 @@ export default function BrandSelector({
               aria-pressed={checked}
               onClick={() => onToggle(b, !checked)}
               className={cn(
-                'rounded-full border px-4 py-2 text-sm font-semibold transition-all active:scale-[0.97]',
+                'border px-4 py-2 text-sm font-semibold transition-colors',
                 checked
-                  ? 'border-zinc-900 bg-zinc-900 text-white shadow-sm'
+                  ? 'border-zinc-900 bg-zinc-900 text-white'
                   : 'border-zinc-300 bg-white text-zinc-600 hover:border-zinc-400 hover:text-zinc-900',
               )}
             >

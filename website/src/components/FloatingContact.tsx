@@ -17,7 +17,7 @@ export default function FloatingContact({ className }: FloatingContactProps) {
         href={CONTACT.LINE_URL}
         target="_blank"
         rel="noreferrer"
-        className="inline-flex h-12 items-center gap-2 rounded-full bg-[#06c755] px-4 text-sm font-bold text-white shadow-[0_6px_20px_rgba(0,0,0,0.18)] transition-all hover:bg-[#05b34c] motion-safe:hover:-translate-y-0.5 sm:h-14 sm:px-5"
+        className="inline-flex h-12 items-center gap-2 border border-[#06c755] bg-[#06c755] px-4 text-sm font-bold text-white transition-colors hover:bg-[#05b34c] sm:h-14 sm:px-5"
       >
         <MessageCircle className="h-5 w-5 fill-current" />
         Inbox LINE
@@ -25,7 +25,7 @@ export default function FloatingContact({ className }: FloatingContactProps) {
       <a
         href={CONTACT.PHONE_TEL}
         aria-label={isThai ? 'โทรหาทีมขาย' : 'Call sales team'}
-        className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-zinc-950 text-white shadow-[0_6px_20px_rgba(0,0,0,0.18)] transition-colors hover:bg-zinc-800 sm:h-14 sm:w-14"
+        className="inline-flex h-12 w-12 items-center justify-center border border-zinc-950 bg-zinc-950 text-white transition-colors hover:bg-zinc-800 sm:h-14 sm:w-14"
       >
         <Phone className="h-5 w-5" />
       </a>

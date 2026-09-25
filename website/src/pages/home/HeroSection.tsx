@@ -13,7 +13,7 @@ export default function HeroSection() {
     <section className="pk-hero" aria-labelledby="hero-title">
       <div className="pk-hero-copy">
         <p className="pk-hero-location">{isThai ? 'ฉะเชิงเทรา · ดูแลร้านค้าในภาคตะวันออก' : 'Chachoengsao · For retailers across eastern Thailand'}</p>
-        <p className="pk-hero-brand font-display">WITH PK.</p>
+        <p className="pk-hero-brand font-display"><span className="pk-typewriter">WITH PK HUB.</span></p>
         <h1 id="hero-title" className="pk-hero-title font-display">
           {isThai ? <>ร้านคุณไปได้ไกลกว่า<br /><span>เมื่อมีพาร์ทเนอร์ที่ใช่</span></> : <>More for your store.<br /><span>A partner for what’s next.</span></>}
         </h1>

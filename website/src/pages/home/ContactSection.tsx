@@ -45,7 +45,7 @@ export default function ContactSection() {
         viewport={revealViewport}
         className="grid gap-10"
       >
-        <div className="grid gap-px overflow-hidden border border-zinc-800 bg-zinc-800 md:grid-cols-2">
+        <div className="pk-contact-grid grid gap-px overflow-hidden border border-zinc-800 bg-zinc-800 md:grid-cols-3">
           {contacts.map((contact) => {
             const Icon = contact.icon
             return (
@@ -57,8 +57,8 @@ export default function ContactSection() {
                 rel={contact.href.startsWith('http') ? 'noreferrer' : undefined}
                 className={
                   contact.highlight
-                    ? 'group flex min-h-28 items-center justify-between gap-5 bg-[#087c3b] p-6 transition-colors hover:bg-[#066430] sm:p-8'
-                    : 'group flex min-h-28 items-center justify-between gap-5 bg-[#18181b] p-6 transition-colors hover:bg-zinc-800 sm:p-8'
+                    ? 'pk-contact-primary group flex min-h-24 items-center justify-between gap-5 bg-[#087c3b] p-5 transition-colors hover:bg-[#066430] md:col-span-3 sm:p-7'
+                    : 'group flex min-h-20 items-center justify-between gap-5 bg-[#18181b] p-5 transition-colors hover:bg-zinc-800 sm:p-7'
                 }
               >
                 <span className="flex items-center gap-4 whitespace-nowrap text-lg font-bold text-white">

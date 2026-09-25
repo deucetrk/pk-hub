@@ -70,7 +70,7 @@ export default function Navbar() {
       <Container className="py-3">
         <div className="flex items-center justify-between gap-4 lg:gap-6">
           <a href={location.pathname === homePath ? '#top' : homePath} className="flex shrink-0 items-center" aria-label="PK HUB">
-            <LogoMark className="h-10 sm:h-12 w-auto shrink-0" />
+            <LogoMark className="h-11 sm:h-12 w-auto shrink-0" />
           </a>
 
           <nav className="hidden items-center gap-5 xl:gap-7 xl:flex" aria-label={isThai ? 'เมนู' : 'Navigation'}>
