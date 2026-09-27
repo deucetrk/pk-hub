@@ -16,11 +16,11 @@ const MOMENTS = [
     altTh: 'กล่องมือถือห่อวัสดุกันกระแทกก่อนจัดส่ง', altEn: 'Phone boxes protected with cushioning for dispatch',
   },
   {
-    src: '/proof/storefront-building.webp', width: 1600, height: 1200,
+    src: '/proof/storefront.jpg', width: 1425, height: 1430,
     labelTh: 'พบกับทีม', labelEn: 'Meet the team',
     th: ['มีหน้าร้าน มีทีมให้ติดต่อ', 'พบกันได้ที่ถนนศุขประยูร ฉะเชิงเทรา หรือคุยกับทีมผ่าน LINE เพื่อเริ่มต้นความร่วมมือ'],
     en: ['A place to visit. A team to reach.', 'Visit Sukprayoon Road in Chachoengsao, or start a conversation with the team on LINE.'],
-    altTh: 'อาคารหน้าร้าน PK HUB ฉะเชิงเทรา', altEn: 'PK HUB storefront in Chachoengsao',
+    altTh: 'ภายในหน้าร้าน PK HUB ที่ฉะเชิงเทรา', altEn: 'Inside the PK HUB storefront in Chachoengsao',
   },
   {
     src: '/reviews/iphone-lot.webp', width: 1100, height: 600,
