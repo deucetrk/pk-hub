@@ -51,7 +51,7 @@ export const BRAND_MARQUEE_ITEMS: BrandMarqueeItem[] = [
   },
   {
     name: 'Honor',
-    logoSrc: '/brands/normalized/honor.webp',
+    logoSrc: '/brands/normalized/honor.png',
     logoKind: 'wordmark',
     logoClassName: 'pk-brand-logo-honor',
   },
