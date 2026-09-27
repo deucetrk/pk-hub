@@ -278,7 +278,7 @@
   .pk-hero { grid-template-columns: 1fr; }
   .pk-hero-copy { padding: 28px 20px; }
   .pk-hero-location { margin-bottom: 18px; font-size: 12px; }
-  .pk-hero-brand { font-size: clamp(42px, 14vw, 58px); margin-bottom: 18px; white-space: nowrap; letter-spacing: -.08em; }
+  .pk-hero-brand { font-size: clamp(36px, 10.5vw, 46px); margin-bottom: 18px; white-space: nowrap; letter-spacing: -.08em; }
   .pk-hero-title { font-size: 30px; line-height: 1.28; }
   .pk-hero-description { font-size: 15px; line-height: 1.7; margin-top: 14px; }
   .pk-hero-actions { display: grid; grid-template-columns: 1fr; margin-top: 20px; gap: 8px; max-width: 370px; }
