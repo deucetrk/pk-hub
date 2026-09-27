@@ -2,23 +2,23 @@ import Container from '@/components/Container'
 import { useLanguage } from '@/i18n/LanguageContext'
 import { BRAND_MARQUEE_ITEMS } from './constants'
 
-function BrandRail({ ariaHidden = false }: { ariaHidden?: boolean }) {
+function BrandGrid() {
   return (
-    <div className="pk-brand-rail" aria-hidden={ariaHidden}>
-      {BRAND_MARQUEE_ITEMS.map((brand) => (
-        <span key={brand.name} className="pk-brand-rail-item">
+    <div className="pk-brand-grid">
+      {BRAND_MARQUEE_ITEMS.map((brand, index) => (
+        <span key={brand.name} className="pk-brand-grid-item">
           <span className="pk-brand-logo-stage">
             <img
               src={brand.logoSrc}
-              alt={ariaHidden ? '' : brand.name}
-              width={144}
-              height={44}
+              alt={brand.name}
+              width={brand.logoKind === 'symbol' ? 32 : 112}
+              height={28}
               loading="lazy"
               decoding="async"
               className={`pk-brand-logo pk-brand-logo-${brand.logoKind} ${brand.logoClassName ?? ''}`}
             />
           </span>
-          <span className="pk-brand-rail-dot" aria-hidden="true">/</span>
+          {index < BRAND_MARQUEE_ITEMS.length - 1 && <span className="pk-brand-grid-divider" aria-hidden="true">/</span>}
         </span>
       ))}
     </div>
@@ -41,11 +41,8 @@ export default function BrandsSection() {
           </a>
         </div>
 
-        <div className="pk-marquee mt-7" role="region" aria-label={isThai ? 'รายชื่อแบรนด์มือถือ' : 'Mobile phone brands'}>
-          <div className="pk-marquee-track">
-            <BrandRail />
-            <BrandRail ariaHidden />
-          </div>
+        <div className="pk-brand-list mt-7" role="region" aria-label={isThai ? 'รายชื่อแบรนด์มือถือ' : 'Mobile phone brands'}>
+          <BrandGrid />
         </div>
 
         <p className="mt-4 text-xs leading-6 text-zinc-500">
