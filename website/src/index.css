@@ -63,24 +63,47 @@
   display: flex;
   flex-shrink: 0;
   align-items: center;
-  gap: 34px;
-  padding: 15px 34px 15px 0;
+  gap: 28px;
+  padding: 14px 28px 14px 0;
 }
 
 .pk-brand-rail-item {
   display: inline-flex;
   flex-shrink: 0;
   align-items: center;
-  gap: 34px;
+  gap: 28px;
   color: #61616c;
-  filter: grayscale(1);
-  opacity: .84;
-  transition: filter 180ms, opacity 180ms;
 }
 
-.pk-brand-rail-item:hover {
-  filter: grayscale(0);
-  opacity: 1;
+.pk-brand-logo-stage {
+  display: grid;
+  width: 144px;
+  height: 44px;
+  flex: 0 0 144px;
+  place-items: center;
+}
+
+.pk-brand-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.pk-brand-logo-wordmark {
+  padding: 8px 14px;
+}
+
+.pk-brand-logo-symbol {
+  padding: 5px 50px;
+}
+
+.pk-brand-logo-honor {
+  mix-blend-mode: multiply;
+}
+
+.pk-brand-logo-infinix {
+  filter: invert(1);
 }
 
 .pk-brand-rail-dot {
