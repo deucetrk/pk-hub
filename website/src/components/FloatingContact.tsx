@@ -12,22 +12,26 @@ export default function FloatingContact({ className }: FloatingContactProps) {
   const { isThai } = useLanguage()
 
   return (
-    <aside className={cn('fixed bottom-4 right-4 z-40 flex items-center gap-2 sm:bottom-6 sm:right-6', className)}>
+    <aside className={cn('pk-floating-contact fixed z-40 flex items-center gap-2', className)}>
       <a
         href={CONTACT.LINE_URL}
         target="_blank"
         rel="noreferrer"
-        className="inline-flex h-12 items-center gap-2 border border-[#06c755] bg-[#06c755] px-4 text-sm font-bold text-white transition-colors hover:bg-[#05b34c] sm:h-14 sm:px-5"
+        aria-label={isThai ? `ทักทีม PK ทาง LINE ${CONTACT.LINE_ID}` : `Message PK on LINE ${CONTACT.LINE_ID}`}
+        title={`LINE ${CONTACT.LINE_ID}`}
+        className="pk-floating-contact-button pk-floating-contact-line group inline-flex items-center justify-center border border-[#06c755] bg-[#06c755] text-white transition-colors hover:bg-[#05b34c]"
       >
-        <MessageCircle className="h-5 w-5 fill-current" />
-        Inbox LINE
+        <MessageCircle className="h-6 w-6 fill-current" aria-hidden="true" />
+        <span className="pk-floating-contact-label" aria-hidden="true">LINE {CONTACT.LINE_ID}</span>
       </a>
       <a
         href={CONTACT.PHONE_TEL}
-        aria-label={isThai ? 'โทรหาทีมขาย' : 'Call sales team'}
-        className="inline-flex h-12 w-12 items-center justify-center border border-zinc-950 bg-zinc-950 text-white transition-colors hover:bg-zinc-800 sm:h-14 sm:w-14"
+        aria-label={isThai ? `โทรหาทีม PK ${CONTACT.PHONE_DISPLAY}` : `Call PK ${CONTACT.PHONE_DISPLAY}`}
+        title={CONTACT.PHONE_DISPLAY}
+        className="pk-floating-contact-button pk-floating-contact-phone group inline-flex items-center justify-center border border-[#2457d6] bg-[#2457d6] text-white transition-colors hover:bg-[#1946b8]"
       >
-        <Phone className="h-5 w-5" />
+        <Phone className="h-5 w-5" aria-hidden="true" />
+        <span className="pk-floating-contact-label" aria-hidden="true">{CONTACT.PHONE_DISPLAY}</span>
       </a>
     </aside>
   )

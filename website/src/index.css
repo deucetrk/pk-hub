@@ -405,3 +405,43 @@
   .pk-demo-caption { padding: 14px 18px; font-size: 10px; line-height: 1.7; }
   .pk-ecosystem-end { align-items: start; flex-direction: column; gap: 16px; margin-top: 32px; padding-top: 32px; }
 }
+/* Persistent direct contact for mobile retailers and desktop buyers. */
+.pk-floating-contact {
+  right: max(14px, env(safe-area-inset-right));
+  bottom: max(14px, env(safe-area-inset-bottom));
+  z-index: 60;
+}
+.pk-floating-contact-button {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  box-shadow: 0 3px 12px rgb(15 23 42 / 18%);
+}
+.pk-floating-contact-label {
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 10px);
+  width: max-content;
+  max-width: 190px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  background: #18181b;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.25;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(4px, -50%);
+  transition: opacity 160ms ease, transform 160ms ease;
+}
+.pk-floating-contact-button:hover .pk-floating-contact-label,
+.pk-floating-contact-button:focus-visible .pk-floating-contact-label {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+@media (max-width: 639px) {
+  .pk-floating-contact-button { width: 48px; height: 48px; }
+  .pk-floating-contact-label { display: none; }
+}

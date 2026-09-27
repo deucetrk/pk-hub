@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import Navbar from '@/components/Navbar'
+import FloatingContact from '@/components/FloatingContact'
 import { getHomeFaqSchema } from '@/content/homeFaqs'
 import { useLanguage } from '@/i18n/LanguageContext'
 
@@ -40,6 +41,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
+      <FloatingContact />
     </div>
   )
 }
