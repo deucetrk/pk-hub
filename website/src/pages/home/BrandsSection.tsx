@@ -37,7 +37,7 @@ export default function BrandsSection() {
       <Container>
         <div className="flex flex-wrap items-baseline justify-between gap-3">
           <div>
-            <p className="pk-eyebrow">01 / BRANDS</p>
+            <p className="pk-eyebrow">01 / แบรนด์มือถือ</p>
             <h2 className="mt-2 text-base font-semibold">{isThai ? 'แบรนด์มือถือที่คุยกับเราได้' : 'Talk to us about these brands'}</h2>
           </div>
           <a href="#contact" className="text-sm text-zinc-600 underline underline-offset-4">
