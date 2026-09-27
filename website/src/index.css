@@ -73,7 +73,10 @@
 }
 
 .pk-brand-logo-honor {
-  mix-blend-mode: multiply;
+  /* Official artwork includes transparent clear space around the wordmark. */
+  width: min(154px, 137%);
+  max-width: none;
+  max-height: none;
 }
 
 .pk-brand-logo-infinix {
