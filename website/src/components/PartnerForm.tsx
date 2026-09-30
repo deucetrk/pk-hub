@@ -115,6 +115,7 @@ export default function PartnerForm({ className, isApplication = false }: Partne
           setTouched({})
           setRequestId(crypto.randomUUID())
           setValues(EMPTY_LEAD)
+          requestAnimationFrame(() => document.getElementById('contactName')?.focus())
         }}
       />
     )

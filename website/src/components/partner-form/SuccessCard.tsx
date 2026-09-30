@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { Send } from 'lucide-react'
 
 import type { PartnerLead } from '@/utils/partnerLead'
@@ -6,17 +7,22 @@ import { CONTACT } from '@/pages/home/constants'
 
 export default function SuccessCard({ values, onReset, isApplication = false }: { values: PartnerLead; onReset: () => void; isApplication?: boolean }) {
   const { isThai } = useLanguage()
+  const headingRef = useRef<HTMLHeadingElement>(null)
+
+  useEffect(() => {
+    headingRef.current?.focus()
+  }, [])
 
   return (
     <div className="grid gap-6 border border-zinc-200 bg-white p-6 sm:p-8">
       <div className="flex items-start gap-4">
         <Send className="mt-1 h-8 w-8 shrink-0 text-[#2457d6]" aria-hidden="true" />
         <div className="grid gap-2">
-          <div className="text-2xl font-black text-zinc-900">
+          <h3 ref={headingRef} tabIndex={-1} className="text-2xl font-black text-zinc-900 focus:outline-2 focus:outline-offset-4 focus:outline-[#2457d6]">
             {isApplication
               ? (isThai ? 'ส่งใบสมัครจากอุปกรณ์นี้แล้ว' : 'The application was sent from this device')
               : (isThai ? 'ส่งคำขอจากอุปกรณ์นี้แล้ว' : 'The request was sent from this device')}
-          </div>
+          </h3>
           <div className="text-base leading-[1.8] text-zinc-600">{isThai ? 'ส่งข้อมูลจากเบราว์เซอร์แล้ว แต่หน้านี้ตรวจสอบไม่ได้ว่าปลายทางบันทึกข้อมูลสำเร็จ หากต้องการยืนยัน ให้ทัก LINE พร้อมชื่อร้าน การสมัครยังไม่เปิดสิทธิ์ค้าส่งทันที' : 'Your browser sent the request, but this page cannot confirm that it was recorded. To check, message PK on LINE with your store name. Applying does not unlock wholesale access immediately.'}</div>
         </div>
       </div>

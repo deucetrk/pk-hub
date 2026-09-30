@@ -209,3 +209,12 @@ capabilities before owner-approved claims and owning contracts exist.
   the rebuilt production preview preserved the gateway and query at 390px. The 13 prerendered
   routes passed `check`, `lint`, `build`, and `seo:validate`. This does not exercise the protected
   Dealer Portal after the gateway handoff.
+- The shared partner form now focuses its sent-from-device heading when a local submission replaces
+  the form, then returns focus to the first field when starting another entry. A synthetic Thai Join
+  request was sent only to a localhost 204 responder; the resulting heading received focus. With
+  that responder stopped, the retry showed the existing uncertain-delivery alert; restoring it and
+  retrying showed the result with focus again. Node 24 `check`, `lint`, `build`, and `seo:validate`
+  pass. These observations do not prove Google Apps Script delivery, deduplication, or a 390px and
+  desktop rendering of this final focus change. Join's checkbox still describes price and stock
+  follow-up while the form presents itself as a partner application; owner-approved consent purpose
+  and copy are needed before release.
