@@ -4,6 +4,7 @@ import { inventoryCashflowArticle } from './published/inventoryCashflow'
 import { openMobileShopArticle } from './published/openMobileShop'
 import { supplierChecklistArticle } from './published/supplierChecklist'
 import { thaiMarketPhoneArticle } from './published/thaiMarketPhone'
+import { publishedBlogSlugs, type PublishedBlogSlug } from './publishedManifest'
 
 export type BlogArticleSection = {
   heading: string
@@ -90,14 +91,24 @@ export type PublishedBlogArticle = {
 
 // Publication boundary: only explicitly approved articles may be imported here.
 // Draft approval packs live outside src/ so Vite cannot bundle or expose them.
-export const publishedArticles: PublishedBlogArticle[] = [
-  supplierChecklistArticle,
-  openMobileShopArticle,
-  thaiMarketPhoneArticle,
-  inventoryCashflowArticle,
-  documentsTaxInvoiceArticle,
-  firstWholesaleOrderArticle,
-]
+const articlesBySlug = {
+  'checklist-choose-mobile-phone-wholesaler': supplierChecklistArticle,
+  'how-to-start-mobile-phone-shop': openMobileShopArticle,
+  'what-is-thai-market-official-phone': thaiMarketPhoneArticle,
+  'mobile-shop-inventory-cashflow-guide': inventoryCashflowArticle,
+  'mobile-phone-reseller-documents-tax-invoice': documentsTaxInvoiceArticle,
+  'first-wholesale-mobile-phone-order': firstWholesaleOrderArticle,
+} satisfies Record<PublishedBlogSlug, PublishedBlogArticle>
+
+export const publishedArticles: PublishedBlogArticle[] = publishedBlogSlugs.map(
+  (slug) => {
+    const article = articlesBySlug[slug]
+    if (article.slug !== slug) {
+      throw new Error(`Published article slug mismatch: ${slug}`)
+    }
+    return article
+  },
+)
 
 export const BLOG_PAGE_SIZE = 9
 

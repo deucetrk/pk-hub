@@ -1,11 +1,11 @@
 import { BrowserRouter as Router } from 'react-router-dom'
 
-import AppRoutes from '@/AppRoutes'
+import AppRoutes, { type RoutePages } from '@/AppRoutes'
 
-export default function App() {
+export default function App(pages: RoutePages) {
   return (
     <Router>
-      <AppRoutes />
+      <AppRoutes {...pages} />
     </Router>
   )
 }

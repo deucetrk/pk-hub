@@ -1,19 +1,23 @@
-import { CheckCircle2 } from 'lucide-react'
+import { Send } from 'lucide-react'
 
 import type { PartnerLead } from '@/utils/partnerLead'
 import { useLanguage } from '@/i18n/LanguageContext'
 import { CONTACT } from '@/pages/home/constants'
 
-export default function SuccessCard({ values, onReset }: { values: PartnerLead; onReset: () => void }) {
+export default function SuccessCard({ values, onReset, isApplication = false }: { values: PartnerLead; onReset: () => void; isApplication?: boolean }) {
   const { isThai } = useLanguage()
 
   return (
     <div className="grid gap-6 border border-zinc-200 bg-white p-6 sm:p-8">
       <div className="flex items-start gap-4">
-        <CheckCircle2 className="mt-1 h-8 w-8 shrink-0 text-[#06c755]" />
+        <Send className="mt-1 h-8 w-8 shrink-0 text-[#2457d6]" aria-hidden="true" />
         <div className="grid gap-2">
-          <div className="text-2xl font-black text-zinc-900">{isThai ? 'ส่งคำขอจากอุปกรณ์นี้แล้ว' : 'The request was sent from this device'}</div>
-          <div className="text-base leading-[1.8] text-zinc-600">{isThai ? 'ทีม PK จะตรวจสอบใบสมัครก่อนติดต่อกลับ หากต้องการยืนยันทันทีให้ส่งชื่อร้านทาง LINE ได้เลย' : 'PK will review the application before contacting you. To confirm it immediately, send your store name on LINE.'}</div>
+          <div className="text-2xl font-black text-zinc-900">
+            {isApplication
+              ? (isThai ? 'ส่งใบสมัครจากอุปกรณ์นี้แล้ว' : 'The application was sent from this device')
+              : (isThai ? 'ส่งคำขอจากอุปกรณ์นี้แล้ว' : 'The request was sent from this device')}
+          </div>
+          <div className="text-base leading-[1.8] text-zinc-600">{isThai ? 'ส่งข้อมูลจากเบราว์เซอร์แล้ว แต่หน้านี้ตรวจสอบไม่ได้ว่าปลายทางบันทึกข้อมูลสำเร็จ หากต้องการยืนยัน ให้ทัก LINE พร้อมชื่อร้าน การสมัครยังไม่เปิดสิทธิ์ค้าส่งทันที' : 'Your browser sent the request, but this page cannot confirm that it was recorded. To check, message PK on LINE with your store name. Applying does not unlock wholesale access immediately.'}</div>
         </div>
       </div>
       <div className="grid gap-4 border-y border-zinc-200 py-5 text-base">
@@ -50,7 +54,9 @@ export default function SuccessCard({ values, onReset }: { values: PartnerLead; 
           className="inline-flex items-center justify-center border border-zinc-300 bg-white px-6 py-4 text-sm font-semibold text-zinc-700 transition-colors hover:border-zinc-400 hover:text-zinc-900"
           onClick={onReset}
         >
-          {isThai ? 'ฝากข้อมูลร้านอื่น' : 'Send another store'}
+          {isApplication
+            ? (isThai ? 'สมัครร้านอื่น' : 'Apply for another store')
+            : (isThai ? 'ฝากข้อมูลร้านอื่น' : 'Send another store')}
         </button>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import Container from '@/components/Container'
 import LogoMark from '@/components/LogoMark'
-import { publishedArticles } from '@/content/blog/articles'
+import { publishedBlogSlugs } from '@/content/blog/publishedManifest'
 import { useLanguage } from '@/i18n/LanguageContext'
 
 import { CONTACT } from './constants'
@@ -29,7 +29,7 @@ export default function Footer() {
             <div className="text-sm font-bold text-zinc-400">© PK HUB — {isThai ? 'สงวนลิขสิทธิ์' : 'All rights reserved'}</div>
           </div>
           <div className="grid gap-2 text-sm font-semibold leading-[1.8] text-zinc-400">
-            {isThai && publishedArticles.length ? (
+            {isThai && publishedBlogSlugs.length ? (
               <a href="/th/blog" className="w-fit text-zinc-300 transition-colors hover:text-white">
                 บทความมือถือ ธุรกิจ และเทคโนโลยี
               </a>

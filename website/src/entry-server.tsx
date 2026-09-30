@@ -4,6 +4,11 @@ import { StaticRouter } from 'react-router-dom'
 import { LazyMotion, domAnimation } from 'framer-motion'
 
 import AppRoutes from '@/AppRoutes'
+import Home from '@/pages/Home'
+import Join from '@/pages/Join'
+import DealerLogin from '@/pages/DealerLogin'
+import BlogArticle from '@/pages/blog/BlogArticle'
+import BlogIndex from '@/pages/blog/BlogIndex'
 export { getHomeFaqSchema } from '@/content/homeFaqs'
 import { getPublishedArticle, getPublishedBlogPaths } from '@/content/blog/articles'
 import { BLOG_INDEX_META, DEALER_LOGIN_META, getBlogIndexMeta, HOME_META, JOIN_META, SITE_URL, type PageMeta } from '@/lib/seo'
@@ -13,7 +18,13 @@ export function render(url: string) {
     <StrictMode>
       <LazyMotion features={domAnimation} strict>
         <StaticRouter location={url}>
-          <AppRoutes />
+          <AppRoutes
+            HomePage={Home}
+            JoinPage={Join}
+            DealerLoginPage={DealerLogin}
+            BlogArticlePage={BlogArticle}
+            BlogIndexPage={BlogIndex}
+          />
         </StaticRouter>
       </LazyMotion>
     </StrictMode>,

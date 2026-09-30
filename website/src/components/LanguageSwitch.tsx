@@ -13,14 +13,18 @@ export default function LanguageSwitch({ onChange }: LanguageSwitchProps = {}) {
   }
 
   return (
-    <div className="inline-flex border border-zinc-300 bg-white text-xs font-semibold" aria-label="Language">
+    <div
+      role="group"
+      className="inline-flex border border-zinc-300 bg-white text-xs font-semibold"
+      aria-label={language === 'th' ? 'เลือกภาษา' : 'Choose language'}
+    >
       {(['th', 'en'] as const).map((item) => (
         <button
           key={item}
           type="button"
           aria-pressed={language === item}
           onClick={() => changeLanguage(item)}
-          className={`px-3 py-1.5 transition-colors ${
+          className={`min-h-11 min-w-11 px-3 py-1.5 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2457d6] ${
             language === item ? 'bg-zinc-900 text-white' : 'text-zinc-500 hover:text-zinc-950'
           }`}
         >

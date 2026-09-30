@@ -34,9 +34,10 @@ const EMPTY_LEAD: PartnerLead = {
 
 type PartnerFormProps = {
   className?: string
+  isApplication?: boolean
 }
 
-export default function PartnerForm({ className }: PartnerFormProps) {
+export default function PartnerForm({ className, isApplication = false }: PartnerFormProps) {
   const { isThai, language } = useLanguage()
   const referralCode = useReferralAttribution()
   const [requestId, setRequestId] = useState(() => crypto.randomUUID())
@@ -56,11 +57,33 @@ export default function PartnerForm({ className }: PartnerFormProps) {
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const website = String(new FormData(e.currentTarget as HTMLFormElement).get('website') ?? '')
-    setTouched({ shopName: true, province: true, contactName: true, phone: true, interestedBrands: true, consent: true })
+    const form = e.currentTarget as HTMLFormElement
+    const website = String(new FormData(form).get('website') ?? '')
+    setTouched((current) => ({
+      ...current,
+      shopName: true,
+      province: true,
+      contactName: true,
+      phone: true,
+      interestedBrands: true,
+      consent: true,
+      email: current.email || Boolean(errors.email),
+    }))
     setSubmitError('')
 
-    if (hasErrors(errors)) return
+    if (hasErrors(errors)) {
+      if (errors.email) setOptionalOpen(true)
+      const firstInvalid = (
+        ['contactName', 'shopName', 'province', 'phone', 'interestedBrands', 'email', 'consent'] as const
+      ).find((key) => errors[key])
+      let selector = firstInvalid ? `#${firstInvalid}` : null
+      if (firstInvalid === 'interestedBrands') selector = '#interested-brands button'
+      if (firstInvalid === 'consent') selector = '#partner-consent'
+      if (selector) {
+        requestAnimationFrame(() => form.querySelector<HTMLElement>(selector)?.focus())
+      }
+      return
+    }
 
     try {
       setStatus('submitting')
@@ -76,7 +99,9 @@ export default function PartnerForm({ className }: PartnerFormProps) {
       setStatus('success')
     } catch {
       setStatus('idle')
-      setSubmitError(isThai ? 'ส่งฟอร์มไม่สำเร็จตอนนี้ ทัก LINE มาได้เลย ทีมขายช่วยเช็กราคาให้' : 'The form could not be submitted right now. Message us on LINE and our sales team can help.')
+      setSubmitError(isThai
+        ? 'ยังยืนยันผลการส่งไม่ได้ ข้อมูลอาจถึงทีม PK แล้ว กรุณาทัก LINE พร้อมชื่อร้านก่อนกดส่งซ้ำ'
+        : 'We cannot confirm delivery. PK may have received your details. Message us on LINE with your store name before resending.')
     }
   }
 
@@ -84,6 +109,7 @@ export default function PartnerForm({ className }: PartnerFormProps) {
     return (
       <SuccessCard
         values={values}
+        isApplication={isApplication}
         onReset={() => {
           setStatus('idle')
           setTouched({})
@@ -250,7 +276,7 @@ export default function PartnerForm({ className }: PartnerFormProps) {
         }}
       />
 
-      {submitError ? <div className="text-sm font-semibold text-red-600">{submitError}</div> : null}
+      {submitError ? <div role="alert" className="text-sm font-semibold text-red-700">{submitError}</div> : null}
 
       <div className="flex flex-col gap-3 sm:flex-row">
         <Button
@@ -261,10 +287,14 @@ export default function PartnerForm({ className }: PartnerFormProps) {
           {status === 'submitting' ? (
             <>
               <Loader2 className="h-5 w-5 animate-spin" />
-              {isThai ? 'กำลังส่งให้ทีมขาย' : 'Sending to sales'}
+              {isApplication
+                ? (isThai ? 'กำลังส่งใบสมัคร' : 'Sending application')
+                : (isThai ? 'กำลังส่งให้ทีมขาย' : 'Sending to sales')}
             </>
           ) : (
-            isThai ? 'ฝากข้อมูลให้ทีมเช็กราคา' : 'Send details for a price check'
+            isApplication
+              ? (isThai ? 'ส่งใบสมัครให้ทีม PK ตรวจสอบ' : 'Send application for PK review')
+              : (isThai ? 'ฝากข้อมูลให้ทีมเช็กราคา' : 'Send details for a price check')
           )}
         </Button>
         <a

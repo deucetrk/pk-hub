@@ -1,26 +1,65 @@
+import { Suspense, lazy, type ComponentType } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 
 import { LanguageProvider } from '@/i18n/LanguageContext'
-import Home from '@/pages/Home'
-import Join from '@/pages/Join'
-import DealerLogin from '@/pages/DealerLogin'
-import BlogArticle from '@/pages/blog/BlogArticle'
-import BlogIndex from '@/pages/blog/BlogIndex'
 
-export default function AppRoutes() {
+// SSR receives every page directly from entry-server. These defaults are used
+// only for client-side navigation after the initial route has hydrated.
+function ServerPagePlaceholder() {
+  return null
+}
+
+const DeferredHome = import.meta.env.SSR ? ServerPagePlaceholder : lazy(() => import('@/pages/Home'))
+const DeferredJoin = import.meta.env.SSR ? ServerPagePlaceholder : lazy(() => import('@/pages/Join'))
+const DeferredDealerLogin = import.meta.env.SSR ? ServerPagePlaceholder : lazy(() => import('@/pages/DealerLogin'))
+const DeferredBlogIndex = import.meta.env.SSR ? ServerPagePlaceholder : lazy(() => import('@/pages/blog/BlogIndex'))
+const DeferredBlogArticle = import.meta.env.SSR ? ServerPagePlaceholder : lazy(() => import('@/pages/blog/BlogArticle'))
+
+export type RoutePages = {
+  HomePage?: ComponentType
+  JoinPage?: ComponentType
+  DealerLoginPage?: ComponentType
+  BlogIndexPage?: ComponentType
+  BlogArticlePage?: ComponentType
+}
+
+function RouteView({ Page, english = false }: { Page: ComponentType; english?: boolean }) {
+  return (
+    <Suspense fallback={<main role="status">{english ? 'Loading page…' : 'กำลังเปิดหน้า…'}</main>}>
+      <Page />
+    </Suspense>
+  )
+}
+
+export default function AppRoutes({
+  HomePage = DeferredHome,
+  JoinPage = DeferredJoin,
+  DealerLoginPage = DeferredDealerLogin,
+  BlogIndexPage = DeferredBlogIndex,
+  BlogArticlePage = DeferredBlogArticle,
+}: RoutePages = {}) {
   return (
     <LanguageProvider>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/th" element={<Home />} />
-        <Route path="/en" element={<Home />} />
-        <Route path="/th/join" element={<Join />} />
-        <Route path="/en/join" element={<Join />} />
-        <Route path="/th/dealer/login" element={<DealerLogin />} />
-        <Route path="/en/dealer/login" element={<DealerLogin />} />
-        <Route path="/th/blog" element={<BlogIndex />} />
-        <Route path="/th/blog/page/:page" element={<BlogIndex />} />
-        <Route path="/th/blog/:slug" element={<BlogArticle />} />
+        <Route path="/" element={<RouteView Page={HomePage} />} />
+        <Route path="/th" element={<RouteView Page={HomePage} />} />
+        <Route path="/en" element={<RouteView Page={HomePage} english />} />
+        <Route path="/th/join" element={<RouteView Page={JoinPage} />} />
+        <Route path="/en/join" element={<RouteView Page={JoinPage} english />} />
+        <Route path="/th/dealer/login" element={<RouteView Page={DealerLoginPage} />} />
+        <Route path="/en/dealer/login" element={<RouteView Page={DealerLoginPage} english />} />
+        <Route
+          path="/th/blog"
+          element={<RouteView Page={BlogIndexPage} />}
+        />
+        <Route
+          path="/th/blog/page/:page"
+          element={<RouteView Page={BlogIndexPage} />}
+        />
+        <Route
+          path="/th/blog/:slug"
+          element={<RouteView Page={BlogArticlePage} />}
+        />
         <Route path="*" element={<Navigate to="/th" replace />} />
       </Routes>
     </LanguageProvider>

@@ -31,7 +31,7 @@ render the affected routes at desktop and 390px mobile.
 ## Key conventions
 
 - **TypeScript strict mode is OFF** — `strict: false`, `noUnusedLocals: false`, `noUnusedParameters: false`. Don't fight the config
-- **Public palette**: warm paper `#f5f1e8`, warm white, carbon `#1b1c19`, cobalt blue `#2457d6`, and restrained warm neutrals. LINE retains its own green. Public PK HUB should feel like an editorial Thai wholesale partner, while the separate Dealer Portal remains a transactional product. Shared rules live in `src/index.css`; `LogoMark` uses `public/logo-transparent.png` with actual alpha.
+- **Public palette**: cobalt blue `#2457d6`, carbon `#1b1c19`, white, and restrained cool neutrals. LINE retains its own green. Public PK HUB follows the owner-selected Apple-inspired editorial direction with expressive, reduced-motion-safe transitions; the separate Dealer Portal remains a transactional product. Shared rules live in `src/index.css`; `LogoMark` uses `public/logo-transparent.png` with actual alpha.
 - **Homepage scope**: communicate current wholesale supply, real proof, the reviewed partner path, and approved Dealer Portal capabilities. Do not advertise speculative intelligence, financing, credit, inventory, pricing, or delivery services before their owning contracts and owner-approved claims exist.
 - **Utility function**: `cn()` from `src/lib/utils.ts` wraps `clsx` + `tailwind-merge` — use it for conditional class merging
 - **PostCSS config is locked** — `postcss.config.js` has `WARNING: DON'T EDIT THIS FILE` comments; leave it alone
