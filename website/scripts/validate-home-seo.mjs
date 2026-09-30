@@ -36,8 +36,8 @@ for (const lang of ['th', 'en']) {
     assert(decode(body).includes(question.acceptedAnswer.text), `${lang}: FAQ answer matches rendered text`)
   }
   assert(!/opacity:\s*0(?:;|")/.test(body), `${lang}: prerendered content visible`)
-  assert(/fetchPriority="high"/i.test(body), `${lang}: hero image priority`)
-  assert(html.includes('rel="preload" as="image" href="/proof/storefront-building.webp"'))
+  assert(body.includes('pk-order-chat-demo'), `${lang}: first-party sample inquiry visual`)
+  assert(body.includes(lang === 'th' ? 'ไม่ใช่แชทหรือออเดอร์จริง' : 'Not a real chat or order'), `${lang}: sample inquiry disclosure`)
   for (const match of body.matchAll(/<img\b[^>]*>/g)) {
     assert(/\bwidth="/.test(match[0]) && /\bheight="/.test(match[0]), `${lang}: image dimensions`)
     assert(/\balt="/.test(match[0]), `${lang}: image alternative text`)
@@ -51,9 +51,9 @@ for (const lang of ['th', 'en']) {
   assert(body.includes('href="https://lin.ee/VEgW6qG"'), `${lang}: LINE CTA`)
   assert(body.includes('preload="none"'), `${lang}: video deferred until requested`)
   assert(body.includes('id="dealer-portal"'), `${lang}: Dealer Portal is prerendered`)
-  assert(body.includes('01 / TRUSTED SUPPLY') && body.includes('02 / DEALER PORTAL'), `${lang}: ecosystem content`)
+  assert(body.includes('01 / สินค้าและทีมขาย') && body.includes('02 / ระบบร้านค้า'), `${lang}: ecosystem content`)
   assert(!body.includes('PK INTELLIGENCE') && !body.includes('FINANCING OPTIONS'), `${lang}: speculative services removed`)
-  assert(body.includes(lang === 'th' ? 'สิทธิ์ใช้งานเปิดหลังตรวจสอบและอนุมัติ' : 'Access follows review and approval.'), `${lang}: access boundary`)
+  assert(body.includes(lang === 'th' ? 'ส่งข้อมูลร้านให้ทีม PK ตรวจสอบก่อนเปิดสิทธิ์ใช้งาน' : 'Send your store details for review before access is enabled.'), `${lang}: access boundary`)
   assert(body.includes(lang === 'th' ? 'ภาพอธิบายการใช้งานจากโครงสร้าง Portal' : 'Illustration based on the Portal structure'), `${lang}: illustrative UI labelled`)
   assert(body.includes('/logo-transparent.png'), `${lang}: transparent brand asset`)
 }

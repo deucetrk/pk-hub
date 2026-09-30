@@ -88,24 +88,24 @@ export default function WhySection() {
   const { isThai, language } = useLanguage()
   const referralCode = useReferralAttribution()
   const { item } = useRevealMotion()
-  const journey = isThai ? ['หาสินค้า', 'เช็กข้อมูล', 'ตัดสินใจ', 'สั่งซื้อ', 'รับสินค้า', 'เติบโต'] : ['Source', 'Discover', 'Decide', 'Buy', 'Fulfill', 'Grow']
+  const journey = isThai ? ['เลือกรุ่น', 'เช็กราคาและสต็อก', 'ยืนยันออเดอร์', 'รับสินค้า'] : ['Choose models', 'Check price and stock', 'Confirm the order', 'Receive your goods']
 
   return (
     <section id="why" className="pk-ecosystem scroll-mt-24" aria-labelledby="ecosystem-title">
       <Container>
         <div className="pk-ecosystem-intro">
-          <p className="pk-eyebrow">THE PK CONNECTION</p>
-          <h2 id="ecosystem-title" className="font-display">{isThai ? <>มากกว่าที่ซื้อของ<br /><span>พาร์ทเนอร์สำหรับร้านมือถือ</span></> : <>More than a supplier.<br /><span>A partner for your business.</span></>}</h2>
-          <p className="pk-section-description">{isThai ? 'จากสินค้าที่วางขาย สู่เครื่องมือที่ช่วยให้ทำงานง่ายขึ้น เรากำลังเชื่อมสิ่งที่ร้านมือถือใช้ทุกวันให้ทำงานไปด้วยกัน' : 'From the products on your shelves to tools that simplify purchasing. We’re connecting the things a phone retailer works with every day.'}</p>
+          <p className="pk-eyebrow">รู้จัก PK HUB</p>
+          <h2 id="ecosystem-title" className="font-display">{isThai ? <>หาแหล่งรับมือถือ<br /><span>ที่คุยกันรู้เรื่อง</span></> : <>A wholesale partner<br /><span>who knows your business.</span></>}</h2>
+          <p className="pk-section-description">{isThai ? 'คุยกับทีม PK เรื่องรุ่น เอกสาร และเงื่อนไขให้ชัดก่อนสั่งซื้อ แล้วตามงานต่อได้ผ่าน Dealer Portal' : 'Talk models, documents, and terms through with PK before ordering. Follow up through the Dealer Portal.'}</p>
         </div>
         <ol className="pk-journey" aria-label={isThai ? 'เส้นทางการทำงานของร้านค้า' : 'The retailer journey'}>{journey.map((label, index) => <li key={label}><span>{label}</span>{index < journey.length - 1 && <ArrowRight size={15} aria-hidden="true" />}</li>)}</ol>
         <m.div className="pk-supply" variants={item} initial="hidden" whileInView="show" viewport={revealViewport}>
           <figure><img src="/reviews/iphone-lot.webp" width={1100} height={600} loading="lazy" decoding="async" alt={isThai ? 'กล่อง iPhone จากงานค้าส่งจริงของ PK HUB' : 'iPhone boxes from real PK HUB wholesale operations'} /><figcaption>{isThai ? 'ภาพจากงานจริงของ PK · ตรวจสอบสต็อกปัจจุบันกับทีม' : 'Real PK operations · Check current availability with the team'}</figcaption></figure>
           <div className="pk-feature-copy">
-            <p className="pk-eyebrow">01 / TRUSTED SUPPLY</p>
-            <h3 className="font-display">{isThai ? <>มั่นใจในสินค้า<br />รู้จักคนที่ส่งให้</> : <>Know your supply.<br />Know your partner.</>}</h3>
-            <p>{isThai ? 'มือถือเครื่องศูนย์ไทย หลายแบรนด์ ผ่านทีมที่มีหน้าร้านจริงในฉะเชิงเทรา คุยรุ่น เอกสาร และเงื่อนไขให้ชัดก่อนตัดสินใจ' : 'Official Thai-market phones across brands, from a team with a physical store in Chachoengsao. Clarify models, documents, and terms before deciding.'}</p>
-            <ul className="pk-feature-facts"><li>{isThai ? 'เช็กแหล่งที่มาและรายละเอียดสินค้า' : 'Check sourcing and product details'}</li><li>{isThai ? 'สอบถามเอกสารภาษีและการรับประกัน' : 'Discuss tax documents and warranty terms'}</li><li>{isThai ? 'มีทีมประสานงานก่อนและหลังสั่งซื้อ' : 'Reach the team before and after ordering'}</li></ul>
+            <p className="pk-eyebrow">01 / สินค้าและทีมขาย</p>
+            <h3 className="font-display">{isThai ? <>รู้รายละเอียดสินค้า<br />คุยกับทีมได้โดยตรง</> : <>Know what you’re buying.<br />Talk directly with our team.</>}</h3>
+            <p>{isThai ? 'มือถือหลายแบรนด์จากทีมที่มีหน้าร้านในฉะเชิงเทรา สอบถามรุ่น เอกสารภาษี และเงื่อนไขก่อนตัดสินใจได้' : 'Phones across brands from a team with a physical store in Chachoengsao. Ask about models, tax documents, and terms before deciding.'}</p>
+            <ul className="pk-feature-facts"><li>{isThai ? 'ถามรายละเอียดรุ่นและสินค้าได้ก่อนสั่ง' : 'Ask about models and product details'}</li><li>{isThai ? 'คุยเรื่องเอกสารภาษีและการรับประกัน' : 'Discuss tax documents and warranty terms'}</li><li>{isThai ? 'ติดต่อทีมได้ก่อนและหลังสั่งซื้อ' : 'Contact the team before and after ordering'}</li></ul>
             <a href="#proof" className="pk-text-link">{isThai ? 'ดูเบื้องหลังการทำงาน' : 'See the work behind your order'}<ArrowUpRight size={18} aria-hidden="true" /></a>
           </div>
         </m.div>
@@ -113,11 +113,11 @@ export default function WhySection() {
       <div id="dealer-portal" className="pk-portal-section scroll-mt-24">
         <Container>
           <div className="pk-portal-heading">
-            <div><p className="pk-eyebrow">02 / DEALER PORTAL</p><h3 className="font-display">{isThai ? <>เช็ก สั่ง ติดตาม<br />ให้ต่อกันในที่เดียว</> : <>Find it. Order it.<br />Keep it connected.</>}</h3></div>
-            <div><p>{isThai ? 'ดูราคาสำหรับร้าน เช็กสต็อกอ้างอิง และติดตามคำสั่งซื้อผ่าน Dealer Portal สำหรับร้านที่ผ่านการตรวจสอบและได้รับสิทธิ์แล้ว' : 'View your store’s pricing, reference stock, and order status through the Dealer Portal after review and access approval.'}</p><a className="pk-text-link" href={withReferral(`/${language}/dealer/login`, referralCode)}>{isThai ? 'เข้าสู่ Dealer Portal' : 'Enter the Dealer Portal'}<ArrowUpRight size={18} aria-hidden="true" /></a></div>
+            <div><p className="pk-eyebrow">02 / ระบบร้านค้า</p><h3 className="font-display">{isThai ? <>เช็กราคา สั่งซื้อ<br />แล้วตามออเดอร์ได้</> : <>Check prices. Order.<br />Track what’s next.</>}</h3></div>
+            <div><p>{isThai ? 'ร้านที่ได้รับอนุมัติใช้ Dealer Portal เพื่อดูราคาตามสิทธิ์ เช็กสต็อกอ้างอิง และดูสถานะคำสั่งซื้อได้' : 'Approved stores can view their pricing, check reference stock, and follow order status in the Dealer Portal.'}</p><a className="pk-text-link" href={withReferral(`/${language}/dealer/login`, referralCode)}>{isThai ? 'เข้าสู่ระบบร้านค้า' : 'Sign in to the Dealer Portal'}<ArrowUpRight size={18} aria-hidden="true" /></a></div>
           </div>
           <m.div variants={item} initial="hidden" whileInView="show" viewport={revealViewport}><PortalPreview /></m.div>
-          <div className="pk-ecosystem-end"><div><p className="font-display text-xl font-semibold">{isThai ? 'เริ่มเป็นส่วนหนึ่งของเครือข่าย PK' : 'Make your next move with PK'}</p><p className="mt-2 text-sm leading-6 text-zinc-600">{isThai ? 'สมัครให้ทีมรู้จักร้านของคุณ สิทธิ์ใช้งานเปิดหลังตรวจสอบและอนุมัติ' : 'Introduce your store. Access follows review and approval.'}</p></div><a href={withReferral(`/${language}/join`, referralCode)} className="pk-action pk-action-primary">{isThai ? 'สมัครเป็นพาร์ทเนอร์' : 'Become a partner'}<ArrowUpRight size={18} aria-hidden="true" /></a></div>
+          <div className="pk-ecosystem-end"><div><p className="font-display text-xl font-semibold">{isThai ? 'อยากสมัครเป็นร้านค้าพาร์ทเนอร์?' : 'Want to apply as a retail partner?'}</p><p className="mt-2 text-sm leading-6 text-zinc-600">{isThai ? 'ส่งข้อมูลร้านให้ทีม PK ตรวจสอบก่อนเปิดสิทธิ์ใช้งาน' : 'Send your store details for review before access is enabled.'}</p></div><a href={withReferral(`/${language}/join`, referralCode)} className="pk-action pk-action-primary">{isThai ? 'สมัครร้านค้า' : 'Apply as a store'}<ArrowUpRight size={18} aria-hidden="true" /></a></div>
         </Container>
       </div>
     </section>

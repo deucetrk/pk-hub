@@ -7,23 +7,17 @@ function BrandRail({ ariaHidden = false }: { ariaHidden?: boolean }) {
     <div className="pk-brand-rail" aria-hidden={ariaHidden}>
       {BRAND_MARQUEE_ITEMS.map((brand) => (
         <span key={brand.name} className="pk-brand-rail-item">
-          {brand.logoSrc ? (
-            <span
-              className={`flex items-center justify-center overflow-hidden ${brand.frameClassName ?? "h-10 w-28"}`}
-            >
-              <img
-                src={brand.logoSrc}
-                alt={ariaHidden ? "" : brand.name}
-                width={128}
-                height={48}
-                loading="lazy"
-                decoding="async"
-                className={`h-full w-full object-contain ${brand.logoClassName ?? ""}`}
-              />
-            </span>
-          ) : (
-            <span className="text-sm font-bold">{brand.name}</span>
-          )}
+          <span className="pk-brand-logo-stage">
+            <img
+              src={brand.logoSrc}
+              alt={ariaHidden ? "" : brand.name}
+              width={brand.logoKind === "symbol" ? 32 : 112}
+              height={28}
+              loading="lazy"
+              decoding="async"
+              className={`pk-brand-logo pk-brand-logo-${brand.logoKind} ${brand.logoClassName ?? ""}`}
+            />
+          </span>
           <span className="pk-brand-rail-dot" aria-hidden="true">
             /
           </span>

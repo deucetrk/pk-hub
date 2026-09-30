@@ -91,6 +91,39 @@
   opacity: 1;
 }
 
+.pk-brand-rail-item .pk-brand-logo-stage {
+  display: grid;
+  width: 124px;
+  height: 42px;
+  place-items: center;
+}
+
+.pk-brand-rail-item .pk-brand-logo {
+  display: block;
+  width: auto;
+  max-width: 112px;
+  height: auto;
+  max-height: 28px;
+  object-fit: contain;
+}
+
+.pk-brand-rail-item .pk-brand-logo-symbol {
+  max-width: 32px;
+  max-height: 28px;
+}
+
+.pk-brand-rail-item .pk-brand-logo-honor {
+  /* Preserve the verified optical adjustment for the official transparent asset. */
+  width: 154px;
+  max-width: none;
+  max-height: none;
+  transform: translateY(-14px);
+}
+
+.pk-brand-rail-item .pk-brand-logo-infinix {
+  filter: invert(1);
+}
+
 .pk-brand-rail-dot {
   color: #a1a1aa;
   font-size: 14px;

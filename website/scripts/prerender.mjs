@@ -80,7 +80,6 @@ function localize(html, route, meta) {
   if (isHome) {
     const schema = JSON.stringify(getHomeFaqSchema(lang)).replace(/</g, '\\u003c')
     page = page.replace('</head>', `<script id="faq-schema" type="application/ld+json">${schema}</script>\n</head>`)
-    page = page.replace('</head>', '<link rel="preload" as="image" href="/proof/storefront-building.webp" fetchpriority="high" />\n</head>')
   }
 
   if (route.endsWith('/join')) {
