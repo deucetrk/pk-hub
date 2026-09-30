@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
 import { ChevronDown, Loader2, MessageCircle } from 'lucide-react'
 
@@ -46,8 +46,13 @@ export default function PartnerForm({ className, isApplication = false }: Partne
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle')
   const [submitError, setSubmitError] = useState<string>('')
   const [optionalOpen, setOptionalOpen] = useState(false)
+  const submitErrorRef = useRef<HTMLDivElement>(null)
 
   const errors = useMemo(() => validatePartnerLead(values, language), [language, values])
+
+  useEffect(() => {
+    if (submitError) submitErrorRef.current?.focus()
+  }, [submitError])
 
   const setField = <K extends keyof PartnerLead>(key: K, next: PartnerLead[K]) => {
     setValues((v) => ({ ...v, [key]: next }))
@@ -277,7 +282,16 @@ export default function PartnerForm({ className, isApplication = false }: Partne
         }}
       />
 
-      {submitError ? <div role="alert" className="text-sm font-semibold text-red-700">{submitError}</div> : null}
+      {submitError ? (
+        <div
+          ref={submitErrorRef}
+          tabIndex={-1}
+          role="alert"
+          className="text-sm font-semibold text-red-700 focus:outline-2 focus:outline-offset-4 focus:outline-[#2457d6]"
+        >
+          {submitError}
+        </div>
+      ) : null}
 
       <div className="flex flex-col gap-3 sm:flex-row">
         <Button

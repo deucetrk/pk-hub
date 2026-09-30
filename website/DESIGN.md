@@ -218,3 +218,8 @@ capabilities before owner-approved claims and owning contracts exist.
   desktop rendering of this final focus change. Join's checkbox still describes price and stock
   follow-up while the form presents itself as a partner application; owner-approved consent purpose
   and copy are needed before release.
+- On 2026-10-01, the uncertain-delivery alert now receives visible keyboard focus after a failed
+  synthetic Join submission to a deliberately unavailable localhost endpoint. Thai at 1280px and
+  390px, and English at 390px, showed the alert in view without document overflow; the entered
+  values and retry action remained present. Node 24 `check`, `lint`, `build`, and `seo:validate`
+  pass. This verifies local error presentation only; no real lead delivery was attempted.
