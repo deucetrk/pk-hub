@@ -36,8 +36,8 @@ for (const lang of ['th', 'en']) {
     assert(decode(body).includes(question.acceptedAnswer.text), `${lang}: FAQ answer matches rendered text`)
   }
   assert(!/opacity:\s*0(?:;|")/.test(body), `${lang}: prerendered content visible`)
-  assert(body.includes('pk-order-chat-demo'), `${lang}: first-party sample inquiry visual`)
-  assert(body.includes(lang === 'th' ? 'ไม่ใช่แชทหรือออเดอร์จริง' : 'Not a real chat or order'), `${lang}: sample inquiry disclosure`)
+  assert(body.includes('src="/proof/storefront-building.webp"'), `${lang}: first-party storefront hero`)
+  assert(body.includes(lang === 'th' ? 'อาคารหน้าร้าน PK HUB ถนนศุขประยูร ฉะเชิงเทรา' : 'PK HUB storefront on Sukprayoon Road, Chachoengsao'), `${lang}: storefront image description`)
   for (const match of body.matchAll(/<img\b[^>]*>/g)) {
     assert(/\bwidth="/.test(match[0]) && /\bheight="/.test(match[0]), `${lang}: image dimensions`)
     assert(/\balt="/.test(match[0]), `${lang}: image alternative text`)
