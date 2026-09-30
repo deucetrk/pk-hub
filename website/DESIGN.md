@@ -223,3 +223,9 @@ capabilities before owner-approved claims and owning contracts exist.
   390px, and English at 390px, showed the alert in view without document overflow; the entered
   values and retry action remained present. Node 24 `check`, `lint`, `build`, and `seo:validate`
   pass. This verifies local error presentation only; no real lead delivery was attempted.
+- Journal search now replaces the current history entry as the query changes, so Back leaves the
+  search instead of stepping through typed characters. Track and tag selections still create
+  navigable history entries. The Thai Journal was exercised locally at 390px with a three-character
+  query and at 1280px with a track filter; both showed the expected article count and contained
+  document width. Node 24 `check`, `lint`, `build`, and `seo:validate` pass. This is local route
+  behavior, not hosted or production acceptance.

@@ -270,7 +270,9 @@ export default function BlogIndex() {
     const next = new URLSearchParams(searchParams);
     if (value) next.set(name, value);
     else next.delete(name);
-    navigate(`/th/blog${next.size ? `?${next.toString()}` : ""}`);
+    navigate(`/th/blog${next.size ? `?${next.toString()}` : ""}`, {
+      replace: name === "q",
+    });
   }
 
   function clearFilters() {
