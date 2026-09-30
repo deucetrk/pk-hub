@@ -223,6 +223,16 @@ capabilities before owner-approved claims and owning contracts exist.
   390px, and English at 390px, showed the alert in view without document overflow; the entered
   values and retry action remained present. Node 24 `check`, `lint`, `build`, and `seo:validate`
   pass. This verifies local error presentation only; no real lead delivery was attempted.
+- The hosted Vercel PR #7 preview at `https://pk-omlqr0zzk-deucetrks-projects.vercel.app`
+  corresponds to website commit `5493ccd` (deployment `6770938552`), not production. On
+  2026-10-01, all 13 mounted public paths were inspected at 390 x 844 and 1280 x 800. Each had
+  one H1/main landmark, no document overflow, and loaded images in the initial viewport after
+  hydration. At 390px, the mobile menu switched Thai Home to English Home and closed, an empty
+  Thai Join submit showed six field errors and focused the first field without sending a lead,
+  and Journal search for `VAT` showed one result while retaining search focus; Back returned to
+  Home. The Thai Dealer gateway linked to the configured Dealer login and Join routes. This is
+  hosted public-preview evidence only: full-page image coverage, lead delivery, protected Dealer
+  or staff sessions, commercial publication approval, and production release remain open.
 - Journal search now replaces the current history entry as the query changes, so Back leaves the
   search instead of stepping through typed characters. Track and tag selections still create
   navigable history entries. The Thai Journal was exercised locally at 390px with a three-character
