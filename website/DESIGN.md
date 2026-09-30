@@ -231,8 +231,13 @@ capabilities before owner-approved claims and owning contracts exist.
   Thai Join submit showed six field errors and focused the first field without sending a lead,
   and Journal search for `VAT` showed one result while retaining search focus; Back returned to
   Home. The Thai Dealer gateway linked to the configured Dealer login and Join routes. This is
-  hosted public-preview evidence only: full-page image coverage, lead delivery, protected Dealer
-  or staff sessions, commercial publication approval, and production release remain open.
+  hosted public-preview evidence only: lead delivery, protected Dealer or staff sessions,
+  commercial publication approval, and production release remain open.
+- The same hosted build was traversed from top to footer for all six Thai articles at 390 x 844
+  and 1280 x 800 on 2026-10-01. Lazy images loaded after reaching their sections; every image
+  completed with nonzero natural width. Each article retained one H1/main, valid in-page anchors,
+  and document width within the viewport. This extends the hosted layout and asset check beyond
+  the initial viewport; it does not verify article claims or the lead endpoint.
 - Journal search now replaces the current history entry as the query changes, so Back leaves the
   search instead of stepping through typed characters. Track and tag selections still create
   navigable history entries. The Thai Journal was exercised locally at 390px with a three-character
