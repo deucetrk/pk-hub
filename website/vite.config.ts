@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tsconfigPaths from "vite-tsconfig-paths";
-import { existsSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { resolve, sep } from 'node:path'
 
 // https://vite.dev/config/
@@ -24,7 +24,8 @@ export default defineConfig(({ command }) => ({
             return next()
           }
           response.statusCode = 404
-          response.end('Page not found')
+          response.setHeader('Content-Type', 'text/html; charset=utf-8')
+          response.end(readFileSync(resolve(output, '404.html')))
         })
       },
     },

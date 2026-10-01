@@ -7,6 +7,7 @@
 import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { execFileSync } from 'node:child_process'
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const dist = resolve(root, 'dist')
@@ -123,6 +124,22 @@ writeFileSync(
   resolve(dist, 'index.html'),
   readFileSync(resolve(dist, 'th', 'index.html'), 'utf-8'),
 )
+
+// Vercel serves this document with HTTP 404 for missing static routes.
+const missingArticleRoute = '/th/blog/unpublished-article'
+const notFoundPage = localize(template, missingArticleRoute, {
+  title: 'ไม่พบหน้าที่ต้องการ | PK HUB',
+  description: 'เลือกอ่านคู่มือสำหรับร้านค้าจาก PK HUB Journal',
+  canonical: `${SITE}/th/blog`,
+}).replace('<div id="root"></div>', `<div id="root">${unhideMotion(render(missingArticleRoute))}</div>`)
+  .replace('</head>', '<meta name="robots" content="noindex, follow" />\n</head>')
+writeFileSync(resolve(dist, '404.html'), notFoundPage)
+
+// Public, non-sensitive evidence of the source deployed to this alias.
+const revision = process.env.VERCEL_GIT_COMMIT_SHA || process.env.GITHUB_SHA ||
+  execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim()
+if (!/^[a-f0-9]{40}$/i.test(revision)) throw new Error('Invalid build revision')
+writeFileSync(resolve(dist, 'revision.json'), JSON.stringify({ revision }) + '\n')
 
 // sitemap.xml with build-time lastmod
 const lastmod = new Intl.DateTimeFormat('en-CA', {

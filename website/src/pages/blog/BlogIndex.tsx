@@ -205,7 +205,8 @@ export default function BlogIndex() {
   const focusSearchAfterClearRef = useRef(false);
   const { page } = useParams();
   const [searchParams] = useSearchParams();
-  const routePage = Math.max(1, Number(page ?? 1) || 1);
+  const validPage = page === undefined || /^[1-9]\d*$/.test(page);
+  const routePage = validPage ? Number(page ?? 1) : 1;
   const pageMeta = useMemo(() => getBlogIndexMeta(routePage), [routePage]);
   usePageMeta(pageMeta);
   const query = searchParams.get("q")?.trim() ?? "";
@@ -261,7 +262,7 @@ export default function BlogIndex() {
   const pageCount = hasFilters
     ? Math.max(1, Math.ceil(filteredArticles.length / BLOG_PAGE_SIZE))
     : getPublishedBlogPageCount();
-  if (!hasFilters && routePage > pageCount)
+  if (!validPage || !Number.isSafeInteger(routePage) || (page !== undefined && routePage === 1) || (!hasFilters && routePage > pageCount))
     return <Navigate to="/th/blog" replace />;
 
   const showHighlights = !hasFilters && routePage === 1;

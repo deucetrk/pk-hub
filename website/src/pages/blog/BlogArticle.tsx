@@ -6,7 +6,7 @@ import {
   ExternalLink,
   MessageCircle,
 } from "lucide-react";
-import { Navigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import Container from "@/components/Container";
 import FloatingContact from "@/components/FloatingContact";
@@ -184,7 +184,25 @@ export default function BlogArticle() {
 
   usePageMeta(meta);
 
-  if (!article) return <Navigate to="/th" replace />;
+  if (!article) {
+    return (
+      <div className="min-h-dvh bg-white text-[#18181b]">
+        <a href="#main-content" className="pk-skip-link">ข้ามไปเนื้อหา</a>
+        <Navbar />
+        <main id="main-content" tabIndex={-1} className="border-b border-zinc-200 py-20 sm:py-28">
+          <Container>
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#2457d6]">PK HUB JOURNAL</p>
+            <h1 className="mt-5 text-4xl font-bold tracking-tight sm:text-6xl">ไม่พบบทความนี้</h1>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-zinc-600">ลิงก์อาจเปลี่ยนไป หรือบทความยังไม่ได้เผยแพร่ เลือกอ่านคู่มือสำหรับร้านค้าจากหน้าบทความได้ครับ</p>
+            <Link to="/th/blog" className="mt-8 inline-flex min-h-11 items-center gap-3 bg-[#2457d6] px-6 py-3 font-bold text-white hover:bg-[#1b43ac] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2457d6]">
+              ดูบทความทั้งหมด <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </Container>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   const articleUrl = `${SITE_URL}/th/blog/${article.slug}`;
   const articleSchema = {

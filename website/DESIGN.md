@@ -4,6 +4,25 @@ Status: canonical public-site design direction
 Owner accepted: 2026-09-20; Apple-inspired layout and expressive motion selected 2026-09-30
 Last verified: 2026-09-20 production desktop and 390px public acceptance at `pkhub.co`
 
+## Authorized production closeout — 2026-10-01
+
+The owner requested completing PK HUB and pushing the scoped redesign to production, with
+desktop Sales/onboarding as the immediate priority. Release uses the connected GitHub/Vercel
+pipeline. Prior main is `79a82a4e80e1d8ef6ef44a621cfe5ec26d37e154`; retain its ready deployment
+for alias rollback, or revert this release on main and let the same pipeline rebuild. No database,
+credential, access-policy or live lead write is part of release verification.
+
+Malformed journal page numbers canonicalize to the journal index; the six published articles
+currently fit one page. A missing article has a keyboard-accessible recovery link and the build
+includes a noindex `404.html` for missing static routes. Local actual-source browser review at
+1280px and 390px found one H1 and no horizontal overflow; Enter on the recovery link opened the
+journal. `/page/1.5` recovered to `/th/blog`. Node 24 check, lint, build and SEO validation passed.
+The build emits non-sensitive `revision.json`, served without caching, for exact release evidence.
+Reduced-motion CSS and Framer Motion guards remain; system-level reduced-motion emulation is
+not available in the current browser harness and has not been attested. Existing lead transport
+cannot confirm receipt (`no-cors`); the UI preserves its explicit uncertain-result/LINE recovery.
+Application-specific consent approval and actual delivery/deduplication remain separate gates.
+
 This document governs the public PK HUB website only. Dealer Portal and PK Commerce remain separate
 products and deployments. Public PK HUB explains the relationship, shows real operating proof, and
 routes a retailer into application or conversation. It does not own protected commerce truth.
