@@ -196,12 +196,18 @@ capabilities before owner-approved claims and owning contracts exist.
   responded after hydration. Browser error/warning logs were empty. `check`, `lint`, `build`,
   `seo:validate`, and `git diff --check` passed on 2026-10-01. No network timing, Core Web Vitals,
   lead delivery, or live production behavior was measured.
-- Language switching on the public Dealer gateway now stays on the equivalent Thai/English gateway
-  and preserves its query string. The mobile menu uses 44px language targets with visible keyboard
-  focus. The local dev view was exercised in both directions at desktop and at 390px mobile, and
-  the rebuilt production preview preserved the gateway and query at 390px. The 13 prerendered
-  routes passed `check`, `lint`, `build`, and `seo:validate`. This does not exercise the protected
-  Dealer Portal after the gateway handoff.
+- Language switching stays on the equivalent Thai/English Home, Join, or Dealer gateway and
+  preserves the query string. On 2026-10-01, a local production build at `127.0.0.1:5204` was
+  exercised in both directions on all three route pairs at 390px and 1280px with synthetic
+  `ref=QA-PUBLIC`. The mobile menu now closes and returns focus to its 44px menu button; previously
+  the removed language button lost focus to the document body. Desktop retains focus on the
+  selected language button, and mobile Escape still returns focus to the menu button. Home also
+  retained `#why` when switching English to Thai. Each observed state had one H1 and contained
+  document width. English Home now translates its three partnership labels and its skip link;
+  the existing SEO validator checks the labels for the appropriate locale. `check`, `lint`,
+  `build`, and `seo:validate` pass. No new preview-origin browser errors or warnings were observed.
+  This is local presentation/navigation evidence; no lead was submitted and protected Dealer
+  access, Join consent approval, lead delivery, hosted acceptance, and production remain open.
 - The shared partner form now focuses its sent-from-device heading when a local submission replaces
   the form, then returns focus to the first field when starting another entry. A synthetic Thai Join
   request was sent only to a localhost 204 responder; the resulting heading received focus. With

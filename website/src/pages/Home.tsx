@@ -13,7 +13,7 @@ import ProofSection from "./home/ProofSection";
 import WhySection from "./home/WhySection";
 
 export default function Home() {
-  const { language } = useLanguage();
+  const { isThai, language } = useLanguage();
   useEffect(() => {
     let schema = document.getElementById("faq-schema");
     if (!schema) {
@@ -30,7 +30,7 @@ export default function Home() {
   return (
     <div id="top" className="min-h-dvh bg-[var(--pk-white)] text-[#18181b]">
       <a href="#main-content" className="pk-skip-link">
-        Skip to content / ข้ามไปเนื้อหา
+        {isThai ? "ข้ามไปเนื้อหา" : "Skip to content"}
       </a>
       <Navbar />
 

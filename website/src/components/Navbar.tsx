@@ -58,12 +58,16 @@ export default function Navbar() {
     [isThai, items],
   );
 
+  function closeMenuAndRestoreFocus() {
+    setOpen(false);
+    requestAnimationFrame(() => mobileMenuButtonRef.current?.focus());
+  }
+
   useEffect(() => {
     if (!open) return;
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
-        setOpen(false);
-        requestAnimationFrame(() => mobileMenuButtonRef.current?.focus());
+        closeMenuAndRestoreFocus();
       }
     };
     window.addEventListener("keydown", onKeyDown);
@@ -144,7 +148,7 @@ export default function Navbar() {
           >
             <div className="mt-3 grid gap-2 rounded-md border border-zinc-300 bg-[var(--pk-white)] p-3">
               <div className="px-4 py-2 sm:hidden">
-                <LanguageSwitch onChange={() => setOpen(false)} />
+                <LanguageSwitch onChange={closeMenuAndRestoreFocus} />
               </div>
               {items.map((it) => (
                 <a

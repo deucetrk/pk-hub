@@ -51,7 +51,10 @@ for (const lang of ['th', 'en']) {
   assert(body.includes('href="https://lin.ee/VEgW6qG"'), `${lang}: LINE CTA`)
   assert(body.includes('preload="none"'), `${lang}: video deferred until requested`)
   assert(body.includes('id="dealer-portal"'), `${lang}: Dealer Portal is prerendered`)
-  assert(body.includes('01 / สินค้าและทีมขาย') && body.includes('02 / ระบบร้านค้า'), `${lang}: ecosystem content`)
+  const ecosystemLabels = lang === 'th'
+    ? ['01 / สินค้าและทีมขาย', '02 / ระบบร้านค้า']
+    : ['01 / Products and people', '02 / Dealer Portal']
+  assert(ecosystemLabels.every((label) => body.includes(label)), `${lang}: localized ecosystem content`)
   assert(!body.includes('PK INTELLIGENCE') && !body.includes('FINANCING OPTIONS'), `${lang}: speculative services removed`)
   assert(body.includes(lang === 'th' ? 'ส่งข้อมูลร้านให้ทีม PK ตรวจสอบก่อนเปิดสิทธิ์ใช้งาน' : 'Send your store details for review before access is enabled.'), `${lang}: access boundary`)
   assert(body.includes(lang === 'th' ? 'ภาพอธิบายการใช้งานจากโครงสร้าง Portal' : 'Illustration based on the Portal structure'), `${lang}: illustrative UI labelled`)
