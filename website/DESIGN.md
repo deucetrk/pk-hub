@@ -169,25 +169,18 @@ capabilities before owner-approved claims and owning contracts exist.
   the pressed state and search retained focus while updating the result count. The Blog index was
   also viewed at 1280px without document overflow. `check`, `lint`, `build`, and `seo:validate`
   passed on 2026-10-01; the existing 535 KB client chunk warning remains. This is local only.
-- Before releasing the redesigned journal, review the owner-approved iPhone example in
-  `src/content/blog/published/openMobileShop.ts` against current commercial authority. It explicitly
-  cites the PK HUB price sheet from 5 August 2026 and Apple retail prices observed on 11 August
-  2026. Those figures were not updated during this UI pass and must not be presented as current
-  order quotes.
-- The dated iPhone pricing example now starts with a prominent historical-example notice before
-  either price table and links to the existing LINE contact for a current price/stock check. Its
-  numbers and source dates remain unchanged. The section rendered at 390px and desktop without
-  overflow, and the link has a 44px target. The rebuilt preview retained the notice; `check`,
-  `lint`, `build`, and `seo:validate` passed. Current commercial publication approval remains open.
+- The published journal no longer exposes the dated PK HUB iPhone wholesale prices, retail
+  comparisons, or implied margin examples while commercial publication approval is open. The
+  opening-shop, inventory, and first-order guides now explain how to request current item-specific
+  prices and compare the confirmed total against working capital. The illustrative shop budget
+  split remains clearly hypothetical. Restoring a public price table requires current owner
+  approval and source confirmation.
 - The six Thai articles were traversed from top to footer in the local browser at 390 x 844 and
   1280 x 800 on 2026-10-01. Each retained one H1/main, valid contents anchors, sources before its
-  contact form, contained document width, and fully loaded images with no broken asset. The only
-  wide comparison table was locally scrollable, but its prices were clipped on mobile. That one
-  comparison now presents the same sourced rows and derived totals as an unboxed vertical list below
-  1024px, retaining the desktop table above that width. The mobile source-price links have 44px
-  targets. The commercial figures themselves did not change. `check`, `lint`, `build`, and
-  `seo:validate` passed; the existing client bundle warning is about 537 KB. No lead was sent and
-  no production deployment occurred.
+  contact form, contained document width, and fully loaded images with no broken asset. The price
+  comparison that was present during this earlier layout sweep has since been removed from
+  published content pending commercial approval. No lead was sent and no production deployment
+  occurred.
 - The Home, Join, and Dealer gateway opening motion now starts with readable copy instead of fully
   transparent text. The stagger, brand reveal, and photography transition remain. Their immediate
   390px frames and the Home desktop frame were inspected locally without horizontal overflow;
@@ -232,7 +225,7 @@ capabilities before owner-approved claims and owning contracts exist.
   and Journal search for `VAT` showed one result while retaining search focus; Back returned to
   Home. The Thai Dealer gateway linked to the configured Dealer login and Join routes. This is
   hosted public-preview evidence only: lead delivery, protected Dealer or staff sessions,
-  commercial publication approval, and production release remain open.
+  approval of any future public price example, and production release remain open.
 - The same hosted build was traversed from top to footer for all six Thai articles at 390 x 844
   and 1280 x 800 on 2026-10-01. Lazy images loaded after reaching their sections; every image
   completed with nonzero natural width. Each article retained one H1/main, valid in-page anchors,
