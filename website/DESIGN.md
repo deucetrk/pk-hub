@@ -237,3 +237,10 @@ capabilities before owner-approved claims and owning contracts exist.
   query and at 1280px with a track filter; both showed the expected article count and contained
   document width. Node 24 `check`, `lint`, `build`, and `seo:validate` pass. This is local route
   behavior, not hosted or production acceptance.
+- The Thai Journal index now presents its lead and two priority stories as an open editorial layout
+  with photography, white space, and thin rules instead of bordered cards. Its visible introduction,
+  route metadata, and collection schema describe the six published practical guides rather than
+  promising news or current price comparisons. The route rendered at 390px and 1280px; a no-result
+  search and its clear action recovered the article list at 390px without document overflow. Node 24
+  `check`, `lint`, `build`, and `seo:validate` pass on 2026-10-01. This is local preview evidence;
+  the updated PR head still needs hosted preview and release review.

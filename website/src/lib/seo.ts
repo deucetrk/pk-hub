@@ -40,7 +40,7 @@ export const HOME_META = {
 export const BLOG_INDEX_META: PageMeta = {
   title: 'บทความมือถือ ธุรกิจร้านมือถือ และเทคโนโลยี | PK HUB',
   description:
-    'ข่าว อัปเดต บทวิเคราะห์และบทความจาก PK HUB ครอบคลุมมือถือ เทคโนโลยี ราคา สต็อก เอกสาร และธุรกิจร้านมือถือ',
+    'คู่มือและบทวิเคราะห์สำหรับร้านมือถือจาก PK HUB เรื่องเลือกแหล่งสินค้า จัดสต็อก เอกสาร และการเริ่มขาย',
   canonical: `${SITE_URL}/th/blog`,
   ogType: 'website',
   image: `${SITE_URL}/og-image.jpg`,
@@ -94,7 +94,7 @@ export function getBlogIndexMeta(page = 1): PageMeta {
   return {
     ...BLOG_INDEX_META,
     title: `บทความมือถือ ธุรกิจ และเทคโนโลยี หน้า ${page} | PK HUB`,
-    description: `ข่าว อัปเดต บทวิเคราะห์และบทความจาก PK HUB สำหรับร้านมือถือและคนสนใจเทคโนโลยี หน้าที่ ${page}`,
+    description: `คู่มือและบทวิเคราะห์จาก PK HUB สำหรับร้านมือถือ เรื่องสินค้า สต็อก เอกสาร และการเริ่มขาย หน้าที่ ${page}`,
     canonical: `${SITE_URL}/th/blog/page/${page}`,
   }
 }

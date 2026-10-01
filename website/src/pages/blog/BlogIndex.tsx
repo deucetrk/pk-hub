@@ -32,7 +32,7 @@ const blogCollectionSchema = {
       "@id": `${SITE_URL}/th/blog#collection`,
       name: "บทความมือถือ ธุรกิจ และเทคโนโลยีจาก PK HUB",
       description:
-        "ข่าว อัปเดต บทวิเคราะห์ และบทความเรื่องมือถือ เทคโนโลยี ราคา สต็อก เอกสาร และธุรกิจร้านมือถือ",
+        "คู่มือและบทวิเคราะห์สำหรับร้านมือถือ เรื่องการเลือกแหล่งสินค้า สต็อก เอกสาร และการเริ่มขาย",
       url: `${SITE_URL}/th/blog`,
       inLanguage: "th-TH",
     },
@@ -70,10 +70,10 @@ function ArticleMeta({ article }: { article: PublishedBlogArticle }) {
 
 function LeadStory({ article }: { article: PublishedBlogArticle }) {
   return (
-    <article className="group grid overflow-hidden border border-[#d4d4d8] bg-white lg:grid-cols-[minmax(0,1.2fr)_minmax(23rem,0.8fr)]">
+    <article className="group grid gap-0 border-t border-[#d4d4d8] pt-5 lg:grid-cols-[minmax(0,1.2fr)_minmax(23rem,0.8fr)] lg:gap-10 lg:pt-7">
       <a
         href={articleHref(article)}
-        className="relative aspect-[16/10] overflow-hidden border-b border-[#d4d4d8] lg:aspect-auto lg:min-h-[28rem] lg:border-b-0 lg:border-r"
+        className="relative aspect-[16/10] overflow-hidden bg-[#ededf0] lg:aspect-auto lg:min-h-[29rem]"
         aria-label={`อ่าน ${article.title}`}
       >
         <img
@@ -86,7 +86,7 @@ function LeadStory({ article }: { article: PublishedBlogArticle }) {
           className="absolute inset-0 h-full w-full object-cover transition-[filter,transform] duration-500 group-hover:brightness-[0.94] motion-safe:group-hover:scale-[1.015]"
         />
       </a>
-      <div className="grid content-center gap-5 p-6 sm:p-9 lg:p-11">
+      <div className="grid content-center gap-5 py-7 sm:py-9 lg:py-11">
         <ArticleMeta article={article} />
         <h2 className="font-display text-[2.15rem] font-extrabold leading-[1.14] tracking-[-0.045em] sm:text-5xl lg:text-[3rem]">
           <a
@@ -118,10 +118,10 @@ function PriorityStory({
   number: number;
 }) {
   return (
-    <article className="group grid overflow-hidden border border-[#d4d4d8] bg-white sm:grid-cols-[minmax(13rem,0.8fr)_minmax(0,1.2fr)]">
+    <article className="group grid content-start border-t border-[#d4d4d8] pt-5">
       <a
         href={articleHref(article)}
-        className="relative aspect-[16/10] overflow-hidden border-b border-[#d4d4d8] sm:aspect-auto sm:min-h-[18rem] sm:border-b-0 sm:border-r"
+        className="relative aspect-[16/10] overflow-hidden bg-[#ededf0]"
         aria-label={`อ่าน ${article.title}`}
       >
         <img
@@ -140,7 +140,7 @@ function PriorityStory({
           {String(number).padStart(2, "0")}
         </span>
       </a>
-      <div className="grid content-center gap-4 p-6 sm:p-7 lg:p-8">
+      <div className="grid content-start gap-4 pt-5 sm:pt-6">
         <ArticleMeta article={article} />
         <h2 className="font-display text-[1.65rem] font-extrabold leading-[1.24] tracking-[-0.035em] sm:text-3xl">
           <a
@@ -308,8 +308,8 @@ export default function BlogIndex() {
               </h1>
             </div>
             <p className="max-w-xl border-l-2 border-[#2457d6] pl-5 text-base leading-7 text-[#52525b] sm:text-lg sm:leading-8">
-              ข่าว อัปเดต เปรียบเทียบราคา และบทวิเคราะห์จากข้อมูลจริง
-              พร้อมมุมที่ทั้งร้านค้าและคนใช้มือถืออ่านต่อได้
+              คู่มือจากมุมร้านมือถือ เรื่องเลือกแหล่งสินค้า จัดสต็อก
+              เอกสาร และการเริ่มขาย เพื่อช่วยให้ตัดสินใจได้ชัดขึ้น
             </p>
           </Container>
         </header>
