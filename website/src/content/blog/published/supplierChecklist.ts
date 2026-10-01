@@ -14,7 +14,7 @@ export const supplierChecklistArticle: PublishedBlogArticle = {
   contentTrack: 'retailer',
   tags: ['แหล่งขายส่ง', 'เครื่องศูนย์ไทย', 'ซัพพลายเออร์'],
   publishedAt: '2026-08-09',
-  modifiedAt: '2026-08-11',
+  modifiedAt: '2026-10-01',
   estimatedReadMinutes: 6,
   recommendedImage: '/blog/wholesale-order-inspection-cover.png',
   imageAlt: 'ภาพจำลองร้านมือถือกำลังตรวจล็อตสินค้าก่อนรับเข้าสต็อก',
@@ -96,7 +96,7 @@ export const supplierChecklistArticle: PublishedBlogArticle = {
   ],
   conclusion: [
     'แหล่งขายส่งที่เหมาะกับร้านจึง **ไม่ใช่แค่เจ้าที่เสนอราคาต่ำ** แต่เป็นเจ้าที่ทำให้ร้านรู้ต้นทุนจริง ตรวจสอบสินค้าได้ และมีขั้นตอนเมื่อเกิดปัญหา',
-    'PK HUB ดูแลร้านค้ามาแล้ว **มากกว่า 500 ร้าน** มีฐานดำเนินงานในฉะเชิงเทรา และ **ไม่มีขั้นต่ำในการสั่งซื้อ** ร้านค้าสามารถส่งรุ่นและจำนวนที่สนใจทาง **LINE @pkhub** เพื่อให้ทีมตรวจราคา สต็อก เอกสาร และรอบจัดส่งล่าสุดก่อนตัดสินใจ',
+    'PK HUB มีหน้าร้านในฉะเชิงเทรา ร้านค้าสามารถส่งรุ่นและจำนวนที่สนใจทาง **LINE @pkhub** เพื่อให้ทีมตรวจราคา สต็อก เอกสาร รอบจัดส่ง และเงื่อนไขการสั่งซื้อของรายการนั้นก่อนตัดสินใจ',
   ],
   ctaLabel: 'ส่งรายการให้ทีม PK HUB เช็ก',
   ctaHref: 'https://lin.ee/VEgW6qG',
