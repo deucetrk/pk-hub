@@ -244,3 +244,16 @@ capabilities before owner-approved claims and owning contracts exist.
   search and its clear action recovered the article list at 390px without document overflow. Node 24
   `check`, `lint`, `build`, and `seo:validate` pass on 2026-10-01. This is local preview evidence;
   the updated PR head still needs hosted preview and release review.
+- The immutable Vercel preview `https://pk-p8h5f0uib-deucetrks-projects.vercel.app` maps to
+  `f8a650e` through GitHub deployment `6777839479`. The existing browser session opened its Thai
+  Journal directly, although unauthenticated HTTP redirects to SSO. At 390px and 1280px, the new
+  editorial layout, copy, and metadata rendered with one H1/main and contained document width;
+  the lead image loaded. Search for `VAT` returned one article and retained input focus. This
+  verifies that Journal preview, not production or the protected commerce journeys.
+- Journal clear-filter actions now return focus to the search input after the restored layout
+  commits, keeping it visible rather than losing focus when the empty-state button disappears.
+  The lead reading action, home breadcrumb, and empty-state recovery action have 44px targets.
+  Keyboard recovery was exercised at 390px and 1280px locally; the focused input remained in view,
+  document width stayed contained, and the browser reported no error/warning logs. Node 24 `check`,
+  `lint`, `build`, and `seo:validate` pass. These are local observations until the new commit is
+  inspected in its own hosted preview.

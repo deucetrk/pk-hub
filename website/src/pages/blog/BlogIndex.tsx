@@ -1,5 +1,5 @@
 import { ArrowRight, Search, X } from "lucide-react";
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import {
   Navigate,
   useNavigate,
@@ -101,7 +101,7 @@ function LeadStory({ article }: { article: PublishedBlogArticle }) {
         </p>
         <a
           href={articleHref(article)}
-          className="inline-flex w-fit items-center gap-2 border-b-2 border-[#2457d6] pb-1 font-bold transition-colors hover:border-[#1946b8] hover:text-[#1946b8]"
+          className="inline-flex min-h-11 w-fit items-center gap-2 border-b-2 border-[#2457d6] pb-1 font-bold transition-colors hover:border-[#1946b8] hover:text-[#1946b8]"
         >
           อ่านบทความ <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </a>
@@ -201,6 +201,8 @@ function LibraryCard({ article }: { article: PublishedBlogArticle }) {
 
 export default function BlogIndex() {
   const navigate = useNavigate();
+  const searchInputRef = useRef<HTMLInputElement>(null);
+  const focusSearchAfterClearRef = useRef(false);
   const { page } = useParams();
   const [searchParams] = useSearchParams();
   const routePage = Math.max(1, Number(page ?? 1) || 1);
@@ -211,6 +213,12 @@ export default function BlogIndex() {
     PublishedBlogArticle["contentTrack"] | null;
   const selectedTag = searchParams.get("tag") ?? "";
   const hasFilters = Boolean(query || selectedTrack || selectedTag);
+
+  useEffect(() => {
+    if (hasFilters || !focusSearchAfterClearRef.current) return;
+    focusSearchAfterClearRef.current = false;
+    searchInputRef.current?.focus();
+  }, [hasFilters]);
 
   const topTags = useMemo(() => {
     const counts = new Map<string, number>();
@@ -276,6 +284,7 @@ export default function BlogIndex() {
   }
 
   function clearFilters() {
+    focusSearchAfterClearRef.current = true;
     navigate("/th/blog");
   }
 
@@ -298,7 +307,7 @@ export default function BlogIndex() {
             <div>
               <a
                 href="/th"
-                className="inline-flex items-center gap-2 text-xs font-bold text-[#52525b] transition-colors hover:text-black"
+                className="inline-flex min-h-11 items-center gap-2 text-xs font-bold text-[#52525b] transition-colors hover:text-black"
               >
                 <span className="h-2 w-2 bg-[#2457d6]" aria-hidden="true" /> PK
                 HUB
@@ -406,6 +415,7 @@ export default function BlogIndex() {
                   aria-hidden="true"
                 />
                 <input
+                  ref={searchInputRef}
                   type="search"
                   value={query}
                   onChange={(event) => updateFilters("q", event.target.value)}
@@ -458,7 +468,7 @@ export default function BlogIndex() {
                 <button
                   type="button"
                   onClick={clearFilters}
-                  className="mt-5 border-b-2 border-[#2457d6] pb-1 font-bold"
+                  className="mt-5 inline-flex min-h-11 items-center border-b-2 border-[#2457d6] pb-1 font-bold"
                 >
                   ดูบทความทั้งหมด
                 </button>
