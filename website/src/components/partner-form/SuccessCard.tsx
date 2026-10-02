@@ -10,7 +10,9 @@ export default function SuccessCard({ values, onReset, isApplication = false }: 
   const headingRef = useRef<HTMLHeadingElement>(null)
 
   useEffect(() => {
-    headingRef.current?.focus()
+    const heading = headingRef.current
+    heading?.focus({ preventScroll: true })
+    heading?.scrollIntoView({ block: 'start', behavior: 'auto' })
   }, [])
 
   return (
@@ -18,7 +20,7 @@ export default function SuccessCard({ values, onReset, isApplication = false }: 
       <div className="flex items-start gap-4">
         <Send className="mt-1 h-8 w-8 shrink-0 text-[#2457d6]" aria-hidden="true" />
         <div className="grid gap-2">
-          <h3 ref={headingRef} tabIndex={-1} className="text-2xl font-black text-zinc-900 focus:outline-2 focus:outline-offset-4 focus:outline-[#2457d6]">
+          <h3 ref={headingRef} tabIndex={-1} className="scroll-mt-24 text-2xl font-black text-zinc-900 focus:outline-2 focus:outline-offset-4 focus:outline-[#2457d6]">
             {isApplication
               ? (isThai ? 'ส่งใบสมัครจากอุปกรณ์นี้แล้ว' : 'The application was sent from this device')
               : (isThai ? 'ส่งคำขอจากอุปกรณ์นี้แล้ว' : 'The request was sent from this device')}

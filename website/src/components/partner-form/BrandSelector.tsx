@@ -42,7 +42,7 @@ export default function BrandSelector({
               aria-pressed={checked}
               onClick={() => onToggle(b, !checked)}
               className={cn(
-                "min-h-10 rounded-md border px-3.5 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2457d6]/20",
+                "min-h-11 rounded-md border px-3.5 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2457d6]/20 disabled:cursor-wait disabled:opacity-60",
                 checked
                   ? "border-[#2457d6] bg-[#edf2ff] text-[#1946b8]"
                   : "border-zinc-300 bg-white text-zinc-700 hover:border-zinc-500 hover:text-zinc-950",

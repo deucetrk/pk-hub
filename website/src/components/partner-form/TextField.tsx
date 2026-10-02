@@ -37,7 +37,7 @@ export default function TextField({
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${id}-error` : undefined}
         className={cn(
-          "h-11 w-full min-w-0 rounded-md border bg-white px-3 text-sm font-medium text-zinc-900 outline-none transition-colors placeholder:text-zinc-500 focus-visible:border-[#2457d6] focus-visible:ring-2 focus-visible:ring-[#2457d6]/15",
+          "h-11 w-full min-w-0 rounded-md border bg-white px-3 text-sm font-medium text-zinc-900 outline-none transition-colors placeholder:text-zinc-500 focus-visible:border-[#2457d6] focus-visible:ring-2 focus-visible:ring-[#2457d6]/15 disabled:cursor-wait disabled:bg-zinc-50 disabled:text-zinc-600",
           error ? "border-red-600" : "border-zinc-300 hover:border-zinc-500",
         )}
       />
