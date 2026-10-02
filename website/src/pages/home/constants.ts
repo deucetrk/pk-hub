@@ -11,14 +11,14 @@ export const CONTACT = {
 
 export const BRANDS = ['Apple', 'Samsung', 'Oppo', 'Vivo', 'Realme', 'Xiaomi', 'Honor', 'Infinix']
 
-export type BrandMarqueeItem = {
+export type BrandItem = {
   name: string
   logoSrc: string
   logoKind: 'symbol' | 'wordmark'
   logoClassName?: string
 }
 
-export const BRAND_MARQUEE_ITEMS: BrandMarqueeItem[] = [
+export const BRAND_ITEMS: BrandItem[] = [
   {
     name: 'Apple',
     logoSrc: '/brands/normalized/apple.png',
