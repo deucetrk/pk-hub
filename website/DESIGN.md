@@ -1,6 +1,11 @@
 # PK HUB Public Design Direction
 
 Status: canonical public-site design direction
+
+Current onboarding correction: [041](../ONBOARDING-041.md) records actual public Join/Home pending
+draft containment, duplicate guard, original-request result and mobile focus correction. Source/main
+CI passes; production creation remains rate-limited. This supersedes older form-release status,
+not consent/delivery acceptance or the full ecosystem outcome.
 Owner accepted: 2026-09-20; Apple-inspired layout and expressive motion selected 2026-09-30
 Last verified: 2026-09-20 production desktop and 390px public acceptance at `pkhub.co`
 
