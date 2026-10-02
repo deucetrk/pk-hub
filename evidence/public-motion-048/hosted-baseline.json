@@ -1,0 +1,1009 @@
+{
+  "origin": "https://pkhub.co",
+  "expectedRevision": "acf36134a6a9a524ae2709304c099c56b446030d",
+  "motion": "no-preference",
+  "startedAt": "2026-10-02T23:45:47.515Z",
+  "results": [
+    {
+      "width": 1280,
+      "route": "/th",
+      "name": "hero entrance",
+      "passed": true,
+      "details": {
+        "sequence": [
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.08s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.17s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.25s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.33s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.41s"
+          }
+        ],
+        "observed": {
+          "clip": "inset(2.72627% 0px 0px)",
+          "transform": "matrix(1.01908, 0, 0, 1.01908, 0, 0)"
+        }
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th",
+      "name": "hero hover depth",
+      "passed": false,
+      "error": "Image hover remains matrix(1, 0, 0, 1, 0, 0)"
+    },
+    {
+      "width": 1280,
+      "route": "/th",
+      "name": "all brands simultaneously visible",
+      "passed": false,
+      "error": "Only these brands are simultaneously visible: Samsung, Oppo, Vivo, Realme, Xiaomi, Honor"
+    },
+    {
+      "width": 1280,
+      "route": "/th",
+      "name": "portal keyboard transition",
+      "passed": true,
+      "details": {
+        "before": "เริ่มจากของที่ร้านต้องการ",
+        "after": "เห็นข้อมูลก่อนตัดสินใจ",
+        "samples": [
+          {
+            "opacity": 0.99234,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 0.560077,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 0.231893,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 0.0242485,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 0.175863,
+            "transform": "matrix(1, 0, 0, 1, 0, 15.59)"
+          },
+          {
+            "opacity": 0.573276,
+            "transform": "matrix(1, 0, 0, 1, 0, 11.7213)"
+          },
+          {
+            "opacity": 0.862257,
+            "transform": "matrix(1, 0, 0, 1, 0, 6.83865)"
+          },
+          {
+            "opacity": 0.999332,
+            "transform": "matrix(1, 0, 0, 1, 0, 3.53899)"
+          },
+          {
+            "opacity": 0.968665,
+            "transform": "matrix(1, 0, 0, 1, 0, 1.79058)"
+          },
+          {
+            "opacity": 0.988928,
+            "transform": "matrix(1, 0, 0, 1, 0, 0.632656)"
+          },
+          {
+            "opacity": 0.998205,
+            "transform": "matrix(1, 0, 0, 1, 0, 0.102585)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          }
+        ]
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th",
+      "name": "proof keyboard transition",
+      "passed": true,
+      "details": {
+        "before": "ใส่ใจตั้งแต่ก่อนออกจากร้าน",
+        "after": "มีหน้าร้าน มีทีมให้ติดต่อ",
+        "samples": [
+          {
+            "opacity": 0.975941,
+            "transform": "matrix(1, 0, 0, 1, 0, -0.287161)"
+          },
+          {
+            "opacity": 0.751088,
+            "transform": "matrix(1, 0, 0, 1, 0, -2.50729)"
+          },
+          {
+            "opacity": 0.521407,
+            "transform": "matrix(1, 0, 0, 1, 0, -4.784)"
+          },
+          {
+            "opacity": 0.324921,
+            "transform": "matrix(1, 0, 0, 1, 0, -6.78434)"
+          },
+          {
+            "opacity": 0.164591,
+            "transform": "matrix(1, 0, 0, 1, 0, -8.3571)"
+          },
+          {
+            "opacity": 0.0598555,
+            "transform": "matrix(1, 0, 0, 1, 0, -9.40995)"
+          },
+          {
+            "opacity": 0.00146532,
+            "transform": "matrix(1, 0, 0, 1, 0, -9.98477)"
+          },
+          {
+            "opacity": 0.173686,
+            "transform": "matrix(1, 0, 0, 1, 0, 11.5654)"
+          },
+          {
+            "opacity": 0.413728,
+            "transform": "matrix(1, 0, 0, 1, 0, 8.18943)"
+          },
+          {
+            "opacity": 0.595964,
+            "transform": "matrix(1, 0, 0, 1, 0, 5.62878)"
+          },
+          {
+            "opacity": 0.773838,
+            "transform": "matrix(1, 0, 0, 1, 0, 3.15496)"
+          },
+          {
+            "opacity": 0.891225,
+            "transform": "matrix(1, 0, 0, 1, 0, 1.51488)"
+          },
+          {
+            "opacity": 0.980783,
+            "transform": "matrix(1, 0, 0, 1, 0, 0.265625)"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          }
+        ]
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th",
+      "name": "FAQ keyboard",
+      "passed": true,
+      "details": {
+        "focusRetained": true
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": false,
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/en",
+      "name": "hero entrance",
+      "passed": true,
+      "details": {
+        "sequence": [
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.08s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.17s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.25s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.33s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.41s"
+          }
+        ],
+        "observed": {
+          "clip": "inset(2.72627% 0px 0px)",
+          "transform": "matrix(1.01908, 0, 0, 1.01908, 0, 0)"
+        }
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/en",
+      "name": "hero hover depth",
+      "passed": false,
+      "error": "Image hover remains matrix(1, 0, 0, 1, 0, 0)"
+    },
+    {
+      "width": 1280,
+      "route": "/en",
+      "name": "all brands simultaneously visible",
+      "passed": false,
+      "error": "Only these brands are simultaneously visible: Samsung, Oppo, Vivo, Realme, Xiaomi, Honor"
+    },
+    {
+      "width": 1280,
+      "route": "/en",
+      "name": "portal keyboard transition",
+      "passed": true,
+      "details": {
+        "before": "Start with what your store needs",
+        "after": "Get the facts before you decide",
+        "samples": [
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 0.567342,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 0.233334,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 0.0287903,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 0.117893,
+            "transform": "matrix(1, 0, 0, 1, 0, 15.833)"
+          },
+          {
+            "opacity": 0.527572,
+            "transform": "matrix(1, 0, 0, 1, 0, 12.4663)"
+          },
+          {
+            "opacity": 0.829833,
+            "transform": "matrix(1, 0, 0, 1, 0, 7.4916)"
+          },
+          {
+            "opacity": 0.993519,
+            "transform": "matrix(1, 0, 0, 1, 0, 3.95383)"
+          },
+          {
+            "opacity": 0.964574,
+            "transform": "matrix(1, 0, 0, 1, 0, 2.02434)"
+          },
+          {
+            "opacity": 0.986586,
+            "transform": "matrix(1, 0, 0, 1, 0, 0.766506)"
+          },
+          {
+            "opacity": 0.996488,
+            "transform": "matrix(1, 0, 0, 1, 0, 0.200709)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 5.33413e-07)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          }
+        ]
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/en",
+      "name": "proof keyboard transition",
+      "passed": true,
+      "details": {
+        "before": "Care before it leaves our store",
+        "after": "A place to visit. A team to reach.",
+        "samples": [
+          {
+            "opacity": 0.997554,
+            "transform": "matrix(1, 0, 0, 1, 0, -0.0485139)"
+          },
+          {
+            "opacity": 0.737715,
+            "transform": "matrix(1, 0, 0, 1, 0, -2.66996)"
+          },
+          {
+            "opacity": 0.512624,
+            "transform": "matrix(1, 0, 0, 1, 0, -4.89381)"
+          },
+          {
+            "opacity": 0.316892,
+            "transform": "matrix(1, 0, 0, 1, 0, -6.84623)"
+          },
+          {
+            "opacity": 0.177051,
+            "transform": "matrix(1, 0, 0, 1, 0, -8.23809)"
+          },
+          {
+            "opacity": 0.0562137,
+            "transform": "matrix(1, 0, 0, 1, 0, -9.44273)"
+          },
+          {
+            "opacity": 0.00380315,
+            "transform": "matrix(1, 0, 0, 1, 0, -9.96228)"
+          },
+          {
+            "opacity": 0.181079,
+            "transform": "matrix(1, 0, 0, 1, 0, 11.4444)"
+          },
+          {
+            "opacity": 0.418314,
+            "transform": "matrix(1, 0, 0, 1, 0, 8.13879)"
+          },
+          {
+            "opacity": 0.623454,
+            "transform": "matrix(1, 0, 0, 1, 0, 5.2579)"
+          },
+          {
+            "opacity": 0.775466,
+            "transform": "matrix(1, 0, 0, 1, 0, 3.1201)"
+          },
+          {
+            "opacity": 0.910168,
+            "transform": "matrix(1, 0, 0, 1, 0, 1.23933)"
+          },
+          {
+            "opacity": 0.989712,
+            "transform": "matrix(1, 0, 0, 1, 0, 0.144274)"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          }
+        ]
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/en",
+      "name": "FAQ keyboard",
+      "passed": true,
+      "details": {
+        "focusRetained": true
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/en",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": false,
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th/blog",
+      "name": "journal search recovery",
+      "passed": true,
+      "details": {
+        "recovered": true
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th/blog",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": false,
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th",
+      "name": "hero entrance",
+      "passed": true,
+      "details": {
+        "sequence": [
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.08s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.17s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.25s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.33s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.41s"
+          }
+        ],
+        "observed": {
+          "clip": "inset(2.72627% 0px 0px)",
+          "transform": "matrix(1.01908, 0, 0, 1.01908, 0, 0)"
+        }
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th",
+      "name": "all brands simultaneously visible",
+      "passed": false,
+      "error": "Only these brands are simultaneously visible: Samsung"
+    },
+    {
+      "width": 390,
+      "route": "/th",
+      "name": "portal keyboard transition",
+      "passed": true,
+      "details": {
+        "before": "เริ่มจากของที่ร้านต้องการ",
+        "after": "เห็นข้อมูลก่อนตัดสินใจ",
+        "samples": [
+          {
+            "opacity": 0.927385,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 0.516551,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 0.20883,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 0.0191925,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 0.246185,
+            "transform": "matrix(1, 0, 0, 1, 0, 15.2665)"
+          },
+          {
+            "opacity": 0.624761,
+            "transform": "matrix(1, 0, 0, 1, 0, 11.011)"
+          },
+          {
+            "opacity": 0.895139,
+            "transform": "matrix(1, 0, 0, 1, 0, 6.2963)"
+          },
+          {
+            "opacity": 0.943622,
+            "transform": "matrix(1, 0, 0, 1, 0, 3.22161)"
+          },
+          {
+            "opacity": 0.975322,
+            "transform": "matrix(1, 0, 0, 1, 0, 1.41016)"
+          },
+          {
+            "opacity": 0.990836,
+            "transform": "matrix(1, 0, 0, 1, 0, 0.523654)"
+          },
+          {
+            "opacity": 0.998902,
+            "transform": "matrix(1, 0, 0, 1, 0, 0.0627169)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          }
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th",
+      "name": "proof keyboard transition",
+      "passed": true,
+      "details": {
+        "before": "ใส่ใจตั้งแต่ก่อนออกจากร้าน",
+        "after": "มีหน้าร้าน มีทีมให้ติดต่อ",
+        "samples": [
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 0.750249,
+            "transform": "matrix(1, 0, 0, 1, 0, -2.50729)"
+          },
+          {
+            "opacity": 0.519573,
+            "transform": "matrix(1, 0, 0, 1, 0, -4.82059)"
+          },
+          {
+            "opacity": 0.344356,
+            "transform": "matrix(1, 0, 0, 1, 0, -6.56906)"
+          },
+          {
+            "opacity": 0.181782,
+            "transform": "matrix(1, 0, 0, 1, 0, -8.18618)"
+          },
+          {
+            "opacity": 0.0739556,
+            "transform": "matrix(1, 0, 0, 1, 0, -9.25858)"
+          },
+          {
+            "opacity": 0.00457476,
+            "transform": "matrix(1, 0, 0, 1, 0, -9.95263)"
+          },
+          {
+            "opacity": 0.141621,
+            "transform": "matrix(1, 0, 0, 1, 0, 11.9979)"
+          },
+          {
+            "opacity": 0.381263,
+            "transform": "matrix(1, 0, 0, 1, 0, 8.68225)"
+          },
+          {
+            "opacity": 0.567449,
+            "transform": "matrix(1, 0, 0, 1, 0, 6.05409)"
+          },
+          {
+            "opacity": 0.75116,
+            "transform": "matrix(1, 0, 0, 1, 0, 3.46517)"
+          },
+          {
+            "opacity": 0.893265,
+            "transform": "matrix(1, 0, 0, 1, 0, 1.4883)"
+          },
+          {
+            "opacity": 0.973397,
+            "transform": "matrix(1, 0, 0, 1, 0, 0.369063)"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          }
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th",
+      "name": "FAQ keyboard",
+      "passed": true,
+      "details": {
+        "focusRetained": true
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th",
+      "name": "mobile menu and locale",
+      "passed": true,
+      "details": {
+        "anchorTop": 95.96875,
+        "focus": "BODY"
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": false,
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 390,
+      "route": "/en",
+      "name": "hero entrance",
+      "passed": true,
+      "details": {
+        "sequence": [
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.08s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.17s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.25s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.33s"
+          },
+          {
+            "name": "pk-hero-enter",
+            "duration": "0.76s",
+            "delay": "0.41s"
+          }
+        ],
+        "observed": {
+          "clip": "inset(2.72627% 0px 0px)",
+          "transform": "matrix(1.01908, 0, 0, 1.01908, 0, 0)"
+        }
+      }
+    },
+    {
+      "width": 390,
+      "route": "/en",
+      "name": "all brands simultaneously visible",
+      "passed": false,
+      "error": "Only these brands are simultaneously visible: Samsung"
+    },
+    {
+      "width": 390,
+      "route": "/en",
+      "name": "portal keyboard transition",
+      "passed": true,
+      "details": {
+        "before": "Start with what your store needs",
+        "after": "Get the facts before you decide",
+        "samples": [
+          {
+            "opacity": 0.947622,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 0.572646,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 0.233334,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 0.0292014,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 0.128066,
+            "transform": "matrix(1, 0, 0, 1, 0, 15.8306)"
+          },
+          {
+            "opacity": 0.535612,
+            "transform": "matrix(1, 0, 0, 1, 0, 12.4577)"
+          },
+          {
+            "opacity": 0.837452,
+            "transform": "matrix(1, 0, 0, 1, 0, 7.4457)"
+          },
+          {
+            "opacity": 0.986805,
+            "transform": "matrix(1, 0, 0, 1, 0, 4.27342)"
+          },
+          {
+            "opacity": 0.96391,
+            "transform": "matrix(1, 0, 0, 1, 0, 2.06228)"
+          },
+          {
+            "opacity": 0.986532,
+            "transform": "matrix(1, 0, 0, 1, 0, 0.769622)"
+          },
+          {
+            "opacity": 0.996462,
+            "transform": "matrix(1, 0, 0, 1, 0, 0.202153)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          },
+          {
+            "opacity": 1,
+            "transform": "matrix(1, 0, 0, 1, 0, 0)"
+          }
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "route": "/en",
+      "name": "proof keyboard transition",
+      "passed": true,
+      "details": {
+        "before": "Care before it leaves our store",
+        "after": "A place to visit. A team to reach.",
+        "samples": [
+          {
+            "opacity": 0.990289,
+            "transform": "matrix(1, 0, 0, 1, 0, -0.0965636)"
+          },
+          {
+            "opacity": 0.770473,
+            "transform": "matrix(1, 0, 0, 1, 0, -2.29734)"
+          },
+          {
+            "opacity": 0.539132,
+            "transform": "matrix(1, 0, 0, 1, 0, -4.60121)"
+          },
+          {
+            "opacity": 0.338672,
+            "transform": "matrix(1, 0, 0, 1, 0, -6.63188)"
+          },
+          {
+            "opacity": 0.191894,
+            "transform": "matrix(1, 0, 0, 1, 0, -8.08669)"
+          },
+          {
+            "opacity": 0.0674237,
+            "transform": "matrix(1, 0, 0, 1, 0, -9.32639)"
+          },
+          {
+            "opacity": 0.00344282,
+            "transform": "matrix(1, 0, 0, 1, 0, -9.96719)"
+          },
+          {
+            "opacity": 0.145161,
+            "transform": "matrix(1, 0, 0, 1, 0, 11.938)"
+          },
+          {
+            "opacity": 0.384382,
+            "transform": "matrix(1, 0, 0, 1, 0, 8.62227)"
+          },
+          {
+            "opacity": 0.597975,
+            "transform": "matrix(1, 0, 0, 1, 0, 5.62878)"
+          },
+          {
+            "opacity": 0.818719,
+            "transform": "matrix(1, 0, 0, 1, 0, 2.53935)"
+          },
+          {
+            "opacity": 0.938369,
+            "transform": "matrix(1, 0, 0, 1, 0, 0.846843)"
+          },
+          {
+            "opacity": 0.998229,
+            "transform": "matrix(1, 0, 0, 1, 0, 0.0251173)"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          }
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "route": "/en",
+      "name": "FAQ keyboard",
+      "passed": true,
+      "details": {
+        "focusRetained": true
+      }
+    },
+    {
+      "width": 390,
+      "route": "/en",
+      "name": "mobile menu and locale",
+      "passed": true,
+      "details": {
+        "anchorTop": 97.390625,
+        "focus": "BODY"
+      }
+    },
+    {
+      "width": 390,
+      "route": "/en",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": false,
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th/blog",
+      "name": "journal search recovery",
+      "passed": true,
+      "details": {
+        "recovered": true
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th/blog",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": false,
+        "abortedMethods": [],
+        "errors": []
+      }
+    }
+  ],
+  "beforeRevision": "acf36134a6a9a524ae2709304c099c56b446030d",
+  "afterRevision": "acf36134a6a9a524ae2709304c099c56b446030d",
+  "finishedAt": "2026-10-02T23:46:39.941Z",
+  "passed": 26,
+  "failed": 6
+}

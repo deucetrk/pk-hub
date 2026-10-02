@@ -1,0 +1,1433 @@
+{
+  "origin": "http://127.0.0.1:8860",
+  "expectedRevision": "498ed6cc4f0b96c3a4f52652bb2f01fd0dd19746",
+  "motion": "reduce",
+  "startedAt": "2026-10-02T23:51:06.309Z",
+  "results": [
+    {
+      "width": 1280,
+      "route": "/th",
+      "name": "all brands simultaneously visible",
+      "passed": true,
+      "details": {
+        "visible": [
+          "Apple",
+          "Samsung",
+          "Oppo",
+          "Vivo",
+          "Realme",
+          "Xiaomi",
+          "Honor",
+          "Infinix"
+        ]
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th",
+      "name": "portal keyboard transition",
+      "passed": true,
+      "details": {
+        "before": "เริ่มจากของที่ร้านต้องการ",
+        "after": "เห็นข้อมูลก่อนตัดสินใจ",
+        "samples": [
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          }
+        ]
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th",
+      "name": "proof keyboard transition",
+      "passed": true,
+      "details": {
+        "before": "ใส่ใจตั้งแต่ก่อนออกจากร้าน",
+        "after": "มีหน้าร้าน มีทีมให้ติดต่อ",
+        "samples": [
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          }
+        ]
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th",
+      "name": "FAQ keyboard",
+      "passed": true,
+      "details": {
+        "focusRetained": true
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/en",
+      "name": "all brands simultaneously visible",
+      "passed": true,
+      "details": {
+        "visible": [
+          "Apple",
+          "Samsung",
+          "Oppo",
+          "Vivo",
+          "Realme",
+          "Xiaomi",
+          "Honor",
+          "Infinix"
+        ]
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/en",
+      "name": "portal keyboard transition",
+      "passed": true,
+      "details": {
+        "before": "Start with what your store needs",
+        "after": "Get the facts before you decide",
+        "samples": [
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          }
+        ]
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/en",
+      "name": "proof keyboard transition",
+      "passed": true,
+      "details": {
+        "before": "Care before it leaves our store",
+        "after": "A place to visit. A team to reach.",
+        "samples": [
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          }
+        ]
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/en",
+      "name": "FAQ keyboard",
+      "passed": true,
+      "details": {
+        "focusRetained": true
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/en",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th/join",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/en/join",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th/dealer/login",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/en/dealer/login",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th/blog",
+      "name": "journal search recovery",
+      "passed": true,
+      "details": {
+        "recovered": true
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th/blog",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th/blog/checklist-choose-mobile-phone-wholesaler",
+      "name": "article TOC keyboard",
+      "passed": true,
+      "details": {
+        "target": "#section-1",
+        "top": 112
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th/blog/checklist-choose-mobile-phone-wholesaler",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th/blog/how-to-start-mobile-phone-shop",
+      "name": "article TOC keyboard",
+      "passed": true,
+      "details": {
+        "target": "#section-1",
+        "top": 112
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th/blog/how-to-start-mobile-phone-shop",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th/blog/what-is-thai-market-official-phone",
+      "name": "article TOC keyboard",
+      "passed": true,
+      "details": {
+        "target": "#section-1",
+        "top": 112
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th/blog/what-is-thai-market-official-phone",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th/blog/mobile-shop-inventory-cashflow-guide",
+      "name": "article TOC keyboard",
+      "passed": true,
+      "details": {
+        "target": "#section-1",
+        "top": 112
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th/blog/mobile-shop-inventory-cashflow-guide",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th/blog/mobile-phone-reseller-documents-tax-invoice",
+      "name": "article TOC keyboard",
+      "passed": true,
+      "details": {
+        "target": "#section-1",
+        "top": 112
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th/blog/mobile-phone-reseller-documents-tax-invoice",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th/blog/first-wholesale-mobile-phone-order",
+      "name": "article TOC keyboard",
+      "passed": true,
+      "details": {
+        "target": "#section-1",
+        "top": 112
+      }
+    },
+    {
+      "width": 1280,
+      "route": "/th/blog/first-wholesale-mobile-phone-order",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th",
+      "name": "all brands simultaneously visible",
+      "passed": true,
+      "details": {
+        "visible": [
+          "Apple",
+          "Samsung",
+          "Oppo",
+          "Vivo",
+          "Realme",
+          "Xiaomi",
+          "Honor",
+          "Infinix"
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th",
+      "name": "portal keyboard transition",
+      "passed": true,
+      "details": {
+        "before": "เริ่มจากของที่ร้านต้องการ",
+        "after": "เห็นข้อมูลก่อนตัดสินใจ",
+        "samples": [
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          }
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th",
+      "name": "proof keyboard transition",
+      "passed": true,
+      "details": {
+        "before": "ใส่ใจตั้งแต่ก่อนออกจากร้าน",
+        "after": "มีหน้าร้าน มีทีมให้ติดต่อ",
+        "samples": [
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          }
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th",
+      "name": "FAQ keyboard",
+      "passed": true,
+      "details": {
+        "focusRetained": true
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th",
+      "name": "mobile menu and locale",
+      "passed": true,
+      "details": {
+        "anchorTop": 95.96875,
+        "focus": "BODY"
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 390,
+      "route": "/en",
+      "name": "all brands simultaneously visible",
+      "passed": true,
+      "details": {
+        "visible": [
+          "Apple",
+          "Samsung",
+          "Oppo",
+          "Vivo",
+          "Realme",
+          "Xiaomi",
+          "Honor",
+          "Infinix"
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "route": "/en",
+      "name": "portal keyboard transition",
+      "passed": true,
+      "details": {
+        "before": "Start with what your store needs",
+        "after": "Get the facts before you decide",
+        "samples": [
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          }
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "route": "/en",
+      "name": "proof keyboard transition",
+      "passed": true,
+      "details": {
+        "before": "Care before it leaves our store",
+        "after": "A place to visit. A team to reach.",
+        "samples": [
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          },
+          {
+            "opacity": 1,
+            "transform": "none"
+          }
+        ]
+      }
+    },
+    {
+      "width": 390,
+      "route": "/en",
+      "name": "FAQ keyboard",
+      "passed": true,
+      "details": {
+        "focusRetained": true
+      }
+    },
+    {
+      "width": 390,
+      "route": "/en",
+      "name": "mobile menu and locale",
+      "passed": true,
+      "details": {
+        "anchorTop": 96.390625,
+        "focus": "BODY"
+      }
+    },
+    {
+      "width": 390,
+      "route": "/en",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th/join",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 390,
+      "route": "/en/join",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th/dealer/login",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 390,
+      "route": "/en/dealer/login",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th/blog",
+      "name": "journal search recovery",
+      "passed": true,
+      "details": {
+        "recovered": true
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th/blog",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th/blog/checklist-choose-mobile-phone-wholesaler",
+      "name": "article TOC keyboard",
+      "passed": true,
+      "details": {
+        "target": "#section-1",
+        "top": 112.296875
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th/blog/checklist-choose-mobile-phone-wholesaler",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th/blog/how-to-start-mobile-phone-shop",
+      "name": "article TOC keyboard",
+      "passed": true,
+      "details": {
+        "target": "#section-1",
+        "top": 112.28125
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th/blog/how-to-start-mobile-phone-shop",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th/blog/what-is-thai-market-official-phone",
+      "name": "article TOC keyboard",
+      "passed": true,
+      "details": {
+        "target": "#section-1",
+        "top": 112.28125
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th/blog/what-is-thai-market-official-phone",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th/blog/mobile-shop-inventory-cashflow-guide",
+      "name": "article TOC keyboard",
+      "passed": true,
+      "details": {
+        "target": "#section-1",
+        "top": 112.28125
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th/blog/mobile-shop-inventory-cashflow-guide",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th/blog/mobile-phone-reseller-documents-tax-invoice",
+      "name": "article TOC keyboard",
+      "passed": true,
+      "details": {
+        "target": "#section-1",
+        "top": 112.28125
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th/blog/mobile-phone-reseller-documents-tax-invoice",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th/blog/first-wholesale-mobile-phone-order",
+      "name": "article TOC keyboard",
+      "passed": true,
+      "details": {
+        "target": "#section-1",
+        "top": 112.28125
+      }
+    },
+    {
+      "width": 390,
+      "route": "/th/blog/first-wholesale-mobile-phone-order",
+      "name": "route readability and assets",
+      "passed": true,
+      "details": {
+        "status": 200,
+        "h1Count": 1,
+        "h1Opacity": "1",
+        "overflow": false,
+        "missingImages": [],
+        "reduced": true,
+        "reducedMeasurement": {
+          "maxDuration": 0.00001,
+          "running": 0,
+          "scroll": "auto"
+        },
+        "abortedMethods": [],
+        "errors": []
+      }
+    }
+  ],
+  "beforeRevision": "498ed6cc4f0b96c3a4f52652bb2f01fd0dd19746",
+  "afterRevision": "498ed6cc4f0b96c3a4f52652bb2f01fd0dd19746",
+  "finishedAt": "2026-10-02T23:52:39.770Z",
+  "passed": 58,
+  "failed": 0
+}

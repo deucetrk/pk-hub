@@ -2,6 +2,11 @@
 
 Status: canonical public-site design direction
 
+Current motion acceptance: [048](../PUBLIC-MOTION-048.md) records actual hosted hover/brand
+failures and the committed correction, 64 ordinary/58 reduced-motion cases across thirteen
+published routes at desktop/mobile, and source fingerprints. Final local acceptance is distinct
+from production promotion and real lead delivery. The full ecosystem goal remains IN PROGRESS.
+
 Current onboarding correction: [041](../ONBOARDING-041.md) records actual public Join/Home pending
 draft containment, duplicate guard, original-request result and mobile focus correction. Source/main
 CI passes; production creation remains rate-limited. This supersedes older form-release status,
@@ -23,8 +28,9 @@ includes a noindex `404.html` for missing static routes. Local actual-source bro
 1280px and 390px found one H1 and no horizontal overflow; Enter on the recovery link opened the
 journal. `/page/1.5` recovered to `/th/blog`. Node 24 check, lint, build and SEO validation passed.
 The build emits non-sensitive `revision.json`, served without caching, for exact release evidence.
-Reduced-motion CSS and Framer Motion guards remain; system-level reduced-motion emulation is
-not available in the current browser harness and has not been attested. Existing lead transport
+Reduced-motion CSS and Framer Motion guards remain; Chromium preference emulation now has
+actual route and interaction proof in 048, superseding the former harness limitation. This is
+not physical-device/OS-setting or screen-reader proof. Existing lead transport
 cannot confirm receipt (`no-cors`); the UI preserves its explicit uncertain-result/LINE recovery.
 Application-specific consent approval and actual delivery/deduplication remain separate gates.
 
