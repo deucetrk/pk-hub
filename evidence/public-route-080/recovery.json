@@ -1,0 +1,579 @@
+{
+  "origin": "http://127.0.0.1:8870",
+  "revision": "b4a93c307e93bb18b870e4703c91f7ff34b38545",
+  "results": [
+    {
+      "width": 1280,
+      "motion": "no-preference",
+      "language": "th",
+      "mode": "entry-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "no-preference",
+      "language": "th",
+      "mode": "bootstrap-hold",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "no-preference",
+      "language": "th",
+      "mode": "bootstrap-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "no-preference",
+      "language": "th",
+      "mode": "route-hold",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "no-preference",
+      "language": "th",
+      "mode": "route-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "no-preference",
+      "language": "th",
+      "mode": "route-draft",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "no-preference",
+      "language": "th",
+      "mode": "missing-route",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "no-preference",
+      "language": "en",
+      "mode": "entry-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "no-preference",
+      "language": "en",
+      "mode": "bootstrap-hold",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "no-preference",
+      "language": "en",
+      "mode": "bootstrap-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "no-preference",
+      "language": "en",
+      "mode": "route-hold",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "no-preference",
+      "language": "en",
+      "mode": "route-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "no-preference",
+      "language": "en",
+      "mode": "route-draft",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "no-preference",
+      "language": "en",
+      "mode": "missing-route",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "no-preference",
+      "language": "th",
+      "mode": "entry-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "no-preference",
+      "language": "th",
+      "mode": "bootstrap-hold",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "no-preference",
+      "language": "th",
+      "mode": "bootstrap-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "no-preference",
+      "language": "th",
+      "mode": "route-hold",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "no-preference",
+      "language": "th",
+      "mode": "route-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "no-preference",
+      "language": "th",
+      "mode": "route-draft",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "no-preference",
+      "language": "th",
+      "mode": "missing-route",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "no-preference",
+      "language": "en",
+      "mode": "entry-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "no-preference",
+      "language": "en",
+      "mode": "bootstrap-hold",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "no-preference",
+      "language": "en",
+      "mode": "bootstrap-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "no-preference",
+      "language": "en",
+      "mode": "route-hold",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "no-preference",
+      "language": "en",
+      "mode": "route-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "no-preference",
+      "language": "en",
+      "mode": "route-draft",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "no-preference",
+      "language": "en",
+      "mode": "missing-route",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "reduce",
+      "language": "th",
+      "mode": "entry-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "reduce",
+      "language": "th",
+      "mode": "bootstrap-hold",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "reduce",
+      "language": "th",
+      "mode": "bootstrap-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "reduce",
+      "language": "th",
+      "mode": "route-hold",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "reduce",
+      "language": "th",
+      "mode": "route-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "reduce",
+      "language": "th",
+      "mode": "route-draft",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "reduce",
+      "language": "th",
+      "mode": "missing-route",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "reduce",
+      "language": "en",
+      "mode": "entry-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "reduce",
+      "language": "en",
+      "mode": "bootstrap-hold",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "reduce",
+      "language": "en",
+      "mode": "bootstrap-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "reduce",
+      "language": "en",
+      "mode": "route-hold",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "reduce",
+      "language": "en",
+      "mode": "route-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "reduce",
+      "language": "en",
+      "mode": "route-draft",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "motion": "reduce",
+      "language": "en",
+      "mode": "missing-route",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "reduce",
+      "language": "th",
+      "mode": "entry-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "reduce",
+      "language": "th",
+      "mode": "bootstrap-hold",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "reduce",
+      "language": "th",
+      "mode": "bootstrap-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "reduce",
+      "language": "th",
+      "mode": "route-hold",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "reduce",
+      "language": "th",
+      "mode": "route-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "reduce",
+      "language": "th",
+      "mode": "route-draft",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "reduce",
+      "language": "th",
+      "mode": "missing-route",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "reduce",
+      "language": "en",
+      "mode": "entry-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "reduce",
+      "language": "en",
+      "mode": "bootstrap-hold",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "reduce",
+      "language": "en",
+      "mode": "bootstrap-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "reduce",
+      "language": "en",
+      "mode": "route-hold",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "reduce",
+      "language": "en",
+      "mode": "route-failure",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "reduce",
+      "language": "en",
+      "mode": "route-draft",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "motion": "reduce",
+      "language": "en",
+      "mode": "missing-route",
+      "passed": true,
+      "issues": 0,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "language": "th",
+      "mode": "missing-route-no-script",
+      "passed": true,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "language": "en",
+      "mode": "missing-route-no-script",
+      "passed": true,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "language": "th",
+      "mode": "missing-route-no-script",
+      "passed": true,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "language": "en",
+      "mode": "missing-route-no-script",
+      "passed": true,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "language": "th",
+      "mode": "form-no-script",
+      "passed": true,
+      "writes": 0
+    },
+    {
+      "width": 1280,
+      "language": "en",
+      "mode": "form-no-script",
+      "passed": true,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "language": "th",
+      "mode": "form-no-script",
+      "passed": true,
+      "writes": 0
+    },
+    {
+      "width": 390,
+      "language": "en",
+      "mode": "form-no-script",
+      "passed": true,
+      "writes": 0
+    }
+  ],
+  "fingerprints": {
+    "src/AppRoutes.tsx": "c42cb47cb50447155997d5068b98a6b7cca41910ed62a5ce072fa787ed67d102",
+    "src/main.tsx": "a0d979120c39b0d86fcd11383b79617ded3e5af6e387cb675b8958249f86a0b0",
+    "src/components/HydrationReady.tsx": "fdb5af99eb5e9998424860a4d711e17ae1616e3b4f3aba5fa8ca5caa5871d396",
+    "src/components/RouteFeedback.tsx": "19ecbd5d030f915b7d77d3effa53cf7d18e8bd8c0349a88bb37f899ee4eb5b03",
+    "src/pages/NotFound.tsx": "600951de91d542a12e747428f11f23e0ca2f4f8230e75ae40d738b3a23cb5b4a",
+    "src/index.css": "00f06f596112007ca1882a3d2aad4c94ecfee501e14ea9fdb88a0d91c238e09d",
+    "scripts/prerender.mjs": "af08349cbc07ecc654eb41f4f42f6260e6e316aa826094f226d170894827c491",
+    "vite.config.ts": "d4b65c0d17044f1c87205cb8ed84ca5bbf0d511dd753f92b3330f6bc32c286be",
+    "scripts/qa/public-route-recovery.browser.mjs": "530d6d4376adbfdccfddc1c4a5930b708e598f65860b09ed392c4f099eb0b152"
+  },
+  "syntheticNetworkFailures": true,
+  "productionAcceptance": false
+}

@@ -1,0 +1,37 @@
+{
+  "nodeMajor": 24,
+  "runtimeRevision": "b4a93c307e93bb18b870e4703c91f7ff34b38545",
+  "checks": {
+    "check": {
+      "command": "npm run check",
+      "passed": true,
+      "log": "/tmp/pkhub-route-080-check-final2.log",
+      "sha256": "109956b7bbed742e13866ced2abdf861bad4584a41c2ffaf43ca1d112e84b1a2",
+      "output": "\n> development@0.0.0 check\n> tsc -b --noEmit\n\n"
+    },
+    "lint": {
+      "command": "npm run lint",
+      "passed": true,
+      "log": "/tmp/pkhub-route-080-lint-final2.log",
+      "sha256": "de06444ef2c33221ea27df340d1659ef485ee0084039c53ca61327ff995df481",
+      "output": "\n> development@0.0.0 lint\n> eslint .\n\n"
+    },
+    "build": {
+      "command": "npm run build",
+      "passed": true,
+      "log": "/tmp/pkhub-route-080-build-final2.log",
+      "sha256": "6693c79b0dd89745849b516559ef90f4a03e4f388096bf646414b6e1f6b9bf9d",
+      "output": "\n> development@0.0.0 build\n> tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs\n\nvite v6.4.3 building for production...\ntransforming...\n✓ 2090 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                           8.71 kB │ gzip:   2.24 kB\ndist/assets/index-DxBEq1Pn.css           59.03 kB │ gzip:  12.16 kB\ndist/assets/message-circle-CdTvh6yR.js    0.32 kB │ gzip:   0.26 kB\ndist/assets/arrow-down-DAOiHmh_.js        0.34 kB │ gzip:   0.27 kB\ndist/assets/arrow-right-yacbZ2Zs.js       0.34 kB │ gzip:   0.27 kB\ndist/assets/search-06O3b7Qe.js            0.35 kB │ gzip:   0.28 kB\ndist/assets/phone-habsmp_Q.js             0.50 kB │ gzip:   0.34 kB\ndist/assets/Footer-B3_UBBhz.js            2.54 kB │ gzip:   1.19 kB\ndist/assets/DealerLogin-pt3vFW02.js       5.59 kB │ gzip:   2.33 kB\ndist/assets/Join-mjCQZ_pS.js              6.07 kB │ gzip:   2.38 kB\ndist/assets/BlogIndex-B0fm2s8x.js        12.81 kB │ gzip:   4.15 kB\ndist/assets/PartnerForm-Bdc0ckJL.js      21.66 kB │ gzip:   6.95 kB\ndist/assets/BlogArticle-2NJ4XX_m.js      24.61 kB │ gzip:   6.61 kB\ndist/assets/Home-CcLhH0bL.js             52.31 kB │ gzip:  16.13 kB\ndist/assets/articles-BJkDWaKi.js        110.30 kB │ gzip:  20.82 kB\ndist/assets/index-BRMzPSbi.js           311.17 kB │ gzip: 102.69 kB\n✓ built in 2.03s\nvite v6.4.3 building SSR bundle for production...\ntransforming...\n✓ 46 modules transformed.\nrendering chunks...\ndist-ssr/entry-server.js  323.21 kB\n✓ built in 316ms\nprerendered /th (51 KB)\nprerendered /en (52 KB)\nprerendered /th/join (23 KB)\nprerendered /en/join (23 KB)\nprerendered /th/dealer/login (14 KB)\nprerendered /en/dealer/login (14 KB)\nprerendered /th/blog (26 KB)\nprerendered /th/blog/checklist-choose-mobile-phone-wholesaler (43 KB)\nprerendered /th/blog/how-to-start-mobile-phone-shop (53 KB)\nprerendered /th/blog/what-is-thai-market-official-phone (43 KB)\nprerendered /th/blog/mobile-shop-inventory-cashflow-guide (42 KB)\nprerendered /th/blog/mobile-phone-reseller-documents-tax-invoice (42 KB)\nprerendered /th/blog/first-wholesale-mobile-phone-order (42 KB)\nsitemap.xml written (lastmod 2026-10-04)\ndone\n"
+    },
+    "seo": {
+      "command": "npm run seo:validate",
+      "passed": true,
+      "log": "/tmp/pkhub-route-080-seo-final2.log",
+      "sha256": "4d1a5f59a68d59ae40e9ff430eace1c7465f5eedfee3b54627f2e93ad7c684ed",
+      "output": "\n> development@0.0.0 seo:validate\n> node scripts/validate-home-seo.mjs\n\nPASS: locale metadata, canonical/hreflang, visible prerendering, truthful ecosystem content, FAQ parity, images, CTA anchors, deferred video, and sitemap routes\n"
+    }
+  },
+  "browserCases": 260,
+  "visuallyInspectedPngs": 16,
+  "productionAcceptance": false
+}

@@ -2,11 +2,18 @@
 
 Status: canonical public-site design direction
 
+Current route recovery: [080](../PUBLIC-ROUTE-080.md) adds editorial cold loading/failure,
+safe prerendered/bootstrap forms with native Contact fallback and matching bilingual static404.
+Final runtimeb4a93c3 passes260 local browser cases, Node24 gates and sixteen inspected captures.
+Query/fragment/locale keep drafts; fragment reload is a real document reload. Consent/provider,
+hosted404/revision and cross-surface completion remain separate; all-design is still incomplete.
+
 Current acquisition composition: [077](../PUBLIC-ACQUISITION-077.md) supersedes the old Join
 layout with a full-width authentic hero, application desk, separate process context, actual-draft
 review and truthful captured-result handoff. Runtime d4fe4ea passes54 application/enquiry,
 64 ordinary/58 reduced public and20 supporting-recovery cases. Consent-purpose approval,
-provider delivery and cold-chunk/hosted acceptance remain separate; all ecosystem design is incomplete.
+provider delivery and hosted acceptance remain separate;080 closes local cold-route recovery.
+All ecosystem design remains incomplete.
 
 Current motion acceptance: [048](../PUBLIC-MOTION-048.md) records actual hosted hover/brand
 failures and the committed correction, 64 ordinary/58 reduced-motion cases across thirteen
@@ -55,13 +62,13 @@ boundaries. Avoid generic SaaS composition, consumer phone-store claims, and spe
 
 ## Reference interpretation
 
-| Reference                                                                        | Borrow                                                                                               | Do not copy                                                                             |
-| -------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
-| [Apple Design](https://developer.apple.com/design/)                              | Editorial type and image scale, generous space, purposeful motion, quiet controls                      | Apple marks, assets, product claims, or platform-only UI conventions                      |
-| [Ant Design](https://ant.design/docs/spec/values/)                               | Ordered hierarchy, restrained functional color, consistent controls, legible form guidance           | Admin navigation, dashboard cards, or dense enterprise chrome                            |
-| [Faire](https://mobbin.com/screens/63f8c31f-e379-484b-bfe5-37615064fc25)         | Product-led wholesale promise, editorial image hierarchy, category discovery, simple conversion path | Fashion palette, consumer merchandising, marketplace claims                             |
-| [Klook Partner](https://mobbin.com/screens/ed33965d-0fcd-4084-b7a4-8fec6cf27d44) | Partner explanation, proof before application, understandable journey                                | Unsupported reach, scale, or partner-benefit claims                                     |
-| [Airtasker](https://mobbin.com/screens/279eb3cd-59e0-4169-b80a-883e65f4313b)     | Short benefit-led sections and product explanation beside a concrete visual                          | Marketplace metrics, pricing, or service mechanics                                      |
+| Reference                                                                        | Borrow                                                                                               | Do not copy                                                          |
+| -------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| [Apple Design](https://developer.apple.com/design/)                              | Editorial type and image scale, generous space, purposeful motion, quiet controls                    | Apple marks, assets, product claims, or platform-only UI conventions |
+| [Ant Design](https://ant.design/docs/spec/values/)                               | Ordered hierarchy, restrained functional color, consistent controls, legible form guidance           | Admin navigation, dashboard cards, or dense enterprise chrome        |
+| [Faire](https://mobbin.com/screens/63f8c31f-e379-484b-bfe5-37615064fc25)         | Product-led wholesale promise, editorial image hierarchy, category discovery, simple conversion path | Fashion palette, consumer merchandising, marketplace claims          |
+| [Klook Partner](https://mobbin.com/screens/ed33965d-0fcd-4084-b7a4-8fec6cf27d44) | Partner explanation, proof before application, understandable journey                                | Unsupported reach, scale, or partner-benefit claims                  |
+| [Airtasker](https://mobbin.com/screens/279eb3cd-59e0-4169-b80a-883e65f4313b)     | Short benefit-led sections and product explanation beside a concrete visual                          | Marketplace metrics, pricing, or service mechanics                   |
 
 References are pattern evidence, not PK visual identity or business authority.
 
