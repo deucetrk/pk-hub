@@ -1,6 +1,8 @@
 # PK HUB route loading and recovery — 080
 
 Date: 2026-10-04 (+07). Full ecosystem design remains **IN PROGRESS**.
+Subsequent cross-surface status: [085](PUBLIC-DESIGN-085.md) records local completion of all agreed
+active design. This080 runtime/evidence is unchanged; hosted and full business acceptance remain open.
 Public root: `/Users/deuce/.codex/worktrees/pkhub-editorial-followup/applications`;
 commands run from `website/`. Branch: `codex/pkhub-acquisition-redesign`, based on main378a61c.
 Runtime commits: `2db9675ea32ef950b94a9ec5aafe6fa1ac3c0521`, then

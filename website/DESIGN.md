@@ -2,18 +2,22 @@
 
 Status: canonical public-site design direction
 
+Current release packet: [085](../PUBLIC-DESIGN-085.md) records all agreed active ecosystem design
+locally complete and owner notified2026-10-04. Public runtimeb4a93c3 and its260-case acceptance
+are unchanged. Hosted promotion and protected/provider/consent/business acceptance remain open.
+
 Current route recovery: [080](../PUBLIC-ROUTE-080.md) adds editorial cold loading/failure,
 safe prerendered/bootstrap forms with native Contact fallback and matching bilingual static404.
 Final runtimeb4a93c3 passes260 local browser cases, Node24 gates and sixteen inspected captures.
 Query/fragment/locale keep drafts; fragment reload is a real document reload. Consent/provider,
-hosted404/revision and cross-surface completion remain separate; all-design is still incomplete.
+hosted404/revision and full business completion remain separate;085 supersedes the all-design status.
 
 Current acquisition composition: [077](../PUBLIC-ACQUISITION-077.md) supersedes the old Join
 layout with a full-width authentic hero, application desk, separate process context, actual-draft
 review and truthful captured-result handoff. Runtime d4fe4ea passes54 application/enquiry,
 64 ordinary/58 reduced public and20 supporting-recovery cases. Consent-purpose approval,
 provider delivery and hosted acceptance remain separate;080 closes local cold-route recovery.
-All ecosystem design remains incomplete.
+085 records subsequent local ecosystem design completion.
 
 Current motion acceptance: [048](../PUBLIC-MOTION-048.md) records actual hosted hover/brand
 failures and the committed correction, 64 ordinary/58 reduced-motion cases across thirteen
