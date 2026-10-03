@@ -250,7 +250,7 @@ try {
                 continue;
               }
               for (const token of times.split(',')) {
-                const match = token.trim().match(/^(\d+(?:\.\d+)?)(ms|s)$/);
+                const match = token.trim().match(/^(\d+(?:\.\d+)?(?:e[+-]?\d+)?)(ms|s)$/i);
                 if (!match) {
                   invalidDurations.push({ tag: el.tagName, pseudo, token });
                   continue;
