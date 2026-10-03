@@ -17,6 +17,17 @@ const { render, getPageMeta, getPrerenderRoutes, getRouteLastModified, getHomeFa
 
 const SITE = 'https://pkhub.co'
 
+function holdPrerenderForms(html, route) {
+  const english = route === '/en' || route.startsWith('/en/')
+  const message = english
+    ? 'The form is preparing. If it stays unavailable, contact our team.'
+    : 'กำลังเตรียมแบบฟอร์ม หากยังไม่พร้อมใช้งาน ติดต่อทีมงานได้'
+  const label = english ? 'Contact the team' : 'ช่องทางติดต่อทีมงาน'
+  const contact = `/${english ? 'en' : 'th'}#contact`
+  const note = `<div class="pk-form-bootstrap-note" data-pk-bootstrap-notice="" role="status"><p>${message}</p><a class="pk-action pk-action-secondary" href="${contact}">${label}</a></div>`
+  return html.replace(/<form\b/g, `${note}<form inert="" data-pk-bootstrap-form=""`)
+}
+
 const template = readFileSync(resolve(dist, 'index.html'), 'utf-8')
 
 function removeTagById(html, id) {
@@ -118,7 +129,7 @@ function unhideMotion(html) {
 const routes = getPrerenderRoutes()
 
 for (const route of routes) {
-  const appHtml = unhideMotion(render(route))
+  const appHtml = holdPrerenderForms(unhideMotion(render(route)), route)
   const page = localize(template, route, getPageMeta(route)).replace(
     '<div id="root"></div>',
     `<div id="root">${appHtml}</div>`,

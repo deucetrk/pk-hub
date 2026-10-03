@@ -131,6 +131,17 @@ assert(
   'No homepage catch-all for unknown routes',
 )
 const missingPage = readFileSync(resolve(dist, '404.html'), 'utf-8')
+for (const language of ['th', 'en']) {
+  const application = readFileSync(resolve(dist, language, 'join', 'index.html'), 'utf-8')
+  assert(
+    application.includes('inert="" data-pk-bootstrap-form=""'),
+    'Static forms wait for hydration',
+  )
+  assert(
+    application.includes('data-pk-bootstrap-notice=""'),
+    'Static forms retain a native contact path',
+  )
+}
 assert(
   missingPage.includes('data-pk-not-found=""'),
   'Static 404 must hydrate its exact recovery document',

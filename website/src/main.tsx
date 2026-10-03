@@ -10,7 +10,7 @@ import './index.css'
 const container = document.getElementById('root')!
 container.setAttribute('aria-busy', 'true')
 const waitingForms = Array.from(container.querySelectorAll('form')).filter(
-  (form) => !form.hasAttribute('inert'),
+  (form) => form.hasAttribute('data-pk-bootstrap-form') || !form.hasAttribute('inert'),
 )
 waitingForms.forEach((form) => form.setAttribute('inert', ''))
 // A prerendered form must not fall back to native GET submission before React
@@ -69,7 +69,11 @@ async function mount() {
 
   // Remove our temporary DOM attribute before React compares the server markup.
   // The capturing submit guard remains until the first committed effect.
-  waitingForms.forEach((form) => form.removeAttribute('inert'))
+  waitingForms.forEach((form) => {
+    form.removeAttribute('inert')
+    form.removeAttribute('data-pk-bootstrap-form')
+  })
+  container.querySelectorAll('[data-pk-bootstrap-notice]').forEach((notice) => notice.remove())
   if (container.hasChildNodes()) {
     hydrateRoot(container, app)
   } else {

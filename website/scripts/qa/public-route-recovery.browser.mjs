@@ -21,6 +21,7 @@ const { chromium } = await import(pathToFileURL(process.env.PLAYWRIGHT_MODULE).h
 const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH });
 const results = [];
 const modes = [
+  'entry-failure',
   'bootstrap-hold',
   'bootstrap-failure',
   'route-hold',
@@ -53,7 +54,7 @@ try {
           let release;
           const target = `/${language}/join?ref=QA-ROUTE-080#application`;
           const chunk = /\/assets\/Join-[^/]+\.js(?:\?.*)?$/;
-          if (!['missing-route', 'route-draft'].includes(mode))
+          if (!['missing-route', 'route-draft', 'entry-failure'].includes(mode))
             await page.route(chunk, async (route) => {
               if (mode.endsWith('failure')) return route.abort('failed');
               await new Promise((resolve) => {
@@ -61,7 +62,34 @@ try {
               });
               return route.continue();
             });
-          if (mode === 'route-draft') {
+          if (mode === 'entry-failure') {
+            await page.route(/\/assets\/index-[^/]+\.js(?:\?.*)?$/, (route) =>
+              route.abort('failed'),
+            );
+            await page.goto(origin + target);
+            assert.equal(await page.locator('form').getAttribute('inert'), '');
+            assert.equal(await page.locator('form').getAttribute('data-pk-bootstrap-form'), '');
+            const contact = page.getByRole('link', {
+              name: language === 'en' ? 'Contact the team' : 'ช่องทางติดต่อทีมงาน',
+              exact: true,
+            });
+            await contact.waitFor();
+            await page.locator('#shopName').evaluate((input) => input.focus());
+            assert(
+              await page.locator('#shopName').evaluate((input) => input !== document.activeElement),
+            );
+            await page.screenshot({
+              path: path.join(output, `${mode}-${language}-${width}-${motion}.png`),
+              fullPage: true,
+            });
+            await contact.focus();
+            const [navigation] = await Promise.all([
+              page.waitForNavigation(),
+              page.keyboard.press('Enter'),
+            ]);
+            assert.equal(navigation.status(), 200);
+            assert.equal(page.url(), origin + '/' + language + '#contact');
+          } else if (mode === 'route-draft') {
             await page.goto(origin + target);
             await page.waitForFunction(
               () => !document.getElementById('root').hasAttribute('aria-busy'),
@@ -150,15 +178,15 @@ try {
                 () => !document.getElementById('root').hasAttribute('aria-busy'),
               );
               assert.equal(await page.locator('.pk-load-error').count(), 0);
+              assert.equal(await page.locator('[data-pk-bootstrap-notice]').count(), 0);
+              assert.equal(await page.locator('form[inert]').count(), 0);
             } else {
-              const notice = page
-                .getByRole('alert')
-                .filter({
-                  hasText:
-                    language === 'en'
-                      ? 'Page controls could not load'
-                      : 'โหลดการทำงานของหน้าไม่สำเร็จ',
-                });
+              const notice = page.getByRole('alert').filter({
+                hasText:
+                  language === 'en'
+                    ? 'Page controls could not load'
+                    : 'โหลดการทำงานของหน้าไม่สำเร็จ',
+              });
               await notice.waitFor();
               assert(await notice.evaluate((element) => element === document.activeElement));
               assert.equal(
@@ -299,6 +327,33 @@ try {
         assert.equal(navigation.status(), 200);
         assert.equal(page.url(), origin + '/' + language);
         results.push({ width, language, mode: 'missing-route-no-script', passed: true, writes: 0 });
+        await context.close();
+      }
+  if (requested.includes('entry-failure'))
+    for (const width of widths)
+      for (const language of ['th', 'en']) {
+        const context = await browser.newContext({
+          viewport: { width, height: 900 },
+          javaScriptEnabled: false,
+        });
+        const page = await context.newPage();
+        await page.route('**/*', (route) =>
+          route.request().method() === 'GET' ? route.continue() : route.abort(),
+        );
+        await page.goto(origin + '/' + language + '/join');
+        assert.equal(await page.locator('form').getAttribute('inert'), '');
+        const contact = page.getByRole('link', {
+          name: language === 'en' ? 'Contact the team' : 'ช่องทางติดต่อทีมงาน',
+          exact: true,
+        });
+        await contact.focus();
+        const [navigation] = await Promise.all([
+          page.waitForNavigation(),
+          page.keyboard.press('Enter'),
+        ]);
+        assert.equal(navigation.status(), 200);
+        assert.equal(page.url(), origin + '/' + language + '#contact');
+        results.push({ width, language, mode: 'form-no-script', passed: true, writes: 0 });
         await context.close();
       }
 } finally {

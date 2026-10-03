@@ -355,6 +355,19 @@
 .pk-route-feedback {
   padding: clamp(56px, 12vh, 120px) 0;
 }
+.pk-form-bootstrap-note {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 24px;
+  margin-bottom: 24px;
+  border-left: 2px solid var(--pk-accent);
+  padding: 16px 20px;
+  background: var(--pk-grey);
+  color: var(--pk-black);
+  font-size: 14px;
+  line-height: 1.6;
+}
 .pk-route-feedback-copy {
   max-width: 760px;
 }
