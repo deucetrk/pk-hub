@@ -154,7 +154,8 @@ export default function PartnerForm({ className, isApplication = false }: Partne
       onSubmit={onSubmit}
       aria-busy={status === 'submitting'}
       className={cn(
-        'pk-partner-form grid min-w-0 grid-cols-[minmax(0,1fr)] gap-5 border border-zinc-200 bg-white p-5 sm:p-8',
+        'pk-partner-form grid min-w-0 grid-cols-[minmax(0,1fr)] gap-5 bg-white',
+        isApplication ? 'border-0 p-0' : 'border border-zinc-200 p-5 sm:p-8',
         className,
       )}
     >
@@ -173,69 +174,95 @@ export default function PartnerForm({ className, isApplication = false }: Partne
               ? 'ข้อมูลสำหรับขอเช็กราคา'
               : 'Price enquiry details'}
         </legend>
-        <TextField
-          id="contactName"
-          label={isThai ? 'ชื่อผู้ติดต่อ' : 'Contact name'}
-          value={values.contactName}
-          onChange={(v) => setField('contactName', v)}
-          onBlur={() => setTouched((t) => ({ ...t, contactName: true }))}
-          placeholder={isThai ? 'ชื่อคนที่ทีม PK ติดต่อได้' : 'Who should the PK team contact?'}
-          error={showError('contactName') ? errors.contactName : undefined}
-        />
+        <section
+          className="grid min-w-0 gap-5"
+          aria-label={isThai ? 'ร้านค้าและผู้ติดต่อ' : 'Store and contact'}
+        >
+          {isApplication ? (
+            <h3 className="text-lg font-bold">
+              {isThai ? 'ร้านค้าและผู้ติดต่อ' : 'Store and contact'}
+            </h3>
+          ) : null}
+          <div className={cn('grid min-w-0 gap-5', isApplication && 'sm:grid-cols-2')}>
+            <TextField
+              id="contactName"
+              label={isThai ? 'ชื่อผู้ติดต่อ' : 'Contact name'}
+              value={values.contactName}
+              onChange={(v) => setField('contactName', v)}
+              onBlur={() => setTouched((t) => ({ ...t, contactName: true }))}
+              placeholder={isThai ? 'ชื่อคนที่ทีม PK ติดต่อได้' : 'Who should the PK team contact?'}
+              error={showError('contactName') ? errors.contactName : undefined}
+            />
 
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-          <TextField
-            id="shopName"
-            label={isThai ? 'ชื่อร้าน / ชื่อเพจ' : 'Store or page name'}
-            value={values.shopName}
-            onChange={(v) => setField('shopName', v)}
-            onBlur={() => setTouched((t) => ({ ...t, shopName: true }))}
-            placeholder={
-              isThai ? 'เช่น ร้านมือถือชลบุรี หรือชื่อเพจ' : 'e.g. PK Mobile Chonburi or page name'
+            <div className={isApplication ? 'contents' : 'grid grid-cols-1 gap-5 sm:grid-cols-2'}>
+              <TextField
+                id="shopName"
+                label={isThai ? 'ชื่อร้าน / ชื่อเพจ' : 'Store or page name'}
+                value={values.shopName}
+                onChange={(v) => setField('shopName', v)}
+                onBlur={() => setTouched((t) => ({ ...t, shopName: true }))}
+                placeholder={
+                  isThai
+                    ? 'เช่น ร้านมือถือชลบุรี หรือชื่อเพจ'
+                    : 'e.g. PK Mobile Chonburi or page name'
+                }
+                error={showError('shopName') ? errors.shopName : undefined}
+              />
+
+              <TextField
+                id="province"
+                label={isThai ? 'จังหวัด' : 'Province'}
+                value={values.province}
+                onChange={(v) => setField('province', v)}
+                onBlur={() => setTouched((t) => ({ ...t, province: true }))}
+                placeholder={isThai ? 'เช่น ชลบุรี' : 'e.g. Chonburi'}
+                error={showError('province') ? errors.province : undefined}
+              />
+            </div>
+
+            <TextField
+              id="phone"
+              label={isThai ? 'เบอร์โทรที่ให้ทีมทักกลับ' : 'Phone number for our team to call back'}
+              value={values.phone}
+              onChange={(v) => setField('phone', v)}
+              onBlur={() => setTouched((t) => ({ ...t, phone: true }))}
+              placeholder="08x-xxx-xxxx"
+              inputMode="tel"
+              error={showError('phone') ? errors.phone : undefined}
+            />
+          </div>
+        </section>
+
+        <section
+          className={cn('grid min-w-0 gap-4', isApplication && 'border-t border-zinc-200 pt-7')}
+          aria-label={isThai ? 'สินค้าที่สนใจ' : 'Products of interest'}
+        >
+          {isApplication ? (
+            <h3 className="text-lg font-bold">
+              {isThai ? 'สินค้าที่สนใจ' : 'Products of interest'}
+            </h3>
+          ) : null}
+          <BrandSelector
+            options={BRAND_OPTIONS}
+            label={
+              isThai
+                ? 'แบรนด์ที่สนใจ (แตะเลือกได้หลายแบรนด์)'
+                : 'Brands of interest (tap to select)'
             }
-            error={showError('shopName') ? errors.shopName : undefined}
+            selected={values.interestedBrands}
+            error={touched.interestedBrands ? errors.interestedBrands : undefined}
+            onToggle={(brand, checked) => {
+              if (submittingRef.current) return
+              setTouched((t) => ({ ...t, interestedBrands: true }))
+              setValues((v) => ({
+                ...v,
+                interestedBrands: checked
+                  ? [...v.interestedBrands, brand]
+                  : v.interestedBrands.filter((x) => x !== brand),
+              }))
+            }}
           />
-
-          <TextField
-            id="province"
-            label={isThai ? 'จังหวัด' : 'Province'}
-            value={values.province}
-            onChange={(v) => setField('province', v)}
-            onBlur={() => setTouched((t) => ({ ...t, province: true }))}
-            placeholder={isThai ? 'เช่น ชลบุรี' : 'e.g. Chonburi'}
-            error={showError('province') ? errors.province : undefined}
-          />
-        </div>
-
-        <TextField
-          id="phone"
-          label={isThai ? 'เบอร์โทรที่ให้ทีมทักกลับ' : 'Phone number for our team to call back'}
-          value={values.phone}
-          onChange={(v) => setField('phone', v)}
-          onBlur={() => setTouched((t) => ({ ...t, phone: true }))}
-          placeholder="08x-xxx-xxxx"
-          inputMode="tel"
-          error={showError('phone') ? errors.phone : undefined}
-        />
-
-        <BrandSelector
-          options={BRAND_OPTIONS}
-          label={
-            isThai ? 'แบรนด์ที่สนใจ (แตะเลือกได้หลายแบรนด์)' : 'Brands of interest (tap to select)'
-          }
-          selected={values.interestedBrands}
-          error={touched.interestedBrands ? errors.interestedBrands : undefined}
-          onToggle={(brand, checked) => {
-            if (submittingRef.current) return
-            setTouched((t) => ({ ...t, interestedBrands: true }))
-            setValues((v) => ({
-              ...v,
-              interestedBrands: checked
-                ? [...v.interestedBrands, brand]
-                : v.interestedBrands.filter((x) => x !== brand),
-            }))
-          }}
-        />
+        </section>
 
         <div className="pk-form-details">
           <button
@@ -342,6 +369,52 @@ export default function PartnerForm({ className, isApplication = false }: Partne
           </div>
         ) : null}
 
+        {isApplication ? (
+          <section
+            className="border-y border-zinc-200 py-6"
+            aria-label={isThai ? 'ข้อมูลที่จะส่งกับใบสมัคร' : 'Application details to send'}
+          >
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <h3 className="text-lg font-bold">
+                {isThai ? 'ตรวจข้อมูลก่อนส่ง' : 'Review before sending'}
+              </h3>
+              <button
+                type="button"
+                className="min-h-11 text-sm font-semibold text-[#2457d6] underline underline-offset-4"
+                onClick={() => document.getElementById('contactName')?.focus()}
+              >
+                {isThai ? 'แก้ข้อมูลร้าน' : 'Edit store details'}
+              </button>
+            </div>
+            {values.shopName.trim() ||
+            values.province.trim() ||
+            values.phone.trim() ||
+            values.interestedBrands.length ? (
+              <dl className="mt-4 grid grid-cols-1 gap-x-6 gap-y-4 text-sm sm:grid-cols-2">
+                {[
+                  [isThai ? 'ร้านค้า' : 'Store', values.shopName.trim()],
+                  [isThai ? 'จังหวัด' : 'Province', values.province.trim()],
+                  [isThai ? 'เบอร์โทร' : 'Phone', values.phone.trim()],
+                  [isThai ? 'แบรนด์' : 'Brands', values.interestedBrands.join(', ')],
+                ].map(([label, value]) => (
+                  <div key={label} className="min-w-0">
+                    <dt className="text-zinc-600">{label}</dt>
+                    <dd className="mt-1 break-words font-semibold">
+                      {value || (isThai ? 'ยังไม่ได้กรอก' : 'Not entered yet')}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            ) : (
+              <p className="mt-3 text-sm leading-6 text-zinc-600">
+                {isThai
+                  ? 'ตรวจชื่อร้าน จังหวัด เบอร์โทร และแบรนด์ที่สนใจก่อนส่ง'
+                  : 'Check your store, province, phone and selected brands before sending.'}
+              </p>
+            )}
+          </section>
+        ) : null}
+
         <ConsentField
           checked={values.consent}
           isThai={isThai}
@@ -372,13 +445,15 @@ export default function PartnerForm({ className, isApplication = false }: Partne
             {status === 'submitting' ? (
               <>
                 <Loader2 className="h-5 w-5 animate-spin" />
-                {isApplication
-                  ? isThai
-                    ? 'กำลังส่งใบสมัคร'
-                    : 'Sending application'
-                  : isThai
-                    ? 'กำลังส่งให้ทีมขาย'
-                    : 'Sending to sales'}
+                <span role="status">
+                  {isApplication
+                    ? isThai
+                      ? 'กำลังส่งใบสมัคร'
+                      : 'Sending application'
+                    : isThai
+                      ? 'กำลังส่งให้ทีมขาย'
+                      : 'Sending to sales'}
+                </span>
               </>
             ) : isApplication ? (
               isThai ? (

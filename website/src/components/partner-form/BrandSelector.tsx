@@ -20,18 +20,12 @@ export default function BrandSelector({
       aria-invalid={Boolean(error)}
       aria-describedby={error ? "brand-selector-error" : undefined}
     >
-      <div className="flex items-center justify-between gap-3">
-        <legend className="text-sm font-semibold text-zinc-700">{label}</legend>
-        {error ? (
-          <div
-            id="brand-selector-error"
-            className="text-sm font-medium text-red-700"
-            role="alert"
-          >
-            {error}
-          </div>
-        ) : null}
-      </div>
+      <legend className="text-sm font-semibold text-zinc-700">{label}</legend>
+      {error ? (
+        <div id="brand-selector-error" className="text-sm font-medium text-red-700" role="alert">
+          {error}
+        </div>
+      ) : null}
       <div className="flex flex-wrap gap-2">
         {options.map((b) => {
           const checked = selected.includes(b);

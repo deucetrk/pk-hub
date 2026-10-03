@@ -23,6 +23,7 @@ export default function ConsentField({
           id="partner-consent"
           type="checkbox"
           aria-invalid={Boolean(error)}
+          aria-describedby={error ? "partner-consent-error" : undefined}
           className="mt-1 h-4 w-4 rounded border-zinc-300 accent-[#2457d6] focus-visible:ring-2 focus-visible:ring-[#2457d6]/20"
           checked={checked}
           onChange={(e) => onChange(e.target.checked)}
@@ -41,7 +42,7 @@ export default function ConsentField({
         </div>
       </div>
       {error ? (
-        <div className="text-sm font-medium text-red-700" role="alert">
+        <div id="partner-consent-error" className="text-sm font-medium text-red-700" role="alert">
           {error}
         </div>
       ) : null}
