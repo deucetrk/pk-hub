@@ -178,6 +178,9 @@ try {
                 assert(await submit.isDisabled());
                 assert(await page.locator('#interested-brands button').first().isDisabled());
                 assert(await page.getByRole('status').isVisible());
+                assert.equal(await submit.evaluate(node => getComputedStyle(node).opacity), '1');
+                if (motion === 'no-preference')
+                  await page.screenshot({ path: path.join(output, 'pending-' + language + '-' + width + '.png') });
                 await page.locator('form').evaluate((form) => {
                   form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
                   form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));

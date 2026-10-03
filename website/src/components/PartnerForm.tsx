@@ -439,7 +439,7 @@ export default function PartnerForm({ className, isApplication = false }: Partne
         <div className="flex flex-col gap-3 sm:flex-row">
           <Button
             type="submit"
-            className="w-full border-transparent bg-[#2457d6] text-white hover:bg-[#1946b8] sm:w-auto"
+            className="w-full border-transparent bg-[#2457d6] text-white hover:bg-[#1946b8] disabled:cursor-wait disabled:opacity-100 sm:w-auto"
             disabled={status === 'submitting'}
           >
             {status === 'submitting' ? (
