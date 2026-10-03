@@ -2,6 +2,12 @@
 
 Status: canonical public-site design direction
 
+Current acquisition composition: [077](../PUBLIC-ACQUISITION-077.md) supersedes the old Join
+layout with a full-width authentic hero, application desk, separate process context, actual-draft
+review and truthful captured-result handoff. Runtime d4fe4ea passes54 application/enquiry,
+64 ordinary/58 reduced public and20 supporting-recovery cases. Consent-purpose approval,
+provider delivery and cold-chunk/hosted acceptance remain separate; all ecosystem design is incomplete.
+
 Current motion acceptance: [048](../PUBLIC-MOTION-048.md) records actual hosted hover/brand
 failures and the committed correction, 64 ordinary/58 reduced-motion cases across thirteen
 published routes at desktop/mobile, and source fingerprints. Final local acceptance is distinct
