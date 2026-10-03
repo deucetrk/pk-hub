@@ -238,15 +238,33 @@ try {
       if (motion === 'reduce') {
         const reduced = await page.evaluate(() => {
           let maxDuration = 0;
+          let unavailableNonRendered = 0;
+          const invalidDurations = [];
           for (const el of document.querySelectorAll('*')) for (const pseudo of [null, '::before', '::after']) {
             const style = getComputedStyle(el, pseudo);
-            for (const times of [style.animationDuration, style.transitionDuration])
-              maxDuration = Math.max(maxDuration, ...times.split(',').map(parseFloat));
+            for (const times of [style.animationDuration, style.transitionDuration]) {
+              // Chromium exposes no computed duration for non-rendered video
+              // source/fallback children. Empty values are not elapsed time.
+              if (!times && el.getClientRects().length === 0) {
+                unavailableNonRendered += 1;
+                continue;
+              }
+              for (const token of times.split(',')) {
+                const match = token.trim().match(/^(\d+(?:\.\d+)?(?:e[+-]?\d+)?)(ms|s)$/i);
+                if (!match) {
+                  invalidDurations.push({ tag: el.tagName, pseudo, token });
+                  continue;
+                }
+                const seconds = Number(match[1]) / (match[2] === 'ms' ? 1000 : 1);
+                maxDuration = Math.max(maxDuration, seconds);
+              }
+            }
           }
-          return { maxDuration, running: document.getAnimations().filter(a => a.playState === 'running').length,
+          return { maxDuration, unavailableNonRendered, invalidDurations,
+            running: document.getAnimations().filter(a => a.playState === 'running').length,
             scroll: getComputedStyle(document.documentElement).scrollBehavior };
         });
-        assert(reduced.maxDuration <= 0.0000101 && reduced.running === 0 && reduced.scroll === 'auto', `Motion not reduced: ${JSON.stringify(reduced)}`);
+        assert(reduced.invalidDurations.length === 0 && reduced.maxDuration <= 0.0000101 && reduced.running === 0 && reduced.scroll === 'auto', `Motion not reduced: ${JSON.stringify(reduced)}`);
         measured.reducedMeasurement = reduced;
       }
       assert(measured.missingImages.length === 0, `Broken/unloaded images: ${JSON.stringify(measured.missingImages)}`);

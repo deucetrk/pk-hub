@@ -1,0 +1,444 @@
+{
+  "revision": "b4a93c307e93bb18b870e4703c91f7ff34b38545",
+  "origin": "http://127.0.0.1:8870",
+  "results": [
+    {
+      "motion": "no-preference",
+      "width": 1280,
+      "language": "th",
+      "mode": "layout",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "no-preference",
+      "width": 1280,
+      "language": "th",
+      "mode": "validation",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "no-preference",
+      "width": 1280,
+      "language": "th",
+      "mode": "pending",
+      "passed": true,
+      "localPosts": 2
+    },
+    {
+      "motion": "no-preference",
+      "width": 1280,
+      "language": "th",
+      "mode": "error-retry",
+      "passed": true,
+      "localPosts": 2
+    },
+    {
+      "motion": "no-preference",
+      "width": 1280,
+      "language": "th",
+      "mode": "long-record",
+      "passed": true,
+      "localPosts": 1
+    },
+    {
+      "motion": "no-preference",
+      "width": 1280,
+      "language": "th",
+      "mode": "optional-invalid",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "no-preference",
+      "width": 1280,
+      "language": "en",
+      "mode": "layout",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "no-preference",
+      "width": 1280,
+      "language": "en",
+      "mode": "validation",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "no-preference",
+      "width": 1280,
+      "language": "en",
+      "mode": "pending",
+      "passed": true,
+      "localPosts": 2
+    },
+    {
+      "motion": "no-preference",
+      "width": 1280,
+      "language": "en",
+      "mode": "error-retry",
+      "passed": true,
+      "localPosts": 2
+    },
+    {
+      "motion": "no-preference",
+      "width": 1280,
+      "language": "en",
+      "mode": "long-record",
+      "passed": true,
+      "localPosts": 1
+    },
+    {
+      "motion": "no-preference",
+      "width": 1280,
+      "language": "en",
+      "mode": "optional-invalid",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "no-preference",
+      "width": 390,
+      "language": "th",
+      "mode": "layout",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "no-preference",
+      "width": 390,
+      "language": "th",
+      "mode": "validation",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "no-preference",
+      "width": 390,
+      "language": "th",
+      "mode": "pending",
+      "passed": true,
+      "localPosts": 2
+    },
+    {
+      "motion": "no-preference",
+      "width": 390,
+      "language": "th",
+      "mode": "error-retry",
+      "passed": true,
+      "localPosts": 2
+    },
+    {
+      "motion": "no-preference",
+      "width": 390,
+      "language": "th",
+      "mode": "long-record",
+      "passed": true,
+      "localPosts": 1
+    },
+    {
+      "motion": "no-preference",
+      "width": 390,
+      "language": "th",
+      "mode": "optional-invalid",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "no-preference",
+      "width": 390,
+      "language": "en",
+      "mode": "layout",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "no-preference",
+      "width": 390,
+      "language": "en",
+      "mode": "validation",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "no-preference",
+      "width": 390,
+      "language": "en",
+      "mode": "pending",
+      "passed": true,
+      "localPosts": 2
+    },
+    {
+      "motion": "no-preference",
+      "width": 390,
+      "language": "en",
+      "mode": "error-retry",
+      "passed": true,
+      "localPosts": 2
+    },
+    {
+      "motion": "no-preference",
+      "width": 390,
+      "language": "en",
+      "mode": "long-record",
+      "passed": true,
+      "localPosts": 1
+    },
+    {
+      "motion": "no-preference",
+      "width": 390,
+      "language": "en",
+      "mode": "optional-invalid",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "reduce",
+      "width": 1280,
+      "language": "th",
+      "mode": "layout",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "reduce",
+      "width": 1280,
+      "language": "th",
+      "mode": "validation",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "reduce",
+      "width": 1280,
+      "language": "th",
+      "mode": "pending",
+      "passed": true,
+      "localPosts": 2
+    },
+    {
+      "motion": "reduce",
+      "width": 1280,
+      "language": "th",
+      "mode": "error-retry",
+      "passed": true,
+      "localPosts": 2
+    },
+    {
+      "motion": "reduce",
+      "width": 1280,
+      "language": "th",
+      "mode": "long-record",
+      "passed": true,
+      "localPosts": 1
+    },
+    {
+      "motion": "reduce",
+      "width": 1280,
+      "language": "th",
+      "mode": "optional-invalid",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "reduce",
+      "width": 1280,
+      "language": "en",
+      "mode": "layout",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "reduce",
+      "width": 1280,
+      "language": "en",
+      "mode": "validation",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "reduce",
+      "width": 1280,
+      "language": "en",
+      "mode": "pending",
+      "passed": true,
+      "localPosts": 2
+    },
+    {
+      "motion": "reduce",
+      "width": 1280,
+      "language": "en",
+      "mode": "error-retry",
+      "passed": true,
+      "localPosts": 2
+    },
+    {
+      "motion": "reduce",
+      "width": 1280,
+      "language": "en",
+      "mode": "long-record",
+      "passed": true,
+      "localPosts": 1
+    },
+    {
+      "motion": "reduce",
+      "width": 1280,
+      "language": "en",
+      "mode": "optional-invalid",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "reduce",
+      "width": 390,
+      "language": "th",
+      "mode": "layout",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "reduce",
+      "width": 390,
+      "language": "th",
+      "mode": "validation",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "reduce",
+      "width": 390,
+      "language": "th",
+      "mode": "pending",
+      "passed": true,
+      "localPosts": 2
+    },
+    {
+      "motion": "reduce",
+      "width": 390,
+      "language": "th",
+      "mode": "error-retry",
+      "passed": true,
+      "localPosts": 2
+    },
+    {
+      "motion": "reduce",
+      "width": 390,
+      "language": "th",
+      "mode": "long-record",
+      "passed": true,
+      "localPosts": 1
+    },
+    {
+      "motion": "reduce",
+      "width": 390,
+      "language": "th",
+      "mode": "optional-invalid",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "reduce",
+      "width": 390,
+      "language": "en",
+      "mode": "layout",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "reduce",
+      "width": 390,
+      "language": "en",
+      "mode": "validation",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "motion": "reduce",
+      "width": 390,
+      "language": "en",
+      "mode": "pending",
+      "passed": true,
+      "localPosts": 2
+    },
+    {
+      "motion": "reduce",
+      "width": 390,
+      "language": "en",
+      "mode": "error-retry",
+      "passed": true,
+      "localPosts": 2
+    },
+    {
+      "motion": "reduce",
+      "width": 390,
+      "language": "en",
+      "mode": "long-record",
+      "passed": true,
+      "localPosts": 1
+    },
+    {
+      "motion": "reduce",
+      "width": 390,
+      "language": "en",
+      "mode": "optional-invalid",
+      "passed": true,
+      "localPosts": 0
+    },
+    {
+      "width": 1280,
+      "route": "/th",
+      "mode": "enquiry-result",
+      "passed": true,
+      "localPosts": 1
+    },
+    {
+      "width": 1280,
+      "route": "/en",
+      "mode": "enquiry-result",
+      "passed": true,
+      "localPosts": 1
+    },
+    {
+      "width": 1280,
+      "route": "/th/blog/checklist-choose-mobile-phone-wholesaler",
+      "mode": "enquiry-result",
+      "passed": true,
+      "localPosts": 1
+    },
+    {
+      "width": 390,
+      "route": "/th",
+      "mode": "enquiry-result",
+      "passed": true,
+      "localPosts": 1
+    },
+    {
+      "width": 390,
+      "route": "/en",
+      "mode": "enquiry-result",
+      "passed": true,
+      "localPosts": 1
+    },
+    {
+      "width": 390,
+      "route": "/th/blog/checklist-choose-mobile-phone-wholesaler",
+      "mode": "enquiry-result",
+      "passed": true,
+      "localPosts": 1
+    }
+  ],
+  "fingerprints": {
+    "src/pages/Join.tsx": "513b37a83ba2d3f9b4950902570eb50024650c0a345bccb0241061e20c2c8174",
+    "src/components/PartnerForm.tsx": "e126d4cf8129b301c895a6f9777840ab6450ae01a1557ab196e1625a029fbfb3",
+    "src/components/partner-form/BrandSelector.tsx": "849950df719cb58230ea1bba73c4eadd7c07d190d668fdcf2246142a2a037b32",
+    "src/components/partner-form/ConsentField.tsx": "182f69bdb9ef73ffc33b6d97d7a41ca7c2f715622ae4532350b7f5acf5022f4a",
+    "src/components/partner-form/SuccessCard.tsx": "19e5103d8e19d52ec4941b66d10639addcf8358bc218e7f66983d9a0bcaaa227",
+    "src/services/partnerLeadSubmission.ts": "e6bd171354a47bca199058adfa3b7a6a1a13dd6dbd4569f8767ad62116cba7ce",
+    "src/utils/partnerLead.ts": "37c8f6f2bb0f09bd1619bd48f4c4063680f8568f33bc183a4cf4621b0b2e720f",
+    "src/utils/referralAttribution.ts": "b96db72444c2a4b88a979b3e7e3d5e10a89bfa6aaeb6d626f5d25c0e7e81657e",
+    "scripts/qa/public-acquisition.browser.mjs": "2459155890b9e4ca209d58152d8185e78ed893745574c8f444b73d9f900d4779"
+  },
+  "boundary": "Actual public build; synthetic localhost lead endpoint only. No receipt/dedup/consent approval, protected access or production claim."
+}
