@@ -27,6 +27,13 @@ Node24 typecheck/lint/client+SSR/prerender/SEO checks and source/build/artifact 
 Source and retained build are unchanged since runtimeb4a93c3. This packet adds status/routing only.
 No endpoint/provider/referral/payload/consent-purpose/permission/business contract change.
 
+Fresh Node24 gates and all260 mounted cases also pass on build7d275c2. The actual current
+public source/build inputs/four QA drivers match080 exactly;31 current build artifacts are hashed
+in [085 manifest](evidence/public-design-085/source.json). The build uses only a loopback synthetic
+lead endpoint. [Current results](evidence/public-design-085/results.json) retain all five suites;
+six new desktop/mobile captures were visually inspected. Owned preview8870 and lead fixture8871
+have stopped after completion. No real provider or persistent lead write occurred.
+
 The existing Join consent mismatch remains a pending owner decision from077; original wording
 is preserved. Existing no-cors transport still cannot attest receipt/storage. Real delivery,
 receipt/deduplication, consent acceptance and protected Dealer access remain separate gates.

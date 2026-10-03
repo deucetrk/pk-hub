@@ -1,0 +1,4153 @@
+{
+  "buildRevision": "7d275c2bc0acab293b5103e2682574eb8dc30e69",
+  "syntheticOnly": true,
+  "hostedAcceptance": false,
+  "suites": {
+    "recovery": {
+      "cases": 64,
+      "results": [
+        {
+          "width": 1280,
+          "motion": "no-preference",
+          "language": "th",
+          "mode": "entry-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "no-preference",
+          "language": "th",
+          "mode": "bootstrap-hold",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "no-preference",
+          "language": "th",
+          "mode": "bootstrap-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "no-preference",
+          "language": "th",
+          "mode": "route-hold",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "no-preference",
+          "language": "th",
+          "mode": "route-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "no-preference",
+          "language": "th",
+          "mode": "route-draft",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "no-preference",
+          "language": "th",
+          "mode": "missing-route",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "no-preference",
+          "language": "en",
+          "mode": "entry-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "no-preference",
+          "language": "en",
+          "mode": "bootstrap-hold",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "no-preference",
+          "language": "en",
+          "mode": "bootstrap-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "no-preference",
+          "language": "en",
+          "mode": "route-hold",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "no-preference",
+          "language": "en",
+          "mode": "route-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "no-preference",
+          "language": "en",
+          "mode": "route-draft",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "no-preference",
+          "language": "en",
+          "mode": "missing-route",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "no-preference",
+          "language": "th",
+          "mode": "entry-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "no-preference",
+          "language": "th",
+          "mode": "bootstrap-hold",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "no-preference",
+          "language": "th",
+          "mode": "bootstrap-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "no-preference",
+          "language": "th",
+          "mode": "route-hold",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "no-preference",
+          "language": "th",
+          "mode": "route-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "no-preference",
+          "language": "th",
+          "mode": "route-draft",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "no-preference",
+          "language": "th",
+          "mode": "missing-route",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "no-preference",
+          "language": "en",
+          "mode": "entry-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "no-preference",
+          "language": "en",
+          "mode": "bootstrap-hold",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "no-preference",
+          "language": "en",
+          "mode": "bootstrap-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "no-preference",
+          "language": "en",
+          "mode": "route-hold",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "no-preference",
+          "language": "en",
+          "mode": "route-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "no-preference",
+          "language": "en",
+          "mode": "route-draft",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "no-preference",
+          "language": "en",
+          "mode": "missing-route",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "reduce",
+          "language": "th",
+          "mode": "entry-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "reduce",
+          "language": "th",
+          "mode": "bootstrap-hold",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "reduce",
+          "language": "th",
+          "mode": "bootstrap-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "reduce",
+          "language": "th",
+          "mode": "route-hold",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "reduce",
+          "language": "th",
+          "mode": "route-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "reduce",
+          "language": "th",
+          "mode": "route-draft",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "reduce",
+          "language": "th",
+          "mode": "missing-route",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "reduce",
+          "language": "en",
+          "mode": "entry-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "reduce",
+          "language": "en",
+          "mode": "bootstrap-hold",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "reduce",
+          "language": "en",
+          "mode": "bootstrap-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "reduce",
+          "language": "en",
+          "mode": "route-hold",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "reduce",
+          "language": "en",
+          "mode": "route-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "reduce",
+          "language": "en",
+          "mode": "route-draft",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "motion": "reduce",
+          "language": "en",
+          "mode": "missing-route",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "reduce",
+          "language": "th",
+          "mode": "entry-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "reduce",
+          "language": "th",
+          "mode": "bootstrap-hold",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "reduce",
+          "language": "th",
+          "mode": "bootstrap-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "reduce",
+          "language": "th",
+          "mode": "route-hold",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "reduce",
+          "language": "th",
+          "mode": "route-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "reduce",
+          "language": "th",
+          "mode": "route-draft",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "reduce",
+          "language": "th",
+          "mode": "missing-route",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "reduce",
+          "language": "en",
+          "mode": "entry-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "reduce",
+          "language": "en",
+          "mode": "bootstrap-hold",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "reduce",
+          "language": "en",
+          "mode": "bootstrap-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "reduce",
+          "language": "en",
+          "mode": "route-hold",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "reduce",
+          "language": "en",
+          "mode": "route-failure",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "reduce",
+          "language": "en",
+          "mode": "route-draft",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "motion": "reduce",
+          "language": "en",
+          "mode": "missing-route",
+          "passed": true,
+          "issues": 0,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "language": "th",
+          "mode": "missing-route-no-script",
+          "passed": true,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "language": "en",
+          "mode": "missing-route-no-script",
+          "passed": true,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "language": "th",
+          "mode": "missing-route-no-script",
+          "passed": true,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "language": "en",
+          "mode": "missing-route-no-script",
+          "passed": true,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "language": "th",
+          "mode": "form-no-script",
+          "passed": true,
+          "writes": 0
+        },
+        {
+          "width": 1280,
+          "language": "en",
+          "mode": "form-no-script",
+          "passed": true,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "language": "th",
+          "mode": "form-no-script",
+          "passed": true,
+          "writes": 0
+        },
+        {
+          "width": 390,
+          "language": "en",
+          "mode": "form-no-script",
+          "passed": true,
+          "writes": 0
+        }
+      ]
+    },
+    "acquisition": {
+      "cases": 54,
+      "results": [
+        {
+          "motion": "no-preference",
+          "width": 1280,
+          "language": "th",
+          "mode": "layout",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "no-preference",
+          "width": 1280,
+          "language": "th",
+          "mode": "validation",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "no-preference",
+          "width": 1280,
+          "language": "th",
+          "mode": "pending",
+          "passed": true,
+          "localPosts": 2
+        },
+        {
+          "motion": "no-preference",
+          "width": 1280,
+          "language": "th",
+          "mode": "error-retry",
+          "passed": true,
+          "localPosts": 2
+        },
+        {
+          "motion": "no-preference",
+          "width": 1280,
+          "language": "th",
+          "mode": "long-record",
+          "passed": true,
+          "localPosts": 1
+        },
+        {
+          "motion": "no-preference",
+          "width": 1280,
+          "language": "th",
+          "mode": "optional-invalid",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "no-preference",
+          "width": 1280,
+          "language": "en",
+          "mode": "layout",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "no-preference",
+          "width": 1280,
+          "language": "en",
+          "mode": "validation",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "no-preference",
+          "width": 1280,
+          "language": "en",
+          "mode": "pending",
+          "passed": true,
+          "localPosts": 2
+        },
+        {
+          "motion": "no-preference",
+          "width": 1280,
+          "language": "en",
+          "mode": "error-retry",
+          "passed": true,
+          "localPosts": 2
+        },
+        {
+          "motion": "no-preference",
+          "width": 1280,
+          "language": "en",
+          "mode": "long-record",
+          "passed": true,
+          "localPosts": 1
+        },
+        {
+          "motion": "no-preference",
+          "width": 1280,
+          "language": "en",
+          "mode": "optional-invalid",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "no-preference",
+          "width": 390,
+          "language": "th",
+          "mode": "layout",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "no-preference",
+          "width": 390,
+          "language": "th",
+          "mode": "validation",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "no-preference",
+          "width": 390,
+          "language": "th",
+          "mode": "pending",
+          "passed": true,
+          "localPosts": 2
+        },
+        {
+          "motion": "no-preference",
+          "width": 390,
+          "language": "th",
+          "mode": "error-retry",
+          "passed": true,
+          "localPosts": 2
+        },
+        {
+          "motion": "no-preference",
+          "width": 390,
+          "language": "th",
+          "mode": "long-record",
+          "passed": true,
+          "localPosts": 1
+        },
+        {
+          "motion": "no-preference",
+          "width": 390,
+          "language": "th",
+          "mode": "optional-invalid",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "no-preference",
+          "width": 390,
+          "language": "en",
+          "mode": "layout",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "no-preference",
+          "width": 390,
+          "language": "en",
+          "mode": "validation",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "no-preference",
+          "width": 390,
+          "language": "en",
+          "mode": "pending",
+          "passed": true,
+          "localPosts": 2
+        },
+        {
+          "motion": "no-preference",
+          "width": 390,
+          "language": "en",
+          "mode": "error-retry",
+          "passed": true,
+          "localPosts": 2
+        },
+        {
+          "motion": "no-preference",
+          "width": 390,
+          "language": "en",
+          "mode": "long-record",
+          "passed": true,
+          "localPosts": 1
+        },
+        {
+          "motion": "no-preference",
+          "width": 390,
+          "language": "en",
+          "mode": "optional-invalid",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "reduce",
+          "width": 1280,
+          "language": "th",
+          "mode": "layout",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "reduce",
+          "width": 1280,
+          "language": "th",
+          "mode": "validation",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "reduce",
+          "width": 1280,
+          "language": "th",
+          "mode": "pending",
+          "passed": true,
+          "localPosts": 2
+        },
+        {
+          "motion": "reduce",
+          "width": 1280,
+          "language": "th",
+          "mode": "error-retry",
+          "passed": true,
+          "localPosts": 2
+        },
+        {
+          "motion": "reduce",
+          "width": 1280,
+          "language": "th",
+          "mode": "long-record",
+          "passed": true,
+          "localPosts": 1
+        },
+        {
+          "motion": "reduce",
+          "width": 1280,
+          "language": "th",
+          "mode": "optional-invalid",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "reduce",
+          "width": 1280,
+          "language": "en",
+          "mode": "layout",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "reduce",
+          "width": 1280,
+          "language": "en",
+          "mode": "validation",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "reduce",
+          "width": 1280,
+          "language": "en",
+          "mode": "pending",
+          "passed": true,
+          "localPosts": 2
+        },
+        {
+          "motion": "reduce",
+          "width": 1280,
+          "language": "en",
+          "mode": "error-retry",
+          "passed": true,
+          "localPosts": 2
+        },
+        {
+          "motion": "reduce",
+          "width": 1280,
+          "language": "en",
+          "mode": "long-record",
+          "passed": true,
+          "localPosts": 1
+        },
+        {
+          "motion": "reduce",
+          "width": 1280,
+          "language": "en",
+          "mode": "optional-invalid",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "reduce",
+          "width": 390,
+          "language": "th",
+          "mode": "layout",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "reduce",
+          "width": 390,
+          "language": "th",
+          "mode": "validation",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "reduce",
+          "width": 390,
+          "language": "th",
+          "mode": "pending",
+          "passed": true,
+          "localPosts": 2
+        },
+        {
+          "motion": "reduce",
+          "width": 390,
+          "language": "th",
+          "mode": "error-retry",
+          "passed": true,
+          "localPosts": 2
+        },
+        {
+          "motion": "reduce",
+          "width": 390,
+          "language": "th",
+          "mode": "long-record",
+          "passed": true,
+          "localPosts": 1
+        },
+        {
+          "motion": "reduce",
+          "width": 390,
+          "language": "th",
+          "mode": "optional-invalid",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "reduce",
+          "width": 390,
+          "language": "en",
+          "mode": "layout",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "reduce",
+          "width": 390,
+          "language": "en",
+          "mode": "validation",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "motion": "reduce",
+          "width": 390,
+          "language": "en",
+          "mode": "pending",
+          "passed": true,
+          "localPosts": 2
+        },
+        {
+          "motion": "reduce",
+          "width": 390,
+          "language": "en",
+          "mode": "error-retry",
+          "passed": true,
+          "localPosts": 2
+        },
+        {
+          "motion": "reduce",
+          "width": 390,
+          "language": "en",
+          "mode": "long-record",
+          "passed": true,
+          "localPosts": 1
+        },
+        {
+          "motion": "reduce",
+          "width": 390,
+          "language": "en",
+          "mode": "optional-invalid",
+          "passed": true,
+          "localPosts": 0
+        },
+        {
+          "width": 1280,
+          "route": "/th",
+          "mode": "enquiry-result",
+          "passed": true,
+          "localPosts": 1
+        },
+        {
+          "width": 1280,
+          "route": "/en",
+          "mode": "enquiry-result",
+          "passed": true,
+          "localPosts": 1
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/checklist-choose-mobile-phone-wholesaler",
+          "mode": "enquiry-result",
+          "passed": true,
+          "localPosts": 1
+        },
+        {
+          "width": 390,
+          "route": "/th",
+          "mode": "enquiry-result",
+          "passed": true,
+          "localPosts": 1
+        },
+        {
+          "width": 390,
+          "route": "/en",
+          "mode": "enquiry-result",
+          "passed": true,
+          "localPosts": 1
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/checklist-choose-mobile-phone-wholesaler",
+          "mode": "enquiry-result",
+          "passed": true,
+          "localPosts": 1
+        }
+      ]
+    },
+    "motion": {
+      "cases": 64,
+      "results": [
+        {
+          "width": 1280,
+          "route": "/th",
+          "name": "hero entrance",
+          "passed": true,
+          "details": {
+            "sequence": [
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.08s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.17s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.25s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.33s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.41s"
+              }
+            ],
+            "observed": {
+              "clip": "inset(2.72627% 0px 0px)",
+              "transform": "matrix(1.01908, 0, 0, 1.01908, 0, 0)"
+            }
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th",
+          "name": "hero hover depth",
+          "passed": true,
+          "details": {
+            "before": "none",
+            "after": "matrix(1.015, 0, 0, 1.015, 0, 0)"
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th",
+          "name": "all brands simultaneously visible",
+          "passed": true,
+          "details": {
+            "visible": [
+              "Apple",
+              "Samsung",
+              "Oppo",
+              "Vivo",
+              "Realme",
+              "Xiaomi",
+              "Honor",
+              "Infinix"
+            ]
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th",
+          "name": "portal keyboard transition",
+          "passed": true,
+          "details": {
+            "before": "เริ่มจากของที่ร้านต้องการ",
+            "after": "เห็นข้อมูลก่อนตัดสินใจ",
+            "samples": [
+              {
+                "opacity": 0.957428,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 0.288925,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 0.0772254,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 0.113965,
+                "transform": "matrix(1, 0, 0, 1, 0, 16)"
+              },
+              {
+                "opacity": 0.670025,
+                "transform": "matrix(1, 0, 0, 1, 0, 10.9744)"
+              },
+              {
+                "opacity": 0.983933,
+                "transform": "matrix(1, 0, 0, 1, 0, 4.71381)"
+              },
+              {
+                "opacity": 0.964523,
+                "transform": "matrix(1, 0, 0, 1, 0, 2.02724)"
+              },
+              {
+                "opacity": 0.988904,
+                "transform": "matrix(1, 0, 0, 1, 0, 0.634044)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 5.33413e-07)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              }
+            ]
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th",
+          "name": "proof keyboard transition",
+          "passed": true,
+          "details": {
+            "before": "ใส่ใจตั้งแต่ก่อนออกจากร้าน",
+            "after": "มีหน้าร้าน มีทีมให้ติดต่อ",
+            "samples": [
+              {
+                "opacity": 0.996094,
+                "transform": "matrix(1, 0, 0, 1, 0, -0.0965636)"
+              },
+              {
+                "opacity": 0.770897,
+                "transform": "matrix(1, 0, 0, 1, 0, -2.37937)"
+              },
+              {
+                "opacity": 0.770897,
+                "transform": "matrix(1, 0, 0, 1, 0, -2.37937)"
+              },
+              {
+                "opacity": 0.338672,
+                "transform": "matrix(1, 0, 0, 1, 0, -6.65972)"
+              },
+              {
+                "opacity": 0.194968,
+                "transform": "matrix(1, 0, 0, 1, 0, -8.11026)"
+              },
+              {
+                "opacity": 0.0555902,
+                "transform": "matrix(1, 0, 0, 1, 0, -9.45703)"
+              },
+              {
+                "opacity": 0.00371147,
+                "transform": "matrix(1, 0, 0, 1, 0, -9.97517)"
+              },
+              {
+                "opacity": 0.215074,
+                "transform": "matrix(1, 0, 0, 1, 0, 10.9665)"
+              },
+              {
+                "opacity": 0.417169,
+                "transform": "matrix(1, 0, 0, 1, 0, 8.02721)"
+              },
+              {
+                "opacity": 0.6512,
+                "transform": "matrix(1, 0, 0, 1, 0, 4.85232)"
+              },
+              {
+                "opacity": 0.838051,
+                "transform": "matrix(1, 0, 0, 1, 0, 2.22995)"
+              },
+              {
+                "opacity": 0.93934,
+                "transform": "matrix(1, 0, 0, 1, 0, 0.846843)"
+              },
+              {
+                "opacity": 0.999919,
+                "transform": "matrix(1, 0, 0, 1, 0, 0.0002024)"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              }
+            ]
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th",
+          "name": "FAQ keyboard",
+          "passed": true,
+          "details": {
+            "focusRetained": true
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/en",
+          "name": "hero entrance",
+          "passed": true,
+          "details": {
+            "sequence": [
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.08s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.17s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.25s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.33s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.41s"
+              }
+            ],
+            "observed": {
+              "clip": "inset(2.72627% 0px 0px)",
+              "transform": "matrix(1.01908, 0, 0, 1.01908, 0, 0)"
+            }
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/en",
+          "name": "hero hover depth",
+          "passed": true,
+          "details": {
+            "before": "none",
+            "after": "matrix(1.015, 0, 0, 1.015, 0, 0)"
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/en",
+          "name": "all brands simultaneously visible",
+          "passed": true,
+          "details": {
+            "visible": [
+              "Apple",
+              "Samsung",
+              "Oppo",
+              "Vivo",
+              "Realme",
+              "Xiaomi",
+              "Honor",
+              "Infinix"
+            ]
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/en",
+          "name": "portal keyboard transition",
+          "passed": true,
+          "details": {
+            "before": "Start with what your store needs",
+            "after": "Get the facts before you decide",
+            "samples": [
+              {
+                "opacity": 0.922565,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 0.453338,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 0.118996,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 0.240297,
+                "transform": "matrix(1, 0, 0, 1, 0, 15.59)"
+              },
+              {
+                "opacity": 0.669479,
+                "transform": "matrix(1, 0, 0, 1, 0, 10.9744)"
+              },
+              {
+                "opacity": 0.999635,
+                "transform": "matrix(1, 0, 0, 1, 0, 3.87918)"
+              },
+              {
+                "opacity": 0.988928,
+                "transform": "matrix(1, 0, 0, 1, 0, 0.632656)"
+              },
+              {
+                "opacity": 0.997461,
+                "transform": "matrix(1, 0, 0, 1, 0, 0.145099)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              }
+            ]
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/en",
+          "name": "proof keyboard transition",
+          "passed": true,
+          "details": {
+            "before": "Care before it leaves our store",
+            "after": "A place to visit. A team to reach.",
+            "samples": [
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 0.599337,
+                "transform": "matrix(1, 0, 0, 1, 0, -4.07099)"
+              },
+              {
+                "opacity": 0.310156,
+                "transform": "matrix(1, 0, 0, 1, 0, -6.90784)"
+              },
+              {
+                "opacity": 0.13333,
+                "transform": "matrix(1, 0, 0, 1, 0, -8.70548)"
+              },
+              {
+                "opacity": 0.000677847,
+                "transform": "matrix(1, 0, 0, 1, 0, -9.99464)"
+              },
+              {
+                "opacity": 0.284642,
+                "transform": "matrix(1, 0, 0, 1, 0, 9.96471)"
+              },
+              {
+                "opacity": 0.539306,
+                "transform": "matrix(1, 0, 0, 1, 0, 6.44169)"
+              },
+              {
+                "opacity": 0.75116,
+                "transform": "matrix(1, 0, 0, 1, 0, 3.46517)"
+              },
+              {
+                "opacity": 0.909789,
+                "transform": "matrix(1, 0, 0, 1, 0, 1.21487)"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              }
+            ]
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/en",
+          "name": "FAQ keyboard",
+          "passed": true,
+          "details": {
+            "focusRetained": true
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/en",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/join",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/en/join",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/dealer/login",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/en/dealer/login",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog",
+          "name": "journal search recovery",
+          "passed": true,
+          "details": {
+            "recovered": true
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/checklist-choose-mobile-phone-wholesaler",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/checklist-choose-mobile-phone-wholesaler",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/how-to-start-mobile-phone-shop",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 114
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/how-to-start-mobile-phone-shop",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/what-is-thai-market-official-phone",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 114
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/what-is-thai-market-official-phone",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/mobile-shop-inventory-cashflow-guide",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/mobile-shop-inventory-cashflow-guide",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/mobile-phone-reseller-documents-tax-invoice",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/mobile-phone-reseller-documents-tax-invoice",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/first-wholesale-mobile-phone-order",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/first-wholesale-mobile-phone-order",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th",
+          "name": "hero entrance",
+          "passed": true,
+          "details": {
+            "sequence": [
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.08s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.17s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.25s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.33s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.41s"
+              }
+            ],
+            "observed": {
+              "clip": "inset(2.72627% 0px 0px)",
+              "transform": "matrix(1.01908, 0, 0, 1.01908, 0, 0)"
+            }
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th",
+          "name": "all brands simultaneously visible",
+          "passed": true,
+          "details": {
+            "visible": [
+              "Apple",
+              "Samsung",
+              "Oppo",
+              "Vivo",
+              "Realme",
+              "Xiaomi",
+              "Honor",
+              "Infinix"
+            ]
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th",
+          "name": "portal keyboard transition",
+          "passed": true,
+          "details": {
+            "before": "เริ่มจากของที่ร้านต้องการ",
+            "after": "เห็นข้อมูลก่อนตัดสินใจ",
+            "samples": [
+              {
+                "opacity": 0.997432,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 0.509525,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 0.092455,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 0.72,
+                "transform": "matrix(1, 0, 0, 1, 0, 16)"
+              },
+              {
+                "opacity": 0.754038,
+                "transform": "matrix(1, 0, 0, 1, 0, 9.455)"
+              },
+              {
+                "opacity": 0.947369,
+                "transform": "matrix(1, 0, 0, 1, 0, 5.66864)"
+              },
+              {
+                "opacity": 0.955436,
+                "transform": "matrix(1, 0, 0, 1, 0, 2.54649)"
+              },
+              {
+                "opacity": 0.978963,
+                "transform": "matrix(1, 0, 0, 1, 0, 1.20213)"
+              },
+              {
+                "opacity": 0.992555,
+                "transform": "matrix(1, 0, 0, 1, 0, 0.425402)"
+              },
+              {
+                "opacity": 0.999736,
+                "transform": "matrix(1, 0, 0, 1, 0, 0.0150795)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              }
+            ]
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th",
+          "name": "proof keyboard transition",
+          "passed": true,
+          "details": {
+            "before": "ใส่ใจตั้งแต่ก่อนออกจากร้าน",
+            "after": "มีหน้าร้าน มีทีมให้ติดต่อ",
+            "samples": [
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 0.81979,
+                "transform": "matrix(1, 0, 0, 1, 0, -1.91331)"
+              },
+              {
+                "opacity": 0.550691,
+                "transform": "matrix(1, 0, 0, 1, 0, -4.52821)"
+              },
+              {
+                "opacity": 0.375239,
+                "transform": "matrix(1, 0, 0, 1, 0, -6.27992)"
+              },
+              {
+                "opacity": 0.225348,
+                "transform": "matrix(1, 0, 0, 1, 0, -7.77136)"
+              },
+              {
+                "opacity": 0.0743063,
+                "transform": "matrix(1, 0, 0, 1, 0, -9.25858)"
+              },
+              {
+                "opacity": 0.0105096,
+                "transform": "matrix(1, 0, 0, 1, 0, -9.9173)"
+              },
+              {
+                "opacity": 0.136299,
+                "transform": "matrix(1, 0, 0, 1, 0, 11.938)"
+              },
+              {
+                "opacity": 0.474181,
+                "transform": "matrix(1, 0, 0, 1, 0, 7.35363)"
+              },
+              {
+                "opacity": 0.646415,
+                "transform": "matrix(1, 0, 0, 1, 0, 4.85232)"
+              },
+              {
+                "opacity": 0.834686,
+                "transform": "matrix(1, 0, 0, 1, 0, 2.26101)"
+              },
+              {
+                "opacity": 0.9369,
+                "transform": "matrix(1, 0, 0, 1, 0, 0.846843)"
+              },
+              {
+                "opacity": 0.99978,
+                "transform": "matrix(1, 0, 0, 1, 0, 0.0018169)"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              }
+            ]
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th",
+          "name": "FAQ keyboard",
+          "passed": true,
+          "details": {
+            "focusRetained": true
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th",
+          "name": "mobile menu and locale",
+          "passed": true,
+          "details": {
+            "anchorTop": 95.96875,
+            "focus": "BODY"
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/en",
+          "name": "hero entrance",
+          "passed": true,
+          "details": {
+            "sequence": [
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.08s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.17s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.25s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.33s"
+              },
+              {
+                "name": "pk-hero-enter",
+                "duration": "0.76s",
+                "delay": "0.41s"
+              }
+            ],
+            "observed": {
+              "clip": "inset(2.72627% 0px 0px)",
+              "transform": "matrix(1.01908, 0, 0, 1.01908, 0, 0)"
+            }
+          }
+        },
+        {
+          "width": 390,
+          "route": "/en",
+          "name": "all brands simultaneously visible",
+          "passed": true,
+          "details": {
+            "visible": [
+              "Apple",
+              "Samsung",
+              "Oppo",
+              "Vivo",
+              "Realme",
+              "Xiaomi",
+              "Honor",
+              "Infinix"
+            ]
+          }
+        },
+        {
+          "width": 390,
+          "route": "/en",
+          "name": "portal keyboard transition",
+          "passed": true,
+          "details": {
+            "before": "Start with what your store needs",
+            "after": "Get the facts before you decide",
+            "samples": [
+              {
+                "opacity": 0.98309,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 0.608912,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 0.304683,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 0.0398227,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 0.72,
+                "transform": "matrix(1, 0, 0, 1, 0, 16)"
+              },
+              {
+                "opacity": 0.56487,
+                "transform": "matrix(1, 0, 0, 1, 0, 12.4663)"
+              },
+              {
+                "opacity": 0.825543,
+                "transform": "matrix(1, 0, 0, 1, 0, 8.04986)"
+              },
+              {
+                "opacity": 0.944673,
+                "transform": "matrix(1, 0, 0, 1, 0, 3.16155)"
+              },
+              {
+                "opacity": 0.972383,
+                "transform": "matrix(1, 0, 0, 1, 0, 1.57812)"
+              },
+              {
+                "opacity": 0.988928,
+                "transform": "matrix(1, 0, 0, 1, 0, 0.632656)"
+              },
+              {
+                "opacity": 0.998909,
+                "transform": "matrix(1, 0, 0, 1, 0, 0.0623317)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              }
+            ]
+          }
+        },
+        {
+          "width": 390,
+          "route": "/en",
+          "name": "proof keyboard transition",
+          "passed": true,
+          "details": {
+            "before": "Care before it leaves our store",
+            "after": "A place to visit. A team to reach.",
+            "samples": [
+              {
+                "opacity": 1,
+                "transform": "matrix(1, 0, 0, 1, 0, -0.0965636)"
+              },
+              {
+                "opacity": 0.705914,
+                "transform": "matrix(1, 0, 0, 1, 0, -3.04446)"
+              },
+              {
+                "opacity": 0.512259,
+                "transform": "matrix(1, 0, 0, 1, 0, -5.00366)"
+              },
+              {
+                "opacity": 0.290561,
+                "transform": "matrix(1, 0, 0, 1, 0, -7.15113)"
+              },
+              {
+                "opacity": 0.0858845,
+                "transform": "matrix(1, 0, 0, 1, 0, -9.18801)"
+              },
+              {
+                "opacity": 0.0041805,
+                "transform": "matrix(1, 0, 0, 1, 0, -9.96719)"
+              },
+              {
+                "opacity": 0.136743,
+                "transform": "matrix(1, 0, 0, 1, 0, 11.938)"
+              },
+              {
+                "opacity": 0.474549,
+                "transform": "matrix(1, 0, 0, 1, 0, 7.25117)"
+              },
+              {
+                "opacity": 0.698644,
+                "transform": "matrix(1, 0, 0, 1, 0, 4.12002)"
+              },
+              {
+                "opacity": 0.834927,
+                "transform": "matrix(1, 0, 0, 1, 0, 2.22995)"
+              },
+              {
+                "opacity": 0.961848,
+                "transform": "matrix(1, 0, 0, 1, 0, 0.483943)"
+              },
+              {
+                "opacity": 0.99978,
+                "transform": "matrix(1, 0, 0, 1, 0, 0.0002024)"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              }
+            ]
+          }
+        },
+        {
+          "width": 390,
+          "route": "/en",
+          "name": "FAQ keyboard",
+          "passed": true,
+          "details": {
+            "focusRetained": true
+          }
+        },
+        {
+          "width": 390,
+          "route": "/en",
+          "name": "mobile menu and locale",
+          "passed": true,
+          "details": {
+            "anchorTop": 96.390625,
+            "focus": "BODY"
+          }
+        },
+        {
+          "width": 390,
+          "route": "/en",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/join",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/en/join",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/dealer/login",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/en/dealer/login",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog",
+          "name": "journal search recovery",
+          "passed": true,
+          "details": {
+            "recovered": true
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/checklist-choose-mobile-phone-wholesaler",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112.296875
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/checklist-choose-mobile-phone-wholesaler",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/how-to-start-mobile-phone-shop",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112.28125
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/how-to-start-mobile-phone-shop",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/what-is-thai-market-official-phone",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112.28125
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/what-is-thai-market-official-phone",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/mobile-shop-inventory-cashflow-guide",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 90.28125
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/mobile-shop-inventory-cashflow-guide",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/mobile-phone-reseller-documents-tax-invoice",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112.28125
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/mobile-phone-reseller-documents-tax-invoice",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/first-wholesale-mobile-phone-order",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112.28125
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/first-wholesale-mobile-phone-order",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": false,
+            "abortedMethods": [],
+            "errors": []
+          }
+        }
+      ]
+    },
+    "reduced": {
+      "cases": 58,
+      "results": [
+        {
+          "width": 1280,
+          "route": "/th",
+          "name": "all brands simultaneously visible",
+          "passed": true,
+          "details": {
+            "visible": [
+              "Apple",
+              "Samsung",
+              "Oppo",
+              "Vivo",
+              "Realme",
+              "Xiaomi",
+              "Honor",
+              "Infinix"
+            ]
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th",
+          "name": "portal keyboard transition",
+          "passed": true,
+          "details": {
+            "before": "เริ่มจากของที่ร้านต้องการ",
+            "after": "เห็นข้อมูลก่อนตัดสินใจ",
+            "samples": [
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              }
+            ]
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th",
+          "name": "proof keyboard transition",
+          "passed": true,
+          "details": {
+            "before": "ใส่ใจตั้งแต่ก่อนออกจากร้าน",
+            "after": "มีหน้าร้าน มีทีมให้ติดต่อ",
+            "samples": [
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              }
+            ]
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th",
+          "name": "FAQ keyboard",
+          "passed": true,
+          "details": {
+            "focusRetained": true
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 12,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/en",
+          "name": "all brands simultaneously visible",
+          "passed": true,
+          "details": {
+            "visible": [
+              "Apple",
+              "Samsung",
+              "Oppo",
+              "Vivo",
+              "Realme",
+              "Xiaomi",
+              "Honor",
+              "Infinix"
+            ]
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/en",
+          "name": "portal keyboard transition",
+          "passed": true,
+          "details": {
+            "before": "Start with what your store needs",
+            "after": "Get the facts before you decide",
+            "samples": [
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              }
+            ]
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/en",
+          "name": "proof keyboard transition",
+          "passed": true,
+          "details": {
+            "before": "Care before it leaves our store",
+            "after": "A place to visit. A team to reach.",
+            "samples": [
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              }
+            ]
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/en",
+          "name": "FAQ keyboard",
+          "passed": true,
+          "details": {
+            "focusRetained": true
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/en",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 12,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/join",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/en/join",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/dealer/login",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/en/dealer/login",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog",
+          "name": "journal search recovery",
+          "passed": true,
+          "details": {
+            "recovered": true
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/checklist-choose-mobile-phone-wholesaler",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/checklist-choose-mobile-phone-wholesaler",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/how-to-start-mobile-phone-shop",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/how-to-start-mobile-phone-shop",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/what-is-thai-market-official-phone",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/what-is-thai-market-official-phone",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/mobile-shop-inventory-cashflow-guide",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/mobile-shop-inventory-cashflow-guide",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/mobile-phone-reseller-documents-tax-invoice",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/mobile-phone-reseller-documents-tax-invoice",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/first-wholesale-mobile-phone-order",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112
+          }
+        },
+        {
+          "width": 1280,
+          "route": "/th/blog/first-wholesale-mobile-phone-order",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th",
+          "name": "all brands simultaneously visible",
+          "passed": true,
+          "details": {
+            "visible": [
+              "Apple",
+              "Samsung",
+              "Oppo",
+              "Vivo",
+              "Realme",
+              "Xiaomi",
+              "Honor",
+              "Infinix"
+            ]
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th",
+          "name": "portal keyboard transition",
+          "passed": true,
+          "details": {
+            "before": "เริ่มจากของที่ร้านต้องการ",
+            "after": "เห็นข้อมูลก่อนตัดสินใจ",
+            "samples": [
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              }
+            ]
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th",
+          "name": "proof keyboard transition",
+          "passed": true,
+          "details": {
+            "before": "ใส่ใจตั้งแต่ก่อนออกจากร้าน",
+            "after": "มีหน้าร้าน มีทีมให้ติดต่อ",
+            "samples": [
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              }
+            ]
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th",
+          "name": "FAQ keyboard",
+          "passed": true,
+          "details": {
+            "focusRetained": true
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th",
+          "name": "mobile menu and locale",
+          "passed": true,
+          "details": {
+            "anchorTop": 95.96875,
+            "focus": "BODY"
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 12,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/en",
+          "name": "all brands simultaneously visible",
+          "passed": true,
+          "details": {
+            "visible": [
+              "Apple",
+              "Samsung",
+              "Oppo",
+              "Vivo",
+              "Realme",
+              "Xiaomi",
+              "Honor",
+              "Infinix"
+            ]
+          }
+        },
+        {
+          "width": 390,
+          "route": "/en",
+          "name": "portal keyboard transition",
+          "passed": true,
+          "details": {
+            "before": "Start with what your store needs",
+            "after": "Get the facts before you decide",
+            "samples": [
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              }
+            ]
+          }
+        },
+        {
+          "width": 390,
+          "route": "/en",
+          "name": "proof keyboard transition",
+          "passed": true,
+          "details": {
+            "before": "Care before it leaves our store",
+            "after": "A place to visit. A team to reach.",
+            "samples": [
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              },
+              {
+                "opacity": 1,
+                "transform": "none"
+              }
+            ]
+          }
+        },
+        {
+          "width": 390,
+          "route": "/en",
+          "name": "FAQ keyboard",
+          "passed": true,
+          "details": {
+            "focusRetained": true
+          }
+        },
+        {
+          "width": 390,
+          "route": "/en",
+          "name": "mobile menu and locale",
+          "passed": true,
+          "details": {
+            "anchorTop": 96.390625,
+            "focus": "BODY"
+          }
+        },
+        {
+          "width": 390,
+          "route": "/en",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 12,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/join",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/en/join",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/dealer/login",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/en/dealer/login",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog",
+          "name": "journal search recovery",
+          "passed": true,
+          "details": {
+            "recovered": true
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/checklist-choose-mobile-phone-wholesaler",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112.296875
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/checklist-choose-mobile-phone-wholesaler",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/how-to-start-mobile-phone-shop",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112.28125
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/how-to-start-mobile-phone-shop",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/what-is-thai-market-official-phone",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112.28125
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/what-is-thai-market-official-phone",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/mobile-shop-inventory-cashflow-guide",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112.28125
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/mobile-shop-inventory-cashflow-guide",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/mobile-phone-reseller-documents-tax-invoice",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112.28125
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/mobile-phone-reseller-documents-tax-invoice",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/first-wholesale-mobile-phone-order",
+          "name": "article TOC keyboard",
+          "passed": true,
+          "details": {
+            "target": "#section-1",
+            "top": 112.28125
+          }
+        },
+        {
+          "width": 390,
+          "route": "/th/blog/first-wholesale-mobile-phone-order",
+          "name": "route readability and assets",
+          "passed": true,
+          "details": {
+            "status": 200,
+            "h1Count": 1,
+            "h1Opacity": "1",
+            "overflow": false,
+            "missingImages": [],
+            "reduced": true,
+            "reducedMeasurement": {
+              "maxDuration": 0.00001,
+              "unavailableNonRendered": 0,
+              "invalidDurations": [],
+              "running": 0,
+              "scroll": "auto"
+            },
+            "abortedMethods": [],
+            "errors": []
+          }
+        }
+      ]
+    },
+    "supporting": {
+      "cases": 20,
+      "results": [
+        {
+          "mode": "missing-article",
+          "width": 1280,
+          "motion": "no-preference",
+          "passed": true
+        },
+        {
+          "mode": "fractional-page",
+          "width": 1280,
+          "motion": "no-preference",
+          "passed": true
+        },
+        {
+          "mode": "past-last-page",
+          "width": 1280,
+          "motion": "no-preference",
+          "passed": true
+        },
+        {
+          "mode": "settled-error-focus",
+          "width": 1280,
+          "motion": "no-preference",
+          "language": "th",
+          "passed": true,
+          "geometry": {
+            "top": 515.6875,
+            "bottom": 535.6875,
+            "height": 20
+          },
+          "blockedPosts": 1
+        },
+        {
+          "mode": "settled-error-focus",
+          "width": 1280,
+          "motion": "no-preference",
+          "language": "en",
+          "passed": true,
+          "geometry": {
+            "top": 533.6875,
+            "bottom": 573.6875,
+            "height": 40
+          },
+          "blockedPosts": 1
+        },
+        {
+          "mode": "missing-article",
+          "width": 390,
+          "motion": "no-preference",
+          "passed": true
+        },
+        {
+          "mode": "fractional-page",
+          "width": 390,
+          "motion": "no-preference",
+          "passed": true
+        },
+        {
+          "mode": "past-last-page",
+          "width": 390,
+          "motion": "no-preference",
+          "passed": true
+        },
+        {
+          "mode": "settled-error-focus",
+          "width": 390,
+          "motion": "no-preference",
+          "language": "th",
+          "passed": true,
+          "geometry": {
+            "top": 538.5,
+            "bottom": 578.5,
+            "height": 40
+          },
+          "blockedPosts": 1
+        },
+        {
+          "mode": "settled-error-focus",
+          "width": 390,
+          "motion": "no-preference",
+          "language": "en",
+          "passed": true,
+          "geometry": {
+            "top": 554.5,
+            "bottom": 614.5,
+            "height": 60
+          },
+          "blockedPosts": 1
+        },
+        {
+          "mode": "missing-article",
+          "width": 1280,
+          "motion": "reduce",
+          "passed": true
+        },
+        {
+          "mode": "fractional-page",
+          "width": 1280,
+          "motion": "reduce",
+          "passed": true
+        },
+        {
+          "mode": "past-last-page",
+          "width": 1280,
+          "motion": "reduce",
+          "passed": true
+        },
+        {
+          "mode": "settled-error-focus",
+          "width": 1280,
+          "motion": "reduce",
+          "language": "th",
+          "passed": true,
+          "geometry": {
+            "top": 500.6875,
+            "bottom": 520.6875,
+            "height": 20
+          },
+          "blockedPosts": 1
+        },
+        {
+          "mode": "settled-error-focus",
+          "width": 1280,
+          "motion": "reduce",
+          "language": "en",
+          "passed": true,
+          "geometry": {
+            "top": 533.6875,
+            "bottom": 573.6875,
+            "height": 40
+          },
+          "blockedPosts": 1
+        },
+        {
+          "mode": "missing-article",
+          "width": 390,
+          "motion": "reduce",
+          "passed": true
+        },
+        {
+          "mode": "fractional-page",
+          "width": 390,
+          "motion": "reduce",
+          "passed": true
+        },
+        {
+          "mode": "past-last-page",
+          "width": 390,
+          "motion": "reduce",
+          "passed": true
+        },
+        {
+          "mode": "settled-error-focus",
+          "width": 390,
+          "motion": "reduce",
+          "language": "th",
+          "passed": true,
+          "geometry": {
+            "top": 538.5,
+            "bottom": 578.5,
+            "height": 40
+          },
+          "blockedPosts": 1
+        },
+        {
+          "mode": "settled-error-focus",
+          "width": 390,
+          "motion": "reduce",
+          "language": "en",
+          "passed": true,
+          "geometry": {
+            "top": 554.5,
+            "bottom": 614.5,
+            "height": 60
+          },
+          "blockedPosts": 1
+        }
+      ]
+    }
+  },
+  "cases": 260
+}
