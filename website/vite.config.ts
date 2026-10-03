@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import tsconfigPaths from "vite-tsconfig-paths";
+import tsconfigPaths from 'vite-tsconfig-paths'
 import { existsSync, readFileSync } from 'node:fs'
 import { resolve, sep } from 'node:path'
 
@@ -16,7 +16,10 @@ export default defineConfig(({ command }) => ({
         const output = resolve(server.config.root, server.config.build.outDir)
         server.middlewares.use((request, response, next) => {
           const url = new URL(request.url ?? '/', 'http://localhost')
-          if (url.pathname === '/' || url.pathname.includes('.')) return next()
+          if (url.pathname === '/') return next()
+          const file = resolve(output, '.' + url.pathname)
+          if (url.pathname.includes('.') && file.startsWith(output + sep) && existsSync(file))
+            return next()
           const route = url.pathname.replace(/\/$/, '')
           const target = resolve(output, '.' + route, 'index.html')
           if (target.startsWith(output + sep) && existsSync(target)) {
@@ -31,11 +34,9 @@ export default defineConfig(({ command }) => ({
     },
     react({
       babel: {
-        plugins: [
-          ...(command === 'serve' ? ['react-dev-locator'] : []),
-        ],
+        plugins: [...(command === 'serve' ? ['react-dev-locator'] : [])],
       },
     }),
-    tsconfigPaths()
+    tsconfigPaths(),
   ],
 }))

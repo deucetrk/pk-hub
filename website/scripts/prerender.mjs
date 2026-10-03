@@ -12,9 +12,8 @@ import { execFileSync } from 'node:child_process'
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const dist = resolve(root, 'dist')
 
-const { render, getPageMeta, getPrerenderRoutes, getRouteLastModified, getHomeFaqSchema } = await import(
-  resolve(root, 'dist-ssr/entry-server.js')
-)
+const { render, getPageMeta, getPrerenderRoutes, getRouteLastModified, getHomeFaqSchema } =
+  await import(resolve(root, 'dist-ssr/entry-server.js'))
 
 const SITE = 'https://pkhub.co'
 
@@ -25,10 +24,7 @@ function removeTagById(html, id) {
 }
 
 function removeScriptById(html, id) {
-  return html.replace(
-    new RegExp(`\\s*<script[^>]+id="${id}"[^>]*>[\\s\\S]*?<\\/script>`, 'g'),
-    '',
-  )
+  return html.replace(new RegExp(`\\s*<script[^>]+id="${id}"[^>]*>[\\s\\S]*?<\\/script>`, 'g'), '')
 }
 
 function localize(html, route, meta) {
@@ -38,19 +34,19 @@ function localize(html, route, meta) {
   let page = html
     .replace(/<html lang="[^"]*"/, `<html lang="${lang}"`)
     .replace(/<title>[^<]*<\/title>/, `<title>${meta.title}</title>`)
-    .replace(
-      /(<meta\s+name="description"\s+content=")[^"]*(")/,
-      `$1${meta.description}$2`,
-    )
+    .replace(/(<meta\s+name="description"\s+content=")[^"]*(")/, `$1${meta.description}$2`)
     .replace(/(<meta property="og:title" content=")[^"]*(")/, `$1${meta.title}$2`)
-    .replace(
-      /(<meta\s+property="og:description"\s+content=")[^"]*(")/,
-      `$1${meta.description}$2`,
-    )
+    .replace(/(<meta\s+property="og:description"\s+content=")[^"]*(")/, `$1${meta.description}$2`)
     .replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${meta.canonical}$2`)
     .replace(/(<meta property="og:type" content=")[^"]*(")/, `$1${meta.ogType ?? 'website'}$2`)
-    .replace(/(<meta property="og:image" content=")[^"]*(")/, `$1${meta.image ?? `${SITE}/og-image.jpg`}$2`)
-    .replace(/(<meta property="og:image:alt" content=")[^"]*(")/, `$1${meta.imageAlt ?? meta.title}$2`)
+    .replace(
+      /(<meta property="og:image" content=")[^"]*(")/,
+      `$1${meta.image ?? `${SITE}/og-image.jpg`}$2`,
+    )
+    .replace(
+      /(<meta property="og:image:alt" content=")[^"]*(")/,
+      `$1${meta.imageAlt ?? meta.title}$2`,
+    )
     .replace(/(<meta property="og:locale" content=")[^"]*(")/, `$1${meta.locale ?? 'th_TH'}$2`)
     .replace(
       /(<meta property="og:locale:alternate" content=")[^"]*(")/,
@@ -59,14 +55,26 @@ function localize(html, route, meta) {
     .replace(/(<link rel="canonical" href=")[^"]*(")/, `$1${meta.canonical}$2`)
     .replace(/(<meta name="twitter:title" content=")[^"]*(")/, `$1${meta.title}$2`)
     .replace(/(<meta\s+name="twitter:description"\s+content=")[^"]*(")/, `$1${meta.description}$2`)
-    .replace(/(<meta name="twitter:image" content=")[^"]*(")/, `$1${meta.image ?? `${SITE}/og-image.jpg`}$2`)
-    .replace(/(<meta name="twitter:image:alt" content=")[^"]*(")/, `$1${meta.imageAlt ?? meta.title}$2`)
+    .replace(
+      /(<meta name="twitter:image" content=")[^"]*(")/,
+      `$1${meta.image ?? `${SITE}/og-image.jpg`}$2`,
+    )
+    .replace(
+      /(<meta name="twitter:image:alt" content=")[^"]*(")/,
+      `$1${meta.imageAlt ?? meta.title}$2`,
+    )
 
   if (meta.publishedTime) {
-    page = page.replace('</head>', `    <meta property="article:published_time" content="${meta.publishedTime}" />\n</head>`)
+    page = page.replace(
+      '</head>',
+      `    <meta property="article:published_time" content="${meta.publishedTime}" />\n</head>`,
+    )
   }
   if (meta.modifiedTime) {
-    page = page.replace('</head>', `    <meta property="article:modified_time" content="${meta.modifiedTime}" />\n</head>`)
+    page = page.replace(
+      '</head>',
+      `    <meta property="article:modified_time" content="${meta.modifiedTime}" />\n</head>`,
+    )
   }
 
   if (!isHome) {
@@ -80,7 +88,10 @@ function localize(html, route, meta) {
 
   if (isHome) {
     const schema = JSON.stringify(getHomeFaqSchema(lang)).replace(/</g, '\\u003c')
-    page = page.replace('</head>', `<script id="faq-schema" type="application/ld+json">${schema}</script>\n</head>`)
+    page = page.replace(
+      '</head>',
+      `<script id="faq-schema" type="application/ld+json">${schema}</script>\n</head>`,
+    )
   }
 
   if (route.endsWith('/join')) {
@@ -120,23 +131,26 @@ for (const route of routes) {
 
 // Root index.html: serve Thai content (canonical already points to /th);
 // client router keeps URL behaviour (/ -> /th) once hydrated.
-writeFileSync(
-  resolve(dist, 'index.html'),
-  readFileSync(resolve(dist, 'th', 'index.html'), 'utf-8'),
-)
+writeFileSync(resolve(dist, 'index.html'), readFileSync(resolve(dist, 'th', 'index.html'), 'utf-8'))
 
 // Vercel serves this document with HTTP 404 for missing static routes.
-const missingArticleRoute = '/th/blog/unpublished-article'
+const missingArticleRoute = '/__pk_not_found'
 const notFoundPage = localize(template, missingArticleRoute, {
-  title: 'ไม่พบหน้าที่ต้องการ | PK HUB',
-  description: 'เลือกอ่านคู่มือสำหรับร้านค้าจาก PK HUB Journal',
-  canonical: `${SITE}/th/blog`,
-}).replace('<div id="root"></div>', `<div id="root">${unhideMotion(render(missingArticleRoute))}</div>`)
+  title: 'ไม่พบหน้าที่ต้องการ · Page not found | PK HUB',
+  description: 'กลับไปยังหน้าหลัก PK HUB · Return to PK HUB',
+  canonical: `${SITE}/th`,
+})
+  .replace(
+    '<div id="root"></div>',
+    `<div id="root" data-pk-not-found="">${unhideMotion(render(missingArticleRoute))}</div>`,
+  )
   .replace('</head>', '<meta name="robots" content="noindex, follow" />\n</head>')
 writeFileSync(resolve(dist, '404.html'), notFoundPage)
 
 // Public, non-sensitive evidence of the source deployed to this alias.
-const revision = process.env.VERCEL_GIT_COMMIT_SHA || process.env.GITHUB_SHA ||
+const revision =
+  process.env.VERCEL_GIT_COMMIT_SHA ||
+  process.env.GITHUB_SHA ||
   execFileSync('git', ['rev-parse', 'HEAD'], { cwd: root, encoding: 'utf8' }).trim()
 if (!/^[a-f0-9]{40}$/i.test(revision)) throw new Error('Invalid build revision')
 writeFileSync(resolve(dist, 'revision.json'), JSON.stringify({ revision }) + '\n')
@@ -153,14 +167,19 @@ const alt = `
     <xhtml:link rel="alternate" hreflang="en" href="${SITE}/en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="${SITE}/th" />`
 const secondaryUrls = routes
-  .filter((route) => route.includes('/join') || route.includes('/dealer/login') || route.startsWith('/th/blog'))
-  .map((route) => `
+  .filter(
+    (route) =>
+      route.includes('/join') || route.includes('/dealer/login') || route.startsWith('/th/blog'),
+  )
+  .map(
+    (route) => `
   <url>
     <loc>${SITE}${route}</loc>
     <lastmod>${getRouteLastModified(route) ?? lastmod}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>${route.includes('/join') ? '0.9' : route.includes('/dealer/login') ? '0.8' : route === '/th/blog' ? '0.8' : '0.7'}</priority>
-  </url>`)
+  </url>`,
+  )
   .join('')
 writeFileSync(
   resolve(dist, 'sitemap.xml'),
