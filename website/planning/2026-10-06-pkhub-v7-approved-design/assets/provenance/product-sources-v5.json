@@ -1,0 +1,71 @@
+{
+  "assets": [
+    {
+      "key": "phone",
+      "url": "https://www.apple.com/th/iphone/home/images/overview/select/iphone_17__fb1277oq3eaa_large.jpg",
+      "file": "phone.jpg",
+      "bytes": 20872,
+      "preview": "phone-preview.webp",
+      "preview_bytes": 2760,
+      "sha256": "586d1c5d2e6bf5952362d963ccec160a060b4c76efbd0f7d47c814863951e7fc",
+      "use": "Illustrative product imagery, not an inventory or availability assertion"
+    },
+    {
+      "key": "phoneAlt",
+      "url": "https://www.apple.com/th/iphone/home/images/overview/select/iphone_16__b6tkv86m2gc2_large.jpg",
+      "file": "phoneAlt.jpg",
+      "bytes": 25245,
+      "preview": "phoneAlt-preview.webp",
+      "preview_bytes": 3674,
+      "sha256": "e6005cb334a2b7fc0a51456bc92aea5a75d4f5015a81d608c2086d07390602a8",
+      "use": "Illustrative product imagery, not an inventory or availability assertion"
+    },
+    {
+      "key": "phoneFamily",
+      "url": "https://www.apple.com/th/iphone-17/images/overview/welcome/hero_startframe__e9e7pcnguyqi_medium.jpg",
+      "file": "phone-family.jpg",
+      "bytes": 39635,
+      "preview": "phoneFamily-preview.webp",
+      "preview_bytes": 7240,
+      "sha256": "a8e60d53661a3c61b857ffdc0f2e97e264be9e805f61a8e86d46b5c1992b0338",
+      "use": "Illustrative product imagery, not an inventory or availability assertion"
+    },
+    {
+      "key": "case",
+      "url": "https://www.ais.th/content/ais/th/th_th/consumers/store/recommend/linkup/_jcr_content/root/container_1816311984/aiscontainer_v2_copy/aiscontainer_copy_co_956955450/carousel_copy/aiscontainer_3584071_268864026/aiscontainer_v2/aiscontainer/aiscontainer_1689895/image.coreimg.jpeg/1757919512128/linkup-clear-case-for-iphone-17-image-pdp-position-3.jpeg",
+      "file": "case.jpg",
+      "bytes": 25470,
+      "preview": "case-preview.webp",
+      "preview_bytes": 2250,
+      "sha256": "e1a7c89d1f6ff3d7878059626759d821dbc95d3b894fd74032f44ab53694282c",
+      "use": "Illustrative product imagery, not an inventory or availability assertion"
+    },
+    {
+      "key": "charger",
+      "url": "https://www.ais.th/content/ais/th/th_th/consumers/store/recommend/linkup/_jcr_content/root/container_1816311984/aiscontainer_v2_copy/aiscontainer_copy/carousel_copy/aiscontainer_3584071/aiscontainer_v2/aiscontainer/columncontrol/content2/aiscontainer_1689895937/image.coreimg.png/1750387171838/linkup-charger-33w-pd-gan.png",
+      "file": "charger.png",
+      "bytes": 183500,
+      "preview": "charger-preview.webp",
+      "preview_bytes": 6544,
+      "sha256": "6bc015866aefb91ef2b45f6393f329712c3460b3003b8b78ff4070c979295bd7",
+      "use": "Illustrative product imagery, not an inventory or availability assertion"
+    },
+    {
+      "key": "aisSim",
+      "url": "https://www.ais.th/content/dam/ais/consumer/content/package/exclusive/the-one-sim/the-one-sim-element.png",
+      "file": "ais-sim.png",
+      "bytes": 644194,
+      "preview": "aisSim-preview.webp",
+      "preview_bytes": 74298,
+      "sha256": "f00d53ef38434f33235d5a55bd34ceb5b02eb35f2b4f4bca27cf6f2751aa187d",
+      "use": "Illustrative product imagery, not an inventory or availability assertion"
+    },
+    {
+      "key": "myais",
+      "url": "https://www.ais.th/content/dam/ais/consumer/symbols/logo/my-ais-app-48x48.svg",
+      "file": "myais.svg",
+      "bytes": 11427
+    }
+  ],
+  "note": "All product images were retrieved from official Apple or AIS pages. Originals are preserved; previews are resized/encoded for delivery. Stock screens, chat, account figures and engagement metrics remain illustrative."
+}

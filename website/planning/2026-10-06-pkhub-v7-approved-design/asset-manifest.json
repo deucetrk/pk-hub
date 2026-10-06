@@ -1,0 +1,185 @@
+{
+  "assets": [
+    {
+      "key": "logo",
+      "path": "assets/brands/logo.png",
+      "mimeType": "image/png",
+      "bytes": 13584,
+      "sha256": "fed8ea6338e8eed473c1463489f8a17a9d0d5c3eb64366e4d9d7fa58db854e8a",
+      "productionTarget": "public/pkhub-v7/brands/logo.png"
+    },
+    {
+      "key": "oppo",
+      "path": "assets/brands/oppo.png",
+      "mimeType": "image/png",
+      "bytes": 27508,
+      "sha256": "39f299ac2cd9a3472e9df799e6fe1a78b9165acee4d18a7b5a1c38209ecc436c",
+      "productionTarget": "public/pkhub-v7/brands/oppo.png"
+    },
+    {
+      "key": "vivo",
+      "path": "assets/brands/vivo.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 4846,
+      "sha256": "ea0c8fbfe26747259db6f8f5297701c32eb581f0c04c1f64c9af55a4d8c02c36",
+      "productionTarget": "public/pkhub-v7/brands/vivo.svg"
+    },
+    {
+      "key": "apple",
+      "path": "assets/brands/apple.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 744,
+      "sha256": "f8d5c2f1dae96518bee08009737413f87a21c2edfb4639ad86c533d985f33ddf",
+      "productionTarget": "public/pkhub-v7/brands/apple.svg"
+    },
+    {
+      "key": "xiaomi",
+      "path": "assets/brands/xiaomi.png",
+      "mimeType": "image/png",
+      "bytes": 3117,
+      "sha256": "a7c0c244830cd3216e7561c59510962cad684787fa38d10237d5942c28f548d6",
+      "productionTarget": "public/pkhub-v7/brands/xiaomi.png"
+    },
+    {
+      "key": "realme",
+      "path": "assets/brands/realme.png",
+      "mimeType": "image/png",
+      "bytes": 961,
+      "sha256": "ad7b4342680f8e706441bc5498a172aa056aa3d020fa448bf7e2da93ffacd401",
+      "productionTarget": "public/pkhub-v7/brands/realme.png"
+    },
+    {
+      "key": "honor",
+      "path": "assets/brands/honor.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 2156,
+      "sha256": "d99021bdd6f4a4ac78c88e27a9dfc74537a2e16d4c1cf9fb29b559f39ee18e0e",
+      "productionTarget": "public/pkhub-v7/brands/honor.svg"
+    },
+    {
+      "key": "huawei",
+      "path": "assets/brands/huawei.png",
+      "mimeType": "image/png",
+      "bytes": 12719,
+      "sha256": "492e58a2680a4f4607185e21d55183f0d2ac976b8f4737512a495672d31e4070",
+      "productionTarget": "public/pkhub-v7/brands/huawei.png"
+    },
+    {
+      "key": "alldocube",
+      "path": "assets/brands/alldocube.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 3466,
+      "sha256": "aed4b8b5c7447ab0cc71d1242102dba198f952cd3c027807468f389bf2cd03f2",
+      "productionTarget": "public/pkhub-v7/brands/alldocube.svg"
+    },
+    {
+      "key": "social",
+      "path": "assets/marketing/social.jpg",
+      "mimeType": "image/jpeg",
+      "bytes": 187170,
+      "sha256": "fb91adc4360efe351bd9edb1024b955ed7e1aac15016562f0f0dbd163d8c417f",
+      "productionTarget": "public/pkhub-v7/marketing/social.jpg"
+    },
+    {
+      "key": "phone",
+      "path": "assets/products/phone.webp",
+      "mimeType": "image/webp",
+      "bytes": 2760,
+      "sha256": "00393dd9b705a493b63367496fc19e58dc1928ca69edfb43420d63334abb7344",
+      "productionTarget": "public/pkhub-v7/products/phone.webp"
+    },
+    {
+      "key": "phoneAlt",
+      "path": "assets/products/phoneAlt.webp",
+      "mimeType": "image/webp",
+      "bytes": 3674,
+      "sha256": "ca74a0196316add94bbe454df77f48f7f921fe4df78bb48681cda6ff7310d5dc",
+      "productionTarget": "public/pkhub-v7/products/phoneAlt.webp"
+    },
+    {
+      "key": "phoneFamily",
+      "path": "assets/products/phoneFamily.webp",
+      "mimeType": "image/webp",
+      "bytes": 23592,
+      "sha256": "7fcf2c7ecb8da13a500df5174302ed6005e962c6a29dd5dad3c4f0abd6b64a37",
+      "productionTarget": "public/pkhub-v7/products/phoneFamily.webp"
+    },
+    {
+      "key": "case",
+      "path": "assets/products/case.webp",
+      "mimeType": "image/webp",
+      "bytes": 12556,
+      "sha256": "a2864042e4e1908291d71c322fa8d1be904d54c1d699861b8f1ba0ce65e3e0ad",
+      "productionTarget": "public/pkhub-v7/products/case.webp"
+    },
+    {
+      "key": "charger",
+      "path": "assets/products/charger.webp",
+      "mimeType": "image/webp",
+      "bytes": 6544,
+      "sha256": "4561e7b779bb29439a1bd936dc3a6a9a6b50104df4de0d423f53072f79ee6e51",
+      "productionTarget": "public/pkhub-v7/products/charger.webp"
+    },
+    {
+      "key": "aisSim",
+      "path": "assets/products/aisSim.webp",
+      "mimeType": "image/webp",
+      "bytes": 74298,
+      "sha256": "602f76954ade5b20a9db96b14035db95e99a1e3b446867b6f35d2b9e7291568e",
+      "productionTarget": "public/pkhub-v7/products/aisSim.webp"
+    },
+    {
+      "key": "myais",
+      "path": "assets/products/myais.svg",
+      "mimeType": "image/svg+xml",
+      "bytes": 11427,
+      "sha256": "7d759de51d513c1839b054a76b8eb8892b729c21edf15757c67387494e8da049",
+      "productionTarget": "public/pkhub-v7/products/myais.svg"
+    },
+    {
+      "key": "ipad",
+      "path": "assets/products/ipad.webp",
+      "mimeType": "image/webp",
+      "bytes": 30290,
+      "sha256": "bfb869aee87da384236660f529be7daea9f08ab4c9034ab79099a815623bf8bd",
+      "productionTarget": "public/pkhub-v7/products/ipad.webp"
+    },
+    {
+      "key": "earbuds",
+      "path": "assets/products/earbuds.webp",
+      "mimeType": "image/webp",
+      "bytes": 7494,
+      "sha256": "7acbf61c2402a3484dd47a71329d02f46333c0f6c34b4353dbce07b7a288987c",
+      "productionTarget": "public/pkhub-v7/products/earbuds.webp"
+    },
+    {
+      "key": "simSocial",
+      "path": "assets/products/simSocial.webp",
+      "mimeType": "image/webp",
+      "bytes": 61144,
+      "sha256": "49a8c4facf111fca0efafcc83f90b15cfabeffb63d9080a12320688d400a8386",
+      "productionTarget": "public/pkhub-v7/products/simSocial.webp"
+    },
+    {
+      "key": "simZeed",
+      "path": "assets/products/simZeed.webp",
+      "mimeType": "image/webp",
+      "bytes": 76392,
+      "sha256": "ca484166d08e517b137664068742d60d9f5efb8dbe4e319a5a0f84bde9ce9ba3",
+      "productionTarget": "public/pkhub-v7/products/simZeed.webp"
+    },
+    {
+      "key": "sleasing",
+      "path": "assets/brands/sleasing.png",
+      "mimeType": "image/png",
+      "bytes": 6829,
+      "sha256": "23d1e3fce4e38d6dacef62a232b206275ac0915a9fac46d2131a53934fea6cda",
+      "productionTarget": "public/pkhub-v7/brands/sleasing.png"
+    }
+  ],
+  "notes": [
+    "Delivery WebP cutouts preserve alpha; edited PNG originals supplied for later export",
+    "S Leasing mark is the official SCAP-hosted asset",
+    "Reference social artwork is a designed campaign sheet, not live promotions"
+  ]
+}

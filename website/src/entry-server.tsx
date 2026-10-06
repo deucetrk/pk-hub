@@ -9,9 +9,19 @@ import Join from '@/pages/Join'
 import DealerLogin from '@/pages/DealerLogin'
 import BlogArticle from '@/pages/blog/BlogArticle'
 import BlogIndex from '@/pages/blog/BlogIndex'
+import PartnerMarketingPage from '@/pages/products/PartnerMarketingPage'
 export { getHomeFaqSchema } from '@/content/homeFaqs'
 import { getPublishedArticle, getPublishedBlogPaths } from '@/content/blog/articles'
-import { BLOG_INDEX_META, DEALER_LOGIN_META, getBlogIndexMeta, HOME_META, JOIN_META, SITE_URL, type PageMeta } from '@/lib/seo'
+import {
+  BLOG_INDEX_META,
+  DEALER_LOGIN_META,
+  getBlogIndexMeta,
+  HOME_META,
+  JOIN_META,
+  PARTNER_MARKETING_META,
+  SITE_URL,
+  type PageMeta,
+} from '@/lib/seo'
 
 export function render(url: string) {
   return renderToString(
@@ -24,6 +34,7 @@ export function render(url: string) {
             DealerLoginPage={DealerLogin}
             BlogArticlePage={BlogArticle}
             BlogIndexPage={BlogIndex}
+            PartnerMarketingPage={PartnerMarketingPage}
           />
         </StaticRouter>
       </LazyMotion>
@@ -32,7 +43,17 @@ export function render(url: string) {
 }
 
 export function getPrerenderRoutes() {
-  return ['/th', '/en', '/th/join', '/en/join', '/th/dealer/login', '/en/dealer/login', ...getPublishedBlogPaths()]
+  return [
+    '/th',
+    '/en',
+    '/th/join',
+    '/en/join',
+    '/th/dealer/login',
+    '/en/dealer/login',
+    '/th/products/partner-marketing',
+    '/en/products/partner-marketing',
+    ...getPublishedBlogPaths(),
+  ]
 }
 
 export function getPageMeta(url: string): PageMeta {
@@ -41,6 +62,8 @@ export function getPageMeta(url: string): PageMeta {
   if (url === '/en/join') return JOIN_META.en
   if (url === '/th/dealer/login') return DEALER_LOGIN_META.th
   if (url === '/en/dealer/login') return DEALER_LOGIN_META.en
+  if (url === '/th/products/partner-marketing') return PARTNER_MARKETING_META.th
+  if (url === '/en/products/partner-marketing') return PARTNER_MARKETING_META.en
   if (url === '/th/blog') return BLOG_INDEX_META
   if (url.startsWith('/th/blog/page/')) {
     return getBlogIndexMeta(Number(url.split('/').pop() ?? 1))

@@ -37,6 +37,21 @@ render the affected routes at desktop and 390px mobile.
 - **PostCSS config is locked** — `postcss.config.js` has `WARNING: DON'T EDIT THIS FILE` comments; leave it alone
 - **Static assets live in `public/`** — brand logos in `public/brands/`, store photos in `public/proof/` and `public/reviews/`
 
+## Owner approved V7 override on 2026-10-06
+
+For the homepage and reviewed Partner Marketing composition, follow
+`planning/2026-10-06-pkhub-v7-approved-design/START_HERE.md`, `DESIGN_LOCK.md`,
+`OWNER_APPROVAL.md` and `approved-metrics.json` (all four are in that planning directory).
+The owner approved all V7 designs shown so far and
+explicitly confirmed the current headline figures as real metrics to use. Older visual guidance in
+this file and DESIGN.md is superseded within that scope: use a white Panoramic Ecosystem hero,
+transparent product imagery, expandable service rows, the real S Leasing logo and PK Hub agent Hub
+copy, and the approved simultaneous Marketing counters without tabs. Preserve their exact meanings.
+
+The latest approval does not authorize invented inventory/prices, Tier 2/3 rates, lender approval
+guarantees, backend changes or deployment. Keep the current uncommitted work. Implement the real
+homepage first, capture rendered desktop/mobile evidence, and use shared primitives for later pages.
+
 ## Gotchas
 
 - `src/services/partnerLeadSubmission.ts` throws at runtime if `VITE_PARTNER_LEAD_ENDPOINT` is unset — copy `.env.example` to `.env.local` before running `dev`

@@ -1,12 +1,35 @@
 # PK HUB Public Design Direction
 
-Status: canonical public-site design direction
+Status: canonical public-site design direction; homepage and reviewed Partner Marketing visuals are governed by the owner-approved V7 override dated 2026-10-06 below
 Owner accepted: 2026-09-20; Apple-inspired layout and expressive motion selected 2026-09-30
+Latest owner approval: V7 designs and current headline figures, 2026-10-06, Asia/Bangkok
 Last verified: 2026-09-20 production desktop and 390px public acceptance at `pkhub.co`
 
 This document governs the public PK HUB website only. Dealer Portal and PK Commerce remain separate
 products and deployments. Public PK HUB explains the relationship, shows real operating proof, and
 routes a retailer into application or conversation. It does not own protected commerce truth.
+
+## Owner approved V7 direction on 2026-10-06
+
+The owner approved every V7 design shown so far and confirmed the current headline figures as real
+metrics to use. Read `planning/2026-10-06-pkhub-v7-approved-design/START_HERE.md`, `DESIGN_LOCK.md`,
+`OWNER_APPROVAL.md` and `approved-metrics.json` before homepage or Partner Marketing implementation.
+All four files are in that planning directory.
+The supplied approved reference HTML, assets and screenshots lock composition and motion.
+
+Within this scope, V7 supersedes the historical visual thesis and removal register below: use the
+white Panoramic Ecosystem hero, colored official brands, layered Stock/chat explanation, transparent
+products, four-stage customer journey, expandable service rows and compact simultaneous Marketing
+counters. S Leasing uses its real mark and the approved PK Hub agent-recruitment Hub copy. The
+headline figures are owner-confirmed and must not be treated as demo placeholders.
+
+The approved homepage sequence is Hero, Device portfolio, Stock on Demand, One Customer, Store
+potential, Partner start and compact Footer. The full Marketing showcase moves to its reviewed
+separate composition. Preserve the current working application and referral paths, bilingual route
+behavior and all operational truth boundaries. The first implementation checkpoint is rendered
+homepage review; additional product expansion and deployment follow their separate gates.
+
+The older entries below remain historical context and guidance for unaffected public routes.
 
 ## Visual thesis
 

@@ -17,6 +17,8 @@ async function mount() {
     pages.JoinPage = (await import('@/pages/Join')).default
   } else if (path === '/th/dealer/login' || path === '/en/dealer/login') {
     pages.DealerLoginPage = (await import('@/pages/DealerLogin')).default
+  } else if (path === '/th/products/partner-marketing' || path === '/en/products/partner-marketing') {
+    pages.PartnerMarketingPage = (await import('@/pages/products/PartnerMarketingPage')).default
   } else if (/^\/th\/blog(?:\/page\/[^/]+)?\/?$/.test(path)) {
     pages.BlogIndexPage = (await import('@/pages/blog/BlogIndex')).default
   } else if (path.startsWith('/th/blog/')) {

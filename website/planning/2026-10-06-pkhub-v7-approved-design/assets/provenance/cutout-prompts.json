@@ -1,0 +1,11 @@
+{
+  "mode": "built-in image_gen",
+  "transparent_background": true,
+  "prompt": "Use case: background-extraction. Edit target: the attached official product photo. Remove ONLY the surrounding white background to genuine alpha transparency. Keep every product, shape, camera, screen, label, color, highlight, perspective and arrangement unchanged. Do not invent or redesign the product. Preserve white material inside the products as opaque. Preserve all screen content and original text without retyping. No backdrop, no floor, no extra shadow, no frame, no added object. Keep the full original subject and aspect ratio with a small transparent safety margin.",
+  "targets": {
+    "phoneFamily": "../product-assets-v5/phone-family.jpg",
+    "ipad": "../product-assets-v6/ipad-fan.jpg",
+    "earbuds": "../product-assets-v6/earbuds.jpg",
+    "case": "../product-assets-v5/case.jpg"
+  }
+}

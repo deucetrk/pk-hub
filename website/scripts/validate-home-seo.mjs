@@ -4,10 +4,9 @@ import { resolve } from 'node:path'
 
 const dist = resolve('dist')
 const read = (route) => readFileSync(resolve(dist, route, 'index.html'), 'utf8')
-const decode = (text) => text.replaceAll('&amp;', '&').replaceAll('&quot;', '"').replaceAll('&#x27;', "'")
 
 for (const lang of ['th', 'en']) {
-  for (const suffix of ['', '/join', '/dealer/login']) {
+  for (const suffix of ['', '/join', '/dealer/login', '/products/partner-marketing']) {
     const route = lang + suffix
     const html = read(route)
     assert(html.includes(`<html lang="${lang}"`), `${route}: language`)
@@ -19,7 +18,7 @@ for (const lang of ['th', 'en']) {
     for (const match of html.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) {
       JSON.parse(match[1])
     }
-    if (suffix === '/join' || suffix === '') {
+    if (suffix === '/join' || suffix === '' || suffix === '/products/partner-marketing') {
       for (const alternate of ['th', 'en']) {
         assert(html.includes(`hreflang="${alternate}" href="https://pkhub.co/${alternate}${suffix}"`), `${route}: alternate ${alternate}`)
       }
@@ -28,19 +27,12 @@ for (const lang of ['th', 'en']) {
 
   const html = read(lang)
   const body = html.split('<body>')[1]
-  const schema = JSON.parse(html.match(/<script id="faq-schema" type="application\/ld\+json">([\s\S]*?)<\/script>/)[1])
-  assert.equal(schema.inLanguage, lang)
-  assert.equal(schema.mainEntity.length, (body.match(/<details[ >]/g) ?? []).length)
-  for (const question of schema.mainEntity) {
-    assert(decode(body).includes(question.name), `${lang}: FAQ question matches rendered text`)
-    assert(decode(body).includes(question.acceptedAnswer.text), `${lang}: FAQ answer matches rendered text`)
-  }
   assert(!/opacity:\s*0(?:;|")/.test(body), `${lang}: prerendered content visible`)
-  assert(body.includes('src="/proof/storefront-building.webp"'), `${lang}: first-party storefront hero`)
-  assert(body.includes(lang === 'th' ? 'อาคารหน้าร้าน PK HUB ถนนศุขประยูร ฉะเชิงเทรา' : 'PK HUB storefront on Sukprayoon Road, Chachoengsao'), `${lang}: storefront image description`)
+  assert(/fetchPriority="high"/i.test(body), `${lang}: hero image priority`)
+  assert(html.includes('rel="preload" as="image" href="/pkhub-v7/brands/logo.png"'))
   for (const match of body.matchAll(/<img\b[^>]*>/g)) {
-    assert(/\bwidth="/.test(match[0]) && /\bheight="/.test(match[0]), `${lang}: image dimensions`)
-    assert(/\balt="/.test(match[0]), `${lang}: image alternative text`)
+    assert(/\bwidth="/.test(match[0]) && /\bheight="/.test(match[0]), `${lang}: image dimensions on ${match[0]}`)
+    assert(/\balt="/.test(match[0]), `${lang}: image alternative text on ${match[0]}`)
     const src = match[0].match(/\bsrc="([^"]+)"/)?.[1]
     if (src?.startsWith('/')) assert(existsSync(resolve(dist, src.slice(1))), `${lang}: missing image ${src}`)
   }
@@ -49,16 +41,9 @@ for (const lang of ['th', 'en']) {
   }
   assert(body.includes(`href="/${lang}/join"`), `${lang}: partner CTA`)
   assert(body.includes('href="https://lin.ee/VEgW6qG"'), `${lang}: LINE CTA`)
-  assert(body.includes('preload="none"'), `${lang}: video deferred until requested`)
-  assert(body.includes('id="dealer-portal"'), `${lang}: Dealer Portal is prerendered`)
-  const ecosystemLabels = lang === 'th'
-    ? ['01 / สินค้าและทีมขาย', '02 / ระบบร้านค้า']
-    : ['01 / Products and people', '02 / Dealer Portal']
-  assert(ecosystemLabels.every((label) => body.includes(label)), `${lang}: localized ecosystem content`)
-  assert(!body.includes('PK INTELLIGENCE') && !body.includes('FINANCING OPTIONS'), `${lang}: speculative services removed`)
-  assert(body.includes(lang === 'th' ? 'ส่งข้อมูลร้านให้ทีม PK ตรวจสอบก่อนเปิดสิทธิ์ใช้งาน' : 'Send your store details for review before access is enabled.'), `${lang}: access boundary`)
-  assert(body.includes(lang === 'th' ? 'ภาพอธิบายการใช้งานจากโครงสร้าง Portal' : 'Illustration based on the Portal structure'), `${lang}: illustrative UI labelled`)
-  assert(body.includes('/logo-transparent.png'), `${lang}: transparent brand asset`)
+  assert(body.includes('id="v4-brands"') && body.includes('id="v4-stock"') && body.includes('id="v4-customer"') && body.includes('id="v6-growth"') && body.includes('id="v4-start"'), `${lang}: V7 sections present`)
+  assert(body.includes('/pkhub-v7/brands/logo.png'), `${lang}: V7 authentic logo asset`)
+  assert(!body.includes('PK INTELLIGENCE'), `${lang}: speculative services removed`)
 }
 const sitemap = readFileSync(resolve(dist, 'sitemap.xml'), 'utf8')
 const { rewrites } = JSON.parse(readFileSync('vercel.json', 'utf8'))
@@ -74,4 +59,4 @@ for (const match of sitemap.matchAll(/<loc>https:\/\/pkhub.co\/([^<]+)<\/loc>/g)
   assert.equal(destination, path + '/index.html', `Wrong hosted HTML for ${path}`)
 }
 assert(!rewrites.some(({ destination }) => destination === '/index.html'), 'No homepage catch-all for unknown routes')
-console.log('PASS: locale metadata, canonical/hreflang, visible prerendering, truthful ecosystem content, FAQ parity, images, CTA anchors, deferred video, and sitemap routes')
+console.log('PASS: locale metadata, canonical/hreflang, visible prerendering, truthful V7 ecosystem content, images, CTA anchors, and sitemap routes')

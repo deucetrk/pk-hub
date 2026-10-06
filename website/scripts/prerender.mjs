@@ -78,14 +78,22 @@ function localize(html, route, meta) {
   }
 
   if (isHome) {
-    const schema = JSON.stringify(getHomeFaqSchema(lang)).replace(/</g, '\\u003c')
-    page = page.replace('</head>', `<script id="faq-schema" type="application/ld+json">${schema}</script>\n</head>`)
+    page = removeScriptById(page, 'faq-schema')
+    page = removeScriptById(page, 'video-schema')
+    page = page.replace('</head>', '<link rel="preload" as="image" href="/pkhub-v7/brands/logo.png" fetchpriority="high" />\n</head>')
   }
 
   if (route.endsWith('/join')) {
     const alternate = `<link id="alternate-th" rel="alternate" hreflang="th" href="${SITE}/th/join" />
     <link id="alternate-en" rel="alternate" hreflang="en" href="${SITE}/en/join" />
     <link id="alternate-default" rel="alternate" hreflang="x-default" href="${SITE}/th/join" />`
+    page = page.replace('</head>', `${alternate}\n</head>`)
+  }
+
+  if (route.includes('/products/partner-marketing')) {
+    const alternate = `<link id="alternate-th" rel="alternate" hreflang="th" href="${SITE}/th/products/partner-marketing" />
+    <link id="alternate-en" rel="alternate" hreflang="en" href="${SITE}/en/products/partner-marketing" />
+    <link id="alternate-default" rel="alternate" hreflang="x-default" href="${SITE}/th/products/partner-marketing" />`
     page = page.replace('</head>', `${alternate}\n</head>`)
   }
 
@@ -136,13 +144,13 @@ const alt = `
     <xhtml:link rel="alternate" hreflang="en" href="${SITE}/en" />
     <xhtml:link rel="alternate" hreflang="x-default" href="${SITE}/th" />`
 const secondaryUrls = routes
-  .filter((route) => route.includes('/join') || route.includes('/dealer/login') || route.startsWith('/th/blog'))
+  .filter((route) => route.includes('/join') || route.includes('/dealer/login') || route.includes('/products/') || route.startsWith('/th/blog'))
   .map((route) => `
   <url>
     <loc>${SITE}${route}</loc>
     <lastmod>${getRouteLastModified(route) ?? lastmod}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>${route.includes('/join') ? '0.9' : route.includes('/dealer/login') ? '0.8' : route === '/th/blog' ? '0.8' : '0.7'}</priority>
+    <priority>${route.includes('/join') ? '0.9' : route.includes('/dealer/login') ? '0.8' : route.includes('/products/') ? '0.8' : route === '/th/blog' ? '0.8' : '0.7'}</priority>
   </url>`)
   .join('')
 writeFileSync(

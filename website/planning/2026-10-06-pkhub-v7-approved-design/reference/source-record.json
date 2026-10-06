@@ -1,0 +1,11 @@
+{
+  "ownerApprovedDesign": "V7",
+  "designSource": "/Users/deuce/.codex/visualizations/2026/10/05/01a10b14-c276-78e0-88be-8f73ac73e959/pkhub-direction/pkhub-homepage-v7.html",
+  "designSourceSha256": "89b8a28a818680e9a521f0da736335d5177584f80cd60bee2b67ba68d42e5e99",
+  "approvedReferenceSha256": "b75bbf2354f7bd1b4861be85c7537530bf7f86dc8a44a7543831c3486af52b60",
+  "visibleLayoutChanged": false,
+  "change": "Owner approval provenance replaces prototype classification; current values unchanged",
+  "historicalEvidence": "The copied validation reports describe the original design-review run. They are not an application implementation or production release.",
+  "approvedReferenceBeforeWhitespaceCleanupSha256": "ec5b7d6bd031ebfc01605711f56e128c82d40e91c81bd00e3700397a11f6ceba",
+  "repositoryFormatting": "Whitespace cleanup only; original design source preserved and visible layout unchanged."
+}

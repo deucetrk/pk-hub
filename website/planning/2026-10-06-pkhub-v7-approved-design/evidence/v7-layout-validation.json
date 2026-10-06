@@ -1,0 +1,114 @@
+[
+  {
+    "width": 1440,
+    "service": "accessories",
+    "openPanels": 1,
+    "overflow": false,
+    "textOverflow": []
+  },
+  {
+    "width": 1440,
+    "service": "finance",
+    "openPanels": 1,
+    "overflow": false,
+    "textOverflow": []
+  },
+  {
+    "width": 1440,
+    "service": "repair",
+    "openPanels": 1,
+    "overflow": false,
+    "textOverflow": []
+  },
+  {
+    "width": 1440,
+    "service": "marketing",
+    "openPanels": 1,
+    "overflow": false,
+    "textOverflow": []
+  },
+  {
+    "width": 1280,
+    "service": "accessories",
+    "openPanels": 1,
+    "overflow": false,
+    "textOverflow": []
+  },
+  {
+    "width": 1280,
+    "service": "finance",
+    "openPanels": 1,
+    "overflow": false,
+    "textOverflow": []
+  },
+  {
+    "width": 1280,
+    "service": "repair",
+    "openPanels": 1,
+    "overflow": false,
+    "textOverflow": []
+  },
+  {
+    "width": 1280,
+    "service": "marketing",
+    "openPanels": 1,
+    "overflow": false,
+    "textOverflow": []
+  },
+  {
+    "width": 390,
+    "service": "accessories",
+    "openPanels": 1,
+    "overflow": false,
+    "textOverflow": []
+  },
+  {
+    "width": 390,
+    "service": "finance",
+    "openPanels": 1,
+    "overflow": false,
+    "textOverflow": []
+  },
+  {
+    "width": 390,
+    "service": "repair",
+    "openPanels": 1,
+    "overflow": false,
+    "textOverflow": []
+  },
+  {
+    "width": 390,
+    "service": "marketing",
+    "openPanels": 1,
+    "overflow": false,
+    "textOverflow": []
+  },
+  {
+    "width": 320,
+    "service": "accessories",
+    "openPanels": 1,
+    "overflow": false,
+    "textOverflow": []
+  },
+  {
+    "width": 320,
+    "service": "finance",
+    "openPanels": 1,
+    "overflow": false,
+    "textOverflow": []
+  },
+  {
+    "width": 320,
+    "service": "repair",
+    "openPanels": 1,
+    "overflow": false,
+    "textOverflow": []
+  },
+  {
+    "width": 320,
+    "service": "marketing",
+    "openPanels": 1,
+    "overflow": false,
+    "textOverflow": []
+  }
+]

@@ -1,0 +1,461 @@
+{
+  "layouts": [
+    {
+      "brokenImages": [],
+      "counters": [
+        {
+          "hiddenStatus": false,
+          "id": "marketingViews",
+          "size": "36px",
+          "text": "100,000"
+        },
+        {
+          "hiddenStatus": false,
+          "id": "marketingComments",
+          "size": "36px",
+          "text": "1,000"
+        }
+      ],
+      "h1": "43px",
+      "h1s": 1,
+      "headerCount": 1,
+      "overflow": false,
+      "overflows": [],
+      "url": "http://127.0.0.1:5173/en/products/partner-marketing",
+      "width": 1440
+    },
+    {
+      "brokenImages": [],
+      "counters": [
+        {
+          "hiddenStatus": false,
+          "id": "marketingViews",
+          "size": "36px",
+          "text": "12,724"
+        },
+        {
+          "hiddenStatus": false,
+          "id": "marketingComments",
+          "size": "36px",
+          "text": "127"
+        }
+      ],
+      "h1": "43px",
+      "h1s": 1,
+      "headerCount": 1,
+      "overflow": false,
+      "overflows": [],
+      "url": "http://127.0.0.1:5173/en/products/partner-marketing",
+      "width": 1280
+    },
+    {
+      "brokenImages": [],
+      "counters": [
+        {
+          "hiddenStatus": false,
+          "id": "marketingViews",
+          "size": "36px",
+          "text": "93,921"
+        },
+        {
+          "hiddenStatus": false,
+          "id": "marketingComments",
+          "size": "36px",
+          "text": "939"
+        }
+      ],
+      "h1": "34px",
+      "h1s": 1,
+      "headerCount": 1,
+      "overflow": false,
+      "overflows": [],
+      "url": "http://127.0.0.1:5173/en/products/partner-marketing",
+      "width": 390
+    },
+    {
+      "brokenImages": [],
+      "counters": [
+        {
+          "hiddenStatus": false,
+          "id": "marketingViews",
+          "size": "27.69px",
+          "text": "100,000"
+        },
+        {
+          "hiddenStatus": false,
+          "id": "marketingComments",
+          "size": "27.69px",
+          "text": "1,000"
+        }
+      ],
+      "h1": "34px",
+      "h1s": 1,
+      "headerCount": 1,
+      "overflow": false,
+      "overflows": [],
+      "url": "http://127.0.0.1:5173/en/products/partner-marketing",
+      "width": 320
+    },
+    {
+      "brokenImages": [],
+      "counters": [
+        {
+          "hiddenStatus": false,
+          "id": "marketingViews",
+          "size": "27.69px",
+          "text": "100,000"
+        },
+        {
+          "hiddenStatus": false,
+          "id": "marketingComments",
+          "size": "27.69px",
+          "text": "1,000"
+        }
+      ],
+      "h1": "34px",
+      "h1s": 1,
+      "headerCount": 1,
+      "overflow": false,
+      "overflows": [],
+      "url": "http://127.0.0.1:5173/th/products/partner-marketing",
+      "width": 320
+    },
+    {
+      "brokenImages": [],
+      "counters": [
+        {
+          "hiddenStatus": false,
+          "id": "marketingViews",
+          "size": "36px",
+          "text": "100,000"
+        },
+        {
+          "hiddenStatus": false,
+          "id": "marketingComments",
+          "size": "36px",
+          "text": "1,000"
+        }
+      ],
+      "h1": "34px",
+      "h1s": 1,
+      "headerCount": 1,
+      "overflow": false,
+      "overflows": [],
+      "url": "http://127.0.0.1:5173/th/products/partner-marketing",
+      "width": 390
+    },
+    {
+      "brokenImages": [],
+      "counters": [
+        {
+          "hiddenStatus": false,
+          "id": "marketingViews",
+          "size": "36px",
+          "text": "10,625"
+        },
+        {
+          "hiddenStatus": false,
+          "id": "marketingComments",
+          "size": "36px",
+          "text": "106"
+        }
+      ],
+      "h1": "43px",
+      "h1s": 1,
+      "headerCount": 1,
+      "overflow": false,
+      "overflows": [],
+      "url": "http://127.0.0.1:5173/th/products/partner-marketing",
+      "width": 1280
+    },
+    {
+      "brokenImages": [],
+      "counters": [
+        {
+          "hiddenStatus": false,
+          "id": "marketingViews",
+          "size": "36px",
+          "text": "93,762"
+        },
+        {
+          "hiddenStatus": false,
+          "id": "marketingComments",
+          "size": "36px",
+          "text": "938"
+        }
+      ],
+      "h1": "43px",
+      "h1s": 1,
+      "headerCount": 1,
+      "overflow": false,
+      "overflows": [],
+      "url": "http://127.0.0.1:5173/th/products/partner-marketing",
+      "width": 1440
+    },
+    {
+      "brokenImages": [],
+      "counters": [
+        {
+          "hiddenStatus": false,
+          "id": "topup",
+          "size": "52px",
+          "text": "289"
+        },
+        {
+          "hiddenStatus": false,
+          "id": "growth",
+          "size": "102px",
+          "text": "100"
+        }
+      ],
+      "h1": "57.6px",
+      "h1s": 1,
+      "headerCount": 1,
+      "overflow": false,
+      "overflows": [],
+      "url": "http://127.0.0.1:5173/th#v4-brands",
+      "width": 1440
+    },
+    {
+      "brokenImages": [],
+      "counters": [
+        {
+          "hiddenStatus": false,
+          "id": "topup",
+          "size": "52px",
+          "text": "979"
+        },
+        {
+          "hiddenStatus": false,
+          "id": "growth",
+          "size": "102px",
+          "text": "100"
+        }
+      ],
+      "h1": "51.2px",
+      "h1s": 1,
+      "headerCount": 1,
+      "overflow": false,
+      "overflows": [],
+      "url": "http://127.0.0.1:5173/th#v4-brands",
+      "width": 1280
+    },
+    {
+      "brokenImages": [],
+      "counters": [
+        {
+          "hiddenStatus": false,
+          "id": "topup",
+          "size": "52px",
+          "text": "1,000"
+        },
+        {
+          "hiddenStatus": false,
+          "id": "growth",
+          "size": "76px",
+          "text": "100"
+        }
+      ],
+      "h1": "37px",
+      "h1s": 1,
+      "headerCount": 1,
+      "overflow": false,
+      "overflows": [],
+      "url": "http://127.0.0.1:5173/th#v4-brands",
+      "width": 390
+    },
+    {
+      "brokenImages": [],
+      "counters": [
+        {
+          "hiddenStatus": false,
+          "id": "topup",
+          "size": "52px",
+          "text": "1,000"
+        },
+        {
+          "hiddenStatus": false,
+          "id": "growth",
+          "size": "66px",
+          "text": "100"
+        }
+      ],
+      "h1": "37px",
+      "h1s": 1,
+      "headerCount": 1,
+      "overflow": false,
+      "overflows": [],
+      "url": "http://127.0.0.1:5173/th#v4-brands",
+      "width": 320
+    }
+  ],
+  "gallery": [
+    {
+      "trigger": "post0",
+      "initialFocus": true,
+      "tabContained": true,
+      "reverseTabContained": true,
+      "escapeClosed": true,
+      "focusReturned": true
+    },
+    {
+      "label": "ดูแคมเปญตัวอย่าง: โปรวันนี้",
+      "initial": true,
+      "returned": {
+        "closed": true,
+        "label": "ดูแคมเปญตัวอย่าง: โปรวันนี้"
+      }
+    },
+    {
+      "label": "ดูแคมเปญตัวอย่าง: ซิม",
+      "initial": true,
+      "returned": {
+        "closed": true,
+        "label": "ดูแคมเปญตัวอย่าง: ซิม"
+      }
+    },
+    {
+      "label": "ดูแคมเปญตัวอย่าง: รุ่นใหม่",
+      "initial": true,
+      "returned": {
+        "closed": true,
+        "label": "ดูแคมเปญตัวอย่าง: รุ่นใหม่"
+      }
+    },
+    {
+      "label": "ดูแคมเปญตัวอย่าง: ดีลพิเศษ",
+      "initial": true,
+      "returned": {
+        "closed": true,
+        "label": "ดูแคมเปญตัวอย่าง: ดีลพิเศษ"
+      }
+    },
+    {
+      "label": "ดูโพสต์ตัวอย่าง: ซื้อ 1 แถม 1",
+      "initial": true,
+      "returned": {
+        "closed": true,
+        "label": "ดูโพสต์ตัวอย่าง: ซื้อ 1 แถม 1"
+      }
+    },
+    {
+      "label": "ดูโพสต์ตัวอย่าง: SIM Flash Sale",
+      "initial": true,
+      "returned": {
+        "closed": true,
+        "label": "ดูโพสต์ตัวอย่าง: SIM Flash Sale"
+      }
+    },
+    {
+      "label": "ดูโพสต์ตัวอย่าง: Black Friday",
+      "initial": true,
+      "returned": {
+        "closed": true,
+        "label": "ดูโพสต์ตัวอย่าง: Black Friday"
+      }
+    },
+    {
+      "label": "ดูโพสต์ตัวอย่าง: 10.10 ดีลคู่ร้าน",
+      "initial": true,
+      "returned": {
+        "closed": true,
+        "label": "ดูโพสต์ตัวอย่าง: 10.10 ดีลคู่ร้าน"
+      }
+    },
+    {
+      "label": "ดูโพสต์ตัวอย่าง: เปิดเทอม พร้อมเรียน",
+      "initial": true,
+      "returned": {
+        "closed": true,
+        "label": "ดูโพสต์ตัวอย่าง: เปิดเทอม พร้อมเรียน"
+      }
+    },
+    {
+      "label": "ดูโพสต์ตัวอย่าง: New Arrival รุ่นใหม่มาแล้ว",
+      "initial": true,
+      "returned": {
+        "closed": true,
+        "label": "ดูโพสต์ตัวอย่าง: New Arrival รุ่นใหม่มาแล้ว"
+      }
+    },
+    {
+      "label": "ดูโพสต์ตัวอย่าง: Mid Month Deal",
+      "initial": true,
+      "returned": {
+        "closed": true,
+        "label": "ดูโพสต์ตัวอย่าง: Mid Month Deal"
+      }
+    },
+    {
+      "label": "ดูโพสต์ตัวอย่าง: Payday Sale",
+      "initial": true,
+      "returned": {
+        "closed": true,
+        "label": "ดูโพสต์ตัวอย่าง: Payday Sale"
+      }
+    },
+    {
+      "label": "ดูโพสต์ตัวอย่าง: Weekend Special",
+      "initial": true,
+      "returned": {
+        "closed": true,
+        "label": "ดูโพสต์ตัวอย่าง: Weekend Special"
+      }
+    }
+  ],
+  "services": [
+    {
+      "name": "finance",
+      "focusInService": {
+        "initial": "ปิดรายละเอียด",
+        "inside": true
+      },
+      "tabService": true,
+      "result": {
+        "closed": true,
+        "focus": "สนใจเป็นตัวแทน S Leasing "
+      }
+    },
+    {
+      "name": "accessories",
+      "initial": true,
+      "result": {
+        "closed": true,
+        "focus": "คุยเรื่องอุปกรณ์เสริม "
+      }
+    },
+    {
+      "name": "repair",
+      "initial": true,
+      "result": {
+        "closed": true,
+        "focus": "ปรึกษาเรื่องงานบริการ "
+      }
+    }
+  ],
+  "built": {
+    "before": {
+      "canonical": "https://pkhub.co/th/products/partner-marketing",
+      "title": "Partner Marketing สื่อการตลาดฟรีสำหรับพาร์ทเนอร์ | PK HUB",
+      "url": "http://127.0.0.1:5174/th/products/partner-marketing",
+      "width": 530
+    },
+    "afterLocale": {
+      "canonical": "https://pkhub.co/th/products/partner-marketing",
+      "lang": "en",
+      "title": "Partner Marketing สื่อการตลาดฟรีสำหรับพาร์ทเนอร์ | PK HUB",
+      "url": "http://127.0.0.1:5174/en/products/partner-marketing"
+    },
+    "anchor": {
+      "scrollY": 1300,
+      "sectionTop": 0.2421875,
+      "url": "http://127.0.0.1:5174/en#v4-brands"
+    }
+  },
+  "sim": {
+    "pausedAfterTap": {
+      "playState": "paused",
+      "pressed": "true"
+    }
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "version": "V7",
+  "scope": "Owner-review prototype only; website/backend unchanged",
+  "changes": [
+    "Four expandable service rows instead of cramped 2x2 cards",
+    "Official S Leasing logo from SCAP product page",
+    "Owner-supplied PK Hub agent recruitment positioning",
+    "Transparent product imagery via built-in imagegen",
+    "Finite staged motion and connecting dot; reduced-motion CSS preserved"
+  ],
+  "visual_thesis": "Pure white, open service composition with one useful visual at a time",
+  "content_plan": "Preserve accepted homepage sections; broad service choices and inquiry/Marketing preview CTAs",
+  "interaction_thesis": [
+    "Expand/collapse services without extra windows",
+    "Stagger products/posters on selection",
+    "Show PK Hub connection to S Leasing with finite movement"
+  ],
+  "references": [
+    {
+      "name": "Airtable",
+      "url": "https://mobbin.com/sites/sections/167edd07-5357-4149-ad18-b42cfd3fddeb",
+      "pattern": "Expandable product rows with contextual visualization"
+    },
+    {
+      "name": "Zendesk",
+      "url": "https://mobbin.com/sites/sections/977f4003-17b4-40d5-bb40-c2dfc9c796d9",
+      "pattern": "Thin dividers and one selected feature visualization"
+    }
+  ],
+  "official_logo_sources": [
+    {
+      "key": "sleasing",
+      "url": "https://www.srisawadcapital.co.th/storage/content/product/logo-s-leasing.png",
+      "file": "sleasing.png",
+      "sha256": "23d1e3fce4e38d6dacef62a232b206275ac0915a9fac46d2131a53934fea6cda"
+    },
+    {
+      "key": "sleasingWhite",
+      "url": "https://www.srisawadcapital.co.th/storage/content/product/s-leasing/logo-sleasing-white.png",
+      "file": "sleasingWhite.png",
+      "sha256": "c4ea95e3925e967aff153d089421a4517222dea23064fcbdf91f87f5e58cd2f6"
+    }
+  ],
+  "imagegen_alpha": {
+    "phoneFamily": [
+      0,
+      255
+    ],
+    "ipad": [
+      0,
+      255
+    ],
+    "earbuds": [
+      0,
+      255
+    ],
+    "case": [
+      0,
+      255
+    ]
+  },
+  "rendered_checks": [
+    {
+      "width": 1440,
+      "service": "accessories",
+      "openPanels": 1,
+      "overflow": false,
+      "textOverflow": []
+    },
+    {
+      "width": 1440,
+      "service": "finance",
+      "openPanels": 1,
+      "overflow": false,
+      "textOverflow": []
+    },
+    {
+      "width": 1440,
+      "service": "repair",
+      "openPanels": 1,
+      "overflow": false,
+      "textOverflow": []
+    },
+    {
+      "width": 1440,
+      "service": "marketing",
+      "openPanels": 1,
+      "overflow": false,
+      "textOverflow": []
+    },
+    {
+      "width": 1280,
+      "service": "accessories",
+      "openPanels": 1,
+      "overflow": false,
+      "textOverflow": []
+    },
+    {
+      "width": 1280,
+      "service": "finance",
+      "openPanels": 1,
+      "overflow": false,
+      "textOverflow": []
+    },
+    {
+      "width": 1280,
+      "service": "repair",
+      "openPanels": 1,
+      "overflow": false,
+      "textOverflow": []
+    },
+    {
+      "width": 1280,
+      "service": "marketing",
+      "openPanels": 1,
+      "overflow": false,
+      "textOverflow": []
+    },
+    {
+      "width": 390,
+      "service": "accessories",
+      "openPanels": 1,
+      "overflow": false,
+      "textOverflow": []
+    },
+    {
+      "width": 390,
+      "service": "finance",
+      "openPanels": 1,
+      "overflow": false,
+      "textOverflow": []
+    },
+    {
+      "width": 390,
+      "service": "repair",
+      "openPanels": 1,
+      "overflow": false,
+      "textOverflow": []
+    },
+    {
+      "width": 390,
+      "service": "marketing",
+      "openPanels": 1,
+      "overflow": false,
+      "textOverflow": []
+    },
+    {
+      "width": 320,
+      "service": "accessories",
+      "openPanels": 1,
+      "overflow": false,
+      "textOverflow": []
+    },
+    {
+      "width": 320,
+      "service": "finance",
+      "openPanels": 1,
+      "overflow": false,
+      "textOverflow": []
+    },
+    {
+      "width": 320,
+      "service": "repair",
+      "openPanels": 1,
+      "overflow": false,
+      "textOverflow": []
+    },
+    {
+      "width": 320,
+      "service": "marketing",
+      "openPanels": 1,
+      "overflow": false,
+      "textOverflow": []
+    }
+  ],
+  "interaction_checks": [
+    "Four services open, switch and close",
+    "Finance inquiry dialog with Hub recruitment copy",
+    "Escape and focus return from inquiry",
+    "Partner Marketing preview and focus return",
+    "Existing combined marketing counters preserved"
+  ],
+  "script_errors": [],
+  "image_note": "Cutouts were created by imagegen from official photos; source originals and edited assets are both preserved. Device render details are illustrative.",
+  "prototype_sha256": "89b8a28a818680e9a521f0da736335d5177584f80cd60bee2b67ba68d42e5e99"
+}

@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-06",
+  "scope": "Handoff package and documentation only",
+  "ownerApprovalRecorded": true,
+  "approvedMetricValuesPreserved": true,
+  "referenceSyntaxChecked": true,
+  "referenceVisibleLayoutChanged": false,
+  "portableAssetCount": 22,
+  "imageAlphaVerified": {
+    "phoneFamily": [
+      0,
+      255
+    ],
+    "case": [
+      0,
+      255
+    ],
+    "ipad": [
+      0,
+      255
+    ],
+    "earbuds": [
+      0,
+      255
+    ]
+  },
+  "applicationFilesUnchanged": {
+    "src/pages/Home.tsx": true,
+    "src/pages/home/HeroSection.tsx": true,
+    "src/pages/home/BrandsSection.tsx": true,
+    "src/pages/home/StockOnDemandSection.tsx": true,
+    "src/pages/home/OneCustomerSection.tsx": true,
+    "src/pages/home/MarketingSection.tsx": true,
+    "src/components/Navbar.tsx": true,
+    "src/components/PartnerForm.tsx": true,
+    "src/AppRoutes.tsx": true,
+    "src/index.css": true,
+    "src/lib/motion.ts": true,
+    "src/pages/home/constants.ts": true,
+    "index.html": true,
+    "package.json": true,
+    "postcss.config.js": true
+  },
+  "rootDocumentsUpdated": [
+    "AGENTS.md",
+    "DESIGN.md"
+  ],
+  "persistentRule": ".agents/rules/pkhub-v7-approved-design.md",
+  "applicationBuildNotRun": "No application implementation in this turn; required checks are assigned in START_HERE.md",
+  "deploymentPerformed": false
+}

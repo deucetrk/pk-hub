@@ -1,0 +1,83 @@
+{
+  "layouts": [
+    {
+      "brokenImages": [],
+      "h1Count": 1,
+      "headerHeight": 80,
+      "heading": "ทุกตัวช่วยร้านมือถือในพาร์ทเนอร์เดียว",
+      "overflow": false,
+      "route": "/th",
+      "width": 1440
+    },
+    {
+      "brokenImages": [],
+      "h1Count": 1,
+      "headerHeight": 64,
+      "heading": "ทุกตัวช่วยร้านมือถือในพาร์ทเนอร์เดียว",
+      "overflow": false,
+      "route": "/th",
+      "width": 390
+    },
+    {
+      "brokenImages": [],
+      "h1Count": 1,
+      "headerHeight": 80,
+      "heading": "หน้าร้านโตSocial ก็โตต่อ",
+      "overflow": false,
+      "route": "/th/products/partner-marketing",
+      "width": 1440
+    },
+    {
+      "brokenImages": [],
+      "h1Count": 1,
+      "headerHeight": 64,
+      "heading": "หน้าร้านโตSocial ก็โตต่อ",
+      "overflow": false,
+      "route": "/th/products/partner-marketing",
+      "width": 390
+    },
+    {
+      "brokenImages": [],
+      "h1Count": 1,
+      "headerHeight": 73,
+      "heading": "สมัครเป็นพาร์ทเนอร์กับ PK",
+      "overflow": false,
+      "route": "/th/join",
+      "width": 1440
+    },
+    {
+      "brokenImages": [],
+      "h1Count": 1,
+      "headerHeight": 69,
+      "heading": "สมัครเป็นพาร์ทเนอร์กับ PK",
+      "overflow": false,
+      "route": "/th/join",
+      "width": 390
+    },
+    {
+      "brokenImages": [],
+      "h1Count": 1,
+      "headerHeight": 73,
+      "heading": "บทความมือถือ ธุรกิจ และเทคโนโลยี",
+      "overflow": false,
+      "route": "/th/blog",
+      "width": 1440
+    },
+    {
+      "brokenImages": [],
+      "h1Count": 1,
+      "headerHeight": 69,
+      "heading": "บทความมือถือ ธุรกิจ และเทคโนโลยี",
+      "overflow": false,
+      "route": "/th/blog",
+      "width": 390
+    }
+  ],
+  "locale": {
+    "canonical": "https://pkhub.co/en/products/partner-marketing",
+    "focus": "Open menu",
+    "title": "Free Partner Marketing Media & Campaigns | PK HUB",
+    "url": "http://127.0.0.1:5174/en/products/partner-marketing"
+  },
+  "consoleErrors": []
+}

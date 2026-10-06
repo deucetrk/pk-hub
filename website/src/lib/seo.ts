@@ -16,23 +16,23 @@ export type PageMeta = {
 
 export const HOME_META = {
   th: {
-    title: 'ค้าส่งมือถือฉะเชิงเทรา สำหรับร้านค้า | PK HUB',
+    title: 'พาร์ทเนอร์ค้าส่งมือถือทั่วประเทศ ศูนย์ปฏิบัติการฉะเชิงเทรา | PK HUB',
     description:
-      'PK HUB พาร์ทเนอร์ค้าส่งมือถือในฉะเชิงเทราและภาคตะวันออก หลายแบรนด์ พร้อม Dealer Portal สำหรับร้านที่ได้รับอนุมัติ เช็กราคา สต็อกอ้างอิง และคุยกับทีมโดยตรง',
+      'PK HUB ระบบนิเวศค้าส่งมือถือเครื่องศูนย์ไทยและอุปกรณ์เสริมสำหรับร้านค้าทั่วประเทศ ออกใบกำกับภาษีเต็มรูปแบบ พร้อมระบบ Dealer Portal เช็กราคาและสต็อกอ้างอิง',
     canonical: `${SITE_URL}/th`,
     ogType: 'website',
     image: `${SITE_URL}/og-image.jpg`,
-    imageAlt: 'หน้าร้านและทีมค้าส่งมือถือ PK HUB ในฉะเชิงเทรา',
+    imageAlt: 'ศูนย์ปฏิบัติการและสต็อกจริง PK HUB ฉะเชิงเทรา',
     locale: 'th_TH',
   },
   en: {
-    title: 'PK HUB | Chachoengsao Smartphone Wholesale Partner',
+    title: 'PK HUB | Nationwide Smartphone Wholesale & Retail Partner Ecosystem',
     description:
-      'Multi-brand phone wholesale in Chachoengsao and eastern Thailand. Approved retailers can check pricing, reference stock, and orders in the PK HUB Dealer Portal.',
+      'Official multi-brand smartphone and accessory wholesale partner for retailers nationwide. Transparent Dealer Portal, verified stock, and dedicated team based in Chachoengsao.',
     canonical: `${SITE_URL}/en`,
     ogType: 'website',
     image: `${SITE_URL}/og-image.jpg`,
-    imageAlt: 'PK HUB smartphone wholesale storefront in Chachoengsao',
+    imageAlt: 'PK HUB smartphone wholesale operations and storefront in Chachoengsao',
     locale: 'en_US',
   },
 } satisfies Record<'th' | 'en', PageMeta>
@@ -88,6 +88,29 @@ export const DEALER_LOGIN_META = {
   },
 } satisfies Record<'th' | 'en', PageMeta>
 
+export const PARTNER_MARKETING_META = {
+  th: {
+    title: 'Partner Marketing สื่อการตลาดฟรีสำหรับพาร์ทเนอร์ | PK HUB',
+    description:
+      'สื่อการตลาดและแคมเปญโปรโมชั่นฟรีสำหรับร้านค้าพาร์ทเนอร์ PK HUB ทุกร้าน ไม่มีขั้นต่ำยอดซื้อ พร้อมตัวอย่างการนำสื่อไปใช้จริง',
+    canonical: `${SITE_URL}/th/products/partner-marketing`,
+    ogType: 'website',
+    image: `${SITE_URL}/og-image.jpg`,
+    imageAlt: 'สื่อการตลาดฟรีสำหรับพาร์ทเนอร์ PK HUB',
+    locale: 'th_TH',
+  },
+  en: {
+    title: 'Free Partner Marketing Media & Campaigns | PK HUB',
+    description:
+      'Free promotional marketing assets and campaigns for all PK HUB retail partners with zero minimum order. Ready to use for storefronts and social media.',
+    canonical: `${SITE_URL}/en/products/partner-marketing`,
+    ogType: 'website',
+    image: `${SITE_URL}/og-image.jpg`,
+    imageAlt: 'Free marketing assets for PK HUB retail partners',
+    locale: 'en_US',
+  },
+} satisfies Record<'th' | 'en', PageMeta>
+
 
 export function getBlogIndexMeta(page = 1): PageMeta {
   if (page <= 1) return BLOG_INDEX_META
@@ -110,6 +133,9 @@ export function applyPageMeta(meta: PageMeta) {
   document.querySelector('meta[property="og:image"]')?.setAttribute('content', meta.image ?? `${SITE_URL}/og-image.jpg`)
   document.querySelector('meta[property="og:image:alt"]')?.setAttribute('content', meta.imageAlt ?? meta.title)
   document.querySelector('meta[property="og:locale"]')?.setAttribute('content', meta.locale ?? 'th_TH')
+  document
+    .querySelector('meta[property="og:locale:alternate"]')
+    ?.setAttribute('content', (meta.locale ?? 'th_TH') === 'en_US' ? 'th_TH' : 'en_US')
   document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', meta.title)
   document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', meta.description)
   document.querySelector('meta[name="twitter:image"]')?.setAttribute('content', meta.image ?? `${SITE_URL}/og-image.jpg`)
