@@ -12,7 +12,7 @@ import { execFileSync } from 'node:child_process'
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..')
 const dist = resolve(root, 'dist')
 
-const { render, getPageMeta, getPrerenderRoutes, getRouteLastModified, getHomeFaqSchema } =
+const { render, getPageMeta, getPrerenderRoutes, getRouteLastModified } =
   await import(resolve(root, 'dist-ssr/entry-server.js'))
 
 const SITE = 'https://pkhub.co'
@@ -23,7 +23,7 @@ function holdPrerenderForms(html, route) {
     ? 'The form is preparing. If it stays unavailable, contact our team.'
     : 'กำลังเตรียมแบบฟอร์ม หากยังไม่พร้อมใช้งาน ติดต่อทีมงานได้'
   const label = english ? 'Contact the team' : 'ช่องทางติดต่อทีมงาน'
-  const contact = `/${english ? 'en' : 'th'}#contact`
+  const contact = `/${english ? 'en' : 'th'}#v4-start`
   const note = `<div class="pk-form-bootstrap-note" data-pk-bootstrap-notice="" role="status"><p>${message}</p><a class="pk-action pk-action-secondary" href="${contact}">${label}</a></div>`
   return html.replace(/<form\b/g, `${note}<form inert="" data-pk-bootstrap-form=""`)
 }
@@ -98,17 +98,22 @@ function localize(html, route, meta) {
   }
 
   if (isHome) {
-    const schema = JSON.stringify(getHomeFaqSchema(lang)).replace(/</g, '\\u003c')
-    page = page.replace(
-      '</head>',
-      `<script id="faq-schema" type="application/ld+json">${schema}</script>\n</head>`,
-    )
+    page = removeScriptById(page, 'faq-schema')
+    page = removeScriptById(page, 'video-schema')
+    page = page.replace('</head>', '<link rel="preload" as="image" href="/pkhub-v7/brands/logo.png" fetchpriority="high" />\n</head>')
   }
 
   if (route.endsWith('/join')) {
     const alternate = `<link id="alternate-th" rel="alternate" hreflang="th" href="${SITE}/th/join" />
     <link id="alternate-en" rel="alternate" hreflang="en" href="${SITE}/en/join" />
     <link id="alternate-default" rel="alternate" hreflang="x-default" href="${SITE}/th/join" />`
+    page = page.replace('</head>', `${alternate}\n</head>`)
+  }
+
+  if (route.includes('/products/partner-marketing')) {
+    const alternate = `<link id="alternate-th" rel="alternate" hreflang="th" href="${SITE}/th/products/partner-marketing" />
+    <link id="alternate-en" rel="alternate" hreflang="en" href="${SITE}/en/products/partner-marketing" />
+    <link id="alternate-default" rel="alternate" hreflang="x-default" href="${SITE}/th/products/partner-marketing" />`
     page = page.replace('</head>', `${alternate}\n</head>`)
   }
 
@@ -180,7 +185,7 @@ const alt = `
 const secondaryUrls = routes
   .filter(
     (route) =>
-      route.includes('/join') || route.includes('/dealer/login') || route.startsWith('/th/blog'),
+      route.includes('/join') || route.includes('/dealer/login') || route.includes('/products/') || route.startsWith('/th/blog'),
   )
   .map(
     (route) => `
@@ -188,7 +193,7 @@ const secondaryUrls = routes
     <loc>${SITE}${route}</loc>
     <lastmod>${getRouteLastModified(route) ?? lastmod}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>${route.includes('/join') ? '0.9' : route.includes('/dealer/login') ? '0.8' : route === '/th/blog' ? '0.8' : '0.7'}</priority>
+    <priority>${route.includes('/join') ? '0.9' : route.includes('/dealer/login') ? '0.8' : route.includes('/products/') ? '0.8' : route === '/th/blog' ? '0.8' : '0.7'}</priority>
   </url>`,
   )
   .join('')

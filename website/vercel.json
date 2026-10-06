@@ -38,6 +38,14 @@
       "destination": "/en/dealer/login/index.html"
     },
     {
+      "source": "/th/products/partner-marketing",
+      "destination": "/th/products/partner-marketing/index.html"
+    },
+    {
+      "source": "/en/products/partner-marketing",
+      "destination": "/en/products/partner-marketing/index.html"
+    },
+    {
       "source": "/th/blog",
       "destination": "/th/blog/index.html"
     },

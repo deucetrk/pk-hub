@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "approval": {
+    "date": "2026-10-06",
+    "timezone": "Asia/Bangkok",
+    "source": "direct owner confirmation in this conversation",
+    "publicationApproved": true,
+    "classification": "owner-confirmed business figures",
+    "ownerInstruction": "yea please use this number first it's not prototye metrics, i agree with all designs so far",
+    "independentlyAudited": false
+  },
+  "growth": {
+    "sku": {
+      "from": 40,
+      "to": 100,
+      "unit": "SKU",
+      "label": "ตัวเลือกขายที่เข้าถึงได้",
+      "meaning": "Accessible sale options; not all physically held by the shop"
+    },
+    "profit": {
+      "from": 1,
+      "to": 10,
+      "unit": "×",
+      "label": "โอกาสเติบโตของกำไร",
+      "meaning": "Preserve the owner-approved profit opportunity presentation; do not add a guarantee or timeframe"
+    }
+  },
+  "marketing": {
+    "views": {
+      "from": 0,
+      "to": 100000,
+      "unit": "views",
+      "label": "ยอดชม"
+    },
+    "comments": {
+      "from": 0,
+      "to": 1000,
+      "unit": "comments",
+      "label": "ความคิดเห็น"
+    }
+  },
+  "topup": {
+    "from": 0,
+    "to": 1000,
+    "unit": "THB",
+    "label": "ยอดเติมเงินต่อรายการ",
+    "meaning": "Transaction amount; not commission or Tier 2/3 earnings"
+  },
+  "presentation": {
+    "counterDurationMs": 2000,
+    "marketingLayout": "simultaneous two columns, no tabs",
+    "format": "full numbers with commas and tabular digits",
+    "screenReader": "final values only"
+  },
+  "notAuthorizedByThisRecord": [
+    "New timeframe or customer cohort",
+    "New investment amount",
+    "Tier 2/3 commission or lender approval guarantee",
+    "Treating illustration rows as current inventory or prices"
+  ]
+}

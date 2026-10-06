@@ -101,8 +101,8 @@ export const supplierChecklistArticle: PublishedBlogArticle = {
   ctaLabel: 'ส่งรายการให้ทีม PK HUB เช็ก',
   ctaHref: 'https://lin.ee/VEgW6qG',
   internalLinks: [
-    { label: 'ดูขั้นตอนสั่งซื้อกับ PK HUB', href: '/th#process' },
-    { label: 'ดูหลักฐานหน้าร้านและงานแพ็กจริง', href: '/th#proof' },
+    { label: 'ดูขั้นตอนสั่งซื้อกับ PK HUB', href: '/th#v4-start' },
+    { label: 'คุยกับทีมเรื่องหน้าร้านและงานแพ็กจริง', href: '/th#v4-start' },
   ],
   sources: [
     {

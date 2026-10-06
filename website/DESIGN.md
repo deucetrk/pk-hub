@@ -1,6 +1,6 @@
 # PK HUB Public Design Direction
 
-Status: canonical public-site design direction
+Status: canonical public-site design direction; V7 Home and Partner Marketing approved 2026-10-06
 
 Current release packet: [085](../PUBLIC-DESIGN-085.md) records all agreed active ecosystem design
 locally complete and owner notified2026-10-04. Public runtimeb4a93c3 and its260-case acceptance
@@ -30,6 +30,34 @@ CI passes; production creation remains rate-limited. This supersedes older form-
 not consent/delivery acceptance or the full ecosystem outcome.
 Owner accepted: 2026-09-20; Apple-inspired layout and expressive motion selected 2026-09-30
 Last verified: 2026-09-20 production desktop and 390px public acceptance at `pkhub.co`
+
+## Owner approved V7 direction on 2026-10-06
+
+The owner approved every V7 design shown so far and confirmed the current headline figures as real
+metrics to use. Read `planning/2026-10-06-pkhub-v7-approved-design/START_HERE.md`, `DESIGN_LOCK.md`,
+`OWNER_APPROVAL.md` and `approved-metrics.json` before homepage or Partner Marketing implementation.
+All four files are in that planning directory.
+The supplied approved reference HTML, assets and screenshots lock composition and motion.
+
+Within this scope, V7 supersedes the historical visual thesis and removal register below: use the
+white Panoramic Ecosystem hero, colored official brands, layered Stock/chat explanation, transparent
+products, four-stage customer journey, expandable service rows and compact simultaneous Marketing
+counters. S Leasing uses its real mark and the approved PK Hub agent-recruitment Hub copy. The
+headline figures are owner-confirmed and must not be treated as demo placeholders.
+
+The approved homepage sequence is Hero, Device portfolio, Stock on Demand, One Customer, Store
+potential, Partner start and compact Footer. The full Marketing showcase moves to its reviewed
+separate composition. Preserve the current working application and referral paths, bilingual route
+behavior and all operational truth boundaries. The first implementation checkpoint is rendered
+homepage review; additional product expansion and deployment follow their separate gates.
+
+The older entries below remain historical context and guidance for unaffected public routes.
+
+## V7 production authorization — 2026-10-06
+
+The owner requested publishing the reviewed V7 homepage and Partner Marketing. Integrate the
+reviewed branch with current main while retaining application, bootstrap, route recovery and
+revision safeguards. Verify the exact release at pkhub.co after the connected pipeline completes.
 
 ## Authorized production closeout — 2026-10-01
 

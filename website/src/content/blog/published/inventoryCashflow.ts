@@ -114,7 +114,7 @@ export const inventoryCashflowArticle: PublishedBlogArticle = {
   "internalLinks": [
     {
       "label": "ดูขั้นตอนเช็กสินค้าและสั่งซื้อ",
-      "href": "/th#process"
+      "href": "/th#v4-start"
     }
   ],
   "sources": [

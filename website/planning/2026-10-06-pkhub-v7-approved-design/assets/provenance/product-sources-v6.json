@@ -1,0 +1,34 @@
+[
+  {
+    "key": "ipad",
+    "url": "https://www.apple.com/th/ipad-11/images/overview/design/fan__vnl85mt3xzm6_large.jpg",
+    "original": "ipad-fan.jpg",
+    "preview": "ipad-fan-preview.webp",
+    "sha256": "4967179fc70a2fe203d9befebd4301ea7ef3ef5bdc6913c753adf6c21d698fc5",
+    "use": "Illustrative real product imagery only; no current stock or eligibility assertion"
+  },
+  {
+    "key": "earbuds",
+    "url": "https://www.apple.com/v/airpods/af/images/overview/hero_endframe__calpooy4ucr6_large.jpg",
+    "original": "earbuds.jpg",
+    "preview": "earbuds-preview.webp",
+    "sha256": "58a103f5647d7326f3ccaaed289815772025036e8a8082ca91dd091039465681",
+    "use": "Illustrative real product imagery only; no current stock or eligibility assertion"
+  },
+  {
+    "key": "simSocial",
+    "url": "https://www.ais.th/content/dam/ais/consumer/store/sim-card/prepaid/super-social/product-detail/super-social.png",
+    "original": "simSocial.png",
+    "preview": "simSocial-preview.webp",
+    "sha256": "589dca94c075f08efc715bc58223edeab9802f8875512650fe951e40b62975c3",
+    "use": "Illustrative real product imagery only; no current stock or eligibility assertion"
+  },
+  {
+    "key": "simZeed",
+    "url": "https://www.ais.th/content/dam/ais/consumer/store/sim-card/prepaid/zeed/product-detail/zeed.png",
+    "original": "simZeed.png",
+    "preview": "simZeed-preview.webp",
+    "sha256": "03dfbf79618e2c3bfcecf619977d3fc971df8aaf10494288c6383ab6e830f37b",
+    "use": "Illustrative real product imagery only; no current stock or eligibility assertion"
+  }
+]

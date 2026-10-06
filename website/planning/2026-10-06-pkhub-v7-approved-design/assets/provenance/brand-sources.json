@@ -1,0 +1,70 @@
+{
+  "created": "2026-10-05",
+  "note": "Official website assets; no invented logo colors. vivo vector uses its official hover blue from the official stylesheet. Apple vector viewport tightened without changing paths. The public hero is a service overview, not a direct revenue calculator. Latest owner direction: static ecosystem diagram; product navigation is not required. Repair is shown as coming soon. No public website code changed.",
+  "assets": [
+    {
+      "brand": "oppo",
+      "official_page": "https://www.oppo.com/en/",
+      "asset_url": "https://www.oppo.com/content/dam/oppo/common/file/image/logo.png",
+      "asset_method": "download",
+      "file": "oppo.png",
+      "sha256": "39f299ac2cd9a3472e9df799e6fe1a78b9165acee4d18a7b5a1c38209ecc436c"
+    },
+    {
+      "brand": "vivo",
+      "official_page": "https://www.vivo.com/en/",
+      "asset_url": null,
+      "asset_method": "copied logo SVG from official page",
+      "file": "vivo.svg",
+      "sha256": "ea0c8fbfe26747259db6f8f5297701c32eb581f0c04c1f64c9af55a4d8c02c36"
+    },
+    {
+      "brand": "apple",
+      "official_page": "https://www.apple.com/",
+      "asset_url": null,
+      "asset_method": "copied logo SVG from official page",
+      "file": "apple.svg",
+      "sha256": "f8d5c2f1dae96518bee08009737413f87a21c2edfb4639ad86c533d985f33ddf"
+    },
+    {
+      "brand": "xiaomi",
+      "official_page": "https://www.mi.com/global/about/mediakit/",
+      "asset_url": "https://i01.appmifile.com/webfile/globalimg/mobile/logo/mi.png",
+      "asset_method": "download from image referenced by official media kit",
+      "file": "xiaomi.png",
+      "sha256": "a7c0c244830cd3216e7561c59510962cad684787fa38d10237d5942c28f548d6"
+    },
+    {
+      "brand": "realme",
+      "official_page": "https://www.realme.com/global/",
+      "asset_url": "https://image01.realme.net/general/20181218/1545105227803.png",
+      "asset_method": "download",
+      "file": "realme.png",
+      "sha256": "ad7b4342680f8e706441bc5498a172aa056aa3d020fa448bf7e2da93ffacd401"
+    },
+    {
+      "brand": "honor",
+      "official_page": "https://www.honor.com/global/brand-guideline11/basics1/layout/",
+      "asset_url": "https://www-file.honor.com/content/dam/honor/common/logo/honor-logo-black.svg",
+      "asset_method": "download",
+      "file": "honor.svg",
+      "sha256": "d99021bdd6f4a4ac78c88e27a9dfc74537a2e16d4c1cf9fb29b559f39ee18e0e"
+    },
+    {
+      "brand": "huawei",
+      "official_page": "https://www.huawei.com/en/",
+      "asset_url": "https://www.huawei.com/-/media/hcomponent-header/1.0.1.20260908162100/component/img/huawei_logo.png",
+      "asset_method": "download",
+      "file": "huawei.png",
+      "sha256": "492e58a2680a4f4607185e21d55183f0d2ac976b8f4737512a495672d31e4070"
+    },
+    {
+      "brand": "alldocube",
+      "official_page": "https://www.alldocube.com/en/",
+      "asset_url": null,
+      "asset_method": "copied logo SVG from official page",
+      "file": "alldocube.svg",
+      "sha256": "aed4b8b5c7447ab0cc71d1242102dba198f952cd3c027807468f389bf2cd03f2"
+    }
+  ]
+}

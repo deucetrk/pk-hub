@@ -1,71 +1,82 @@
-import Container from "@/components/Container";
-import { useLanguage } from "@/i18n/LanguageContext";
-import { BRAND_ITEMS } from "./constants";
+import { ArrowUpRight } from 'lucide-react'
+import { useLanguage } from '@/i18n/LanguageContext'
+import { CONTACT } from './constants'
 
-function BrandRail() {
-  return (
-    <div className="pk-brand-rail">
-      {BRAND_ITEMS.map((brand) => (
-        <span key={brand.name} className="pk-brand-rail-item">
-          <span className="pk-brand-logo-stage">
-            <img
-              src={brand.logoSrc}
-              alt={brand.name}
-              width={brand.logoKind === "symbol" ? 32 : 112}
-              height={28}
-              loading="lazy"
-              decoding="async"
-              className={`pk-brand-logo pk-brand-logo-${brand.logoKind} ${brand.logoClassName ?? ""}`}
-            />
-          </span>
-        </span>
-      ))}
-    </div>
-  );
+interface BrandItem {
+  id: string
+  name: string
+  src: string
+  width: number
+  height: number
 }
 
+const BRANDS: BrandItem[] = [
+  { id: 'oppo', name: 'OPPO', src: '/pkhub-v7/brands/oppo.png', width: 600, height: 144 },
+  { id: 'vivo', name: 'vivo', src: '/pkhub-v7/brands/vivo.svg', width: 103, height: 28 },
+  { id: 'apple', name: 'Apple', src: '/pkhub-v7/brands/apple.svg', width: 28, height: 36 },
+  { id: 'xiaomi', name: 'Xiaomi', src: '/pkhub-v7/brands/xiaomi.png', width: 196, height: 196 },
+  { id: 'realme', name: 'realme', src: '/pkhub-v7/brands/realme.png', width: 96, height: 96 },
+  { id: 'honor', name: 'HONOR', src: '/pkhub-v7/brands/honor.svg', width: 161, height: 42 },
+  { id: 'huawei', name: 'HUAWEI', src: '/pkhub-v7/brands/huawei.png', width: 266, height: 60 },
+  { id: 'alldocube', name: 'Alldocube', src: '/pkhub-v7/brands/alldocube.svg', width: 191, height: 34 },
+]
+
 export default function BrandsSection() {
-  const { isThai } = useLanguage();
+  const { isThai } = useLanguage()
 
   return (
-    <section
-      id="brands"
-      className="pk-brands-section scroll-mt-24 border-b border-zinc-300 bg-[var(--pk-white)] py-9 sm:py-12"
-    >
-      <Container>
-        <div className="flex flex-wrap items-baseline justify-between gap-3">
-          <div>
-            <p className="pk-eyebrow">01 / BRANDS</p>
-            <h2 className="mt-2 text-base font-semibold">
-              {isThai
-                ? "แบรนด์มือถือที่คุยกับเราได้"
-                : "Talk to us about these brands"}
-            </h2>
+    <section className="v4-brands" id="v4-brands" aria-label={isThai ? 'กลุ่มแบรนด์และสินค้า' : 'Device portfolio and brands'}>
+      <div>
+        <p className="v4-eyebrow">THE DEVICE PORTFOLIO</p>
+        <h2>
+          {isThai ? (
+            <>
+              แบรนด์ที่คุ้นเคย
+              <br />
+              <span>และอีกหลากหลายตัวเลือก</span>
+            </>
+          ) : (
+            <>
+              Familiar Brands
+              <br />
+              <span>and Diverse Selection</span>
+            </>
+          )}
+        </h2>
+      </div>
+
+      <div className="v4-brand-wall" aria-label={isThai ? 'แบรนด์ตัวอย่างในกลุ่มสินค้า' : 'Brand portfolio'}>
+        {BRANDS.map((brand) => (
+          <div key={brand.id} className="v4-brand-slot">
+            <img
+              src={brand.src}
+              alt={brand.name}
+              data-brand={brand.id}
+              width={brand.width}
+              height={brand.height}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
-          <a
-            href="#contact"
-            className="text-sm text-zinc-600 underline underline-offset-4"
-          >
-            {isThai
-              ? "เช็กรุ่นและสต็อกกับทีม PK"
-              : "Check models and availability with PK"}
-          </a>
-        </div>
+        ))}
+      </div>
 
-        <div
-          className="pk-brands-grid mt-7"
-          role="region"
-          aria-label={isThai ? "รายชื่อแบรนด์มือถือ" : "Mobile phone brands"}
-        >
-          <BrandRail />
-        </div>
-
-        <p className="mt-4 text-xs leading-6 text-zinc-500">
+      <div className="v4-brand-foot">
+        <span>
           {isThai
-            ? "รายชื่อแบรนด์สำหรับคุยรุ่นและความต้องการของร้าน — เช็กข้อมูลปัจจุบันกับทีม PK ก่อนสั่งซื้อ"
-            : "Brands to start a conversation about models and store needs — ask PK to confirm current details before ordering."}
-        </p>
-      </Container>
+            ? 'สมาร์ตโฟนหลากรุ่น อุปกรณ์เสริม และบริการที่ต่อยอดไปกับร้านคุณ'
+            : 'Multi-brand smartphones, accessories, and services that grow alongside your store.'}
+        </span>
+        <a
+          className="v4-text-action cursor-interaction"
+          href={CONTACT.LINE_URL}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {isThai ? 'สอบถามรุ่นและสินค้าเพิ่มเติม' : 'Inquire about models & stock'}{' '}
+          <ArrowUpRight size={15} aria-hidden="true" />
+        </a>
+      </div>
     </section>
-  );
+  )
 }

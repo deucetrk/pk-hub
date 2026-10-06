@@ -115,7 +115,7 @@ export const documentsTaxInvoiceArticle: PublishedBlogArticle = {
   "internalLinks": [
     {
       "label": "ดูข้อมูลติดต่อ PK HUB",
-      "href": "/th#contact"
+      "href": "/th#v4-start"
     }
   ],
   "sources": [

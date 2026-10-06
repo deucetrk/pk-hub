@@ -1,6 +1,6 @@
 import { Component, Suspense, useEffect, useRef, type ComponentType, type ReactNode } from 'react'
 
-import Navbar from '@/components/Navbar'
+import LegacyNavbar from '@/components/LegacyNavbar'
 import Container from '@/components/Container'
 
 export default function RouteFeedback({
@@ -22,7 +22,7 @@ export default function RouteFeedback({
       <a href="#route-feedback" className="pk-skip-link">
         {english ? 'Skip to content' : 'ข้ามไปเนื้อหา'}
       </a>
-      <Navbar />
+      <LegacyNavbar />
       <main id="route-feedback" tabIndex={-1} className="pk-route-feedback" aria-busy={!failed}>
         <Container>
           <div className="pk-route-feedback-copy">

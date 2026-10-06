@@ -1,0 +1,34 @@
+[
+  {
+    "key": "phoneFamily",
+    "file": "phoneFamily-transparent.png",
+    "preview": "phoneFamily-transparent-preview.webp",
+    "built_in_source": "/Users/deuce/.codex/generated_images/01a10b14-c276-78e0-88be-8f73ac73e959/exec-1f2803e3-3e21-4619-bbed-0be1f8d81f99.png",
+    "sha256": "1a19e4b9d628aba3a3b078950c09c2da660d5301db2dc5f0875a82d99a672d9e",
+    "edit": "Background extraction from original official product image; generated output reviewed, original preserved"
+  },
+  {
+    "key": "ipad",
+    "file": "ipad-transparent.png",
+    "preview": "ipad-transparent-preview.webp",
+    "built_in_source": "/Users/deuce/.codex/generated_images/01a10b14-c276-78e0-88be-8f73ac73e959/exec-a698ffd2-22ce-465f-b5dc-d905f20758ff.png",
+    "sha256": "df8618b805d32b992374a0030b43f0d7ba3e02ae2a43ea5fd30c5e354f85fe36",
+    "edit": "Background extraction from original official product image; generated output reviewed, original preserved"
+  },
+  {
+    "key": "earbuds",
+    "file": "earbuds-transparent.png",
+    "preview": "earbuds-transparent-preview.webp",
+    "built_in_source": "/Users/deuce/.codex/generated_images/01a10b14-c276-78e0-88be-8f73ac73e959/exec-c204960a-dd71-47e3-9632-2e752536753a.png",
+    "sha256": "c3b6933b432ee7f346992fde8ecdead6a9add637b547a3590eafdda48a65b521",
+    "edit": "Background extraction from original official product image; generated output reviewed, original preserved"
+  },
+  {
+    "key": "case",
+    "file": "case-transparent.png",
+    "preview": "case-transparent-preview.webp",
+    "built_in_source": "/Users/deuce/.codex/generated_images/01a10b14-c276-78e0-88be-8f73ac73e959/exec-384986b0-f394-44d8-8f79-aa49433236ad.png",
+    "sha256": "f444318ac2d2bc16114a2832e94017b4d93f5df8f582934e18203703a7ce3641",
+    "edit": "Background extraction from original official product image; generated output reviewed, original preserved"
+  }
+]

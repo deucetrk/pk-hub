@@ -142,7 +142,7 @@ export const openMobileShopArticle: PublishedBlogArticle = {
   ctaHref: 'https://lin.ee/VEgW6qG',
   internalLinks: [
     { label: 'อ่าน 7 ข้อก่อนเลือกแหล่งขายส่งมือถือ', href: '/th/blog/checklist-choose-mobile-phone-wholesaler' },
-    { label: 'ดูแบรนด์ที่ PK HUB ดูแล', href: '/th#brands' },
+    { label: 'ดูแบรนด์ที่ PK HUB ดูแล', href: '/th#v4-brands' },
   ],
   sources: [
     {

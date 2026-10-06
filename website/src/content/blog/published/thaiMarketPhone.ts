@@ -110,7 +110,7 @@ export const thaiMarketPhoneArticle: PublishedBlogArticle = {
   "internalLinks": [
     {
       "label": "ดูแบรนด์ที่ PK HUB ดูแล",
-      "href": "/th#brands"
+      "href": "/th#v4-brands"
     }
   ],
   "sources": [

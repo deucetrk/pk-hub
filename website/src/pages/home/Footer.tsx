@@ -1,50 +1,38 @@
-import Container from '@/components/Container'
-import LogoMark from '@/components/LogoMark'
-import { publishedBlogSlugs } from '@/content/blog/publishedManifest'
+import { useLocation } from 'react-router-dom'
+import LegacyFooter from './LegacyFooter'
 import { useLanguage } from '@/i18n/LanguageContext'
 
-import { CONTACT } from './constants'
-
-export default function Footer() {
+function V7Footer() {
   const { isThai } = useLanguage()
 
   return (
-    <footer className="border-t border-zinc-800 bg-[#18181b] py-10 text-zinc-400">
-      <Container>
-        <div className="grid gap-8 md:grid-cols-2 md:items-start">
-          <div className="grid gap-4">
-            <div className="flex items-center gap-4">
-              <span className="inline-block">
-                <LogoMark className="h-10 w-auto shrink-0 invert sm:h-12" />
-              </span>
-              <div>
-                <div className="mt-1 text-sm font-semibold text-zinc-400">
-                  {isThai ? 'เช็กราคาส่งมือถือสำหรับร้านค้า' : 'Wholesale phone prices for retailers'}
-                </div>
-              </div>
-            </div>
-            <div className="text-sm font-bold text-zinc-400">
-              {isThai ? '72/29-30 ถนนศุขประยูร ต.หน้าเมือง อ.เมือง จ.ฉะเชิงเทรา 24000' : '72/29-30 Sukprayoon Road, Chachoengsao 24000, Thailand'}
-            </div>
-            <div className="text-sm font-bold text-zinc-400">© PK HUB — {isThai ? 'สงวนลิขสิทธิ์' : 'All rights reserved'}</div>
-          </div>
-          <div className="grid gap-2 text-sm font-semibold leading-[1.8] text-zinc-400">
-            {isThai && publishedBlogSlugs.length ? (
-              <a href="/th/blog" className="w-fit text-zinc-300 transition-colors hover:text-white">
-                บทความมือถือ ธุรกิจ และเทคโนโลยี
-              </a>
-            ) : null}
-            <div>{isThai ? 'ทีมค้าส่งมือถือภายใต้ PK Media — AIS Authorized Distributor อย่างเป็นทางการ' : 'The smartphone wholesale team under PK Media — an official AIS Authorized Distributor.'}</div>
-            <div>{isThai ? 'มือถือเครื่องศูนย์ไทย • ราคาส่ง B2B • แพ็กส่งตามรอบจริง' : 'Official Thai-market devices • B2B wholesale • Real dispatch rounds'}</div>
-            <div>{isThai ? 'เหมาะกับร้านมือถือหน้าร้าน ร้านออนไลน์ และคนเริ่มขายใหม่' : 'For physical phone shops, online sellers, and new retailers.'}</div>
-            <div>
-              {isThai
-                ? `Inbox LINE ${CONTACT.LINE_ID} หรือโทร ${CONTACT.PHONE_DISPLAY} เพื่อเช็กราคาส่งล่าสุด`
-                : `Inbox LINE ${CONTACT.LINE_ID} or call ${CONTACT.PHONE_DISPLAY} for current wholesale prices.`}
-            </div>
-          </div>
-        </div>
-      </Container>
+    <footer className="v4-footer">
+      <img
+        src="/pkhub-v7/brands/logo.png"
+        alt="PK HUB"
+        width={360}
+        height={119}
+        className="max-h-[32px] w-auto object-contain"
+        loading="lazy"
+        decoding="async"
+      />
+      <span>
+        {isThai
+          ? 'พาร์ทเนอร์ค้าส่งมือถือสำหรับร้านทั่วไทย'
+          : 'Smartphone wholesale partner for retailers nationwide'}
+      </span>
+      <span>
+        {isThai
+          ? 'เครื่องศูนย์ไทยแท้ · ใบกำกับภาษีเต็มรูปแบบ'
+          : 'Official Thai-market devices · Full tax invoices'}
+      </span>
     </footer>
   )
+}
+
+export default function Footer() {
+  const { pathname } = useLocation()
+  const isV7Page = pathname === '/' || /^\/(th|en)\/?$/.test(pathname) ||
+    /^\/(th|en)\/products\/partner-marketing\/?$/.test(pathname)
+  return isV7Page ? <V7Footer /> : <LegacyFooter />
 }

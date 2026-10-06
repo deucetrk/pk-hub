@@ -120,11 +120,11 @@ export const firstWholesaleOrderArticle: PublishedBlogArticle = {
   "internalLinks": [
     {
       "label": "ดูขั้นตอนสั่งซื้อ",
-      "href": "/th#process"
+      "href": "/th#v4-start"
     },
     {
       "label": "ดูช่องทางติดต่อ",
-      "href": "/th#contact"
+      "href": "/th#v4-start"
     }
   ],
   "sources": [

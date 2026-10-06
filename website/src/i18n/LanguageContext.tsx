@@ -27,12 +27,18 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   const setLanguage = (next: Language) => {
     const hash = location.hash
-    const suffix = location.pathname.endsWith('/join')
-      ? '/join'
-      : location.pathname.endsWith('/dealer/login')
-        ? '/dealer/login'
-        : ''
-    navigate(`/${next}${suffix}${location.search}${location.pathname.startsWith('/th/blog') ? '' : hash}`)
+    let nextPath = location.pathname
+    if (nextPath.startsWith('/th')) {
+      nextPath = `/${next}${nextPath.slice(3)}`
+    } else if (nextPath.startsWith('/en')) {
+      nextPath = `/${next}${nextPath.slice(3)}`
+    } else {
+      nextPath = `/${next}${nextPath}`
+    }
+    if (nextPath.startsWith('/en/blog')) {
+      nextPath = '/en'
+    }
+    navigate(`${nextPath}${location.search}${hash}`)
   }
 
   return (
