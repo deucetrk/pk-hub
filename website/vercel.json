@@ -56,35 +56,124 @@
     {
       "source": "/th/blog/:slug",
       "destination": "/th/blog/:slug/index.html"
+    },
+    {
+      "source": "/th/products",
+      "destination": "/th/products/index.html"
+    },
+    {
+      "source": "/th/products/handset-wholesale",
+      "destination": "/th/products/handset-wholesale/index.html"
+    },
+    {
+      "source": "/th/products/stock-on-demand",
+      "destination": "/th/products/stock-on-demand/index.html"
+    },
+    {
+      "source": "/th/products/accessories",
+      "destination": "/th/products/accessories/index.html"
+    },
+    {
+      "source": "/th/products/ais-sim",
+      "destination": "/th/products/ais-sim/index.html"
+    },
+    {
+      "source": "/th/products/ais-rom",
+      "destination": "/th/products/ais-rom/index.html"
+    },
+    {
+      "source": "/th/products/finance",
+      "destination": "/th/products/finance/index.html"
+    },
+    {
+      "source": "/th/products/after-sales",
+      "destination": "/th/products/after-sales/index.html"
+    },
+    {
+      "source": "/th/products/repair",
+      "destination": "/th/products/repair/index.html"
+    },
+    {
+      "source": "/en/products",
+      "destination": "/en/products/index.html"
+    },
+    {
+      "source": "/en/products/handset-wholesale",
+      "destination": "/en/products/handset-wholesale/index.html"
+    },
+    {
+      "source": "/en/products/stock-on-demand",
+      "destination": "/en/products/stock-on-demand/index.html"
+    },
+    {
+      "source": "/en/products/accessories",
+      "destination": "/en/products/accessories/index.html"
+    },
+    {
+      "source": "/en/products/ais-sim",
+      "destination": "/en/products/ais-sim/index.html"
+    },
+    {
+      "source": "/en/products/ais-rom",
+      "destination": "/en/products/ais-rom/index.html"
+    },
+    {
+      "source": "/en/products/finance",
+      "destination": "/en/products/finance/index.html"
+    },
+    {
+      "source": "/en/products/after-sales",
+      "destination": "/en/products/after-sales/index.html"
+    },
+    {
+      "source": "/en/products/repair",
+      "destination": "/en/products/repair/index.html"
     }
   ],
   "headers": [
     {
       "source": "/revision.json",
-      "headers": [{ "key": "Cache-Control", "value": "no-store" }]
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        }
+      ]
     },
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/(brands|proof|reviews|og-image\\.jpg|favicon\\.png|logo\\.png)/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=2592000" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=2592000"
+        }
       ]
     },
     {
       "source": "/(th|en)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
       ]
     },
     {
       "source": "/(th|en)/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
       ]
     }
   ]

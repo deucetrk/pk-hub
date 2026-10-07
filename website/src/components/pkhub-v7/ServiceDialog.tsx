@@ -1,7 +1,10 @@
 import { useEffect, useRef } from 'react'
-import { MessageCircle, X } from 'lucide-react'
+import { ArrowUpRight, MessageCircle, X } from 'lucide-react'
+import { CAPABILITY_PRODUCT, productPath } from '@/content/productServices'
 import { CONTACT } from '@/pages/home/constants'
 import { useLanguage } from '@/i18n/LanguageContext'
+import { useReferralAttribution } from '@/hooks/useReferralAttribution'
+import { withReferral } from '@/utils/referralAttribution'
 
 export interface ServiceDetail {
   id: string
@@ -19,7 +22,8 @@ export default function ServiceDialog({ service, triggerEl, onClose }: ServiceDi
   const dialogRef = useRef<HTMLDialogElement>(null)
   const closeBtnRef = useRef<HTMLButtonElement>(null)
   const triggerElRef = useRef<HTMLElement | null>(null)
-  const { isThai } = useLanguage()
+  const { isThai, language } = useLanguage()
+  const referralCode = useReferralAttribution()
 
   useEffect(() => {
     if (triggerEl) {
@@ -102,6 +106,8 @@ export default function ServiceDialog({ service, triggerEl, onClose }: ServiceDi
       <p className="v4-eyebrow">PK HUB · PARTNER SERVICES</p>
       <h2 id="v6-service-title">{service?.title || ''}</h2>
       <p className="v6-service-copy">{service?.description || ''}</p>
+
+      {service && CAPABILITY_PRODUCT[service.id] ? <a className="v4-text-action cursor-interaction" href={withReferral(productPath(language, CAPABILITY_PRODUCT[service.id]), referralCode)}>{isThai ? 'ดูรายละเอียดบริการ' : 'Explore service details'}<ArrowUpRight size={15} aria-hidden="true" /></a> : null}
 
       <a
         href={CONTACT.LINE_URL}

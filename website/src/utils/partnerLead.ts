@@ -1,3 +1,4 @@
+import type {AcquisitionContext} from './acquisitionContext'
 export type PartnerLead = {
   shopName: string
   province: string
@@ -20,18 +21,34 @@ export type PartnerLeadSubmission = PartnerLead & {
   website: string
   referralCode: string
   acquisitionSource: 'ORGANIC' | 'BD_REFERRAL'
+  acquisitionContext?: AcquisitionContext
 }
 
 export type PartnerLeadErrors = Partial<Record<keyof PartnerLead, string>>
 
-function normalizePhone(value: string) {
-  return value.replace(/\s+/g, '').replace(/-/g, '')
+export function normalizePhone(value: string) {
+  let v = (value || '').trim()
+  if (v.startsWith('+66')) {
+    v = '0' + v.slice(3)
+  }
+  return v.replace(/[\s-]+/g, '')
 }
 
-function isValidThaiPhone(value: string) {
+export function isValidThaiPhone(value: string) {
   const v = normalizePhone(value)
   if (!/^0\d{8,9}$/.test(v)) return false
   return true
+}
+
+export function generateRequestId(): string {
+  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+    return crypto.randomUUID()
+  }
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    const r = (Math.random() * 16) | 0
+    const v = c === 'x' ? r : (r & 0x3) | 0x8
+    return v.toString(16)
+  })
 }
 
 export function validatePartnerLead(values: PartnerLead, language: 'th' | 'en' = 'th'): PartnerLeadErrors {

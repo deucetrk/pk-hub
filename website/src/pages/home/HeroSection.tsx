@@ -14,6 +14,7 @@ import {
 } from 'lucide-react'
 import { useReferralAttribution } from '@/hooks/useReferralAttribution'
 import { useLanguage } from '@/i18n/LanguageContext'
+import { CAPABILITY_PRODUCT, productPath } from '@/content/productServices'
 import { CONTACT } from '@/pages/home/constants'
 import { withReferral } from '@/utils/referralAttribution'
 
@@ -343,6 +344,9 @@ export default function HeroSection() {
         <strong>{isThai ? currentCapDef.detailTitleTh : currentCapDef.detailTitleEn}</strong>
         <span>{isThai ? currentCapDef.detailDescTh : currentCapDef.detailDescEn}</span>
       </div>
+      <a className="v4-text-action cursor-interaction" style={{ justifyContent: 'center', margin: '0 auto' }} href={productPath(language, CAPABILITY_PRODUCT[selectedCap])}>
+        {isThai ? 'สำรวจบริการนี้' : 'Explore this service'} <ArrowUpRight size={15} aria-hidden="true" />
+      </a>
     </section>
   )
 }

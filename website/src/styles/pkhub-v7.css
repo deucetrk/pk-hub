@@ -1079,3 +1079,10 @@
 #pk-home-v7 .v5-real-phones img:first-child{height:220px;width:43%;margin-right:2%}
 #pk-home-v7 .v5-real-phones img:last-child{height:236px;width:49%}
 }
+
+/* Public pages use the viewport; the 390px frame belongs to the design reference. */
+#pk-home-v7:not(.is-mobile) .v4-page{max-width:none}
+@media(max-width:1000px){
+#pk-home-v7 .v4-header nav{display:none}
+#pk-home-v7 .v4-menu{display:flex;align-items:center;justify-content:center}
+}

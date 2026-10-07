@@ -5,8 +5,11 @@ import { resolve } from 'node:path'
 const dist = resolve('dist')
 const read = (route) => readFileSync(resolve(dist, route, 'index.html'), 'utf8')
 
+const reviewSlugs = ['stock-on-demand', 'handset-wholesale', 'accessories', 'ais-sim', 'ais-rom', 'finance', 'after-sales', 'repair']
+const productSuffixes = ['/products', '/products/partner-marketing', ...reviewSlugs.map(slug => '/products/' + slug)]
+
 for (const lang of ['th', 'en']) {
-  for (const suffix of ['', '/join', '/dealer/login', '/products/partner-marketing']) {
+  for (const suffix of ['', '/join', '/dealer/login', ...productSuffixes]) {
     const route = lang + suffix
     const html = read(route)
     assert(html.includes(`<html lang="${lang}"`), `${route}: language`)
@@ -18,12 +21,32 @@ for (const lang of ['th', 'en']) {
     )
     assert(/<title>[^<]+<\/title>/.test(html), `${route}: title`)
     assert(/name="description"\s+content="[^"]+"/.test(html), `${route}: description`)
+    if (suffix === '/products' || reviewSlugs.some(slug => suffix === '/products/' + slug)) {
+      assert(html.includes('name="robots" content="noindex, follow"'), `${route}: review page stays noindex`)
+      const styleName = suffix === '/products/stock-on-demand' ? 'StockOnDemandPage-' : 'product-services-'
+      assert(html.includes(`rel="stylesheet" href="/assets/${styleName}`), `${route}: styled before hydration`)
+    }
+    if (suffix.startsWith('/products')) {
+      for (const match of html.matchAll(/<img\b[^>]*>/g)) {
+        assert(/\bwidth="/.test(match[0]) && /\bheight="/.test(match[0]), `${route}: image dimensions`)
+        const src = match[0].match(/\bsrc="([^"]+)"/)?.[1]
+        if (src?.startsWith('/')) assert(existsSync(resolve(dist, src.slice(1))), `${route}: missing asset ${src}`)
+      }
+      for (const match of html.matchAll(/href="#([^"]+)"/g)) assert(html.includes(`id="${match[1]}"`), `${route}: broken anchor ${match[1]}`)
+      for (const match of html.matchAll(/href="\/(?:th|en)\/products(?:\/[^"#?]+)?"/g)) {
+        const destination = match[0].slice(6, -1)
+        assert(existsSync(resolve(dist, destination.slice(1), 'index.html')), `${route}: broken product link ${destination}`)
+      }
+    }
+    if (suffix === '/products/stock-on-demand') {
+      assert(html.includes('ภาพอธิบายบริการ') || html.includes('Service illustration'), `${route}: inventory is illustrative`)
+    }
     for (const match of html.matchAll(
       /<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g,
     )) {
       JSON.parse(match[1])
     }
-    if (suffix === '/join' || suffix === '' || suffix === '/products/partner-marketing') {
+    if (suffix === '/join' || suffix === '' || suffix.startsWith('/products')) {
       for (const alternate of ['th', 'en']) {
         assert(
           html.includes(`hreflang="${alternate}" href="https://pkhub.co/${alternate}${suffix}"`),
@@ -55,6 +78,8 @@ for (const lang of ['th', 'en']) {
   assert(!body.includes('PK INTELLIGENCE'), `${lang}: speculative services removed`)
 }
 const sitemap = readFileSync(resolve(dist, 'sitemap.xml'), 'utf8')
+for (const slug of reviewSlugs) assert(!sitemap.includes('/products/' + slug), `Review page stays out of sitemap: ${slug}`)
+assert(!sitemap.includes('<loc>https://pkhub.co/th/products</loc>'), 'Review directory stays out of sitemap')
 const { rewrites } = JSON.parse(readFileSync('vercel.json', 'utf8'))
 for (const match of sitemap.matchAll(/<loc>https:\/\/pkhub.co\/([^<]+)<\/loc>/g)) {
   assert(
