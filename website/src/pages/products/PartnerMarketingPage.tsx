@@ -9,6 +9,9 @@ import {
   Palette,
   X,
 } from 'lucide-react'
+import { m } from 'framer-motion'
+import { useSceneMotion } from '@/hooks/useSceneMotion'
+import { ProductServiceLinks } from '@/components/pkhub-v7/ProductStoryMotion'
 import Navbar from '@/components/Navbar'
 import AnimatedNumber from '@/components/pkhub-v7/AnimatedNumber'
 import { APPROVED_METRICS } from '@/content/metrics'
@@ -41,6 +44,7 @@ const pos = (i: number) => `${(i % 3) * 50}% ${Math.floor(i / 3) * 50}%`
 
 export default function PartnerMarketingPage() {
   const { isThai, language } = useLanguage()
+  const scene = useSceneMotion()
   usePageMeta(PARTNER_MARKETING_META[language])
   const [following, setFollowing] = useState<boolean>(false)
   const [selectedPost, setSelectedPost] = useState<number | null>(null)
@@ -91,11 +95,11 @@ export default function PartnerMarketingPage() {
         {/* Backbar */}
         <div className="v6-backbar" style={{ display: 'flex' }}>
           <a
-            href={`/${language}`}
+            href={`/${language}/products`}
             className="v4-text-action cursor-interaction flex items-center gap-2"
           >
             <ArrowLeft size={16} aria-hidden="true" />
-            <span>{isThai ? 'กลับหน้าแรก' : 'Back to Home'}</span>
+            <span>{isThai ? 'สินค้าและบริการ' : 'Products & services'}</span>
           </a>
           <span className="v6-current-page">Partner Marketing</span>
         </div>
@@ -106,7 +110,7 @@ export default function PartnerMarketingPage() {
             id="v4-marketing"
             aria-labelledby="v4-marketing-title"
           >
-            <div className="v4-marketing-copy">
+            <m.div className="v4-marketing-copy" initial={false} animate={scene.reduceMotion ? {} : {y:[12,0]}} transition={{duration:0.6}}>
               <p className="v4-eyebrow">FREE PARTNER MARKETING</p>
               <h1 id="v4-marketing-title">
                 {isThai ? (
@@ -226,10 +230,10 @@ export default function PartnerMarketingPage() {
                   </span>
                 </div>
               </div>
-            </div>
+            </m.div>
 
             {/* Instagram Demo */}
-            <div className="v4-instagram" aria-label={isThai ? 'ตัวอย่างบัญชี Instagram ของร้าน' : 'Sample shop Instagram account'}>
+            <div ref={scene.ref} data-motion-phase={scene.phase} onPointerDown={scene.engage} onKeyDown={scene.engage} className={`v4-instagram ${scene.running ? 'is-motion-visible' : ''}`} aria-label={isThai ? 'ตัวอย่างบัญชี Instagram ของร้าน' : 'Sample shop Instagram account'}>
               <div className="v4-ig-bar">
                 <Camera size={16} aria-hidden="true" />
                 <strong>abc.mobile</strong>
@@ -349,8 +353,8 @@ export default function PartnerMarketingPage() {
 
               <p className="v4-ig-caption">
                 {isThai
-                  ? 'บัญชี ตัวเลข และโปรโมชั่นสมมติสำหรับตัวอย่างการนำสื่อไปใช้'
-                  : 'Sample account, figures, and promotions for demonstration of media deployment'}
+                  ? 'ตัวอย่างร้านพาร์ทเนอร์ใช้สื่อกับลูกค้าของร้าน · บัญชี สถิติในบัญชี และโปรโมชั่นเป็นตัวอย่าง'
+                  : 'A Partner shop using media for its own customers. Account statistics and promotions here are illustrative.'}
               </p>
             </div>
 
@@ -403,6 +407,7 @@ export default function PartnerMarketingPage() {
             ) : null}
           </section>
 
+          <section className="pstory-related-section"><p className="v4-eyebrow">MORE POSSIBILITIES, ONE PARTNER</p><h2>{isThai ? 'สื่อพร้อมแล้ว สินค้าและบริการก็ต่อยอดได้' : 'Ready to promote. More to offer.'}</h2><ProductServiceLinks ids={['handset-wholesale','accessories']} /></section>
           <PartnerStartSection />
         </main>
 

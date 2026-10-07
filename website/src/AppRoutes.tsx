@@ -31,12 +31,26 @@ const DeferredPartnerMarketing = import.meta.env.SSR
   ? ServerPagePlaceholder
   : lazy(() => import('@/pages/products/PartnerMarketingPage'))
 
+const DeferredStockOnDemand = import.meta.env.SSR
+  ? ServerPagePlaceholder
+  : lazy(() => import('@/pages/products/StockOnDemandPage'))
+
+const DeferredServiceProduct = import.meta.env.SSR
+  ? ServerPagePlaceholder
+  : lazy(() => import('@/pages/products/ServiceProductPage'))
+const DeferredProductsIndex = import.meta.env.SSR
+  ? ServerPagePlaceholder
+  : lazy(() => import('@/pages/products/ProductsIndexPage'))
+
 export type RoutePages = {
   HomePage?: ComponentType
   JoinPage?: ComponentType
   DealerLoginPage?: ComponentType
   BlogIndexPage?: ComponentType
   BlogArticlePage?: ComponentType
+  ServiceProductPage?: ComponentType
+  ProductsIndexPage?: ComponentType
+  StockOnDemandPage?: ComponentType
   PartnerMarketingPage?: ComponentType
 }
 
@@ -57,6 +71,9 @@ export default function AppRoutes({
   BlogIndexPage = DeferredBlogIndex,
   BlogArticlePage = DeferredBlogArticle,
   PartnerMarketingPage = DeferredPartnerMarketing,
+  StockOnDemandPage = DeferredStockOnDemand,
+  ServiceProductPage = DeferredServiceProduct,
+  ProductsIndexPage = DeferredProductsIndex,
 }: RoutePages = {}) {
   return (
     <LanguageProvider>
@@ -68,8 +85,14 @@ export default function AppRoutes({
         <Route path="/en/join" element={<RouteView Page={JoinPage} english />} />
         <Route path="/th/dealer/login" element={<RouteView Page={DealerLoginPage} />} />
         <Route path="/en/dealer/login" element={<RouteView Page={DealerLoginPage} english />} />
+        <Route path="/th/products/stock-on-demand" element={<RouteView Page={StockOnDemandPage} />} />
+        <Route path="/en/products/stock-on-demand" element={<RouteView Page={StockOnDemandPage} english />} />
         <Route path="/th/products/partner-marketing" element={<RouteView Page={PartnerMarketingPage} />} />
         <Route path="/en/products/partner-marketing" element={<RouteView Page={PartnerMarketingPage} english />} />
+        <Route path="/th/products" element={<RouteView Page={ProductsIndexPage} />} />
+        <Route path="/en/products" element={<RouteView Page={ProductsIndexPage} english />} />
+        <Route path="/th/products/:slug" element={<RouteView Page={ServiceProductPage} />} />
+        <Route path="/en/products/:slug" element={<RouteView Page={ServiceProductPage} english />} />
         <Route path="/th/blog" element={<RouteView Page={BlogIndexPage} />} />
         <Route path="/th/blog/page/:page" element={<RouteView Page={BlogIndexPage} />} />
         <Route path="/th/blog/:slug" element={<RouteView Page={BlogArticlePage} />} />

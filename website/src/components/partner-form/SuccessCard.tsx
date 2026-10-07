@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Send } from 'lucide-react'
 
+import type { PartnerLeadReceipt } from '@/services/partnerLeadSubmission'
 import type { PartnerLead } from '@/utils/partnerLead'
 import { useLanguage } from '@/i18n/LanguageContext'
 import { CONTACT } from '@/pages/home/constants'
@@ -9,10 +10,12 @@ export default function SuccessCard({
   values,
   onReset,
   isApplication = false,
+  receipt,
 }: {
   values: PartnerLead
   onReset: () => void
   isApplication?: boolean
+  receipt?: PartnerLeadReceipt | null
 }) {
   const { isThai } = useLanguage()
   const headingRef = useRef<HTMLHeadingElement>(null)
@@ -37,17 +40,18 @@ export default function SuccessCard({
       >
         {isApplication
           ? isThai
-            ? 'ส่งใบสมัครจากอุปกรณ์นี้แล้ว'
-            : 'The application was sent from this device'
+            ? receipt ? 'บันทึกใบสมัครแล้ว' : 'ยังยืนยันการรับใบสมัครไม่ได้'
+            : receipt ? 'Your application is recorded' : 'Application receipt is unverified'
           : isThai
-            ? 'ส่งคำขอจากอุปกรณ์นี้แล้ว'
-            : 'The request was sent from this device'}
+            ? receipt ? 'บันทึกข้อมูลร้านแล้ว' : 'ยังยืนยันการรับข้อมูลไม่ได้'
+            : receipt ? 'Your enquiry is recorded' : 'Enquiry receipt is unverified'}
       </h3>
       <p className="mt-5 text-base leading-8 text-zinc-600">
         {isThai
-          ? 'ส่งข้อมูลจากเบราว์เซอร์แล้ว แต่หน้านี้ตรวจสอบไม่ได้ว่าปลายทางบันทึกข้อมูลสำเร็จ หากต้องการยืนยัน ให้ทัก LINE พร้อมชื่อร้าน การสมัครยังไม่เปิดสิทธิ์ค้าส่งทันที'
-          : 'Your browser sent the request, but this page cannot confirm that it was recorded. To check, message PK on LINE with your store name. Applying does not unlock wholesale access immediately.'}
+          ? receipt ? 'ระบบบันทึกข้อมูลแล้ว ทีม PK จะตรวจสอบและติดต่อกลับ การสมัครยังไม่เปิดสิทธิ์ค้าส่งทันที' : 'ยังยืนยันการรับข้อมูลไม่ได้ กรุณาคุยกับทีม PK ก่อนส่งซ้ำ'
+          : receipt ? 'Your details are recorded for PK to review and contact you. Applying does not unlock wholesale access immediately.' : 'Receipt is unverified. Please contact PK before resending.'}
       </p>
+      {receipt ? <p className="mt-4 text-xs leading-6 text-zinc-600" data-receipt-id={receipt.requestId}>{isThai ? 'เลขอ้างอิง' : 'Reference'}: <span className="font-mono break-all">{receipt.requestId}</span>{receipt.duplicate ? <span className="block">{isThai ? 'พบคำขอเดิมที่บันทึกแล้ว ไม่มีการสร้างใบสมัครซ้ำ' : 'Existing recorded request; no duplicate application was created.'}</span> : null}</p> : null}
       <dl className="my-7 grid grid-cols-1 gap-x-8 gap-y-5 border-y border-zinc-200 py-6 sm:grid-cols-2">
         {[
           [isThai ? 'ชื่อร้านค้า' : 'Store', values.shopName],

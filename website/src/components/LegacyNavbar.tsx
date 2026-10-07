@@ -1,3 +1,4 @@
+import ProductNavigation from './navigation/ProductNavigation'
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import { Menu, Store, X } from "lucide-react";
@@ -32,7 +33,7 @@ export default function LegacyNavbar() {
     () =>
       isThai
         ? [
-            { href: `${homePath}#v4-brands`, label: "สินค้าและบริการ" },
+            { href: `${homePath}/products`, label: "สินค้าและบริการ" },
             { href: `${homePath}#v4-stock`, label: "โอกาสของร้านคุณ" },
             { href: `${homePath}#v4-start`, label: "ทีมช่วยดูแล" },
             ...(publishedBlogSlugs.length
@@ -40,7 +41,7 @@ export default function LegacyNavbar() {
               : []),
           ]
         : [
-            { href: `${homePath}#v4-brands`, label: "Assortment" },
+            { href: `${homePath}/products`, label: "Products & services" },
             { href: `${homePath}#v4-stock`, label: "Stock on Demand" },
             { href: `${homePath}#v4-start`, label: "Partner Team" },
           ],
@@ -69,7 +70,7 @@ export default function LegacyNavbar() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-zinc-300 bg-[var(--pk-white)]">
+    <header className="pk-glass-header sticky top-0 z-50 border-b border-zinc-300 bg-[var(--pk-white)]">
       <Container className="py-3">
         <div className="flex items-center justify-between gap-4 lg:gap-6">
           <a
@@ -84,7 +85,7 @@ export default function LegacyNavbar() {
             className="hidden items-center gap-5 xl:gap-7 xl:flex"
             aria-label={isThai ? "เมนู" : "Navigation"}
           >
-            {primaryItems.map((it) => (
+            {primaryItems.map((it, index) => index === 0 ? <ProductNavigation key={it.href} /> : (
               <a
                 key={it.href}
                 href={it.href}
@@ -144,7 +145,7 @@ export default function LegacyNavbar() {
               <div className="px-4 py-2 sm:hidden">
                 <LanguageSwitch onChange={closeMenuAndRestoreFocus} />
               </div>
-              {items.map((it) => (
+              {items.map((it, index) => index === 0 ? <ProductNavigation key={it.href} mobile onNavigate={() => setOpen(false)} /> : (
                 <a
                   key={it.href}
                   href={it.href}

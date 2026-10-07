@@ -1,12 +1,13 @@
+import {captureAcquisitionContext} from '@/utils/acquisitionContext'
 import { useEffect, useMemo, useRef, useState } from 'react'
 
 import { ChevronDown, Loader2, MessageCircle } from 'lucide-react'
 
 import { useReferralAttribution } from '@/hooks/useReferralAttribution'
 import { cn } from '@/lib/utils'
-import { hasErrors, type PartnerLead, validatePartnerLead } from '@/utils/partnerLead'
+import { generateRequestId, hasErrors, normalizePhone, type PartnerLead, validatePartnerLead } from '@/utils/partnerLead'
 import { useLanguage } from '@/i18n/LanguageContext'
-import { submitPartnerLead } from '@/services/partnerLeadSubmission'
+import { submitPartnerLead, type PartnerLeadReceipt } from '@/services/partnerLeadSubmission'
 import { CONTACT } from '@/pages/home/constants'
 
 import Button from './Button'
@@ -40,7 +41,7 @@ type PartnerFormProps = {
 export default function PartnerForm({ className, isApplication = false }: PartnerFormProps) {
   const { isThai, language } = useLanguage()
   const referralCode = useReferralAttribution()
-  const [requestId, setRequestId] = useState(() => crypto.randomUUID())
+  const [requestId, setRequestId] = useState(() => generateRequestId())
   const [values, setValues] = useState<PartnerLead>(EMPTY_LEAD)
   const [touched, setTouched] = useState<Record<string, boolean>>({})
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle')
@@ -49,6 +50,7 @@ export default function PartnerForm({ className, isApplication = false }: Partne
   const submitErrorRef = useRef<HTMLDivElement>(null)
   const submittingRef = useRef(false)
   const [submittedValues, setSubmittedValues] = useState<PartnerLead | null>(null)
+  const [receipt, setReceipt] = useState<PartnerLeadReceipt | null>(null)
 
   const errors = useMemo(() => validatePartnerLead(values, language), [language, values])
 
@@ -102,13 +104,13 @@ export default function PartnerForm({ className, isApplication = false }: Partne
       return
     }
 
-    // Capture the displayed request before dispatch; an opaque transport is not a receipt.
+    // Capture the displayed request; success requires its matching persisted receipt.
     const submitted = { ...values, interestedBrands: [...values.interestedBrands] }
     submittingRef.current = true
     setSubmittedValues(submitted)
     try {
       setStatus('submitting')
-      await submitPartnerLead({
+      const persisted = await submitPartnerLead({
         ...submitted,
         language,
         sourcePage: window.location.href,
@@ -116,7 +118,9 @@ export default function PartnerForm({ className, isApplication = false }: Partne
         website,
         referralCode: referralCode ?? '',
         acquisitionSource: referralCode ? 'BD_REFERRAL' : 'ORGANIC',
+        acquisitionContext: captureAcquisitionContext(window.location.href, window.sessionStorage),
       })
+      setReceipt(persisted)
       setStatus('success')
     } catch {
       setStatus('idle')
@@ -134,14 +138,16 @@ export default function PartnerForm({ className, isApplication = false }: Partne
     return (
       <SuccessCard
         values={submittedValues ?? values}
+        receipt={receipt}
         isApplication={isApplication}
         onReset={() => {
           setStatus('idle')
           setTouched({})
           setSubmitError('')
           setSubmittedValues(null)
+          setReceipt(null)
           setOptionalOpen(false)
-          setRequestId(crypto.randomUUID())
+          setRequestId(generateRequestId())
           setValues(EMPTY_LEAD)
           requestAnimationFrame(() => document.getElementById('contactName')?.focus())
         }}
@@ -225,7 +231,12 @@ export default function PartnerForm({ className, isApplication = false }: Partne
               label={isThai ? 'เบอร์โทรที่ให้ทีมทักกลับ' : 'Phone number for our team to call back'}
               value={values.phone}
               onChange={(v) => setField('phone', v)}
-              onBlur={() => setTouched((t) => ({ ...t, phone: true }))}
+              onBlur={() => {
+                setTouched((t) => ({ ...t, phone: true }))
+                if (values.phone.trim()) {
+                  setField('phone', normalizePhone(values.phone))
+                }
+              }}
               placeholder="08x-xxx-xxxx"
               inputMode="tel"
               error={showError('phone') ? errors.phone : undefined}
@@ -418,6 +429,7 @@ export default function PartnerForm({ className, isApplication = false }: Partne
         <ConsentField
           checked={values.consent}
           isThai={isThai}
+          isApplication={isApplication}
           error={showError('consent') ? errors.consent : undefined}
           onChange={(next) => {
             setTouched((t) => ({ ...t, consent: true }))

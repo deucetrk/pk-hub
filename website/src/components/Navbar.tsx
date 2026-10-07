@@ -1,3 +1,6 @@
+import {useAcquisitionContext} from '@/hooks/useAcquisitionContext'
+import ProductNavigation from './navigation/ProductNavigation'
+import { isProductRoute } from '@/content/productServices'
 import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Menu, Store, X } from "lucide-react";
 import { useLocation } from "react-router-dom";
@@ -43,7 +46,7 @@ function V7Navbar() {
 
   return (
     <>
-      <header className="v4-header">
+      <header className="v4-header pk-glass-header">
         <a
           href={isHome ? "#top" : homePath}
           className="flex shrink-0 items-center cursor-interaction"
@@ -61,9 +64,7 @@ function V7Navbar() {
         </a>
 
         <nav aria-label={isThai ? "เมนู" : "Navigation"}>
-          <a href={sectionHref("#v4-brands")} className="cursor-interaction">
-            {isThai ? "สินค้าและบริการ" : "Assortment"}
-          </a>
+          <ProductNavigation />
           <a href={sectionHref("#v4-stock")} className="cursor-interaction">
             {isThai ? "โอกาสของร้านคุณ" : "Stock on Demand"}
           </a>
@@ -114,13 +115,7 @@ function V7Navbar() {
           <div className="py-2 mb-2 border-b border-zinc-200/80 sm:hidden">
             <LanguageSwitch onChange={closeMenuAndRestoreFocus} />
           </div>
-          <a
-            href={sectionHref("#v4-brands")}
-            className="cursor-interaction"
-            onClick={() => setOpen(false)}
-          >
-            {isThai ? "สินค้าและบริการ" : "Assortment"}
-          </a>
+          <ProductNavigation mobile onNavigate={() => setOpen(false)} />
           <a
             href={sectionHref("#v4-stock")}
             className="cursor-interaction"
@@ -169,8 +164,9 @@ function V7Navbar() {
 }
 
 export default function Navbar() {
+  useAcquisitionContext();
   const { pathname } = useLocation();
   const isV7Page = pathname === "/" || /^\/(th|en)\/?$/.test(pathname) ||
-    /^\/(th|en)\/products\/partner-marketing\/?$/.test(pathname);
+    isProductRoute(pathname);
   return isV7Page ? <V7Navbar /> : <LegacyNavbar />;
 }

@@ -9,7 +9,8 @@
     "seo:validate": "node scripts/validate-home-seo.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
-    "check": "tsc -b --noEmit"
+    "check": "tsc -b --noEmit",
+    "test": "node --experimental-strip-types scripts/test-partner-lead.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

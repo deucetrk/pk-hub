@@ -1,9 +1,11 @@
 import { useEffect } from 'react'
+import { PRODUCT_SERVICES, type ProductId } from '@/content/productServices'
 
 export const SITE_URL = 'https://pkhub.co'
 
 export type PageMeta = {
   title: string
+  robots?: string
   description: string
   canonical: string
   ogType?: 'website' | 'article'
@@ -88,6 +90,21 @@ export const DEALER_LOGIN_META = {
   },
 } satisfies Record<'th' | 'en', PageMeta>
 
+export const STOCK_ON_DEMAND_META = {
+  th: {
+    title: 'Stock on Demand เพิ่มทางเลือกให้ร้านมือถือ | PK HUB',
+    description: 'ให้สต็อก PK เป็นส่วนต่อของร้าน เช็กรุ่น สี ความจุ ราคา และรอบส่งกับทีม ก่อนเสนอทางเลือกให้ลูกค้า โดยไม่ต้องสต็อกทุกรุ่น',
+    canonical: `${SITE_URL}/th/products/stock-on-demand`,
+    ogType: 'website', locale: 'th_TH', robots: 'noindex, follow',
+  },
+  en: {
+    title: 'Stock on Demand | More Options for Your Shop | PK HUB',
+    description: 'Extend your shop’s assortment with PK. Confirm models, stock, prices and dispatch with our team before offering customers more options.',
+    canonical: `${SITE_URL}/en/products/stock-on-demand`,
+    ogType: 'website', locale: 'en_US', robots: 'noindex, follow',
+  },
+} satisfies Record<'th' | 'en', PageMeta>
+
 export const PARTNER_MARKETING_META = {
   th: {
     title: 'Partner Marketing สื่อการตลาดฟรีสำหรับพาร์ทเนอร์ | PK HUB',
@@ -112,6 +129,28 @@ export const PARTNER_MARKETING_META = {
 } satisfies Record<'th' | 'en', PageMeta>
 
 
+export function getProductMeta(id: ProductId, language: 'th' | 'en'): PageMeta {
+  if (id === 'stock-on-demand') return STOCK_ON_DEMAND_META[language]
+  if (id === 'partner-marketing') return PARTNER_MARKETING_META[language]
+  const service = PRODUCT_SERVICES.find(p => p.id === id)!
+  return {
+    title: `${language === 'th' ? service.title : service.titleEn} | PK HUB`,
+    description: language === 'th' ? service.description : service.descriptionEn,
+    canonical: `${SITE_URL}/${language}/products/${id}`,
+    ogType: 'website', locale: language === 'th' ? 'th_TH' : 'en_US',
+    robots: 'noindex, follow',
+  }
+}
+
+export function getProductsIndexMeta(language: 'th' | 'en'): PageMeta {
+  return {
+    title: language === 'th' ? 'สินค้าและบริการสำหรับร้านค้าพาร์ทเนอร์ | PK HUB' : 'Products & Services for Your Shop | PK HUB',
+    description: language === 'th' ? 'สำรวจสินค้าและบริการ PK HUB ตั้งแต่มือถือ อุปกรณ์เสริม Stock on Demand ซิม เติมเงิน S Leasing Marketing และการดูแลหลังการขาย' : 'Explore PK HUB smartphones, accessories, Stock on Demand, SIMs, top-up, S Leasing, Marketing and after-sales support.',
+    canonical: `${SITE_URL}/${language}/products`,
+    ogType: 'website', locale: language === 'th' ? 'th_TH' : 'en_US', robots: 'noindex, follow',
+  }
+}
+
 export function getBlogIndexMeta(page = 1): PageMeta {
   if (page <= 1) return BLOG_INDEX_META
   return {
@@ -123,6 +162,15 @@ export function getBlogIndexMeta(page = 1): PageMeta {
 }
 
 export function applyPageMeta(meta: PageMeta) {
+  const robots = document.querySelector('meta[name="robots"]')
+  if (meta.robots) {
+    const tag = robots ?? document.createElement('meta')
+    tag.setAttribute('name', 'robots')
+    tag.setAttribute('content', meta.robots)
+    if (!robots) document.head.appendChild(tag)
+  } else {
+    robots?.remove()
+  }
   document.title = meta.title
   document.querySelector('meta[name="description"]')?.setAttribute('content', meta.description)
   document.querySelector('link[rel="canonical"]')?.setAttribute('href', meta.canonical)

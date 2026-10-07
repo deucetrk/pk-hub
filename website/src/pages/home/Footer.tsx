@@ -1,3 +1,4 @@
+import { isProductRoute } from '@/content/productServices'
 import { useLocation } from 'react-router-dom'
 import LegacyFooter from './LegacyFooter'
 import { useLanguage } from '@/i18n/LanguageContext'
@@ -33,6 +34,6 @@ function V7Footer() {
 export default function Footer() {
   const { pathname } = useLocation()
   const isV7Page = pathname === '/' || /^\/(th|en)\/?$/.test(pathname) ||
-    /^\/(th|en)\/products\/partner-marketing\/?$/.test(pathname)
+    isProductRoute(pathname)
   return isV7Page ? <V7Footer /> : <LegacyFooter />
 }

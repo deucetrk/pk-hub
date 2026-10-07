@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
 import { LazyMotion, domAnimation } from 'framer-motion'
 import App from './App'
+import { SERVICE_PRODUCT_IDS } from '@/content/productServices'
 import type { RoutePages } from './AppRoutes'
 import NotFound from '@/pages/NotFound'
 import HydrationReady from '@/components/HydrationReady'
@@ -38,7 +39,7 @@ function finishBootstrap() {
 }
 
 async function mount() {
-  const path = window.location.pathname
+  const path = window.location.pathname.replace(/\/+$/, '') || '/'
   const pages: RoutePages = {}
 
   // Preload the matched journal route before hydration. The prerendered HTML
@@ -52,8 +53,14 @@ async function mount() {
     pages.JoinPage = (await import('@/pages/Join')).default
   } else if (path === '/th/dealer/login' || path === '/en/dealer/login') {
     pages.DealerLoginPage = (await import('@/pages/DealerLogin')).default
+  } else if (path === '/th/products/stock-on-demand' || path === '/en/products/stock-on-demand') {
+    pages.StockOnDemandPage = (await import('@/pages/products/StockOnDemandPage')).default
   } else if (path === '/th/products/partner-marketing' || path === '/en/products/partner-marketing') {
     pages.PartnerMarketingPage = (await import('@/pages/products/PartnerMarketingPage')).default
+  } else if (/^\/(th|en)\/products\/?$/.test(path)) {
+    pages.ProductsIndexPage = (await import('@/pages/products/ProductsIndexPage')).default
+  } else if (SERVICE_PRODUCT_IDS.some(id => path === `/th/products/${id}` || path === `/en/products/${id}`)) {
+    pages.ServiceProductPage = (await import('@/pages/products/ServiceProductPage')).default
   } else if (/^\/th\/blog(?:\/page\/[^/]+)?\/?$/.test(path)) {
     pages.BlogIndexPage = (await import('@/pages/blog/BlogIndex')).default
   } else if (path.startsWith('/th/blog/')) {

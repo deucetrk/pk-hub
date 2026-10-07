@@ -5,11 +5,13 @@ export default function ConsentField({
   onChange,
   error,
   isThai = true,
+  isApplication = false,
 }: {
   checked: boolean;
   onChange: (checked: boolean) => void;
   error?: string;
   isThai?: boolean;
+  isApplication?: boolean;
 }) {
   return (
     <label
@@ -30,14 +32,22 @@ export default function ConsentField({
         />
         <div>
           <div className="text-sm font-semibold leading-relaxed text-zinc-800">
-            {isThai
-              ? "ยินยอมให้ทีม PK HUB ทักกลับเพื่อเช็กราคาและสต็อก"
-              : "I agree that PK HUB may reply with prices and stock availability"}
+            {isApplication
+              ? isThai
+                ? "ยินยอมให้ทีม PK HUB ติดต่อกลับเกี่ยวกับใบสมัครร้านค้าและสิทธิ์ค้าส่ง"
+                : "I agree that PK HUB may contact me regarding the store application and wholesale access"
+              : isThai
+                ? "ยินยอมให้ทีม PK HUB ทักกลับเพื่อเช็กราคาและสต็อก"
+                : "I agree that PK HUB may reply with prices and stock availability"}
           </div>
           <div className="mt-0.5 text-xs font-medium text-zinc-500">
-            {isThai
-              ? "ใช้สำหรับคุยเรื่องราคาส่งและออเดอร์ร้านค้าเท่านั้น"
-              : "Used only for wholesale pricing and store order discussions."}
+            {isApplication
+              ? isThai
+                ? "ใช้สำหรับคุยเรื่องการสมัครร้านค้าและการค้าส่งเท่านั้น"
+                : "Used only for retailer application and wholesale discussions."
+              : isThai
+                ? "ใช้สำหรับคุยเรื่องราคาส่งและออเดอร์ร้านค้าเท่านั้น"
+                : "Used only for wholesale pricing and store order discussions."}
           </div>
         </div>
       </div>
