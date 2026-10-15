@@ -3,12 +3,13 @@ import { useReferralAttribution } from '@/hooks/useReferralAttribution'
 import { useLanguage } from '@/i18n/LanguageContext'
 import { CONTACT } from '@/pages/home/constants'
 import { withReferral } from '@/utils/referralAttribution'
+import { dealerLoginUrl } from '@/lib/dealerPortal'
 
 export default function PartnerStartSection() {
   const { isThai, language } = useLanguage()
   const referralCode = useReferralAttribution()
   const joinPath = withReferral(`/${language}/join`, referralCode)
-  const dealerLoginPath = withReferral(`/${language}/dealer/login`, referralCode)
+  const dealerLoginPath = dealerLoginUrl(referralCode)
 
   return (
     <section className="v4-start" id="v4-start" aria-labelledby="v4-start-title">

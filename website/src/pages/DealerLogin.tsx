@@ -69,8 +69,8 @@ export default function DealerLogin() {
               </h1>
               <p className="mt-5 max-w-lg text-base leading-7 text-zinc-600 sm:text-lg sm:leading-8">
                 {isThai
-                  ? "ใช้บัญชีร้านค้าที่ทีม PK อนุมัติแล้ว เพื่อดูราคาของร้าน ตรวจสอบสินค้า และติดตามคำสั่งซื้อ"
-                  : "Use the store account approved by PK to view your prices, check products, and follow orders."}
+                  ? "ใช้บัญชีร้านค้าที่ทีม PK อนุมัติแล้ว เพื่อส่งคำขอซื้อ ตรวจข้อเสนอจากฝ่ายขาย และติดตามคำสั่งซื้อ"
+                  : "Use your approved store account to request products, review sales offers, and track orders."}
               </p>
 
               <a

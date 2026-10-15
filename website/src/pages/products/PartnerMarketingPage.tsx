@@ -50,6 +50,7 @@ export default function PartnerMarketingPage() {
   const [selectedPost, setSelectedPost] = useState<number | null>(null)
   const lastTriggerRef = useRef<HTMLElement | null>(null)
   const postCloseButtonRef = useRef<HTMLButtonElement>(null)
+  const postDialogRef = useRef<HTMLDialogElement>(null)
 
   const openPost = (index: number, triggerEl?: HTMLElement) => {
     lastTriggerRef.current = triggerEl ?? (document.activeElement as HTMLElement) ?? null
@@ -65,6 +66,9 @@ export default function PartnerMarketingPage() {
 
   useEffect(() => {
     if (selectedPost === null) return
+    postDialogRef.current?.showModal()
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
 
     requestAnimationFrame(() => {
       postCloseButtonRef.current?.focus()
@@ -80,7 +84,10 @@ export default function PartnerMarketingPage() {
       }
     }
     window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = previousOverflow
+    }
   }, [selectedPost])
 
   return (
@@ -286,7 +293,7 @@ export default function PartnerMarketingPage() {
                   aria-pressed={following}
                   onClick={() => setFollowing(!following)}
                 >
-                  {following ? (isThai ? 'กำลังติดตาม' : 'Following') : (isThai ? 'ติดตาม' : 'Follow')}
+                  {following ? (isThai ? 'กำลังติดตาม (ตัวอย่าง)' : 'Following (demo)') : (isThai ? 'ติดตาม (ตัวอย่าง)' : 'Follow (demo)')}
                 </button>
                 <a
                   className="v4-ig-message cursor-interaction inline-flex items-center justify-center text-center no-underline"
@@ -294,7 +301,7 @@ export default function PartnerMarketingPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {isThai ? 'ส่งข้อความ' : 'Message'}
+                  {isThai ? 'คุยกับทีม PK' : 'Contact PK'}
                 </a>
               </div>
 
@@ -360,11 +367,13 @@ export default function PartnerMarketingPage() {
 
             {/* Post Detail Modal Dialog */}
             {selectedPost !== null ? (
-              <div
+              <dialog
+                ref={postDialogRef}
                 className="v4-post-detail"
                 role="dialog"
                 aria-modal="true"
                 aria-label={isThai ? 'ตัวอย่างแคมเปญ' : 'Campaign preview'}
+                onCancel={(event) => { event.preventDefault(); closePost() }}
                 onClick={(e) => {
                   if (e.target === e.currentTarget) closePost()
                 }}
@@ -403,7 +412,7 @@ export default function PartnerMarketingPage() {
                       : 'Sample promotional graphic · Customize text and conditions before use'}
                   </p>
                 </div>
-              </div>
+              </dialog>
             ) : null}
           </section>
 

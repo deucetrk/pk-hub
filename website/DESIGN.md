@@ -2,6 +2,11 @@
 
 Status: canonical public-site design direction; V7 Home and Partner Marketing approved 2026-10-06
 
+Current local batch: [2026-10-15 journey refinement](../PUBLIC-UX-20261015.md) preserves V7,
+adds direct Dealer entry, clearer required form fields and viewport-safe marketing previews.
+Desktop/mobile evidence is local; a subsequent owner instruction authorizes this exact batch's
+GitHub production release. See the same record for release verification and remaining gaps.
+
 Current release packet: [085](../PUBLIC-DESIGN-085.md) records all agreed active ecosystem design
 locally complete and owner notified2026-10-04. Public runtimeb4a93c3 and its260-case acceptance
 are unchanged. Hosted promotion and protected/provider/consent/business acceptance remain open.

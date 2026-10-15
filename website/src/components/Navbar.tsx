@@ -1,4 +1,5 @@
 import {useAcquisitionContext} from '@/hooks/useAcquisitionContext'
+import { dealerLoginUrl } from '@/lib/dealerPortal'
 import ProductNavigation from './navigation/ProductNavigation'
 import { isProductRoute } from '@/content/productServices'
 import { useEffect, useRef, useState } from "react";
@@ -26,7 +27,7 @@ function V7Navbar() {
     location.pathname === '';
   const sectionHref = (hash: string) => (isHome ? hash : `${homePath}${hash}`);
   const joinPath = withReferral(`/${language}/join`, referralCode);
-  const dealerLoginPath = withReferral(`/${language}/dealer/login`, referralCode);
+  const dealerLoginPath = dealerLoginUrl(referralCode);
 
   function closeMenuAndRestoreFocus() {
     setOpen(false);
@@ -79,6 +80,9 @@ function V7Navbar() {
         </nav>
 
         <div className="flex items-center gap-4">
+          <a href={dealerLoginPath} className="hidden min-h-11 items-center text-sm font-medium xl:inline-flex">
+            {isThai ? 'เข้าสู่ระบบร้านค้า' : 'Dealer login'}
+          </a>
           <div className="hidden sm:block">
             <LanguageSwitch />
           </div>
