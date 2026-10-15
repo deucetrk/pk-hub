@@ -9,6 +9,8 @@ export default function TextField({
   placeholder,
   inputMode,
   type = "text",
+  required = false,
+  autoComplete,
   error,
 }: {
   id: string;
@@ -19,12 +21,15 @@ export default function TextField({
   placeholder?: string;
   inputMode?: React.InputHTMLAttributes<HTMLInputElement>["inputMode"];
   type?: React.InputHTMLAttributes<HTMLInputElement>["type"];
+  required?: boolean;
+  autoComplete?: React.InputHTMLAttributes<HTMLInputElement>["autoComplete"];
   error?: string;
 }) {
   return (
     <div className="grid min-w-0 gap-2">
       <label htmlFor={id} className="text-sm font-semibold text-zinc-700">
         {label}
+        {required ? <span className="ml-1 text-red-700" aria-hidden="true">*</span> : null}
       </label>
       <input
         id={id}
@@ -34,6 +39,9 @@ export default function TextField({
         placeholder={placeholder}
         inputMode={inputMode}
         type={type}
+        required={required}
+        aria-required={required || undefined}
+        autoComplete={autoComplete}
         aria-invalid={Boolean(error)}
         aria-describedby={error ? `${id}-error` : undefined}
         className={cn(

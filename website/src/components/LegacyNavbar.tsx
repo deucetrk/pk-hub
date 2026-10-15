@@ -1,4 +1,5 @@
 import ProductNavigation from './navigation/ProductNavigation'
+import { dealerLoginUrl } from '@/lib/dealerPortal'
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import { Menu, Store, X } from "lucide-react";
@@ -24,10 +25,7 @@ export default function LegacyNavbar() {
   const referralCode = useReferralAttribution();
   const homePath = `/${language}`;
   const joinPath = withReferral(`/${language}/join`, referralCode);
-  const dealerLoginPath = withReferral(
-    `/${language}/dealer/login`,
-    referralCode,
-  );
+  const dealerLoginPath = dealerLoginUrl(referralCode);
 
   const items = useMemo<NavItem[]>(
     () =>

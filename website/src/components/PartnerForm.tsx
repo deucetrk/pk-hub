@@ -157,6 +157,7 @@ export default function PartnerForm({ className, isApplication = false }: Partne
 
   return (
     <form
+      noValidate
       onSubmit={onSubmit}
       aria-busy={status === 'submitting'}
       className={cn(
@@ -170,6 +171,7 @@ export default function PartnerForm({ className, isApplication = false }: Partne
         <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
+      <p className="text-sm text-zinc-600">{isThai ? '* ข้อมูลจำเป็นสำหรับให้ทีมติดต่อกลับ' : '* Required so our team can contact you'}</p>
       <fieldset disabled={status === 'submitting'} className="m-0 grid min-w-0 gap-5 border-0 p-0">
         <legend className="sr-only">
           {isApplication
@@ -192,6 +194,8 @@ export default function PartnerForm({ className, isApplication = false }: Partne
           <div className={cn('grid min-w-0 gap-5', isApplication && 'sm:grid-cols-2')}>
             <TextField
               id="contactName"
+              required
+              autoComplete="name"
               label={isThai ? 'ชื่อผู้ติดต่อ' : 'Contact name'}
               value={values.contactName}
               onChange={(v) => setField('contactName', v)}
@@ -203,6 +207,8 @@ export default function PartnerForm({ className, isApplication = false }: Partne
             <div className={isApplication ? 'contents' : 'grid grid-cols-1 gap-5 sm:grid-cols-2'}>
               <TextField
                 id="shopName"
+                required
+                autoComplete="organization"
                 label={isThai ? 'ชื่อร้าน / ชื่อเพจ' : 'Store or page name'}
                 value={values.shopName}
                 onChange={(v) => setField('shopName', v)}
@@ -217,6 +223,8 @@ export default function PartnerForm({ className, isApplication = false }: Partne
 
               <TextField
                 id="province"
+                required
+                autoComplete="address-level1"
                 label={isThai ? 'จังหวัด' : 'Province'}
                 value={values.province}
                 onChange={(v) => setField('province', v)}
@@ -228,6 +236,9 @@ export default function PartnerForm({ className, isApplication = false }: Partne
 
             <TextField
               id="phone"
+              required
+              type="tel"
+              autoComplete="tel"
               label={isThai ? 'เบอร์โทรที่ให้ทีมทักกลับ' : 'Phone number for our team to call back'}
               value={values.phone}
               onChange={(v) => setField('phone', v)}
@@ -257,8 +268,8 @@ export default function PartnerForm({ className, isApplication = false }: Partne
             options={BRAND_OPTIONS}
             label={
               isThai
-                ? 'แบรนด์ที่สนใจ (แตะเลือกได้หลายแบรนด์)'
-                : 'Brands of interest (tap to select)'
+                ? 'แบรนด์ที่สนใจ * (เลือกอย่างน้อยหนึ่งแบรนด์)'
+                : 'Brands of interest * (select at least one)'
             }
             selected={values.interestedBrands}
             error={touched.interestedBrands ? errors.interestedBrands : undefined}
@@ -309,6 +320,8 @@ export default function PartnerForm({ className, isApplication = false }: Partne
                 />
                 <TextField
                   id="email"
+                  type="email"
+                  autoComplete="email"
                   label={isThai ? 'อีเมล (ไม่บังคับ)' : 'Email (optional)'}
                   value={values.email}
                   onChange={(v) => setField('email', v)}

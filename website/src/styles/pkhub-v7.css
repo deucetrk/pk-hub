@@ -147,8 +147,10 @@
 #pk-home-v7 .v4-post-title{position:absolute;top:11px;left:11px;right:9px;font-family:Anuphan,sans-serif;font-size:15px;font-weight:500;line-height:1.3;text-align:left;color:#283227;z-index:1}
 #pk-home-v7 .v4-post-stamp{position:absolute;right:6px;bottom:6px;background:#283323dd;color:#fff;padding:3px 5px;border-radius:3px;font-family:Arial,sans-serif;font-size:11px;line-height:1.2;z-index:1}
 #pk-home-v7 .v4-ig-caption{font-size:11px;line-height:1.7;color:#909585;padding:12px 15px;margin:0}
-#pk-home-v7 .v4-post-detail{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:#f5f6eeeb;z-index:10;padding:20px}
-#pk-home-v7 .v4-post-dialog{max-width:600px;width:100%;background:var(--v4-panel);border:1px solid var(--v4-rule);border-radius:14px;padding:18px;position:relative;box-shadow:0 22px 70px #24321b18}
+#pk-home-v7 .v4-post-detail{position:fixed;inset:0;margin:0;width:100%;height:100dvh;max-width:none;max-height:none;border:0;align-items:center;justify-content:center;background:transparent;padding:20px}
+#pk-home-v7 .v4-post-detail[open]{display:flex}
+#pk-home-v7 .v4-post-detail::backdrop{background:#1b1c19b3}
+#pk-home-v7 .v4-post-dialog{max-width:600px;width:100%;max-height:calc(100dvh - 40px);overflow-y:auto;overscroll-behavior:contain;background:var(--v4-panel);border:1px solid var(--v4-rule);border-radius:12px;padding:18px;position:relative;box-shadow:0 22px 70px #24321b18}
 #pk-home-v7 .v4-post-close{position:absolute;right:24px;top:24px;width:44px;height:44px;border:0;background:#ffffffdd;border-radius:50%;color:var(--v4-ink);z-index:2;display:flex;align-items:center;justify-content:center}
 #pk-home-v7 .v4-post-close svg{width:19px;height:19px}
 #pk-home-v7 .v4-post-large{aspect-ratio:1;background-size:300% 300%;background-position:var(--pos);position:relative;border-radius:8px;overflow:hidden}
@@ -618,7 +620,7 @@
 #pk-home-v7 .v4-post-stamp.is-white>img{filter:invert(1)}
 #pk-home-v7 .v4-post-large .v4-post-stamp{top:13px;right:13px}
 #pk-home-v7 .v4-post-large .v4-post-stamp>img{width:82px}
-#pk-home-v7 .v4-post-close{top:auto;bottom:74px;right:25px}
+#pk-home-v7 .v4-post-close{top:24px;bottom:auto;right:24px}
 #pk-home-v7 .v4-post-detail{background:#ffffffeb}
 #pk-home-v7 .v4-feedback{background:#f5f7fb;color:#526079}
 #pk-home-v7 .v5-real-phones{position:relative;gap:0;padding:5px 16px}

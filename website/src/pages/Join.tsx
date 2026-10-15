@@ -51,12 +51,12 @@ export default function Join() {
               aria-hidden="true"
             />
           </figure>
-          <Container className="relative py-12 sm:py-16 lg:py-20">
+          <Container className="relative py-7 sm:py-16 lg:py-20">
             <div className="pk-join-intro max-w-2xl">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-white/80">
                 PK HUB · {isThai ? "สำหรับร้านค้าพาร์ทเนอร์" : "Retail partners"}
               </p>
-              <h1 className="mt-5 font-display text-[clamp(2.6rem,5.2vw,5rem)] font-black leading-[1.08] tracking-[-0.04em]">
+              <h1 className="mt-4 font-display text-[clamp(2rem,5.2vw,5rem)] font-black leading-[1.15] tracking-[-0.04em]">
                 {isThai ? (
                   <>
                     สมัครเป็นพาร์ทเนอร์<span className="block">กับ PK HUB</span>
@@ -83,7 +83,7 @@ export default function Join() {
           </Container>
         </section>
 
-        <Container className="grid items-start gap-10 py-12 sm:py-16 lg:grid-cols-[minmax(0,1.65fr)_minmax(0,0.85fr)] lg:gap-16">
+        <Container className="grid items-start gap-10 py-7 sm:py-16 lg:grid-cols-[minmax(0,1.65fr)_minmax(0,0.85fr)] lg:gap-16">
           <section
             id="partner-application-form"
             className="min-w-0 scroll-mt-24"
