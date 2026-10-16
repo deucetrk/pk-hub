@@ -1,0 +1,182 @@
+{
+  "verifiedAt": "2026-10-15T15:38:44.588977+00:00",
+  "status": "ENGINEERING_RELEASE_VERIFIED",
+  "pullRequests": [
+    "https://github.com/deucetrk/PK-Commerce/pull/48",
+    "https://github.com/deucetrk/pk-hub/pull/13"
+  ],
+  "commerceMerge": "475f321729928b8fcbf017b88ae69dd779d6fae1",
+  "commerceFinalMain": "14c675887e7ba7904afdb99b2edddea456151a46",
+  "publicFinalMain": "c1375508f6cc4f223668735820ebffde05338d19",
+  "ci": [
+    {
+      "conclusion": "success",
+      "headSha": "14c675887e7ba7904afdb99b2edddea456151a46",
+      "status": "completed",
+      "url": "https://github.com/deucetrk/PK-Commerce/actions/runs/38760708822",
+      "pass": true
+    },
+    {
+      "conclusion": "success",
+      "headSha": "c1375508f6cc4f223668735820ebffde05338d19",
+      "status": "completed",
+      "url": "https://github.com/deucetrk/pk-hub/actions/runs/38759625476",
+      "pass": true
+    }
+  ],
+  "deployments": [
+    {
+      "state": "success",
+      "statuses": [
+        {
+          "context": "Vercel – pk-commerce-web",
+          "state": "success",
+          "target_url": "https://vercel.com/deucetrks-projects/pk-commerce-web/KtG8dQ5CWY41hhtpmp675Ve35tMg"
+        },
+        {
+          "context": "Vercel – pkhub-dealer-portal",
+          "state": "success",
+          "target_url": "https://vercel.com/deucetrks-projects/pkhub-dealer-portal/GU498YAm2J8rrw4XVJXjs6EuWd6W"
+        }
+      ],
+      "repo": "deucetrk/PK-Commerce",
+      "pass": true
+    },
+    {
+      "state": "success",
+      "statuses": [
+        {
+          "context": "Vercel – pk-hub",
+          "state": "success",
+          "target_url": "https://vercel.com/deucetrks-projects/pk-hub/DqLvnwVtNcNRzkLneXQkCmsQPgis"
+        },
+        {
+          "context": "Vercel – applications",
+          "state": "success",
+          "target_url": "https://vercel.com/deucetrks-projects/applications/6e5TbUzdS9yS9ezuAD4v4Axi8Sci"
+        },
+        {
+          "context": "Vercel – website",
+          "state": "success",
+          "target_url": "https://vercel.com/deucetrks-projects/website/87Zr9AXfyvauksbF421wCt3HM3GG"
+        }
+      ],
+      "repo": "deucetrk/pk-hub",
+      "pass": true
+    }
+  ],
+  "endpoints": [
+    {
+      "url": "https://pkpos.pkhub.co/api/revision",
+      "status": 200,
+      "cacheControl": "no-store",
+      "body": {
+        "ok": true,
+        "revision": "14c675887e7ba7904afdb99b2edddea456151a46",
+        "environment": "production"
+      },
+      "pass": true
+    },
+    {
+      "url": "https://dealer.pkhub.co/api/revision",
+      "status": 200,
+      "cacheControl": "no-store",
+      "body": {
+        "ok": true,
+        "revision": "14c675887e7ba7904afdb99b2edddea456151a46",
+        "environment": "production"
+      },
+      "pass": true
+    },
+    {
+      "url": "https://pk-commerce-api.onrender.com/api/revision",
+      "status": 200,
+      "cacheControl": "no-store",
+      "body": {
+        "service": "pk-commerce-api",
+        "gitCommitSha": "14c675887e7ba7904afdb99b2edddea456151a46"
+      },
+      "pass": true
+    },
+    {
+      "url": "https://pk-commerce-api.onrender.com/api/health",
+      "status": 200,
+      "cacheControl": null,
+      "body": {
+        "status": "ok",
+        "service": "pk-commerce-api"
+      },
+      "pass": true
+    },
+    {
+      "url": "https://pkhub.co/revision.json",
+      "status": 200,
+      "cacheControl": "no-store",
+      "body": {
+        "revision": "c1375508f6cc4f223668735820ebffde05338d19"
+      },
+      "pass": true
+    }
+  ],
+  "git": [
+    {
+      "repo": "deucetrk/PK-Commerce",
+      "head": "14c675887e7ba7904afdb99b2edddea456151a46",
+      "remoteMain": "14c675887e7ba7904afdb99b2edddea456151a46",
+      "clean": true,
+      "unpublished": "",
+      "pass": true
+    },
+    {
+      "repo": "deucetrk/pk-hub",
+      "head": "c1375508f6cc4f223668735820ebffde05338d19",
+      "remoteMain": "c1375508f6cc4f223668735820ebffde05338d19",
+      "clean": true,
+      "unpublished": "",
+      "pass": true
+    }
+  ],
+  "unauthenticatedIsolation": [
+    {
+      "url": "https://pk-commerce-api.onrender.com/api/dealer-portal/session",
+      "status": 401,
+      "expected": 401
+    },
+    {
+      "url": "https://pk-commerce-api.onrender.com/api/orders/dealer",
+      "status": 401,
+      "expected": 401
+    }
+  ],
+  "renderedProductionSmoke": {
+    "public": {
+      "path": "/th/products/partner-marketing",
+      "directDealerLinks": true,
+      "nativeModal": true,
+      "escapeDismisses": true,
+      "focusRestored": true,
+      "horizontalOverflow": false,
+      "screenshot": "three-surface-release-20261015-public.jpg"
+    },
+    "dealer": {
+      "path": "/login",
+      "passwordFieldRendered": true,
+      "requestOrientedHeading": true,
+      "horizontalOverflow": false
+    },
+    "pkpos": {
+      "path": "/login",
+      "staffHeadingRendered": true,
+      "passwordFieldRendered": true,
+      "horizontalOverflow": false
+    }
+  },
+  "scope": "Application release only. No database migration, environment, permission, stock, pricing, payment, or business-data changes.",
+  "notPerformed": [
+    "real transactional walkthrough",
+    "authenticated per-role production acceptance",
+    "physical scanner/printer checks",
+    "native reduced-motion and screen-reader acceptance"
+  ],
+  "implementationEvidence": "https://github.com/deucetrk/PK-Commerce/blob/14c675887e7ba7904afdb99b2edddea456151a46/docs/evidence/THREE-SURFACE-UX-20261015.md"
+}

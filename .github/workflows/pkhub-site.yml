@@ -4,6 +4,10 @@ on:
   pull_request:
     paths:
       - 'website/**'
+      - '*.md'
+      - 'docs/**'
+      - 'tasks/**'
+      - 'scripts/**'
       - 'vercel.json'
       - '.github/workflows/pkhub-site.yml'
   push:
@@ -11,6 +15,10 @@ on:
       - main
     paths:
       - 'website/**'
+      - '*.md'
+      - 'docs/**'
+      - 'tasks/**'
+      - 'scripts/**'
       - 'vercel.json'
       - '.github/workflows/pkhub-site.yml'
   workflow_dispatch:
@@ -28,8 +36,13 @@ jobs:
           node-version: 24
           cache: npm
           cache-dependency-path: website/package-lock.json
+      - run: node scripts/check-continuity.mjs --tracked
+        working-directory: .
+      - run: node --test scripts/check-continuity.test.mjs
+        working-directory: .
       - run: npm ci
       - run: npm run check
       - run: npm run lint
+      - run: npm test
       - run: npm run build
       - run: npm run seo:validate

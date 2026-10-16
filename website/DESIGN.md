@@ -1,40 +1,9 @@
 # PK HUB Public Design Direction
 
-Status: canonical public-site design direction; V7 Home and Partner Marketing approved 2026-10-06
-
-Current local batch: [2026-10-15 journey refinement](../PUBLIC-UX-20261015.md) preserves V7,
-adds direct Dealer entry, clearer required form fields and viewport-safe marketing previews.
-Desktop/mobile evidence is local; a subsequent owner instruction authorizes this exact batch's
-GitHub production release. See the same record for release verification and remaining gaps.
-
-Current release packet: [085](../PUBLIC-DESIGN-085.md) records all agreed active ecosystem design
-locally complete and owner notified2026-10-04. Public runtimeb4a93c3 and its260-case acceptance
-are unchanged. Hosted promotion and protected/provider/consent/business acceptance remain open.
-
-Current route recovery: [080](../PUBLIC-ROUTE-080.md) adds editorial cold loading/failure,
-safe prerendered/bootstrap forms with native Contact fallback and matching bilingual static404.
-Final runtimeb4a93c3 passes260 local browser cases, Node24 gates and sixteen inspected captures.
-Query/fragment/locale keep drafts; fragment reload is a real document reload. Consent/provider,
-hosted404/revision and full business completion remain separate;085 supersedes the all-design status.
-
-Current acquisition composition: [077](../PUBLIC-ACQUISITION-077.md) supersedes the old Join
-layout with a full-width authentic hero, application desk, separate process context, actual-draft
-review and truthful captured-result handoff. Runtime d4fe4ea passes54 application/enquiry,
-64 ordinary/58 reduced public and20 supporting-recovery cases. Consent-purpose approval,
-provider delivery and hosted acceptance remain separate;080 closes local cold-route recovery.
-085 records subsequent local ecosystem design completion.
-
-Current motion acceptance: [048](../PUBLIC-MOTION-048.md) records actual hosted hover/brand
-failures and the committed correction, 64 ordinary/58 reduced-motion cases across thirteen
-published routes at desktop/mobile, and source fingerprints. Final local acceptance is distinct
-from production promotion and real lead delivery. The full ecosystem goal remains IN PROGRESS.
-
-Current onboarding correction: [041](../ONBOARDING-041.md) records actual public Join/Home pending
-draft containment, duplicate guard, original-request result and mobile focus correction. Source/main
-CI passes; production creation remains rate-limited. This supersedes older form-release status,
-not consent/delivery acceptance or the full ecosystem outcome.
-Owner accepted: 2026-09-20; Apple-inspired layout and expressive motion selected 2026-09-30
-Last verified: 2026-09-20 production desktop and 390px public acceptance at `pkhub.co`
+Canonical public design direction; V7 Home and Partner Marketing approved 2026-10-06.
+Current repository status belongs in [GOAL.md](../GOAL.md) and [CURRENT_STATE.md](../CURRENT_STATE.md).
+The [2026-10-15 journey release](../PUBLIC-UX-20261015.md) preserves V7 and records its exact
+release proof and open acceptance. Earlier release counts below are historical observations.
 
 ## Owner approved V7 direction on 2026-10-06
 
@@ -53,10 +22,11 @@ headline figures are owner-confirmed and must not be treated as demo placeholder
 The approved homepage sequence is Hero, Device portfolio, Stock on Demand, One Customer, Store
 potential, Partner start and compact Footer. The full Marketing showcase moves to its reviewed
 separate composition. Preserve the current working application and referral paths, bilingual route
-behavior and all operational truth boundaries. The first implementation checkpoint is rendered
-homepage review; additional product expansion and deployment follow their separate gates.
+behavior and all operational truth boundaries. The approved implementation is released as recorded above. New product expansion and deployment
+require their own scoped validation and authorization.
 
-The older entries below remain historical context and guidance for unaffected public routes.
+V7 is the active direction for Home and Partner Marketing. Earlier design guidance remains useful
+for unaffected routes; dated production permissions below apply only to their named releases.
 
 ## V7 production authorization — 2026-10-06
 
@@ -80,8 +50,8 @@ journal. `/page/1.5` recovered to `/th/blog`. Node 24 check, lint, build and SEO
 The build emits non-sensitive `revision.json`, served without caching, for exact release evidence.
 Reduced-motion CSS and Framer Motion guards remain; Chromium preference emulation now has
 actual route and interaction proof in 048, superseding the former harness limitation. This is
-not physical-device/OS-setting or screen-reader proof. Existing lead transport
-cannot confirm receipt (`no-cors`); the UI preserves its explicit uncertain-result/LINE recovery.
+not physical-device/OS-setting or screen-reader proof. The transport limitation described in that historical release has since been superseded:
+current receipt-verified CORS behavior and tests are documented in [AGENTS.md](AGENTS.md).
 Application-specific consent approval and actual delivery/deduplication remain separate gates.
 
 This document governs the public PK HUB website only. Dealer Portal and PK Commerce remain separate
@@ -343,3 +313,36 @@ capabilities before owner-approved claims and owning contracts exist.
   document width stayed contained, and the browser reported no error/warning logs. Node 24 `check`,
   `lint`, `build`, and `seo:validate` pass. These are local observations until the new commit is
   inspected in its own hosted preview.
+
+## Historical context
+
+Superseded status announcements retained for provenance; these are not the current task queue.
+
+Current release packet: [085](../PUBLIC-DESIGN-085.md) records all agreed active ecosystem design
+locally complete and owner notified2026-10-04. Public runtimeb4a93c3 and its260-case acceptance
+are unchanged. Hosted promotion and protected/provider/consent/business acceptance remain open.
+
+Current route recovery: [080](../PUBLIC-ROUTE-080.md) adds editorial cold loading/failure,
+safe prerendered/bootstrap forms with native Contact fallback and matching bilingual static404.
+Final runtimeb4a93c3 passes260 local browser cases, Node24 gates and sixteen inspected captures.
+Query/fragment/locale keep drafts; fragment reload is a real document reload. Consent/provider,
+hosted404/revision and full business completion remain separate;085 supersedes the all-design status.
+
+Current acquisition composition: [077](../PUBLIC-ACQUISITION-077.md) supersedes the old Join
+layout with a full-width authentic hero, application desk, separate process context, actual-draft
+review and truthful captured-result handoff. Runtime d4fe4ea passes54 application/enquiry,
+64 ordinary/58 reduced public and20 supporting-recovery cases. Consent-purpose approval,
+provider delivery and hosted acceptance remain separate;080 closes local cold-route recovery.
+085 records subsequent local ecosystem design completion.
+
+Current motion acceptance: [048](../PUBLIC-MOTION-048.md) records actual hosted hover/brand
+failures and the committed correction, 64 ordinary/58 reduced-motion cases across thirteen
+published routes at desktop/mobile, and source fingerprints. Final local acceptance is distinct
+from production promotion and real lead delivery. The full ecosystem goal remains IN PROGRESS.
+
+Current onboarding correction: [041](../ONBOARDING-041.md) records actual public Join/Home pending
+draft containment, duplicate guard, original-request result and mobile focus correction. Source/main
+CI passes; production creation remains rate-limited. This supersedes older form-release status,
+not consent/delivery acceptance or the full ecosystem outcome.
+Owner accepted: 2026-09-20; Apple-inspired layout and expressive motion selected 2026-09-30
+Last verified: 2026-09-20 production desktop and 390px public acceptance at `pkhub.co`

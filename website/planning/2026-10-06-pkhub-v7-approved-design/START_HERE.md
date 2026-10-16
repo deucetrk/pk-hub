@@ -1,4 +1,14 @@
-# PK HUB V7 implementation handoff
+# PK HUB V7 design provenance
+
+This is the dated 2026-10-06 composition record. V7 and the later journey changes are already
+released. Start current work from [the repository goal](../../../GOAL.md) and
+[agent contract](../../../AGENTS.md); [DESIGN.md](../../DESIGN.md) scopes the visual decisions
+that remain applicable. Old implementation tasks, checkout descriptions and production gates
+below describe their original checkpoint and are not current work instructions.
+
+## Historical context
+
+### Original implementation handoff
 
 Implement the owner-approved V7 public homepage in the existing website. The owner approved all designs shown so far on 2026-10-06 and explicitly confirmed that the current headline metrics are real figures to use, rather than prototype metrics. Preserve the approved appearance, interactions and copy while connecting application and contact actions to the existing website.
 
@@ -6,7 +16,8 @@ The approved Partner Marketing composition is the only secondary page included a
 
 ## Working directory and required reading
 
-Work in `/Users/deuce/Desktop/PK Media/applications/website`.
+The historical donor was the original desktop website checkout. Use the current Git root and
+its `website/` directory; do not switch to or reset the donor.
 
 Read these files in order:
 

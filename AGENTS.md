@@ -1,41 +1,39 @@
-# AGENTS.md
+# PK HUB repository agent contract
 
-Single-page B2B website for PK HUB (Thai smartphone wholesaler). All commands run from `applications/website/`.
+The repository is project memory. Start at its Git root, not a machine-specific checkout.
 
-## Commands
+## Cold start and authority
 
-| Task | Command |
-|------|---------|
-| Dev server | `npm run dev` |
-| Typecheck | `npm run check` (tsc -b --noEmit) |
-| Lint | `npm run lint` |
-| Production build | `npm run build` (tsc -b + vite client build + vite ssr build + prerender `/th` & `/en`) |
+Read [GOAL.md](GOAL.md) and [docs/INDEX.md](docs/INDEX.md), inspect Git status/log/diff, then
+follow only the relevant owning source and tests. Run `node scripts/check-continuity.mjs`.
+Read [CURRENT_STATE.md](CURRENT_STATE.md) when release state matters and [tasks/NEXT.md](tasks/NEXT.md)
+when selecting work. Historical approval and release records are dated evidence, not standing
+permission. A completed goal does not authorize a new feature or production action.
 
-No test suite exists. Verify changes by running `check` + `lint`.
+Owner-confirmed business rules and accepted design decisions outrank summaries. Code, contracts
+and tests prove current implementation; record mismatches instead of inventing missing behavior.
+The public site routes to Commerce; it never owns stock, price, permissions, payment or eligibility.
+Cross-product architecture lives in the linked Commerce knowledge base in docs/INDEX.md.
 
-## Architecture
+## Scope and safety
 
-- **React 18 + Vite 6 + TypeScript ~5.8 + Tailwind CSS 3** — no framework (Next.js etc.)
-- **Prerendered SPA**: build emits static `/th/index.html` and `/en/index.html` with full content baked in (so crawlers and AI engines can read it), then React hydrates on top via `hydrateRoot`. See `scripts/prerender.mjs` and `src/entry-server.tsx`
-- **Two routes**: `App.tsx` -> `AppRoutes.tsx` renders one `Home` page composed of 8 section components in `src/pages/home/` — Hero, Brands (CSS marquee, keyframes in `src/index.css`), Proof, Stats, Why, Process, Faq, Contact (Contact also hosts the partner form)
-- **i18n via URL path**: `/th` and `/en` routes. `LanguageContext` reads `location.pathname` — no i18n library, just `useLanguage()` hook returning `{ language, isThai }`. Add translations inline in components, not in separate files. Locale meta (title, description, canonical, og:url, og:locale) is per-locale in the prerendered HTML; client `useEffect` syncs it on locale switch
-- **Path alias**: `@/*` maps to `./src/*` (configured in tsconfig + vite-tsconfig-paths)
-- **Form submission**: partner leads POST to a Google Apps Script endpoint (`VITE_PARTNER_LEAD_ENDPOINT` env var) using `fetch` with `mode: 'no-cors'`
-- **Fonts**: Google Fonts CDN loads Anuphan (display) and IBM Plex Sans Thai (body) — loaded in `index.html`, no local font files
-- **Motion**: framer-motion's `LazyMotion` + `m` components (tree-shaken). See `src/lib/motion.ts` for reveal variants
+Build/fix requests authorize implementation inside accepted scope. Production deployment,
+configuration, credentials, provider changes and real lead/business writes require explicit
+current scope, recovery and verification. Never put secrets or customer data into evidence.
+Preserve dirty/unrelated work. Use an isolated clean branch; inspect scoped diffs before commit/push.
+Do not treat a successful submission transport, build or deployment URL as business acceptance.
 
-## Key conventions
+Read [website/AGENTS.md](website/AGENTS.md) for the application's actual commands and boundaries.
+For UI changes read its design contract and inspect rendered desktop/mobile, keyboard, loading,
+failure/recovery and reduced-motion states. Record skipped acceptance honestly.
 
-- **TypeScript strict mode is OFF** — `strict: false`, `noUnusedLocals: false`, `noUnusedParameters: false`. Don't fight the config
-- **Tailwind dark mode uses `class` strategy** but the site is currently light-only; the palette is cool slate — light sections `bg-[#f8fafc]` (slate-50) / muted `bg-slate-100`, dark sections `bg-[#111827]` (slate-900), grays are `slate-*`, LINE green `#06c755` accent
-- **Utility function**: `cn()` from `src/lib/utils.ts` wraps `clsx` + `tailwind-merge` — use it for conditional class merging
-- **PostCSS config is locked** — `postcss.config.js` has `WARNING: DON'T EDIT THIS FILE` comments; leave it alone
-- **Static assets live in `public/`** — brand logos in `public/brands/`, store photos in `public/proof/` and `public/reviews/`
+## Closeout
 
-## Gotchas
+Keep one active outcome in GOAL.md and one exact next action. Update only documents whose meaning
+changed. A narrative handoff is needed only if goal, Git and linked evidence cannot explain the
+remaining work. Use relative tracked paths or durable URLs for essential evidence.
 
-- `src/services/partnerLeadSubmission.ts` throws at runtime if `VITE_PARTNER_LEAD_ENDPOINT` is unset — copy `.env.example` to `.env.local` before running `dev`
-- The `vite-plugin-trae-solo-badge` devDependency and `babel-plugin-react-dev-locator` are IDE-specific — ignore them; they don't affect production
-- SEO structured data (JSON-LD) lives inline in `index.html` — edit there, not in components. Schema includes WholesaleStore, FAQPage, and VideoObject. `telephone` must be in E.164 form (no `*` placeholders)
-- When adding new page sections, follow the pattern: create `src/pages/home/<Name>Section.tsx`, import and place it in `src/pages/Home.tsx`
-- For prerender to work cleanly, every `<img>` should have `width`/`height` attributes (prevents CLS in the prerendered HTML) and `loading="lazy"` + `decoding="async"` below the fold. Keep `vite.config.ts` `sourcemap: false` for prod. Original media backups live in `media-originals/` (gitignored)
+Use Node 24. Run the continuity checker and its tests, then proportional application checks.
+Before publication run `node scripts/check-continuity.mjs --tracked`; after commit use `--git`,
+and after push/fetch use `--published`. A push is not CI, deployment or business verification.
+[Continuity contract](docs/orchestration/CONTINUITY.md) defines the check's limits.

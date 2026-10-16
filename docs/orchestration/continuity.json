@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "documents": [
+    "AGENTS.md",
+    "README.md",
+    "GOAL.md",
+    "CURRENT_STATE.md",
+    "tasks/NEXT.md",
+    "docs/INDEX.md",
+    "website/AGENTS.md",
+    "PUBLIC-UX-20261015.md",
+    "docs/orchestration/CONTINUITY.md",
+    "docs/evidence/AGENT-CONTINUITY-20261016.md",
+    "CLAUDE.md",
+    "GEMINI.md",
+    "website/CLAUDE.md",
+    "website/GEMINI.md"
+  ],
+  "requiredArtifacts": [
+    "docs/evidence/three-surface-release-20261015.json",
+    "docs/evidence/three-surface-release-20261015-public.jpg",
+    "scripts/check-continuity.test.mjs"
+  ],
+  "maxActiveLines": 260
+}
