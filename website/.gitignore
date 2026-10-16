@@ -29,4 +29,6 @@ media-originals/
 *.md
 !AGENTS.md
 !DESIGN.md
+!CLAUDE.md
+!GEMINI.md
 .env*
