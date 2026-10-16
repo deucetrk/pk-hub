@@ -108,6 +108,14 @@ for (const [name, file, transform, expected] of [
   });
 }
 
+test('CRLF documents retain the same continuation contract', (t) => {
+  const f = fixture(t);
+  for (const file of ['GOAL.md', 'CURRENT_STATE.md', 'tasks/NEXT.md']) {
+    f.edit(file, (s) => s.replaceAll('\n', '\r\n'));
+  }
+  assert.equal(f.errors(), '');
+});
+
 test('completed goal with validation metadata passes', (t) => {
   const f = fixture(t);
   f.edit('GOAL.md', (s) =>

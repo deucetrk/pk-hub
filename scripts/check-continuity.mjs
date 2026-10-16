@@ -1,5 +1,5 @@
 import { readFileSync, existsSync, realpathSync, statSync } from 'node:fs';
-import { resolve, relative, dirname, isAbsolute } from 'node:path';
+import { resolve, relative, dirname, isAbsolute, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 
@@ -12,7 +12,7 @@ const core = [
   'docs/INDEX.md',
 ];
 const configPath = 'docs/orchestration/continuity.json';
-const activeText = (text) => text.split(/^## Historical context\s*$/m)[0];
+const activeText = (text) => text.replaceAll('\r\n', '\n').split(/^## Historical context\s*$/m)[0];
 
 export function checkContinuity(root, options = {}) {
   root = realpathSync(root);
@@ -26,7 +26,7 @@ export function checkContinuity(root, options = {}) {
     }).trim();
   const inside = (path) => {
     const rel = relative(root, path);
-    return rel !== '..' && !rel.startsWith('../') && !isAbsolute(rel);
+    return rel !== '..' && !rel.startsWith(`..${sep}`) && !isAbsolute(rel);
   };
   const inspect = (name, from = configPath) => {
     const path = resolve(root, name);

@@ -23,8 +23,22 @@ identifier. Evaluation had no inherited chat; input was repository roots and a r
 reconstruction request, with no answers or reading order. Memory, network and live systems were
 excluded by instruction, not an OS sandbox.
 
-PENDING: independent corrected-export evaluation, scoped publication and CI.
-Follow [GOAL.md](../../GOAL.md).
+Independent corrected-export evaluation: PASS for continuation and document coherence by
+/root/cold_start_verified with fork_turns=none. No blocking contradiction or unavailable required
+context. Public source commit 6a15c586eed7a3e46ae1f9fbd68360080c8981b5, 347 tracked files;
+manifest SHA256 8ce5672da4fb2df0ee8dda0ca1c5477dc15fb198ba85b45f40b0dced40d7a552.
+Commerce source commit df7d96bacaf391700e622d98d936c79e4ddde2be was evaluated alongside it.
+The independent evaluator recovered task, authority, next action, dated release and open gates;
+Node24 checker, --tracked --git, 18 fixtures and 16 intake tests passed with clean Git state.
+No remote exists in the export, so --published correctly failed. Reproduce source with git archive.
+Manifest digest is SHA256 of compact, sorted-key JSON containing sorted {path, sha256} file entries.
+The later CRLF/path-separator correction passed 19/19 local fixtures; remaining edits record closeout.
+
+Source commits were pushed/fetched; --published passed in the real worktree.
+[PR14](https://github.com/deucetrk/pk-hub/pull/14) retains final commits and latest-head CI.
+[Commerce PR49](https://github.com/deucetrk/PK-Commerce/pull/49) carries shared research/ADR and
+the fuller paired evaluation. Publication is distinct from hosted business acceptance.
+Follow [GOAL.md](../../GOAL.md) for subsequent work.
 
 ## Limits
 

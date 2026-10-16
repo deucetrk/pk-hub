@@ -1,6 +1,7 @@
 ---
 task: AGENT-CONTINUITY-001
-status: in_progress
+status: complete
+validation: passed
 updated: 2026-10-16
 ---
 # Active goal: repository continuity
@@ -23,9 +24,11 @@ Use existing structure and preserve the dirty Desktop donor.
 
 ## Next action
 
-Run `node scripts/check-continuity.mjs`, complete the acceptance in
-[the evidence record](docs/evidence/AGENT-CONTINUITY-20261016.md), then commit and push.
-After completion consult [the queue](tasks/NEXT.md); no new product work is selected here.
+Begin the first READY item in [the queue](tasks/NEXT.md): inspect the remaining native
+accessibility/device scenarios in [the last UX release](PUBLIC-UX-20261015.md), then perform
+the available local/read-only check and record actual environment and gaps. No real lead or
+production mutation is authorized here. [Continuity evidence](docs/evidence/AGENT-CONTINUITY-20261016.md)
+records this completed goal's acceptance and publication.
 
 ## Previous outcome
 
