@@ -1,6 +1,6 @@
 ---
-goal: AGENT-CONTINUITY-001
-updated: 2026-10-16
+goal: PKHUB-V1-REDESIGN-001
+updated: 2026-10-19
 ---
 # Current repository state
 
@@ -16,3 +16,6 @@ The site has Home, Join, Dealer gateway, product/service and Thai blog routes. I
 a verified matching receipt; configuration and real provider delivery remain separate checks.
 Native reduced-motion/screen-reader/physical-device and authenticated per-role business
 acceptance were not completed by the last release. Do not convert those gaps into new permission.
+
+In progress: the [v1 redesign](GOAL.md) on `claude/pkhub-v1-redesign`; production still serves
+`77c4f18` until that branch merges.

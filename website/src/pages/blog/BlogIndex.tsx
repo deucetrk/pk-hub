@@ -70,10 +70,10 @@ function ArticleMeta({ article }: { article: PublishedBlogArticle }) {
 
 function LeadStory({ article }: { article: PublishedBlogArticle }) {
   return (
-    <article className="group grid gap-0 border-t border-[#d4d4d8] pt-5 lg:grid-cols-[minmax(0,1.2fr)_minmax(23rem,0.8fr)] lg:gap-10 lg:pt-7">
+    <article className="group grid gap-0 pt-0 lg:grid-cols-[minmax(0,1.2fr)_minmax(23rem,0.8fr)] lg:gap-10 lg:pt-7">
       <a
         href={articleHref(article)}
-        className="relative aspect-[16/10] overflow-hidden bg-[#ededf0] lg:aspect-auto lg:min-h-[29rem]"
+        className="relative aspect-[16/10] overflow-hidden rounded-3xl bg-[#ededf0] lg:aspect-auto lg:min-h-[29rem]"
         aria-label={`อ่าน ${article.title}`}
       >
         <img
@@ -88,7 +88,7 @@ function LeadStory({ article }: { article: PublishedBlogArticle }) {
       </a>
       <div className="grid content-center gap-5 py-7 sm:py-9 lg:py-11">
         <ArticleMeta article={article} />
-        <h2 className="font-display text-[2.15rem] font-extrabold leading-[1.14] tracking-[-0.045em] sm:text-5xl lg:text-[3rem]">
+        <h2 className="font-display text-[2.15rem] font-normal leading-[1.14] tracking-[-0.01em] sm:text-5xl lg:text-[3rem]">
           <a
             href={articleHref(article)}
             className="transition-colors hover:text-[#1946b8]"
@@ -118,10 +118,10 @@ function PriorityStory({
   number: number;
 }) {
   return (
-    <article className="group grid content-start border-t border-[#d4d4d8] pt-5">
+    <article className="group grid content-start">
       <a
         href={articleHref(article)}
-        className="relative aspect-[16/10] overflow-hidden bg-[#ededf0]"
+        className="relative aspect-[16/10] overflow-hidden rounded-3xl bg-[#ededf0]"
         aria-label={`อ่าน ${article.title}`}
       >
         <img
@@ -134,7 +134,7 @@ function PriorityStory({
           className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 motion-safe:group-hover:scale-[1.025]"
         />
         <span
-          className="absolute left-0 top-0 grid h-10 w-10 place-items-center bg-[#2457d6] font-display text-lg font-extrabold text-white"
+          className="absolute left-4 top-4 grid h-10 w-10 place-items-center rounded-full bg-[#2457d6] font-display text-lg font-normal text-white"
           aria-hidden="true"
         >
           {String(number).padStart(2, "0")}
@@ -142,7 +142,7 @@ function PriorityStory({
       </a>
       <div className="grid content-start gap-4 pt-5 sm:pt-6">
         <ArticleMeta article={article} />
-        <h2 className="font-display text-[1.65rem] font-extrabold leading-[1.24] tracking-[-0.035em] sm:text-3xl">
+        <h2 className="font-display text-[1.65rem] font-normal leading-[1.24] tracking-[-0.01em] sm:text-3xl">
           <a
             href={articleHref(article)}
             className="transition-colors hover:text-[#1946b8]"
@@ -160,10 +160,10 @@ function PriorityStory({
 
 function LibraryCard({ article }: { article: PublishedBlogArticle }) {
   return (
-    <article className="group grid content-start border-t border-[#d4d4d8] pt-5">
+    <article className="group grid content-start">
       <a
         href={articleHref(article)}
-        className="relative aspect-[16/10] overflow-hidden bg-[#ededf0]"
+        className="relative aspect-[16/10] overflow-hidden rounded-3xl bg-[#ededf0]"
         aria-label={`อ่าน ${article.title}`}
       >
         <img
@@ -178,7 +178,7 @@ function LibraryCard({ article }: { article: PublishedBlogArticle }) {
       </a>
       <div className="grid gap-3 pt-5">
         <ArticleMeta article={article} />
-        <h3 className="font-display text-[1.55rem] font-extrabold leading-[1.25] tracking-[-0.035em]">
+        <h3 className="font-display text-[1.55rem] font-normal leading-[1.25] tracking-[-0.01em]">
           <a
             href={articleHref(article)}
             className="transition-colors hover:text-[#1946b8]"
@@ -290,8 +290,8 @@ export default function BlogIndex() {
   }
 
   return (
-    <div id="top" className="min-h-dvh bg-white text-[#18181b]">
-      <a href="#main-content" className="pk-skip-link">
+    <div id="top" className="v1 min-h-dvh bg-white text-[#0a0a0a]">
+      <a href="#main-content" className="v1-skip">
         Skip to content / ข้ามไปเนื้อหา
       </a>
       <script
@@ -303,23 +303,19 @@ export default function BlogIndex() {
       />
       <Navbar />
       <main id="main-content" tabIndex={-1}>
-        <header className="border-b border-[#d4d4d8] bg-white py-10 sm:py-14 lg:py-16">
-          <Container className="grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(19rem,0.42fr)] lg:items-end">
-            <div>
-              <a
-                href="/th"
-                className="inline-flex min-h-11 items-center gap-2 text-xs font-bold text-[#52525b] transition-colors hover:text-black"
-              >
-                <span className="h-2 w-2 bg-[#2457d6]" aria-hidden="true" /> PK
-                HUB
-              </a>
-              <h1 className="mt-5 max-w-4xl font-display text-[2.7rem] font-extrabold leading-[1.08] tracking-[-0.05em] sm:text-6xl lg:text-[4.25rem]">
-                บทความมือถือ ธุรกิจ และเทคโนโลยี
+        <header className="bg-white pb-12 pt-[clamp(48px,6.6vw,96px)]">
+          <Container className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_440px] lg:items-end">
+            <div className="grid gap-4">
+              <p className="v1-eyebrow">บทความ</p>
+              <h1 className="v1-h1">
+                ความรู้จากมุม
+                <br />
+                ร้านมือถือ
               </h1>
             </div>
-            <p className="max-w-xl border-l-2 border-[#2457d6] pl-5 text-base leading-7 text-[#52525b] sm:text-lg sm:leading-8">
-              คู่มือจากมุมร้านมือถือ เรื่องเลือกแหล่งสินค้า จัดสต็อก
-              เอกสาร และการเริ่มขาย เพื่อช่วยให้ตัดสินใจได้ชัดขึ้น
+            <p className="v1-lede pb-3">
+              เลือกแหล่งสินค้า จัดสต็อก เอกสาร และการเริ่มขาย
+              เพื่อช่วยให้ตัดสินใจได้ชัดขึ้น
             </p>
           </Container>
         </header>
@@ -327,13 +323,13 @@ export default function BlogIndex() {
         {showHighlights && (
           <section
             aria-labelledby="highlight-heading"
-            className="border-b border-[#d4d4d8] py-8 sm:py-10 lg:py-12"
+            className="pb-[clamp(56px,6.6vw,96px)]"
           >
             <Container>
               <div className="mb-6">
                 <h2
                   id="highlight-heading"
-                  className="font-display text-3xl font-extrabold tracking-[-0.035em] sm:text-4xl"
+                  className="font-display text-3xl font-normal tracking-[-0.01em] sm:text-4xl"
                 >
                   บทความแนะนำ
                 </h2>
@@ -355,7 +351,7 @@ export default function BlogIndex() {
         )}
 
         <section
-          className="py-10 sm:py-14 lg:py-16"
+          className="v1-mist py-[clamp(56px,6.6vw,96px)]"
           aria-labelledby="library-heading"
         >
           <Container>
@@ -367,7 +363,7 @@ export default function BlogIndex() {
                 <h2
                   id="library-heading"
                   aria-live="polite"
-                  className="mt-1 font-display text-3xl font-extrabold tracking-[-0.035em] sm:text-4xl"
+                  className="mt-1 font-display text-3xl font-normal tracking-[-0.01em] sm:text-4xl"
                 >
                   {hasFilters
                     ? `พบ ${filteredArticles.length} บทความ`
@@ -383,7 +379,7 @@ export default function BlogIndex() {
                     type="button"
                     onClick={() => updateFilters("track", "")}
                     aria-pressed={!selectedTrack}
-                    className={`min-h-11 rounded-md border px-3 py-2 text-sm font-medium transition-colors ${!selectedTrack ? "border-[#2457d6] bg-[#edf2ff] text-[#1946b8]" : "border-[#d4d4d8] bg-white text-[#52525b] hover:border-[#2457d6]"}`}
+                    className={`min-h-11 rounded-full border px-5 py-2 text-sm font-medium transition-colors ${!selectedTrack ? "border-[#0a0a0a] bg-[#0a0a0a] text-white" : "border-[#d4d4d8] bg-white text-[#52525b] hover:border-[#2457d6]"}`}
                   >
                     ทั้งหมด
                   </button>
@@ -402,7 +398,7 @@ export default function BlogIndex() {
                         )
                       }
                       aria-pressed={selectedTrack === track}
-                      className={`min-h-11 rounded-md border px-3 py-2 text-sm font-medium transition-colors ${selectedTrack === track ? "border-[#2457d6] bg-[#edf2ff] text-[#1946b8]" : "border-[#d4d4d8] bg-white text-[#52525b] hover:border-[#2457d6]"}`}
+                      className={`min-h-11 rounded-full border px-5 py-2 text-sm font-medium transition-colors ${selectedTrack === track ? "border-[#0a0a0a] bg-[#0a0a0a] text-white" : "border-[#d4d4d8] bg-white text-[#52525b] hover:border-[#2457d6]"}`}
                     >
                       {label}
                     </button>
@@ -421,7 +417,7 @@ export default function BlogIndex() {
                   value={query}
                   onChange={(event) => updateFilters("q", event.target.value)}
                   placeholder="ค้นหา เช่น สต็อก, VAT, IMEI"
-                  className="h-11 w-full rounded-md border border-[#a1a1aa] bg-white py-3 pl-12 pr-4 text-sm outline-none transition-colors placeholder:text-[#71717a] focus:border-[#2457d6] focus:ring-2 focus:ring-[#2457d6]/15"
+                  className="h-11 w-full rounded-full border border-[#cfcfcf] bg-white py-3 pl-12 pr-4 text-sm outline-none transition-colors placeholder:text-[#71717a] focus:border-[#2457d6] focus:ring-2 focus:ring-[#2457d6]/15"
                 />
               </label>
             </div>
@@ -460,7 +456,7 @@ export default function BlogIndex() {
               </div>
             ) : (
               <div className="border-b border-[#d4d4d8] py-16 text-center">
-                <h3 className="font-display text-2xl font-extrabold">
+                <h3 className="font-display text-2xl font-normal">
                   ยังไม่พบบทความที่ตรงกับคำนี้
                 </h3>
                 <p className="mt-2 text-[#71717a]">
@@ -493,7 +489,7 @@ export default function BlogIndex() {
                       aria-current={
                         routePage === pageNumber ? "page" : undefined
                       }
-                      className={`grid h-11 w-11 place-items-center border text-sm font-bold transition-colors ${routePage === pageNumber ? "border-[#18181b] bg-[#18181b] text-white" : "border-[#d4d4d8] hover:border-[#2457d6]"}`}
+                      className={`grid h-11 w-11 place-items-center rounded-full border text-sm font-bold transition-colors ${routePage === pageNumber ? "border-[#18181b] bg-[#18181b] text-white" : "border-[#d4d4d8] hover:border-[#2457d6]"}`}
                     >
                       {pageNumber}
                     </a>
