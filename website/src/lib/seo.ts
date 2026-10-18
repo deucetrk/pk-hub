@@ -18,9 +18,9 @@ export type PageMeta = {
 
 export const HOME_META = {
   th: {
-    title: 'พาร์ทเนอร์ค้าส่งมือถือทั่วประเทศ ศูนย์ปฏิบัติการฉะเชิงเทรา | PK HUB',
+    title: 'พาร์ทเนอร์ค้าส่งมือถือสำหรับร้านค้าทั่วประเทศ | PK HUB',
     description:
-      'PK HUB ระบบนิเวศค้าส่งมือถือเครื่องศูนย์ไทยและอุปกรณ์เสริมสำหรับร้านค้าทั่วประเทศ ออกใบกำกับภาษีเต็มรูปแบบ พร้อมระบบ Dealer Portal เช็กราคาและสต็อกอ้างอิง',
+      'สินค้าค้าส่งมือถือ แท็บเล็ต และอุปกรณ์เสริม 500+ รุ่นจาก 26 แบรนด์ Stock on Demand ซิมและเติมเงิน AIS ผ่อนกับ S Leasing และทีมดูแลหลังการขาย สำหรับร้านคู่ค้า PK HUB',
     canonical: `${SITE_URL}/th`,
     ogType: 'website',
     image: `${SITE_URL}/og-image.jpg`,
@@ -28,9 +28,9 @@ export const HOME_META = {
     locale: 'th_TH',
   },
   en: {
-    title: 'PK HUB | Nationwide Smartphone Wholesale & Retail Partner Ecosystem',
+    title: 'PK HUB | Smartphone Wholesale Partner for Retail Stores',
     description:
-      'Official multi-brand smartphone and accessory wholesale partner for retailers nationwide. Transparent Dealer Portal, verified stock, and dedicated team based in Chachoengsao.',
+      'Wholesale phones, tablets and accessories (500+ models, 26 brands), Stock on Demand, AIS SIM and top-up, S Leasing instalments and after-sales support for PK HUB partner stores.',
     canonical: `${SITE_URL}/en`,
     ogType: 'website',
     image: `${SITE_URL}/og-image.jpg`,
@@ -107,9 +107,9 @@ export const STOCK_ON_DEMAND_META = {
 
 export const PARTNER_MARKETING_META = {
   th: {
-    title: 'Partner Marketing สื่อการตลาดฟรีสำหรับพาร์ทเนอร์ | PK HUB',
+    title: 'สื่อการตลาดสำหรับร้านคู่ค้า (เร็วๆ นี้) | PK HUB',
     description:
-      'สื่อการตลาดและแคมเปญโปรโมชั่นฟรีสำหรับร้านค้าพาร์ทเนอร์ PK HUB ทุกร้าน ไม่มีขั้นต่ำยอดซื้อ พร้อมตัวอย่างการนำสื่อไปใช้จริง',
+      'PK HUB กำลังเตรียมสื่อการตลาดสำหรับร้านคู่ค้า ใช้ฟรี ไม่มีขั้นต่ำการสั่งซื้อ สมัครเป็นคู่ค้าไว้ก่อนแล้วเราจะแจ้งเมื่อพร้อมใช้',
     canonical: `${SITE_URL}/th/products/partner-marketing`,
     ogType: 'website',
     image: `${SITE_URL}/og-image.jpg`,
@@ -117,9 +117,9 @@ export const PARTNER_MARKETING_META = {
     locale: 'th_TH',
   },
   en: {
-    title: 'Free Partner Marketing Media & Campaigns | PK HUB',
+    title: 'Marketing Media for Partner Stores (Coming Soon) | PK HUB',
     description:
-      'Free promotional marketing assets and campaigns for all PK HUB retail partners with zero minimum order. Ready to use for storefronts and social media.',
+      'PK HUB is preparing marketing media for partner stores: free, with no minimum order. Join now and we will let you know when it is ready.',
     canonical: `${SITE_URL}/en/products/partner-marketing`,
     ogType: 'website',
     image: `${SITE_URL}/og-image.jpg`,
@@ -128,6 +128,25 @@ export const PARTNER_MARKETING_META = {
   },
 } satisfies Record<'th' | 'en', PageMeta>
 
+
+export const CONTACT_META = {
+  th: {
+    title: 'ติดต่อทีม PK HUB | โทร LINE และสำนักงานใหญ่ฉะเชิงเทรา',
+    description: 'คุยกับทีม PK HUB เรื่องสมัครคู่ค้า สินค้า หรือบริการ โทร 089-248-0888 LINE @pkhub สำนักงานใหญ่ ฉะเชิงเทรา เปิดจันทร์–เสาร์ 8:00–17:00',
+    canonical: `${SITE_URL}/th/contact`,
+    ogType: 'website',
+    image: `${SITE_URL}/og-image.jpg`,
+    locale: 'th_TH',
+  },
+  en: {
+    title: 'Contact PK HUB | Phone, LINE and Chachoengsao HQ',
+    description: 'Talk to PK HUB about partnership, products or services. Call 089-248-0888, LINE @pkhub, or visit our Chachoengsao headquarters, Mon–Sat 8:00–17:00.',
+    canonical: `${SITE_URL}/en/contact`,
+    ogType: 'website',
+    image: `${SITE_URL}/og-image.jpg`,
+    locale: 'en_US',
+  },
+} satisfies Record<'th' | 'en', PageMeta>
 
 export function getProductMeta(id: ProductId, language: 'th' | 'en'): PageMeta {
   if (id === 'stock-on-demand') return STOCK_ON_DEMAND_META[language]

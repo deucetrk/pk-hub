@@ -6,6 +6,7 @@ import { LazyMotion, domAnimation } from 'framer-motion'
 import AppRoutes from '@/AppRoutes'
 import Home from '@/pages/Home'
 import Join from '@/pages/Join'
+import Contact from '@/pages/Contact'
 import DealerLogin from '@/pages/DealerLogin'
 import BlogArticle from '@/pages/blog/BlogArticle'
 import BlogIndex from '@/pages/blog/BlogIndex'
@@ -18,6 +19,7 @@ export { getHomeFaqSchema } from '@/content/homeFaqs'
 import { getPublishedArticle, getPublishedBlogPaths } from '@/content/blog/articles'
 import {
   BLOG_INDEX_META,
+  CONTACT_META,
   DEALER_LOGIN_META,
   getBlogIndexMeta,
   getProductMeta,
@@ -38,6 +40,7 @@ export function render(url: string) {
           <AppRoutes
             HomePage={Home}
             JoinPage={Join}
+            ContactPage={Contact}
             DealerLoginPage={DealerLogin}
             BlogArticlePage={BlogArticle}
             BlogIndexPage={BlogIndex}
@@ -58,6 +61,8 @@ export function getPrerenderRoutes() {
     '/en',
     '/th/join',
     '/en/join',
+    '/th/contact',
+    '/en/contact',
     '/th/dealer/login',
     '/en/dealer/login',
     '/th/products/stock-on-demand',
@@ -75,6 +80,8 @@ export function getPageMeta(url: string): PageMeta {
   if (url === '/en') return HOME_META.en
   if (url === '/th/join') return JOIN_META.th
   if (url === '/en/join') return JOIN_META.en
+  if (url === '/th/contact') return CONTACT_META.th
+  if (url === '/en/contact') return CONTACT_META.en
   if (url === '/th/dealer/login') return DEALER_LOGIN_META.th
   if (url === '/en/dealer/login') return DEALER_LOGIN_META.en
   if (url === '/th/products/stock-on-demand') return STOCK_ON_DEMAND_META.th

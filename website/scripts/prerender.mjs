@@ -4,7 +4,7 @@
  *
  * Runs after `vite build` (client) + `vite build --ssr` (server bundle).
  */
-import { readFileSync, writeFileSync, mkdirSync, rmSync, readdirSync } from 'node:fs'
+import { readFileSync, writeFileSync, mkdirSync, rmSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { execFileSync } from 'node:child_process'
@@ -23,16 +23,12 @@ function holdPrerenderForms(html, route) {
     ? 'The form is preparing. If it stays unavailable, contact our team.'
     : 'กำลังเตรียมแบบฟอร์ม หากยังไม่พร้อมใช้งาน ติดต่อทีมงานได้'
   const label = english ? 'Contact the team' : 'ช่องทางติดต่อทีมงาน'
-  const contact = `/${english ? 'en' : 'th'}#v4-start`
+  const contact = `/${english ? 'en' : 'th'}/contact`
   const note = `<div class="pk-form-bootstrap-note" data-pk-bootstrap-notice="" role="status"><p>${message}</p><a class="pk-action pk-action-secondary" href="${contact}">${label}</a></div>`
   return html.replace(/<form\b/g, `${note}<form inert="" data-pk-bootstrap-form=""`)
 }
 
 const template = readFileSync(resolve(dist, 'index.html'), 'utf-8')
-const cssAssets = readdirSync(resolve(dist, 'assets')).filter(name => name.endsWith('.css'))
-const productCss = cssAssets.find(name => name.startsWith('product-services-'))
-const stockCss = cssAssets.find(name => name.startsWith('StockOnDemandPage-'))
-if (!productCss || !stockCss) throw new Error('Missing product-page stylesheets')
 
 function removeTagById(html, id) {
   return html.replace(new RegExp(`\\s*<[^>]+id="${id}"[^>]*>`, 'g'), '')
@@ -79,13 +75,6 @@ function localize(html, route, meta) {
       `$1${meta.imageAlt ?? meta.title}$2`,
     )
 
-  // Keep the prerendered service composition styled while its route module loads.
-  if (/\/products\/stock-on-demand$/.test(route)) {
-    page = page.replace('</head>', `<link rel="stylesheet" href="/assets/${stockCss}" />\n</head>`)
-  } else if (/^\/(th|en)\/products(?:\/[^/]+)?$/.test(route) && !route.endsWith('/partner-marketing')) {
-    page = page.replace('</head>', `<link rel="stylesheet" href="/assets/${productCss}" />\n</head>`)
-  }
-
   if (meta.robots) {
     page = page.replace('</head>', `<meta name="robots" content="${meta.robots}" />\n</head>`)
   }
@@ -115,13 +104,14 @@ function localize(html, route, meta) {
   if (isHome) {
     page = removeScriptById(page, 'faq-schema')
     page = removeScriptById(page, 'video-schema')
-    page = page.replace('</head>', '<link rel="preload" as="image" href="/pkhub-v7/brands/logo.png" fetchpriority="high" />\n</head>')
+    page = page.replace('</head>', '<link rel="preload" as="image" href="/v1/img/phones.webp" fetchpriority="high" />\n</head>')
   }
 
-  if (route.endsWith('/join')) {
-    const alternate = `<link id="alternate-th" rel="alternate" hreflang="th" href="${SITE}/th/join" />
-    <link id="alternate-en" rel="alternate" hreflang="en" href="${SITE}/en/join" />
-    <link id="alternate-default" rel="alternate" hreflang="x-default" href="${SITE}/th/join" />`
+  if (route.endsWith('/join') || route.endsWith('/contact')) {
+    const suffix = route.endsWith('/join') ? '/join' : '/contact'
+    const alternate = `<link id="alternate-th" rel="alternate" hreflang="th" href="${SITE}/th${suffix}" />
+    <link id="alternate-en" rel="alternate" hreflang="en" href="${SITE}/en${suffix}" />
+    <link id="alternate-default" rel="alternate" hreflang="x-default" href="${SITE}/th${suffix}" />`
     page = page.replace('</head>', `${alternate}\n</head>`)
   }
 
@@ -202,7 +192,7 @@ const secondaryUrls = routes
   .filter((route) => !getPageMeta(route).robots?.includes('noindex'))
   .filter(
     (route) =>
-      route.includes('/join') || route.includes('/dealer/login') || route.includes('/products/') || route.startsWith('/th/blog'),
+      route.includes('/join') || route.includes('/contact') || route.includes('/dealer/login') || route.includes('/products/') || route.startsWith('/th/blog'),
   )
   .map(
     (route) => `
@@ -210,7 +200,7 @@ const secondaryUrls = routes
     <loc>${SITE}${route}</loc>
     <lastmod>${getRouteLastModified(route) ?? lastmod}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>${route.includes('/join') ? '0.9' : route.includes('/dealer/login') ? '0.8' : route.includes('/products/') ? '0.8' : route === '/th/blog' ? '0.8' : '0.7'}</priority>
+    <priority>${route.includes('/join') ? '0.9' : route.includes('/contact') ? '0.7' : route.includes('/dealer/login') ? '0.8' : route.includes('/products/') ? '0.8' : route === '/th/blog' ? '0.8' : '0.7'}</priority>
   </url>`,
   )
   .join('')

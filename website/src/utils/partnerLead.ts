@@ -70,9 +70,7 @@ export function validatePartnerLead(values: PartnerLead, language: 'th' | 'en' =
     if (!emailOk) errors.email = message('รูปแบบอีเมลไม่ถูกต้อง', 'Please enter a valid email address')
   }
 
-  if (!values.interestedBrands.length) {
-    errors.interestedBrands = message('กรุณาเลือกอย่างน้อย 1 แบรนด์', 'Please select at least one brand')
-  }
+  // Brands are optional (v1 design 2026-10-19); intake accepts service-only leads.
 
   if (!values.consent) {
     errors.consent = message('กรุณายืนยันความยินยอมก่อนส่งข้อมูล', 'Please confirm consent before submitting')

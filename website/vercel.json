@@ -30,6 +30,14 @@
       "destination": "/en/join/index.html"
     },
     {
+      "source": "/th/contact",
+      "destination": "/th/contact/index.html"
+    },
+    {
+      "source": "/en/contact",
+      "destination": "/en/contact/index.html"
+    },
+    {
       "source": "/th/dealer/login",
       "destination": "/th/dealer/login/index.html"
     },

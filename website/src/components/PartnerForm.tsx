@@ -1,22 +1,18 @@
-import {captureAcquisitionContext} from '@/utils/acquisitionContext'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
+import { ArrowRight } from 'lucide-react'
 
-import { ChevronDown, Loader2, MessageCircle } from 'lucide-react'
-
+import { CONTACT, route, t } from '@/components/v1/site'
+import { PROVINCES } from '@/content/provinces'
 import { useReferralAttribution } from '@/hooks/useReferralAttribution'
-import { cn } from '@/lib/utils'
-import { generateRequestId, hasErrors, normalizePhone, type PartnerLead, validatePartnerLead } from '@/utils/partnerLead'
 import { useLanguage } from '@/i18n/LanguageContext'
-import { submitPartnerLead, type PartnerLeadReceipt } from '@/services/partnerLeadSubmission'
-import { CONTACT } from '@/pages/home/constants'
+import { cn } from '@/lib/utils'
+import { PartnerLeadSubmissionError, submitPartnerLead, type PartnerLeadReceipt } from '@/services/partnerLeadSubmission'
+import { captureAcquisitionContext } from '@/utils/acquisitionContext'
+import { generateRequestId, normalizePhone, validatePartnerLead, type PartnerLead, type PartnerLeadErrors } from '@/utils/partnerLead'
+import { normalizeReferralCode } from '@/utils/referralAttribution'
 
-import Button from './Button'
-import BrandSelector from './partner-form/BrandSelector'
-import ConsentField from './partner-form/ConsentField'
-import SuccessCard from './partner-form/SuccessCard'
-import TextField from './partner-form/TextField'
-
-const BRAND_OPTIONS = ['Apple', 'Samsung', 'Oppo', 'Vivo', 'Realme', 'Xiaomi', 'Honor', 'Infinix']
+const BRAND_OPTIONS = ['Apple', 'Samsung', 'OPPO', 'vivo', 'Xiaomi', 'HONOR', 'HUAWEI', 'realme', 'NOTHING', 'TECNO']
+const NOTE_LIMIT = 1500
 
 const EMPTY_LEAD: PartnerLead = {
   shopName: '',
@@ -33,474 +29,441 @@ const EMPTY_LEAD: PartnerLead = {
   consent: false,
 }
 
+type FieldKey = keyof PartnerLead | 'referral'
+type Failure = 'retry' | 'rate-limited' | 'unavailable'
+
+const FIELD_ORDER: FieldKey[] = ['shopName', 'province', 'contactName', 'phone', 'email', 'referral', 'consent']
+
+function maskPhone(phone: string) {
+  const digits = normalizePhone(phone)
+  return digits.length >= 9 ? `${digits.slice(0, 3)}-XXX-${digits.slice(-4)}` : digits
+}
+
+function shortReference(requestId: string) {
+  const hex = requestId.replace(/-/g, '').slice(0, 8).toUpperCase()
+  return `${hex.slice(0, 4)}-${hex.slice(4)}`
+}
+
+function Field({ id, label, error, children }: { id: string; label: string; error?: string; children: ReactNode }) {
+  return (
+    <div className="v1-field">
+      <label htmlFor={id}>{label}</label>
+      {children}
+      {error ? (
+        <p id={`${id}-error`} className="v1-error">
+          {error}
+        </p>
+      ) : null}
+    </div>
+  )
+}
+
+function Success({ receipt, phone, onReset }: { receipt: PartnerLeadReceipt; phone: string; onReset: () => void }) {
+  const { language } = useLanguage()
+  const heading = useRef<HTMLHeadingElement>(null)
+  useEffect(() => {
+    heading.current?.focus({ preventScroll: true })
+    heading.current?.scrollIntoView({ block: 'center' })
+  }, [])
+  const received = new Intl.DateTimeFormat(language === 'th' ? 'th-TH' : 'en-GB', {
+    dateStyle: 'medium',
+    timeStyle: 'short',
+    timeZone: 'Asia/Bangkok',
+  }).format(new Date(receipt.receivedAt))
+  return (
+    <section className="grid gap-6 rounded-3xl p-[clamp(28px,3vw,40px)] text-white" style={{ background: 'var(--v1-dusk)' }} aria-labelledby="partner-result-heading" data-receipt-id={receipt.requestId}>
+      <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#2457d6]" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 28 28">
+          <path d="M6 14.5l5.5 5.5L22 9" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </span>
+      <div className="grid gap-2.5">
+        <h3 id="partner-result-heading" ref={heading} tabIndex={-1} className="v1-h3 outline-none" style={{ fontSize: 'clamp(30px, 2.8vw, 40px)' }}>
+          {t(language, 'ได้รับข้อมูลร้านแล้ว', 'We have your store details')}
+        </h3>
+        <p className="text-[17px] leading-7 text-[#dbdfe8]">
+          {t(
+            language,
+            `ทีม PK HUB จะโทรกลับที่เบอร์ ${maskPhone(phone)} เพื่อคุยรายละเอียด ยังไม่ใช่การอนุมัติเป็นคู่ค้า`,
+            `The PK HUB team will call ${maskPhone(phone)} to talk through the details. This is not yet partner approval.`,
+          )}
+        </p>
+        {receipt.duplicate ? (
+          <p className="text-[15px] text-[#c9cdd6]">{t(language, 'พบข้อมูลที่ส่งไว้แล้ว ระบบไม่ได้สร้างซ้ำ', 'This was already received; no duplicate was created.')}</p>
+        ) : null}
+      </div>
+      <dl className="flex flex-wrap gap-8 border-y border-white/15 py-4">
+        <div className="grid gap-0.5">
+          <dt className="text-[13px] text-[#c9cdd6]">{t(language, 'เลขอ้างอิง', 'Reference')}</dt>
+          <dd className="font-display text-xl font-medium tracking-[0.06em]" title={receipt.requestId}>
+            {shortReference(receipt.requestId)}
+          </dd>
+        </div>
+        <div className="grid gap-0.5">
+          <dt className="text-[13px] text-[#c9cdd6]">{t(language, 'ได้รับเมื่อ', 'Received')}</dt>
+          <dd className="text-[17px] leading-7">{received}</dd>
+        </div>
+      </dl>
+      <div className="flex flex-wrap gap-3">
+        <a href={route(language, '/products')} className="v1-btn v1-btn-white v1-btn-md">
+          {t(language, 'ดูบริการทั้งหมด', 'See all services')}
+        </a>
+        <a href={CONTACT.LINE_URL} target="_blank" rel="noreferrer" className="v1-btn v1-btn-ghost-light v1-btn-md">
+          {t(language, `ทัก LINE ${CONTACT.LINE_ID} ↗`, `LINE ${CONTACT.LINE_ID} ↗`)}
+        </a>
+        <button type="button" onClick={onReset} className="v1-link px-2 text-[#dbdfe8]">
+          {t(language, 'ส่งข้อมูลร้านอื่น', 'Send another store')}
+        </button>
+      </div>
+    </section>
+  )
+}
+
 type PartnerFormProps = {
   className?: string
+  /** Full application on /join; the compact enquiry is used inside articles. */
   isApplication?: boolean
 }
 
 export default function PartnerForm({ className, isApplication = false }: PartnerFormProps) {
-  const { isThai, language } = useLanguage()
-  const referralCode = useReferralAttribution()
-  const [requestId, setRequestId] = useState(() => generateRequestId())
+  const { language } = useLanguage()
+  const attributedReferral = useReferralAttribution()
   const [values, setValues] = useState<PartnerLead>(EMPTY_LEAD)
-  const [touched, setTouched] = useState<Record<string, boolean>>({})
+  const [referral, setReferral] = useState('')
+  const [touched, setTouched] = useState<Partial<Record<FieldKey, boolean>>>({})
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle')
-  const [submitError, setSubmitError] = useState<string>('')
-  const [optionalOpen, setOptionalOpen] = useState(false)
-  const submitErrorRef = useRef<HTMLDivElement>(null)
-  const submittingRef = useRef(false)
-  const [submittedValues, setSubmittedValues] = useState<PartnerLead | null>(null)
+  const [failure, setFailure] = useState<Failure | null>(null)
+  const [showSummary, setShowSummary] = useState(false)
   const [receipt, setReceipt] = useState<PartnerLeadReceipt | null>(null)
-
-  const errors = useMemo(() => validatePartnerLead(values, language), [language, values])
+  const requestId = useRef(generateRequestId())
+  const lastAttempt = useRef<string | null>(null)
+  const submitting = useRef(false)
+  const summaryRef = useRef<HTMLDivElement>(null)
+  const failureRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (submitError) submitErrorRef.current?.focus()
-  }, [submitError])
+    if (attributedReferral) setReferral((current) => current || attributedReferral)
+  }, [attributedReferral])
 
-  const setField = <K extends keyof PartnerLead>(key: K, next: PartnerLead[K]) => {
-    if (submittingRef.current) return
-    setValues((v) => ({ ...v, [key]: next }))
+  const errors = useMemo(() => {
+    const base: PartnerLeadErrors & { referral?: string } = validatePartnerLead(values, language)
+    if (referral.trim() && !normalizeReferralCode(referral)) {
+      base.referral = t(language, 'รหัสแนะนำใช้ได้เฉพาะ A–Z ตัวเลข - และ _ (3–64 ตัว)', 'Referral codes use A–Z, digits, - and _ (3–64 characters)')
+    }
+    return base
+  }, [language, referral, values])
+
+  const errorFor = (key: FieldKey) => (touched[key] ? (errors as Record<string, string | undefined>)[key] : undefined)
+  const invalid = FIELD_ORDER.filter((key) => (errors as Record<string, string | undefined>)[key])
+
+  useEffect(() => {
+    if (failure) failureRef.current?.focus()
+  }, [failure])
+
+  const set = <K extends keyof PartnerLead>(key: K, value: PartnerLead[K]) => {
+    if (submitting.current) return
+    setValues((current) => ({ ...current, [key]: value }))
+  }
+  const blur = (key: FieldKey) => () => setTouched((current) => ({ ...current, [key]: true }))
+
+  const fieldLabels: Record<string, string> = {
+    shopName: t(language, 'ชื่อร้าน', 'Store name'),
+    province: t(language, 'จังหวัด', 'Province'),
+    contactName: t(language, 'ชื่อผู้ติดต่อ', 'Contact name'),
+    phone: t(language, 'เบอร์โทรศัพท์', 'Phone'),
+    email: t(language, 'อีเมล', 'Email'),
+    referral: t(language, 'รหัสแนะนำ', 'Referral code'),
+    consent: t(language, 'การยินยอม', 'Consent'),
   }
 
-  const showError = (key: keyof PartnerLead) => Boolean(touched[String(key)] && errors[key])
-
-  const onSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (submittingRef.current) return
-    const form = e.currentTarget as HTMLFormElement
-    const website = String(new FormData(form).get('website') ?? '')
-    setTouched((current) => ({
-      ...current,
-      shopName: true,
-      province: true,
-      contactName: true,
-      phone: true,
-      interestedBrands: true,
-      consent: true,
-      email: current.email || Boolean(errors.email),
-    }))
-    setSubmitError('')
-
-    if (hasErrors(errors)) {
-      if (errors.email) setOptionalOpen(true)
-      const firstInvalid = (
-        [
-          'contactName',
-          'shopName',
-          'province',
-          'phone',
-          'interestedBrands',
-          'email',
-          'consent',
-        ] as const
-      ).find((key) => errors[key])
-      let selector = firstInvalid ? `#${firstInvalid}` : null
-      if (firstInvalid === 'interestedBrands') selector = '#interested-brands button'
-      if (firstInvalid === 'consent') selector = '#partner-consent'
-      if (selector) {
-        requestAnimationFrame(() => form.querySelector<HTMLElement>(selector)?.focus())
-      }
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    if (submitting.current) return
+    const form = event.currentTarget
+    setTouched(Object.fromEntries(FIELD_ORDER.map((key) => [key, true])))
+    setFailure(null)
+    if (invalid.length) {
+      setShowSummary(true)
+      requestAnimationFrame(() => {
+        summaryRef.current?.scrollIntoView({ block: 'center' })
+        const first = invalid[0] === 'consent' ? 'partner-consent' : invalid[0] === 'referral' ? 'referralCode' : invalid[0]
+        form.querySelector<HTMLElement>(`#${first}`)?.focus({ preventScroll: true })
+      })
       return
     }
+    setShowSummary(false)
 
-    // Capture the displayed request; success requires its matching persisted receipt.
+    const referralCode = normalizeReferralCode(referral) ?? ''
     const submitted = { ...values, interestedBrands: [...values.interestedBrands] }
-    submittingRef.current = true
-    setSubmittedValues(submitted)
+    const fingerprint = JSON.stringify([submitted, referralCode])
+    // A retry of the same details reuses the request ID so intake returns the original receipt;
+    // edited details get a new ID so they are never rejected as a conflicting replay.
+    if (lastAttempt.current !== null && lastAttempt.current !== fingerprint) requestId.current = generateRequestId()
+    lastAttempt.current = fingerprint
+
+    submitting.current = true
+    setStatus('submitting')
     try {
-      setStatus('submitting')
       const persisted = await submitPartnerLead({
         ...submitted,
         language,
         sourcePage: window.location.href,
-        requestId,
-        website,
-        referralCode: referralCode ?? '',
+        requestId: requestId.current,
+        website: String(new FormData(form).get('website') ?? ''),
+        referralCode,
         acquisitionSource: referralCode ? 'BD_REFERRAL' : 'ORGANIC',
         acquisitionContext: captureAcquisitionContext(window.location.href, window.sessionStorage),
       })
       setReceipt(persisted)
       setStatus('success')
-    } catch {
+    } catch (error) {
+      const code = error instanceof PartnerLeadSubmissionError ? error.code : 'NETWORK'
+      if (code === 'REQUEST_ID_CONFLICT') {
+        requestId.current = generateRequestId()
+        lastAttempt.current = null
+      }
+      setFailure(code === 'RATE_LIMITED' ? 'rate-limited' : code === 'INTAKE_NOT_CONFIGURED' ? 'unavailable' : 'retry')
       setStatus('idle')
-      setSubmitError(
-        isThai
-          ? 'ยังยืนยันผลการส่งไม่ได้ ข้อมูลอาจถึงทีม PK แล้ว กรุณาทัก LINE พร้อมชื่อร้านก่อนกดส่งซ้ำ'
-          : 'We cannot confirm delivery. PK may have received your details. Message us on LINE with your store name before resending.',
-      )
     } finally {
-      submittingRef.current = false
+      submitting.current = false
     }
   }
 
-  if (status === 'success') {
+  if (status === 'success' && receipt) {
     return (
-      <SuccessCard
-        values={submittedValues ?? values}
+      <Success
         receipt={receipt}
-        isApplication={isApplication}
+        phone={values.phone}
         onReset={() => {
-          setStatus('idle')
-          setTouched({})
-          setSubmitError('')
-          setSubmittedValues(null)
-          setReceipt(null)
-          setOptionalOpen(false)
-          setRequestId(generateRequestId())
+          requestId.current = generateRequestId()
+          lastAttempt.current = null
           setValues(EMPTY_LEAD)
-          requestAnimationFrame(() => document.getElementById('contactName')?.focus())
+          setTouched({})
+          setReceipt(null)
+          setStatus('idle')
+          requestAnimationFrame(() => document.getElementById('shopName')?.focus())
         }}
       />
     )
   }
 
+  const busy = status === 'submitting'
+  const input = (key: FieldKey) => ({
+    'aria-invalid': Boolean(errorFor(key)) || undefined,
+    'aria-describedby': errorFor(key) ? `${key === 'referral' ? 'referralCode' : key}-error` : undefined,
+    onBlur: blur(key),
+    className: 'v1-input',
+  })
+
   return (
-    <form
-      noValidate
-      onSubmit={onSubmit}
-      aria-busy={status === 'submitting'}
-      className={cn(
-        'pk-partner-form grid min-w-0 grid-cols-[minmax(0,1fr)] gap-5 bg-white',
-        isApplication ? 'border-0 p-0' : 'border border-zinc-200 p-5 sm:p-8',
-        className,
-      )}
-    >
+    <form noValidate onSubmit={onSubmit} aria-busy={busy} className={cn('grid gap-8', className)}>
       <div className="hidden" aria-hidden="true">
         <label htmlFor="website">Website</label>
         <input id="website" name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
 
-      <p className="text-sm text-zinc-600">{isThai ? '* ข้อมูลจำเป็นสำหรับให้ทีมติดต่อกลับ' : '* Required so our team can contact you'}</p>
-      <fieldset disabled={status === 'submitting'} className="m-0 grid min-w-0 gap-5 border-0 p-0">
-        <legend className="sr-only">
-          {isApplication
-            ? isThai
-              ? 'ข้อมูลสำหรับสมัครร้านค้าพาร์ทเนอร์'
-              : 'Retail partner application details'
-            : isThai
-              ? 'ข้อมูลสำหรับขอเช็กราคา'
-              : 'Price enquiry details'}
-        </legend>
-        <section
-          className="grid min-w-0 gap-5"
-          aria-label={isThai ? 'ร้านค้าและผู้ติดต่อ' : 'Store and contact'}
-        >
+      {showSummary && invalid.length ? (
+        <div ref={summaryRef} className="v1-alert" role="alert">
+          <span className="v1-alert-icon" aria-hidden="true">
+            !
+          </span>
+          <span className="grid gap-0.5">
+            <span className="font-medium">{t(language, `ยังส่งไม่ได้ มี ${invalid.length} ช่องที่ต้องแก้`, `Not sent yet: ${invalid.length} field${invalid.length > 1 ? 's' : ''} to fix`)}</span>
+            <span className="text-[15px]">{invalid.map((key) => fieldLabels[key]).join(' · ')}</span>
+          </span>
+        </div>
+      ) : null}
+
+      <fieldset disabled={busy} className="grid min-w-0 gap-8 disabled:opacity-60">
+        <legend className="v1-sr">{isApplication ? t(language, 'ใบสมัครคู่ค้า', 'Partner application') : t(language, 'ฝากข้อมูลร้าน', 'Store details')}</legend>
+        <div className="grid gap-5">
           {isApplication ? (
-            <h3 className="text-lg font-bold">
-              {isThai ? 'ร้านค้าและผู้ติดต่อ' : 'Store and contact'}
-            </h3>
-          ) : null}
-          <div className={cn('grid min-w-0 gap-5', isApplication && 'sm:grid-cols-2')}>
-            <TextField
-              id="contactName"
-              required
-              autoComplete="name"
-              label={isThai ? 'ชื่อผู้ติดต่อ' : 'Contact name'}
-              value={values.contactName}
-              onChange={(v) => setField('contactName', v)}
-              onBlur={() => setTouched((t) => ({ ...t, contactName: true }))}
-              placeholder={isThai ? 'ชื่อคนที่ทีม PK ติดต่อได้' : 'Who should the PK team contact?'}
-              error={showError('contactName') ? errors.contactName : undefined}
-            />
-
-            <div className={isApplication ? 'contents' : 'grid grid-cols-1 gap-5 sm:grid-cols-2'}>
-              <TextField
-                id="shopName"
-                required
-                autoComplete="organization"
-                label={isThai ? 'ชื่อร้าน / ชื่อเพจ' : 'Store or page name'}
-                value={values.shopName}
-                onChange={(v) => setField('shopName', v)}
-                onBlur={() => setTouched((t) => ({ ...t, shopName: true }))}
-                placeholder={
-                  isThai
-                    ? 'เช่น ร้านมือถือชลบุรี หรือชื่อเพจ'
-                    : 'e.g. PK Mobile Chonburi or page name'
-                }
-                error={showError('shopName') ? errors.shopName : undefined}
-              />
-
-              <TextField
-                id="province"
-                required
-                autoComplete="address-level1"
-                label={isThai ? 'จังหวัด' : 'Province'}
-                value={values.province}
-                onChange={(v) => setField('province', v)}
-                onBlur={() => setTouched((t) => ({ ...t, province: true }))}
-                placeholder={isThai ? 'เช่น ชลบุรี' : 'e.g. Chonburi'}
-                error={showError('province') ? errors.province : undefined}
-              />
+            <div className="grid gap-1.5">
+              <h3 className="font-display text-[28px] leading-10">{t(language, 'ข้อมูลร้าน', 'Store details')}</h3>
+              <p className="v1-small">{t(language, 'ช่องที่มี * ต้องกรอก', 'Fields marked * are required')}</p>
             </div>
-
-            <TextField
-              id="phone"
-              required
-              type="tel"
-              autoComplete="tel"
-              label={isThai ? 'เบอร์โทรที่ให้ทีมทักกลับ' : 'Phone number for our team to call back'}
-              value={values.phone}
-              onChange={(v) => setField('phone', v)}
-              onBlur={() => {
-                setTouched((t) => ({ ...t, phone: true }))
-                if (values.phone.trim()) {
-                  setField('phone', normalizePhone(values.phone))
-                }
-              }}
-              placeholder="08x-xxx-xxxx"
-              inputMode="tel"
-              error={showError('phone') ? errors.phone : undefined}
-            />
+          ) : null}
+          <div className="v1-grid-2">
+            <Field id="shopName" label={t(language, 'ชื่อร้าน *', 'Store name *')} error={errorFor('shopName')}>
+              <input id="shopName" autoComplete="organization" maxLength={160} placeholder={t(language, 'เช่น ร้านมือถือสมใจ', 'e.g. Somjai Mobile')} value={values.shopName} onChange={(e) => set('shopName', e.target.value)} {...input('shopName')} />
+            </Field>
+            <Field id="province" label={t(language, 'จังหวัด *', 'Province *')} error={errorFor('province')}>
+              <select id="province" autoComplete="address-level1" value={values.province} onChange={(e) => set('province', e.target.value)} {...input('province')}>
+                <option value="">{t(language, 'เลือกจังหวัด', 'Choose a province')}</option>
+                {PROVINCES.map(([th, en]) => (
+                  <option key={th} value={th}>
+                    {language === 'th' ? th : en}
+                  </option>
+                ))}
+              </select>
+            </Field>
           </div>
-        </section>
-
-        <section
-          className={cn('grid min-w-0 gap-4', isApplication && 'border-t border-zinc-200 pt-7')}
-          aria-label={isThai ? 'สินค้าที่สนใจ' : 'Products of interest'}
-        >
           {isApplication ? (
-            <h3 className="text-lg font-bold">
-              {isThai ? 'สินค้าที่สนใจ' : 'Products of interest'}
-            </h3>
-          ) : null}
-          <BrandSelector
-            options={BRAND_OPTIONS}
-            label={
-              isThai
-                ? 'แบรนด์ที่สนใจ * (เลือกอย่างน้อยหนึ่งแบรนด์)'
-                : 'Brands of interest * (select at least one)'
-            }
-            selected={values.interestedBrands}
-            error={touched.interestedBrands ? errors.interestedBrands : undefined}
-            onToggle={(brand, checked) => {
-              if (submittingRef.current) return
-              setTouched((t) => ({ ...t, interestedBrands: true }))
-              setValues((v) => ({
-                ...v,
-                interestedBrands: checked
-                  ? [...v.interestedBrands, brand]
-                  : v.interestedBrands.filter((x) => x !== brand),
-              }))
-            }}
-          />
-        </section>
-
-        <div className="pk-form-details">
-          <button
-            type="button"
-            className="pk-form-details-summary"
-            aria-expanded={optionalOpen}
-            aria-controls="partner-form-optional-fields"
-            onClick={() => setOptionalOpen((open) => !open)}
-          >
-            <span>
-              <strong>{isThai ? 'ข้อมูลเพิ่มเติม (ไม่บังคับ)' : 'More details (optional)'}</strong>
-              <small>
-                {isThai
-                  ? 'ช่วยให้ทีมติดต่อและเตรียมข้อมูลได้ตรงขึ้น'
-                  : 'Help the team prepare a more relevant reply.'}
-              </small>
-            </span>
-            <ChevronDown
-              className={cn('pk-form-details-icon', optionalOpen && 'rotate-180')}
-              aria-hidden="true"
-            />
-          </button>
-          {optionalOpen ? (
-            <div id="partner-form-optional-fields" className="pk-form-details-fields">
-              <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                <TextField
-                  id="lineId"
-                  label={isThai ? 'LINE ID (ไม่บังคับ)' : 'LINE ID (optional)'}
-                  value={values.lineId}
-                  onChange={(v) => setField('lineId', v)}
-                  onBlur={() => setTouched((t) => ({ ...t, lineId: true }))}
-                  placeholder="LINE ID"
-                />
-                <TextField
-                  id="email"
-                  type="email"
-                  autoComplete="email"
-                  label={isThai ? 'อีเมล (ไม่บังคับ)' : 'Email (optional)'}
-                  value={values.email}
-                  onChange={(v) => setField('email', v)}
-                  onBlur={() => setTouched((t) => ({ ...t, email: true }))}
-                  placeholder="name@example.com"
-                  inputMode="email"
-                  error={showError('email') ? errors.email : undefined}
-                />
-              </div>
-
-              <TextField
-                id="socialContact"
-                label={
-                  isThai
-                    ? 'เพจร้านหรือช่องทางติดต่ออื่น (ไม่บังคับ)'
-                    : 'Store page or another contact (optional)'
-                }
-                value={values.socialContact}
-                onChange={(v) => setField('socialContact', v)}
-                onBlur={() => setTouched((t) => ({ ...t, socialContact: true }))}
-                placeholder={
-                  isThai ? 'เช่น Facebook หรือ TikTok ของร้าน' : 'e.g. store Facebook or TikTok'
-                }
-              />
-
-              <TextField
-                id="address"
-                label={isThai ? 'ที่อยู่ร้าน (ไม่บังคับ)' : 'Store address (optional)'}
-                value={values.address}
-                onChange={(v) => setField('address', v)}
-                onBlur={() => setTouched((t) => ({ ...t, address: true }))}
-                placeholder={isThai ? 'อำเภอ / ที่อยู่สำหรับติดต่อ' : 'District or contact address'}
-              />
-
-              <TextField
-                id="taxId"
-                label={isThai ? 'เลขประจำตัวผู้เสียภาษี (ถ้ามี)' : 'Tax ID (if available)'}
-                value={values.taxId}
-                onChange={(v) => setField('taxId', v)}
-                onBlur={() => setTouched((t) => ({ ...t, taxId: true }))}
-                inputMode="numeric"
-              />
-
-              <TextField
-                id="note"
-                label={
-                  isThai
-                    ? 'งบประมาณหรือรุ่นที่สนใจ (ไม่บังคับ)'
-                    : 'Budget or models of interest (optional)'
-                }
-                value={values.note}
-                onChange={(v) => setField('note', v)}
-                onBlur={() => setTouched((t) => ({ ...t, note: true }))}
-                placeholder={
-                  isThai
-                    ? 'เช่น งบเริ่มต้น 50,000 บาท หรือ Samsung รุ่น A'
-                    : 'e.g. THB 50,000 starting budget or Samsung A series'
-                }
-              />
-            </div>
+            <Field id="address" label={t(language, 'ที่อยู่ร้าน (ไม่บังคับ)', 'Store address (optional)')}>
+              <input id="address" autoComplete="street-address" maxLength={600} placeholder={t(language, 'เลขที่ ถนน ตำบล อำเภอ', 'Number, road, district')} value={values.address} onChange={(e) => set('address', e.target.value)} className="v1-input" />
+            </Field>
           ) : null}
         </div>
 
-        {referralCode ? (
-          <div className="border-l-2 border-[#8eaaf2] bg-[#eaf0ff] px-4 py-3 text-sm leading-6 text-zinc-700">
-            {isThai
-              ? 'ระบบเก็บข้อมูลผู้แนะนำไว้แล้ว ทีม PK จะตรวจสอบพร้อมใบสมัครของคุณ'
-              : 'Your PK referral context is retained and will be reviewed with this application.'}
+        <div className={cn('grid gap-5', isApplication && 'border-t border-[#e5e5e5] pt-7')}>
+          {isApplication ? <h3 className="font-display text-[22px] leading-8">{t(language, 'ผู้ติดต่อ', 'Contact')}</h3> : null}
+          <div className="v1-grid-2">
+            <Field id="contactName" label={t(language, 'ชื่อผู้ติดต่อ *', 'Contact name *')} error={errorFor('contactName')}>
+              <input id="contactName" autoComplete="name" maxLength={160} placeholder={t(language, 'ชื่อ-นามสกุล หรือชื่อเล่น', 'Full name or nickname')} value={values.contactName} onChange={(e) => set('contactName', e.target.value)} {...input('contactName')} />
+            </Field>
+            <Field id="phone" label={t(language, 'เบอร์โทรศัพท์ *', 'Phone *')} error={errorFor('phone') ? t(language, 'ใส่เบอร์ 9–10 หลัก ขึ้นต้นด้วย 0 เช่น 081-234-5678', 'Enter 9–10 digits starting with 0, e.g. 081-234-5678') : undefined}>
+              <input
+                id="phone"
+                type="tel"
+                inputMode="tel"
+                autoComplete="tel"
+                maxLength={30}
+                placeholder="08X-XXX-XXXX"
+                value={values.phone}
+                onChange={(e) => set('phone', e.target.value)}
+                {...input('phone')}
+              />
+            </Field>
+          </div>
+          {isApplication ? (
+            <>
+              <div className="v1-grid-2">
+                <Field id="lineId" label={t(language, 'LINE ID (ไม่บังคับ)', 'LINE ID (optional)')}>
+                  <input id="lineId" maxLength={100} placeholder={t(language, '@ หรือ ID ส่วนตัว', '@ or personal ID')} value={values.lineId} onChange={(e) => set('lineId', e.target.value)} className="v1-input" />
+                </Field>
+                <Field id="email" label={t(language, 'อีเมล (ไม่บังคับ)', 'Email (optional)')} error={errorFor('email')}>
+                  <input id="email" type="email" inputMode="email" autoComplete="email" maxLength={180} placeholder="name@example.com" value={values.email} onChange={(e) => set('email', e.target.value)} {...input('email')} />
+                </Field>
+              </div>
+              <Field id="socialContact" label={t(language, 'Facebook หรือ TikTok ของร้าน (ไม่บังคับ)', 'Store Facebook or TikTok (optional)')}>
+                <input id="socialContact" maxLength={250} placeholder={t(language, 'ลิงก์เพจหรือชื่อบัญชี', 'Page link or account name')} value={values.socialContact} onChange={(e) => set('socialContact', e.target.value)} className="v1-input" />
+              </Field>
+            </>
+          ) : null}
+        </div>
+
+        {isApplication ? (
+          <div className="grid gap-4 border-t border-[#e5e5e5] pt-7">
+            <div className="grid gap-1">
+              <h3 className="font-display text-[22px] leading-8" id="brands-label">
+                {t(language, 'แบรนด์ที่สนใจ', 'Brands of interest')}
+              </h3>
+              <p className="v1-small">{t(language, 'เลือกได้หลายแบรนด์ หรือข้ามไปก่อนก็ได้', 'Pick any number, or skip for now')}</p>
+            </div>
+            <div className="flex flex-wrap gap-2" role="group" aria-labelledby="brands-label">
+              {[...BRAND_OPTIONS, t(language, 'อุปกรณ์เสริม', 'Accessories'), t(language, 'ซิมและเติมเงิน AIS', 'AIS SIM and top-up')].map((brand) => {
+                const pressed = values.interestedBrands.includes(brand)
+                return (
+                  <button
+                    key={brand}
+                    type="button"
+                    className="v1-toggle"
+                    aria-pressed={pressed}
+                    onClick={() => set('interestedBrands', pressed ? values.interestedBrands.filter((item) => item !== brand) : [...values.interestedBrands, brand])}
+                  >
+                    {pressed ? <span aria-hidden="true">✓</span> : null}
+                    {brand}
+                  </button>
+                )
+              })}
+            </div>
           </div>
         ) : null}
 
         {isApplication ? (
-          <section
-            className="border-y border-zinc-200 py-6"
-            aria-label={isThai ? 'ข้อมูลที่จะส่งกับใบสมัคร' : 'Application details to send'}
-          >
-            <div className="flex flex-wrap items-center justify-between gap-3">
-              <h3 className="text-lg font-bold">
-                {isThai ? 'ตรวจข้อมูลก่อนส่ง' : 'Review before sending'}
-              </h3>
-              <button
-                type="button"
-                className="min-h-11 text-sm font-semibold text-[#2457d6] underline underline-offset-4"
-                onClick={() => document.getElementById('contactName')?.focus()}
-              >
-                {isThai ? 'แก้ข้อมูลร้าน' : 'Edit store details'}
-              </button>
+          <div className="grid gap-5 border-t border-[#e5e5e5] pt-7">
+            <Field id="note" label={t(language, 'อยากให้ทีมรู้อะไรก่อนโทร (ไม่บังคับ)', 'Anything the team should know before calling (optional)')}>
+              <textarea
+                id="note"
+                maxLength={NOTE_LIMIT}
+                placeholder={t(language, 'เช่น ขายมือถือมือหนึ่งอยู่แล้ว อยากเพิ่มอุปกรณ์เสริม', 'e.g. We already sell new phones and want to add accessories')}
+                value={values.note}
+                onChange={(e) => set('note', e.target.value)}
+                className="v1-input"
+                aria-describedby="note-count"
+              />
+              <span id="note-count" className="text-right text-[13px] text-[#606060]">
+                {values.note.length} / {NOTE_LIMIT}
+              </span>
+            </Field>
+            <div className="sm:max-w-[316px]">
+              <Field id="referralCode" label={t(language, 'รหัสแนะนำ (ถ้ามี)', 'Referral code (if any)')} error={errorFor('referral')}>
+                <input id="referralCode" maxLength={64} placeholder={t(language, 'เช่น BD-SOMCHAI', 'e.g. BD-SOMCHAI')} value={referral} onChange={(e) => setReferral(e.target.value)} {...input('referral')} />
+              </Field>
             </div>
-            {values.shopName.trim() ||
-            values.province.trim() ||
-            values.phone.trim() ||
-            values.interestedBrands.length ? (
-              <dl className="mt-4 grid grid-cols-1 gap-x-6 gap-y-4 text-sm sm:grid-cols-2">
-                {[
-                  [isThai ? 'ร้านค้า' : 'Store', values.shopName.trim()],
-                  [isThai ? 'จังหวัด' : 'Province', values.province.trim()],
-                  [isThai ? 'เบอร์โทร' : 'Phone', values.phone.trim()],
-                  [isThai ? 'แบรนด์' : 'Brands', values.interestedBrands.join(', ')],
-                ].map(([label, value]) => (
-                  <div key={label} className="min-w-0">
-                    <dt className="text-zinc-600">{label}</dt>
-                    <dd className="mt-1 break-words font-semibold">
-                      {value || (isThai ? 'ยังไม่ได้กรอก' : 'Not entered yet')}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
-            ) : (
-              <p className="mt-3 text-sm leading-6 text-zinc-600">
-                {isThai
-                  ? 'ตรวจชื่อร้าน จังหวัด เบอร์โทร และแบรนด์ที่สนใจก่อนส่ง'
-                  : 'Check your store, province, phone and selected brands before sending.'}
-              </p>
-            )}
-          </section>
-        ) : null}
-
-        <ConsentField
-          checked={values.consent}
-          isThai={isThai}
-          isApplication={isApplication}
-          error={showError('consent') ? errors.consent : undefined}
-          onChange={(next) => {
-            setTouched((t) => ({ ...t, consent: true }))
-            setField('consent', next)
-          }}
-        />
-
-        {submitError ? (
-          <div
-            ref={submitErrorRef}
-            tabIndex={-1}
-            role="alert"
-            className="text-sm font-semibold text-red-700 focus:outline-2 focus:outline-offset-4 focus:outline-[#2457d6]"
-          >
-            {submitError}
           </div>
         ) : null}
 
-        <div className="flex flex-col gap-3 sm:flex-row">
-          <Button
-            type="submit"
-            className="w-full border-transparent bg-[#2457d6] text-white hover:bg-[#1946b8] disabled:cursor-wait disabled:opacity-100 sm:w-auto"
-            disabled={status === 'submitting'}
-          >
-            {status === 'submitting' ? (
-              <>
-                <Loader2 className="h-5 w-5 animate-spin" />
-                <span role="status">
-                  {isApplication
-                    ? isThai
-                      ? 'กำลังส่งใบสมัคร'
-                      : 'Sending application'
-                    : isThai
-                      ? 'กำลังส่งให้ทีมขาย'
-                      : 'Sending to sales'}
-                </span>
-              </>
-            ) : isApplication ? (
-              isThai ? (
-                'ส่งใบสมัครให้ทีม PK ตรวจสอบ'
-              ) : (
-                'Send application for PK review'
-              )
-            ) : isThai ? (
-              'ฝากข้อมูลให้ทีมเช็กราคา'
-            ) : (
-              'Send details for a price check'
-            )}
-          </Button>
-          <a
-            href={CONTACT.LINE_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex w-full items-center justify-center gap-2 border border-zinc-300 bg-white px-6 py-3.5 text-sm font-semibold text-zinc-700 transition-colors hover:border-zinc-500 hover:text-zinc-900 sm:w-auto"
-          >
-            <MessageCircle className="h-4 w-4 fill-current" />
-            {isThai ? 'ด่วนกว่า? Inbox LINE' : 'Faster? Inbox LINE'}
-          </a>
+        <div className={cn('grid gap-5', isApplication && 'border-t border-[#e5e5e5] pt-7')}>
+          <div className="grid gap-1">
+            <label className="flex cursor-pointer items-start gap-3.5">
+              <input
+                id="partner-consent"
+                type="checkbox"
+                className="v1-check"
+                checked={values.consent}
+                onChange={(e) => {
+                  set('consent', e.target.checked)
+                  setTouched((current) => ({ ...current, consent: true }))
+                }}
+                aria-invalid={Boolean(errorFor('consent')) || undefined}
+                aria-describedby={errorFor('consent') ? 'partner-consent-error' : undefined}
+              />
+              <span className="text-[15px] leading-[26px] text-[#3a3a3a]">
+                {t(language, 'ยินยอมให้ PK HUB ใช้ข้อมูลนี้เพื่อติดต่อกลับเรื่องการเป็นคู่ค้าเท่านั้น *', 'I agree PK HUB may use these details only to contact me about becoming a partner *')}
+              </span>
+            </label>
+            {errorFor('consent') ? (
+              <p id="partner-consent-error" className="v1-error pl-[38px]">
+                {t(language, 'ต้องยินยอมก่อนส่ง เพื่อให้ทีมติดต่อกลับได้', 'Please agree so the team can contact you')}
+              </p>
+            ) : null}
+          </div>
+
+          {failure ? (
+            <div ref={failureRef} tabIndex={-1} className="v1-alert v1-alert-warn outline-none" role="alert">
+              <span className="v1-alert-icon" aria-hidden="true">
+                !
+              </span>
+              <span className="grid gap-0.5">
+                {failure === 'rate-limited' ? (
+                  <span className="font-medium">{t(language, 'ส่งหลายครั้งในเวลาสั้นๆ กรุณารอสักครู่แล้วลองใหม่', 'Too many attempts in a short time. Please wait a moment and try again.')}</span>
+                ) : failure === 'unavailable' ? (
+                  <>
+                    <span className="font-medium">{t(language, 'ตอนนี้ส่งแบบฟอร์มออนไลน์ไม่ได้', 'Online sending is unavailable right now')}</span>
+                    <span className="text-[15px]">{t(language, `ติดต่อทีมได้ที่ ${CONTACT.PHONE_DISPLAY} หรือ LINE ${CONTACT.LINE_ID}`, `Reach the team on ${CONTACT.PHONE_DISPLAY} or LINE ${CONTACT.LINE_ID}`)}</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="font-medium">{t(language, 'ยังส่งไม่สำเร็จ ข้อมูลที่กรอกยังอยู่ครบ', 'Not sent yet. Your details are still here.')}</span>
+                    <span className="text-[15px]">{t(language, 'กดส่งอีกครั้งได้เลย ระบบจะไม่สร้างข้อมูลซ้ำ', 'Press send again. It will not create a duplicate.')}</span>
+                  </>
+                )}
+              </span>
+            </div>
+          ) : null}
+
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <p className="max-w-[340px] text-sm leading-[22px] text-[#606060]">
+              {t(language, 'การส่งข้อมูลยังไม่ใช่การอนุมัติเป็นคู่ค้า ทีมจะติดต่อกลับเพื่อคุยรายละเอียด', 'Sending is not partner approval. The team will call you to talk through the details.')}
+            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              {failure ? <span className="text-[15px] text-[#3a3a3a]">{t(language, `หรือโทร ${CONTACT.PHONE_DISPLAY}`, `or call ${CONTACT.PHONE_DISPLAY}`)}</span> : null}
+              <button type="submit" className="v1-btn v1-btn-primary" disabled={busy}>
+                {busy ? (
+                  <>
+                    <span className="v1-spinner" aria-hidden="true" />
+                    <span role="status">{t(language, 'กำลังส่ง…', 'Sending…')}</span>
+                  </>
+                ) : (
+                  <>
+                    {failure === 'retry' ? t(language, 'ส่งอีกครั้ง', 'Send again') : t(language, 'ส่งข้อมูลร้าน', 'Send store details')}
+                    <ArrowRight size={20} aria-hidden="true" />
+                  </>
+                )}
+              </button>
+            </div>
+          </div>
         </div>
       </fieldset>
     </form>

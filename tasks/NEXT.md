@@ -1,6 +1,6 @@
 ---
-goal: AGENT-CONTINUITY-001
-updated: 2026-10-16
+goal: PKHUB-V1-REDESIGN-001
+updated: 2026-10-19
 ---
 # Work queue
 
@@ -8,6 +8,7 @@ updated: 2026-10-16
 
 | Work | State | Boundary |
 | --- | --- | --- |
+| Privacy notice page (board 14) | NEEDS_OWNER_TEXT | Publish only owner/legal-approved text. |
 | Native accessibility and physical-device review | READY | Local/read-only; record device and OS preference evidence. |
 | Provider delivery and actual-role end-to-end acceptance | NEEDS_SCOPED_AUTHORIZATION | Real leads, account changes or business mutations require exact current authorization. |
 | Always-on agent orchestration | DEFERRED | No scheduler, leases, budget policy or persistent worker runtime is commissioned. |

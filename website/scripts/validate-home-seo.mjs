@@ -9,7 +9,7 @@ const reviewSlugs = ['stock-on-demand', 'handset-wholesale', 'accessories', 'ais
 const productSuffixes = ['/products', '/products/partner-marketing', ...reviewSlugs.map(slug => '/products/' + slug)]
 
 for (const lang of ['th', 'en']) {
-  for (const suffix of ['', '/join', '/dealer/login', ...productSuffixes]) {
+  for (const suffix of ['', '/join', '/contact', '/dealer/login', ...productSuffixes]) {
     const route = lang + suffix
     const html = read(route)
     assert(html.includes(`<html lang="${lang}"`), `${route}: language`)
@@ -23,8 +23,6 @@ for (const lang of ['th', 'en']) {
     assert(/name="description"\s+content="[^"]+"/.test(html), `${route}: description`)
     if (suffix === '/products' || reviewSlugs.some(slug => suffix === '/products/' + slug)) {
       assert(html.includes('name="robots" content="noindex, follow"'), `${route}: review page stays noindex`)
-      const styleName = suffix === '/products/stock-on-demand' ? 'StockOnDemandPage-' : 'product-services-'
-      assert(html.includes(`rel="stylesheet" href="/assets/${styleName}`), `${route}: styled before hydration`)
     }
     if (suffix.startsWith('/products')) {
       for (const match of html.matchAll(/<img\b[^>]*>/g)) {
@@ -46,7 +44,7 @@ for (const lang of ['th', 'en']) {
     )) {
       JSON.parse(match[1])
     }
-    if (suffix === '/join' || suffix === '' || suffix.startsWith('/products')) {
+    if (suffix === '/join' || suffix === '/contact' || suffix === '' || suffix.startsWith('/products')) {
       for (const alternate of ['th', 'en']) {
         assert(
           html.includes(`hreflang="${alternate}" href="https://pkhub.co/${alternate}${suffix}"`),
@@ -60,7 +58,7 @@ for (const lang of ['th', 'en']) {
   const body = html.split('<body>')[1]
   assert(!/opacity:\s*0(?:;|")/.test(body), `${lang}: prerendered content visible`)
   assert(/fetchPriority="high"/i.test(body), `${lang}: hero image priority`)
-  assert(html.includes('rel="preload" as="image" href="/pkhub-v7/brands/logo.png"'))
+  assert(html.includes('rel="preload" as="image" href="/v1/img/phones.webp"'), `${lang}: hero image preload`)
   for (const match of body.matchAll(/<img\b[^>]*>/g)) {
     assert(/\bwidth="/.test(match[0]) && /\bheight="/.test(match[0]), `${lang}: image dimensions on ${match[0]}`)
     assert(/\balt="/.test(match[0]), `${lang}: image alternative text on ${match[0]}`)
@@ -73,8 +71,10 @@ for (const lang of ['th', 'en']) {
   }
   assert(body.includes(`href="/${lang}/join"`), `${lang}: partner CTA`)
   assert(body.includes('href="https://lin.ee/VEgW6qG"'), `${lang}: LINE CTA`)
-  assert(body.includes('id="v4-brands"') && body.includes('id="v4-stock"') && body.includes('id="v4-customer"') && body.includes('id="v6-growth"') && body.includes('id="v4-start"'), `${lang}: V7 sections present`)
-  assert(body.includes('/pkhub-v7/brands/logo.png'), `${lang}: V7 authentic logo asset`)
+  for (const id of ['v1-brands', 'v1-growth', 'v1-stock', 'v1-marketing', 'v1-care', 'v1-start']) {
+    assert(body.includes(`id="${id}"`), `${lang}: v1 section ${id} present`)
+  }
+  assert(body.includes('/v1/brands/pkhub.webp'), `${lang}: authentic PK HUB logo asset`)
   assert(!body.includes('PK INTELLIGENCE'), `${lang}: speculative services removed`)
 }
 const sitemap = readFileSync(resolve(dist, 'sitemap.xml'), 'utf8')
@@ -127,5 +127,5 @@ assert(
 for (const href of ['/th', '/en', '/th/blog'])
   assert(missingPage.includes(`href="${href}"`), 'Static recovery links work without JavaScript')
 console.log(
-  'PASS: locale metadata, canonical/hreflang, visible prerendering, V7 ecosystem, images, CTA anchors, bootstrap form containment, static 404 and sitemap routes',
+  'PASS: locale metadata, canonical/hreflang, visible prerendering, v1 home sections, images, CTA anchors, bootstrap form containment, static 404 and sitemap routes',
 )

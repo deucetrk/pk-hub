@@ -71,7 +71,7 @@ test('Validation: missing required fields flagged in Thai and English', () => {
   assert.equal(thErrors.province, 'กรุณากรอกจังหวัด')
   assert.equal(thErrors.contactName, 'กรุณากรอกชื่อผู้ติดต่อ')
   assert.equal(thErrors.phone, 'กรุณากรอกเบอร์โทร')
-  assert.equal(thErrors.interestedBrands, 'กรุณาเลือกอย่างน้อย 1 แบรนด์')
+  assert.equal(thErrors.interestedBrands, undefined)
   assert.equal(thErrors.consent, 'กรุณายืนยันความยินยอมก่อนส่งข้อมูล')
 
   const enErrors = validatePartnerLead(emptyLead, 'en')
@@ -79,7 +79,7 @@ test('Validation: missing required fields flagged in Thai and English', () => {
   assert.equal(enErrors.province, 'Please enter your province')
   assert.equal(enErrors.contactName, 'Please enter a contact name')
   assert.equal(enErrors.phone, 'Please enter a phone number')
-  assert.equal(enErrors.interestedBrands, 'Please select at least one brand')
+  assert.equal(enErrors.interestedBrands, undefined)
   assert.equal(enErrors.consent, 'Please confirm consent before submitting')
 })
 
@@ -121,12 +121,11 @@ test('Email validation: optional field permits empty but validates when provided
   )
 })
 
-test('Frontend validation: current brand-selection requirement is preserved', () => {
-  // Existing form UX still requests one brand; server intake supports service-only leads.
-  // A later service-interest form can change that UX without restoring the Sheet contract.
+test('Frontend validation: brand selection is optional (v1 application form)', () => {
+  // Server intake supports service-only leads; the v1 form lets stores skip brands.
   const noBrands = { ...VALID_SAMPLE_LEAD, interestedBrands: [] }
   const errors = validatePartnerLead(noBrands, 'th')
-  assert.ok(errors.interestedBrands)
+  assert.equal(errors.interestedBrands, undefined)
 })
 
 test('Request ID generation: generates valid RFC4122 v4 UUID format', () => {

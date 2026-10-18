@@ -1,5 +1,15 @@
 # PK HUB Public Design Direction
 
+## v1 supersedes V7 — 2026-10-19
+
+The owner approved the v1 design (Paper `01M574A45Y9KY0KNPKJGP83B4Z`, "pkhub.co · Site · Desktop"
+and "pkhub.co · Design spec"). It replaces the V7 composition on every public route: ink/cobalt/
+periwinkle palette, light Anuphan display over IBM Plex Sans Thai, pill actions, 28px cards,
+40px rounded section tops, periwinkle grid and pixel glitter. Tokens and components live in
+[src/styles/v1.css](src/styles/v1.css) and [src/components/v1](src/components/v1). Implementation
+evidence: [PKHUB-V1-REDESIGN-20261019](../docs/evidence/PKHUB-V1-REDESIGN-20261019.md). The V7
+sections below are historical.
+
 Canonical public design direction; V7 Home and Partner Marketing approved 2026-10-06.
 Current repository status belongs in [GOAL.md](../GOAL.md) and [CURRENT_STATE.md](../CURRENT_STATE.md).
 The [2026-10-15 journey release](../PUBLIC-UX-20261015.md) preserves V7 and records its exact
