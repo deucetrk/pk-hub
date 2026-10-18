@@ -39,3 +39,13 @@ against a local mocked endpoint only (no real lead sent): retry reused the same 
 produced one receipt view with masked phone and short reference.
 
 Not covered: physical devices, screen readers, real intake delivery.
+
+## Release observation
+
+PR #15 checks: GitHub `verify` and the Vercel pk-hub, website and applications previews all passed.
+The PR merged as `3eecd30d17047d08fd120c93e8a99ef102ff4df9`. At 2026-10-18T19:37:53Z,
+`https://pkhub.co/revision.json` returned that SHA. Production HTTP 200 for:
+`/th`, `/en`, `/th/products` and its 9 service routes, `/th|en/join`, `/th|en/contact` and
+`/th/blog`. `/th/nope` returned 404. The home HTML contains all six v1 section ids. A browser
+check of `https://pkhub.co/th` at 1440px rendered the v1 hero. Rollback: Vercel instant rollback
+to `77c4f18`, or revert the merge.

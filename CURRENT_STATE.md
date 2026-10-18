@@ -17,5 +17,7 @@ a verified matching receipt; configuration and real provider delivery remain sep
 Native reduced-motion/screen-reader/physical-device and authenticated per-role business
 acceptance were not completed by the last release. Do not convert those gaps into new permission.
 
-In progress: the [v1 redesign](GOAL.md) on `claude/pkhub-v1-redesign`; production still serves
-`77c4f18` until that branch merges.
+v1 redesign released: PR #15 merged as `3eecd30d17047d08fd120c93e8a99ef102ff4df9`; pkhub.co
+`/revision.json` served it at 2026-10-18T19:37:53Z, 17 public routes returned 200 and an unknown
+route 404. Rollback target: `77c4f18`. Real intake delivery was not exercised.
+[Evidence](docs/evidence/PKHUB-V1-REDESIGN-20261019.md).
