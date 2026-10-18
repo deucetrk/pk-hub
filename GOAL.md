@@ -1,6 +1,6 @@
 ---
 task: PKHUB-V1-REDESIGN-001
-status: in_progress
+status: complete
 validation: passed
 updated: 2026-10-19
 ---
@@ -35,8 +35,12 @@ Previous production revision: `77c4f1823574e720468518669d28b9a87954afa2`. Roll b
 instant rollback to that deployment, or revert the merge commit on `main` and let the pipeline
 rebuild. No data, schema or configuration is changed by this release.
 
+## Outcome
+
+Merged as `3eecd30d17047d08fd120c93e8a99ef102ff4df9` (PR #15); pkhub.co served that revision at
+2026-10-18T19:37:53Z. See [evidence](docs/evidence/PKHUB-V1-REDESIGN-20261019.md).
+
 ## Next action
 
-After the merge deploys, verify the live revision and routes, record them in
-[CURRENT_STATE.md](CURRENT_STATE.md) and [evidence](docs/evidence/PKHUB-V1-REDESIGN-20261019.md),
-then mark this goal complete. Mobile Paper boards follow in the Commerce design file.
+Owner review of the live site; then the privacy notice (needs approved text) or the first READY
+item in [the queue](tasks/NEXT.md). Mobile Paper boards are tracked in the Commerce design file.
