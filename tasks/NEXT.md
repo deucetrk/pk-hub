@@ -1,6 +1,6 @@
 ---
-goal: PKHUB-V1-REDESIGN-001
-updated: 2026-10-19
+goal: PKHUB-MOTION-001
+updated: 2026-10-20
 ---
 # Work queue
 

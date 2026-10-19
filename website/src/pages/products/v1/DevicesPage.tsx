@@ -17,27 +17,6 @@ const MINI_LOGOS: Array<[string, string, number, number, boolean]> = [
 
 export default function DevicesPage({ focus }: { focus: 'devices' | 'accessories' }) {
   const { language } = useLanguage()
-  const { search } = useLocation()
-  const [selected, setSelected] = useState<string | null>(null)
-  useEffect(() => {
-    const brand = new URLSearchParams(search).get('brand')
-    setSelected(brand)
-    // A brand tapped elsewhere lands on the filter even when the route loaded after the hash jump.
-    if (brand && window.location.hash === '#v1-brand-filter') {
-      const jump = () => document.getElementById('v1-brand-filter')?.scrollIntoView({ block: 'start', behavior: 'instant' })
-      const timer = window.setTimeout(jump, 120)
-      return () => window.clearTimeout(timer)
-    }
-  }, [search])
-  const match = findBrand(selected)
-  const select = (slug: string | null) => {
-    setSelected(slug)
-    const url = new URL(window.location.href)
-    if (slug) url.searchParams.set('brand', slug)
-    else url.searchParams.delete('brand')
-    window.history.replaceState(window.history.state, '', url.pathname + url.search + url.hash)
-  }
-  const dim = (kind: 'phone' | 'accessory') => (match && match.kind !== kind ? 'v1-dim' : '')
   const accessories = focus === 'accessories'
   return (
     <PageShell cta={false}>
@@ -61,7 +40,7 @@ export default function DevicesPage({ focus }: { focus: 'devices' | 'accessories
 
       <section className="v1-white" aria-label={t(language, 'หมวดสินค้า', 'Categories')}>
         <div className="v1-wrap grid gap-6 pb-6 pt-12">
-          <div className={`v1-devices-top v1-reveal ${dim('phone')}`}>
+          <div className="v1-devices-top v1-reveal" data-brand-kind="phone">
             <a href={productRoute(language, 'handset-wholesale')} className="v1-card v1-card-hover v1-devices-phone text-white" style={{ background: 'radial-gradient(circle at 75% 40%, rgba(36,87,214,.33), rgba(36,87,214,0) 55%), #0b0b0b' }}>
               <span className="flex flex-col justify-between gap-8">
                 <span className="grid gap-3">
@@ -92,7 +71,7 @@ export default function DevicesPage({ focus }: { focus: 'devices' | 'accessories
               <img src="/v1/img/tablets.webp" alt={t(language, 'แท็บเล็ต', 'Tablets')} width={367} height={600} loading="lazy" className="mx-auto h-[250px] w-auto object-contain" />
             </div>
           </div>
-          <div className={`v1-devices-row v1-reveal ${dim('accessory')}`}>
+          <div className="v1-devices-row v1-reveal" data-brand-kind="accessory">
             <a href={productRoute(language, 'accessories')} className="v1-card v1-card-hover v1-devices-mini bg-[#f4f4f4]">
               <span className="grid gap-1.5">
                 <span className="v1-h4">{t(language, 'หูฟังและลำโพง', 'Audio')}</span>
@@ -164,6 +143,61 @@ export default function DevicesPage({ focus }: { focus: 'devices' | 'accessories
               )}
             </p>
           </div>
+          <BrandFilter />
+        </div>
+      </section>
+
+      <section className="bg-[#2457d6] text-white" aria-labelledby="v1-sod-strip">
+        <div className="v1-wrap flex flex-wrap items-center justify-between gap-6 py-16">
+          <div className="grid gap-2">
+            <h2 id="v1-sod-strip" className="v1-h3" style={{ fontSize: 'clamp(30px, 2.8vw, 40px)' }}>
+              {t(language, 'ไม่เจอรุ่นที่ลูกค้าถามหา?', 'Cannot find the model a customer wants?')}
+            </h2>
+            <p className="text-lg leading-[30px] text-[#dce5ff]">{t(language, 'ส่งคำขอ Stock on Demand ให้ทีม PK ช่วยหา', 'Send a Stock on Demand request and let PK find it')}</p>
+          </div>
+          <a href={productRoute(language, 'stock-on-demand')} className="v1-btn v1-btn-white">
+            {t(language, 'รู้จัก Stock on Demand →', 'About Stock on Demand →')}
+          </a>
+        </div>
+      </section>
+    </PageShell>
+  )
+}
+
+/**
+ * Brand filter: tapping a logo (here, or on the home billboard via `?brand=`) shows its category and
+ * dims the other category cards. State lives here, and the dimming is a class toggle, so a tap
+ * re-renders only this block rather than the whole page.
+ */
+function BrandFilter() {
+  const { language } = useLanguage()
+  const { search } = useLocation()
+  const [selected, setSelected] = useState<string | null>(null)
+  useEffect(() => {
+    const brand = new URLSearchParams(search).get('brand')
+    setSelected(brand)
+    // A brand tapped elsewhere lands on the filter even when the route loaded after the hash jump.
+    if (brand && window.location.hash === '#v1-brand-filter') {
+      const jump = () => document.getElementById('v1-brand-filter')?.scrollIntoView({ block: 'start', behavior: 'instant' })
+      const timer = window.setTimeout(jump, 120)
+      return () => window.clearTimeout(timer)
+    }
+  }, [search])
+  const match = findBrand(selected)
+  useEffect(() => {
+    document.querySelectorAll<HTMLElement>('[data-brand-kind]').forEach((el) => {
+      el.classList.toggle('v1-dim', Boolean(match) && el.dataset.brandKind !== match?.kind)
+    })
+  }, [match])
+  const select = (slug: string | null) => {
+    setSelected(slug)
+    const url = new URL(window.location.href)
+    if (slug) url.searchParams.set('brand', slug)
+    else url.searchParams.delete('brand')
+    window.history.replaceState(window.history.state, '', url.pathname + url.search + url.hash)
+  }
+  return (
+    <>
           <div aria-live="polite">
             {match ? (
               <div className="v1-filter-banner">
@@ -189,22 +223,6 @@ export default function DevicesPage({ focus }: { focus: 'devices' | 'accessories
             )}
           </div>
           <BrandWall selected={selected} onSelect={select} />
-        </div>
-      </section>
-
-      <section className="bg-[#2457d6] text-white" aria-labelledby="v1-sod-strip">
-        <div className="v1-wrap flex flex-wrap items-center justify-between gap-6 py-16">
-          <div className="grid gap-2">
-            <h2 id="v1-sod-strip" className="v1-h3" style={{ fontSize: 'clamp(30px, 2.8vw, 40px)' }}>
-              {t(language, 'ไม่เจอรุ่นที่ลูกค้าถามหา?', 'Cannot find the model a customer wants?')}
-            </h2>
-            <p className="text-lg leading-[30px] text-[#dce5ff]">{t(language, 'ส่งคำขอ Stock on Demand ให้ทีม PK ช่วยหา', 'Send a Stock on Demand request and let PK find it')}</p>
-          </div>
-          <a href={productRoute(language, 'stock-on-demand')} className="v1-btn v1-btn-white">
-            {t(language, 'รู้จัก Stock on Demand →', 'About Stock on Demand →')}
-          </a>
-        </div>
-      </section>
-    </PageShell>
+    </>
   )
 }

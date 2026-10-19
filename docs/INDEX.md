@@ -14,7 +14,7 @@
   [intake contract](../website/src/services/partnerLeadSubmission.ts),
   [intake tests](../website/scripts/test-partner-lead.mjs),
   [commands](../website/package.json): executable implementation truth.
-- [v1 redesign evidence](evidence/PKHUB-V1-REDESIGN-20261019.md).
+- [v1 redesign evidence](evidence/PKHUB-V1-REDESIGN-20261019.md), [motion evidence](evidence/PKHUB-MOTION-20261020.md).
 - [Last release](../PUBLIC-UX-20261015.md), [dated proof](evidence/three-surface-release-20261015.json).
 - [Continuity contract](orchestration/CONTINUITY.md), [current evidence](evidence/AGENT-CONTINUITY-20261016.md).
 
