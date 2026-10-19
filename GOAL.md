@@ -1,6 +1,6 @@
 ---
 task: PKHUB-MOTION-001
-status: in_progress
+status: complete
 validation: passed
 updated: 2026-10-20
 ---
@@ -22,10 +22,17 @@ rollback to `5a41555`.
 [PKHUB-MOTION-20261020](docs/evidence/PKHUB-MOTION-20261020.md): before/after LCP, CLS, TBT and
 interaction latency, reduced-motion and keyboard checks, rendered review at 390 and 1440 px.
 
+## Outcome
+
+PR #17 merged as `f4f2ae10130553a90d71ec7535cc2e02523b5aec`; pkhub.co served it at
+2026-10-19T17:56:46Z. Live checks and measurements are in the
+[evidence](docs/evidence/PKHUB-MOTION-20261020.md).
+
 ## Next action
 
-Owner approves PR #17 → merge, verify `https://pkhub.co/revision.json` serves the merge SHA and
-the routes return 200, record it in CURRENT_STATE.md, then mark this goal complete.
+Mobile first paint is ~4.0s on Lighthouse's simulated slow 4G before and after this release; the
+cause is render-blocking CSS (including unused V7 styles). Reducing it is the next performance
+task in [the queue](tasks/NEXT.md).
 
 ## Previous outcome
 
