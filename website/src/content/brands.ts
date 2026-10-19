@@ -7,6 +7,16 @@ export type Brand = {
   word?: { color: string; spacing?: string; doto?: boolean; size?: number }
 }
 
+/** URL-safe key used by the brand filter (`?brand=`). */
+export const brandSlug = (brand: Brand) => brand.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')
+
+export const findBrand = (slug: string | null) =>
+  slug
+    ? (PHONE_BRANDS.find((brand) => brandSlug(brand) === slug) && { brand: PHONE_BRANDS.find((brand) => brandSlug(brand) === slug)!, kind: 'phone' as const }) ||
+      (ACCESSORY_BRANDS.find((brand) => brandSlug(brand) === slug) && { brand: ACCESSORY_BRANDS.find((brand) => brandSlug(brand) === slug)!, kind: 'accessory' as const }) ||
+      null
+    : null
+
 /** Phone and tablet brands sold through PK HUB (owner list 2026-10-18; 10 brands). */
 export const PHONE_BRANDS: Brand[] = [
   { name: 'Apple', src: '/v1/brands/apple.svg', width: 30, height: 36 },

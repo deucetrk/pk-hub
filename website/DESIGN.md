@@ -8,7 +8,9 @@ periwinkle palette, light Anuphan display over IBM Plex Sans Thai, pill actions,
 40px rounded section tops, periwinkle grid and pixel glitter. Tokens and components live in
 [src/styles/v1.css](src/styles/v1.css) and [src/components/v1](src/components/v1). Implementation
 evidence: [PKHUB-V1-REDESIGN-20261019](../docs/evidence/PKHUB-V1-REDESIGN-20261019.md). The V7
-sections below are historical.
+sections below are historical. Motion (2026-10-20):
+[PKHUB-MOTION-20261020](../docs/evidence/PKHUB-MOTION-20261020.md); animate only transform and
+opacity and honour reduced motion.
 
 Canonical public design direction; V7 Home and Partner Marketing approved 2026-10-06.
 Current repository status belongs in [GOAL.md](../GOAL.md) and [CURRENT_STATE.md](../CURRENT_STATE.md).

@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 
 import PageShell from '@/components/v1/PageShell'
+import SodChatDemo from '@/components/v1/SodChatDemo'
 import { ComparePanels, Faq, Related, ServiceHero, StatStrip, Steps } from '@/components/v1/ServiceBlocks'
 import { route, t } from '@/components/v1/site'
 import { useLanguage } from '@/i18n/LanguageContext'
@@ -238,41 +239,10 @@ export function StockOnDemandV1() {
           'ส่งคำขอรุ่นที่ไม่มีหน้าร้าน ทีม PK เช็กสินค้า ราคา และรอบส่งให้ ร้านยืนยันก่อนสั่งซื้อทุกครั้ง',
           'Request models you do not stock. PK checks availability, price and dispatch; you always confirm before ordering.',
         )}
+        stageClass="v1-stage-auto"
         visualLabel={t(language, 'ภาพอธิบายบริการ: ตัวอย่างแชตคำขอสินค้า', 'Service illustration: example product request chat')}
         visual={
-          <div className="v1-chat v1-reveal" style={{ inset: 0, padding: u(40), gap: u(16) }}>
-            <div className="grid gap-1.5 justify-self-start">
-              <p className="v1-bubble" style={{ fontSize: u(18), borderRadius: `${u(16)} ${u(16)} ${u(16)} ${u(4)}` }}>
-                {t(language, '“มี Galaxy รุ่นนี้สีม่วงไหม?”', '“Do you have this Galaxy in purple?”')}
-              </p>
-              <p className="pl-1.5 text-[#c9cdd6]" style={{ fontSize: u(13) }}>
-                {t(language, 'ลูกค้าที่หน้าร้าน', 'Customer at the counter')}
-              </p>
-            </div>
-            <div className="v1-bubble v1-bubble-out grid gap-1.5" style={{ width: u(340), borderRadius: `${u(16)} ${u(16)} ${u(4)} ${u(16)}` }}>
-              <span className="text-[#dce5ff]" style={{ fontSize: u(13) }}>
-                {t(language, 'คำขอจากร้าน → PK HUB', 'Store request → PK HUB')}
-              </span>
-              <span style={{ fontSize: u(17) }}>{t(language, 'Galaxy · สีม่วง · 1 เครื่อง', 'Galaxy · purple · 1 unit')}</span>
-            </div>
-            <div className="v1-bubble-card" style={{ width: u(380), fontSize: u(16), gap: u(10), borderRadius: u(16) }}>
-              <p className="text-[#a9bef7]" style={{ fontSize: u(13) }}>
-                {t(language, 'PK เช็กแล้ว', 'PK checked')}
-              </p>
-              <div>
-                <span>{t(language, 'มีสินค้า', 'In stock')}</span>
-                <span aria-hidden="true">✓</span>
-              </div>
-              <div>
-                <span>{t(language, 'ราคาส่ง + ค่าจัดส่ง', 'Wholesale + shipping')}</span>
-                <span>{t(language, 'คิดตามจริง', 'Actual cost')}</span>
-              </div>
-              <div>
-                <span>{t(language, 'เวลา', 'Time')}</span>
-                <span>{t(language, 'เตรียม 1–2 วัน · ส่ง 1–2 วัน', 'Prep 1–2 days · ship 1–2 days')}</span>
-              </div>
-            </div>
-          </div>
+          <SodChatDemo tone="glass" />
         }
       />
       <StatStrip

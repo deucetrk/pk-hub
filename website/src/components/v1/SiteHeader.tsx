@@ -28,7 +28,16 @@ export default function SiteHeader() {
     { href: route(language, '/contact'), label: t(language, 'ติดต่อ', 'Contact') },
   ]
 
+  const [scrolled, setScrolled] = useState(false)
+
   useEffect(() => setOpen(false), [pathname])
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   useEffect(() => {
     if (!open) return
@@ -42,7 +51,7 @@ export default function SiteHeader() {
   }, [open])
 
   return (
-    <header className="v1-header">
+    <header className="v1-header" data-scrolled={scrolled || open}>
       <div className="v1-wrap v1-header-row">
         <a href={isHome ? '#top' : home} className="v1-header-logo inline-flex min-h-11 items-center" aria-label="PK HUB">
           <img src="/v1/brands/pkhub.webp" alt="PK HUB" width={360} height={119} loading="eager" decoding="async" />

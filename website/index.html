@@ -37,10 +37,10 @@
     <link id="alternate-default" rel="alternate" hreflang="x-default" href="https://pkhub.co/th" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Doto:wght@900&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Fonts load without blocking first paint; text renders in the fallback until they swap in. -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Doto:wght@900&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Doto:wght@900&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=Doto:wght@900&family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" /></noscript>
     <script id="organization-schema" type="application/ld+json">
       {
         "@context": "https://schema.org",

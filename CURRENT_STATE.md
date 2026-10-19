@@ -1,6 +1,6 @@
 ---
-goal: PKHUB-V1-REDESIGN-001
-updated: 2026-10-19
+goal: PKHUB-MOTION-001
+updated: 2026-10-20
 ---
 # Current repository state
 
@@ -21,3 +21,5 @@ v1 redesign released: PR #15 merged as `3eecd30d17047d08fd120c93e8a99ef102ff4df9
 `/revision.json` served it at 2026-10-18T19:37:53Z, 17 public routes returned 200 and an unknown
 route 404. Rollback target: `77c4f18`. Real intake delivery was not exercised.
 [Evidence](docs/evidence/PKHUB-V1-REDESIGN-20261019.md).
+
+In progress: [motion goal](GOAL.md), PR #17 (`claude/pkhub-motion`); production still serves `5a41555`.

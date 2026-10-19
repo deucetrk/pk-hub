@@ -1,46 +1,33 @@
 ---
-task: PKHUB-V1-REDESIGN-001
-status: complete
+task: PKHUB-MOTION-001
+status: in_progress
 validation: passed
-updated: 2026-10-19
+updated: 2026-10-20
 ---
-# Active goal: ship the approved v1 public design
+# Active goal: bring pkhub.co to life
 
-Rebuild pkhub.co to the owner-approved v1 design (Paper file `01M574A45Y9KY0KNPKJGP83B4Z`,
-page "pkhub.co · Site · Desktop", boards 01–15, plus "pkhub.co · Design spec"). Approval and the
-owner-confirmed service facts are recorded in Commerce
-[PKHUB-CODEX-DESIGN-REVIEW-20261018](https://github.com/deucetrk/PK-Commerce/blob/main/docs/evidence/PKHUB-CODEX-DESIGN-REVIEW-20261018.md)
-and the [partner-acquisition domain](https://github.com/deucetrk/PK-Commerce/blob/main/docs/domains/partner-acquisition/README.md).
+Build the owner's motion plan (2026-10-20, items 1–6) into the live v1 site: brand billboard,
+hero entrance, live Stock on Demand demo, scroll reveals with confirmed count-ups, hover/press
+feedback and frosted nav, brand filter and a mobile join bar. Only transform/opacity animation,
+reduced motion shows final states, no new animation library.
 
 ## Authority and boundary
 
-Owner instruction 2026-10-19: "do 1,2,3 and mobile designs end to end" and "commit and publish as
-well" authorizes implementing the approved design and publishing it through the connected
-GitHub/Vercel pipeline. It does not authorize real lead submissions, intake/provider changes,
-credential or configuration changes, or a privacy notice without legal text (board 14 is not
-shipped). Product routes stay `noindex` as before.
+UI only: no intake, data, configuration or credential change. Publishing (merging to `main`, which
+deploys pkhub.co) needs the owner's go-ahead. Rollback: revert the merge or Vercel instant
+rollback to `5a41555`.
 
 ## Acceptance
 
-- Home, products hub, 9 product/service routes, join (with all states), contact, blog index and
-  404 follow v1; Thai and English; desktop and 375px mobile without horizontal overflow.
-- Intake contract unchanged: same payload, honeypot, receipt verification; a retry reuses the
-  request ID and edited details get a new one. Brands are optional (design).
-- Node 24 `check`, `lint`, `test`, `build`, `seo:validate` pass; rendered states inspected.
-- After merge, `https://pkhub.co/revision.json` serves the merged SHA and routes return 200.
-
-## Recovery
-
-Previous production revision: `77c4f1823574e720468518669d28b9a87954afa2`. Roll back with Vercel
-instant rollback to that deployment, or revert the merge commit on `main` and let the pipeline
-rebuild. No data, schema or configuration is changed by this release.
-
-## Outcome
-
-Merged as `3eecd30d17047d08fd120c93e8a99ef102ff4df9` (PR #15); pkhub.co served that revision at
-2026-10-18T19:37:53Z. See [evidence](docs/evidence/PKHUB-V1-REDESIGN-20261019.md).
+[PKHUB-MOTION-20261020](docs/evidence/PKHUB-MOTION-20261020.md): before/after LCP, CLS, TBT and
+interaction latency, reduced-motion and keyboard checks, rendered review at 390 and 1440 px.
 
 ## Next action
 
-Owner review of the live site; then the privacy notice (needs approved text) or the first READY
-item in [the queue](tasks/NEXT.md). Mobile Paper boards are tracked in the Commerce design file.
+Owner approves PR #17 → merge, verify `https://pkhub.co/revision.json` serves the merge SHA and
+the routes return 200, record it in CURRENT_STATE.md, then mark this goal complete.
+
+## Previous outcome
+
+PKHUB-V1-REDESIGN-001 shipped `3eecd30` (2026-10-18); see
+[PKHUB-V1-REDESIGN-20261019](docs/evidence/PKHUB-V1-REDESIGN-20261019.md).
