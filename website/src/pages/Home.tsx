@@ -1,6 +1,9 @@
+import { useEffect, useRef } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 
 import BrandWall from '@/components/v1/BrandWall'
+import CountUp from '@/components/v1/CountUp'
+import SodChatDemo from '@/components/v1/SodChatDemo'
 import PageShell from '@/components/v1/PageShell'
 import { productRoute, route, t } from '@/components/v1/site'
 import { useReferralAttribution } from '@/hooks/useReferralAttribution'
@@ -13,9 +16,35 @@ const u = (value: number) => `calc(var(--u) * ${value})`
 
 function HeroCollage() {
   const { language } = useLanguage()
+  const inner = useRef<HTMLDivElement>(null)
+  // Desktop-only, fine-pointer parallax: the whole collage drifts a few pixels with the mouse.
+  useEffect(() => {
+    const hero = inner.current?.closest('section')
+    if (!hero || !window.matchMedia('(pointer: fine) and (min-width: 1024px) and (prefers-reduced-motion: no-preference)').matches) return
+    let frame = 0
+    const onMove = (event: PointerEvent) => {
+      cancelAnimationFrame(frame)
+      frame = requestAnimationFrame(() => {
+        const rect = hero.getBoundingClientRect()
+        inner.current?.style.setProperty('--px', ((event.clientX - rect.left) / rect.width - 0.5).toFixed(3))
+        inner.current?.style.setProperty('--py', ((event.clientY - rect.top) / rect.height - 0.5).toFixed(3))
+      })
+    }
+    const onLeave = () => {
+      inner.current?.style.setProperty('--px', '0')
+      inner.current?.style.setProperty('--py', '0')
+    }
+    hero.addEventListener('pointermove', onMove)
+    hero.addEventListener('pointerleave', onLeave)
+    return () => {
+      cancelAnimationFrame(frame)
+      hero.removeEventListener('pointermove', onMove)
+      hero.removeEventListener('pointerleave', onLeave)
+    }
+  }, [])
   return (
     <figure className="v1-collage" aria-label={t(language, 'ภาพรวมสิ่งที่ร้านได้จาก PK HUB', 'What a store gets from PK HUB')}>
-      <div className="v1-collage-inner">
+      <div ref={inner} className="v1-collage-inner v1-parallax">
         <svg viewBox="0 0 698 550" className="absolute left-0 top-0 h-auto w-full" aria-hidden="true">
           <path className="v1-dash" d="M150 240C150 360 350 95 530 180C710 265 525 505 300 466C60 425 192 192 420 205" fill="none" stroke="rgba(255,255,255,.22)" strokeWidth="1.5" strokeDasharray="4 8" />
           <path d="M184 240C240 240 235 296 305 296M536 220C520 300 470 300 440 310M386 415V470" fill="none" stroke="#BCCAF0" strokeWidth="2" />
@@ -29,12 +58,12 @@ function HeroCollage() {
           width={418}
           height={600}
           {...({ fetchpriority: 'high' } as Record<string, string>)}
-          className="v1-float absolute object-contain"
-          style={{ left: u(22), top: u(18), width: u(232), height: u(334), rotate: '-9deg', transformOrigin: '0 0', zIndex: 2 }}
+          className="v1-enter-t v1-float absolute object-contain"
+          style={{ ['--d' as string]: '0.1s', left: u(22), top: u(18), width: u(232), height: u(334), rotate: '-9deg', transformOrigin: '0 0', zIndex: 2 }}
         />
         <div
-          className="v1-float-2 absolute flex flex-col items-center overflow-hidden rounded-[10px] border border-white bg-[#f4f4f4] text-[#111114] shadow-[0_28px_60px_rgba(0,0,0,.27)]"
-          style={{ left: u(208), top: u(215), width: u(330), height: u(224), rotate: '-3deg', transformOrigin: '0 0', zIndex: 3 }}
+          className="v1-enter v1-float-2 absolute flex flex-col items-center overflow-hidden rounded-[10px] border border-white bg-[#f4f4f4] text-[#111114] shadow-[0_28px_60px_rgba(0,0,0,.27)]"
+          style={{ ['--d' as string]: '0.3s', left: u(208), top: u(215), width: u(330), height: u(224), rotate: '-3deg', transformOrigin: '0 0', zIndex: 3 }}
         >
           <svg viewBox="0 0 330 58" className="h-auto w-full shrink-0" aria-hidden="true">
             <rect width="330" height="58" fill="#111114" />
@@ -56,8 +85,8 @@ function HeroCollage() {
           </div>
         </div>
         <div
-          className="v1-float-3 absolute flex flex-col items-center justify-center overflow-hidden rounded-xl bg-white text-[#111114] shadow-[0_16px_36px_rgba(0,0,0,.2)]"
-          style={{ left: u(456), top: u(16), width: u(208), height: u(190), rotate: '8deg', transformOrigin: '0 0', gap: u(3) }}
+          className="v1-enter v1-float-3 absolute flex flex-col items-center justify-center overflow-hidden rounded-xl bg-white text-[#111114] shadow-[0_16px_36px_rgba(0,0,0,.2)]"
+          style={{ ['--d' as string]: '0.42s', left: u(456), top: u(16), width: u(208), height: u(190), rotate: '8deg', transformOrigin: '0 0', gap: u(3) }}
         >
           <img src="/v1/img/ais-sim.webp" alt="" width={760} height={324} className="object-cover" style={{ width: u(172), height: u(138), objectPosition: '49% 46%' }} />
           <span className="font-medium" style={{ fontSize: u(16) }}>
@@ -65,8 +94,8 @@ function HeroCollage() {
           </span>
         </div>
         <div
-          className="v1-float absolute flex flex-col items-center justify-center rounded-[10px] bg-white shadow-[0_16px_36px_rgba(0,0,0,.2)]"
-          style={{ left: u(252), top: u(27), width: u(176), height: u(145), rotate: '-7deg', transformOrigin: '0 0', gap: u(7) }}
+          className="v1-enter v1-float absolute flex flex-col items-center justify-center rounded-[10px] bg-white shadow-[0_16px_36px_rgba(0,0,0,.2)]"
+          style={{ ['--d' as string]: '0.54s', left: u(252), top: u(27), width: u(176), height: u(145), rotate: '-7deg', transformOrigin: '0 0', gap: u(7) }}
         >
           <span className="text-[#555]" style={{ fontSize: u(16) }}>
             {t(language, 'สินเชื่อ', 'Financing')}
@@ -77,8 +106,8 @@ function HeroCollage() {
           </span>
         </div>
         <div
-          className="v1-float-2 absolute flex flex-col items-center justify-center rounded-xl bg-white text-[#111114] shadow-[0_16px_36px_rgba(0,0,0,.2)]"
-          style={{ left: u(541), top: u(348), width: u(145), height: u(161), rotate: '7deg', transformOrigin: '0 0', gap: u(6) }}
+          className="v1-enter v1-float-2 absolute flex flex-col items-center justify-center rounded-xl bg-white text-[#111114] shadow-[0_16px_36px_rgba(0,0,0,.2)]"
+          style={{ ['--d' as string]: '0.66s', left: u(541), top: u(348), width: u(145), height: u(161), rotate: '7deg', transformOrigin: '0 0', gap: u(6) }}
         >
           <img src="/v1/img/earbuds.webp" alt="" width={600} height={329} className="object-contain" style={{ width: u(108), height: u(101) }} />
           <span className="font-medium" style={{ fontSize: u(16) }}>
@@ -86,8 +115,8 @@ function HeroCollage() {
           </span>
         </div>
         <div
-          className="v1-float-3 absolute flex flex-col items-center justify-center rounded-[10px] border border-[#7b8398] bg-[#16181e] text-white"
-          style={{ left: u(28), top: u(368), width: u(154), height: u(136), rotate: '-8deg', transformOrigin: '0 0', gap: u(13) }}
+          className="v1-enter v1-float-3 absolute flex flex-col items-center justify-center rounded-[10px] border border-[#7b8398] bg-[#16181e] text-white"
+          style={{ ['--d' as string]: '0.78s', left: u(28), top: u(368), width: u(154), height: u(136), rotate: '-8deg', transformOrigin: '0 0', gap: u(13) }}
         >
           <svg viewBox="0 0 49 49" style={{ width: u(49), height: u(49) }} aria-hidden="true">
             <rect x="10" y="3" width="23" height="41" rx="4" fill="none" stroke="#fff" strokeWidth="1.7" />
@@ -98,8 +127,8 @@ function HeroCollage() {
           </span>
         </div>
         <div
-          className="absolute flex items-center rounded-[10px] border border-[#737b91] bg-[#141619] text-white"
-          style={{ left: u(215), top: u(488), gap: u(10), padding: `${u(13)} ${u(16)}`, fontSize: u(15) }}
+          className="v1-enter absolute flex items-center rounded-[10px] border border-[#737b91] bg-[#141619] text-white"
+          style={{ ['--d' as string]: '0.9s', left: u(215), top: u(488), gap: u(10), padding: `${u(13)} ${u(16)}`, fontSize: u(15) }}
         >
           <svg viewBox="0 0 30 30" style={{ width: u(30), height: u(30) }} aria-hidden="true">
             <path d="M6 16V13a9 9 0 0 1 18 0v3M6 14H4v9h5v-9H6Zm18 0h2v9h-5v-9h3Zm0 9c0 3-3 4-8 4" fill="none" stroke="#fff" strokeWidth="1.6" />
@@ -117,7 +146,7 @@ function Hero() {
   return (
     <section className="v1-hero" aria-labelledby="v1-page-title">
       <div className="v1-wrap v1-hero-grid v1-home-hero">
-        <div className="v1-hero-copy">
+        <div className="v1-hero-copy v1-copy-enter">
           <p className="v1-eyebrow v1-eyebrow-sky">PK HUB PARTNER</p>
           <h1 id="v1-page-title" className="v1-h1">
             {t(language, 'เพิ่มตัวเลือกขาย', 'More to sell,')}
@@ -193,7 +222,7 @@ function Growth() {
           </h2>
           <div className="grid gap-2.5">
             <p className="v1-num" style={{ fontSize: 'clamp(52px, 5vw, 72px)', lineHeight: 1.17 }}>
-              {t(language, '500+ รุ่น', '500+ models')}
+              <CountUp to={500} suffix="+" /> {t(language, 'รุ่น', 'models')}
             </p>
             <p className="text-xl leading-8">{t(language, 'จาก 26 แบรนด์ มือถือ แท็บเล็ต และอุปกรณ์เสริม', 'from 26 brands of phones, tablets and accessories')}</p>
             <p className="text-base leading-7 text-[#bebebe]">
@@ -201,7 +230,9 @@ function Growth() {
             </p>
             <div className="flex flex-wrap gap-x-9 gap-y-4 border-t border-[#404040] pt-5">
               <p className="flex items-center gap-4">
-                <span className="v1-num text-[46px] leading-[58px]">10</span>
+                <span className="v1-num text-[46px] leading-[58px]">
+                  <CountUp to={10} />
+                </span>
                 <span className="text-base leading-[26px] text-[#d2d2d2]">
                   {t(language, 'แบรนด์', 'brands of')}
                   <br />
@@ -209,7 +240,9 @@ function Growth() {
                 </span>
               </p>
               <p className="flex items-center gap-4">
-                <span className="v1-num text-[46px] leading-[58px]">16</span>
+                <span className="v1-num text-[46px] leading-[58px]">
+                  <CountUp to={16} />
+                </span>
                 <span className="text-base leading-[26px] text-[#d2d2d2]">
                   {t(language, 'แบรนด์', 'brands of')}
                   <br />
@@ -352,26 +385,7 @@ function StockOnDemand() {
         </div>
         <div className="v1-sod-grid v1-reveal">
           <div className="v1-card v1-card-pad v1-dark grid">
-            <div className="v1-chat" aria-label={t(language, 'ตัวอย่างการส่งคำขอ', 'Example request')}>
-              <div className="grid gap-1.5 justify-self-start">
-                <p className="v1-bubble">{t(language, '“มี Galaxy รุ่นนี้สีม่วงไหม?”', '“Do you have this Galaxy in purple?”')}</p>
-                <p className="pl-1.5 text-[13px] leading-5 text-[#bebebe]">{t(language, 'ลูกค้าที่หน้าร้าน', 'Customer at the counter')}</p>
-              </div>
-              <p className="v1-bubble v1-bubble-out" style={{ fontSize: 18 }}>
-                {t(language, 'ร้านส่งคำขอ → PK HUB · Galaxy สีม่วง 1 เครื่อง', 'Store requests → PK HUB · Galaxy, purple, 1 unit')}
-              </p>
-              <div className="v1-bubble-card">
-                <p className="text-sm text-[#a9bef7]">{t(language, 'PK เช็กแล้ว', 'PK checked')}</p>
-                <div>
-                  <span>{t(language, 'มีสินค้า', 'In stock')}</span>
-                  <span aria-hidden="true">✓</span>
-                </div>
-                <div>
-                  <span>{t(language, 'เตรียม · ส่ง', 'Prepare · ship')}</span>
-                  <span>{t(language, '1–2 วัน · 1–2 วัน', '1–2 days · 1–2 days')}</span>
-                </div>
-              </div>
-            </div>
+            <SodChatDemo />
           </div>
           <div className="grid gap-5">
             {[

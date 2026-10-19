@@ -1,4 +1,8 @@
+import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
+
 import BrandWall from '@/components/v1/BrandWall'
+import { findBrand } from '@/content/brands'
 import PageShell from '@/components/v1/PageShell'
 import { productRoute, t } from '@/components/v1/site'
 import { useLanguage } from '@/i18n/LanguageContext'
@@ -13,6 +17,27 @@ const MINI_LOGOS: Array<[string, string, number, number, boolean]> = [
 
 export default function DevicesPage({ focus }: { focus: 'devices' | 'accessories' }) {
   const { language } = useLanguage()
+  const { search } = useLocation()
+  const [selected, setSelected] = useState<string | null>(null)
+  useEffect(() => {
+    const brand = new URLSearchParams(search).get('brand')
+    setSelected(brand)
+    // A brand tapped elsewhere lands on the filter even when the route loaded after the hash jump.
+    if (brand && window.location.hash === '#v1-brand-filter') {
+      const jump = () => document.getElementById('v1-brand-filter')?.scrollIntoView({ block: 'start', behavior: 'instant' })
+      const timer = window.setTimeout(jump, 120)
+      return () => window.clearTimeout(timer)
+    }
+  }, [search])
+  const match = findBrand(selected)
+  const select = (slug: string | null) => {
+    setSelected(slug)
+    const url = new URL(window.location.href)
+    if (slug) url.searchParams.set('brand', slug)
+    else url.searchParams.delete('brand')
+    window.history.replaceState(window.history.state, '', url.pathname + url.search + url.hash)
+  }
+  const dim = (kind: 'phone' | 'accessory') => (match && match.kind !== kind ? 'v1-dim' : '')
   const accessories = focus === 'accessories'
   return (
     <PageShell cta={false}>
@@ -36,7 +61,7 @@ export default function DevicesPage({ focus }: { focus: 'devices' | 'accessories
 
       <section className="v1-white" aria-label={t(language, 'หมวดสินค้า', 'Categories')}>
         <div className="v1-wrap grid gap-6 pb-6 pt-12">
-          <div className="v1-devices-top v1-reveal">
+          <div className={`v1-devices-top v1-reveal ${dim('phone')}`}>
             <a href={productRoute(language, 'handset-wholesale')} className="v1-card v1-card-hover v1-devices-phone text-white" style={{ background: 'radial-gradient(circle at 75% 40%, rgba(36,87,214,.33), rgba(36,87,214,0) 55%), #0b0b0b' }}>
               <span className="flex flex-col justify-between gap-8">
                 <span className="grid gap-3">
@@ -67,7 +92,7 @@ export default function DevicesPage({ focus }: { focus: 'devices' | 'accessories
               <img src="/v1/img/tablets.webp" alt={t(language, 'แท็บเล็ต', 'Tablets')} width={367} height={600} loading="lazy" className="mx-auto h-[250px] w-auto object-contain" />
             </div>
           </div>
-          <div className="v1-devices-row v1-reveal">
+          <div className={`v1-devices-row v1-reveal ${dim('accessory')}`}>
             <a href={productRoute(language, 'accessories')} className="v1-card v1-card-hover v1-devices-mini bg-[#f4f4f4]">
               <span className="grid gap-1.5">
                 <span className="v1-h4">{t(language, 'หูฟังและลำโพง', 'Audio')}</span>
@@ -122,7 +147,7 @@ export default function DevicesPage({ focus }: { focus: 'devices' | 'accessories
         </div>
       </section>
 
-      <section className="v1-white v1-pad-sm" aria-labelledby="v1-brands-title">
+      <section id="v1-brand-filter" className="v1-white v1-pad-sm scroll-mt-20" aria-labelledby="v1-brands-title">
         <div className="v1-wrap">
           <div className="v1-section-head">
             <div>
@@ -139,7 +164,31 @@ export default function DevicesPage({ focus }: { focus: 'devices' | 'accessories
               )}
             </p>
           </div>
-          <BrandWall />
+          <div aria-live="polite">
+            {match ? (
+              <div className="v1-filter-banner">
+                <span className="grid gap-1">
+                  <span className="font-display text-2xl">{t(language, `แบรนด์ ${match.brand.name}`, `${match.brand.name}`)}</span>
+                  <span className="v1-small">
+                    {match.kind === 'phone'
+                      ? t(language, 'อยู่ในหมวดมือถือและแท็บเล็ต ดูราคาและสั่งได้หลังเปิดบัญชีคู่ค้า', 'In phones and tablets. See prices and order once your partner account is open.')
+                      : t(language, 'อยู่ในหมวดอุปกรณ์เสริม ดูราคาและสั่งได้หลังเปิดบัญชีคู่ค้า', 'In accessories. See prices and order once your partner account is open.')}
+                  </span>
+                </span>
+                <span className="flex flex-wrap gap-2">
+                  <a href={productRoute(language, 'stock-on-demand')} className="v1-btn v1-btn-ink v1-btn-md">
+                    {t(language, `หารุ่น ${match.brand.name} ที่ลูกค้าถาม`, `Find a ${match.brand.name} model`)}
+                  </a>
+                  <button type="button" className="v1-btn v1-btn-ghost v1-btn-md" onClick={() => select(null)}>
+                    {t(language, 'ดูทุกแบรนด์', 'All brands')}
+                  </button>
+                </span>
+              </div>
+            ) : (
+              <p className="v1-small mb-4">{t(language, 'แตะโลโก้เพื่อดูว่าแบรนด์อยู่หมวดไหน', 'Tap a logo to see its category')}</p>
+            )}
+          </div>
+          <BrandWall selected={selected} onSelect={select} />
         </div>
       </section>
 

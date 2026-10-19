@@ -15,15 +15,16 @@ type HeroProps = {
   secondary?: { href: string; label: string }
   visual: ReactNode
   visualLabel: string
+  stageClass?: string
 }
 
-export function ServiceHero({ crumb, eyebrow, title, lede, secondary, visual, visualLabel }: HeroProps) {
+export function ServiceHero({ crumb, eyebrow, title, lede, secondary, visual, visualLabel, stageClass }: HeroProps) {
   const { language } = useLanguage()
   const referralCode = useReferralAttribution()
   return (
     <section className="v1-hero" aria-labelledby="v1-page-title">
       <div className="v1-wrap v1-hero-grid">
-        <div className="v1-hero-copy">
+        <div className="v1-hero-copy v1-copy-enter">
           <p className="v1-crumb">
             <a href={route(language, '/products')}>{t(language, 'บริการ', 'Services')}</a>
             <span aria-hidden="true">&nbsp;&nbsp;/&nbsp;&nbsp;</span>
@@ -44,7 +45,7 @@ export function ServiceHero({ crumb, eyebrow, title, lede, secondary, visual, vi
             </a>
           </div>
         </div>
-        <figure className="v1-stage" aria-label={visualLabel}>
+        <figure className={`v1-stage ${stageClass ?? ''}`} aria-label={visualLabel}>
           {visual}
         </figure>
       </div>
@@ -53,12 +54,12 @@ export function ServiceHero({ crumb, eyebrow, title, lede, secondary, visual, vi
   )
 }
 
-export function StatStrip({ items }: { items: Array<[string, string]> }) {
+export function StatStrip({ items }: { items: Array<[ReactNode, string]> }) {
   return (
     <section className="v1-band v1-dark" aria-label="Key facts">
       <dl className="v1-wrap v1-stats">
         {items.map(([value, label]) => (
-          <div key={value + label}>
+          <div key={label}>
             <dt className="v1-sr">{label}</dt>
             <dd className="grid gap-1.5">
               <strong>{value}</strong>

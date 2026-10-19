@@ -1,3 +1,4 @@
+import CountUp from '@/components/v1/CountUp'
 import PageShell from '@/components/v1/PageShell'
 import { ComparePanels, Faq, Related, ServiceHero, StatStrip, Steps } from '@/components/v1/ServiceBlocks'
 import { t } from '@/components/v1/site'
@@ -162,10 +163,10 @@ export function RomPage() {
       />
       <StatStrip
         items={[
-          ['3%', t(language, 'เติมเงินให้ลูกค้าทั่วไป (Tier 3)', 'Top-ups for customers (Tier 3)')],
-          ['1.5%', t(language, 'เติมให้ร้านอื่น (Tier 2)', 'Top-ups for other stores (Tier 2)')],
+          [<CountUp key="3" to={3} suffix="%" />, t(language, 'เติมเงินให้ลูกค้าทั่วไป (Tier 3)', 'Top-ups for customers (Tier 3)')],
+          [<CountUp key="1.5" to={1.5} decimals={1} suffix="%" />, t(language, 'เติมให้ร้านอื่น (Tier 2)', 'Top-ups for other stores (Tier 2)')],
           [t(language, 'สิ้นเดือน', 'Month end'), t(language, 'AIS จ่ายค่าตอบแทนเติมเงิน', 'AIS pays top-up commission')],
-          ['30,000+', t(language, 'บาท/เดือน ยอดเติมของ Tier 2', 'THB/month Tier 2 top-up volume')],
+          [<CountUp key="30000" to={30000} suffix="+" />, t(language, 'บาท/เดือน ยอดเติมของ Tier 2', 'THB/month Tier 2 top-up volume')],
         ]}
       />
       <Steps

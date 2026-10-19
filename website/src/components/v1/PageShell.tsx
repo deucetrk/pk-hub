@@ -6,6 +6,7 @@ import CtaBand from './CtaBand'
 import FloatingContact from './FloatingContact'
 import SiteFooter from './SiteFooter'
 import SiteHeader from './SiteHeader'
+import StickyJoin from './StickyJoin'
 import { useReveal } from './useReveal'
 
 type PageShellProps = {
@@ -29,6 +30,7 @@ export default function PageShell({ children, cta = true, className }: PageShell
         {cta ? <CtaBand /> : null}
       </main>
       <SiteFooter />
+      {cta ? <StickyJoin /> : null}
       <FloatingContact />
     </div>
   )
