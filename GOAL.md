@@ -11,13 +11,13 @@ hero entrance, live Stock on Demand demo, scroll reveals with confirmed count-up
 feedback and frosted nav, brand filter and a mobile join bar. Only transform/opacity animation,
 reduced motion shows final states, no new animation library.
 
-## Boundary
+## Authority and boundary
 
 UI only: no intake, data, configuration or credential change. Publishing (merging to `main`, which
 deploys pkhub.co) needs the owner's go-ahead. Rollback: revert the merge or Vercel instant
 rollback to `5a41555`.
 
-## Acceptance and evidence
+## Acceptance
 
 [PKHUB-MOTION-20261020](docs/evidence/PKHUB-MOTION-20261020.md): before/after LCP, CLS, TBT and
 interaction latency, reduced-motion and keyboard checks, rendered review at 390 and 1440 px.
