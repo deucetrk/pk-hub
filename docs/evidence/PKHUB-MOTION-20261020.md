@@ -61,3 +61,22 @@ Node 24: `check`, `lint`, `test` (16 pass), `build` and `seo:validate` all pass.
 - the mobile join bar show/hide.
 
 Not covered: physical devices, screen readers, field (CrUX) data.
+
+## Release observation (live)
+
+PR #17 checks passed: `verify` and the Vercel pk-hub, website and applications previews. It merged as `f4f2ae10130553a90d71ec7535cc2e02523b5aec`. At 2026-10-19T17:56:46Z, `https://pkhub.co/revision.json` returned that SHA. 17 public routes returned 200, including `/th/products/accessories?brand=jbl`, and `/th/nope` returned 404. The home HTML contains the billboard, demo, sticky bar and entrance markup.
+
+The headless-Chromium check against https://pkhub.co repeated the local results:
+- Reduced motion: no billboard animation, a wrapped grid, 0 duplicate tiles shown, final states.
+- Motion allowed: the billboard runs and pauses when a logo has keyboard focus, with a solid focus outline.
+
+Live Lighthouse on `/th` after release:
+
+| Run | LCP | CLS | TBT | Score |
+| --- | --- | --- | --- | --- |
+| Mobile 1 | 4756 ms | 0.000 | 39 ms | 70 |
+| Mobile 2 | 4509 ms | 0.000 | 2 ms | 73 |
+| Desktop 1 | 953 ms | 0.003 | 0 ms | 97 |
+| Desktop 2 | 691 ms | 0.001 | 0 ms | 100 |
+
+Honest reading: on the live CDN, mobile LCP is unchanged from before (4.44–4.47s). The local improvement did not carry over. First contentful paint is about 4.0s both before and after under Lighthouse's simulated slow 4G, so LCP follows first paint. Render-blocking CSS remains (about 480ms estimated, including unused V7 styles). Speed Index rose from 4.36s to 5.11s because the hero entrance finishes later by design. CLS stays at 0.000–0.003 and TBT stays low. Reducing CSS is queued as the next performance task.

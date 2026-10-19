@@ -22,4 +22,6 @@ v1 redesign released: PR #15 merged as `3eecd30d17047d08fd120c93e8a99ef102ff4df9
 route 404. Rollback target: `77c4f18`. Real intake delivery was not exercised.
 [Evidence](docs/evidence/PKHUB-V1-REDESIGN-20261019.md).
 
-In progress: [motion goal](GOAL.md), PR #17 (`claude/pkhub-motion`); production still serves `5a41555`.
+Motion released: PR #17 merged as `f4f2ae10130553a90d71ec7535cc2e02523b5aec`; `/revision.json` served it
+at 2026-10-19T17:56:46Z, 17 routes returned 200 and an unknown route 404. Rollback target: `5a41555`.
+[Evidence](docs/evidence/PKHUB-MOTION-20261020.md).
