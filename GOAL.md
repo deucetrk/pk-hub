@@ -1,10 +1,21 @@
 ---
-task: PKHUB-SEO-001
-status: complete
-validation: passed
+task: PKHUB-BLOG-SEO-001
+status: in_progress
+validation: local_passed
 updated: 2026-10-20
 ---
-# Active goal: rank pkhub.co for Thai wholesale-phone searches (SEO/AEO/GEO)
+# Active goal: make the blog rank and get cited (PKHUB-BLOG-SEO-001)
+
+Owner request 2026-10-20: improve the current blog and propose a blog strategy. Branch
+`claude/pkhub-blog-seo`: FAQs with schema and repaired internal links on the six published guides,
+plus [the strategy](docs/BLOG_STRATEGY.md). Merging deploys pkhub.co and waits for the owner's
+go-ahead. Open owner choices: cadence and who approves articles, the utility track, the model and
+price source for the shortlist articles, and a named author.
+
+Next action: owner go-ahead to merge the blog PR, then request indexing for the six guides in
+Search Console; first new articles follow the strategy's topic table once the owner picks cadence.
+
+# Previous goal: rank pkhub.co for Thai wholesale-phone searches (SEO/AEO/GEO)
 
 Owner request 2026-10-20: "the best SEO, AEO, GEO … get discovered and rank first".
 [Evidence and keyword data](docs/evidence/PKHUB-SEO-20261020.md).

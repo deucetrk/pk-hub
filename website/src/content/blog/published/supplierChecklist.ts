@@ -14,7 +14,7 @@ export const supplierChecklistArticle: PublishedBlogArticle = {
   contentTrack: 'retailer',
   tags: ['แหล่งขายส่ง', 'เครื่องศูนย์ไทย', 'ซัพพลายเออร์'],
   publishedAt: '2026-08-09',
-  modifiedAt: '2026-10-01',
+  modifiedAt: '2026-10-20',
   estimatedReadMinutes: 6,
   recommendedImage: '/blog/wholesale-order-inspection-cover.png',
   imageAlt: 'ภาพจำลองร้านมือถือกำลังตรวจล็อตสินค้าก่อนรับเข้าสต็อก',
@@ -100,9 +100,26 @@ export const supplierChecklistArticle: PublishedBlogArticle = {
   ],
   ctaLabel: 'ส่งรายการให้ทีม PK HUB เช็ก',
   ctaHref: 'https://lin.ee/VEgW6qG',
+  faqs: [
+    {
+      question: 'เลือกแหล่งขายส่งมือถือ ควรเช็กอะไรบ้าง?',
+      answer:
+        'เช็ก 7 เรื่อง: ที่มาและตลาดที่จำหน่ายของสินค้า เงื่อนไขประกัน เอกสารซื้อขายและใบกำกับภาษีเต็มรูป จุดที่ยืนยันราคาและสต็อก ขั้นต่ำและการผสมรุ่น ขั้นตอนแพ็ก ส่ง และตรวจรับ และช่องทางติดต่อหลังการขาย',
+    },
+    {
+      question: 'แหล่งขายส่งที่ราคาถูกที่สุด คือแหล่งที่ดีที่สุดหรือไม่?',
+      answer:
+        'ไม่เสมอไป แหล่งที่เหมาะกับร้านคือเจ้าที่ทำให้รู้ต้นทุนจริงทั้ง VAT และค่าจัดส่ง ตรวจสอบสินค้าได้ และมีขั้นตอนชัดเจนเมื่อเกิดปัญหา',
+    },
+    {
+      question: 'ร้านใหม่ต้องสั่งมือถือล็อตใหญ่หรือไม่?',
+      answer:
+        'ไม่จำเป็นเสมอไป ให้ถามว่าทดลองสั่งจำนวนน้อยได้หรือไม่ รุ่นหรือโปรโมชันใดมีขั้นต่ำ และผสมรุ่นในออเดอร์เดียวกันได้แค่ไหน',
+    },
+  ],
   internalLinks: [
-    { label: 'ดูขั้นตอนสั่งซื้อกับ PK HUB', href: '/th#v4-start' },
-    { label: 'คุยกับทีมเรื่องหน้าร้านและงานแพ็กจริง', href: '/th#v4-start' },
+    { label: 'ดูมือถือเครื่องศูนย์ไทยที่ PK HUB ขายส่ง', href: '/th/products/handset-wholesale' },
+    { label: 'สมัครเป็นร้านค้าพาร์ทเนอร์ PK HUB', href: '/th/join' },
   ],
   sources: [
     {

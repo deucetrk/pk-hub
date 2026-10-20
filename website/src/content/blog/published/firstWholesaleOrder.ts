@@ -12,7 +12,7 @@ export const firstWholesaleOrderArticle: PublishedBlogArticle = {
   "contentTrack": "retailer",
   "tags": ["สั่งมือถือขายส่ง", "ออเดอร์แรก", "ตรวจรับสินค้า"],
   "publishedAt": "2026-08-11",
-  "modifiedAt": "2026-10-01",
+  "modifiedAt": "2026-10-20",
   "estimatedReadMinutes": 6,
   "recommendedImage": "/reviews/bubble-pack.webp",
   "imageAlt": "สมาร์ตโฟนที่ห่อกันกระแทกเพื่อเตรียมจัดส่งให้ร้านค้า",
@@ -117,14 +117,28 @@ export const firstWholesaleOrderArticle: PublishedBlogArticle = {
   "ctaDescription": "เริ่มด้วยชื่อร้าน จังหวัด งบประมาณ และรุ่นที่สนใจถ้ามี ทีมจะช่วยเช็กราคา สต็อก เอกสาร และรอบส่งล่าสุดให้ก่อนตัดสินใจ",
   "ctaLabel": "เริ่มส่งรายการให้ PK HUB เช็ก",
   "ctaHref": "https://lin.ee/VEgW6qG",
-  "internalLinks": [
+  "faqs": [
     {
-      "label": "ดูขั้นตอนสั่งซื้อ",
-      "href": "/th#v4-start"
+      "question": "สั่งมือถือขายส่งครั้งแรก ต้องส่งข้อมูลอะไรบ้าง?",
+      "answer": "ชื่อร้าน จังหวัด งบประมาณ และรุ่นที่สนใจถ้ามี โดยระบุแบรนด์ รุ่น สี ความจุ จำนวน และวันที่ต้องการ ถ้ายังไม่รู้รุ่นให้ส่งช่วงงบและคุณสมบัติที่ลูกค้าถามหาแทนได้"
     },
     {
-      "label": "ดูช่องทางติดต่อ",
-      "href": "/th#v4-start"
+      "question": "ขั้นตอนสั่งซื้อกับ PK HUB เป็นอย่างไร?",
+      "answer": "สอบถามรุ่น จากนั้นทีมตรวจรายการและออก invoice ร้านชำระเงินตาม invoice แล้วทีมแพ็กและจัดส่งตามรอบที่ตกลง"
+    },
+    {
+      "question": "ของมาถึงร้านแล้วควรทำอะไร?",
+      "answer": "ตรวจชื่อผู้ส่ง สภาพกล่อง และจำนวนกล่องก่อนเซ็นรับ ถ่ายวิดีโอขณะเปิดกล่อง ตรวจเครื่องและเอกสาร แล้วแจ้ง PK HUB ทันทีที่พบปัญหา"
+    }
+  ],
+  "internalLinks": [
+    {
+      "label": "ดูมือถือและแท็บเล็ตที่สั่งได้",
+      "href": "/th/products/handset-wholesale"
+    },
+    {
+      "label": "ดูช่องทางติดต่อ PK HUB",
+      "href": "/th/contact"
     }
   ],
   "sources": [
