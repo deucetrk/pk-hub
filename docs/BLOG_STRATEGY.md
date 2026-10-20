@@ -83,8 +83,8 @@ well:
 | 3 | เช็คประกัน Samsung ทุกวิธี | เช็คประกัน samsung (4,400) | Utility | — |
 | 4 | เช็ค IMEI คืออะไร เช็กยังไงก่อนรับเครื่องเข้าร้าน | เช็ค imei (1,000 + 880) | Utility | — |
 | 5 | ขายส่ง iPad และแท็บเล็ต สำหรับร้านมือถือ | ขายส่ง ipad (480), ขายส่งแท็บเล็ต (260) | Partner | Tablet brands to name |
-| 6 | มือถือราคาไม่เกิน 5,000 ที่ร้านควรมีไว้ขาย (2026) | มือถือ ราคาไม่เกิน 5000 (5,400) | Utility | Model list; official retail prices with dates |
-| 7 | มือถือราคาไม่เกิน 10,000 ที่ขายง่าย (2026) | ราคาไม่เกิน 10000 (2,400) | Utility | Same as 6 |
+| 6 | มือถือราคาไม่เกิน 5,000 ที่ร้านควรมีไว้ขาย (2026) | มือถือ ราคาไม่เกิน 5000 (5,400) | Utility | Owner: feature TECNO; official prices with dates |
+| 7 | มือถือราคาไม่เกิน 10,000 ที่ขายง่าย (2026) | ราคาไม่เกิน 10000 (2,400) | Utility | Agent recommends models from data; official prices with dates |
 | 8 | ขายซิม AIS ที่ร้าน เริ่มยังไง รีเบตคิดอย่างไร | ขายส่งซิม (210) | Partner | Campaign facts you allow |
 | 9 | ขายมือถือออนไลน์ เริ่มยังไงให้ไม่ขาดทุน | ขายมือถือออนไลน์ (210) | Partner | — |
 | 10 | เครื่องศูนย์ไทย กับ เครื่องนอก/เครื่องหิ้ว ต่างกันยังไง | AEO question | Utility | — |
@@ -92,6 +92,8 @@ well:
 | 12 | คู่มือขายส่งมือถือ 2026 (pillar linking all of the above) | ขายส่งมือถือ (2,900) | Partner | — |
 
 ## Workflow per article
+
+Owner decisions and the exact agent steps: [BLOG_DRAFTING.md](BLOG_DRAFTING.md).
 
 1. Research: treg keyword volume plus the Google Thailand top 10 for the target phrase (about $0.10).
 2. Outline: questions from the top results, Pantip and Search Console queries.

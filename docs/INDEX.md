@@ -16,7 +16,7 @@
   [commands](../website/package.json): executable implementation truth.
 - [v1 redesign evidence](evidence/PKHUB-V1-REDESIGN-20261019.md), [motion evidence](evidence/PKHUB-MOTION-20261020.md),
   [mobile paint evidence](evidence/PKHUB-MOBILE-PAINT-20261020.md),
-  [SEO evidence](evidence/PKHUB-SEO-20261020.md), [blog strategy](BLOG_STRATEGY.md).
+  [SEO evidence](evidence/PKHUB-SEO-20261020.md), [blog strategy](BLOG_STRATEGY.md), [drafting playbook](BLOG_DRAFTING.md).
 - [Last release](../PUBLIC-UX-20261015.md), [dated proof](evidence/three-surface-release-20261015.json).
 - [Continuity contract](orchestration/CONTINUITY.md), [current evidence](evidence/AGENT-CONTINUITY-20261016.md).
 
