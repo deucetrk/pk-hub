@@ -97,7 +97,9 @@ well:
 2. Outline: questions from the top results, Pantip and Search Console queries.
 3. Draft in the article data format (`src/content/blog/published/*.ts`) with sources.
 4. Owner or team fact check: anything about PK HUB terms, prices, rebates or policy.
-5. Publish, then request indexing in Search Console and share on LINE OA and Facebook.
+5. Publish by merging. IndexNow notifies Bing and others automatically, and Google finds the page
+   through the sitemap and blog index. A Search Console indexing request is optional; it only
+   speeds Google up. Share on LINE OA and Facebook.
 6. After 4–6 weeks, read the article's Search Console queries; refresh it or add FAQs.
 
 ## Measuring it

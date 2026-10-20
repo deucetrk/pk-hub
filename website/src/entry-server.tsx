@@ -15,7 +15,7 @@ import { PRODUCT_SERVICES, SERVICE_PRODUCT_IDS, type ProductId } from '@/content
 import StockOnDemandPage from '@/pages/products/StockOnDemandPage'
 import PartnerMarketingPage from '@/pages/products/PartnerMarketingPage'
 export { getHomeFaqSchema } from '@/content/homeFaqs'
-import { getPublishedArticle, getPublishedBlogPaths } from '@/content/blog/articles'
+import { getPublishedArticle, getPublishedBlogPaths, publishedArticles } from '@/content/blog/articles'
 import {
   BLOG_INDEX_META,
   CONTACT_META,
@@ -112,6 +112,9 @@ export function getPageMeta(url: string): PageMeta {
 }
 
 export function getRouteLastModified(url: string) {
+  if (url === '/th/blog') {
+    return publishedArticles.map((article) => article.modifiedAt).sort().at(-1)
+  }
   if (!url.startsWith('/th/blog/')) return undefined
   return getPublishedArticle(url.split('/').pop() ?? '')?.modifiedAt
 }
