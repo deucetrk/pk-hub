@@ -38,6 +38,9 @@ function formatThaiBaht(value: number) {
 
 const EDITORIAL_ACCENTS = ["#2457d6", "#4f7ce5", "#52525b"];
 
+// Owner-approved byline (2026-10-20): first name only, with the business name.
+const BLOG_AUTHOR = "ธีรกานต์";
+
 function sectionAnchor(index: number) {
   return `section-${index + 1}`;
 }
@@ -216,9 +219,9 @@ export default function BlogArticle() {
     inLanguage: "th-TH",
     mainEntityOfPage: articleUrl,
     author: {
-      "@type": "Organization",
-      name: "ทีมบรรณาธิการ PK HUB",
-      url: `${SITE_URL}/th`,
+      "@type": "Person",
+      name: BLOG_AUTHOR,
+      worksFor: { "@type": "Organization", name: "PK HUB", url: `${SITE_URL}/th` },
     },
     publisher: {
       "@type": "Organization",
@@ -316,7 +319,7 @@ export default function BlogArticle() {
                 {article.summary}
               </p>
               <div className="text-sm text-[#71717a]">
-                เขียนและตรวจทานโดยทีมบรรณาธิการ PK HUB · อัปเดต{" "}
+                เขียนโดย {BLOG_AUTHOR} · PK HUB · อัปเดต{" "}
                 {formatThaiDate(article.modifiedAt)}
               </div>
             </div>

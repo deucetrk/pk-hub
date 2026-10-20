@@ -12,8 +12,12 @@ plus [the strategy](docs/BLOG_STRATEGY.md). Merging deploys pkhub.co and waits f
 go-ahead. Open owner choices: cadence and who approves articles, the utility track, the model and
 price source for the shortlist articles, and a named author.
 
-Next action: owner go-ahead to merge the blog PR, then request indexing for the six guides in
-Search Console; first new articles follow the strategy's topic table once the owner picks cadence.
+Outcome so far: PR #23 merged as `029c138` (FAQs, repaired links, strategy). Owner decisions are
+recorded in [the drafting playbook](docs/BLOG_DRAFTING.md): two scheduled drafts a week as PRs, the
+owner approves by merging, byline ธีรกานต์ · PK HUB.
+
+Next action: review the next `Blog draft:` PR from the local scheduled task
+`pkhub-blog-draft` (Mon and Thu 09:00, owner's Mac); merge only on owner approval.
 
 # Previous goal: rank pkhub.co for Thai wholesale-phone searches (SEO/AEO/GEO)
 
