@@ -127,7 +127,7 @@ function Sell() {
                 <span className="v1-h4" style={{ fontSize: 32, lineHeight: '40px' }}>
                   {t(language, 'อุปกรณ์เสริม', 'Accessories')}
                 </span>
-                <span className="v1-small">{t(language, 'หูฟัง ลำโพง นาฬิกา ที่ชาร์จ เคส · 16 แบรนด์', 'Audio, watches, chargers, cases · 16 brands')}</span>
+                <span className="v1-small">{t(language, 'หูฟัง ลำโพง นาฬิกา ที่ชาร์จ เคส · 14 แบรนด์', 'Audio, watches, chargers, cases · 14 brands')}</span>
               </span>
               <img src="/v1/img/earbuds.webp" alt="" width={600} height={329} loading="lazy" className="v1-card-media h-[120px] w-[220px] object-contain" style={{ ['--v1-tilt' as string]: '0deg' }} />
             </a>

@@ -3,6 +3,8 @@ import { ArrowUpRight } from 'lucide-react'
 
 import BrandWall from '@/components/v1/BrandWall'
 import CountUp from '@/components/v1/CountUp'
+import { Faq } from '@/components/v1/ServiceBlocks'
+import { HOME_FAQS } from '@/content/homeFaqs'
 import SodChatDemo from '@/components/v1/SodChatDemo'
 import PageShell from '@/components/v1/PageShell'
 import { productRoute, route, t } from '@/components/v1/site'
@@ -147,7 +149,7 @@ function Hero() {
     <section className="v1-hero" aria-labelledby="v1-page-title">
       <div className="v1-wrap v1-hero-grid v1-home-hero">
         <div className="v1-hero-copy v1-copy-enter">
-          <p className="v1-eyebrow v1-eyebrow-sky">PK HUB PARTNER</p>
+          <p className="v1-eyebrow v1-eyebrow-sky">{t(language, 'PK HUB · ขายส่งมือถือเครื่องศูนย์ไทย', 'PK HUB · SMARTPHONE WHOLESALE')}</p>
           <h1 id="v1-page-title" className="v1-h1">
             {t(language, 'เพิ่มตัวเลือกขาย', 'More to sell,')}
             <br />
@@ -158,7 +160,7 @@ function Hero() {
           <p className="v1-lede">
             {t(
               language,
-              'สินค้าค้าส่ง Stock on Demand และทีมสนับสนุน สำหรับร้านที่อยากมีทางเลือกให้ลูกค้ามากขึ้น',
+              'มือถือขายส่ง Stock on Demand และทีมสนับสนุน สำหรับร้านที่อยากมีทางเลือกให้ลูกค้ามากขึ้น',
               'Wholesale devices, Stock on Demand and a support team for stores that want to offer customers more.',
             )}
           </p>
@@ -224,7 +226,7 @@ function Growth() {
             <p className="v1-num" style={{ fontSize: 'clamp(52px, 5vw, 72px)', lineHeight: 1.17 }}>
               <CountUp to={500} suffix="+" /> {t(language, 'รุ่น', 'models')}
             </p>
-            <p className="text-xl leading-8">{t(language, 'จาก 26 แบรนด์ มือถือ แท็บเล็ต และอุปกรณ์เสริม', 'from 26 brands of phones, tablets and accessories')}</p>
+            <p className="text-xl leading-8">{t(language, 'จาก 24 แบรนด์ มือถือ แท็บเล็ต และอุปกรณ์เสริม', 'from 24 brands of phones, tablets and accessories')}</p>
             <p className="text-base leading-7 text-[#bebebe]">
               {t(language, 'ต่อยอดตัวเลือกขาย โดยไม่ต้องวางสินค้าทุกรุ่นไว้หน้าร้าน', 'Offer more without keeping every model on your shelf')}
             </p>
@@ -241,7 +243,7 @@ function Growth() {
               </p>
               <p className="flex items-center gap-4">
                 <span className="v1-num text-[46px] leading-[58px]">
-                  <CountUp to={16} />
+                  <CountUp to={14} />
                 </span>
                 <span className="text-base leading-[26px] text-[#d2d2d2]">
                   {t(language, 'แบรนด์', 'brands of')}
@@ -473,6 +475,7 @@ export default function Home() {
       <StockOnDemand />
       <MarketingSoon />
       <Care />
+      <Faq items={HOME_FAQS[language].map(({ q, a }) => [q, a])} />
     </PageShell>
   )
 }

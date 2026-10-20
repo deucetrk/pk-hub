@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 
 import BrandWall from '@/components/v1/BrandWall'
-import { findBrand } from '@/content/brands'
+import { Faq } from '@/components/v1/ServiceBlocks'
+import { ACCESSORY_BRANDS, PHONE_BRANDS, findBrand } from '@/content/brands'
 import PageShell from '@/components/v1/PageShell'
 import { productRoute, t } from '@/components/v1/site'
 import { useLanguage } from '@/i18n/LanguageContext'
@@ -23,7 +24,7 @@ export default function DevicesPage({ focus }: { focus: 'devices' | 'accessories
       <section className="v1-white" aria-labelledby="v1-page-title">
         <div className="v1-wrap grid gap-6 pb-6 pt-[clamp(48px,6.6vw,96px)]">
           <p className="v1-eyebrow">
-            {accessories ? t(language, 'อุปกรณ์เสริม · 16 แบรนด์', 'Accessories · 16 brands') : t(language, 'สินค้า · ตัวแทนจำหน่ายที่ได้รับอนุญาตจาก AIS', 'Products · AIS authorized dealer')}
+            {accessories ? t(language, 'อุปกรณ์เสริม · 14 แบรนด์', 'Accessories · 14 brands') : t(language, 'สินค้า · ตัวแทนจำหน่ายที่ได้รับอนุญาตจาก AIS', 'Products · AIS authorized dealer')}
           </p>
           <div className="v1-section-head" style={{ marginBottom: 0 }}>
             <h1 id="v1-page-title" className="v1-h1">
@@ -32,7 +33,17 @@ export default function DevicesPage({ focus }: { focus: 'devices' | 'accessories
               {t(language, 'สั่งเข้าร้านได้จากที่เดียว', 'ordered from one place')}
             </h1>
             <p className="v1-lede">
-              {t(language, 'ราคาส่งสำหรับร้านคู่ค้า ดูราคาและสั่งได้หลังเปิดบัญชีคู่ค้า', 'Wholesale prices for partner stores. See prices and order once your partner account is open.')}
+              {accessories
+                ? t(
+                    language,
+                    'PK HUB ขายส่งอุปกรณ์เสริมมือถือให้ร้านค้าทั่วประเทศ ทั้งหูฟัง ลำโพง สมาร์ทวอทช์ ที่ชาร์จ สาย เคส และฟิล์ม ราคาส่งสำหรับร้านคู่ค้า ดูราคาและสั่งได้หลังเปิดบัญชีคู่ค้า',
+                    'PK HUB supplies phone accessories wholesale to stores across Thailand: audio, smartwatches, chargers, cables, cases and screen guards. Partner prices; see prices and order once your partner account is open.',
+                  )
+                : t(
+                    language,
+                    'PK HUB ขายส่งมือถือและแท็บเล็ตเครื่องศูนย์ไทยให้ร้านค้าทั่วประเทศ ทั้ง iPhone, Samsung, OPPO, vivo, Xiaomi และแบรนด์อื่น ราคาส่งสำหรับร้านคู่ค้า ออกใบกำกับภาษีได้ ดูราคาและสั่งได้หลังเปิดบัญชีคู่ค้า',
+                    'PK HUB supplies official Thai-warranty phones and tablets wholesale to stores across Thailand: iPhone, Samsung, OPPO, vivo, Xiaomi and more. Partner prices with tax invoices; see prices and order once your partner account is open.',
+                  )}
             </p>
           </div>
         </div>
@@ -160,6 +171,8 @@ export default function DevicesPage({ focus }: { focus: 'devices' | 'accessories
           </a>
         </div>
       </section>
+
+      <Faq items={accessories ? accessoryFaqs(language) : handsetFaqs(language)} />
     </PageShell>
   )
 }
@@ -226,3 +239,92 @@ function BrandFilter() {
     </>
   )
 }
+
+const names = (brands: typeof PHONE_BRANDS) => brands.map((brand) => brand.name).join(', ')
+
+// Answers repeat only facts already published on pkhub.co; prices, stock and terms stay with the team.
+const handsetFaqs = (language: 'th' | 'en'): Array<[string, string]> => [
+  [
+    t(language, 'PK HUB ขายส่งมือถือแบรนด์อะไรบ้าง', 'Which phone brands does PK HUB supply wholesale?'),
+    t(
+      language,
+      `มือถือและแท็บเล็ตจาก ${names(PHONE_BRANDS)} รวมถึงแท็บเล็ตอย่าง iPad, Galaxy Tab และ MatePad รุ่น สี ความจุ ราคา และสต็อกตรวจสอบก่อนยืนยันแต่ละออเดอร์`,
+      `Phones and tablets from ${names(PHONE_BRANDS)}, including tablets such as iPad, Galaxy Tab and MatePad. Models, colours, capacities, prices and stock are checked before each order is confirmed.`,
+    ),
+  ],
+  [
+    t(language, 'เป็นมือถือเครื่องศูนย์ไทยหรือไม่', 'Are the phones official Thai-warranty models?'),
+    t(
+      language,
+      'เป็นมือถือเครื่องศูนย์ไทย ตรวจสอบรายละเอียดประกันของรุ่นที่สนใจกับทีมก่อนยืนยันออเดอร์',
+      'Yes, they are official Thai-market models. Confirm the warranty details for your selected models with the team before ordering.',
+    ),
+  ],
+  [
+    t(language, 'ดูราคาส่งได้อย่างไร', 'How do I see wholesale prices?'),
+    t(
+      language,
+      'ราคาส่งดูได้หลังเปิดบัญชีคู่ค้า หรือทัก LINE @pkhub พร้อมรุ่น สี ความจุ และจำนวน ทีมจะตรวจสอบราคา สต็อก และรอบจัดส่งให้',
+      'Wholesale prices are visible once your partner account is open, or message @pkhub on LINE with the model, colour, capacity and quantity and the team will check price, stock and dispatch.',
+    ),
+  ],
+  [
+    t(language, 'ถ้าร้านไม่มีรุ่นที่ลูกค้าถามหา ทำอย่างไร', 'What if a customer wants a model I do not stock?'),
+    t(
+      language,
+      'ส่งคำขอ Stock on Demand ให้ทีม PK ช่วยหา เตรียม 1–2 วัน ส่ง 1–2 วัน ร้านยืนยันก่อนสั่งซื้อทุกครั้ง',
+      'Send a Stock on Demand request and PK finds it: 1–2 days to prepare, 1–2 days to deliver, and you always confirm before ordering.',
+    ),
+  ],
+  [
+    t(language, 'ออกใบกำกับภาษีได้หรือไม่', 'Can I get a tax invoice?'),
+    t(language, 'PK HUB จดทะเบียน VAT และออกใบกำกับภาษีเต็มรูปแบบ', 'PK HUB is VAT registered and issues full tax invoices.'),
+  ],
+  [
+    t(language, 'ต้องสั่งขั้นต่ำเท่าไหร่', 'Is there a minimum order?'),
+    t(
+      language,
+      'เริ่มสอบถามได้โดยไม่มีขั้นต่ำในการคุย แจ้งรุ่นและจำนวนที่สนใจ เพื่อให้ทีมยืนยันเงื่อนไขการสั่งซื้อของรายการนั้นก่อนตัดสินใจ',
+      'There is no minimum to start a conversation. Share the models and quantities you need so the team can confirm the ordering terms before you decide.',
+    ),
+  ],
+]
+
+const accessoryFaqs = (language: 'th' | 'en'): Array<[string, string]> => [
+  [
+    t(language, 'PK HUB ขายส่งอุปกรณ์เสริมแบรนด์อะไรบ้าง', 'Which accessory brands does PK HUB supply wholesale?'),
+    t(
+      language,
+      `อุปกรณ์เสริมจากแบรนด์อย่าง ${names(ACCESSORY_BRANDS)} สินค้าและราคาตรวจสอบก่อนยืนยันแต่ละออเดอร์`,
+      `Accessories from brands such as ${names(ACCESSORY_BRANDS)}. Products and prices are checked before each order is confirmed.`,
+    ),
+  ],
+  [
+    t(language, 'มีอุปกรณ์เสริมหมวดไหนบ้าง', 'Which accessory categories are available?'),
+    t(
+      language,
+      'หูฟังและลำโพง สมาร์ทวอทช์ ที่ชาร์จและสาย เคส ฟิล์ม และอุปกรณ์ป้องกัน',
+      'Audio, smartwatches, chargers and cables, cases, screen guards and protection.',
+    ),
+  ],
+  [
+    t(language, 'สั่งพร้อมมือถือได้หรือไม่', 'Can I order accessories together with phones?'),
+    t(
+      language,
+      'ได้ สั่งอุปกรณ์เสริมได้จากที่เดียวกับมือถือและแท็บเล็ต ผ่านบัญชีคู่ค้า PK HUB',
+      'Yes. Accessories are ordered from the same place as phones and tablets, through your PK HUB partner account.',
+    ),
+  ],
+  [
+    t(language, 'ดูราคาส่งได้อย่างไร', 'How do I see wholesale prices?'),
+    t(
+      language,
+      'ราคาส่งดูได้หลังเปิดบัญชีคู่ค้า หรือทัก LINE @pkhub พร้อมสินค้าและจำนวนที่สนใจ',
+      'Wholesale prices are visible once your partner account is open, or message @pkhub on LINE with the products and quantities you need.',
+    ),
+  ],
+  [
+    t(language, 'ออกใบกำกับภาษีได้หรือไม่', 'Can I get a tax invoice?'),
+    t(language, 'PK HUB จดทะเบียน VAT และออกใบกำกับภาษีเต็มรูปแบบ', 'PK HUB is VAT registered and issues full tax invoices.'),
+  ],
+]

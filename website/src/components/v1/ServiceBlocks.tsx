@@ -169,8 +169,18 @@ export function ComparePanels({
 
 export function Faq({ items }: { items: Array<[string, string]> }) {
   const { language } = useLanguage()
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    inLanguage: language,
+    mainEntity: items.map(([question, answer]) => ({
+      '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer },
+    })),
+  }
   return (
     <section className="v1-white v1-pad" aria-labelledby="v1-faq-title">
+      {/* The visible questions are the schema's only source, so the two cannot drift apart. */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, '\\u003c') }} />
       <div className="v1-wrap v1-faq v1-reveal">
         <div className="grid content-start gap-3">
           <p className="v1-eyebrow">{t(language, 'คำถามที่พบบ่อย', 'FAQ')}</p>

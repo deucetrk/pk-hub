@@ -31,7 +31,7 @@ export const PHONE_BRANDS: Brand[] = [
   { name: 'TECNO', src: '/v1/brands/tecno.svg', width: 80, height: 24 },
 ]
 
-/** Accessory brands shown on the wall (16 accessory brands in total per owner). */
+/** Accessory brands shown on the wall (14 accessory brands, owner-confirmed 2026-10-20). */
 export const ACCESSORY_BRANDS: Brand[] = [
   { name: 'JBL', src: '/v1/brands/jbl.svg', width: 44, height: 26 },
   { name: 'Marshall', src: '/v1/brands/marshall.svg', width: 84, height: 30 },

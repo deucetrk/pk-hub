@@ -1,5 +1,5 @@
 ---
-goal: PKHUB-MOBILE-PAINT-001
+goal: PKHUB-SEO-001
 updated: 2026-10-20
 ---
 # Current repository state
