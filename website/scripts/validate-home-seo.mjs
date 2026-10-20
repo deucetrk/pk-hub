@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync, readdirSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 
 const dist = resolve('dist')
@@ -92,6 +92,7 @@ assert(!sitemap.includes('<loc>https://pkhub.co/th/products</loc>'), 'Review dir
 assert(!sitemap.includes('/dealer/login'), 'Sign-in pages stay out of sitemap')
 for (const slug of indexedSlugs) for (const lang of ['th', 'en']) assert(sitemap.includes(`<loc>https://pkhub.co/${lang}/products/${slug}</loc>`), `Released page in sitemap: ${lang}/${slug}`)
 assert(existsSync(resolve(dist, 'llms.txt')), 'llms.txt is published')
+assert(readdirSync(dist).some((name) => /^[a-f0-9]{32}\.txt$/.test(name)), 'IndexNow key file is published')
 const { rewrites } = JSON.parse(readFileSync('vercel.json', 'utf8'))
 for (const match of sitemap.matchAll(/<loc>https:\/\/pkhub.co\/([^<]+)<\/loc>/g)) {
   assert(

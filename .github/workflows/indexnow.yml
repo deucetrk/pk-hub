@@ -1,0 +1,30 @@
+name: Notify search engines
+
+# After each deploy of main, submit the pages whose sitemap lastmod is today to IndexNow
+# (Bing/ChatGPT search, Copilot, Yandex, Naver, Seznam). Google reads the sitemap instead.
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'website/**'
+  workflow_dispatch:
+    inputs:
+      all:
+        description: Submit every sitemap URL
+        type: boolean
+        default: false
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: website
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node scripts/indexnow.mjs --wait-for "$GITHUB_SHA" ${{ inputs.all && '--all' || '' }}
