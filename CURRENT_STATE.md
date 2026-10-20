@@ -7,6 +7,9 @@ updated: 2026-10-20
 [GOAL.md](GOAL.md) owns the active outcome and exact next action.
 [Continuity evidence](docs/evidence/AGENT-CONTINUITY-20261016.md) records current validation.
 
+Latest observed pkhub.co revision: `dfbe776d1353a33cadb74fcbce1816cb94714041` (PR #21, SEO/AEO)
+at 2026-10-20T16:14:14Z; see [SEO evidence](docs/evidence/PKHUB-SEO-20261020.md).
+
 Last observed application release: `c1375508f6cc4f223668735820ebffde05338d19` at
 2026-10-15T15:38:44Z, observed alongside Commerce `14c675887e7ba7904afdb99b2edddea456151a46`.
 [Portable proof](docs/evidence/three-surface-release-20261015.json) includes CI and revision
