@@ -1,6 +1,5 @@
 import { StrictMode } from 'react'
 import { createRoot, hydrateRoot } from 'react-dom/client'
-import { LazyMotion, domAnimation } from 'framer-motion'
 import App from './App'
 import { SERVICE_PRODUCT_IDS } from '@/content/productServices'
 import type { RoutePages } from './AppRoutes'
@@ -69,10 +68,8 @@ async function mount() {
 
   const app = (
     <StrictMode>
-      <LazyMotion features={domAnimation} strict>
         {container.hasAttribute('data-pk-not-found') ? <NotFound /> : <App {...pages} />}
         <HydrationReady onReady={finishBootstrap} />
-      </LazyMotion>
     </StrictMode>
   )
 

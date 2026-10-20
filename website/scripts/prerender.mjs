@@ -28,7 +28,13 @@ function holdPrerenderForms(html, route) {
   return html.replace(/<form\b/g, `${note}<form inert="" data-pk-bootstrap-form=""`)
 }
 
-const template = readFileSync(resolve(dist, 'index.html'), 'utf-8')
+// Inline the single site stylesheet (~18 KB gzipped) so first paint needs no extra request on
+// slow mobile networks; the hashed file stays in /assets for anything that still links it.
+const template = readFileSync(resolve(dist, 'index.html'), 'utf-8').replace(
+  /<link rel="stylesheet" crossorigin href="\/assets\/(index-[\w-]+\.css)">/,
+  (_, file) => `<style>${readFileSync(resolve(dist, 'assets', file), 'utf-8').replace(/<\/style/gi, '<\\/style')}</style>`,
+)
+if (!/<style>/.test(template)) throw new Error('Site stylesheet was not inlined')
 
 function removeTagById(html, id) {
   return html.replace(new RegExp(`\\s*<[^>]+id="${id}"[^>]*>`, 'g'), '')
