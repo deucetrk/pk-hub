@@ -20,7 +20,7 @@ export const HOME_META = {
   th: {
     title: 'ขายส่งมือถือเครื่องศูนย์ไทย สำหรับร้านค้าทั่วประเทศ | PK HUB',
     description:
-      'ขายส่งมือถือ แท็บเล็ต และอุปกรณ์เสริม เครื่องศูนย์ไทย 500+ รุ่นจาก 26 แบรนด์ ออกใบกำกับภาษีได้ Stock on Demand ซิมและเติมเงิน AIS ผ่อนกับ S Leasing และทีมดูแลหลังการขาย สำหรับร้านคู่ค้า PK HUB',
+      'ขายส่งมือถือ แท็บเล็ต และอุปกรณ์เสริม เครื่องศูนย์ไทย 500+ รุ่นจาก 24 แบรนด์ ออกใบกำกับภาษีได้ Stock on Demand ซิมและเติมเงิน AIS ผ่อนกับ S Leasing และทีมดูแลหลังการขาย สำหรับร้านคู่ค้า PK HUB',
     canonical: `${SITE_URL}/th`,
     ogType: 'website',
     image: `${SITE_URL}/og-image.jpg`,
@@ -30,7 +30,7 @@ export const HOME_META = {
   en: {
     title: 'Smartphone Wholesale in Thailand for Retail Stores | PK HUB',
     description:
-      'Wholesale phones, tablets and accessories (500+ models, 26 brands), Stock on Demand, AIS SIM and top-up, S Leasing instalments and after-sales support for PK HUB partner stores.',
+      'Wholesale phones, tablets and accessories (500+ models, 24 brands), Stock on Demand, AIS SIM and top-up, S Leasing instalments and after-sales support for PK HUB partner stores.',
     canonical: `${SITE_URL}/en`,
     ogType: 'website',
     image: `${SITE_URL}/og-image.jpg`,
@@ -165,11 +165,11 @@ export const INDEXED_PRODUCT_META: Partial<Record<ProductId, Record<'th' | 'en',
   accessories: {
     th: {
       title: 'ขายส่งอุปกรณ์เสริมมือถือ หูฟัง ที่ชาร์จ เคส ฟิล์ม | PK HUB',
-      description: 'ขายส่งอุปกรณ์เสริมมือถือจาก 16 แบรนด์ หูฟัง ลำโพง สมาร์ทวอทช์ ที่ชาร์จ สาย เคส และฟิล์ม ราคาส่งสำหรับร้านคู่ค้า สั่งพร้อมมือถือได้จากที่เดียว ออกใบกำกับภาษีได้',
+      description: 'ขายส่งอุปกรณ์เสริมมือถือจาก 14 แบรนด์ หูฟัง ลำโพง สมาร์ทวอทช์ ที่ชาร์จ สาย เคส และฟิล์ม ราคาส่งสำหรับร้านคู่ค้า สั่งพร้อมมือถือได้จากที่เดียว ออกใบกำกับภาษีได้',
     },
     en: {
       title: 'Wholesale Phone Accessories: Audio, Chargers, Cases | PK HUB',
-      description: 'Phone accessories wholesale from 16 brands: audio, smartwatches, chargers, cables, cases and screen guards at partner prices, ordered alongside phones, with tax invoices.',
+      description: 'Phone accessories wholesale from 14 brands: audio, smartwatches, chargers, cables, cases and screen guards at partner prices, ordered alongside phones, with tax invoices.',
     },
   },
   'ais-sim': {

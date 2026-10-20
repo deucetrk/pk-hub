@@ -26,13 +26,12 @@ the merge or Vercel instant rollback to `fb585c8`.
 
 ## Open owner decisions
 
-1. Accessory brand count: the site says 16 brands but lists 14. Which is right?
-2. Google Business Profile for the Chachoengsao location (owner to set up), then its URL and the
+1. Google Business Profile for the Chachoengsao location (owner to set up), then its URL and the
    official Instagram/TikTok/YouTube URLs go into the organization schema `sameAs`.
-3. Remaining product pages (Stock on Demand, ROM, S Leasing, after-sales, repair) stay noindex
+2. Remaining product pages (Stock on Demand, ROM, S Leasing, after-sales, repair) stay noindex
    until their copy is reviewed.
 
 ## Next action
 
-Owner go-ahead to merge PR #21; then request indexing for `/th`, `/th/products/handset-wholesale`,
+After PR #21 is merged and deployed, the owner requests indexing for `/th`, `/th/products/handset-wholesale`,
 `/th/products/accessories` and `/th/products/ais-sim` in Search Console.

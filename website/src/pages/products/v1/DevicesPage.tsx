@@ -24,7 +24,7 @@ export default function DevicesPage({ focus }: { focus: 'devices' | 'accessories
       <section className="v1-white" aria-labelledby="v1-page-title">
         <div className="v1-wrap grid gap-6 pb-6 pt-[clamp(48px,6.6vw,96px)]">
           <p className="v1-eyebrow">
-            {accessories ? t(language, 'อุปกรณ์เสริม · 16 แบรนด์', 'Accessories · 16 brands') : t(language, 'สินค้า · ตัวแทนจำหน่ายที่ได้รับอนุญาตจาก AIS', 'Products · AIS authorized dealer')}
+            {accessories ? t(language, 'อุปกรณ์เสริม · 14 แบรนด์', 'Accessories · 14 brands') : t(language, 'สินค้า · ตัวแทนจำหน่ายที่ได้รับอนุญาตจาก AIS', 'Products · AIS authorized dealer')}
           </p>
           <div className="v1-section-head" style={{ marginBottom: 0 }}>
             <h1 id="v1-page-title" className="v1-h1">

@@ -226,7 +226,7 @@ function Growth() {
             <p className="v1-num" style={{ fontSize: 'clamp(52px, 5vw, 72px)', lineHeight: 1.17 }}>
               <CountUp to={500} suffix="+" /> {t(language, 'รุ่น', 'models')}
             </p>
-            <p className="text-xl leading-8">{t(language, 'จาก 26 แบรนด์ มือถือ แท็บเล็ต และอุปกรณ์เสริม', 'from 26 brands of phones, tablets and accessories')}</p>
+            <p className="text-xl leading-8">{t(language, 'จาก 24 แบรนด์ มือถือ แท็บเล็ต และอุปกรณ์เสริม', 'from 24 brands of phones, tablets and accessories')}</p>
             <p className="text-base leading-7 text-[#bebebe]">
               {t(language, 'ต่อยอดตัวเลือกขาย โดยไม่ต้องวางสินค้าทุกรุ่นไว้หน้าร้าน', 'Offer more without keeping every model on your shelf')}
             </p>
@@ -243,7 +243,7 @@ function Growth() {
               </p>
               <p className="flex items-center gap-4">
                 <span className="v1-num text-[46px] leading-[58px]">
-                  <CountUp to={16} />
+                  <CountUp to={14} />
                 </span>
                 <span className="text-base leading-[26px] text-[#d2d2d2]">
                   {t(language, 'แบรนด์', 'brands of')}
