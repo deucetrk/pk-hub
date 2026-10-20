@@ -1,6 +1,6 @@
 export const HOME_FAQS = {
   th: [
-    { q: 'PK HUB ขายส่งมือถือแบรนด์อะไรบ้าง?', a: 'สอบถามมือถือจาก Apple, Samsung, OPPO, vivo, realme, Xiaomi, HONOR และ Infinix ได้กับทีม PK รุ่น สี ความจุ ราคา และสต็อกต้องตรวจสอบก่อนยืนยันแต่ละออเดอร์' },
+    { q: 'PK HUB ขายส่งมือถือแบรนด์อะไรบ้าง?', a: 'มือถือและแท็บเล็ตเครื่องศูนย์ไทยจาก Apple, Samsung, OPPO, vivo, Xiaomi, HONOR, HUAWEI, realme, NOTHING และ TECNO รวมถึงอุปกรณ์เสริมอีก 16 แบรนด์ รุ่น สี ความจุ ราคา และสต็อกต้องตรวจสอบก่อนยืนยันแต่ละออเดอร์' },
     { q: 'ต้องสั่งขั้นต่ำเท่าไหร่?', a: 'เริ่มสอบถามได้โดยไม่มีขั้นต่ำในการคุย แจ้งรุ่นและจำนวนที่สนใจ เพื่อให้ทีมยืนยันเงื่อนไขการสั่งซื้อของรายการนั้นก่อนตัดสินใจ' },
     { q: 'ร้านอยู่ที่ไหน และดูแลพื้นที่ใดบ้าง?', a: 'หน้าร้านอยู่ที่ 72/29-30 ถนนศุขประยูร ฉะเชิงเทรา ดูแลร้านค้าในฉะเชิงเทราและภาคตะวันออก สำหรับพื้นที่อื่นให้สอบถามรอบและวิธีจัดส่งกับทีมโดยตรง' },
     { q: 'เช็กราคาและรอบจัดส่งได้อย่างไร?', a: 'ทัก LINE @pkhub พร้อมรุ่น สี ความจุ และจำนวน ทีมจะตรวจสอบราคา สต็อก และรอบจัดส่งให้ยืนยันก่อนสั่งซื้อ' },
@@ -8,7 +8,7 @@ export const HOME_FAQS = {
     { q: 'สมัครแล้วเข้าระบบค้าส่งได้ทันทีหรือไม่?', a: 'การสมัครเป็นการส่งข้อมูลให้ทีม PK ตรวจสอบและติดต่อกลับ สิทธิ์เข้าระบบค้าส่งเปิดหลังได้รับการอนุมัติเท่านั้น' },
   ],
   en: [
-    { q: 'Which smartphone brands can I ask PK HUB about?', a: 'Ask PK about Apple, Samsung, OPPO, vivo, realme, Xiaomi, HONOR, and Infinix. Models, colours, capacities, prices, and availability are checked before each order is confirmed.' },
+    { q: 'Which smartphone brands can I ask PK HUB about?', a: 'Official Thai-warranty phones and tablets from Apple, Samsung, OPPO, vivo, Xiaomi, HONOR, HUAWEI, realme, NOTHING and TECNO, plus accessories from 16 brands. Models, colours, capacities, prices, and availability are checked before each order is confirmed.' },
     { q: 'Is there a minimum order?', a: 'There is no minimum to start a conversation. Share the models and quantities you need so the team can confirm the applicable ordering terms before you decide.' },
     { q: 'Where is PK HUB and which areas do you serve?', a: 'Our storefront is at 72/29-30 Sukprayoon Road, Chachoengsao. We work with retailers in Chachoengsao and eastern Thailand. Ask the team about delivery arrangements for other areas.' },
     { q: 'How do I check prices and delivery timing?', a: 'Message @pkhub on LINE with the model, colour, capacity, and quantity. The team checks prices, availability, and dispatch timing before you confirm an order.' },

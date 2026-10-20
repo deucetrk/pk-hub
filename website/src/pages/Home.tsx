@@ -3,6 +3,8 @@ import { ArrowUpRight } from 'lucide-react'
 
 import BrandWall from '@/components/v1/BrandWall'
 import CountUp from '@/components/v1/CountUp'
+import { Faq } from '@/components/v1/ServiceBlocks'
+import { HOME_FAQS } from '@/content/homeFaqs'
 import SodChatDemo from '@/components/v1/SodChatDemo'
 import PageShell from '@/components/v1/PageShell'
 import { productRoute, route, t } from '@/components/v1/site'
@@ -147,7 +149,7 @@ function Hero() {
     <section className="v1-hero" aria-labelledby="v1-page-title">
       <div className="v1-wrap v1-hero-grid v1-home-hero">
         <div className="v1-hero-copy v1-copy-enter">
-          <p className="v1-eyebrow v1-eyebrow-sky">PK HUB PARTNER</p>
+          <p className="v1-eyebrow v1-eyebrow-sky">{t(language, 'PK HUB · ขายส่งมือถือเครื่องศูนย์ไทย', 'PK HUB · SMARTPHONE WHOLESALE')}</p>
           <h1 id="v1-page-title" className="v1-h1">
             {t(language, 'เพิ่มตัวเลือกขาย', 'More to sell,')}
             <br />
@@ -158,7 +160,7 @@ function Hero() {
           <p className="v1-lede">
             {t(
               language,
-              'สินค้าค้าส่ง Stock on Demand และทีมสนับสนุน สำหรับร้านที่อยากมีทางเลือกให้ลูกค้ามากขึ้น',
+              'มือถือขายส่ง Stock on Demand และทีมสนับสนุน สำหรับร้านที่อยากมีทางเลือกให้ลูกค้ามากขึ้น',
               'Wholesale devices, Stock on Demand and a support team for stores that want to offer customers more.',
             )}
           </p>
@@ -473,6 +475,7 @@ export default function Home() {
       <StockOnDemand />
       <MarketingSoon />
       <Care />
+      <Faq items={HOME_FAQS[language].map(({ q, a }) => [q, a])} />
     </PageShell>
   )
 }

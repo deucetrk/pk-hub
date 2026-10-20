@@ -11,27 +11,28 @@ Owner request 2026-10-20: "the best SEO, AEO, GEO … get discovered and rank fi
 
 ## Authority and boundary
 
-Branch `claude/pkhub-seo-aeo`: head metadata, sitemap/indexing and `llms.txt` only, using claims
-already published. Visible copy, hero, FAQ and the noindex review pages wait for owner decisions
-below. Merging to `main` deploys pkhub.co and waits for the owner's go-ahead. Rollback: revert the
-merge or Vercel instant rollback to `fb585c8`.
+Branch `claude/pkhub-seo-aeo`. Owner approved on 2026-10-20: release the handset, accessory and AIS
+SIM pages for search; ขายส่งมือถือ in the visible hero; a visible home FAQ. Copy reuses facts already
+published. Merging to `main` deploys pkhub.co and waits for the owner's go-ahead. Rollback: revert
+the merge or Vercel instant rollback to `fb585c8`.
 
 ## Acceptance
 
-- Home titles/descriptions use ขายส่งมือถือ; sign-in pages are noindex and out of the sitemap;
-  `llms.txt` is published; Node 24 `check`, `lint`, `build`, `seo:validate` pass.
-- After deploy: Search Console re-index request for `/th` and a recheck of the ranking table.
+- Home and released product pages lead with ขายส่ง keywords, carry visible FAQs with FAQPage
+  schema, and are in the sitemap; sign-in pages are noindex; `llms.txt` is published.
+- Node 24 `check`, `lint`, `build`, `seo:validate` pass; rendered check at desktop and 390px.
+- After deploy: Search Console URL inspection and indexing requests, then a recheck of the
+  ranking table in the [evidence](docs/evidence/PKHUB-SEO-20261020.md).
 
 ## Open owner decisions
 
-1. Release the reviewed product pages (handset wholesale, accessories, AIS SIM) for indexing once
-   their copy is approved — they match ขายส่ง iphone / ขายส่งซิม / ขายส่งอุปกรณ์มือถือ.
-   Recommended.
-2. Put ขายส่งมือถือ in the visible home hero (H1 or the line above it) — changes approved v1 copy.
-3. Restore a visible home FAQ with FAQPage schema, using owner-confirmed answers only.
-4. Official profile URLs (Google Business Profile, Instagram, TikTok, YouTube) for `sameAs`.
+1. Accessory brand count: the site says 16 brands but lists 14. Which is right?
+2. Google Business Profile for the Chachoengsao location (owner to set up), then its URL and the
+   official Instagram/TikTok/YouTube URLs go into the organization schema `sameAs`.
+3. Remaining product pages (Stock on Demand, ROM, S Leasing, after-sales, repair) stay noindex
+   until their copy is reviewed.
 
 ## Next action
 
-Owner go-ahead to merge the branch PR, then request indexing for `https://pkhub.co/th` in Search
-Console and answer the open decisions above.
+Owner go-ahead to merge PR #21; then request indexing for `/th`, `/th/products/handset-wholesale`,
+`/th/products/accessories` and `/th/products/ais-sim` in Search Console.

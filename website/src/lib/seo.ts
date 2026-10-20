@@ -150,9 +150,53 @@ export const CONTACT_META = {
   },
 } satisfies Record<'th' | 'en', PageMeta>
 
+/** Product pages the owner released for search on 2026-10-20; the rest stay noindex until reviewed. */
+export const INDEXED_PRODUCT_META: Partial<Record<ProductId, Record<'th' | 'en', Pick<PageMeta, 'title' | 'description'>>>> = {
+  'handset-wholesale': {
+    th: {
+      title: 'ขายส่งมือถือ iPhone Samsung OPPO vivo เครื่องศูนย์ไทย | PK HUB',
+      description: 'ขายส่งมือถือและแท็บเล็ตเครื่องศูนย์ไทย 500+ รุ่นจาก 10 แบรนด์ ทั้ง iPhone, Samsung, OPPO, vivo, Xiaomi ราคาส่งสำหรับร้านคู่ค้า ออกใบกำกับภาษีได้ Stock on Demand หารุ่นที่ไม่มีในร้าน',
+    },
+    en: {
+      title: 'Wholesale Phones in Thailand: iPhone, Samsung, OPPO, vivo | PK HUB',
+      description: 'Official Thai-warranty phones and tablets wholesale: 500+ models from 10 brands including iPhone, Samsung, OPPO, vivo and Xiaomi, with partner prices, tax invoices and Stock on Demand.',
+    },
+  },
+  accessories: {
+    th: {
+      title: 'ขายส่งอุปกรณ์เสริมมือถือ หูฟัง ที่ชาร์จ เคส ฟิล์ม | PK HUB',
+      description: 'ขายส่งอุปกรณ์เสริมมือถือจาก 16 แบรนด์ หูฟัง ลำโพง สมาร์ทวอทช์ ที่ชาร์จ สาย เคส และฟิล์ม ราคาส่งสำหรับร้านคู่ค้า สั่งพร้อมมือถือได้จากที่เดียว ออกใบกำกับภาษีได้',
+    },
+    en: {
+      title: 'Wholesale Phone Accessories: Audio, Chargers, Cases | PK HUB',
+      description: 'Phone accessories wholesale from 16 brands: audio, smartwatches, chargers, cables, cases and screen guards at partner prices, ordered alongside phones, with tax invoices.',
+    },
+  },
+  'ais-sim': {
+    th: {
+      title: 'ตัวแทนขายซิม AIS รับรีเบต สำหรับร้านมือถือ | PK HUB',
+      description: 'สมัครกับ PK HUB เพื่อรับรหัสตัวแทน ขายซิม AIS ที่ร้าน ซิมที่เปิดใช้ด้วยการเติมเงินนับเป็นยอดรีเบตตามแคมเปญของ AIS ซึ่งส่วนใหญ่มีรอบละไตรมาส',
+    },
+    en: {
+      title: 'Become an AIS SIM Dealer and Earn Rebates | PK HUB',
+      description: 'Join PK HUB for an AIS dealer code, sell AIS SIMs in your store and earn rebates under AIS campaigns, most of which run quarterly.',
+    },
+  },
+}
+
 export function getProductMeta(id: ProductId, language: 'th' | 'en'): PageMeta {
   if (id === 'stock-on-demand') return STOCK_ON_DEMAND_META[language]
   if (id === 'partner-marketing') return PARTNER_MARKETING_META[language]
+  const indexed = INDEXED_PRODUCT_META[id]?.[language]
+  if (indexed) {
+    return {
+      ...indexed,
+      canonical: `${SITE_URL}/${language}/products/${id}`,
+      ogType: 'website',
+      image: `${SITE_URL}/og-image.jpg`,
+      locale: language === 'th' ? 'th_TH' : 'en_US',
+    }
+  }
   const service = PRODUCT_SERVICES.find(p => p.id === id)!
   return {
     title: `${language === 'th' ? service.title : service.titleEn} | PK HUB`,
