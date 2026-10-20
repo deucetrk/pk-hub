@@ -25,3 +25,8 @@ route 404. Rollback target: `77c4f18`. Real intake delivery was not exercised.
 Motion released: PR #17 merged as `f4f2ae10130553a90d71ec7535cc2e02523b5aec`; `/revision.json` served it
 at 2026-10-19T17:56:46Z, 17 routes returned 200 and an unknown route 404. Rollback target: `5a41555`.
 [Evidence](docs/evidence/PKHUB-MOTION-20261020.md).
+
+Mobile paint released: PR #19 merged as `a10891cbe012b5e84fc2dd082d9ac9d3805405c0`; `/revision.json`
+served it at 2026-10-20T06:21:21Z; 19 routes returned 200 and an unknown route 404. Live mobile
+LCP 1108 ms (was 1876 ms) under slow 4G + 4× CPU. Rollback target: `f4f2ae1`.
+[Evidence](docs/evidence/PKHUB-MOBILE-PAINT-20261020.md).

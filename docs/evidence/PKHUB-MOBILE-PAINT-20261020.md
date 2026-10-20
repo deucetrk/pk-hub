@@ -55,3 +55,31 @@ The remaining CLS of 0.002–0.004 is the web fonts swapping in. The Vercel prev
 ## Validation
 
 Node 24: `check`, `lint`, `test` (16 pass), `build` and `seo:validate` all pass.
+
+## Release observation (live)
+
+PR #19 checks passed: `verify` and the Vercel pk-hub, website and applications previews. It merged as `a10891cbe012b5e84fc2dd082d9ac9d3805405c0`. At 2026-10-20T06:21:21Z, `https://pkhub.co/revision.json` returned that SHA.
+
+Production HTTP 200: home (th/en), products and its 9 services, `?brand=jbl`, join and contact (th/en), the blog index, one article and dealer login. `/th/nope` returned 404. The home HTML has the stylesheet inlined (`<style>`), and `/v1/img/phones.webp` now returns `max-age=604800`.
+
+Live measurements use the same applied throttling as the PR numbers (slow 4G + 4× CPU, 390px, 5 runs, medians):
+
+| `/th` mobile | FCP | LCP | CLS |
+| --- | --- | --- | --- |
+| Live before (`f4f2ae1`) | 1852 ms | 1876 ms | 0.004 |
+| Live after (`a10891c`) | 632 ms | 1108 ms | 0.004 |
+
+Live interaction latency, 4× CPU, worst Event Timing over 3 repeats:
+
+| Interaction | Range |
+| --- | --- |
+| Menu | 104–184 ms |
+| Stock on Demand chips | 120–168 ms |
+| Brand filter | 112–144 ms |
+| Join brand toggles | 88–168 ms |
+
+All are under 200ms. They read slightly higher than the local runs, consistent with network-loaded route chunks.
+
+Live motion check (headless Chromium, 390px):
+- Reduced motion: no billboard animation, a wrapped grid, 0 duplicate tiles, final states.
+- Motion allowed: the billboard runs and pauses on keyboard focus with a solid outline.
