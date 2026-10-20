@@ -1,7 +1,7 @@
 # pkhub.co mobile first paint — evidence (2026-10-20)
 
 Owner go-ahead 2026-10-20 ("ok just go for it first") for the queued task from
-[PKHUB-MOTION-20261020](PKHUB-MOTION-20261020.md). Branch `claude/pkhub-mobile-paint` from `e2c1aed`.
+[PKHUB-MOTION-20261020](PKHUB-MOTION-20261020.md). Branch `claude/pkhub-mobile-paint` from `870b2c5`.
 
 ## Diagnosis
 
@@ -24,7 +24,7 @@ Applied throttling (Playwright: slow 4G, 150ms RTT, 1.6Mbps, plus 4× CPU; 390px
 | Build | FCP | LCP | CLS |
 | --- | --- | --- | --- |
 | Live pkhub.co (`f4f2ae1`) | 1852 ms | 1876 ms | 0.004 |
-| Local `main` (`e2c1aed`) | 1700 ms | 1720 ms | 0.004 (one run 0.119) |
+| Local `main` (`870b2c5`) | 1700 ms | 1720 ms | 0.004 (one run 0.119) |
 | Local this branch | 824 ms | 1012 ms | 0.004 |
 
 Lighthouse 13.5, simulated throttling, local production builds (3 runs):
