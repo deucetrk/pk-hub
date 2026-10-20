@@ -18,9 +18,9 @@ export type PageMeta = {
 
 export const HOME_META = {
   th: {
-    title: 'พาร์ทเนอร์ค้าส่งมือถือสำหรับร้านค้าทั่วประเทศ | PK HUB',
+    title: 'ขายส่งมือถือเครื่องศูนย์ไทย สำหรับร้านค้าทั่วประเทศ | PK HUB',
     description:
-      'สินค้าค้าส่งมือถือ แท็บเล็ต และอุปกรณ์เสริม 500+ รุ่นจาก 26 แบรนด์ Stock on Demand ซิมและเติมเงิน AIS ผ่อนกับ S Leasing และทีมดูแลหลังการขาย สำหรับร้านคู่ค้า PK HUB',
+      'ขายส่งมือถือ แท็บเล็ต และอุปกรณ์เสริม เครื่องศูนย์ไทย 500+ รุ่นจาก 26 แบรนด์ ออกใบกำกับภาษีได้ Stock on Demand ซิมและเติมเงิน AIS ผ่อนกับ S Leasing และทีมดูแลหลังการขาย สำหรับร้านคู่ค้า PK HUB',
     canonical: `${SITE_URL}/th`,
     ogType: 'website',
     image: `${SITE_URL}/og-image.jpg`,
@@ -28,7 +28,7 @@ export const HOME_META = {
     locale: 'th_TH',
   },
   en: {
-    title: 'PK HUB | Smartphone Wholesale Partner for Retail Stores',
+    title: 'Smartphone Wholesale in Thailand for Retail Stores | PK HUB',
     description:
       'Wholesale phones, tablets and accessories (500+ models, 26 brands), Stock on Demand, AIS SIM and top-up, S Leasing instalments and after-sales support for PK HUB partner stores.',
     canonical: `${SITE_URL}/en`,
@@ -76,6 +76,7 @@ export const DEALER_LOGIN_META = {
       'เข้าสู่ระบบสำหรับร้านค้าพาร์ทเนอร์ PK HUB การเข้าถึงราคาส่งต้องได้รับการตรวจสอบและอนุมัติก่อนใช้งาน',
     canonical: `${SITE_URL}/th/dealer/login`,
     ogType: 'website',
+    robots: 'noindex, follow',
     image: `${SITE_URL}/og-image.jpg`,
     locale: 'th_TH',
   },
@@ -85,6 +86,7 @@ export const DEALER_LOGIN_META = {
       'Sign in for PK HUB retail partners. Wholesale access requires review and approval before it can be used.',
     canonical: `${SITE_URL}/en/dealer/login`,
     ogType: 'website',
+    robots: 'noindex, follow',
     image: `${SITE_URL}/og-image.jpg`,
     locale: 'en_US',
   },

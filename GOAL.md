@@ -1,36 +1,37 @@
 ---
-task: PKHUB-MOBILE-PAINT-001
-status: complete
-validation: passed
+task: PKHUB-SEO-001
+status: in_progress
+validation: local_passed
 updated: 2026-10-20
 ---
-# Active goal: faster mobile first paint on pkhub.co
+# Active goal: rank pkhub.co for Thai wholesale-phone searches (SEO/AEO/GEO)
 
-Owner go-ahead 2026-10-20 ("ok just go for it first"): cut what delays the first mobile paint
-without losing any v1 visual, motion or reduced-motion behaviour.
+Owner request 2026-10-20: "the best SEO, AEO, GEO … get discovered and rank first".
+[Evidence and keyword data](docs/evidence/PKHUB-SEO-20261020.md).
 
 ## Authority and boundary
 
-Front-end build and static assets only: no intake, data, configuration or credential change.
-Publishing (merging to `main`, which deploys pkhub.co) waits for the owner's go-ahead. Rollback:
-revert the merge or Vercel instant rollback to `f4f2ae1`.
+Branch `claude/pkhub-seo-aeo`: head metadata, sitemap/indexing and `llms.txt` only, using claims
+already published. Visible copy, hero, FAQ and the noindex review pages wait for owner decisions
+below. Merging to `main` deploys pkhub.co and waits for the owner's go-ahead. Rollback: revert the
+merge or Vercel instant rollback to `fb585c8`.
 
 ## Acceptance
 
-[PKHUB-MOBILE-PAINT-20261020](docs/evidence/PKHUB-MOBILE-PAINT-20261020.md): before/after FCP,
-LCP, CLS and interaction latency; motion and reduced-motion checks; Node 24 validation.
+- Home titles/descriptions use ขายส่งมือถือ; sign-in pages are noindex and out of the sitemap;
+  `llms.txt` is published; Node 24 `check`, `lint`, `build`, `seo:validate` pass.
+- After deploy: Search Console re-index request for `/th` and a recheck of the ranking table.
 
-## Outcome
+## Open owner decisions
 
-PR #19 merged as `a10891cbe012b5e84fc2dd082d9ac9d3805405c0`; pkhub.co served it at
-2026-10-20T06:21:21Z. Live mobile LCP under the PR's throttling fell from 1876 ms to 1108 ms.
-See the [evidence](docs/evidence/PKHUB-MOBILE-PAINT-20261020.md).
+1. Release the reviewed product pages (handset wholesale, accessories, AIS SIM) for indexing once
+   their copy is approved — they match ขายส่ง iphone / ขายส่งซิม / ขายส่งอุปกรณ์มือถือ.
+   Recommended.
+2. Put ขายส่งมือถือ in the visible home hero (H1 or the line above it) — changes approved v1 copy.
+3. Restore a visible home FAQ with FAQPage schema, using owner-confirmed answers only.
+4. Official profile URLs (Google Business Profile, Instagram, TikTok, YouTube) for `sameAs`.
 
 ## Next action
 
-Owner review of the live site. Open items: privacy notice text (board 14) and the TikTok handle;
-then the first READY item in [the queue](tasks/NEXT.md).
-
-## Previous outcome
-
-PKHUB-MOTION-001 shipped `f4f2ae1`; see [motion evidence](docs/evidence/PKHUB-MOTION-20261020.md).
+Owner go-ahead to merge the branch PR, then request indexing for `https://pkhub.co/th` in Search
+Console and answer the open decisions above.

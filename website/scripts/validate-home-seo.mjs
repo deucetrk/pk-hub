@@ -21,6 +21,9 @@ for (const lang of ['th', 'en']) {
     )
     assert(/<title>[^<]+<\/title>/.test(html), `${route}: title`)
     assert(/name="description"\s+content="[^"]+"/.test(html), `${route}: description`)
+    if (suffix === '/dealer/login') {
+      assert(html.includes('name="robots" content="noindex, follow"'), `${route}: sign-in page stays out of search`)
+    }
     if (suffix === '/products' || reviewSlugs.some(slug => suffix === '/products/' + slug)) {
       assert(html.includes('name="robots" content="noindex, follow"'), `${route}: review page stays noindex`)
     }
@@ -80,6 +83,8 @@ for (const lang of ['th', 'en']) {
 const sitemap = readFileSync(resolve(dist, 'sitemap.xml'), 'utf8')
 for (const slug of reviewSlugs) assert(!sitemap.includes('/products/' + slug), `Review page stays out of sitemap: ${slug}`)
 assert(!sitemap.includes('<loc>https://pkhub.co/th/products</loc>'), 'Review directory stays out of sitemap')
+assert(!sitemap.includes('/dealer/login'), 'Sign-in pages stay out of sitemap')
+assert(existsSync(resolve(dist, 'llms.txt')), 'llms.txt is published')
 const { rewrites } = JSON.parse(readFileSync('vercel.json', 'utf8'))
 for (const match of sitemap.matchAll(/<loc>https:\/\/pkhub.co\/([^<]+)<\/loc>/g)) {
   assert(
