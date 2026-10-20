@@ -12,7 +12,7 @@ export const inventoryCashflowArticle: PublishedBlogArticle = {
   "contentTrack": "retailer",
   "tags": ["บริหารสต็อก", "เงินหมุน", "ต้นทุนร้าน"],
   "publishedAt": "2026-08-11",
-  "modifiedAt": "2026-10-01",
+  "modifiedAt": "2026-10-20",
   "estimatedReadMinutes": 7,
   "recommendedImage": "/blog/inventory-cashflow-cover.png",
   "imageAlt": "ภาพจำลองเจ้าของร้านทบทวนจำนวนสต็อกมือถือแต่ละกลุ่ม",
@@ -111,10 +111,28 @@ export const inventoryCashflowArticle: PublishedBlogArticle = {
   "ctaDescription": "ส่งรุ่นที่กำลังจะเติมพร้อมงบประมาณ ทีม PK HUB จะช่วยเช็กราคา สต็อก รอบส่ง และสะกิดว่าตัวไหนควรมี ควรเริ่มน้อย หรือรอออเดอร์",
   "ctaLabel": "ส่งรายการรุ่นที่ต้องการเติมสต็อก",
   "ctaHref": "https://lin.ee/VEgW6qG",
+  "faqs": [
+    {
+      "question": "สต็อกร้านมือถืออย่างไรไม่ให้เงินจม?",
+      "answer": "แบ่งเครื่องเป็น 3 กลุ่ม คือ Core, Test และ Order-led ตั้งเพดานเงินก่อนเจอโปร กำหนดอายุสต็อกที่ต้องทบทวน และตั้งจุดเติมที่เผื่อเวลาหาของ"
+    },
+    {
+      "question": "ควรเติมสต็อกมือถือเมื่อไร?",
+      "answer": "เมื่อมีสัญญาณจากลูกค้าและยอดขาย ไม่ใช่เพราะรู้สึกว่าของน้อย และจุดเติมต้องรวมเวลาตั้งแต่ถามราคา ยืนยัน ชำระเงิน แพ็ก ขนส่ง จนตรวจรับ"
+    },
+    {
+      "question": "ประชุมสต็อกทุกสัปดาห์ควรดูอะไร?",
+      "answer": "ดูสี่เรื่อง คือ ตัวขายดีที่ใกล้หมด ตัวที่ค้างเกินกำหนด คำถามที่ร้านไม่มีของตอบ และเงินสดที่พร้อมเติม แล้วตัดสินใจว่าจะเติม หยุด ทดลอง หรือรับตามออเดอร์"
+    }
+  ],
   "internalLinks": [
     {
-      "label": "ดูขั้นตอนเช็กสินค้าและสั่งซื้อ",
-      "href": "/th#v4-start"
+      "label": "ดูอุปกรณ์เสริมที่สั่งพร้อมมือถือได้",
+      "href": "/th/products/accessories"
+    },
+    {
+      "label": "อ่านขั้นตอนสั่งมือถือขายส่งครั้งแรก",
+      "href": "/th/blog/first-wholesale-mobile-phone-order"
     }
   ],
   "sources": [

@@ -226,6 +226,18 @@ export default function BlogArticle() {
       logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` },
     },
   };
+  const faqSchema = article.faqs?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        inLanguage: "th-TH",
+        mainEntity: article.faqs.map(({ question, answer }) => ({
+          "@type": "Question",
+          name: question,
+          acceptedAnswer: { "@type": "Answer", text: answer },
+        })),
+      }
+    : null;
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -275,6 +287,12 @@ export default function BlogArticle() {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumbSchema) }}
         />
+        {faqSchema ? (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: safeJsonLd(faqSchema) }}
+          />
+        ) : null}
 
         <header className="border-b border-[#e4e4e7] bg-white">
           <Container className="py-10 sm:py-14 lg:py-16">
@@ -377,6 +395,17 @@ export default function BlogArticle() {
                     </span>
                   </a>
                 ))}
+                {article.faqs?.length ? (
+                  <a
+                    href="#article-faq"
+                    className="group grid grid-cols-[2rem_1fr] gap-3 border-b border-[#e4e4e7] py-3 text-base font-semibold leading-6 text-[#52525b] transition-colors hover:text-[#171717]"
+                  >
+                    <span className="font-display text-lg font-extrabold text-[#2457d6]">?</span>
+                    <span className="underline decoration-transparent underline-offset-4 transition-colors group-hover:decoration-current">
+                      คำถามที่พบบ่อย
+                    </span>
+                  </a>
+                ) : null}
               </div>
             </nav>
 
@@ -755,13 +784,49 @@ export default function BlogArticle() {
               ))}
             </section>
 
+            {article.faqs?.length ? (
+              <section
+                id="article-faq"
+                aria-labelledby="article-faq-heading"
+                className="grid scroll-mt-28 gap-5"
+              >
+                <h2
+                  id="article-faq-heading"
+                  className="font-display text-3xl font-extrabold tracking-[-0.035em] text-[#18181b] sm:text-4xl"
+                >
+                  คำถามที่พบบ่อย
+                </h2>
+                <div className="grid border-t border-[#d4d4d8]">
+                  {article.faqs.map(({ question, answer }) => (
+                    <details
+                      key={question}
+                      className="group border-b border-[#d4d4d8] py-5"
+                    >
+                      <summary className="flex cursor-pointer list-none items-start justify-between gap-4 font-display text-xl font-bold leading-8 text-[#18181b] [&::-webkit-details-marker]:hidden">
+                        <h3 className="text-xl font-bold leading-8">{question}</h3>
+                        <span
+                          className="mt-1 shrink-0 text-2xl leading-none text-[#2457d6] transition-transform group-open:rotate-45"
+                          aria-hidden="true"
+                        >
+                          +
+                        </span>
+                      </summary>
+                      <p className="mt-3 text-lg leading-8 text-[#52525b]">
+                        {answer}
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </section>
+            ) : null}
+
             <nav
               aria-label="อ่านต่อในเว็บไซต์"
               className="grid border-y border-[#d4d4d8] sm:grid-cols-2 sm:divide-x sm:divide-[#d4d4d8]"
             >
               {article.internalLinks.map((link, index) => (
                 <a
-                  key={link.href}
+                  key={`${link.href}-${link.label}`}
                   href={link.href}
                   className="group flex items-center justify-between gap-4 py-5 font-semibold text-[#3f3f46] transition-colors hover:text-[#171717] sm:px-5 sm:first:pl-0 sm:last:pr-0"
                 >

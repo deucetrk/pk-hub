@@ -115,6 +115,17 @@ assert(
   !rewrites.some(({ destination }) => destination === '/index.html'),
   'No homepage catch-all for unknown routes',
 )
+for (const match of sitemap.matchAll(/<loc>https:\/\/pkhub.co\/(th\/blog\/[^<]+)<\/loc>/g)) {
+  const article = readFileSync(resolve(dist, match[1], 'index.html'), 'utf8')
+  assert(article.includes('"@type":"FAQPage"') && article.includes('id="article-faq"'), `${match[1]}: visible FAQ with schema`)
+  for (const link of article.matchAll(/href="(\/(?:th|en)[^"#?]*)(#[^"]*)?"/g)) {
+    assert(existsSync(resolve(dist, link[1].slice(1), 'index.html')), `${match[1]}: broken internal link ${link[1]}`)
+    if (link[2] && link[1] !== '/' + match[1]) {
+      const target = readFileSync(resolve(dist, link[1].slice(1), 'index.html'), 'utf8')
+      assert(target.includes(`id="${link[2].slice(1)}"`), `${match[1]}: broken anchor ${link[1]}${link[2]}`)
+    }
+  }
+}
 const missingPage = readFileSync(resolve(dist, '404.html'), 'utf-8')
 for (const language of ['th', 'en']) {
   const application = readFileSync(resolve(dist, language, 'join', 'index.html'), 'utf-8')

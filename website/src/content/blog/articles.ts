@@ -85,6 +85,8 @@ export type PublishedBlogArticle = {
   ctaDescription?: string
   ctaLabel: string
   ctaHref: string
+  /** Visible questions answered by the article itself; rendered with matching FAQPage schema. */
+  faqs?: Array<{ question: string; answer: string }>
   internalLinks: Array<{ label: string; href: string }>
   sources: BlogSource[]
 }

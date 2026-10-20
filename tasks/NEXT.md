@@ -1,5 +1,5 @@
 ---
-goal: PKHUB-SEO-001
+goal: PKHUB-BLOG-SEO-001
 updated: 2026-10-20
 ---
 # Work queue
