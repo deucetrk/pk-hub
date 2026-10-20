@@ -158,7 +158,7 @@
       ]
     },
     {
-      "source": "/(brands|proof|reviews|og-image\\.jpg|favicon\\.png|logo\\.png)/(.*)",
+      "source": "/(brands|proof|reviews|v1|blog|og-image\\.jpg|favicon\\.png|logo\\.png)/(.*)",
       "headers": [
         {
           "key": "Cache-Control",
