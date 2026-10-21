@@ -38,6 +38,14 @@
       "destination": "/en/contact/index.html"
     },
     {
+      "source": "/th/privacy",
+      "destination": "/th/privacy/index.html"
+    },
+    {
+      "source": "/en/privacy",
+      "destination": "/en/privacy/index.html"
+    },
+    {
       "source": "/th/dealer/login",
       "destination": "/th/dealer/login/index.html"
     },
