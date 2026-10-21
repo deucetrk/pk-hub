@@ -20,6 +20,9 @@ const DeferredJoin = import.meta.env.SSR
 const DeferredContact = import.meta.env.SSR
   ? ServerPagePlaceholder
   : lazy(() => import('@/pages/Contact'))
+const DeferredPrivacy = import.meta.env.SSR
+  ? ServerPagePlaceholder
+  : lazy(() => import('@/pages/Privacy'))
 const DeferredDealerLogin = import.meta.env.SSR
   ? ServerPagePlaceholder
   : lazy(() => import('@/pages/DealerLogin'))
@@ -49,6 +52,7 @@ export type RoutePages = {
   HomePage?: ComponentType
   JoinPage?: ComponentType
   ContactPage?: ComponentType
+  PrivacyPage?: ComponentType
   DealerLoginPage?: ComponentType
   BlogIndexPage?: ComponentType
   BlogArticlePage?: ComponentType
@@ -72,6 +76,7 @@ export default function AppRoutes({
   HomePage = DeferredHome,
   JoinPage = DeferredJoin,
   ContactPage = DeferredContact,
+  PrivacyPage = DeferredPrivacy,
   DealerLoginPage = DeferredDealerLogin,
   BlogIndexPage = DeferredBlogIndex,
   BlogArticlePage = DeferredBlogArticle,
@@ -90,6 +95,8 @@ export default function AppRoutes({
         <Route path="/en/join" element={<RouteView Page={JoinPage} english />} />
         <Route path="/th/contact" element={<RouteView Page={ContactPage} />} />
         <Route path="/en/contact" element={<RouteView Page={ContactPage} english />} />
+        <Route path="/th/privacy" element={<RouteView Page={PrivacyPage} />} />
+        <Route path="/en/privacy" element={<RouteView Page={PrivacyPage} english />} />
         <Route path="/th/dealer/login" element={<RouteView Page={DealerLoginPage} />} />
         <Route path="/en/dealer/login" element={<RouteView Page={DealerLoginPage} english />} />
         <Route path="/th/products/stock-on-demand" element={<RouteView Page={StockOnDemandPage} />} />

@@ -113,8 +113,8 @@ function localize(html, route, meta) {
     page = page.replace('</head>', '<link rel="preload" as="image" href="/v1/img/phones.webp" fetchpriority="high" />\n</head>')
   }
 
-  if (route.endsWith('/join') || route.endsWith('/contact')) {
-    const suffix = route.endsWith('/join') ? '/join' : '/contact'
+  if (/\/(join|contact|privacy)$/.test(route)) {
+    const suffix = route.slice(route.lastIndexOf('/'))
     const alternate = `<link id="alternate-th" rel="alternate" hreflang="th" href="${SITE}/th${suffix}" />
     <link id="alternate-en" rel="alternate" hreflang="en" href="${SITE}/en${suffix}" />
     <link id="alternate-default" rel="alternate" hreflang="x-default" href="${SITE}/th${suffix}" />`

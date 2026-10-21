@@ -6,6 +6,7 @@ import AppRoutes from '@/AppRoutes'
 import Home from '@/pages/Home'
 import Join from '@/pages/Join'
 import Contact from '@/pages/Contact'
+import Privacy from '@/pages/Privacy'
 import DealerLogin from '@/pages/DealerLogin'
 import BlogArticle from '@/pages/blog/BlogArticle'
 import BlogIndex from '@/pages/blog/BlogIndex'
@@ -26,6 +27,7 @@ import {
   HOME_META,
   JOIN_META,
   PARTNER_MARKETING_META,
+  PRIVACY_META,
   STOCK_ON_DEMAND_META,
   SITE_URL,
   type PageMeta,
@@ -39,6 +41,7 @@ export function render(url: string) {
             HomePage={Home}
             JoinPage={Join}
             ContactPage={Contact}
+            PrivacyPage={Privacy}
             DealerLoginPage={DealerLogin}
             BlogArticlePage={BlogArticle}
             BlogIndexPage={BlogIndex}
@@ -60,6 +63,8 @@ export function getPrerenderRoutes() {
     '/en/join',
     '/th/contact',
     '/en/contact',
+    '/th/privacy',
+    '/en/privacy',
     '/th/dealer/login',
     '/en/dealer/login',
     '/th/products/stock-on-demand',
@@ -79,6 +84,8 @@ export function getPageMeta(url: string): PageMeta {
   if (url === '/en/join') return JOIN_META.en
   if (url === '/th/contact') return CONTACT_META.th
   if (url === '/en/contact') return CONTACT_META.en
+  if (url === '/th/privacy') return PRIVACY_META.th
+  if (url === '/en/privacy') return PRIVACY_META.en
   if (url === '/th/dealer/login') return DEALER_LOGIN_META.th
   if (url === '/en/dealer/login') return DEALER_LOGIN_META.en
   if (url === '/th/products/stock-on-demand') return STOCK_ON_DEMAND_META.th
