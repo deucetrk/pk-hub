@@ -150,7 +150,6 @@ export const CONTACT_META = {
   },
 } satisfies Record<'th' | 'en', PageMeta>
 
-/** Noindex until the owner fills the marked placeholders (retention, DPO, transfer safeguard). */
 export const PRIVACY_META = {
   th: {
     title: 'ประกาศความเป็นส่วนตัว | PK HUB',
@@ -159,7 +158,6 @@ export const PRIVACY_META = {
     ogType: 'website',
     image: `${SITE_URL}/og-image.jpg`,
     locale: 'th_TH',
-    robots: 'noindex, follow',
   },
   en: {
     title: 'Privacy notice | PK HUB',
@@ -168,7 +166,6 @@ export const PRIVACY_META = {
     ogType: 'website',
     image: `${SITE_URL}/og-image.jpg`,
     locale: 'en_US',
-    robots: 'noindex, follow',
   },
 } satisfies Record<'th' | 'en', PageMeta>
 

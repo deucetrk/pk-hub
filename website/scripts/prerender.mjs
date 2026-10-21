@@ -199,7 +199,7 @@ const secondaryUrls = routes
   .filter((route) => !getPageMeta(route).robots?.includes('noindex'))
   .filter(
     (route) =>
-      route.includes('/join') || route.includes('/contact') || route.includes('/dealer/login') || route.includes('/products/') || route.startsWith('/th/blog'),
+      route.includes('/join') || route.includes('/contact') || route.includes('/privacy') || route.includes('/dealer/login') || route.includes('/products/') || route.startsWith('/th/blog'),
   )
   .map(
     (route) => `
@@ -207,7 +207,7 @@ const secondaryUrls = routes
     <loc>${SITE}${route}</loc>${getRouteLastModified(route) ? `
     <lastmod>${getRouteLastModified(route)}</lastmod>` : ''}
     <changefreq>monthly</changefreq>
-    <priority>${route.includes('/join') ? '0.9' : route.includes('/contact') ? '0.7' : route.includes('/dealer/login') ? '0.8' : route.includes('/products/') ? '0.8' : route === '/th/blog' ? '0.8' : '0.7'}</priority>
+    <priority>${route.includes('/join') ? '0.9' : route.includes('/contact') ? '0.7' : route.includes('/privacy') ? '0.3' : route.includes('/dealer/login') ? '0.8' : route.includes('/products/') ? '0.8' : route === '/th/blog' ? '0.8' : '0.7'}</priority>
   </url>`,
   )
   .join('')

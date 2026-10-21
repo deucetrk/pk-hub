@@ -8,14 +8,12 @@ import { PRIVACY_META, usePageMeta } from '@/lib/seo'
 /**
  * Privacy notice for the partner enquiry form. Its structure follows the ten items in section 4.1
  * of the PDPC guideline on notifying purposes and details of collection (PDPA B.E. 2562, s. 23).
- * Facts come from the form, ADR-0037 and the hosting records; anything the repository does not
- * record is a visible placeholder until the owner confirms it.
+ * Facts come from the form, ADR-0037, the hosting records and the owner's answers of 2026-10-21
+ * (legal name, retention, transfer wording, privacy email, no DPO).
  */
-export const PRIVACY_UPDATED = { th: '21 ตุลาคม 2569', en: '21 October 2026' } as const
+const PRIVACY_EMAIL = 'pkmediabusiness@gmail.com'
 
-function Pending({ children }: { children: ReactNode }) {
-  return <mark className="v1-pending">{children}</mark>
-}
+export const PRIVACY_UPDATED = { th: '21 ตุลาคม 2569', en: '21 October 2026' } as const
 
 function Section({ id, title, children }: { id: string; title: string; children: ReactNode }) {
   return (
@@ -31,11 +29,15 @@ function Section({ id, title, children }: { id: string; title: string; children:
 export default function Privacy() {
   const { language } = useLanguage()
   usePageMeta(PRIVACY_META[language])
-  const hq = HQ[language]
-  const pending = (th: string, en: string) => <Pending>{t(language, `[รอเจ้าของยืนยัน: ${th}]`, `[Owner to confirm: ${en}]`)}</Pending>
+  const company = t(language, 'บริษัท พี เค มีเดีย บิสซิเนส จำกัด', 'PK Media Business Co., Ltd. (บริษัท พี เค มีเดีย บิสซิเนส จำกัด)')
+  const address = t(
+    language,
+    '72/29-30 ถนนศุขประยูร ตำบลหน้าเมือง อำเภอเมืองฉะเชิงเทรา จังหวัดฉะเชิงเทรา 24000',
+    `${HQ.en.address}, Thailand`,
+  )
 
   const summary = [
-    [t(language, 'ใครเก็บ', 'Who'), 'PK HUB · บริษัท พี เค มีเดีย บิสซิเนส จำกัด'],
+    [t(language, 'ใครเก็บ', 'Who'), t(language, 'PK HUB · บริษัท พี เค มีเดีย บิสซิเนส จำกัด', 'PK HUB · PK Media Business Co., Ltd.')],
     [t(language, 'เก็บอะไร', 'What'), t(language, 'ข้อมูลร้านและผู้ติดต่อที่คุณกรอกในฟอร์มสมัครคู่ค้า', 'The store and contact details you enter in the partner form')],
     [t(language, 'เพื่ออะไร', 'Why'), t(language, 'ติดต่อกลับเรื่องการเป็นคู่ค้าเท่านั้น', 'Only to contact you about becoming a partner')],
     [t(language, 'สิทธิของคุณ', 'Your rights'), t(language, 'ขอดู แก้ไข ลบ หรือถอนความยินยอมได้ทุกเมื่อ', 'Access, correct, delete or withdraw consent at any time')],
@@ -108,12 +110,12 @@ export default function Privacy() {
 
             <Section id="privacy-controller" title={t(language, '1. ผู้ควบคุมข้อมูลส่วนบุคคล', '1. Who is responsible for your data')}>
               <p>
-                {t(language, 'บริษัท พี เค มีเดีย บิสซิเนส จำกัด ในชื่อ PK HUB', 'บริษัท พี เค มีเดีย บิสซิเนส จำกัด, trading as PK HUB')} {pending('ชื่อนิติบุคคลตามหนังสือรับรอง', 'registered legal name, and its English form')}
+                {company} {t(language, 'ในชื่อ PK HUB', 'trading as PK HUB')}
               </p>
               <p>
-                {hq.name}
+                {t(language, 'สำนักงานใหญ่', 'Head office')}
                 <br />
-                {hq.address}
+                {address}
               </p>
             </Section>
 
@@ -161,9 +163,22 @@ export default function Privacy() {
             </Section>
 
             <Section id="privacy-retention" title={t(language, '5. ระยะเวลาเก็บข้อมูล', '5. How long we keep it')}>
-              <p>
-                {pending('ระยะเวลาเก็บข้อมูลของผู้สมัครที่ไม่ได้เป็นคู่ค้า และของผู้ที่เป็นคู่ค้าแล้ว', 'retention period for enquiries that do not become partners, and for those that do')}
-              </p>
+              <ul>
+                <li>
+                  {t(
+                    language,
+                    'ผู้สมัครที่ไม่ได้เป็นคู่ค้า: 2 ปีนับจากการติดต่อครั้งล่าสุด',
+                    'Applicants who do not become partners: 2 years after our last contact',
+                  )}
+                </li>
+                <li>
+                  {t(
+                    language,
+                    'ผู้สมัครที่เป็นคู่ค้าแล้ว: ตลอดช่วงที่เป็นคู่ค้า และอีก 10 ปีหลังสิ้นสุด เพื่อการบัญชี ภาษี และการใช้สิทธิทางกฎหมาย',
+                    'Applicants who become partners: for the whole partnership and 10 years after it ends, for accounting, tax and legal claims',
+                  )}
+                </li>
+              </ul>
               <p>
                 {t(
                   language,
@@ -186,10 +201,16 @@ export default function Privacy() {
               <p>
                 {t(
                   language,
-                  'ฐานข้อมูลที่เก็บข้อมูลจากฟอร์มตั้งอยู่บนเซิร์ฟเวอร์ของ Supabase ในโตเกียว ประเทศญี่ปุ่น',
-                  'The database that stores form submissions runs on Supabase servers in Tokyo, Japan.',
-                )}{' '}
-                {pending('มาตรการคุ้มครองที่ใช้กับการส่งข้อมูลไปต่างประเทศ (มาตรา 28–29)', 'the safeguard relied on for this transfer (ss. 28–29)')}
+                  'ข้อมูลจากฟอร์มเก็บไว้กับผู้ให้บริการคลาวด์ (Supabase) ในประเทศญี่ปุ่น ภายใต้มาตรการคุ้มครองข้อมูลตามสัญญาของผู้ให้บริการ',
+                  'Form data is stored with a cloud provider (Supabase) in Japan, under the provider’s contractual data-protection safeguards.',
+                )}
+              </p>
+              <p>
+                {t(
+                  language,
+                  'ในอนาคตเราอาจย้ายที่เก็บไปยังประเทศอื่น เช่น สิงคโปร์ หากย้าย เราจะปรับปรุงประกาศนี้',
+                  'We may later move storage to another country, such as Singapore. If we do, we will update this notice.',
+                )}
               </p>
             </Section>
 
@@ -233,13 +254,20 @@ export default function Privacy() {
                   </a>
                 </li>
                 <li>
-                  {t(language, 'จดหมายถึง', 'Post to')} {hq.address}
+                  {t(language, 'จดหมายถึง', 'Post to')} {company}, {address}
                 </li>
                 <li>
-                  {t(language, 'อีเมล', 'Email')} {pending('อีเมลสำหรับคำขอเรื่องข้อมูลส่วนบุคคล', 'email address for privacy requests')}
+                  {t(language, 'อีเมล', 'Email')}{' '}
+                  <a className="v1-legal-link" href={`mailto:${PRIVACY_EMAIL}`}>
+                    {PRIVACY_EMAIL}
+                  </a>
                 </li>
                 <li>
-                  {t(language, 'เจ้าหน้าที่คุ้มครองข้อมูลส่วนบุคคล (DPO)', 'Data protection officer (DPO)')} {pending('ชื่อและช่องทางติดต่อ DPO หรือระบุว่าไม่มี', 'DPO name and contact, or state that none is appointed')}
+                  {t(
+                    language,
+                    'เจ้าหน้าที่คุ้มครองข้อมูลส่วนบุคคล (DPO): ยังไม่ได้แต่งตั้ง โปรดส่งคำขอทางอีเมลด้านบน',
+                    'Data protection officer (DPO): none appointed. Please send requests to the email above.',
+                  )}
                 </li>
               </ul>
               <p>

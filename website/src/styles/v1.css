@@ -2277,14 +2277,6 @@ button.v1-brand-tile[aria-pressed='true'] .v1-doto {
   text-underline-offset: 3px;
 }
 
-.v1-pending {
-  padding: 1px 6px;
-  border: 1px dashed #b45309;
-  border-radius: 6px;
-  background: #fff7e6;
-  color: #7c3d00;
-  font-size: 15px;
-}
 
 @media (max-width: 639px) {
   .v1-legal-summary {
