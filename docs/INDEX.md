@@ -15,6 +15,7 @@
   [intake tests](../website/scripts/test-partner-lead.mjs),
   [commands](../website/package.json): executable implementation truth.
 - [v1 redesign evidence](evidence/PKHUB-V1-REDESIGN-20261019.md), [motion evidence](evidence/PKHUB-MOTION-20261020.md),
+  [homepage share artwork](evidence/PKHUB-SHARE-20261025.md),
   [mobile paint evidence](evidence/PKHUB-MOBILE-PAINT-20261020.md),
   [SEO evidence](evidence/PKHUB-SEO-20261020.md), [blog strategy](BLOG_STRATEGY.md), [drafting playbook](BLOG_DRAFTING.md).
 - [Last release](../PUBLIC-UX-20261015.md), [dated proof](evidence/three-surface-release-20261015.json).
