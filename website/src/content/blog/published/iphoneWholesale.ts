@@ -13,8 +13,8 @@ export const iphoneWholesaleArticle: PublishedBlogArticle = {
   category: 'คู่มือร้านมือถือ',
   contentTrack: 'retailer',
   tags: ['ขายส่ง iPhone', 'เครื่องศูนย์ไทย', 'ประกัน Apple', 'IMEI'],
-  publishedAt: '2026-10-21',
-  modifiedAt: '2026-10-21',
+  publishedAt: '2026-10-27',
+  modifiedAt: '2026-10-27',
   estimatedReadMinutes: 8,
   recommendedImage: '/blog/iphone-inventory-ladder.png',
   imageAlt: 'ภาพจำลอง iPhone สามเครื่องวางเรียงกันสำหรับร้านมือถือที่กำลังวางแผนสั่งสินค้า',
@@ -108,6 +108,7 @@ export const iphoneWholesaleArticle: PublishedBlogArticle = {
       paragraphs: [
         'PK HUB ขายส่งมือถือและแท็บเล็ต **เครื่องศูนย์ไทย** รวมถึง Apple ให้ร้านค้าคู่ค้า เป็นผู้ประกอบการจดทะเบียน VAT และ **ออกใบกำกับภาษีเต็มรูป** ได้ รุ่น สี ความจุ ราคา และสต็อกตรวจสอบโดยทีมก่อนยืนยันแต่ละออเดอร์',
         'เริ่มสอบถามได้โดยไม่มีขั้นต่ำในการคุย ส่งรุ่นและจำนวนทาง **LINE @pkhub** เพื่อให้ทีมยืนยันเงื่อนไขของรายการนั้น ส่วนสิทธิ์เข้าระบบค้าส่งเปิดหลังทีมตรวจสอบและอนุมัติการสมัครร้านค้าคู่ค้าแล้ว หน้าร้านอยู่ที่ถนนศุขประยูร ฉะเชิงเทรา',
+        'iPhone ที่ PK HUB ส่งให้ร้านเป็น **เครื่องใหม่ที่ยังไม่เคยเปิดใช้งาน** ซื้อผ่านช่องทางทางการของ AIS และมีประกันศูนย์ Apple ประเทศไทย ขอให้ระบุหมายเลขเครื่องในใบกำกับภาษีได้ และหากเครื่องมีปัญหา ติดต่อทาง LINE หรือโทร 089-248-0888 ทีม PK HUB จะช่วยประสานงานให้',
       ],
     },
   ],
@@ -147,7 +148,7 @@ export const iphoneWholesaleArticle: PublishedBlogArticle = {
   internalLinks: [
     { label: 'ดูมือถือและแท็บเล็ตเครื่องศูนย์ไทยที่ PK HUB ขายส่ง', href: '/th/products/handset-wholesale' },
     { label: 'มือถือเครื่องศูนย์ไทยคืออะไร ต่างจากเครื่องนอกอย่างไร', href: '/th/blog/what-is-thai-market-official-phone' },
-    { label: 'เอกสารและใบกำกับภาษีสำหรับร้านขายมือถือ', href: '/th/blog/mobile-phone-reseller-documents-tax-invoice' },
+    { label: 'เช็คประกัน iPhone ยังไง 3 วิธีเช็กเอง', href: '/th/blog/check-iphone-warranty' },
   ],
   sources: [
     {

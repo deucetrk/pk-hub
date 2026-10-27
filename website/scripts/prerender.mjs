@@ -183,7 +183,8 @@ const revision =
 if (!/^[a-f0-9]{40}$/i.test(revision)) throw new Error('Invalid build revision')
 writeFileSync(resolve(dist, 'revision.json'), JSON.stringify({ revision }) + '\n')
 
-// sitemap.xml with build-time lastmod
+// sitemap.xml: lastmod only where the content date is known (articles and the blog index).
+// A build date on every page would teach search engines to ignore lastmod.
 const lastmod = new Intl.DateTimeFormat('en-CA', {
   timeZone: 'Asia/Bangkok',
   year: 'numeric',
@@ -203,8 +204,8 @@ const secondaryUrls = routes
   .map(
     (route) => `
   <url>
-    <loc>${SITE}${route}</loc>
-    <lastmod>${getRouteLastModified(route) ?? lastmod}</lastmod>
+    <loc>${SITE}${route}</loc>${getRouteLastModified(route) ? `
+    <lastmod>${getRouteLastModified(route)}</lastmod>` : ''}
     <changefreq>monthly</changefreq>
     <priority>${route.includes('/join') ? '0.9' : route.includes('/contact') ? '0.7' : route.includes('/dealer/login') ? '0.8' : route.includes('/products/') ? '0.8' : route === '/th/blog' ? '0.8' : '0.7'}</priority>
   </url>`,
@@ -217,20 +218,18 @@ writeFileSync(
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>${SITE}/th</loc>${alt}
-    <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>${SITE}/en</loc>${alt}
-    <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>${secondaryUrls}
 </urlset>
 `,
 )
-console.log(`sitemap.xml written (lastmod ${lastmod})`)
+console.log(`sitemap.xml written (built ${lastmod})`)
 
 // clean up SSR bundle
 rmSync(resolve(root, 'dist-ssr'), { recursive: true, force: true })

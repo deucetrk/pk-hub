@@ -1,10 +1,21 @@
 ---
-task: PKHUB-BLOG-SEO-001
+task: PKHUB-HOME-SHARE-001
 status: in_progress
 validation: local_passed
-updated: 2026-10-20
+updated: 2026-10-25
 ---
-# Active goal: make the blog rank and get cited (PKHUB-BLOG-SEO-001)
+# Active goal: use the homepage artwork when sharing PK HUB (PKHUB-HOME-SHARE-001)
+
+Owner requested a share image based on the supplied homepage hero rather than the storefront photo.
+Branch `codex/pkhub-share-image-20261025` adds Thai/English 1200 × 630 artwork and updates only
+homepage social metadata. [Evidence and release procedure](docs/evidence/PKHUB-SHARE-20261025.md).
+Local type/lint, 16 intake tests, build/SEO, 19 continuity tests and desktop/mobile browser checks
+passed. Production publication awaits current owner approval; no production settings or data changed.
+
+Next action: owner approves publishing this scoped image change; then merge the reviewed PR,
+verify the hosted revision and both locale image URLs/metadata, and check a fresh share preview.
+
+# Previous goal: make the blog rank and get cited (PKHUB-BLOG-SEO-001)
 
 Owner request 2026-10-20: improve the current blog and propose a blog strategy. Branch
 `claude/pkhub-blog-seo`: FAQs with schema and repaired internal links on the six published guides,
@@ -12,8 +23,12 @@ plus [the strategy](docs/BLOG_STRATEGY.md). Merging deploys pkhub.co and waits f
 go-ahead. Open owner choices: cadence and who approves articles, the utility track, the model and
 price source for the shortlist articles, and a named author.
 
-Next action: owner go-ahead to merge the blog PR, then request indexing for the six guides in
-Search Console; first new articles follow the strategy's topic table once the owner picks cadence.
+Outcome so far: PR #23 merged as `029c138` (FAQs, repaired links, strategy). Owner decisions are
+recorded in [the drafting playbook](docs/BLOG_DRAFTING.md): two scheduled drafts a week as PRs, the
+owner approves by merging, byline ธีรกานต์ · PK HUB.
+
+Next action: review the next `Blog draft:` PR from the local scheduled task
+`pkhub-blog-draft` (Mon and Thu 09:00, owner's Mac); merge only on owner approval.
 
 # Previous goal: rank pkhub.co for Thai wholesale-phone searches (SEO/AEO/GEO)
 
