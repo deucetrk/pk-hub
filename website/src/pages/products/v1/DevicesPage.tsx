@@ -284,8 +284,8 @@ const handsetFaqs = (language: 'th' | 'en'): Array<[string, string]> => [
     t(language, 'ต้องสั่งขั้นต่ำเท่าไหร่', 'Is there a minimum order?'),
     t(
       language,
-      'เริ่มสอบถามได้โดยไม่มีขั้นต่ำในการคุย แจ้งรุ่นและจำนวนที่สนใจ เพื่อให้ทีมยืนยันเงื่อนไขการสั่งซื้อของรายการนั้นก่อนตัดสินใจ',
-      'There is no minimum to start a conversation. Share the models and quantities you need so the team can confirm the ordering terms before you decide.',
+      'สั่งได้ตั้งแต่ 1 เครื่อง ไม่ต้องวางมัดจำ สั่งรุ่นเดียวหรือคละหลายรุ่นก็ได้ราคาส่งเหมือนกัน ทีมยืนยันราคาและสต็อกของแต่ละรายการก่อนสั่ง',
+      'You can order from a single unit with no deposit; one model or a mix of models gets the same wholesale pricing. The team confirms price and stock for each order.',
     ),
   ],
 ]

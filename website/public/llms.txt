@@ -9,6 +9,9 @@
 - Services for partner shops: Stock on Demand, AIS SIM and top-up (AIS authorised distributor), S Leasing instalments, after-sales support.
 - Documents: VAT registered; issues full tax invoices.
 - Serves: retail shops across Thailand, with a focus on Chachoengsao and eastern Thailand.
+- Ordering: from 1 unit, no deposit; a single model or mixed models get the same wholesale pricing. Price and stock are confirmed per order.
+- Delivery: high-value phones usually ship with transport insurance; nearby shops can send a messenger (e.g. Lalamove) or pick up in Chachoengsao.
+- Best sellers with partner shops: Apple (all iPhone series, most repeat orders), then vivo, OPPO and Samsung.
 - Becoming a partner: apply online; wholesale access opens only after the team reviews and approves the shop.
 - Address: 72/29-30 Sukprayoon Road, Na Mueang, Mueang Chachoengsao, Chachoengsao 24000, Thailand.
 - Contact: +66 89 248 0888 · LINE @pkhub (https://lin.ee/VEgW6qG) · Mon–Sat 8:00–17:00.
@@ -29,3 +32,5 @@
 - [จัดสต็อกและกระแสเงินสดร้านมือถือ](https://pkhub.co/th/blog/mobile-shop-inventory-cashflow-guide)
 - [เอกสารและใบกำกับภาษีสำหรับร้านขายมือถือ](https://pkhub.co/th/blog/mobile-phone-reseller-documents-tax-invoice)
 - [สั่งมือถือขายส่งครั้งแรก](https://pkhub.co/th/blog/first-wholesale-mobile-phone-order)
+- [ขายส่งไอโฟน: ร้านมือถือต้องเช็กอะไรก่อนสั่ง](https://pkhub.co/th/blog/iphone-wholesale-for-mobile-shops)
+- [เช็คประกัน iPhone ยังไง](https://pkhub.co/th/blog/check-iphone-warranty)
