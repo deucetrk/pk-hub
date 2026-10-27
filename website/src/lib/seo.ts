@@ -150,6 +150,25 @@ export const CONTACT_META = {
   },
 } satisfies Record<'th' | 'en', PageMeta>
 
+export const PRIVACY_META = {
+  th: {
+    title: 'ประกาศความเป็นส่วนตัว | PK HUB',
+    description: 'PK HUB เก็บและใช้ข้อมูลจากฟอร์มสมัครคู่ค้าอย่างไร เพื่ออะไร เก็บนานเท่าไร และสิทธิของคุณตาม พ.ร.บ.คุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562',
+    canonical: `${SITE_URL}/th/privacy`,
+    ogType: 'website',
+    image: `${SITE_URL}/og-image.jpg`,
+    locale: 'th_TH',
+  },
+  en: {
+    title: 'Privacy notice | PK HUB',
+    description: 'How PK HUB collects and uses the details in its partner form, why, for how long, and your rights under Thailand’s Personal Data Protection Act.',
+    canonical: `${SITE_URL}/en/privacy`,
+    ogType: 'website',
+    image: `${SITE_URL}/og-image.jpg`,
+    locale: 'en_US',
+  },
+} satisfies Record<'th' | 'en', PageMeta>
+
 /** Product pages the owner released for search on 2026-10-20; the rest stay noindex until reviewed. */
 export const INDEXED_PRODUCT_META: Partial<Record<ProductId, Record<'th' | 'en', Pick<PageMeta, 'title' | 'description'>>>> = {
   'handset-wholesale': {

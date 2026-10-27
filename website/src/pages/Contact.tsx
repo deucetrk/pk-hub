@@ -11,6 +11,7 @@ export default function Contact() {
     { label: t(language, 'โทร', 'Phone'), value: CONTACT.PHONE_DISPLAY, href: CONTACT.PHONE_TEL, primary: true },
     { label: 'LINE Official', value: CONTACT.LINE_ID, href: CONTACT.LINE_URL, external: true },
     { label: 'Facebook · Instagram', value: SOCIAL.handle, href: SOCIAL.facebook, external: true },
+    { label: 'TikTok', value: SOCIAL.handle, href: SOCIAL.tiktok, external: true },
   ]
   return (
     <PageShell cta={false}>
