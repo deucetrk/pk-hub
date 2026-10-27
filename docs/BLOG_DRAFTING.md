@@ -17,6 +17,19 @@ An agent never merges a blog draft.
 - Use web research for outside facts. Ask the owner for PK HUB-specific facts or real insights
   in the PR body, never by guessing in the article.
 
+## Owner-confirmed business facts
+
+Drafts may state these, in addition to the published site files listed in step 4:
+
+- 2026-10-22: PK HUB iPhones are new, never-activated units bought through AIS's official channel, with
+  Apple Thailand warranty. Serial numbers can be listed on the tax invoice on request. For
+  after-sales, partners contact LINE or phone, and PK HUB coordinates the claim, files it, or in some
+  cases swaps the unit.
+- 2026-10-27: orders start at **1 unit** with **no deposit**; one model or mixed models get the same
+  wholesale pricing. Best sellers are Apple (every iPhone series, most repeat orders), then vivo, OPPO
+  and Samsung. High-value phones usually ship with transport insurance; nearby shops can send a
+  messenger such as Lalamove, or pick up at the Chachoengsao store.
+
 ## Steps
 
 1. **Pick the topic.** Skip a topic if `website/src/content/blog/publishedManifest.ts` already has it
@@ -44,7 +57,7 @@ An agent never merges a blog draft.
    - `publishedAt` and `modifiedAt` are the draft date. Set `estimatedReadMinutes` from length
      (about 1,200–2,500 Thai words).
    - Plain, practical shop-floor Thai. No hype, no guarantees.
-4. **Respect the facts boundary.** PK HUB facts come only from the published site:
+4. **Respect the facts boundary.** PK HUB facts come only from the owner-confirmed facts above and the published site:
    `src/lib/seo.ts`, `src/content/homeFaqs.ts`, `src/content/productServices.ts`,
    `public/llms.txt`. Never invent PK HUB wholesale prices, stock, minimums, rebate rates,
    delivery times or approval rules. Retail prices are allowed only as official prices with
