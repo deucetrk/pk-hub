@@ -1,4 +1,5 @@
 import { checkIphoneWarrantyArticle } from './published/checkIphoneWarranty'
+import { checkSamsungWarrantyArticle } from './published/checkSamsungWarranty'
 import { documentsTaxInvoiceArticle } from './published/documentsTaxInvoice'
 import { firstWholesaleOrderArticle } from './published/firstWholesaleOrder'
 import { iphoneWholesaleArticle } from './published/iphoneWholesale'
@@ -104,6 +105,7 @@ const articlesBySlug = {
   'first-wholesale-mobile-phone-order': firstWholesaleOrderArticle,
   'check-iphone-warranty': checkIphoneWarrantyArticle,
   'iphone-wholesale-for-mobile-shops': iphoneWholesaleArticle,
+  'check-samsung-warranty': checkSamsungWarrantyArticle,
 } satisfies Record<PublishedBlogSlug, PublishedBlogArticle>
 
 export const publishedArticles: PublishedBlogArticle[] = publishedBlogSlugs.map(
