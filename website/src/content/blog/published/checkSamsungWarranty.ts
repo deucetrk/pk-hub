@@ -12,7 +12,7 @@ export const checkSamsungWarrantyArticle: PublishedBlogArticle = {
   primaryKeyword: 'เช็คประกัน samsung',
   category: 'สินค้าและประกัน',
   contentTrack: 'retailer',
-  tags: ['เช็คประกัน Samsung', 'Samsung Members', 'IMEI', 'ประกันศูนย์'],
+  tags: ['เช็คประกัน Samsung', 'Samsung Members', 'IMEI', 'ประกันศูนย์', 'AIS Care+'],
   publishedAt: '2026-10-29',
   modifiedAt: '2026-10-31',
   estimatedReadMinutes: 7,
@@ -45,8 +45,8 @@ export const checkSamsungWarrantyArticle: PublishedBlogArticle = {
         detail: 'ร้านหรือลูกค้าที่อยากให้เจ้าหน้าที่ตรวจ เตรียมรุ่น IMEI หรือซีเรียล และใบเสร็จ',
       },
       {
-        label: 'Samsung Care+ (ถ้าซื้อเพิ่ม)',
-        detail: 'ดูในแอป Samsung Members > รับความช่วยเหลือ เลื่อนลงไปที่ Samsung Care+ ข้อมูลอาจใช้เวลาขึ้น 7–14 วัน',
+        label: 'Samsung Care+ / AIS Care+ (ถ้าซื้อเพิ่ม)',
+        detail: 'Samsung Care+ ดูในแอป Samsung Members > รับความช่วยเหลือ (อาจใช้เวลาขึ้น 7–14 วัน) ส่วน AIS Care+ with Samsung Care Services นัดหมายเข้าศูนย์ผ่าน LINE @AIScareplus',
       },
     ],
   },
@@ -112,6 +112,7 @@ export const checkSamsungWarrantyArticle: PublishedBlogArticle = {
       paragraphs: [
         'สถานะ “มีประกัน” ไม่ได้แปลว่าซ่อมฟรีทุกกรณี ประกันมาตรฐานคุ้มครองความบกพร่องจากการผลิต หน้าการรับประกันของ Samsung ประเทศไทยระบุข้อยกเว้นไว้หลายข้อ ร้านควรอธิบายสั้น ๆ ตั้งแต่ตอนขายเพื่อลดความเข้าใจผิด',
         'ลูกค้าที่อยากได้ความคุ้มครองอุบัติเหตุ เช่น ตก จอแตก หรือน้ำเข้า ต้องซื้อ **Samsung Care+** เพิ่ม ซึ่ง Samsung ระบุว่าซื้อได้ภายใน **30 วันหลังซื้อเครื่อง** และเช็กสิทธิ์ได้ในแอป Samsung Members',
+        'อีกทางคือ **AIS Care+ with Samsung Care Services** ของ AIS สำหรับมือถือและแท็บเล็ต Samsung ที่ **ซื้อกับ AIS** และใช้เบอร์ AIS ที่ลงทะเบียนในนามบุคคล หน้าบริการของ AIS (ตรวจสอบ 31 ตุลาคม 2026) ระบุสิทธิ์ เช่น **เปลี่ยนจอฟรี 1 ครั้ง** ซ่อมที่ศูนย์ Samsung ได้ไม่จำกัดครั้ง บริการรับ-ส่งเครื่องฟรี และขอเปลี่ยนเครื่องได้โดยมีค่าบริการเพิ่ม ค่าบริการขึ้นกับราคาเครื่อง เช่น **59 บาท/เดือน** สำหรับเครื่องราคา 2,000–5,000 บาท และ **89 บาท/เดือน** สำหรับเครื่องราคา 5,001–10,000 บาท เงื่อนไขและราคาอาจเปลี่ยน ให้ตรวจจากหน้า AIS ก่อนแนะนำลูกค้า ร้านที่อยากเสนอบริการนี้ สอบถามทีม PK HUB ได้ว่ารุ่นที่ร้านขายสมัครได้อย่างไร',
       ],
       bullets: [
         'ความเสียหายจากการตก กระแทก ของเหลว หรือเหงื่อ และชิ้นส่วนภายนอก เช่น กรอบและปุ่ม',
@@ -172,7 +173,7 @@ export const checkSamsungWarrantyArticle: PublishedBlogArticle = {
     {
       question: 'ตกหรือจอแตก ประกัน Samsung ครอบคลุมไหม?',
       answer:
-        'ไม่ครอบคลุม ประกันมาตรฐานคุ้มครองความบกพร่องจากการผลิต ความคุ้มครองอุบัติเหตุต้องซื้อ Samsung Care+ เพิ่ม ซึ่งซื้อได้ภายใน 30 วันหลังซื้อเครื่อง',
+        'ไม่ครอบคลุม ประกันมาตรฐานคุ้มครองความบกพร่องจากการผลิต ความคุ้มครองเพิ่มต้องซื้อแยก เช่น Samsung Care+ (ซื้อได้ภายใน 30 วันหลังซื้อเครื่อง) หรือ AIS Care+ with Samsung Care Services สำหรับเครื่องที่ซื้อกับ AIS ซึ่งมีสิทธิ์เปลี่ยนจอฟรี 1 ครั้ง',
     },
   ],
   internalLinks: [
@@ -204,6 +205,12 @@ export const checkSamsungWarrantyArticle: PublishedBlogArticle = {
       publisher: 'Samsung ประเทศไทย',
       url: 'https://www.samsung.com/th/support/mobile-devices/samsung-care-frequently-asked-questions/',
       accessedAt: '2026-10-29',
+    },
+    {
+      title: 'บริการ AIS Care+ with Samsung Care Services',
+      publisher: 'AIS',
+      url: 'https://www.ais.th/consumers/promotions/service/ais-care-samsung-care',
+      accessedAt: '2026-10-31',
     },
     {
       title: 'How to find the IMEI, model number, and serial number for Samsung Galaxy device',
