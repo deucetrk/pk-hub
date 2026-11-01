@@ -21,14 +21,21 @@ An agent never merges a blog draft.
 
 Drafts may state these, in addition to the published site files listed in step 4:
 
-- 2026-10-22: PK HUB iPhones are new, never-activated units bought through AIS's official channel, with
-  Apple Thailand warranty. Serial numbers can be listed on the tax invoice on request. For
+- 2026-10-22 (amended 2026-10-31): PK HUB iPhones are Thai-market units from channels such as AIS and
+  Synnex, with Apple Thailand warranty. Wholesale sells both unactivated and activated ("แอค") units
+  at different prices; activated units are usually newly launched iPhones that must be activated
+  before dispatch. Retail units are never activated before handover. Serial numbers can be listed on the tax invoice on request. For
   after-sales, partners contact LINE or phone, and PK HUB coordinates the claim, files it, or in some
   cases swaps the unit.
 - 2026-10-27: orders start at **1 unit** with **no deposit**; one model or mixed models get the same
   wholesale pricing. Best sellers are Apple (every iPhone series, most repeat orders), then vivo, OPPO
   and Samsung. High-value phones usually ship with transport insurance; nearby shops can send a
   messenger such as Lalamove, or pick up at the Chachoengsao store.
+- 2026-10-31: the iPhone models partner shops order most are the latest flagship and the previous
+  generation (N-1). Shop owners mostly ask whether a colour and capacity is available, the
+  activated versus unactivated price, and the price. Wholesale orders are photographed while packed
+  (no per-unit inspection); retail sales are unboxed in front of the customer. Real photos:
+  `website/public/blog/iphone-retail-unboxing.jpg`, `wholesale-packing-bubble-wrap.jpg`.
 
 ## Steps
 
