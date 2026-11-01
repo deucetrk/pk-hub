@@ -2,7 +2,7 @@ import { useLanguage } from '@/i18n/LanguageContext'
 import { useReferralAttribution } from '@/hooks/useReferralAttribution'
 import { dealerLoginUrl } from '@/lib/dealerPortal'
 
-import { FacebookIcon, InstagramIcon } from './icons'
+import { FacebookIcon, InstagramIcon, TikTokIcon } from './icons'
 import { CONTACT, SOCIAL, route, t } from './site'
 
 export default function SiteFooter() {
@@ -32,6 +32,9 @@ export default function SiteFooter() {
               </a>
               <a href={SOCIAL.instagram} target="_blank" rel="noreferrer" className="inline-flex h-11 w-11 items-center justify-center" aria-label="Instagram PK HUB">
                 <InstagramIcon />
+              </a>
+              <a href={SOCIAL.tiktok} target="_blank" rel="noreferrer" className="inline-flex h-11 w-11 items-center justify-center" aria-label="TikTok PK HUB">
+                <TikTokIcon size={23} />
               </a>
               <span className="text-[15px] text-[#555]">{SOCIAL.handle}</span>
             </div>
@@ -67,6 +70,7 @@ export default function SiteFooter() {
             </button>
           </div>
           <div className="flex flex-wrap items-center gap-x-7">
+            <a href={route(language, '/privacy')}>{t(language, 'ความเป็นส่วนตัว', 'Privacy')}</a>
             <a href={dealerLoginUrl(referralCode)}>
               {t(language, 'เข้าสู่ระบบคู่ค้า', 'Partner login')} <span aria-hidden="true">&nbsp;↗</span>
             </a>

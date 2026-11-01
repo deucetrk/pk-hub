@@ -413,6 +413,13 @@ export default function PartnerForm({ className, isApplication = false }: Partne
                 {t(language, 'ยินยอมให้ PK HUB ใช้ข้อมูลนี้เพื่อติดต่อกลับเรื่องการเป็นคู่ค้าเท่านั้น *', 'I agree PK HUB may use these details only to contact me about becoming a partner *')}
               </span>
             </label>
+            <p className="pl-[38px] text-[14px] leading-6 text-[#606060]">
+              {t(language, 'อ่านรายละเอียดการเก็บและใช้ข้อมูลใน', 'How we collect and use your details is set out in our')}{' '}
+              <a href={route(language, '/privacy')} target="_blank" rel="noopener" className="text-[#2457d6] underline underline-offset-[3px]">
+                {t(language, 'ประกาศความเป็นส่วนตัว', 'privacy notice')}
+                <span className="v1-sr">{t(language, ' (เปิดในแท็บใหม่)', ' (opens in a new tab)')}</span>
+              </a>
+            </p>
             {errorFor('consent') ? (
               <p id="partner-consent-error" className="v1-error pl-[38px]">
                 {t(language, 'ต้องยินยอมก่อนส่ง เพื่อให้ทีมติดต่อกลับได้', 'Please agree so the team can contact you')}
