@@ -7,6 +7,9 @@ export const publishedBlogSlugs = [
   'mobile-shop-inventory-cashflow-guide',
   'mobile-phone-reseller-documents-tax-invoice',
   'first-wholesale-mobile-phone-order',
+  'check-iphone-warranty',
+  'iphone-wholesale-for-mobile-shops',
+  'check-samsung-warranty',
 ] as const
 
 export type PublishedBlogSlug = (typeof publishedBlogSlugs)[number]

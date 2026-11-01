@@ -1,6 +1,6 @@
 ---
-goal: PKHUB-BLOG-SEO-001
-updated: 2026-10-20
+goal: PKHUB-HOME-SHARE-001
+updated: 2026-10-25
 ---
 # Work queue
 

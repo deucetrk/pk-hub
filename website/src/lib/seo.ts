@@ -23,8 +23,8 @@ export const HOME_META = {
       'ขายส่งมือถือ แท็บเล็ต และอุปกรณ์เสริม เครื่องศูนย์ไทย 500+ รุ่นจาก 24 แบรนด์ ออกใบกำกับภาษีได้ Stock on Demand ซิมและเติมเงิน AIS ผ่อนกับ S Leasing และทีมดูแลหลังการขาย สำหรับร้านคู่ค้า PK HUB',
     canonical: `${SITE_URL}/th`,
     ogType: 'website',
-    image: `${SITE_URL}/og-image.jpg`,
-    imageAlt: 'ศูนย์ปฏิบัติการและสต็อกจริง PK HUB ฉะเชิงเทรา',
+    image: `${SITE_URL}/social/home-th-v1.jpg`,
+    imageAlt: 'PK HUB เพิ่มตัวเลือกขาย ต่อยอดบริการให้ร้านคุณ พร้อมมือถือและบริการสำหรับร้านคู่ค้า',
     locale: 'th_TH',
   },
   en: {
@@ -33,8 +33,8 @@ export const HOME_META = {
       'Wholesale phones, tablets and accessories (500+ models, 24 brands), Stock on Demand, AIS SIM and top-up, S Leasing instalments and after-sales support for PK HUB partner stores.',
     canonical: `${SITE_URL}/en`,
     ogType: 'website',
-    image: `${SITE_URL}/og-image.jpg`,
-    imageAlt: 'PK HUB smartphone wholesale operations and storefront in Chachoengsao',
+    image: `${SITE_URL}/social/home-en-v1.jpg`,
+    imageAlt: 'PK HUB: more to sell, more services for your store, with phones and retail partner services',
     locale: 'en_US',
   },
 } satisfies Record<'th' | 'en', PageMeta>

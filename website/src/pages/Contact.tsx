@@ -54,9 +54,14 @@ export default function Contact() {
                   {hq.hours}
                 </span>
               </address>
-              <a href={CONTACT.MAPS_URL} target="_blank" rel="noreferrer" className="v1-btn v1-btn-ghost v1-btn-md">
-                {t(language, 'เปิดแผนที่ ↗', 'Open map ↗')}
-              </a>
+              <span className="flex flex-wrap gap-2">
+                <a href={CONTACT.MAPS_URL} target="_blank" rel="noreferrer" className="v1-btn v1-btn-ghost v1-btn-md">
+                  {t(language, 'เปิดแผนที่ ↗', 'Open map ↗')}
+                </a>
+                <a href={CONTACT.REVIEW_URL} target="_blank" rel="noreferrer" className="v1-btn v1-btn-ghost v1-btn-md">
+                  {t(language, 'รีวิวบน Google ↗', 'Review on Google ↗')}
+                </a>
+              </span>
             </div>
           </div>
         </div>

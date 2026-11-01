@@ -63,6 +63,14 @@ for (const lang of ['th', 'en']) {
   }
 
   const html = read(lang)
+  const shareImage = `/social/home-${lang}-v1.jpg`
+  for (const tag of [
+    `<meta property="og:image" content="https://pkhub.co${shareImage}"`,
+    `<meta name="twitter:image" content="https://pkhub.co${shareImage}"`,
+    '<meta property="og:image:width" content="1200"',
+    '<meta property="og:image:height" content="630"',
+  ]) assert(html.includes(tag), `${lang}: crawler-visible home share image ${tag}`)
+  assert(existsSync(resolve(dist, shareImage.slice(1))), `${lang}: home share image is published`)
   const body = html.split('<body>')[1]
   assert(!/opacity:\s*0(?:;|")/.test(body), `${lang}: prerendered content visible`)
   assert(/fetchPriority="high"/i.test(body), `${lang}: hero image priority`)

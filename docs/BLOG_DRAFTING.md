@@ -17,6 +17,25 @@ An agent never merges a blog draft.
 - Use web research for outside facts. Ask the owner for PK HUB-specific facts or real insights
   in the PR body, never by guessing in the article.
 
+## Owner-confirmed business facts
+
+Drafts may state these, in addition to the published site files listed in step 4:
+
+- 2026-10-22: PK HUB iPhones are new, never-activated units bought through AIS's official channel, with
+  Apple Thailand warranty. Serial numbers can be listed on the tax invoice on request. For
+  after-sales, partners contact LINE or phone, and PK HUB coordinates the claim, files it, or in some
+  cases swaps the unit.
+- 2026-10-27: orders start at **1 unit** with **no deposit**; one model or mixed models get the same
+  wholesale pricing. Best sellers are Apple (every iPhone series, most repeat orders), then vivo, OPPO
+  and Samsung. High-value phones usually ship with transport insurance; nearby shops can send a
+  messenger such as Lalamove, or pick up at the Chachoengsao store.
+- 2026-10-31: Samsung units are also bought through AIS. Most units sold in store are not activated;
+  units sold at an "activated" price are known to the buyer as already activated. For after-sales,
+  customers can use any Samsung service centre, or the partner can leave the unit with PK HUB to
+  claim. IMEI can be listed on the tax invoice. PK HUB does not sell Samsung Care+ (it mostly uses
+  AIS Care Plus). The best-selling Samsung models are the Galaxy A series. Partners mostly ask about
+  price and stock; no real photos are available yet, so generated covers are fine.
+
 ## Steps
 
 1. **Pick the topic.** Skip a topic if `website/src/content/blog/publishedManifest.ts` already has it
@@ -44,7 +63,7 @@ An agent never merges a blog draft.
    - `publishedAt` and `modifiedAt` are the draft date. Set `estimatedReadMinutes` from length
      (about 1,200–2,500 Thai words).
    - Plain, practical shop-floor Thai. No hype, no guarantees.
-4. **Respect the facts boundary.** PK HUB facts come only from the published site:
+4. **Respect the facts boundary.** PK HUB facts come only from the owner-confirmed facts above and the published site:
    `src/lib/seo.ts`, `src/content/homeFaqs.ts`, `src/content/productServices.ts`,
    `public/llms.txt`. Never invent PK HUB wholesale prices, stock, minimums, rebate rates,
    delivery times or approval rules. Retail prices are allowed only as official prices with
@@ -53,10 +72,24 @@ An agent never merges a blog draft.
    treg's image generation as an illustration with no real logos, prices or people. Save it as
    `public/blog/<slug>-cover.png` and set `imageWidth`/`imageHeight` to its real size. Use an
    `imageCaption` such as "ภาพประกอบ…".
+   5a. **Internal links into the new article.** Edit 2–4 existing published articles, and the most
+   relevant product page if it has a place for one, so that each links to the new article with
+   descriptive Thai anchor text in a sentence where it helps the reader. Add a link in body text or
+   `internalLinks`, never a bare "อ่านต่อ". Bump each edited article's `modifiedAt`. Don't change
+   facts in the articles you edit.
 6. **Register** the article in `src/content/blog/articles.ts` (import plus `articlesBySlug`) and in
    `src/content/blog/publishedManifest.ts`.
 7. **Validate** with Node 24 from `website/`: `npm ci`, `npm run check`, `npm run lint`,
    `npm run build`, `npm run seo:validate`. Fix every failure.
+   7a. **Critic pass.** Before opening the PR, reread the draft as a separate reviewer and list:
+   - every PK HUB claim that is not in the owner-confirmed facts or the published site files;
+   - every number, price, date or policy without a dated official source;
+   - missing or broken FAQ, quick reference or internal links, and any sentence that guarantees
+     an outcome.
+
+   Fix what you can. Put the remaining list in the PR body under **Critic findings** (write "none"
+   if it is empty).
+
 8. **Open the PR.** Use branch `claude/blog-draft-<slug>` from a fresh worktree on `origin/main`,
    and title `Blog draft: <title>`. The body contains:
    - the target keyword and volume, the top 5 competitors, and the angle;
@@ -66,3 +99,25 @@ An agent never merges a blog draft.
      article better.
 
    Never merge it. Never deploy.
+
+## Weekly ranking report (scheduled `pkhub-seo-weekly`, Mondays)
+
+The task checks Google Thailand positions for the tracked keywords below through
+`treg.google.serp.organic` (country `th`, language `th`, depth 100), and pkhub.co's backlink summary
+through `dataforseo.web.backlinks.summary`. It appends one row per keyword to
+`/Users/deuce/Desktop/PK Media/seo-reports/rankings.csv` (date, keyword, position or blank, ranking
+URL) and reports changes since the last run. That file stays on the owner's Mac on purpose: it is
+operational data, not repository knowledge. Spend stays under US$0.50 a run.
+
+Tracked keywords: ขายส่งมือถือ, ขายส่งไอโฟน, ขายส่ง iphone, ขายส่งโทรศัพท์มือถือ, ขายส่งซิม,
+ขายส่ง ipad, ขายส่งแท็บเล็ต, ขายส่งอุปกรณ์มือถือ, ขายส่งเคสมือถือ, แหล่งขายส่งมือถือ,
+เช็คประกัน iphone, เช็คประกัน samsung, เช็ค imei, มือถือเครื่องศูนย์ไทย, เปิดร้านมือถือ, pk hub.
+Add the target keyword of every newly published article.
+
+## Monthly refresh (scheduled `pkhub-blog-refresh`, first Wednesday)
+
+From `rankings.csv`, pick the published article whose target keyword sits closest to page 1 (best
+position 8–40, at least 4 weeks old). Open a `Blog refresh: <title>` PR that updates its facts and
+sources, adds 1–2 FAQs from the current top results, strengthens its internal links and bumps
+`modifiedAt`. Apply the same facts boundary, critic pass and validation as a draft. Never merge it.
+If nothing qualifies yet, report that and open no PR.

@@ -1,10 +1,21 @@
 ---
-task: PKHUB-BLOG-SEO-001
+task: PKHUB-HOME-SHARE-001
 status: in_progress
 validation: local_passed
-updated: 2026-10-20
+updated: 2026-10-25
 ---
-# Active goal: make the blog rank and get cited (PKHUB-BLOG-SEO-001)
+# Active goal: use the homepage artwork when sharing PK HUB (PKHUB-HOME-SHARE-001)
+
+Owner requested a share image based on the supplied homepage hero rather than the storefront photo.
+Branch `codex/pkhub-share-image-20261025` adds Thai/English 1200 × 630 artwork and updates only
+homepage social metadata. [Evidence and release procedure](docs/evidence/PKHUB-SHARE-20261025.md).
+Local type/lint, 16 intake tests, build/SEO, 19 continuity tests and desktop/mobile browser checks
+passed. Production publication awaits current owner approval; no production settings or data changed.
+
+Next action: owner approves publishing this scoped image change; then merge the reviewed PR,
+verify the hosted revision and both locale image URLs/metadata, and check a fresh share preview.
+
+# Previous goal: make the blog rank and get cited (PKHUB-BLOG-SEO-001)
 
 Owner request 2026-10-20: improve the current blog and propose a blog strategy. Branch
 `claude/pkhub-blog-seo`: FAQs with schema and repaired internal links on the six published guides,
