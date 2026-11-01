@@ -29,6 +29,12 @@ Drafts may state these, in addition to the published site files listed in step 4
   wholesale pricing. Best sellers are Apple (every iPhone series, most repeat orders), then vivo, OPPO
   and Samsung. High-value phones usually ship with transport insurance; nearby shops can send a
   messenger such as Lalamove, or pick up at the Chachoengsao store.
+- 2026-10-31: Samsung units are also bought through AIS. Most units sold in store are not activated;
+  units sold at an "activated" price are known to the buyer as already activated. For after-sales,
+  customers can use any Samsung service centre, or the partner can leave the unit with PK HUB to
+  claim. IMEI can be listed on the tax invoice. PK HUB does not sell Samsung Care+ (it mostly uses
+  AIS Care Plus). The best-selling Samsung models are the Galaxy A series. Partners mostly ask about
+  price and stock; no real photos are available yet, so generated covers are fine.
 
 ## Steps
 
