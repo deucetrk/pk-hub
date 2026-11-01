@@ -72,7 +72,7 @@ Drafts may state these, in addition to the published site files listed in step 4
    treg's image generation as an illustration with no real logos, prices or people. Save it as
    `public/blog/<slug>-cover.png` and set `imageWidth`/`imageHeight` to its real size. Use an
    `imageCaption` such as "ภาพประกอบ…".
-5a. **Internal links into the new article.** Edit 2–4 existing published articles, and the most
+   5a. **Internal links into the new article.** Edit 2–4 existing published articles, and the most
    relevant product page if it has a place for one, so that each links to the new article with
    descriptive Thai anchor text in a sentence where it helps the reader. Add a link in body text or
    `internalLinks`, never a bare "อ่านต่อ". Bump each edited article's `modifiedAt`. Don't change
@@ -81,7 +81,7 @@ Drafts may state these, in addition to the published site files listed in step 4
    `src/content/blog/publishedManifest.ts`.
 7. **Validate** with Node 24 from `website/`: `npm ci`, `npm run check`, `npm run lint`,
    `npm run build`, `npm run seo:validate`. Fix every failure.
-7a. **Critic pass.** Before opening the PR, reread the draft as a separate reviewer and list:
+   7a. **Critic pass.** Before opening the PR, reread the draft as a separate reviewer and list:
    - every PK HUB claim that is not in the owner-confirmed facts or the published site files;
    - every number, price, date or policy without a dated official source;
    - missing or broken FAQ, quick reference or internal links, and any sentence that guarantees
@@ -89,6 +89,7 @@ Drafts may state these, in addition to the published site files listed in step 4
 
    Fix what you can. Put the remaining list in the PR body under **Critic findings** (write "none"
    if it is empty).
+
 8. **Open the PR.** Use branch `claude/blog-draft-<slug>` from a fresh worktree on `origin/main`,
    and title `Blog draft: <title>`. The body contains:
    - the target keyword and volume, the top 5 competitors, and the angle;
@@ -120,4 +121,3 @@ position 8–40, at least 4 weeks old). Open a `Blog refresh: <title>` PR that u
 sources, adds 1–2 FAQs from the current top results, strengthens its internal links and bumps
 `modifiedAt`. Apply the same facts boundary, critic pass and validation as a draft. Never merge it.
 If nothing qualifies yet, report that and open no PR.
-
