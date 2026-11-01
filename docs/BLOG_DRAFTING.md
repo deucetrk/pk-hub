@@ -72,10 +72,23 @@ Drafts may state these, in addition to the published site files listed in step 4
    treg's image generation as an illustration with no real logos, prices or people. Save it as
    `public/blog/<slug>-cover.png` and set `imageWidth`/`imageHeight` to its real size. Use an
    `imageCaption` such as "ภาพประกอบ…".
+5a. **Internal links into the new article.** Edit 2–4 existing published articles, and the most
+   relevant product page if it has a place for one, so that each links to the new article with
+   descriptive Thai anchor text in a sentence where it helps the reader. Add a link in body text or
+   `internalLinks`, never a bare "อ่านต่อ". Bump each edited article's `modifiedAt`. Don't change
+   facts in the articles you edit.
 6. **Register** the article in `src/content/blog/articles.ts` (import plus `articlesBySlug`) and in
    `src/content/blog/publishedManifest.ts`.
 7. **Validate** with Node 24 from `website/`: `npm ci`, `npm run check`, `npm run lint`,
    `npm run build`, `npm run seo:validate`. Fix every failure.
+7a. **Critic pass.** Before opening the PR, reread the draft as a separate reviewer and list:
+   - every PK HUB claim that is not in the owner-confirmed facts or the published site files;
+   - every number, price, date or policy without a dated official source;
+   - missing or broken FAQ, quick reference or internal links, and any sentence that guarantees
+     an outcome.
+
+   Fix what you can. Put the remaining list in the PR body under **Critic findings** (write "none"
+   if it is empty).
 8. **Open the PR.** Use branch `claude/blog-draft-<slug>` from a fresh worktree on `origin/main`,
    and title `Blog draft: <title>`. The body contains:
    - the target keyword and volume, the top 5 competitors, and the angle;
@@ -85,3 +98,26 @@ Drafts may state these, in addition to the published site files listed in step 4
      article better.
 
    Never merge it. Never deploy.
+
+## Weekly ranking report (scheduled `pkhub-seo-weekly`, Mondays)
+
+The task checks Google Thailand positions for the tracked keywords below through
+`treg.google.serp.organic` (country `th`, language `th`, depth 100), and pkhub.co's backlink summary
+through `dataforseo.web.backlinks.summary`. It appends one row per keyword to
+`/Users/deuce/Desktop/PK Media/seo-reports/rankings.csv` (date, keyword, position or blank, ranking
+URL) and reports changes since the last run. That file stays on the owner's Mac on purpose: it is
+operational data, not repository knowledge. Spend stays under US$0.50 a run.
+
+Tracked keywords: ขายส่งมือถือ, ขายส่งไอโฟน, ขายส่ง iphone, ขายส่งโทรศัพท์มือถือ, ขายส่งซิม,
+ขายส่ง ipad, ขายส่งแท็บเล็ต, ขายส่งอุปกรณ์มือถือ, ขายส่งเคสมือถือ, แหล่งขายส่งมือถือ,
+เช็คประกัน iphone, เช็คประกัน samsung, เช็ค imei, มือถือเครื่องศูนย์ไทย, เปิดร้านมือถือ, pk hub.
+Add the target keyword of every newly published article.
+
+## Monthly refresh (scheduled `pkhub-blog-refresh`, first Wednesday)
+
+From `rankings.csv`, pick the published article whose target keyword sits closest to page 1 (best
+position 8–40, at least 4 weeks old). Open a `Blog refresh: <title>` PR that updates its facts and
+sources, adds 1–2 FAQs from the current top results, strengthens its internal links and bumps
+`modifiedAt`. Apply the same facts boundary, critic pass and validation as a draft. Never merge it.
+If nothing qualifies yet, report that and open no PR.
+
