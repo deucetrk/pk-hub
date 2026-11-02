@@ -12,7 +12,7 @@ export const thaiMarketPhoneArticle: PublishedBlogArticle = {
   "contentTrack": "consumer",
   "tags": ["เครื่องศูนย์ไทย", "ประกันศูนย์", "IMEI"],
   "publishedAt": "2026-08-11",
-  "modifiedAt": "2026-10-20",
+  "modifiedAt": "2026-11-02",
   "estimatedReadMinutes": 6,
   "recommendedImage": "/blog/thai-market-phone-cover.png",
   "imageAlt": "ภาพจำลองพนักงานร้านตรวจเครื่องและหลักฐานก่อนรับเข้าสต็อก",
@@ -129,6 +129,10 @@ export const thaiMarketPhoneArticle: PublishedBlogArticle = {
     {
       "label": "อ่าน 7 ข้อก่อนเลือกแหล่งขายส่งมือถือ",
       "href": "/th/blog/checklist-choose-mobile-phone-wholesaler"
+    },
+    {
+      "label": "วิธีเช็ค IMEI และเทียบเลขก่อนรับเครื่องเข้าสต็อก",
+      "href": "/th/blog/check-imei"
     }
   ],
   "sources": [

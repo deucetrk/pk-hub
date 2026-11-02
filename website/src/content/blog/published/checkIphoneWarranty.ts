@@ -14,7 +14,7 @@ export const checkIphoneWarrantyArticle: PublishedBlogArticle = {
   contentTrack: 'retailer',
   tags: ['เช็คประกัน iPhone', 'AppleCare', 'หมายเลขประจำเครื่อง', 'ประกันศูนย์'],
   publishedAt: '2026-10-22',
-  modifiedAt: '2026-10-22',
+  modifiedAt: '2026-11-02',
   estimatedReadMinutes: 7,
   recommendedImage: '/blog/check-iphone-warranty-cover.png',
   imageAlt: 'ภาพประกอบสมาร์ทโฟนบนเคาน์เตอร์ร้านที่แสดงไอคอนโล่เครื่องหมายถูก ข้างกล่องเครื่องที่มีบาร์โค้ด ใบเสร็จ และแว่นขยาย',
@@ -175,6 +175,7 @@ export const checkIphoneWarrantyArticle: PublishedBlogArticle = {
     { label: 'ดู iPhone และมือถือเครื่องศูนย์ไทยที่ PK HUB ขายส่ง', href: '/th/products/handset-wholesale' },
     { label: 'มือถือเครื่องศูนย์ไทยคืออะไร ร้านควรเช็กอะไรบ้าง', href: '/th/blog/what-is-thai-market-official-phone' },
     { label: '7 ข้อที่ควรเช็กก่อนเลือกแหล่งขายส่งมือถือ', href: '/th/blog/checklist-choose-mobile-phone-wholesaler' },
+    { label: 'เช็ค IMEI ยังไง ก่อนรับเครื่องเข้าร้าน', href: '/th/blog/check-imei' },
   ],
   sources: [
     {

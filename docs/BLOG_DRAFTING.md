@@ -35,6 +35,11 @@ Drafts may state these, in addition to the published site files listed in step 4
   claim. IMEI can be listed on the tax invoice. PK HUB does not sell Samsung Care+ (it mostly uses
   AIS Care Plus). The best-selling Samsung models are the Galaxy A series. Partners mostly ask about
   price and stock; no real photos are available yet, so generated covers are fine.
+- 2026-11-02: IMEI or serial can be listed on the tax invoice for **every brand**. PK HUB does not
+  compare IMEIs when packing (it checks the model). If a partner finds a problem, they can ask the
+  team; PK HUB logs every step and reconciles. PK HUB does not take trade-in or used phones. The
+  owner knows of no official AIS/NBTC channel for checking a reported-lost IMEI. No real photos (they
+  would show IMEIs), so generated covers stay.
 
 ## Steps
 
