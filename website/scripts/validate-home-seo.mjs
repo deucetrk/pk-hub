@@ -126,7 +126,9 @@ assert(
 )
 for (const match of sitemap.matchAll(/<loc>https:\/\/pkhub.co\/(th\/blog\/[^<]+)<\/loc>/g)) {
   const article = readFileSync(resolve(dist, match[1], 'index.html'), 'utf8')
-  assert(article.includes('"@type":"FAQPage"') && article.includes('id="article-faq"'), `${match[1]}: visible FAQ with schema`)
+  // Paginated blog index pages (th/blog/page/N) list articles; only articles carry a FAQ.
+  if (!/^th\/blog\/page\/\d+$/.test(match[1]))
+    assert(article.includes('"@type":"FAQPage"') && article.includes('id="article-faq"'), `${match[1]}: visible FAQ with schema`)
   for (const link of article.matchAll(/href="(\/(?:th|en)[^"#?]*)(#[^"]*)?"/g)) {
     assert(existsSync(resolve(dist, link[1].slice(1), 'index.html')), `${match[1]}: broken internal link ${link[1]}`)
     if (link[2] && link[1] !== '/' + match[1]) {
