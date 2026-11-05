@@ -14,7 +14,7 @@ export const iphoneWholesaleArticle: PublishedBlogArticle = {
   contentTrack: 'retailer',
   tags: ['ขายส่ง iPhone', 'เครื่องศูนย์ไทย', 'ประกัน Apple', 'IMEI'],
   publishedAt: '2026-10-27',
-  modifiedAt: '2026-10-27',
+  modifiedAt: '2026-11-05',
   estimatedReadMinutes: 8,
   recommendedImage: '/blog/iphone-inventory-ladder.png',
   imageAlt: 'ภาพจำลอง iPhone สามเครื่องวางเรียงกันสำหรับร้านมือถือที่กำลังวางแผนสั่งสินค้า',
@@ -156,6 +156,7 @@ export const iphoneWholesaleArticle: PublishedBlogArticle = {
     { label: 'ดูมือถือและแท็บเล็ตเครื่องศูนย์ไทยที่ PK HUB ขายส่ง', href: '/th/products/handset-wholesale' },
     { label: 'มือถือเครื่องศูนย์ไทยคืออะไร ต่างจากเครื่องนอกอย่างไร', href: '/th/blog/what-is-thai-market-official-phone' },
     { label: 'เช็คประกัน iPhone ยังไง 3 วิธีเช็กเอง', href: '/th/blog/check-iphone-warranty' },
+    { label: 'ขายส่งไอแพดและแท็บเล็ต: เช็ก Wi-Fi/Cellular และ Serial ก่อนสั่ง', href: '/th/blog/ipad-tablet-wholesale-for-mobile-shops' },
   ],
   sources: [
     {

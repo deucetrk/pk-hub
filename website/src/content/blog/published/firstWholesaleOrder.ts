@@ -12,7 +12,7 @@ export const firstWholesaleOrderArticle: PublishedBlogArticle = {
   "contentTrack": "retailer",
   "tags": ["สั่งมือถือขายส่ง", "ออเดอร์แรก", "ตรวจรับสินค้า"],
   "publishedAt": "2026-08-11",
-  "modifiedAt": "2026-11-02",
+  "modifiedAt": "2026-11-05",
   "estimatedReadMinutes": 6,
   "recommendedImage": "/reviews/bubble-pack.webp",
   "imageAlt": "สมาร์ตโฟนที่ห่อกันกระแทกเพื่อเตรียมจัดส่งให้ร้านค้า",
@@ -143,6 +143,10 @@ export const firstWholesaleOrderArticle: PublishedBlogArticle = {
     {
       "label": "เช็ค IMEI ยังไง เทียบเลขในเครื่องกับกล่องตอนรับของ",
       "href": "/th/blog/check-imei"
+    },
+    {
+      "label": "สั่ง iPad และแท็บเล็ตล็อตแรก ต้องเช็กอะไรบ้าง",
+      "href": "/th/blog/ipad-tablet-wholesale-for-mobile-shops"
     }
   ],
   "sources": [

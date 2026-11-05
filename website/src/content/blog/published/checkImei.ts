@@ -14,7 +14,7 @@ export const checkImeiArticle: PublishedBlogArticle = {
   contentTrack: 'retailer',
   tags: ['เช็ค IMEI', 'IMEI คืออะไร', 'iPhone', 'Samsung', 'รับเครื่องเข้าสต็อก'],
   publishedAt: '2026-11-02',
-  modifiedAt: '2026-11-02',
+  modifiedAt: '2026-11-05',
   estimatedReadMinutes: 8,
   recommendedImage: '/blog/check-imei-cover.png',
   imageAlt:
@@ -176,6 +176,7 @@ export const checkImeiArticle: PublishedBlogArticle = {
     { label: 'ดูมือถือเครื่องศูนย์ไทยที่ PK HUB ขายส่ง', href: '/th/products/handset-wholesale' },
     { label: 'เช็คประกัน iPhone ยังไง? 3 วิธีเช็กเองใน 1 นาที', href: '/th/blog/check-iphone-warranty' },
     { label: 'เช็คประกัน Samsung ทุกวิธี ผ่านแอป เว็บ และ IMEI', href: '/th/blog/check-samsung-warranty' },
+    { label: 'ขายส่งไอแพด: iPad รุ่น Wi-Fi ใช้ Serial แทน IMEI ตอนรับเข้าร้าน', href: '/th/blog/ipad-tablet-wholesale-for-mobile-shops' },
   ],
   sources: [
     {
