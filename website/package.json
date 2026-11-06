@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "check": "tsc -b --noEmit",
-    "test": "node --experimental-strip-types scripts/test-partner-lead.mjs"
+    "test": "node --experimental-strip-types scripts/test-partner-lead.mjs && node scripts/check-blog-images.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

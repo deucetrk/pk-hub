@@ -18,6 +18,7 @@ import {
 } from "@/content/blog/articles";
 import { getBlogIndexMeta, SITE_URL, usePageMeta } from "@/lib/seo";
 import Footer from "@/pages/home/Footer";
+import WebpImage from "@/components/WebpImage";
 
 const trackAccent = {
   retailer: "bg-[#2457d6]",
@@ -76,7 +77,7 @@ function LeadStory({ article }: { article: PublishedBlogArticle }) {
         className="relative aspect-[16/10] overflow-hidden rounded-3xl bg-[#ededf0] lg:aspect-auto lg:min-h-[29rem]"
         aria-label={`อ่าน ${article.title}`}
       >
-        <img
+        <WebpImage
           src={article.recommendedImage}
           alt={article.imageAlt}
           width={article.imageWidth}
@@ -124,7 +125,7 @@ function PriorityStory({
         className="relative aspect-[16/10] overflow-hidden rounded-3xl bg-[#ededf0]"
         aria-label={`อ่าน ${article.title}`}
       >
-        <img
+        <WebpImage
           src={article.recommendedImage}
           alt={article.imageAlt}
           width={article.imageWidth}
@@ -166,7 +167,7 @@ function LibraryCard({ article }: { article: PublishedBlogArticle }) {
         className="relative aspect-[16/10] overflow-hidden rounded-3xl bg-[#ededf0]"
         aria-label={`อ่าน ${article.title}`}
       >
-        <img
+        <WebpImage
           src={article.recommendedImage}
           alt={article.imageAlt}
           width={article.imageWidth}
