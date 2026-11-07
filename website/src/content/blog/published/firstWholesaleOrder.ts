@@ -143,6 +143,10 @@ export const firstWholesaleOrderArticle: PublishedBlogArticle = {
     {
       "label": "เช็ค IMEI ยังไง เทียบเลขในเครื่องกับกล่องตอนรับของ",
       "href": "/th/blog/check-imei"
+    },
+    {
+      "label": "สั่ง iPad และแท็บเล็ตล็อตแรก ต้องเช็กอะไรบ้าง",
+      "href": "/th/blog/ipad-tablet-wholesale-for-mobile-shops"
     }
   ],
   "sources": [

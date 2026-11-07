@@ -176,6 +176,7 @@ export const checkImeiArticle: PublishedBlogArticle = {
     { label: 'ดูมือถือเครื่องศูนย์ไทยที่ PK HUB ขายส่ง', href: '/th/products/handset-wholesale' },
     { label: 'เช็คประกัน iPhone ยังไง? 3 วิธีเช็กเองใน 1 นาที', href: '/th/blog/check-iphone-warranty' },
     { label: 'เช็คประกัน Samsung ทุกวิธี ผ่านแอป เว็บ และ IMEI', href: '/th/blog/check-samsung-warranty' },
+    { label: 'ขายส่งไอแพด: iPad รุ่น Wi-Fi ใช้ Serial แทน IMEI ตอนรับเข้าร้าน', href: '/th/blog/ipad-tablet-wholesale-for-mobile-shops' },
   ],
   sources: [
     {

@@ -11,6 +11,7 @@ export const publishedBlogSlugs = [
   'iphone-wholesale-for-mobile-shops',
   'check-samsung-warranty',
   'check-imei',
+  'ipad-tablet-wholesale-for-mobile-shops',
 ] as const
 
 export type PublishedBlogSlug = (typeof publishedBlogSlugs)[number]
