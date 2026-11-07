@@ -26,6 +26,10 @@ Do not treat a successful submission transport, build or deployment URL as busin
 Read [website/AGENTS.md](website/AGENTS.md) for the application's actual commands and boundaries.
 For UI changes read its design contract and inspect rendered desktop/mobile, keyboard, loading,
 failure/recovery and reduced-motion states. Record skipped acceptance honestly.
+Every change follows the owner-approved
+[speed protocol (PERF-001)](https://github.com/deucetrk/PK-Commerce/blob/main/docs/foundations/PERF-001-SPEED-PROTOCOL.md):
+budgets, WebP images, fonts that never block paint, purposeful motion and a throttled mobile
+check in the PR.
 
 ## Closeout
 
