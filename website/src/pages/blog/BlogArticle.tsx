@@ -18,6 +18,7 @@ import {
 } from "@/content/blog/articles";
 import { SITE_URL, usePageMeta } from "@/lib/seo";
 import Footer from "@/pages/home/Footer";
+import WebpImage from "@/components/WebpImage";
 
 function safeJsonLd(data: unknown) {
   return JSON.stringify(data).replace(/</g, "\\u003c");
@@ -330,7 +331,7 @@ export default function BlogArticle() {
                 <span />
                 <span />
               </div>
-              <img
+              <WebpImage
                 src={article.recommendedImage}
                 alt={article.imageAlt}
                 width={article.imageWidth}
@@ -492,7 +493,7 @@ export default function BlogArticle() {
                       ))}
                       {section.visual ? (
                         <figure className="my-3">
-                          <img
+                          <WebpImage
                             src={section.visual.src}
                             alt={section.visual.alt}
                             width={section.visual.width}

@@ -2,11 +2,12 @@ import type { Language } from '@/i18n/LanguageContext'
 
 export { CONTACT } from '@/pages/home/constants'
 
-/** Verified public social profiles (Instagram checked 2026-10-19). */
+/** Verified public social profiles (Instagram checked 2026-10-19; TikTok confirmed by the owner 2026-10-21). */
 export const SOCIAL = {
   handle: '@pkmedia168',
   facebook: 'https://www.facebook.com/pkmedia168',
   instagram: 'https://www.instagram.com/pkmedia168/',
+  tiktok: 'https://www.tiktok.com/@pkmedia168',
 } as const
 
 export const HQ = {
