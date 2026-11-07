@@ -117,12 +117,19 @@ Drafts may state these, in addition to the published site files listed in step 4
 
 ## Weekly ranking report (scheduled `pkhub-seo-weekly`, Mondays)
 
-The task checks Google Thailand positions for the tracked keywords below through
-`treg.google.serp.organic` (country `th`, language `th`, depth 100), and pkhub.co's backlink summary
-through `dataforseo.web.backlinks.summary`. It appends one row per keyword to
-`/Users/deuce/Desktop/PK Media/seo-reports/rankings.csv` (date, keyword, position or blank, ranking
-URL) and reports changes since the last run. That file stays on the owner's Mac on purpose: it is
-operational data, not repository knowledge. Spend stays under US$0.50 a run.
+The task runs `/Users/deuce/Desktop/PK Media/seo-reports/run-weekly.py`. It checks Google Thailand
+positions for the tracked keywords below through `dataforseo.google.serp.organic` (location `2764`,
+language `th`, depth 100), and pkhub.co's backlink summary through
+`dataforseo.web.backlinks.summary`. Do not use the routed `treg.google.serp.organic` for ranking: it
+can return far fewer than 100 results, so a missing site would look unranked when it was never
+checked. DataForSEO hides most URLs behind `google.com/goto`, so the script finds the site from each
+result's breadcrumb, and the recorded URL is approximate.
+
+The script appends one row per keyword to `rankings.csv` (date, keyword, position or blank, ranking
+URL) only after every call succeeds, writes `report-<date>.md` beside it, and caches each answer so a
+killed run resumes. Tuesday and Wednesday runs are catch-ups that exit once the week is recorded.
+Those files stay on the owner's Mac on purpose: they are operational data, not repository knowledge.
+Spend stays under US$0.75 a run (about US$0.02 a keyword).
 
 Tracked keywords: ขายส่งมือถือ, ขายส่งไอโฟน, ขายส่ง iphone, ขายส่งโทรศัพท์มือถือ, ขายส่งซิม,
 ขายส่ง ipad, ขายส่งแท็บเล็ต, ขายส่งอุปกรณ์มือถือ, ขายส่งเคสมือถือ, แหล่งขายส่งมือถือ,
