@@ -1,8 +1,9 @@
 // Every blog raster needs a WebP sibling (served by src/components/WebpImage.tsx) under a size budget.
 import { existsSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const dir = new URL("../public/blog/", import.meta.url).pathname;
+const dir = fileURLToPath(new URL("../public/blog/", import.meta.url));
 const BUDGET_KB = 250;
 const problems = [];
 for (const name of readdirSync(dir)) {

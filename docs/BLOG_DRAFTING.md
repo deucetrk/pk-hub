@@ -21,14 +21,21 @@ An agent never merges a blog draft.
 
 Drafts may state these, in addition to the published site files listed in step 4:
 
-- 2026-10-22: PK HUB iPhones are new, never-activated units bought through AIS's official channel, with
-  Apple Thailand warranty. Serial numbers can be listed on the tax invoice on request. For
+- 2026-10-22 (amended 2026-10-31): PK HUB iPhones are Thai-market units from AIS and
+  Synnex (the only two suppliers, confirmed 2026-11-07), with Apple Thailand warranty. Wholesale sells both unactivated and activated ("แอค") units
+  at different prices; activated units are usually newly launched iPhones that must be activated
+  before dispatch. Retail units are never activated before handover. Serial numbers can be listed on the tax invoice on request. For
   after-sales, partners contact LINE or phone, and PK HUB coordinates the claim, files it, or in some
   cases swaps the unit.
 - 2026-10-27: orders start at **1 unit** with **no deposit**; one model or mixed models get the same
-  wholesale pricing. Best sellers are Apple (every iPhone series, most repeat orders), then vivo, OPPO
+  wholesale pricing. Best sellers are Apple (every iPhone series sells, most repeat orders; see the 2026-10-31 entry for the top models), then vivo, OPPO
   and Samsung. High-value phones usually ship with transport insurance; nearby shops can send a
   messenger such as Lalamove, or pick up at the Chachoengsao store.
+- 2026-10-31: the iPhone models partner shops order most are the latest flagship and the previous
+  generation (N-1). Shop owners mostly ask whether a colour and capacity is available, the
+  activated versus unactivated price, and the price. Wholesale orders are photographed while packed
+  (no per-unit inspection); retail sales are unboxed in front of the customer. Real photos:
+  `website/public/blog/iphone-retail-unboxing.jpg`, `wholesale-packing-bubble-wrap.jpg`.
 - 2026-10-31: Samsung units are also bought through AIS. Most units sold in store are not activated;
   units sold at an "activated" price are known to the buyer as already activated. For after-sales,
   customers can use any Samsung service centre, or the partner can leave the unit with PK HUB to
@@ -40,6 +47,9 @@ Drafts may state these, in addition to the published site files listed in step 4
   team; PK HUB logs every step and reconciles. PK HUB does not take trade-in or used phones. The
   owner knows of no official AIS/NBTC channel for checking a reported-lost IMEI. No real photos (they
   would show IMEIs), so generated covers stay.
+- 2026-11-07: do not mention the "Unbrick within 7 days" rule in articles; it applies only around
+  a new iPhone series launch and is too complex for a guide. "Hi อี่มี่ครับ" meant "ให้ IMEI ครับ":
+  PK HUB lists the IMEI.
 
 ## Steps
 
