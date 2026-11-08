@@ -20,7 +20,7 @@ export default function SiteFooter() {
       <div className="v1-wrap">
         <div className="v1-footer-grid">
           <div className="grid content-start justify-items-start gap-[18px]">
-            <img src="/v1/brands/pkhub.webp" alt="PK HUB" width={144} height={48} loading="lazy" decoding="async" />
+            <img src="/v1/brands/pkhub.svg" alt="PK HUB" width={154} height={36} loading="lazy" decoding="async" />
             <p className="text-[17px] leading-7 text-[#555]">
               {t(language, 'สินค้าค้าส่ง บริการต่อยอด', 'Wholesale devices, add-on services')}
               <br />

@@ -32,7 +32,7 @@ export default function NotFound() {
       <header className="v1-header">
         <div className="v1-wrap v1-header-row">
           <a className="v1-header-logo inline-flex min-h-11 items-center" href="/th" aria-label="PK HUB">
-            <img src="/v1/brands/pkhub.webp" alt="PK HUB" width={360} height={119} />
+            <img src="/v1/brands/pkhub.svg" alt="PK HUB" width={1932} height={451} />
           </a>
           <a href="/th/join" className="v1-btn v1-btn-primary v1-btn-sm">
             สมัครเป็นคู่ค้า ↗
