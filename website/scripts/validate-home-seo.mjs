@@ -90,7 +90,7 @@ for (const lang of ['th', 'en']) {
   for (const id of ['v1-brands', 'v1-growth', 'v1-stock', 'v1-marketing', 'v1-care', 'v1-start']) {
     assert(body.includes(`id="${id}"`), `${lang}: v1 section ${id} present`)
   }
-  assert(body.includes('/v1/brands/pkhub.webp'), `${lang}: authentic PK HUB logo asset`)
+  assert(body.includes('/v1/brands/pkhub.svg'), `${lang}: authentic PK HUB logo asset`)
   assert(body.includes('"@type":"FAQPage"') && body.includes('id="v1-faq-title"'), `${lang}: visible home FAQ with schema`)
   assert(!body.includes('PK INTELLIGENCE'), `${lang}: speculative services removed`)
 }

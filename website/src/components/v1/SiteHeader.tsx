@@ -54,7 +54,7 @@ export default function SiteHeader() {
     <header className="v1-header" data-scrolled={scrolled || open}>
       <div className="v1-wrap v1-header-row">
         <a href={isHome ? '#top' : home} className="v1-header-logo inline-flex min-h-11 items-center" aria-label="PK HUB">
-          <img src="/v1/brands/pkhub.webp" alt="PK HUB" width={360} height={119} loading="eager" decoding="async" />
+          <img src="/v1/brands/pkhub.svg" alt="PK HUB" width={1932} height={451} loading="eager" decoding="async" />
         </a>
         <nav className="v1-header-nav" aria-label={t(language, 'เมนูหลัก', 'Main menu')}>
           {links.slice(0, 2).map((link) => (
