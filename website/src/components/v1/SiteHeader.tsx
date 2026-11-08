@@ -21,6 +21,8 @@ export default function SiteHeader() {
   const home = route(language)
   const isHome = pathname === home || pathname === `${home}/` || pathname === '/'
   const joinPath = withReferral(route(language, '/join'), referralCode)
+  // The join page is the form itself, so its header carries no second "become a partner" pill.
+  const onJoin = pathname.startsWith(route(language, '/join'))
   const links = [
     { href: route(language, '/products'), label: t(language, 'สิทธิ์และบริการ', 'Services') },
     { href: isHome ? '#v1-start' : `${home}#v1-start`, label: t(language, 'วิธีเริ่มต้น', 'How to start') },
@@ -70,10 +72,12 @@ export default function SiteHeader() {
           <a href={dealerLoginUrl(referralCode)} className="v1-nav-link v1-nav-muted">
             {t(language, 'เข้าสู่ระบบคู่ค้า', 'Partner login')} <span aria-hidden="true">↗</span>
           </a>
-          <a href={joinPath} className="v1-btn v1-btn-primary v1-btn-sm">
-            {t(language, 'สมัครเป็นคู่ค้า', 'Become a partner')}
-            <ArrowUpRight size={16} aria-hidden="true" />
-          </a>
+          {onJoin ? null : (
+            <a href={joinPath} className="v1-btn v1-btn-primary v1-btn-sm">
+              {t(language, 'สมัครเป็นคู่ค้า', 'Become a partner')}
+              <ArrowUpRight size={16} aria-hidden="true" />
+            </a>
+          )}
           <button
             ref={menuButton}
             type="button"

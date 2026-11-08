@@ -13,7 +13,7 @@ export default function Join() {
     [t(language, 'เริ่มสั่งสินค้าและใช้บริการ', 'Start ordering and using services'), t(language, 'เมื่อตกลงรายละเอียดกันแล้ว', 'Once the details are agreed')],
   ]
   return (
-    <PageShell cta={false} className="bg-[#f4f4f4]">
+    <PageShell cta={false} contactBar={false} className="bg-[#f4f4f4]">
       <div className="v1-mist">
         <div className="v1-wrap v1-join-grid pb-[clamp(56px,6.6vw,96px)] pt-[clamp(32px,4.4vw,64px)]">
           <aside className="v1-join-aside grid content-start gap-8 rounded-3xl text-white" style={{ background: 'var(--v1-dusk)' }} aria-labelledby="v1-page-title">
@@ -24,9 +24,10 @@ export default function Join() {
                 <br />
                 {t(language, 'ทีมเราติดต่อกลับ', 'we will call you')}
               </h1>
-              <p className="text-lg leading-[30px] text-[#dbdfe8]">{t(language, 'ใช้เวลาไม่กี่นาที ข้อมูลใช้เพื่อติดต่อกลับเท่านั้น', 'Takes a few minutes. Used only to contact you.')}</p>
+              <p className="v1-join-full text-lg leading-[30px] text-[#dbdfe8]">{t(language, 'ใช้เวลาไม่กี่นาที ข้อมูลใช้เพื่อติดต่อกลับเท่านั้น', 'Takes a few minutes. Used only to contact you.')}</p>
+              <p className="v1-join-compact text-[15px] leading-6 text-[#dbdfe8]">{steps.map(([title]) => title).join(' → ')}</p>
             </div>
-            <ol className="border-t border-white/15">
+            <ol className="v1-join-full border-t border-white/15">
               {steps.map(([title, body], index) => (
                 <li key={title} className="flex gap-4 border-b border-white/15 py-5">
                   <span className="v1-num w-8 shrink-0 text-xl leading-7 text-[#a9bef7]">{String(index + 1).padStart(2, '0')}</span>
@@ -37,7 +38,7 @@ export default function Join() {
                 </li>
               ))}
             </ol>
-            <div className="grid gap-3">
+            <div className="v1-join-full grid gap-3">
               <p className="text-[15px] text-[#c9cdd6]">{t(language, 'อยากคุยก่อนกรอก', 'Prefer to talk first?')}</p>
               <div className="flex flex-wrap gap-3">
                 <a href={CONTACT.PHONE_TEL} className="v1-btn v1-btn-ghost-light v1-btn-md">
@@ -52,6 +53,17 @@ export default function Join() {
           <section id="partner-application-form" className="v1-panel scroll-mt-24 bg-white" aria-label={t(language, 'ใบสมัคร', 'Application')}>
             <PartnerForm isApplication />
           </section>
+          <div className="v1-join-compact">
+            <p className="text-[15px] text-[#606060]">{t(language, 'อยากคุยก่อนกรอก', 'Prefer to talk first?')}</p>
+            <div className="mt-3 flex flex-wrap gap-3">
+              <a href={CONTACT.PHONE_TEL} className="v1-btn v1-btn-ghost v1-btn-md">
+                {t(language, `โทร ${CONTACT.PHONE_DISPLAY}`, `Call ${CONTACT.PHONE_DISPLAY}`)}
+              </a>
+              <a href={CONTACT.LINE_URL} target="_blank" rel="noreferrer" className="v1-btn v1-btn-ghost v1-btn-md">
+                LINE {CONTACT.LINE_ID} ↗
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </PageShell>

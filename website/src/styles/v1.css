@@ -243,7 +243,7 @@
 .v1-chip {
   display: inline-flex;
   align-items: center;
-  min-height: 36px;
+  min-height: 44px;
   padding: 0 14px;
   border-radius: 999px;
   font-size: 14px;
@@ -532,10 +532,25 @@
   padding-top: 8px;
 }
 
+@media (max-width: 639px) {
+  /* One row per action on phones: the fallback font is wider than IBM Plex Sans Thai, so a
+     wrapping row changed height when the web font swapped in (home CLS 0.13 before). */
+  .v1-hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 .v1-crumb {
   font-size: 15px;
   line-height: 24px;
   color: #c9cdd6;
+}
+
+.v1-crumb a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
 }
 
 .v1-crumb a:hover {
@@ -1015,44 +1030,6 @@
 }
 
 /* Floating contact ------------------------------------------------------- */
-.v1-fab {
-  position: fixed;
-  right: 24px;
-  bottom: 24px;
-  z-index: 40;
-  display: grid;
-  gap: 14px;
-}
-
-.v1-fab a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: 999px;
-  color: #fff;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.13);
-  transition: transform 180ms ease;
-}
-
-.v1-fab a:hover {
-  transform: scale(1.06);
-}
-
-@media (max-width: 639px) {
-  .v1-fab {
-    right: 16px;
-    bottom: 16px;
-    gap: 10px;
-  }
-
-  .v1-fab a {
-    width: 52px;
-    height: 52px;
-  }
-}
-
 /* Brand wall ------------------------------------------------------------- */
 .v1-brand-row {
   display: grid;
@@ -1131,11 +1108,12 @@
   white-space: nowrap;
 }
 
+/* Dot-matrix brand wordmarks use the loaded display face so the page needs no third font family. */
 .v1-doto {
-  font-family: 'Doto', 'Anuphan', monospace;
-  font-weight: 900;
+  font-family: 'Anuphan', sans-serif;
+  font-weight: 700;
   font-size: 17px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.12em;
 }
 
 @media (max-width: 1023px) {
@@ -1719,6 +1697,60 @@ textarea.v1-input {
   }
 }
 
+/* Phones get the form first (Paper board C): the steps fold into one line and the call/LINE
+   options move under the form. */
+.v1-join-compact {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  /* !important: these elements also carry Tailwind display utilities (grid), which load later. */
+  .v1-join-full {
+    display: none !important;
+  }
+
+  .v1-join-compact {
+    display: block;
+  }
+
+  .v1-join-aside {
+    padding: 24px 20px;
+    gap: 0;
+  }
+}
+
+.v1-more-summary {
+  display: flex;
+  min-height: 44px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  list-style: none;
+}
+
+.v1-more-summary::-webkit-details-marker {
+  display: none;
+}
+
+.v1-more-icon {
+  display: inline-flex;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--v1-line);
+  border-radius: 999px;
+  font-size: 22px;
+  line-height: 1;
+  transition: transform 200ms ease;
+}
+
+.v1-more[open] .v1-more-icon {
+  transform: rotate(45deg);
+}
+
 select.v1-input {
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230a0a0a' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
@@ -2158,33 +2190,55 @@ button.v1-brand-tile[aria-pressed='true'] .v1-doto {
 }
 
 /* Sticky mobile join bar ------------------------------------------------------ */
-.v1-sticky-cta {
-  position: fixed;
-  left: 16px;
-  right: calc(16px + 52px + 12px);
-  bottom: 16px;
-  z-index: 39;
+/* Mobile contact bar: one bar (join + LINE + call) replaces the sticky join pill and the floating
+   phone/LINE circles (Paper "Audit proposals · Nov 2026", board D). Phones only. */
+.v1-contact-bar {
   display: none;
 }
 
-.v1-sticky-cta a {
-  width: 100%;
-  min-height: 52px;
-  box-shadow: 0 12px 30px rgba(36, 87, 214, 0.35);
-}
-
 @media (max-width: 639px) {
-  .v1-sticky-cta {
-    display: block;
+  .v1-contact-bar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    display: flex;
+    gap: 8px;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.96);
+    border-top: 1px solid var(--v1-line);
+    box-shadow: 0 -8px 24px rgba(24, 24, 27, 0.08);
     transition:
-      opacity 260ms ease,
-      transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+      opacity 200ms ease,
+      transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
-  .v1-sticky-cta[data-show='false'] {
+  .v1-contact-bar[data-show='false'] {
     opacity: 0;
-    transform: translateY(calc(100% + 24px));
+    transform: translateY(100%);
     pointer-events: none;
+  }
+
+  .v1-contact-bar .v1-btn {
+    flex: 1;
+    min-height: 52px;
+  }
+
+  .v1-contact-icon {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 999px;
+    color: #fff;
+  }
+
+  /* Only one solid blue action on screen: the header pill steps aside while the bar is up. */
+  html[data-contact-bar='show'] .v1-header .v1-btn-primary {
+    visibility: hidden;
   }
 }
 

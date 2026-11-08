@@ -34,7 +34,7 @@ export default function DealerLogin() {
       <Navbar />
       <main id="main-content" tabIndex={-1}>
         <section className="grid border-b border-zinc-300 lg:min-h-[calc(100svh-78px)] lg:grid-cols-[1.04fr_0.96fr]">
-          <figure className="pk-gateway-media relative min-h-[230px] overflow-hidden bg-[#1b1c19] sm:min-h-[330px] lg:min-h-[660px]">
+          <figure className="pk-gateway-media relative order-last min-h-[230px] lg:order-none overflow-hidden bg-[#1b1c19] sm:min-h-[330px] lg:min-h-[660px]">
             <img
               src="/proof/storefront-entrance.webp"
               alt={

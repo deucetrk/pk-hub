@@ -9,7 +9,6 @@ import {
 import { Link, useParams } from "react-router-dom";
 
 import Container from "@/components/Container";
-import FloatingContact from "@/components/FloatingContact";
 import Navbar from "@/components/Navbar";
 import PartnerForm from "@/components/PartnerForm";
 import {
@@ -313,7 +312,7 @@ export default function BlogArticle() {
                 {article.category} · อ่านประมาณ {article.estimatedReadMinutes}{" "}
                 นาที
               </div>
-              <h1 className="font-display text-[2.1rem] font-extrabold leading-[1.22] tracking-[-0.03em] [text-wrap:balance] sm:text-6xl lg:text-[4.25rem]">
+              <h1 className="font-display text-[2.1rem] font-light leading-[1.22] tracking-[-0.02em] [text-wrap:balance] sm:text-6xl lg:text-[4.25rem]">
                 {article.title}
               </h1>
               <p className="max-w-3xl text-lg leading-8 text-[#52525b] sm:text-xl sm:leading-9">
@@ -337,6 +336,8 @@ export default function BlogArticle() {
                 width={article.imageWidth}
                 height={article.imageHeight}
                 decoding="async"
+                loading="eager"
+                {...{ fetchpriority: "high" }}
                 className="aspect-[3/2] w-full object-cover sm:aspect-[16/7]"
               />
               <figcaption className="border-x border-b border-[#e4e4e7] bg-white px-4 py-3 text-sm leading-6 text-[#71717a]">
@@ -911,7 +912,6 @@ export default function BlogArticle() {
         </Container>
       </main>
       <Footer />
-      <FloatingContact className="hidden md:flex" />
     </div>
   );
 }
