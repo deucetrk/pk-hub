@@ -5,7 +5,8 @@
 - [Agent contract](../AGENTS.md), [active goal](../GOAL.md), [current state](../CURRENT_STATE.md),
   [queue](../tasks/NEXT.md): intent, observed status and continuation.
 - [Website agent contract](../website/AGENTS.md) and [design direction](../website/DESIGN.md):
-  public route, copy, interaction and V7 boundaries.
+  public route, copy, interaction and V7 boundaries. [Motion spec](design/MOTION_SPEC.md) and
+  [component inventory](design/COMPONENTS.md) complete the design kit (DESIGN-001).
 - [Approved V7 sources](../website/planning/2026-10-06-pkhub-v7-approved-design/START_HERE.md),
   [design lock](../website/planning/2026-10-06-pkhub-v7-approved-design/DESIGN_LOCK.md),
   [owner approval](../website/planning/2026-10-06-pkhub-v7-approved-design/OWNER_APPROVAL.md).
