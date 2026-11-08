@@ -5,7 +5,7 @@ export const CONTACT = {
   PHONE_TEL: 'tel:0892480888',
   PHONE_DISPLAY: '089-248-0888',
   FACEBOOK_URL: 'https://www.facebook.com/pkmedia168',
-  // Google Business Profile "PKHub by PK Media" (owner, 2026-11-01); the cid link survives renames.
+  // Google Business Profile "PK Hub" (renamed from "PKHub by PK Media" 2026-11-08); the cid link survives renames.
   MAPS_URL: 'https://www.google.com/maps?cid=325354172230912396',
   REVIEW_URL: 'https://g.page/r/CYzJA1bl44MEEBM/review',
   VAT_NUMBER: '0245540000020',
