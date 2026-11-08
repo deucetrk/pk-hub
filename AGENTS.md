@@ -31,6 +31,17 @@ Every change follows the owner-approved
 budgets, WebP images, fonts that never block paint, purposeful motion and a throttled mobile
 check in the PR.
 
+## Mobbin journey gate (owner rule, every PK repo)
+
+Before designing or coding any new screen, flow, sheet/dialog or redesign, pass the
+[Mobbin journey gate](https://github.com/deucetrk/PK-Commerce/blob/main/docs/agent/skills/ui-work/SKILL.md#mobbin-journey-gate): research the real user journey on Mobbin first, cite
+references per screen, and list them in the PR. Adding a sheet or state to an existing screen
+counts.
+Search Mobbin flows at real data volume, keep 1-3 links per screen, say so when nothing fits;
+a UI PR without the per-screen table is not ready for review.
+Mobbin research comes before design (website/DESIGN.md and the V7 design lock) and owner approval,
+not instead of them.
+
 ## Closeout
 
 Keep one active outcome in GOAL.md and one exact next action. Update only documents whose meaning
