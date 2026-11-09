@@ -54,8 +54,8 @@ the merge or Vercel instant rollback to `fb585c8`.
 
 1. Google Business Profile for the Chachoengsao location (owner to set up), then its URL and the
    official Instagram/TikTok/YouTube URLs go into the organization schema `sameAs`.
-2. Remaining product pages (Stock on Demand, ROM, S Leasing, after-sales, repair) stay noindex
-   until their copy is reviewed.
+2. Closed 2026-11-09: owner released the products index and the remaining product pages
+   (Stock on Demand, ROM, S Leasing, after-sales, repair) for search; all are in the sitemap.
 
 ## Outcome
 
