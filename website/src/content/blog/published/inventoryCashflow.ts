@@ -12,7 +12,7 @@ export const inventoryCashflowArticle: PublishedBlogArticle = {
   "contentTrack": "retailer",
   "tags": ["บริหารสต็อก", "เงินหมุน", "ต้นทุนร้าน"],
   "publishedAt": "2026-08-11",
-  "modifiedAt": "2026-10-20",
+  "modifiedAt": "2026-11-09",
   "estimatedReadMinutes": 7,
   "recommendedImage": "/blog/inventory-cashflow-cover.png",
   "imageAlt": "ภาพจำลองเจ้าของร้านทบทวนจำนวนสต็อกมือถือแต่ละกลุ่ม",
@@ -133,6 +133,10 @@ export const inventoryCashflowArticle: PublishedBlogArticle = {
     {
       "label": "อ่านขั้นตอนสั่งมือถือขายส่งครั้งแรก",
       "href": "/th/blog/first-wholesale-mobile-phone-order"
+    },
+    {
+      "label": "มือถือราคาไม่เกิน 5,000 ร้านควรมีรุ่นแบบไหนเป็นตัวขายประจำ",
+      "href": "/th/blog/phones-under-5000-baht"
     }
   ],
   "sources": [

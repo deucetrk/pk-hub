@@ -7,6 +7,7 @@ import { iphoneWholesaleArticle } from './published/iphoneWholesale'
 import { ipadTabletWholesaleArticle } from './published/ipadTabletWholesale'
 import { inventoryCashflowArticle } from './published/inventoryCashflow'
 import { openMobileShopArticle } from './published/openMobileShop'
+import { phonesUnder5000Article } from './published/phonesUnder5000'
 import { supplierChecklistArticle } from './published/supplierChecklist'
 import { thaiMarketPhoneArticle } from './published/thaiMarketPhone'
 import { publishedBlogSlugs, type PublishedBlogSlug } from './publishedManifest'
@@ -110,6 +111,7 @@ const articlesBySlug = {
   'check-samsung-warranty': checkSamsungWarrantyArticle,
   'check-imei': checkImeiArticle,
   'ipad-tablet-wholesale-for-mobile-shops': ipadTabletWholesaleArticle,
+  'phones-under-5000-baht': phonesUnder5000Article,
 } satisfies Record<PublishedBlogSlug, PublishedBlogArticle>
 
 export const publishedArticles: PublishedBlogArticle[] = publishedBlogSlugs.map(
