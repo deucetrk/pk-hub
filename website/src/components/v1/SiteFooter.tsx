@@ -60,14 +60,18 @@ export default function SiteFooter() {
           </div>
         </div>
         <div className="v1-footer-bottom">
-          <div role="group" aria-label={t(language, 'เลือกภาษา', 'Choose language')} className="flex items-center gap-2">
-            <button type="button" aria-pressed={language === 'th'} onClick={() => setLanguage('th')} className={language === 'th' ? 'font-semibold text-[#111]' : ''}>
-              ไทย
-            </button>
-            <span aria-hidden="true">/</span>
-            <button type="button" aria-pressed={language === 'en'} onClick={() => setLanguage('en')} className={language === 'en' ? 'font-semibold text-[#111]' : ''}>
-              EN
-            </button>
+          <div role="group" aria-label={t(language, 'เลือกภาษา', 'Choose language')} className="flex items-center gap-1">
+            {(['th', 'en'] as const).map((code) => (
+              <button
+                key={code}
+                type="button"
+                aria-pressed={language === code}
+                onClick={() => setLanguage(code)}
+                className={`inline-flex min-h-11 min-w-[60px] items-center justify-center rounded-full ${language === code ? 'bg-[#f4f4f4] font-semibold text-[#111]' : 'hover:bg-[#f4f4f4]'}`}
+              >
+                {code === 'th' ? 'ไทย' : 'EN'}
+              </button>
+            ))}
           </div>
           <div className="flex flex-wrap items-center gap-x-7">
             <a href={route(language, '/privacy')}>{t(language, 'ความเป็นส่วนตัว', 'Privacy')}</a>

@@ -2,21 +2,22 @@ import type { ReactNode } from 'react'
 
 import { useLanguage } from '@/i18n/LanguageContext'
 
+import ContactBar from './ContactBar'
 import CtaBand from './CtaBand'
-import FloatingContact from './FloatingContact'
 import SiteFooter from './SiteFooter'
 import SiteHeader from './SiteHeader'
-import StickyJoin from './StickyJoin'
 import { useReveal } from './useReveal'
 
 type PageShellProps = {
   children: ReactNode
   cta?: boolean
+  /** Phone contact bar; off on the join page, where the form is the action. */
+  contactBar?: boolean
   className?: string
 }
 
-/** Shared v1 chrome: skip link, sticky header, page content, joining band, footer and contact buttons. */
-export default function PageShell({ children, cta = true, className }: PageShellProps) {
+/** Shared v1 chrome: skip link, sticky header, page content, joining band, footer and phone contact bar. */
+export default function PageShell({ children, cta = true, contactBar = true, className }: PageShellProps) {
   const { language } = useLanguage()
   useReveal(language)
   return (
@@ -30,8 +31,7 @@ export default function PageShell({ children, cta = true, className }: PageShell
         {cta ? <CtaBand /> : null}
       </main>
       <SiteFooter />
-      {cta ? <StickyJoin /> : null}
-      <FloatingContact />
+      {contactBar ? <ContactBar /> : null}
     </div>
   )
 }

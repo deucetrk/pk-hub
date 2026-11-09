@@ -134,6 +134,8 @@ export default function PartnerForm({ className, isApplication = false }: Partne
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle')
   const [failure, setFailure] = useState<Failure | null>(null)
   const [showSummary, setShowSummary] = useState(false)
+  // Optional application fields start folded (Paper board C); a referral code or an error opens them.
+  const [moreOpen, setMoreOpen] = useState(false)
   const [receipt, setReceipt] = useState<PartnerLeadReceipt | null>(null)
   const requestId = useRef(generateRequestId())
   const lastAttempt = useRef<string | null>(null)
@@ -143,6 +145,10 @@ export default function PartnerForm({ className, isApplication = false }: Partne
 
   useEffect(() => {
     if (attributedReferral) setReferral((current) => current || attributedReferral)
+  }, [attributedReferral])
+
+  useEffect(() => {
+    if (attributedReferral) setMoreOpen(true)
   }, [attributedReferral])
 
   const errors = useMemo(() => {
@@ -184,6 +190,7 @@ export default function PartnerForm({ className, isApplication = false }: Partne
     setFailure(null)
     if (invalid.length) {
       setShowSummary(true)
+      if (invalid.includes('email') || invalid.includes('referral')) setMoreOpen(true)
       requestAnimationFrame(() => {
         summaryRef.current?.scrollIntoView({ block: 'center' })
         const first = invalid[0] === 'consent' ? 'partner-consent' : invalid[0] === 'referral' ? 'referralCode' : invalid[0]
@@ -298,11 +305,6 @@ export default function PartnerForm({ className, isApplication = false }: Partne
               </select>
             </Field>
           </div>
-          {isApplication ? (
-            <Field id="address" label={t(language, 'ที่อยู่ร้าน (ไม่บังคับ)', 'Store address (optional)')}>
-              <input id="address" autoComplete="street-address" maxLength={600} placeholder={t(language, 'เลขที่ ถนน ตำบล อำเภอ', 'Number, road, district')} value={values.address} onChange={(e) => set('address', e.target.value)} className="v1-input" />
-            </Field>
-          ) : null}
         </div>
 
         <div className={cn('grid gap-5', isApplication && 'border-t border-[#e5e5e5] pt-7')}>
@@ -325,9 +327,29 @@ export default function PartnerForm({ className, isApplication = false }: Partne
               />
             </Field>
           </div>
-          {isApplication ? (
-            <>
-              <div className="v1-grid-2">
+        </div>
+
+
+
+        {isApplication ? (
+          <details
+            className="v1-more border-t border-[#e5e5e5] pt-7"
+            open={moreOpen}
+            onToggle={(event) => setMoreOpen(event.currentTarget.open)}
+          >
+            <summary className="v1-more-summary">
+              <span className="grid gap-1">
+                <span className="font-display text-[22px] leading-8">{t(language, 'ข้อมูลเพิ่มเติม (ไม่บังคับ)', 'More details (optional)')}</span>
+                <span className="v1-small">{t(language, 'ที่อยู่ ช่องทางติดต่ออื่น แบรนด์ที่สนใจ และรหัสแนะนำ', 'Address, other contacts, brands and referral code')}</span>
+              </span>
+              <span className="v1-more-icon" aria-hidden="true">+</span>
+            </summary>
+            <div className="grid gap-7 pt-6">
+              <div className="grid gap-5">
+                <Field id="address" label={t(language, 'ที่อยู่ร้าน (ไม่บังคับ)', 'Store address (optional)')}>
+              <input id="address" autoComplete="street-address" maxLength={600} placeholder={t(language, 'เลขที่ ถนน ตำบล อำเภอ', 'Number, road, district')} value={values.address} onChange={(e) => set('address', e.target.value)} className="v1-input" />
+            </Field>
+                <div className="v1-grid-2">
                 <Field id="lineId" label={t(language, 'LINE ID (ไม่บังคับ)', 'LINE ID (optional)')}>
                   <input id="lineId" maxLength={100} placeholder={t(language, '@ หรือ ID ส่วนตัว', '@ or personal ID')} value={values.lineId} onChange={(e) => set('lineId', e.target.value)} className="v1-input" />
                 </Field>
@@ -338,12 +360,8 @@ export default function PartnerForm({ className, isApplication = false }: Partne
               <Field id="socialContact" label={t(language, 'Facebook หรือ TikTok ของร้าน (ไม่บังคับ)', 'Store Facebook or TikTok (optional)')}>
                 <input id="socialContact" maxLength={250} placeholder={t(language, 'ลิงก์เพจหรือชื่อบัญชี', 'Page link or account name')} value={values.socialContact} onChange={(e) => set('socialContact', e.target.value)} className="v1-input" />
               </Field>
-            </>
-          ) : null}
-        </div>
-
-        {isApplication ? (
-          <div className="grid gap-4 border-t border-[#e5e5e5] pt-7">
+              </div>
+              <div className="grid gap-4">
             <div className="grid gap-1">
               <h3 className="font-display text-[22px] leading-8" id="brands-label">
                 {t(language, 'แบรนด์ที่สนใจ', 'Brands of interest')}
@@ -368,10 +386,7 @@ export default function PartnerForm({ className, isApplication = false }: Partne
               })}
             </div>
           </div>
-        ) : null}
-
-        {isApplication ? (
-          <div className="grid gap-5 border-t border-[#e5e5e5] pt-7">
+              <div className="grid gap-5">
             <Field id="note" label={t(language, 'อยากให้ทีมรู้อะไรก่อนโทร (ไม่บังคับ)', 'Anything the team should know before calling (optional)')}>
               <textarea
                 id="note"
@@ -392,6 +407,8 @@ export default function PartnerForm({ className, isApplication = false }: Partne
               </Field>
             </div>
           </div>
+            </div>
+          </details>
         ) : null}
 
         <div className={cn('grid gap-5', isApplication && 'border-t border-[#e5e5e5] pt-7')}>
