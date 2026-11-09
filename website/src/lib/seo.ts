@@ -97,13 +97,13 @@ export const STOCK_ON_DEMAND_META = {
     title: 'Stock on Demand เพิ่มทางเลือกให้ร้านมือถือ | PK HUB',
     description: 'ให้สต็อก PK เป็นส่วนต่อของร้าน เช็กรุ่น สี ความจุ ราคา และรอบส่งกับทีม ก่อนเสนอทางเลือกให้ลูกค้า โดยไม่ต้องสต็อกทุกรุ่น',
     canonical: `${SITE_URL}/th/products/stock-on-demand`,
-    ogType: 'website', locale: 'th_TH', robots: 'noindex, follow',
+    ogType: 'website', locale: 'th_TH',
   },
   en: {
     title: 'Stock on Demand | More Options for Your Shop | PK HUB',
     description: 'Extend your shop’s assortment with PK. Confirm models, stock, prices and dispatch with our team before offering customers more options.',
     canonical: `${SITE_URL}/en/products/stock-on-demand`,
-    ogType: 'website', locale: 'en_US', robots: 'noindex, follow',
+    ogType: 'website', locale: 'en_US',
   },
 } satisfies Record<'th' | 'en', PageMeta>
 
@@ -169,7 +169,7 @@ export const PRIVACY_META = {
   },
 } satisfies Record<'th' | 'en', PageMeta>
 
-/** Product pages the owner released for search on 2026-10-20; the rest stay noindex until reviewed. */
+/** Keyword titles for the product pages released on 2026-10-20. Every product page is indexable since 2026-11-09 (owner). */
 export const INDEXED_PRODUCT_META: Partial<Record<ProductId, Record<'th' | 'en', Pick<PageMeta, 'title' | 'description'>>>> = {
   'handset-wholesale': {
     th: {
@@ -222,7 +222,6 @@ export function getProductMeta(id: ProductId, language: 'th' | 'en'): PageMeta {
     description: language === 'th' ? service.description : service.descriptionEn,
     canonical: `${SITE_URL}/${language}/products/${id}`,
     ogType: 'website', locale: language === 'th' ? 'th_TH' : 'en_US',
-    robots: 'noindex, follow',
   }
 }
 
@@ -231,7 +230,7 @@ export function getProductsIndexMeta(language: 'th' | 'en'): PageMeta {
     title: language === 'th' ? 'สินค้าและบริการสำหรับร้านค้าพาร์ทเนอร์ | PK HUB' : 'Products & Services for Your Shop | PK HUB',
     description: language === 'th' ? 'สำรวจสินค้าและบริการ PK HUB ตั้งแต่มือถือ อุปกรณ์เสริม Stock on Demand ซิม เติมเงิน S Leasing Marketing และการดูแลหลังการขาย' : 'Explore PK HUB smartphones, accessories, Stock on Demand, SIMs, top-up, S Leasing, Marketing and after-sales support.',
     canonical: `${SITE_URL}/${language}/products`,
-    ogType: 'website', locale: language === 'th' ? 'th_TH' : 'en_US', robots: 'noindex, follow',
+    ogType: 'website', locale: language === 'th' ? 'th_TH' : 'en_US',
   }
 }
 

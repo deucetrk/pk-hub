@@ -199,7 +199,7 @@ const secondaryUrls = routes
   .filter((route) => !getPageMeta(route).robots?.includes('noindex'))
   .filter(
     (route) =>
-      route.includes('/join') || route.includes('/contact') || route.includes('/privacy') || route.includes('/dealer/login') || route.includes('/products/') || route.startsWith('/th/blog'),
+      route.includes('/join') || route.includes('/contact') || route.includes('/privacy') || route.includes('/dealer/login') || /\/products(\/|$)/.test(route) || route.startsWith('/th/blog'),
   )
   .map(
     (route) => `

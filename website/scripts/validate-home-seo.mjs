@@ -5,9 +5,10 @@ import { resolve } from 'node:path'
 const dist = resolve('dist')
 const read = (route) => readFileSync(resolve(dist, route, 'index.html'), 'utf8')
 
+// Keyword pages carry a visible FAQ; every product page is indexable (owner, 2026-11-09).
 const indexedSlugs = ['handset-wholesale', 'accessories', 'ais-sim']
-const reviewSlugs = ['stock-on-demand', 'ais-rom', 'finance', 'after-sales', 'repair']
-const productSuffixes = ['/products', '/products/partner-marketing', ...[...indexedSlugs, ...reviewSlugs].map(slug => '/products/' + slug)]
+const serviceSlugs = ['stock-on-demand', 'ais-rom', 'finance', 'after-sales', 'repair']
+const productSuffixes = ['/products', '/products/partner-marketing', ...[...indexedSlugs, ...serviceSlugs].map(slug => '/products/' + slug)]
 
 for (const lang of ['th', 'en']) {
   for (const suffix of ['', '/join', '/contact', '/dealer/login', ...productSuffixes]) {
@@ -25,8 +26,8 @@ for (const lang of ['th', 'en']) {
     if (suffix === '/dealer/login') {
       assert(html.includes('name="robots" content="noindex, follow"'), `${route}: sign-in page stays out of search`)
     }
-    if (suffix === '/products' || reviewSlugs.some(slug => suffix === '/products/' + slug)) {
-      assert(html.includes('name="robots" content="noindex, follow"'), `${route}: review page stays noindex`)
+    if (suffix === '/products' || serviceSlugs.some(slug => suffix === '/products/' + slug)) {
+      assert(!html.includes('name="robots"'), `${route}: product page is indexable`)
     }
     if (indexedSlugs.some(slug => suffix === '/products/' + slug)) {
       assert(!html.includes('name="robots"'), `${route}: released page is indexable`)
@@ -95,8 +96,8 @@ for (const lang of ['th', 'en']) {
   assert(!body.includes('PK INTELLIGENCE'), `${lang}: speculative services removed`)
 }
 const sitemap = readFileSync(resolve(dist, 'sitemap.xml'), 'utf8')
-for (const slug of reviewSlugs) assert(!sitemap.includes('/products/' + slug), `Review page stays out of sitemap: ${slug}`)
-assert(!sitemap.includes('<loc>https://pkhub.co/th/products</loc>'), 'Review directory stays out of sitemap')
+for (const slug of serviceSlugs) for (const lang of ['th', 'en']) assert(sitemap.includes(`<loc>https://pkhub.co/${lang}/products/${slug}</loc>`), `Service page in sitemap: ${lang}/${slug}`)
+for (const lang of ['th', 'en']) assert(sitemap.includes(`<loc>https://pkhub.co/${lang}/products</loc>`), `Products index in sitemap: ${lang}`)
 assert(!sitemap.includes('/dealer/login'), 'Sign-in pages stay out of sitemap')
 for (const slug of indexedSlugs) for (const lang of ['th', 'en']) assert(sitemap.includes(`<loc>https://pkhub.co/${lang}/products/${slug}</loc>`), `Released page in sitemap: ${lang}/${slug}`)
 assert(existsSync(resolve(dist, 'llms.txt')), 'llms.txt is published')
