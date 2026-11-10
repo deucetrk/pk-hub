@@ -10,6 +10,7 @@ import { PartnerLeadSubmissionError, submitPartnerLead, type PartnerLeadReceipt 
 import { captureAcquisitionContext } from '@/utils/acquisitionContext'
 import { generateRequestId, normalizePhone, validatePartnerLead, type PartnerLead, type PartnerLeadErrors } from '@/utils/partnerLead'
 import { normalizeReferralCode } from '@/utils/referralAttribution'
+import { track } from '@/lib/analytics'
 
 const BRAND_OPTIONS = ['Apple', 'Samsung', 'OPPO', 'vivo', 'Xiaomi', 'HONOR', 'HUAWEI', 'realme', 'NOTHING', 'TECNO']
 const NOTE_LIMIT = 1500
@@ -223,6 +224,7 @@ export default function PartnerForm({ className, isApplication = false }: Partne
       })
       setReceipt(persisted)
       setStatus('success')
+      track('partner_form_submitted', { source: referralCode ? 'BD_REFERRAL' : 'ORGANIC' })
     } catch (error) {
       const code = error instanceof PartnerLeadSubmissionError ? error.code : 'NETWORK'
       if (code === 'REQUEST_ID_CONFLICT') {
