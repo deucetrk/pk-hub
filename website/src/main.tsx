@@ -5,7 +5,10 @@ import { SERVICE_PRODUCT_IDS } from '@/content/productServices'
 import type { RoutePages } from './AppRoutes'
 import NotFound from '@/pages/NotFound'
 import HydrationReady from '@/components/HydrationReady'
+import { startAnalytics } from '@/lib/analytics'
 import './index.css'
+
+startAnalytics()
 
 const container = document.getElementById('root')!
 container.setAttribute('aria-busy', 'true')

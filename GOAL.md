@@ -1,19 +1,26 @@
 ---
-task: PKHUB-HOME-SHARE-001
+task: PKHUB-ANALYTICS-001
 status: in_progress
 validation: local_passed
-updated: 2026-10-25
+updated: 2026-11-10
 ---
-# Active goal: use the homepage artwork when sharing PK HUB (PKHUB-HOME-SHARE-001)
+# Active goal: measure pkhub.co visitors and contact clicks (PKHUB-ANALYTICS-001)
 
-Owner requested a share image based on the supplied homepage hero rather than the storefront photo.
-Branch `codex/pkhub-share-image-20261025` adds Thai/English 1200 × 630 artwork and updates only
-homepage social metadata. [Evidence and release procedure](docs/evidence/PKHUB-SHARE-20261025.md).
-Local type/lint, 16 intake tests, build/SEO, 19 continuity tests and desktop/mobile browser checks
-passed. Production publication awaits current owner approval; no production settings or data changed.
+Owner request 2026-11-10 (codebase audit item 5, "fix it all except 1"): the site had no
+analytics, so the blog, search work and outreach could not be measured. Branch
+`claude/project-thread-ebx4h4` adds cookie-free Vercel Web Analytics with no package
+(`website/src/lib/analytics.ts`). The ~1 KB script loads only on pkhub.co, after the page has loaded
+and the browser is idle (PERF-001). It counts page views and sends three events: `line_click`,
+`call_click` and `partner_form_submitted`. Custom events are recorded only on the Vercel Pro plan;
+on Hobby only page views appear. No cookies and no personal data, so the privacy notice is unchanged
+(owner may choose to mention it).
 
-Next action: owner approves publishing this scoped image change; then merge the reviewed PR,
-verify the hosted revision and both locale image URLs/metadata, and check a fresh share preview.
+Next action: the owner merges the PR, then enables Web Analytics in the Vercel project's
+Analytics tab. Check that page views appear the next day.
+
+# Previous goal: use the homepage artwork when sharing PK HUB (PKHUB-HOME-SHARE-001)
+
+Done: PR #29 merged (`9f92005`); `website/public/og-image.jpg` is the homepage-hero share image.
 
 # Previous goal: make the blog rank and get cited (PKHUB-BLOG-SEO-001)
 

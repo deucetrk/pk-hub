@@ -1,12 +1,14 @@
 ---
-goal: PKHUB-HOME-SHARE-001
-updated: 2026-10-25
+goal: PKHUB-ANALYTICS-001
+updated: 2026-11-10
 ---
 # Current repository state
 
 [GOAL.md](GOAL.md) owns the active outcome and exact next action.
-Homepage share artwork is locally validated on `codex/pkhub-share-image-20261025` and awaits
-publication approval. [Scope, proof and rollback](docs/evidence/PKHUB-SHARE-20261025.md).
+Visitor analytics (cookie-free Vercel Web Analytics) is locally validated on
+`claude/project-thread-ebx4h4` and awaits merge plus enabling Web Analytics in Vercel. The homepage
+share artwork shipped in PR #29 ([proof](docs/evidence/PKHUB-SHARE-20261025.md)); the privacy
+notice is live.
 [Continuity evidence](docs/evidence/AGENT-CONTINUITY-20261016.md) records current validation.
 
 Latest observed pkhub.co revision: `dfbe776d1353a33cadb74fcbce1816cb94714041` (PR #21, SEO/AEO)
