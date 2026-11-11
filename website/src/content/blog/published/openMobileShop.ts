@@ -14,7 +14,7 @@ export const openMobileShopArticle: PublishedBlogArticle = {
   contentTrack: 'retailer',
   tags: ['เปิดร้านมือถือ', 'เงินลงทุน', 'วางสต็อก'],
   publishedAt: '2026-08-10',
-  modifiedAt: '2026-10-20',
+  modifiedAt: '2026-11-09',
   estimatedReadMinutes: 12,
   recommendedImage: '/proof/storefront-building.webp',
   imageAlt: 'อาคารหน้าร้านจริงของ PK HUB ในจังหวัดฉะเชิงเทรา',
@@ -166,6 +166,7 @@ export const openMobileShopArticle: PublishedBlogArticle = {
     { label: 'อ่าน 7 ข้อก่อนเลือกแหล่งขายส่งมือถือ', href: '/th/blog/checklist-choose-mobile-phone-wholesaler' },
     { label: 'ดูแบรนด์มือถือที่ PK HUB ขายส่ง', href: '/th/products/handset-wholesale' },
     { label: 'ขายซิม AIS ที่ร้าน รับรีเบต', href: '/th/products/ais-sim' },
+    { label: 'มือถือราคาไม่เกิน 5,000 ที่ร้านใหม่ควรมีไว้ขาย', href: '/th/blog/phones-under-5000-baht' },
   ],
   sources: [
     {

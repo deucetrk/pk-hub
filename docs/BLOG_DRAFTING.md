@@ -47,6 +47,12 @@ Drafts may state these, in addition to the published site files listed in step 4
   team; PK HUB logs every step and reconciles. PK HUB does not take trade-in or used phones. The
   owner knows of no official AIS/NBTC channel for checking a reported-lost IMEI. No real photos (they
   would show IMEIs), so generated covers stay.
+- 2026-11-11: TECNO units come from AIS, can be claimed, and PK HUB provides after-sales service.
+  PK HUB can issue a **full tax invoice for every brand**, usable for the buyer's tax purposes.
+  No real TECNO photos exist. Wholesale prices come as unactivated ("ไม่แอค") and activated ("แอค")
+  prices; the owner's dated price sheet (tab "ราคาส่ง") may be used to choose which models an
+  article names, labelled with its date. Do not print exact wholesale prices on a public page
+  without a fresh owner decision, and never use the sheet's cost tab ("AdpCost": costs, margins).
 - 2026-11-07: do not mention the "Unbrick within 7 days" rule in articles; it applies only around
   a new iPhone series launch and is too complex for a guide. "Hi อี่มี่ครับ" meant "ให้ IMEI ครับ":
   PK HUB lists the IMEI.
