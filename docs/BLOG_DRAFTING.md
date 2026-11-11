@@ -53,6 +53,14 @@ Drafts may state these, in addition to the published site files listed in step 4
   prices; the owner's dated price sheet (tab "ราคาส่ง") may be used to choose which models an
   article names, labelled with its date. Do not print exact wholesale prices on a public page
   without a fresh owner decision, and never use the sheet's cost tab ("AdpCost": costs, margins).
+- 2026-11-11 (tablets): partners order mostly **OPPO Pad and iPad**, then Xiaomi and **Alldocube**.
+  Every tablet has a wholesale price; PK HUB is a special distributor (ตัวแทนจำหน่ายแบบพิเศษ) for
+  Alldocube. iPad and Samsung Galaxy Tab units are bought through AIS: new, never activated, with
+  Thai warranty. Serial or IMEI can be listed on the tax invoice for tablets. Tablet after-sales:
+  contact LINE or phone, or walk in to the Chachoengsao store. PK HUB can sell to organisations and
+  schools. PK HUB does **not** sell tablet cases or accessories, so articles must not mention them.
+  Covers may be generated in the PK HUB visual style (cobalt `#2457d6`, carbon `#1b1c19`, white).
+  Alldocube is not yet on the site brand list (`src/content/brands.ts`).
 - 2026-11-07: do not mention the "Unbrick within 7 days" rule in articles; it applies only around
   a new iPhone series launch and is too complex for a guide. "Hi อี่มี่ครับ" meant "ให้ IMEI ครับ":
   PK HUB lists the IMEI.
