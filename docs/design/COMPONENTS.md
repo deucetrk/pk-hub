@@ -7,16 +7,15 @@ older shared pieces still in use.
 
 | Component                     | Path                     | Use                                                |
 | ----------------------------- | ------------------------ | -------------------------------------------------- |
-| `PageShell`                   | `v1/PageShell.tsx`       | Page frame: header, footer, floating contact       |
+| `PageShell`                   | `v1/PageShell.tsx`       | Page frame: header, footer, phone contact bar      |
 | `SiteHeader`                  | `v1/SiteHeader.tsx`      | Top navigation, frosted after scroll               |
 | `SiteFooter`                  | `v1/SiteFooter.tsx`      | Footer links and social                            |
 | `ServiceHero` and blocks      | `v1/ServiceBlocks.tsx`   | Service page hero and content blocks               |
 | `CtaBand`                     | `v1/CtaBand.tsx`         | Closing call-to-action band                        |
-| `StickyJoin`                  | `v1/StickyJoin.tsx`      | Mobile join bar under 640 px                       |
+| `ContactBar`                  | `v1/ContactBar.tsx`      | Phone bar under 640 px: join, LINE and call        |
 | `BrandMark` and brand wall    | `v1/BrandWall.tsx`       | Brand logos and billboard rows                     |
 | `CountUp`                     | `v1/CountUp.tsx`         | Owner-confirmed figures with reserved width        |
 | `SodChatDemo`                 | `v1/SodChatDemo.tsx`     | Stock on Demand chat demo (labelled as an example) |
-| `FloatingContact`             | `v1/FloatingContact.tsx` | LINE and phone floating buttons                    |
 | `useReveal`                   | `v1/useReveal.ts`        | Reveal-on-scroll hook with reduced-motion guard    |
 | Icons (`LineIcon` and others) | `v1/icons.tsx`           | Brand icons not in lucide-react                    |
 | `PartnerForm`                 | `PartnerForm.tsx`        | Partner lead form and its states                   |

@@ -295,7 +295,7 @@ export function SLeasingPage() {
       />
       <Steps
         title={t(language, 'เริ่มรับสมัครได้ใน 4 ขั้น', 'Start taking applications in 4 steps')}
-        note={t(language, 'ต้องสมัครกับ PK HUB เพื่อรับรหัส sub-partner ก่อน', 'Join PK HUB for a sub-partner code first')}
+        note={t(language, 'เฉพาะร้านในจังหวัดฉะเชิงเทรา · ต้องสมัครกับ PK HUB เพื่อรับรหัส sub-partner ก่อน', 'Chachoengsao stores only · join PK HUB for a sub-partner code first')}
         steps={[
           { title: t(language, 'สมัครกับ PK HUB', 'Join PK HUB'), body: t(language, 'ฝากข้อมูลร้าน ทีมช่วยเปิดรหัสให้', 'Leave your store details; the team sets up your code') },
           { title: t(language, 'รับรหัส sub-partner', 'Get a sub-partner code'), body: t(language, 'ใช้ส่งใบสมัครสินเชื่อในนามร้าน', 'Use it to submit applications for your store') },
@@ -326,6 +326,7 @@ export function SLeasingPage() {
           note: t(language, 'ทีม PK HUB ช่วยดูแลตลอดขั้นตอน', 'The PK HUB team supports every step'),
         }}
         dots={[
+          t(language, 'เฉพาะร้านในจังหวัดฉะเชิงเทรา', 'Chachoengsao stores only'),
           t(language, 'ต้องมีรหัส sub-partner จาก PK HUB', 'Requires a PK HUB sub-partner code'),
           t(language, 'พิจารณาตามเกณฑ์ของ S Leasing', 'Approval follows S Leasing criteria'),
           t(language, 'ทีม PK HUB ช่วยดูแล', 'Supported by the PK HUB team'),
@@ -333,6 +334,7 @@ export function SLeasingPage() {
       />
       <Faq
         items={[
+          [t(language, 'ร้านนอกฉะเชิงเทราสมัครได้ไหม', 'Can stores outside Chachoengsao join?'), t(language, 'ตอนนี้รับสมัคร S Leasing ผ่าน PK HUB เฉพาะร้านในจังหวัดฉะเชิงเทรา', 'For now, S Leasing through PK HUB is open only to stores in Chachoengsao province.')],
           [t(language, 'ต้องสมัครกับใครก่อน', 'Who do I sign up with?'), t(language, 'สมัครกับ PK HUB เพื่อรับรหัส sub-partner ก่อนเริ่มรับสมัครสินเชื่อให้ลูกค้า', 'Join PK HUB for a sub-partner code before you take customer applications.')],
           [t(language, 'ร้านได้สิทธิอะไรบ้าง', 'What does my store get?'), t(language, 'ราคาพิเศษเมื่อซื้อเครื่องกับ PK HUB และอัตราดอกเบี้ยผ่อนพิเศษสำหรับลูกค้า สิทธิอื่นๆ ทีมแจ้งตอนสมัคร', 'Special device prices when you buy from PK HUB and a special instalment rate for customers. The team explains other benefits when you join.')],
           [t(language, 'รู้ผลอนุมัติเมื่อไร', 'How soon is approval?'), t(language, 'รู้ผลใน 5–10 นาที ทั้งขั้นตอนที่หน้าร้านใช้เวลาประมาณ 30 นาที', 'Within 5–10 minutes; the whole process in store takes about 30 minutes.')],
