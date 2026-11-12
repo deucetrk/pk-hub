@@ -12,7 +12,7 @@ export const inventoryCashflowArticle: PublishedBlogArticle = {
   "contentTrack": "retailer",
   "tags": ["บริหารสต็อก", "เงินหมุน", "ต้นทุนร้าน"],
   "publishedAt": "2026-08-11",
-  "modifiedAt": "2026-11-09",
+  "modifiedAt": "2026-11-12",
   "estimatedReadMinutes": 7,
   "recommendedImage": "/blog/inventory-cashflow-cover.png",
   "imageAlt": "ภาพจำลองเจ้าของร้านทบทวนจำนวนสต็อกมือถือแต่ละกลุ่ม",
@@ -137,6 +137,10 @@ export const inventoryCashflowArticle: PublishedBlogArticle = {
     {
       "label": "มือถือราคาไม่เกิน 5,000 ร้านควรมีรุ่นแบบไหนเป็นตัวขายประจำ",
       "href": "/th/blog/phones-under-5000-baht"
+    },
+    {
+      "label": "จัดชั้นรุ่นมือถือราคาไม่เกิน 10,000 ให้ขายง่ายและเงินไม่จม",
+      "href": "/th/blog/phones-under-10000-baht"
     }
   ],
   "sources": [

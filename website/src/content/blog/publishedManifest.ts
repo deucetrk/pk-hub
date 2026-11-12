@@ -13,6 +13,7 @@ export const publishedBlogSlugs = [
   'check-imei',
   'ipad-tablet-wholesale-for-mobile-shops',
   'phones-under-5000-baht',
+  'phones-under-10000-baht',
 ] as const
 
 export type PublishedBlogSlug = (typeof publishedBlogSlugs)[number]
