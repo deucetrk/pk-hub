@@ -14,7 +14,7 @@ export const phonesUnder5000Article: PublishedBlogArticle = {
   contentTrack: 'retailer',
   tags: ['มือถือราคาไม่เกิน 5000', 'มือถือราคาถูก', 'TECNO', 'เครื่องแอค', 'จัดสต็อกร้านมือถือ'],
   publishedAt: '2026-11-11',
-  modifiedAt: '2026-11-11',
+  modifiedAt: '2026-11-12',
   estimatedReadMinutes: 8,
   recommendedImage: '/blog/phones-under-5000-baht-cover.png',
   imageAlt: 'ภาพประกอบมือถือแอนดรอยด์ไม่มีแบรนด์หลายเครื่องวางเรียงบนเคาน์เตอร์ร้าน พร้อมป้ายราคาเปล่าและกล่องสินค้า',
@@ -159,6 +159,7 @@ export const phonesUnder5000Article: PublishedBlogArticle = {
     { label: 'ดูแบรนด์มือถือที่ PK HUB ขายส่ง', href: '/th/products/handset-wholesale' },
     { label: 'จัดสต็อกร้านมือถือให้เงินไม่จม', href: '/th/blog/mobile-shop-inventory-cashflow-guide' },
     { label: 'เช็ค IMEI ก่อนรับเครื่องเข้าร้าน', href: '/th/blog/check-imei' },
+    { label: 'ลูกค้าขยับงบได้? ดูมือถือราคาไม่เกิน 10,000 ที่ขายง่าย', href: '/th/blog/phones-under-10000-baht' },
   ],
   sources: [
     {
